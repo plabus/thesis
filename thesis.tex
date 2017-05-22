@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  My documentation report
+%  Objetive: Explain what I did and how, so someone can continue with the investigation
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+% PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{book} % Default font size and left-justified equations
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%----------------------------------------------------------------------------------------
+% MY PERSONAL INCLUDES AND STUFF
+%----------------------------------------------------------------------------------------
+
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{mathtools} % loads amsmath
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bbold}
+
+\usepackage{pifont}
+\usepackage{slashed}
+\usepackage[font={small,it}]{caption}
+\usepackage{footmisc}
+\usepackage[super]{nth} % for 2nd, 3rd and so on
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{multirow}
+\usepackage{array}
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+\usepackage{pdfpages}
+\usepackage{emptypage}
+\usepackage{stmaryrd}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+%----------------------------------------------------------------------------------------
+% MATHS FUNCTIONS
+%----------------------------------------------------------------------------------------
+
+% Provides usable ceil and floor functions
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\pluseq}{\mathrel{+}=}
+\newcommand{\asteq}{\mathrel{*}=}
+\DeclareMathOperator{\spn}{span}
+
+
+%----------------------------------------------------------------------------------------
+% BLANK PAGE HANDLING
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\def\cleardoublepage{\clearpage%
+  \if@twoside
+  \ifodd\c@page\else
+  \vspace*{\fill}
+  \hfill
+  \begin{center}
+    This page intentionally left blank.
+  \end{center}
+  \vspace{\fill}
+  \thispagestyle{empty}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi
+  \fi
+  \fi
+}
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+% TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\includepdf{front_page.pdf}
+
+%----------------------------------------------------------------------------------------
+% COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent \textsc{PhD Programme in Astroparticle Physics, SISSA Trieste, Italy.}\\
+
+\noindent The research for this Phd thesis project was carried out
+under the supervision of Prof.~Dr.~Roberto Percacci with financial support
+of a SISSA PhD Fellowship.\\
+
+\noindent \textit{September 2017} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+% PREFACE
+%----------------------------------------------------------------------------------------
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+Blah, blah.
+
+\begin{flushright}
+  \textit{Peter Labus, September 2017.}
+\end{flushright}
+
+%----------------------------------------------------------------------------------------
+% TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+% INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Introduction}}
+
+
+%----------------------------------------------------------------------------------------
+% CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapter{Scalar Matter}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\nocite{*}
+\bibliographystyle{abbrv}
+\bibliography{allrefs}
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
+
+\end{document}
