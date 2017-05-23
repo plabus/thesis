@@ -30,6 +30,7 @@
 \usepackage{color}
 \usepackage{colortbl}
 \usepackage{multirow}
+\usepackage[makeroom]{cancel} % needed for xcancel
 
 \usepackage{textcomp}
 \usepackage{mathtools} % loads amsmath
@@ -143,7 +144,7 @@
 
 \noindent \textsc{PhD Programme in Astroparticle Physics, SISSA Trieste, Italy.}\\
 
-\noindent The research for this Phd thesis project was carried out
+\noindent The research for this PhD thesis project was carried out
 under the supervision of Prof.~Dr.~Roberto Percacci with financial support
 of a SISSA PhD Fellowship.\\
 
@@ -1432,14 +1433,23 @@ This structure, in particular the negative sign in front of the term $\sim g_3^2
 
 The interplay between the dimensional term $2g_3$ and the leading order term from quantum fluctuations, $- g_3^2$, induces one real interacting fixed point as given in Tab.~\ref{puregravityFP_table}. The semi-perturbative approximation features another real fixed point, which we discard as a truncation artefact, as it is not present in the full beta function. Moreover, the perturbative approximation, in which we set all anomalous dimensions to zero everywhere, yields a similar result, where the critical exponent is of course set exactly by the negative dimensionality of the coupling.
 
-\begin{table}[!here]
-\begin{tabular}{ccccc}
-approximation&$g_{3\,\ast}$& $\theta$& $\eta_{\rm TT}$& $\eta_{\sigma}$\\ \hline \hline
-full & 2.204 & 2.17 & -0.62 & 0.50\\ \hline
-semi-pert.&2.203 & 2.17 & -0.62 & 0.37 \\ \hline
-pert. ($\eta_{\rm TT}=0=\eta_{\sigma}$)& 3.65 & 2 & - & - \\\hline\hline
-\end{tabular}
-\caption{\label{puregravityFP_table}Coordinates and critical exponents at an interacting fixed point for vanishing scalar fluctuations.}
+\begin{table}[]
+  \begin{center}
+    \begin{tabular}{ l c c c c }
+      \toprule
+      approximation      & $g_{3\,\ast}$ & $\theta$ & $\eta_{\rm TT}$ & $\eta_{\sigma}$ \\
+      \midrule
+      full               & 2.204         & 2.17     & -0.62           & 0.50 \\
+      semi-perturbative  & 2.203         & 2.17     & -0.62           & 0.37 \\
+      perturbative       & 3.65          & 2        & -               & -    \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{
+    Coordinates and critical exponents at an interacting fixed point for vanishing scalar fluctuations.
+    In the perturbative approximation we have set $\eta_{\rm TT}=\eta_{\sigma}=0$.
+  }
+  \label{puregravityFP_table}
 \end{table}
 
 The real part of the critical exponent is remarkably close to values in previous approximations, both in the single- and bi-metric case. We emphasize that this is a  rather non-trivial result. In our case, we define a coupling $g_3$, which is related to a gravity-scalar interaction vertex, in contrast to previous pure-gravity definitions. Accordingly, the diagrams entering the beta function have a fairly different structure, as does the beta function. It is rather reassuring to note that different ways of defining a Newton coupling and projecting the RG flow onto it result in similar universal properties.
@@ -1455,16 +1465,26 @@ If we identify $\eta_{\sigma} = \eta_{\rm TT}$ we obtain a fixed point with the 
 We observe a comparable value for the critical exponent $\theta$ with  respect to the previous case. The anomalous dimension for the TT mode remains essentially the same. We see that the assumption $\eta_{\sigma}=\eta_{TT}$ even gives the wrong sign for $\eta_\sigma$.
 Since the anomalous dimensions contribute to the scaling dimensions of operators, this is of course a serious shortcoming.
 
-\begin{table}[!here]
-\begin{tabular}{cccc}
-approximation&$g_{3\,\ast}$& $\theta$& $\eta_{\rm TT}$\\ \hline \hline
-full & 2.20 & 2.19 & -0.67 \\\hline
-semi-pert.&2.26 & 2.12 & -0.64 \\ \hline\hline
-\end{tabular}
-\caption{\label{puregravityFPetaapprox}Coordinates and critical exponents of an interacting fixed point with the approximation $\eta_{\sigma} = \eta_{\rm TT}$.}
+\begin{table}[]
+  \begin{center}
+  \begin{tabular}{ l c c c }
+    \toprule
+    approximation     & $g_{3\,\ast}$ & $\theta$ & $\eta_{\rm TT}$ \\
+    \midrule
+    full              & 2.20          & 2.19     & -0.67 \\
+    semi-perturbative & 2.26          & 2.12     & -0.64 \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \caption{
+    Coordinates and critical exponents of an interacting fixed point with the approximation $\eta_{\sigma} = \eta_{\rm TT}$.
+  }
+  \label{puregravityFPetaapprox}
 \end{table}
 
-To test the stability of our results with respect to extended truncations which would include separate beta functions for $G_3$ etc., we consider an approximation where $g_5=g_4=g_3$. We treat the pure-gravity coupling $G_4=G_3$ as an external parameter, and test whether a viable fixed point exists for values of these couplings between 0 and 6.
+To test the stability of our results with respect to extended truncations which would include separate beta functions for $G_3$ etc.,
+we consider an approximation where $g_5=g_4=g_3$. We treat the pure-gravity coupling $G_4=G_3$ as an external parameter,
+and test whether a viable fixed point exists for values of these couplings between 0 and 6.
 For this case, we display the semi-perturbative result, as it allows a clear understanding of the terms:
 \bea
 \beta_{g_3} &=&2 g_3 - \frac{8}{9 \pi} g_3 G_3
@@ -1624,15 +1644,23 @@ Let us start from the case $N_S=1$.
 The properties of the fixed points in the two approximations
 are listed in~tab.~\ref{FPtab3}.
 
-\begin{table}[!here]
-\begin{tabular}{cccccc}
-approximation&$g_{3\,\ast}$& $\theta$& $\eta_{\rm TT}$&$\eta_{\sigma}$& $\eta_S$\\ \hline \hline
-$FP_1$-s.p. & -8.67 & 3.42 & 2.34 &-1.92 &-4.83 \\ \hline
-$FP_1$-full & -13.9 & 3.85 & 3.27 &-0.31 &-6.50 \\ \hline
-$FP_2$-s.p. & 12.2 & 4.81 & -3.28 & 2.69 & 6.78 \\ \hline
-$FP_2$-full & 53.4 & 11.7 & -5.21 &10.8 &25.2\\ \hline\hline
-\end{tabular}
-\caption{\label{FPtab3}Coordinates and critical exponents of the interacting fixed points at $N_S=1$, both in semi-perturbative and full approximations.}
+\begin{table}[]
+  \begin{center}
+    \begin{tabular}{ l c c c c c }
+      \toprule
+      approximation            & $g_{3\,\ast}$ & $\theta$ & $\eta_{\rm TT}$ & $\eta_{\sigma}$ & $\eta_S$ \\
+      \midrule
+      $FP_1$ full              & -13.9         & 3.85     & 3.27            & -0.31           & -6.50 \\
+      $FP_1$ semi-perturbative & -8.67         & 3.42     & 2.34            & -1.92           & -4.83 \\
+      $FP_2$ full              & 53.4          & 11.7     & -5.21           & 10.8            & 25.2  \\
+      $FP_2$ semi-perturbative & 12.2          & 4.81     & -3.28           & 2.69            & 6.78  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{
+    Coordinates and critical exponents of the interacting fixed points at $N_S=1$, both in semi-perturbative and full approximations.
+  }
+  \label{FPtab3}
 \end{table}
 
 
@@ -2692,41 +2720,58 @@ Therefore the number of equations exceeds the number of coefficients for the fir
 
 If we construct the non-perturbative flow equation for quantum gravity by introducing a cutoff defined through a background metric then independence from this artificial metric can only be achieved if the appropriate modified split Ward identity is obeyed. However even if it is obeyed, background independence is guaranteed only in the limit $k\to0$. RG properties on the other hand are defined at intermediate scales $k$. There is therefore the potential for conflict in this formulation between RG notions such as fixed points, and the requirement of background independence. Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
 
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{|c||c|c|c||c|c|c|c|c|c|c|}
-\hline
- & \multicolumn{3}{c||}{parametrisation $f$} & \multicolumn{2}{c|}{cutoff profile $r$} \\
- \hline\hline
-$\eta$ & type & $d_f$ & runs & power-law & not power-law \\
-\hline \hline
-\multirow{3}{*}{$\ne0$} & not power-law & any & yes & \xcancel{FP}\phantom{$=$} $\widehat{\rm FP}$ & \cellcolor{red!30} \\
-\cline{2-5}
- & %\multirow{2}{*}{$\chi^\rho$} 
-   power law & $\ne\rho\eta/2$ & yes & FP $\ne$ $\widehat{\rm FP}$ &  \cellcolor{red!30} incompatible \\
-\cline{3-5}
- &     $f=\chi^\rho$    & $=\rho\eta/2$ & no & FP $=$ $\widehat{\rm FP}$ & \cellcolor{red!30} \\
-\hline  %\cline{1-4}\cline{6-6}
-\multirow{2}{*}{$=0$} & \multirow{2}{*}{any} & $\ne0$ & yes & \multicolumn{2}{c|}{\multirow{2}{*}{FP $=$ $\widehat{\rm FP}$}} 
-\\ %& \multirow{2}{*}{FP $=$ $\widehat{\rm FP}$} \\
-\cline{3-4}
-                   &         & $=0$    & no & \multicolumn{2}{c|}{}  \\
-\hline
- 
-\end{tabular}
-\end{center}
-\caption{RG properties of the derivative expansion for conformally truncated gravity, when the msWI is also satisfied. The results depend on whether the conformal factor develops an anomalous dimension $\eta$, on the choice of cutoff profile $r$, and on how the metric is parametrised via $f$. Depending also on its dimension $d_f$, $f$ can contain a massive parameter, and thus run with $k$ when written in dimensionless terms, as listed in the table.
-$\widehat{\rm FP}$ indicates that a background-independent description exists, while (\xcancel{FP}) FP  indicates that $k$-fixed points are (not) allowed; the (in)equality shows how these relate to the $\hk$-fixed points.}
+\begin{table}[]
+  \begin{center}
+    \begin{tabular}{ r@{\hskip 10mm}  l  r  l@{\hskip 10mm}  c  c  c  c  c  c  c }
+      \toprule
 
-%in the case of power law cutoff $r(z)=z^{-n}$,  or if $\eta=0$, $d_f\ne2$ also in the case of general cutoff. Otherwise the IR cutoff term is actually independent of $k$.}
-\label{table:summary}
+      \textbf{anomalous}            & \multicolumn{3}{ c }{ \hspace{-8mm}\textbf{parametrisation $f$} } & \multicolumn{2}{ c }{ \textbf{cutoff profile $r$} }                                              \\[1mm]
+      \textbf{dimension}            & type                 & $d_f$           & runs                     & power-law                                                      & not power-law                   \\
+
+      \midrule
+
+      \multirow{3}{*}{$\eta \ne 0$} & not power-law        & any             & yes                      & \xcancel{FP} ,\,  $\widehat{\rm FP}$                           & \cellcolor{red!30}              \\[2mm]
+                                    & power law            & $\ne\rho\eta/2$ & yes                      & FP $\ne$ $\widehat{\rm FP}$                                    & \cellcolor{red!30} incompatible \\[0.5mm]
+                                    & ($f=\chi^\rho$)      & $=\rho\eta/2$   & no                       & FP $=$ $\widehat{\rm FP}$                                      & \cellcolor{red!30}              \\[5mm]
+
+      \multirow{2}{*}{$\eta =0$}    & \multirow{2}{*}{any} & $\ne0$          & yes                      & \multicolumn{2}{c}{\multirow{2}{*}{FP $=$ $\widehat{\rm FP}$}}                                   \\[0.5mm]
+                                    &                      & $=0$            & no                       & \multicolumn{2}{c}{}                                                                             \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{
+    RG properties of the derivative expansion for conformally truncated gravity,
+    when the msWI is also satisfied.
+    The results depend on whether the conformal factor develops an anomalous dimension $\eta$,
+    on the choice of cutoff profile $r$, and on how the metric is parametrised via $f$.
+    Depending also on its dimension $d_f$, $f$ can contain a massive parameter,
+    and thus run with $k$ when written in dimensionless terms, as listed in the table.
+    $\widehat{\rm FP}$ indicates that a background-independent description exists,
+    while (\xcancel{FP}) FP  indicates that $k$-fixed points are (not) allowed;
+    the (in)equality shows how these relate to the $\hk$-fixed points.
+  }
+  \label{table:summary}
 \end{table}
 
-
-In this paper we have further investigated these issues. Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.\footnote{For power law cutoff  $r(z)=z^{-n}$, $d_f = 2-\eta/(n+2)$ is excluded \cite{Dietz:2015owa}, and from sec. \ref{sec:required-cutoff} when $\eta=0$,  $d_f=2$ is excluded for any cutoff profile: in these cases the cutoff term is independent of $k$.} The first question that needs to be addressed is whether the msWI, $\mathcal{W}=0$, is compatible with the exact RG flow equation, \ie such that $\dot{\mathcal{W}}=0$ then follows. At the exact level, this latter compatibility is guaranteed since they are both identities derived from the partition function (see also sec. \ref{sec:exact}). Within the derivative expansion approximation of conformally truncated gravity considered in ref. \cite{Dietz:2015owa} (reviewed in sec. \ref{sec:review}), we have shown  in secs. \ref{sec:compatibility-at-d2} and \ref{sec:required-cutoff}, that this compatibility follows if and only if either $\eta=0$ or cutoff profile is power law. In sec. \ref{sec:exact-vs-derivatives}, we saw precisely why the derivative expansion breaks compatibility in general and why these special cases restore it. We argued in sec. \ref{sec:incompatibility} that if the equations are incompatible they are overconstrained since there are then an infinite number of secondary constraints, and thus not even $t$-dependent solutions can exist. We confirmed this latter conclusion by example in sec. \ref{sec:incompatible-no-solns}. In sec. \ref{sec:truncations}, we also saw that the fixed point equations and Ward identities together generically overconstrain the system when expanded in terms of vertices beyond the six-point level.
-
-%It \emph{is not} then guaranteed that RG notions and background independence are compatible. In fact in ref. \cite{Dietz:2015owa} the power-law cutoff profile was used and thus the flow equations and msWI were compatible. However
-%we gave a number of examples where RG notions and background independence are nevertheless in conflict, and in this paper we have furnished more such examples. Thus....
+In this paper we have further investigated these issues.
+Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.
+\footnote{For power law cutoff  $r(z)=z^{-n}$, $d_f = 2-\eta/(n+2)$ is excluded \cite{Dietz:2015owa},
+and from sec. \ref{sec:required-cutoff} when $\eta=0$,  $d_f=2$ is excluded for any cutoff profile:
+in these cases the cutoff term is independent of $k$.} The first question that needs to be addressed is whether the msWI,
+$\mathcal{W}=0$, is compatible with the exact RG flow equation, \ie such that $\dot{\mathcal{W}}=0$ then follows.
+At the exact level, this latter compatibility is guaranteed since they are both identities derived from the partition function
+(see also sec. \ref{sec:exact}).
+Within the derivative expansion approximation of conformally truncated gravity considered in ref.
+\cite{Dietz:2015owa} (reviewed in sec. \ref{sec:review}),
+we have shown  in secs. \ref{sec:compatibility-at-d2} and \ref{sec:required-cutoff},
+that this compatibility follows if and only if either $\eta=0$ or cutoff profile is power law.
+In sec. \ref{sec:exact-vs-derivatives}, we saw precisely why the derivative expansion breaks compatibility
+in general and why these special cases restore it.
+We argued in sec. \ref{sec:incompatibility} that if the equations are incompatible they are overconstrained
+since there are then an infinite number of secondary constraints, and thus not even $t$-dependent solutions can exist.
+We confirmed this latter conclusion by example in sec. \ref{sec:incompatible-no-solns}. In sec. \ref{sec:truncations},
+we also saw that the fixed point equations and Ward identities together generically overconstrain the system when
+expanded in terms of vertices beyond the six-point level.
 
 Even if the equations are compatible the msWI can still forbid fixed points. In sec. \ref{sec:forbids} the reason was laid out particularly clearly. The Ward identity
 \be 
