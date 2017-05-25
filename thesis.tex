@@ -857,9 +857,10 @@ and therefore any measure of momentum-scales, is widely fluctuating?
 
 The solution lies in the use of the background field method \cite{Abbott:1980hw},
 where we split the full metric according to
-\be
-g_{\mu \nu} = \bar{g}_{\mu \kappa} {\rm exp}[ h^{.}_{\,\,.}]^{\kappa}_{\nu}.\label{exppara}
-\ee
+\begin{align}
+  g_{\mu\nu}=\bar g_{\mu\rho}(e^h)^\rho{}_\nu.
+  \label{exppara}
+\end{align}
 We then define the path-integral over all metric configurations as the path-integral
 over the fluctuation field $h_{\mu \nu}$,
 and the background metric $\bar{g}_{\mu \nu}$ can be used to set a scale.
@@ -1011,15 +1012,17 @@ h_{\mu \nu} = h_{\mu \nu}^{TT} + \bar{D}_{\mu}v_{\nu}+ \bar{D}_{\nu}v_{\mu} + \b
 with $\bar{D}^{\mu}h_{\mu \nu}^{TT}=0=h^{\mu\, \, TT}_{\mu}$ and $\bar{D}^{\mu}v_{\mu}=0$
 and  use the unimodular gauge, defined in \cite{Percacci:2015wwa},
 which imposes a constant conformal mode, i.e.
-\be
-h=\rm const,
-\ee
+\begin{align}
+  h = \rm const \,,
+\end{align}
 in the exponential parameterization.
 Moreover, vector fluctuations are also gauged to zero,
-leaving contributions of $h_{\mu \nu}^{TT}$and $\sigma$ to the running couplings.
+leaving contributions of $h_{\mu \nu}^{TT}$ and $\sigma$ to the running couplings.
 For details on the Faddeev-Popov ghost sector for this choice of gauge, see \cite{Percacci:2015wwa}.
 We will employ a redefinition of the form
-$\sigma \rightarrow \sqrt{(\bar{D}^{2})^2+\frac{4}{3}\bar{D}^{\mu}\bar{R}_{\mu \nu}\bar{D}^{\nu}} \sigma$,
+\begin{align}
+  \sigma \mapsto \sqrt{(\bar{D}^{2})^2+\frac{4}{3}\bar{D}^{\mu}\bar{R}_{\mu \nu}\bar{D}^{\nu}} \sigma \,,
+\end{align}
 that cancels part of the Jacobian from the York decomposition \cite{Dou:1997fg}.
 
 To calculate the flow, we define a truncation in the following way:
@@ -1028,12 +1031,12 @@ and then redefine $h_{\mu \nu} \rightarrow \sqrt{32 \pi G} h_{\mu\nu}$. In the n
 the running of the prefactors of the terms at different order in $h_{\mu \nu}$ differs.
 We thus introduce several different ``avatars" of the Newton coupling, $G_3$, $G_4$, $g_3$,
 $g_4$ and $g_5$, and define our truncation to be
-\bea
-\label{gammarhs}
-\Gamma_{k, \, rhs}&=&  \sqrt{\frac{G_3}{G}} \, \Gamma_{EH}^{(3,0)} + \frac{G_4}{G} \, \Gamma_{EH}^{(4,0)}\nonumber\\
-&{}& + \sqrt{\frac{g_3}{G}} \, \Gamma_{\rm kin}^{(1,2)} + \frac{g_4}{ G} \, \Gamma_{\rm kin}^{(2,2)} + \left(\frac{g_5}{ G}\right)^{3/2} \, \Gamma_{\rm kin}^{(3,2)}\nonumber\\
-&{}& + \mbox{ quadratic terms }.
-\eea
+\begin{align}
+  \Gamma_{k, \, rhs} &= \sqrt{\frac{G_3}{G}} \, \Gamma_{EH}^{(3,0)} + \frac{G_4}{G} \, \Gamma_{EH}^{(4,0)} \nonumber \\
+                     & + \sqrt{\frac{g_3}{G}} \, \Gamma_{\rm kin}^{(1,2)} + \frac{g_4}{ G} \, \Gamma_{\rm kin}^{(2,2)} + \left(\frac{g_5}{ G}\right)^{3/2} \, \Gamma_{\rm kin}^{(3,2)}\nonumber\\
+                     & + \vphantom{ \sqrt{\frac{g_3}{G}} }\mbox{ quadratic terms }.
+  \label{gammarhs}
+\end{align}
 Here $\Gamma^{(n,m)}$ stands for the terms of $n$-th order in the fluctuation field $h_{\mu \nu}$
 and $m$-th order in the scalar field.
 Note that the action that contains the scalar fields is quadratic,
