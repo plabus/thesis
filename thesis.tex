@@ -12,12 +12,10 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{book} % Default font size and left-justified equations
+\documentclass[11pt,draft]{book} % Default font size and left-justified equations
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
-\usepackage{xcolor} % Required for specifying colors by name
-\definecolor{ocre}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the book
-
-\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+\input{structure} % Insert the structure.tex file which contains
+                  % the majority of the structure behind the template
 
 %----------------------------------------------------------------------------------------
 % MY PERSONAL INCLUDES AND STUFF
@@ -27,10 +25,6 @@
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage[makeroom]{cancel} % needed for xcancel
-\usepackage{tikz}
-\usetikzlibrary{patterns}
-\usepackage{graphicx}
-\graphicspath{{./figures/}}
 
 \usepackage{textcomp}
 \usepackage{mathtools} % loads amsmath
@@ -170,7 +164,7 @@
 under the supervision of Prof.~Dr.~Roberto Percacci with financial support
 of a SISSA PhD Fellowship.\\
 
-\noindent \textit{September 2017} % Printing/edition date
+\noindent \textit{August 2017} % Printing/edition date
 
 %----------------------------------------------------------------------------------------
 % PREFACE
@@ -182,7 +176,7 @@ of a SISSA PhD Fellowship.\\
 Blah, blah.
 
 \begin{flushright}
-  \textit{Peter Labus, September 2017.}
+  \textit{Peter Labus, August 2017.}
 \end{flushright}
 
 %----------------------------------------------------------------------------------------
