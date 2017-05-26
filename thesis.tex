@@ -12,6 +12,7 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
+% \documentclass[11pt]{book} % Default font size and left-justified equations
 \documentclass[11pt,draft]{book} % Default font size and left-justified equations
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
 \input{structure} % Insert the structure.tex file which contains
@@ -2475,30 +2476,27 @@ This justifies the different powers with which they appear
 in the various terms in (\ref{gammarhs}).
 
 In detail, the different terms on a flat background are given by:
-\bea
- \Gamma_{EH}^{(3,0)} &=&-\frac{1}{3!}
-2\sqrt{32\pi G}
- \int d^4x\Bigl(\frac{3}{2} h_{\mu\nu}(\partial_{\mu}h_{\kappa\lambda})\partial_{\nu}h_{\kappa\lambda}\nonumber\\
-&{}& - 3 h_{\kappa \lambda}(\partial_{\lambda}h_{\mu\nu})\partial_{\mu}h_{\nu\kappa}\Bigr),\label{GammaG3}\\
-%
-\Gamma_{EH}^{(4,0)}&=& - \frac{1}{4!}
-64\pi G
-\int d^4x\Bigl( 3h_{\mu\nu}h_{\kappa\lambda} (\partial_{\mu}h_{\kappa\rho})\partial_{\lambda}h_{\rho\nu}\nonumber\\
-&+&h_{\nu\kappa}h_{\kappa\rho}(\partial_{\sigma}h_{\mu\nu})\partial_{\mu}h_{\rho\sigma}
--3 h_{\mu\nu}h_{\nu\kappa}(\partial_{\kappa}h_{\rho\sigma})\partial_{\mu}h_{\rho\sigma}\nonumber\\
-&+&4 h_{\mu\nu}h_{\nu\kappa}(\partial_{\mu}h_{\rho\sigma})\partial_{\sigma}h_{\rho\kappa}
--2 h_{\mu\nu}h_{\kappa \lambda}(\partial_{\lambda}h_{\nu\rho})\partial_{\rho}h_{\mu\kappa} \nonumber\\
-&+& h_{\mu\nu}h_{\kappa\lambda}(\partial_{\rho}h_{\mu\kappa}) \partial_{\rho}h_{\nu\lambda}
-\nonumber\\
-&-& h_{\mu\nu}h_{\nu\kappa}(\partial_{\rho}h_{\mu\sigma})\partial_{\rho}h_{\kappa\sigma}\Bigr),\label{GammaG4}\\
-%
-\Gamma_{kin}^{(1,2)} &=& - \frac{\sqrt{32 \pi  G}}{2} \int d^4x \sqrt{\bar{g}} h^{\mu \nu}\sum_{i=1}^{N_S}\partial_{\mu}\phi^i \partial_{\nu}\phi^i,\label{Gammag3}\\
-%
-\Gamma_{kin}^{(2,2)} &=& \frac{ 32 \pi  G}{2 } \int d^4x \sqrt{\bar{g}} h^{\mu \rho}h_{\rho}^{\phantom{\rho}\nu}\sum_{i=1}^{N_S}\partial_{\mu}\phi^i \partial_{\nu}\phi^i,\label{Gammag4}\\
-%
-\Gamma_{kin}^{(3,2)} &=& - \frac{(32 \pi  G)^{3/2}}{2}  \int d^4x \sqrt{\bar{g}} h^{\mu \rho}h_{\rho}^{\phantom{\rho}\lambda}h_{\lambda}^{\phantom{\lambda}\nu}\sum_{i=1}^{N_S}\partial_{\mu}\phi^i \partial_{\nu}\phi^i,\nonumber\\
-&{}&\label{Gammag5}
-\eea
+\begin{align}
+  \Gamma_{EH}^{(3,0)} &= -\frac{ 2 \, \sqrt{32\pi G} }{ 3! } \int \mathrm d^4x \;
+  \bigg[
+    \frac{3}{2} \, h_{\mu\nu}(\partial_{\mu}h_{\kappa\lambda})\partial_{\nu}h_{\kappa\lambda}
+    - 3 h_{\kappa \lambda}(\partial_{\lambda}h_{\mu\nu})\partial_{\mu}h_{\nu\kappa}
+  \bigg] \,, \label{GammaG3} \\
+  \Gamma_{EH}^{(4,0)} &= - \frac{ 64\pi G }{ 4! }  \int \mathrm d^4x \;
+  \bigg[
+    3h_{\mu\nu}h_{\kappa\lambda} (\partial_{\mu}h_{\kappa\rho})\partial_{\lambda}h_{\rho\nu}
+    + h_{\nu\kappa}h_{\kappa\rho}(\partial_{\sigma}h_{\mu\nu})\partial_{\mu}h_{\rho\sigma} \nonumber \\
+    & \vphantom{ \frac{ 64\pi G }{ 4! } } - 3 h_{\mu\nu}h_{\nu\kappa}(\partial_{\kappa}h_{\rho\sigma})\partial_{\mu}h_{\rho\sigma}
+    + 4 h_{\mu\nu}h_{\nu\kappa}(\partial_{\mu}h_{\rho\sigma})\partial_{\sigma}h_{\rho\kappa}
+    - 2 h_{\mu\nu}h_{\kappa \lambda}(\partial_{\lambda}h_{\nu\rho})\partial_{\rho}h_{\mu\kappa} \nonumber\\
+    & \vphantom{ \frac{ 64\pi G }{ 4! } } +  h_{\mu\nu}h_{\kappa\lambda}(\partial_{\rho}h_{\mu\kappa}) \partial_{\rho}h_{\nu\lambda}
+    -  h_{\mu\nu}h_{\nu\kappa}(\partial_{\rho}h_{\mu\sigma})\partial_{\rho}h_{\kappa\sigma}
+  \bigg] \,, \label{GammaG4}\\
+  \Gamma_{kin}^{(1,2)} &= - \frac{\sqrt{32 \pi  G}}{2}   \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag3} \\
+  \Gamma_{kin}^{(2,2)} &=   \frac{ 32 \pi  G}{2 }        \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag4} \\
+  \Gamma_{kin}^{(3,2)} &= - \frac{(32 \pi  G)^{3/2}}{2}  \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\lambda} \, h_{\lambda}^{\phantom{\lambda}\nu}
+  \sum_{i=1}^{N_S}\partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag5}
+\end{align}
 where appropriate symmetrizations are understood implicitly, as $h_{\mu \nu} = h_{\nu \mu}$.
 Here, we have already imposed the gauge $h= \rm const$,
 and thus the trace of the fluctuation field can be dropped from the vertices.
