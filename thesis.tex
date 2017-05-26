@@ -4810,104 +4810,120 @@ The Hessian for gravity coupled to a single scalar has been
 given in \cite{Percacci:2015wwa}.
 Here we discuss the changes introduced by having a scalar multiplet for the model of Eq.~(\ref{action}).
 The scalar field is decomposed into a background and
-fluctuation part
-$\phi^a=\bar{\phi}^a+\delta\phi^a$.
+fluctuation part $\phi^a=\bar{\phi}^a+\delta\phi^a$.
 The part of the Hessian which contains a dependence
 on the scalar fluctuation $\delta\phi^a$ is a sum of two pieces.
 The first is quadratic in the scalar field fluctuations and reads:
-\bea
-\int \mathrm{d}^d x \sqrt{\bar{g}}\; \frac{1}{2} \delta\phi^a
-\bigg[
-\left(-\bar{\nabla}^2
-+\bar V''-\bar F''\bar{R}\right) P^{R}_{ab}
-+\left(-\bar{\nabla}^2
-+\frac{1}{\bar\rad}(\bar V'-\bar F'\bar{R})\right) P^{\perp}_{ab}
-\bigg] \delta\phi^b
-\eea
+\begin{align}
+  \int \mathrm d^d x \, \sqrt{\bar{g}} \; \frac{1}{2} \, \delta\phi^i
+  \bigg[
+    \left(-\bar{\nabla}^2
+    +\bar V''-\bar F''\bar{R}\right) P^{R}_{ij}
+    +\left(-\bar{\nabla}^2
+    +\frac{1}{\bar\rad}(\bar V'-\bar F'\bar{R})\right) P^{\perp}_{ij}
+  \bigg] \, \delta\phi^j \,.
+\end{align}
 where we have introduced the
 projectors $P_R^{ab}=\bphi^a\bphi^b/\bphi^2$
 and $P_\perp^{ab} =\delta^{ab}-P_R^{ab}$.
 The second mixes scalar field fluctuations with metric scalar fluctuations:
-\be
-\int \mathrm{d}^d x \sqrt{\bar{g}}\;
-\delta\phi^a P^{R}_{ab} \bar{\phi}^b
-\frac{1}{\bar\rad}
-\bigg[\frac{1}{2}h(\bar V'-\bar F'\bR)-\bar F'(\bar \nabla_\mu\bar \nabla_\mu h^{\mu\nu} - \bar{\nabla}^2 h - \bar{R}_{\mu\nu} h^{\mu\nu}) \bigg]
-\ee
+\begin{align}
+  \int \mathrm d^d x \, \sqrt{\bar{g}} \;
+  \delta\phi^i \, P^{R}_{ij} \, \bar{\phi}^j \,
+  \frac{1}{\bar\rad} \,
+  \bigg[
+    \frac{1}{2} \, h \, (\bar V'-\bar F'\bR)
+    - \bar F' \, (\bar \nabla_\mu\bar \nabla_\mu h^{\mu\nu} - \bar{\nabla}^2 h - \bar{R}_{\mu\nu} h^{\mu\nu})
+  \bigg] .
+\end{align}
 Without loss of generality we can separate the radial field component from the Goldstone bosons
 by fixing the background to be
-$\bar{\phi}^a = 0,\;\;a=1,\dots,N-1$, $\bar{\phi}^N = \bar{\varphi}$
+$\bar{\phi}^i = 0,\; i=1,\, \dots,\, N-1$, $\bar{\phi}^N = \bar{\varphi}$
 and define $\delta\phi^N = \delta \varphi$.
 After the York decomposition
-\be
-\label{york}
-h_{\mu\nu}=\tth_{\!\!\mu\nu}
-+\bnabla_\mu\xi_\nu
-+\bnabla_\nu\xi_\mu
-+\bnabla_\mu\bnabla_\nu\sigma
--\frac{1}{d}\bg_{\mu\nu}\bnabla^2\sigma +\frac{1}{d}\bg_{\mu\nu} h
-\ee
-and the redefinition
-\be
-\label{redef}
-\xi'_\mu=\sqrt{-\bar\nabla^2-\frac{\bar R}{d}}\xi_\mu\ ;\qquad
-\sigma'=\sqrt{-\bar\nabla^2}\sqrt{-\bar\nabla^2-\frac{\bar R}{d-1}}\sigma\ .
-\ee
- the second piece can be rewritten
-\be
-\int \mathrm{d}^d x \sqrt{\bar{g}}\;
-\frac{(d-1)}{d}\bar F' \delta\varphi
-\bigg[ -\sqrt{-\bar{\nabla}^2\left(-\bar{\nabla}^2-\frac{\bar{R}}{d-1}\right)} \, \sigma'
-+\left(-\bar{\nabla}^2
--\frac{(d-2) \bar{R}}{2(d-1)}
-+\frac{d\,\bar{V}^{\prime}}{2(d-1)\bar{F}^{\prime}}\right)h\bigg]
-\ee
-Fixing the gauge $h=const$, $\xi=0$ and also neglecting the residual constant mode of $h$,
+\begin{align}
+  h_{\mu\nu} = \tth_{\!\!\mu\nu}
+             + \bnabla_\mu \, \xi_\nu
+             + \bnabla_\nu \, \xi_\mu
+             + \bnabla_\mu \bnabla_\nu \, \sigma
+             - \frac{1}{d} \, \bg_{\mu\nu} \, \bnabla^2\sigma
+             + \frac{1}{d} \, \bg_{\mu\nu} \, h \,.
+  \label{york}
+\end{align}
+and the redefinitions
+\begin{align}
+  \xi'_\mu = \sqrt{-\bar\nabla^2-\frac{\bar R}{d} \, } \, \xi_\mu\ \,,\qquad
+  \sigma'  = \sqrt{-\bar\nabla^2}\sqrt{-\bar\nabla^2-\frac{\bar R}{d-1} \, } \, \sigma \,.
+  \label{redef}
+\end{align}
+the second piece can be rewritten
+\begin{align}
+  \int \mathrm{d}^d x \, \sqrt{\bar{g}} \;
+  \frac{(d-1)}{d} \, \bar F' \, \delta\varphi
+  \bigg[
+    &- \sqrt{-\bar{\nabla}^2\left(-\bar{\nabla}^2-\frac{\bar{R}}{d-1}\right)} \, \sigma' \nonumber \\
+    &+
+    \left(
+      -\bar{\nabla}^2
+      -\frac{(d-2) \bar{R}}{2(d-1)}
+      +\frac{d\,\bar{V}^{\prime}}{2(d-1)\bar{F}^{\prime}}
+    \right)
+    h
+  \bigg] .
+\end{align}
+Fixing the gauge $h = \text{const}$, $\xi=0$ and also neglecting the residual constant mode of $h$,
 the full Hessian becomes
-\bea
-\Gamma_k^{(2)} = \int \mathrm{d}^d x \sqrt{\bar{g}} \; \bigg\lbrace
-\frac{1}{4}\,\bar{F}\, h^{TT}_{\mu\nu} \left( -\bar{\nabla}^2 + \frac{2 \bar{R}}{d(d-1)} \right) h^{TT\,\mu\nu}
-- \frac{(d-2)(d-1)}{4\,d^2}\,\bar{F} \sigma^{\prime} (-\nabla^2) \sigma^{\prime}
-\nonumber\\
-+\frac{1}{2}\delta\varphi(-\bar{\nabla}^2+\bar V''-\bar F''\bar{R})\delta\varphi
-+\frac{1}{2}\sum_{a=1}^{N-1}\delta\phi^a
-\left(-\bar\nabla^2
-+\frac{1}{\bar\rad}(\bar V'-\bar F'\bar{R})\right)\delta\phi^a \label{oldHessian}
-\\ \nonumber
-- \,   \frac{(d-1)}{d}\bar{F}^{\prime}\delta\varphi
- \sqrt{-\bar{\nabla}^2\left(-\bar{\nabla}^2-\frac{\bar{R}}{d-1}\right)} \, \sigma^{\prime} \bigg\rbrace\,.
-\eea
-%
+\begin{align}
+  \Gamma_k^{(2)} = \int \mathrm d^d x \, \sqrt{\bar{g}} \;
+  \Bigg[
+    \frac{1}{4} \, \bar{F} \, h^{TT}_{\mu\nu} \left( -\bar{\nabla}^2 + \frac{2 \bar{R}}{d(d-1)} \right) h^{TT\,\mu\nu}
+    - \frac{(d-2)(d-1)}{4\,d^2} \, \bar{F} \sigma^{\prime} (-\nabla^2) \sigma^{\prime}
+    \nonumber\\
+    +\frac{1}{2} \, \delta\varphi \, \Big( -\bar\nabla^2 + \bar V'' - \bar F''\bar{R} \, \Big) \, \delta\varphi
+    +\frac{1}{2} \, \sum_{i=1}^{N-1} \delta\phi^i
+    \left(-\bar\nabla^2
+    +\frac{1}{\bar\rad} \, (\bar V'-\bar F'\bar{R})\right) \delta\phi^i
+    \nonumber \\
+    - \,   \frac{(d-1)}{d} \, \bar{F}^{\prime} \, \delta\varphi \,
+    \sqrt{-\bar{\nabla}^2\left(-\bar{\nabla}^2-\frac{\bar{R}}{d-1}\right) \, } \, \sigma^{\prime}
+  \Bigg] .
+  \label{oldHessian}
+\end{align}
 The Hessian can then be diagonalised by the transformation
-\be
-\sigma^{\prime\prime} = \sigma^{\prime}
--\frac{2d}{d-2}\frac{\bar{F}^{\prime}}{\bar{F}} \sqrt{\frac{-\bar{\nabla}^2-\frac{\bar{R}}{d-1}}{-\bar{\nabla}^2}} \, \delta\varphi\,,
-\ee
+\begin{align}
+  \sigma^{\prime\prime} = \sigma^{\prime}
+  -\frac{2d}{d-2} \, \frac{\bar{F}^{\prime}}{\bar{F}}  \, \sqrt{\frac{-\bar{\nabla}^2-\frac{\bar{R}}{d-1}}{-\bar{\nabla}^2} \, } \, \delta\varphi\,,
+\end{align}
 and the diagonal Hessian reads
-\bea
-\label{hessfinal}
-\Gamma_k^{(2)} = \int \mathrm{d}^d x \sqrt{\bar{g}} \bigg\lbrace
-\frac{1}{4}\,\bar{F}\, h^{TT}_{\mu\nu} \left( -\bar{\nabla}^2
-+ \frac{2 \bar{R}}{d(d-1)} \right) h^{TT\,\mu\nu}
-- \frac{(d-2)(d-1)}{4\,d^2}\,\bar{F} \sigma^{\prime\prime} (-\nabla^2) \sigma^{\prime\prime}
-\nonumber\\
-+\, \frac{1}{2} \delta\varphi \bigg[
--\bar{\nabla}^2+\bar V''-\bar F''\bar{R}
-+ 2\frac{d-1}{d-2}\,\frac{\bar{F}^{\prime 2}}{\bar{F}} \left( -\bar{\nabla}^2
-- \frac{\bar{R}}{d-1} \right)
-\bigg] \delta\varphi\\ \nonumber
-+\,\frac{1}{2}\sum_{a=1}^{N-1}\delta\phi^a
-\left(-\bar\nabla^2
-+\frac{1}{\bar\rad}(\bar V'-\bar F'\bar{R})\right)\delta\phi^a  \bigg\rbrace\,.
-\eea
-
+\begin{align}
+  \Gamma_k^{(2)} = \int \mathrm{d}^d x \, \sqrt{\bar{g}} \;
+  \Bigg[
+    \frac{1}{4}\,\bar{F}\, h^{TT}_{\mu\nu} \left( -\bar{\nabla}^2
+    + \frac{2 \bar{R}}{d(d-1)} \right) h^{TT\,\mu\nu}
+    - \frac{(d-2)(d-1)}{4\,d^2} \, \bar{F} \, \sigma^{\prime\prime} (-\nabla^2) \sigma^{\prime\prime}
+    \nonumber\\
+    +\, \frac{1}{2} \, \delta\varphi
+    \bigg(
+      - \bar\nabla^2 + \bar V'' - \bar F'' \bar R
+      + 2 \, \frac{d-1}{d-2} \, \frac{\bar{F}^{\prime 2}}{\bar{F}}
+      \bigg(
+        -\bar{\nabla}^2 - \frac{\bar{R}}{d-1}
+      \bigg)
+    \bigg) \delta\varphi \nonumber \\
+    +\,\frac{1}{2} \, \sum_{i=1}^{N-1} \delta\phi^i
+    \left( -\bar\nabla^2
+    +\frac{1}{\bar\rad} \, \big( \bar V'-\bar F'\bar{R} \big)\right)\delta\phi^i
+  \Bigg] .
+  \label{hessfinal}
+\end{align}
 The ghost terms induced by the gauge fixing are given by:
-\be
-\label{ghosts}
-S_{gh:h}=\int d^dx\sqrt{\bar g}\, c(-\bar\nabla^2)c
-\quad , \quad
-S_{gh:\xi}=\int d^dx\sqrt{\bar g}\,  c_\mu\bar g^{\mu\nu}\left(-\bar\nabla^2-\frac{\bar R}{d}\right)c_\nu\,.
-\ee
+\begin{align}
+  S^{\,\mathrm{ghost}}_{h} = \int \mathrm d^dx \, \sqrt{\bar g} \; c \, (-\bar\nabla^2) \, c \,,
+  \quad
+  S^{\,\mathrm{ghost}}_{\xi} = \int \mathrm d^dx \, \sqrt{\bar g} \;  c_\mu \, \bar g^{\mu\nu}
+  \left(-\bar\nabla^2-\frac{\bar R}{d}\right) c_\nu \,.
+  \label{ghosts}
+\end{align}
 
 
 \end{appendices}
