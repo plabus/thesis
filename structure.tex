@@ -103,12 +103,21 @@ kerning=true,spacing=true,factor=1100,stretch=30,shrink=30]{microtype}
 []
 
 % Subsection text styling
-\titlecontents{subsection}[1.25cm] % Indentation
-{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+\titlecontents*{subsection}[1.75cm] % Identation on the left
+{\addvspace{3pt}\sffamily\small} % Spacing and font
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
-[]
+{\thecontentslabel} % Show title of subsection w/o number
+{\, [\thecontentspage] \,} % Page number with [] brakets
+[][\vspace{2pt}]
+\contentsmargin[0.75cm]{} % Identation on the right
+
+%% ORIGINAL
+% \titlecontents{subsection}[1.25cm] % Indentation
+% {\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+% {\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
+% {}
+% {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+% []
 
 % List of figures
 \titlecontents{figure}[0em]
@@ -158,8 +167,11 @@ kerning=true,spacing=true,factor=1100,stretch=30,shrink=30]{microtype}
 \usepackage{fancyhdr} % Required for header and footer configuration
 
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
-\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
+% Chapter text font settings
+% \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries \thechapter.\ #1}{}}
+% Section text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}}
 \fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
 \fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
 \fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
@@ -482,7 +494,20 @@ innerbottommargin=5pt]{cBox}
 %----------------------------------------------------------------------------------------
 
 \usepackage{hyperref}
-\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= ocre,bookmarks=true,bookmarksopen=false,pdftitle={LQCD on Intel Xeon Phi's},pdfauthor={Peter Labus}}
+\hypersetup{
+  hidelinks,
+  backref=true,
+  pagebackref=true,
+  hyperindex=true,
+  linktoc=all,
+  colorlinks=false,
+  breaklinks=true,
+  urlcolor=ocre,
+  bookmarks=true,
+  bookmarksopen=false,
+  pdftitle={Matter Fields in Asymptotic Safety},
+  pdfauthor={Peter Labus}
+}
 \usepackage{bookmark}
 \bookmarksetup{
 open,
