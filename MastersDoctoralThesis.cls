@@ -247,7 +247,8 @@
 
 \usepackage{xcolor} % Required for specifying custom colours
 
-\colorlet{mdtRed}{red!50!black}
+% \colorlet{mdtRed}{red!50!black}
+\definecolor{mdtRed}{HTML}{7797c9} % SISSA blue
 
 %----------------------------------------------------------------------------------------
 %	MARGINS
@@ -408,7 +409,12 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \usepackage{xcolor}
-\colorlet{mdtRed}{red!50!black}
+% \colorlet{mdtRed}{red!50!black}
+\definecolor{mdtRed}{RGB}{65,105,225} % Royal Blue
+% \definecolor{mdtRed}{RGB}{0,0,128} % Navy
+% \definecolor{mdtRed}{RGB}{25,25,112} % Midnightblue
+% \definecolor{mdtRed}{RGB}{0,0,139} % Dark Blue
+% \definecolor{mdtRed}{HTML}{7797c9} % SISSA blue
 \newcommand{\acknowledgementname}{Acknowledgements}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
