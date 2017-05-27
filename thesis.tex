@@ -12,8 +12,8 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-% \documentclass[11pt]{book} % Default font size and left-justified equations
-\documentclass[11pt,draft]{book} % Default font size and left-justified equations
+\documentclass[11pt]{book} % Default font size and left-justified equations
+% \documentclass[11pt,draft]{book} % Default font size and left-justified equations
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
 \input{structure} % Insert the structure.tex file which contains
                   % the majority of the structure behind the template
@@ -47,10 +47,12 @@
 \usepackage{emptypage}
 \usepackage{stmaryrd}
 \usepackage{setspace}
-\usepackage{hyperref}
 \usepackage{cite}
-
 \usepackage[toc,page]{appendix}
+
+\usepackage[]{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+\newdateformat{dateall}{\THEDAY th \monthname[\THEMONTH] \THEYEAR}
 
 %----------------------------------------------------------------------------------------
 % MATHS FUNCTIONS
@@ -120,7 +122,6 @@
 \newcommand{\rad}{\psi}
 \newcommand{\brad}{\bar\psi}
 
-
 %----------------------------------------------------------------------------------------
 % BLANK PAGE HANDLING
 %----------------------------------------------------------------------------------------
@@ -143,13 +144,16 @@
 }
 \makeatother
 
-
 %----------------------------------------------------------------------------------------
 % TITLE PAGE
 %----------------------------------------------------------------------------------------
 
+% FIXME: Where should this go?
+% This set the labelling of equations to (Chapter.running#)
+\numberwithin{equation}{chapter}
+
 \begin{document}
-\includepdf{front_page.pdf}
+\includepdf{title_page.pdf}
 
 %----------------------------------------------------------------------------------------
 % COPYRIGHT PAGE
@@ -165,19 +169,46 @@
 under the supervision of Prof.~Dr.~Roberto Percacci with financial support
 of a SISSA PhD Fellowship.\\
 
-\noindent \textit{August 2017} % Printing/edition date
+\noindent \textit{\monthyeardate\today.} % Printing/edition date
 
 %----------------------------------------------------------------------------------------
-% PREFACE
+%	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
-\chapter*{Preface}
-\addcontentsline{toc}{chapter}{Preface}
+\frontmatter % Use Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-Blah, blah.
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\vfill
+\begin{center}
+  Here goes me abstract eventually, \dots
+\end{center}
+\vfill
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+
+It is with great pleasure that I gratefully acknowledge the help and support
+% (in no particular order)
+of
+Roberto~Percacci%
+, Tim~R.~Morris%
+, Zo\"e~Slade%
+, Astrid~Eichhorn%
+, Manuel~Reichert%
+, Jan~M.~Pawlowski%
+, Pietro~Don\`a
+and
+Gian~Paolo~Vacca%
+.
 
 \begin{flushright}
-  \textit{Peter Labus, August 2017.}
+  \textit{Peter Labus, \monthyeardate\today.}
 \end{flushright}
 
 %----------------------------------------------------------------------------------------
@@ -187,10 +218,15 @@ Blah, blah.
 \pagestyle{empty} % No headers
 
 \tableofcontents % Print the table of contents itself
-
-%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+% \begingroup
+% \let\clearpage\relax
+% \listoftables
+% \let\clearpage\relax
+% \listoffigures
+% \endgroup
 
 \pagestyle{fancy} % Print headers again
+
 
 %----------------------------------------------------------------------------------------
 % INTRODUCTION
@@ -199,13 +235,26 @@ Blah, blah.
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Introduction}}
 
+Quantum Gravity, approaches, asymptotic safety, what are we doing in this thesis, blah, blah.
 
 %----------------------------------------------------------------------------------------
 % CHAPTER 1
 %----------------------------------------------------------------------------------------
 
-\chapter{Background Independence}
+\mainmatter
+\chapter[Asymptotic Safety and the Functional Renormalisation Group]{Asymptotic Safety and the Functional RG}
 
+\section{The Wilsonian Renormalisation Group}
+\section{Asymptotic Safety}
+\newpage
+What's written as title above?
+
+
+%----------------------------------------------------------------------------------------
+% CHAPTER 2
+%----------------------------------------------------------------------------------------
+
+\chapter{Background Independence}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -1538,7 +1587,8 @@ Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
       \bottomrule
     \end{tabular}
   \end{center}
-  \caption{
+  \caption[RG properties of the derivative expansion for conformally truncated gravity]
+  {
     RG properties of the derivative expansion for conformally truncated gravity,
     when the msWI is also satisfied.
     The results depend on whether the conformal factor develops an anomalous dimension $\eta$,
@@ -1551,6 +1601,7 @@ Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
   }
   \label{table:summary}
 \end{table}
+
 
 In this paper we have further investigated these issues.
 Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.
@@ -1633,10 +1684,10 @@ made without ever introducing a background metric (or gauge fixing) \cite{Morris
 
 
 %----------------------------------------------------------------------------------------
-% CHAPTER 2
+% CHAPTER 3
 %----------------------------------------------------------------------------------------
 
-\chapter{Scalar Matter}
+\chapter{Scalar Matter 1}
 
 \section{Introduction}
 
@@ -2201,7 +2252,7 @@ The argument of the logarithmic term would then be $Z_h/\gamma$
 and the beta function of $f$ would probably be regular for $f=0$.
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
+\section{Summary}
 %%%%%%%%%%%%%%%%%%%%
 
 This paper extends earlier investigations of scalar-tensor
@@ -2253,7 +2304,7 @@ phenomenological level for example in cosmology.
 
 
 %----------------------------------------------------------------------------------------
-% CHAPTER 3
+% CHAPTER 4
 %----------------------------------------------------------------------------------------
 
 \chapter{Scalar Matter 2}
@@ -2959,7 +3010,8 @@ of the coupling.
       \bottomrule
     \end{tabular}
   \end{center}
-  \caption{
+  \caption[Coordinates and critical exponents of fixed points in perturbative approximation]
+  {
     Coordinates and critical exponents at an interacting fixed point for vanishing scalar fluctuations.
     In the perturbative approximation we have set $\eta_{\rm TT}=\eta_{\sigma}=0$.
   }
@@ -3018,7 +3070,8 @@ this is of course a serious shortcoming.
     \bottomrule
   \end{tabular}
   \end{center}
-  \caption{
+  \caption[Coordinates and critical exponents of fixed points]
+  {
     Coordinates and critical exponents of an interacting fixed point with the
     approximation $\eta_{\sigma} = \eta_{\rm TT}$.
   }
@@ -3275,7 +3328,8 @@ are listed in~tab.~\ref{FPtab3}.
       \bottomrule
     \end{tabular}
   \end{center}
-  \caption{
+  \caption[Coordinates and critical exponents of fixed points for one scalar]
+  {
     Coordinates and critical exponents of the interacting fixed points at $N_S=1$,
     both in semi-perturbative and full approximations.
   }
@@ -3421,7 +3475,7 @@ would suggest that there could be an upper limit of scalars that is compatible w
 \newline\\
 
 %
-\section{Conclusions}
+\section{Summary}
 %
 In this work, we discuss how setting up a Renormalization Group flow for gravity-matter systems,
 in order to investigate the viability of the asymptotic safety scenario for gravity and the Standard Model,
@@ -3533,7 +3587,7 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 
 
 %----------------------------------------------------------------------------------------
-% CHAPTER 4
+% CHAPTER 5
 %----------------------------------------------------------------------------------------
 
 \chapter{Scalar Matter 3}
@@ -4569,8 +4623,11 @@ where the trace coefficients are given in \autoref{tab:coeff}.
 			\bottomrule
 		\end{tabular}
 	\end{center}
-  \caption{Heat kernel coefficients for transverse traceless tensors (TTT), transverse vectors (VT)
-  and scalars (S) on $S^4$.}
+  \caption[Heat kernel coefficients for $\mathbb S^4$]
+  {
+    Heat kernel coefficients for transverse traceless tensors (TTT), transverse vectors (VT)
+    and scalars (S) on $\mathbb S^4$.
+  }
 	\label{tab:coeff}
 \end{table}
 
@@ -4786,21 +4843,24 @@ This implies
 \chapter*{Conclusions and Outlook}
 \addcontentsline{toc}{chapter}{Conclusions and Outlook}
 
-In this thesis, blah, blah, blah.
+In this thesis, we did the following blah, blah, blah.
+\newpage
+WOW!!
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
+\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
 \nocite{*}
 \bibliography{allrefs}
 \bibliographystyle{unsrt}
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
 
 %----------------------------------------------------------------------------------------
 %	Appendices
 %----------------------------------------------------------------------------------------
 
+\appendix
 \begin{appendices}
   \chapter{Hessian First Paper}
 
@@ -4923,7 +4983,36 @@ The ghost terms induced by the gauge fixing are given by:
   \label{ghosts}
 \end{align}
 
-
 \end{appendices}
+
+%----------------------------------------------------------------------------------------
+% DECLARATION OF AUTHORSHIP
+%----------------------------------------------------------------------------------------
+
+\chapter*{Declaration of Authorship}
+\addcontentsline{toc}{chapter}{Declaration of Authorship}
+
+\noindent I, Peter Labus, declare that this thesis titled,
+``Matter Fields in Asymptotically Save Quantum Field Theories of Gravity''
+and the work presented in it are my own. I confirm that:
+\vfill
+
+\begin{itemize}
+\item This work was done wholly or mainly while in candidature for a research degree at this University.
+\vfill
+\item Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\vfill
+\item Where I have consulted the published work of others, this is always clearly attributed.
+\vfill
+\item Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\vfill
+\item I have acknowledged all main sources of help.
+\vfill
+\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+\vfill
+
+\noindent Date: \dateall\today%
+\hspace{4cm} Signature:\\
 
 \end{document}
