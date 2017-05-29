@@ -246,6 +246,12 @@ Gian~Paolo~Vacca%
 \section*{The need for Quantum Gravity}
 \addcontentsline{toc}{section}{The need for Quantum Gravity}
 
+% SOURCES:
+% https://www.scientificamerican.com/article/physicists-eye-quantum-gravity-interface/
+% http://www.einstein-online.info/elementary/quantum/border_regions
+% https://www.quora.com/Why-must-there-be-a-quantum-theory-of-gravity
+% https://arxiv.org/abs/gr-qc/0606120
+
 \begin{itemize}
   \item various successes of QFT and GR:
   \item successful applications of GR
@@ -272,24 +278,53 @@ Gian~Paolo~Vacca%
     \end{itemize}
   \item failures of GR / where we expect QM should become significant
     \begin{itemize}
-      \item black holes / information paradox
+      \item black holes / Hawking temperature / information paradox
       \item (very) early Universe cosmology / inflation (?)
       \item dark energy / Cosmological Constant Problem
     \end{itemize}
+  \item why we think we need a quantum theory of gravity
   \item mention of various approaches to Quantum Gravity
+    \begin{itemize}
+      \item M-Theory, Supergravity
+      \item Loop Quantum Gravity / Spin Foams / Group field theory
+      \item Causal dynamical triangulation / Regge calculus
+      \item Causal sets
+    \end{itemize}
   \item asymptotic safety and QG as a QFT
     \begin{itemize}
       \item EH as EFT at low energies
       \item perturbative non-renormalisability
       \item asymptotic safety / non-perturbative completion / interacting fixed points
       \item application to gravity ---> Reuter etc.
-      \item tool: (Functional) Renormalisation Group ---> cf. next chapter
+    \end{itemize}
+  \item non-perturbative tools in QFTs:
+    \begin{itemize}
+      \item conformal bootstrap and Hamiltonian truncation techniques
+      \item lattice techniques / simulations
+      \item entanglement entropy
+      \item (functional) Renormalisation Group ---> cf. next chapter
     \end{itemize}
 \end{itemize}
 
-\section*{Outine of the thesis}
-\addcontentsline{toc}{section}{Outine of the thesis}
-What we are doing in this thesis, blah, blah.
+\section*{Outline of the thesis}
+\addcontentsline{toc}{section}{Outline of the thesis}
+
+\begin{itemize}
+  \item Why to include matter fields and what to learn from it
+    \begin{itemize}
+      \item full QG must explain the existence of matter
+      \item relevant for astrophysical / cosmological test of QG
+      \item other?
+    \end{itemize}
+  \item Why background independence
+  \item What we are actually doing in this thesis
+    \begin{itemize}
+      \item ch. 1 fate of RG properties when RG is constraint to msWI
+      \item ch. 2 scalar field non-minimally coupled to curved background (heat kernel techniques, background calculation)
+      \item ch. 3 massless scalar field minimally coupled to flat background (vertex expansion, fluctuation calculation)
+      \item ch. 4 same as 3 in linear parametrisation \& using the msWI as well
+    \end{itemize}
+\end{itemize}
 
 
 
@@ -301,7 +336,19 @@ What we are doing in this thesis, blah, blah.
 \chapter[Asymptotic Safety and the Functional Renormalisation Group]{Asymptotic Safety and the Functional RG}
 
 \section{The Wilsonian Renormalisation Group}
+\subsection{Quantum field theory basics and Wilson's idea}
+\subsection{The effective average action}
+smooth cutoff examples and types of cutoffs, optimised cutoff
+parametrisation of fields (?) ---> linear, exponential
+\subsection{The exact flow of the effective average action}
+\subsection{Approximation schemes}
+truncation, vertex and derivative expansion, the LPA
+
 \section{Asymptotic Safety}
+\subsection{fixed points, conformal field theories and critical phenomena}
+anomalous dimension, RG improvement, critical exponents
+\subsection{case example: scalar field theory}
+Wilson-Fisher fixed point, LPA, Scaling Solutions
 
 
 
@@ -1611,7 +1658,11 @@ In the limit $r\to\infty$ fully half of the equations must become redundant if (
 to be consistent with background independence.
 
 
-% \section{Summary, discussion and conclusions}
+\section{New developments}
+
+Short review of \cite{Percacci:2016arh, Morris:2016spn}.
+
+
 \section{Summary}
 \label{sec:conclusions}
 
@@ -1659,7 +1710,7 @@ Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
 
 
 In this paper we have further investigated these issues.
-Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.
+Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.%
 \footnote{For power law cutoff  $r(z)=z^{-n}$, $d_f = 2-\eta/(n+2)$ is excluded \cite{Dietz:2015owa},
 and from sec. \ref{sec:required-cutoff} when $\eta=0$,  $d_f=2$ is excluded for any cutoff profile:
 in these cases the cutoff term is independent of $k$.}
