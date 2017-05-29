@@ -49,6 +49,10 @@
 \usepackage{setspace}
 \usepackage{cite}
 \usepackage[toc,page]{appendix}
+\usepackage{natbib}
+\usepackage{bibentry} % used to have a full inlined citation
+\nobibliography*
+
 
 \usepackage[]{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
@@ -327,6 +331,17 @@ Gian~Paolo~Vacca%
 \end{itemize}
 
 
+\section*{List of Publications}
+\addcontentsline{toc}{section}{List of Publications}
+
+The work presented in this thesis is based on the following publications:%
+\vspace{0.5em}
+\begin{itemize}
+  \setlength\itemsep{0.7em}
+  \item \bibentry{Labus:2015ska}
+  \item \bibentry{Dona:2015tnf}
+  \item \bibentry{Labus:2016lkh}
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 % CHAPTER 1
@@ -336,15 +351,23 @@ Gian~Paolo~Vacca%
 \chapter[Asymptotic Safety and the Functional Renormalisation Group]{Asymptotic Safety and the Functional RG}
 
 \section{The Wilsonian Renormalisation Group}
-\subsection{Quantum field theory basics and Wilson's idea}
+
+\subsection{Quantum field theory basics}
+
+\subsection{Wilson's idea}
+
 \subsection{The effective average action}
+
 smooth cutoff examples and types of cutoffs, optimised cutoff
 parametrisation of fields (?) ---> linear, exponential
+
 \subsection{The exact flow of the effective average action}
+
 \subsection{Approximation schemes}
 truncation, vertex and derivative expansion, the LPA
 
 \section{Asymptotic Safety}
+
 \subsection{fixed points, conformal field theories and critical phenomena}
 anomalous dimension, RG improvement, critical exponents
 \subsection{case example: scalar field theory}
@@ -1752,7 +1775,7 @@ of the conformally truncated model \textit{per se}.
 Therefore this issue could provide important constraints for example on the exponential parametrisations
 recently advocated in the literature
 \cite{Demmel:2015zfa,Eichhorn:2013xr,Eichhorn:2015bna,Nink:2014yya,Percacci:2015wwa,
-Labus:2015ska,Ohta:2015efa,Gies:2015tca}.
+Ohta:2015efa,Gies:2015tca}.
 
 For full quantum gravity, such conflict between $k$-fixed points and background independence may also
 show up clearly in a vertex expansion, as discussed in \ref{sec:truncations},
@@ -2460,7 +2483,7 @@ has first been studied in the context of functional RG flows in a unimodular
 setting \cite{Eichhorn:2013xr,Eichhorn:2015bna},
 and has also been argued to be superior to the linear parameterization in the
 context of standard gravity \cite{Nink:2014yya, Percacci:2015wwa, Demmel:2015zfa,
-Labus:2015ska, Ohta:2015efa, Gies:2015tca}.
+Ohta:2015efa, Gies:2015tca}.
 
 In this framework, the effective action at a scale $k$,
 where degrees of freedom of momenta higher than $k$ (as determined by $\bar{g}_{\mu \nu}$)
@@ -4959,7 +4982,7 @@ In this thesis, we did the following:
 %----------------------------------------------------------------------------------------
 
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
-\nocite{*}
+% \nocite{*}
 \bibliography{allrefs}
 \bibliographystyle{unsrt}
 
