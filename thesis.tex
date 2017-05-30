@@ -48,15 +48,26 @@
 \usepackage{stmaryrd}
 \usepackage{setspace}
 \usepackage[toc,page]{appendix}
+
+% Packages for the bibliography
 \usepackage{cite}
-% \usepackage{natbib}
 \usepackage{bibentry} % used to have a full inlined citation
 \nobibliography*
 
-
+% Packages and settings for dates
 \usepackage[]{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 \newdateformat{dateall}{\THEDAY th \monthname[\THEMONTH] \THEYEAR}
+
+%----------------------------------------------------------------------------------------
+% PGFPLOTS FOR PLOTTING IN LATEX
+%----------------------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+% Libraries to generate group plots
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
 
 %----------------------------------------------------------------------------------------
 % MATHS FUNCTIONS
@@ -3265,7 +3276,7 @@ We see that the assumption $\eta_{\sigma}=\eta_{TT}$ even gives the wrong sign f
 Since the anomalous dimensions contribute to the scaling dimensions of operators,
 this is of course a serious shortcoming.
 
-\begin{table}[]
+\begin{table}
   \begin{center}
   \begin{tabular}{ l r r r }
     \toprule
@@ -3283,6 +3294,63 @@ this is of course a serious shortcoming.
   }
   \label{puregravityFPetaapprox}
 \end{table}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+          group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
+          width=0.5\linewidth,
+          xmin=0, xmax=6,
+          % xtick={0,10,20,30,40},
+          legend pos=north east,
+          legend cell align=left,
+          grid=major,
+          grid style=dashed,
+        ]
+        \nextgroupplot[ % 1
+          xlabel={fixed point value $G_3^\star$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={fixed point value $g_3^\star$},
+        ]
+        \addplot[blue] table{data/plotdata1a.dat};
+        \addplot[red] table{data/plotdata1b.dat};
+        \legend{\, full,\, semi-perturbative}
+
+        \nextgroupplot[ % 2
+          xlabel={fixed point value $G_3^\star$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={critical exponent $\theta$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[blue] table{data/plotdata2a.dat};
+        \addplot[red] table{data/plotdata2b.dat};
+
+        \nextgroupplot[ % 3
+          xlabel={fixed point value $G_3^\star$},
+          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+        ]
+        \addplot[blue] table{data/plotdata3a.dat};
+        \addplot[red] table{data/plotdata3b.dat};
+
+        \nextgroupplot[ % 4
+          xlabel={fixed point value $G_3^\star$},
+          ylabel={anomalous dimension $\eta_\sigma$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[blue] table{data/plotdata4a.dat};
+        \addplot[red] table{data/plotdata4b.dat};
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \caption{
+    Results for the pure gravity case $N_S = 0$, $g_3 = g_4 = g_5$ and $G_3 = G_4$:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$
+    and $\eta_{\sigma}$ as a function of the value $G_3^\star$ at the fixed point.
+  }
+  \label{puregravityFP}
+\end{figure}
 
 To test the stability of our results with respect to extended truncations which would include separate
 beta functions for $G_3$ etc.,
@@ -3304,23 +3372,7 @@ We see that the fixed point that we have observed in the approximation $G_3=g_3$
 persists for a large range of values of $G_3$.
 We interpret this as a sign of stability.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{g3_G3_puregravity.pdf}\\
-  \includegraphics[width=\linewidth]{theta_G3_puregravity.pdf}
-  \caption{\label{puregravityFP} We show the fixed point value for $g_3$ (upper panel)
-    and the critical exponent $\theta$ (lower panel) as a function of $G_3=G_4$.
-  The larger blue dots denote the full result and the smaller purple dots the semi-perturbative approximation.}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=0.45\linewidth]{etah_puregravity.pdf}\quad
-  \includegraphics[width=0.45\linewidth]{etasigma_puregravity.pdf}
-  \caption{\label{puregravityeta}We show the fixed point value for $\eta_{\rm TT}$ (left panel)
-  and $\eta_{\sigma}$ (right panel) as a function of $G_3=G_4$.
-The larger blue dots denote the full result and the smaller purple dots the perturbative approximation.}
-\end{figure}
-
-Fig.~\ref{puregravityeta} shows the anomalous dimensions at the fixed point as functions of $G_3$.
+Fig.~\ref{puregravityFP} also shows the anomalous dimensions at the fixed point as functions of $G_3$.
 Note that they vanish for $G_3=0$, since, in the absence of matter self interactions, they are
 generated only by diagrams proportional to $G_3$.
  Note that to obtain this result, the identification $g_5=g_3$,
@@ -3396,7 +3448,6 @@ as $G_{3\,\ast}$ is also pushed to larger values,
 since destabilizing effects of scalars show up in the momentum-independent part of the
 graviton-three- and two-point function.
 
-
 In our approximation, the fixed point merges with another,
 artificial fixed point at $N_S\approx 28$, where the fixed point disappear into the complex plane,
 cf.~Fig.~\ref{g3Nsnoetas}.
@@ -3408,41 +3459,62 @@ the anomalous dimensions are slightly smaller,
 and the fixed-point collision accordingly occurs at larger $N_S$.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{g3_Ns_no_etas.pdf}\\
-\includegraphics[width=\linewidth]{theta_Ns_no_etas.pdf}
-\caption{\label{g3Nsnoetas}We show the fixed point value for $g_3$ (upper panel)
-and the critical exponent $\theta$ (lower panel) as a function of $N_S$.
-The larger blue dots denote the full result and the smaller purple dots the semi-perturbative approximation.}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+          group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
+          width=0.5\linewidth,
+          xmin=0, xmax=50,
+          xtick={0,10,20,30,40},
+          legend pos=north west,
+          legend cell align=left,
+          grid=major,
+          grid style=dashed,
+        ]
+        \nextgroupplot[ % 1
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={fixed point value $g_3^\star$},
+        ]
+        \addplot[color=blue, only marks, mark=triangle, mark size=1.7pt] table{data/plotdata5a.dat};
+        \addplot[color=red,  only marks, mark=square,   mark size=1.3pt] table{data/plotdata5b.dat};
+        \legend{\, full,\, semi-perturbative}
+
+        \nextgroupplot[ % 2
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={critical exponent $\theta$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=blue, only marks, mark=triangle, mark size=1.7pt] table{data/plotdata6a.dat};
+        \addplot[color=red,  only marks, mark=square,   mark size=1.3pt] table{data/plotdata6b.dat};
+
+        \nextgroupplot[ % 3
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+        ]
+        \addplot[color=blue, only marks, mark=triangle, mark size=1.7pt] table{data/plotdata7a.dat};
+        \addplot[color=red,  only marks, mark=square,   mark size=1.3pt] table{data/plotdata7b.dat};
+
+        \nextgroupplot[ % 4
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_\sigma$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=blue, only marks, mark=triangle, mark size=1.7pt] table{data/plotdata8a.dat};
+        \addplot[color=red,  only marks, mark=square,   mark size=1.3pt] table{data/plotdata8b.dat};
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \caption{
+    Results for $\eta_S = 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$
+    and $\eta_{\sigma}$ as a function of the number of scalars $N_S$ for both the full result and in the
+    semi-perturbative approximation.
+  }
+  \label{g3Nsnoetas}
 \end{figure}
-
-\begin{figure}
-\includegraphics[width=0.45\linewidth]{etaTT_Ns_no_etas.pdf}\quad
-\includegraphics[width=0.45\linewidth]{etasigma_Ns_no_etas.pdf}
-\caption{\label{etaNsnoetas}We show the fixed point value for $\eta_{\rm TT}$ (left panel)
-and $\eta_{\sigma}$ (right panel) as a function of $N_S$.
-The larger blue dots denote the full result and the smaller purple dots the semi-perturbative approximation.}
-\end{figure}
-
-
-
-\begin{figure}
-\includegraphics[width=\linewidth]{g3_Ns_G3.pdf}\\
-\includegraphics[width=\linewidth]{theta_NS_G3.pdf}
-\caption{\label{g3NsnoetasG3}We show the fixed point value for $g_3$ (upper panel)
-and the critical exponent $\theta$ (lower panel) as a function of $N_S$.
-The small red dots are for $G_3=G_4=1$,
-the medium blue ones for $G_3=G_4=3$ and the large green ones for $G_3=G_4=6$.}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=0.45\linewidth]{etaTT_NS_G3.pdf}\quad
-\includegraphics[width=0.45\linewidth]{etasigma_NS_G3.pdf}
-\caption{\label{etaNsnoetasG3}We show the fixed point value for $\eta_{\rm TT}$ (left panel)
-and for $\eta_{\sigma}$ (right panel) as a function of $N_S$.
-The small red dots are for $G_3=G_4=1$, the medium blue ones for $G_3=G_4=3$ and the large
-green ones for $G_3=G_4=6$.}
-\end{figure}
-
 
 To investigate the stability of our results,
 we again distinguish the pure-gravity couplings from the gravity-matter couplings.
@@ -3453,12 +3525,73 @@ We observe that larger values of $G_3$ lead to a slower increase in the fixed-po
 and increase the value $N_S$ at which the fixed-point annihilation occurs,
 cf.~Fig.~\ref{g3NsnoetasG3}.
 While quantitative details change, the overall effect of increasing $N_S$ is similar to
-the previous approximation, cf.~Fig.~\ref{etaNsnoetasG3}.
+the previous approximation, cf.~Fig.~\ref{g3NsnoetasG3}.
 This suggests that our results will be qualitatively stable under extensions of the truncation
 including the running of the gravity-couplings as in \cite{Meibohm:2015twa}.
 On the other hand, a non-trivial interplay between the gravity-matter coupling
 and the pure-gravity coupling at large $N_S$ is not excluded,
 as the effect of varying $g_3$ on $G_{3\, \ast}$  remains to be studied.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+          group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
+          width=0.5\linewidth,
+          xmin=0, xmax=32,
+          xtick={0,10,20,30,40},
+          legend pos=north west,
+          legend cell align=left,
+          grid=major,
+          grid style=dashed,
+        ]
+        \nextgroupplot[ % 1
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={fixed point value $g_3^\star$},
+        ]
+        \addplot[color=red,   only marks, mark=square,   mark size=1.3pt] table{data/plotdata9a.dat};
+        \addplot[color=blue,  only marks, mark=triangle, mark size=1.7pt] table{data/plotdata9b.dat};
+        \addplot[color=green, only marks, mark=diamond,  mark size=1.5pt] table{data/plotdata9c.dat};
+        \legend{\,{$G=1$},\,{$G=3$},\,{$G=6$}}
+
+        \nextgroupplot[ % 2
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={critical exponent $\theta$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=red,   only marks, mark=square,   mark size=1.3pt] table{data/plotdata10a.dat};
+        \addplot[color=blue,  only marks, mark=triangle, mark size=1.7pt] table{data/plotdata10b.dat};
+        \addplot[color=green, only marks, mark=diamond,  mark size=1.5pt] table{data/plotdata10c.dat};
+
+        \nextgroupplot[ % 3
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+        ]
+        \addplot[color=red,   only marks, mark=square,   mark size=1.3pt] table{data/plotdata11a.dat};
+        \addplot[color=blue,  only marks, mark=triangle, mark size=1.7pt] table{data/plotdata11b.dat};
+        \addplot[color=green, only marks, mark=diamond,  mark size=1.5pt] table{data/plotdata11c.dat};
+
+        \nextgroupplot[ % 4
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_\sigma$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=red,   only marks, mark=square,   mark size=1.3pt] table{data/plotdata12a.dat};
+        \addplot[color=blue,  only marks, mark=triangle, mark size=1.7pt] table{data/plotdata12b.dat};
+        \addplot[color=green, only marks, mark=diamond,  mark size=1.5pt] table{data/plotdata12c.dat};
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \caption{
+    Results for $\eta_S = 0$, $g_3 = g_4 = g_5$ and $G_3 = G_4 \equiv G$:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$
+    and $\eta_{\sigma}$ as a function of the number of scalars $N_S$.
+  }
+  \label{g3NsnoetasG3}
+\end{figure}
 
 
 \subsection{Fixed-point results including scalar anomalous dimension}
