@@ -1,18 +1,19 @@
 write abstract
-add "is based on the following papers"
++++ add "is based on the following papers"
 write introduction
 write technical intro
 shorten chapter intro's
 make notation uniform
-redo figure 2.1
-loose summaries/conclusions (all)
+redo figure 2.1 in tikZ
+redo figure 3.1 in pgfplots
++++ loose summaries/conclusions (all?)
 beautify fig. 2.2--2.4 (?)
 write new developments in chapter 2
 change notation in chapter 4, s.t. it conforms with rest (York + \bar D)
-loose maths symbols in headers in chapter 4
++++ loose maths symbols in headers in chapter 4
 unify all Feynman diagrams in chapter 4 on one (two) pages
   with one caption only
-redo plots in chapter 4 in pgfplots
++++ redo plots in chapter 4 in pgfplots
 redo tables in pgfplotstable (??)
 all of chapter 5
 conclusions
