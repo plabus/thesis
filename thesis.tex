@@ -1768,24 +1768,15 @@ then from this level onwards some equations become redundant
 In the limit $r\to\infty$ fully half of the equations must become redundant if ($k$-)fixed points are
 to be consistent with background independence.
 
+For the convenience of the reader we summarise our findings of this chapter,
+together with those of ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
+\footnote{
+  For power law cutoff  $r(z)=z^{-n}$, $d_f = 2-\eta/(n+2)$ is excluded \cite{Dietz:2015owa},
+  and from sec. \ref{sec:required-cutoff} when $\eta=0$,  $d_f=2$ is excluded for any cutoff profile:
+  in these cases the cutoff term is independent of $k$.
+}
 
-\section{New developments}
-
-Short review of \cite{Percacci:2016arh, Morris:2016spn}.
-
-
-\section{Summary}
-\label{sec:conclusions}
-
-If we construct the non-perturbative flow equation for quantum gravity by introducing a cutoff defined through
-a background metric then independence from this artificial metric can only be achieved if the appropriate
-modified split Ward identity is obeyed. However even if it is obeyed, background independence is guaranteed
-only in the limit $k\to0$. RG properties on the other hand are defined at intermediate scales $k$.
-There is therefore the potential for conflict in this formulation between RG notions such as fixed points,
-and the requirement of background independence.
-Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
-
-\begin{table}[]
+\begin{table}
   \begin{center}
     \begin{tabular}{ r@{\hskip 10mm}  l  r  l@{\hskip 10mm}  c  c  c  c  c  c  c }
       \toprule
@@ -1820,83 +1811,9 @@ Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
 \end{table}
 
 
-In this paper we have further investigated these issues.
-Our findings, together with those of ref. \cite{Dietz:2015owa}, are summarised in table \ref{table:summary}.%
-\footnote{For power law cutoff  $r(z)=z^{-n}$, $d_f = 2-\eta/(n+2)$ is excluded \cite{Dietz:2015owa},
-and from sec. \ref{sec:required-cutoff} when $\eta=0$,  $d_f=2$ is excluded for any cutoff profile:
-in these cases the cutoff term is independent of $k$.}
-The first question that needs to be addressed is whether the msWI,
-$\mathcal{W}=0$, is compatible with the exact RG flow equation, \ie such that $\dot{\mathcal{W}}=0$ then follows.
-At the exact level, this latter compatibility is guaranteed since they are both identities derived from the
-partition function (see also sec. \ref{sec:exact}).
-Within the derivative expansion approximation of conformally truncated gravity considered in ref.
-\cite{Dietz:2015owa} (reviewed in sec. \ref{sec:review}),
-we have shown  in secs. \ref{sec:compatibility-at-d2} and \ref{sec:required-cutoff},
-that this compatibility follows if and only if either $\eta=0$ or cutoff profile is power law.
-In sec. \ref{sec:exact-vs-derivatives}, we saw precisely why the derivative expansion breaks compatibility
-in general and why these special cases restore it.
-We argued in sec. \ref{sec:incompatibility} that if the equations are incompatible they are overconstrained
-since there are then an infinite number of secondary constraints,
-and thus not even $t$-dependent solutions can exist.
-We confirmed this latter conclusion by example in sec. \ref{sec:incompatible-no-solns}.
-In sec. \ref{sec:truncations},
-we also saw that the fixed point equations and Ward identities together generically overconstrain the
-system when expanded in terms of vertices beyond the six-point level.
+\section{New developments}
 
-Even if the equations are compatible the msWI can still forbid fixed points.
-In sec. \ref{sec:forbids} the reason was laid out particularly clearly. The Ward identity
-\begin{align}
-  \frac{\partial \bar V}{\partial \bar\chi} - \frac{\partial \bar V}{\partial \bar\varphi} + \bar \gamma \, \bar V = \bar \gamma
-  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{r - \frac{1}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bar\varphi}\bar V} \,,
-\end{align}
-(which is compatible for power-law $r$),
-forces the effective potential $\bV$ to depend on $t$ through
-\begin{align}
-  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \,
-  \ln \left[ \bar{f} \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc \right) \right] ,
-\end{align}
-whenever this dimensionless combination is similarly forced to be $t$-dependent.
-For example we see that fixed points with respect to $k$ are forbidden for exponential parametrisations
-$f(\phi) = \mathrm e ^ \phi$  if the field grows a non-zero anomalous dimension.
-It is clear that the reasons for this conflict are general and not tied to the derivative expansion
-of the conformally truncated model \textit{per se}.
-Therefore this issue could provide important constraints for example on the exponential parametrisations
-recently advocated in the literature
-\cite{Demmel:2015zfa,Eichhorn:2013xr,Eichhorn:2015bna,Nink:2014yya,Percacci:2015wwa,
-Ohta:2015efa,Gies:2015tca}.
-
-For full quantum gravity, such conflict between $k$-fixed points and background independence may also
-show up clearly in a vertex expansion, as discussed in \ref{sec:truncations},
-or generically it may not become visible until the six-point level.
-However for full quantum gravity, if we are to follow the standard procedure, we must also fix the gauge.
-The original msWI, which formally expresses background independence before gauge fixing,
-will no longer be compatible with the flow equation.
-Instead we must use the appropriate version which has contributions from the background dependence of
-the gauge fixing and ghost terms as well as from cutoff terms for the ghost action itself.
-However background independence is then only restored in the limit $k\to0$ after going ``on-shell''
-(assuming such an appropriate property can be defined).
-This last step is required to recover quantities that are independent of the gauge fixing.
-If we are to continue with a flow equation for a Legendre effective action
-\cite{Wetterich:1992yh,Morris:1993qb} then to get around this obstruction,
-the Vilkovisky-DeWitt covariant effective action seems called for
-\cite{Branchina:2003ek,Donkin:2012ud,Demmel:2014hla,Safari:2015dva},
-with the msWI replaced by the corresponding modified Nielsen identities where the r\^ole of the background
-field is played by the ``base point'' \cite{Pawlowski:2003sk}.
-
-Returning to the present study, it seems surely significant that
-whenever the msWI equations  are actually compatible with the flow equations,
-it is possible to combine them and thus uncover background independent variables,
-including a background independent notion of scale, $\hk$.
-These are not only independent of $\chi$ but also independent of the parametrisation $f$.
-Of course such an underlying description has only been shown in this $\mathcal{O}(\partial^2)$ approximation and
-in conformally truncated gravity, and one might doubt that this happy circumstance could be generalised to
-full quantum gravity, and not only for the reasons outlined above.
-However we also saw in sec. \ref{sec:counting} that if modified Ward identities are to be compatible with
-the flow equations then in terms of vertices, the information they contain becomes highly redundant
-at sufficiently high order (the six-point level in our case).
-This in itself suggests the existence of a simpler description.
-Finally very recently a formulation for non-perturbative RG has been proposed where computations can be
-made without ever introducing a background metric (or gauge fixing) \cite{Morris:2016nda}.
+Short review of \cite{Percacci:2016arh, Morris:2016spn}.
 
 
 
@@ -2468,56 +2385,6 @@ wave function renormalization constant.
 The argument of the logarithmic term would then be $Z_h/\gamma$
 and the beta function of $f$ would probably be regular for $f=0$.
 
-%%%%%%%%%%%%%%%%%%%%
-\section{Summary}
-%%%%%%%%%%%%%%%%%%%%
-
-This paper extends earlier investigations of scalar-tensor
-gravity, where we used the exponential parametrization of the metric.
-The {\it a priori} motivation of this parametrization is that
-it respects the nonlinear structure of the space of riemannian metrics.
-It appears a posteriori that it leads to better behaved flows:
-there are no infrared singularities \cite{Percacci:2015wwa,Falls:2015qga}
-and the equations can be made gauge-independent even off-shell
-\cite{Falls:2015qga}.
-Quite generally, the use of the exponential parametrization
-in conjunction with the physical gauge $\xi_\mu'=\nabla_\mu h=0$
-leads to simpler equations.
-In the theory considered here, they are sufficiently simple
-that analytic scaling solutions can be found.
-We have given here the form of such solutions in any dimensions
-and for any number of scalar fields.
-Relative to our earlier work, the advantage of having more than
-one scalar field is that there exists a global solution (FP4)
-with $f\geq 0$ everywhere.
-
-One interesting by-product of this analysis is the confirmation
-of upper bounds on the number of scalars, for compatibility with
-a fixed point with positive $f$.
-This result is not confirmed when one uses a scalar-free cutoff
-but we have argued that this is probably not physically correct.
-
-As is often the case when taking the large $N$ limit we have been
-able to construct the exact analytical solutions
-and show that they are unphysical in the type-I cutoff scheme.
-
-We have also investigated in $d=3$ the existence of the gravitationally
-dressed Wilson-Fisher scaling solution for various finite N.
-In particular we have shown that physically acceptable solution do exist
-for small $N$ and given details for the case $N=2$.
-
-We hope that these tools will prove useful also in the search
-of global solutions for $f(R)$ truncations,
-where several results have been obtained recently
-\cite{Benedetti:2012dx,Benedetti:2013jk,Demmel:2012ub,Dietz:2012ic,Dietz:2013sba,Demmel:2015oqa},
-but a clear picture is still missing.
-Another important direction of investigation is the inclusion of other matter fields,
-in particular fermions~\cite{Zanusso:2009bs,Vacca:2010mj,Eichhorn:2011pc,Vacca:2015nta}.
-If the picture we have found up to now will be confirmed also in more sophisticated truncations,
-the possibility to define a consistent QFT of matter-gravity interactions
-will be a guidance in the understanding of several aspects of fundamental/effective physics.
-We find already interesting to start to investigate possible implications at
-phenomenological level for example in cosmology.
 
 
 %----------------------------------------------------------------------------------------
@@ -3857,118 +3724,7 @@ even if the fluctuation couplings are well-behaved. Interpreted along these line
 the one-loop approximation, where we set $\eta_{\rm TT}=\eta_{\sigma}=0=\eta_S$ everywhere,
 and only the background Newton coupling depends on $N_S$,
 would suggest that there could be an upper limit of scalars that is compatible with a viable fixed point.
-\newline\\
 
-%
-\section{Summary}
-%
-In this work, we discuss how setting up a Renormalization Group flow for gravity-matter systems,
-in order to investigate the viability of the asymptotic safety scenario for gravity and the Standard Model,
-necessitates a distinction between couplings of matter to the background metric and couplings to
-fluctuations of the metric.
-We take a first step in disentangling the scale-dependence of the different couplings by studying
-the running of a vertex at which two scalar fields interact with the metric fluctuation field.
-From this vertex we define an avatar of the Newton coupling, $g_3$.
-We observe that the so-defined Newton coupling features an interacting fixed point at $N_S=0$
-where only metric fluctuations drive the Renormalization Group flow.
-The universal critical exponent at this fixed point is close to that of other approximations and definitions.
-We consider this rather strong evidence for the asymptotic safety scenario  in the pure-gravity case,
-that complements previous results.
-We emphasize that this is the first evidence for asymptotic-safety in gravity-matter interactions,
-as all previous results related to the Newton coupling defined from background or fluctuation
-gravitational interactions.
-Our result is therefore a new hint that formulating an asymptotically safe theory of gravity
-and matter could be phenomenologically viable.\newline
-
-We also investigate the anomalous dimensions for different components of the graviton,
-and find a large negative anomalous dimension $\eta_{\rm TT}$ for the TT mode,
-which is not too far from the single-metric approximation $\eta_N=-2$.
-Such a large negative anomalous dimension implies a strongly UV suppressed propagator of the form
-$p^{-2+\eta_{TT}}$. The corresponding propagator in real space is reminiscent of a lower-dimensional setting.
-Thus our result is in line with other indications for some form of dynamical dimensional reduction
-in asymptotically safe gravity
-\cite{Lauscher:2001ya, Lauscher:2005qz, Reuter:2011ah, Rechenberger:2012pm, Calcagni:2013vsa},
-however see also \cite{DOdorico:2015jtl}.
-
-On the other hand, the  $\sigma$-anomalous dimension has the opposite sign.
-This suggests that different tensor structures in gravity exhibit different running---reminiscent
-of the difference between the transverse and longitudinal gluons in the infrared regime
-in Yang-Mills theory in Landau gauge.
-This result is an indication that one should also disentangle the flow of different tensor structures
-at the level of the vertices.
-We moreover observe a difference to results in the linear parametrization,
-where the anomalous dimensions are typically smaller in  absolute value.
-
-Within functional Renormalization Group flows, it is never possible to find a finite-dimensional
-closed truncation, as higher-order couplings always couple back into the flow of lower-order ones.
-For instance, the flow of the coupling $g_3$ depends on the higher-order coupling $g_5$ through
-a tadpole diagram. Thus, one should evaluate the flow for $g_5$,
-which itself depends on $g_7$ and so on, necessitating some approximation to close the truncation.
-Typical choices in the literature include setting higher-order couplings to zero,
-or equating them to lower order ones. In our results,
-we explicitly keep the dependence on all couplings that enter $\beta_{g_3}$,
-enabling us to study the reliability of different approximations:
-We observe that the choice of approximation for those couplings for which no beta function is
-determined explicitly, quantitatively alters the properties of the fixed point: By treating,
-e.g., the pure-gravity couplings $G_3$ and $G_4$ as external parameters, we observe that the
-fixed point in $g_3$ persists for all values of these couplings that we have investigated,
-but, e.g., anomalous dimensions and the critical exponent change.
-It is reassuring that the existence of a fixed point does not  depend on making specific choices
-for couplings for which no beta function is determined, as of course all results in the literature
-make specific choices for these couplings. On the other hand,
-our investigation of the dependence of fixed-point properties on these choices highlights that quantitatively
-more precise results require
- more elaborate truncation schemes which disentangle some of these couplings.
-
-
-In the case $N_S>0$, scalar fluctuations have a significant impact.
-If we work in the approximation where we set the anomalous dimension for the scalar matter field to zero,
-$\eta_S=0$, we observe that matter fluctuations  have a destabilizing effect on the gravitational fixed point,
-and move it toward larger values.
-This observation is in accordance with the general scenario discussed at the level of the
-background couplings in \cite{Dona:2013qba, Dona:2014pla},
-where it is argued that the inclusion of dynamical matter degrees of freedom will impact
-the microscopic dynamics for gravity, and an increasing number of scalars leads to a growth of the
-fixed point value for the Newton coupling. In \cite{Meibohm:2015twa} a similar behavior
-is found for the fluctuation coupling $G_3$.
-The increasing fixed-point value leads to an increase in the anomalous dimension for the graviton.
-As our regularization scheme requires $\eta<2$ for all anomalous dimensions,
-the region of $N_S \geq 14$ requires a re-investigation with a different regularization
-scheme and/or significantly larger truncations.
-We should therefore take care when interpreting our present results.
-Keeping in mind this word of caution, we observe that scalar matter seems to have a significant
-effect on an interacting fixed point and could potentially destabilize it.
-On the other hand, it is reassuring to observe that $N_S=4$,
-which is of course the phenomenologically most relevant case as it corresponds to the number of
-scalar fields in the Standard Model,
-admits a gravitational fixed point in our setting,
-again in line with results in \cite{Dona:2013qba, Dona:2014pla, Meibohm:2015twa}.
-
-Including a scalar anomalous dimension $\eta_S$ leads to a very significant change
-of the fixed-point properties already at $N_S=1$.
-Based on a mode-counting argument, we
-expect that this strong effect of a single scalar field only arises within our truncation,
-and such significant effects of matter should not be expected for small $N_S$.
-We also identify a direction in which an extension of our truncation would potentially
-lead to $\mathcal{O}(1)$ changes of the anomalous dimension for scalars:
-Quantum-gravity effects induce non-vanishing momentum-dependent self-interactions
-for scalars \cite{Eichhorn:2012va}, which will couple into $\eta_S$ via a tadpole diagram.
-If we take into account quantum-gravity induced matter self-interactions, not only $\eta_S$ will change.
-Among the diagrams contributing to $\beta_{g_3}$,
-there will also be one that features a closed scalar loop,
-and thus yields a contribution that scales with $N_S$. Within our present approximation,
-there is no such explicit contribution, and the $N_S$ dependence only arises through the anomalous dimensions.
-
-Moreover, it will be interesting to understand the parametrization and gauge-dependence of our result.
-As the matter-gravity vertices differ signficiantly between,
-e.g., Landau gauge and linear parametrization on the one hand,
-and unimodular gauge and exponential parametrization on the other hand,
-the structure of the beta function for $g_3$ as well as $G_3$ could be significantly different.
-Thus, it will be interesting to understand whether the observations in the present work as
-well as in \cite{Meibohm:2015twa} persist,
-if the system $\beta_{g_3}, \beta_{G_3}$ is analyzed in the two different parametrizations.
-In particular, it will be interesting to see whether the sign of the contribution
-$\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametrization.
 
 
 %----------------------------------------------------------------------------------------
@@ -5229,7 +4985,254 @@ This implies
 \chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
 
-In this thesis, we did the following:
+\section*{Chapter 1}
+
+
+
+\section*{Chapter 2}
+
+If we construct the non-perturbative flow equation for quantum gravity by introducing a cutoff defined through
+a background metric then independence from this artificial metric can only be achieved if the appropriate
+modified split Ward identity is obeyed. However even if it is obeyed, background independence is guaranteed
+only in the limit $k\to0$. RG properties on the other hand are defined at intermediate scales $k$.
+There is therefore the potential for conflict in this formulation between RG notions such as fixed points,
+and the requirement of background independence.
+Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
+
+In this paper we have further investigated these issues.
+The first question that needs to be addressed is whether the msWI,
+$\mathcal{W}=0$, is compatible with the exact RG flow equation, \ie such that $\dot{\mathcal{W}}=0$ then follows.
+At the exact level, this latter compatibility is guaranteed since they are both identities derived from the
+partition function (see also sec. \ref{sec:exact}).
+Within the derivative expansion approximation of conformally truncated gravity considered in ref.
+\cite{Dietz:2015owa} (reviewed in sec. \ref{sec:review}),
+we have shown  in secs. \ref{sec:compatibility-at-d2} and \ref{sec:required-cutoff},
+that this compatibility follows if and only if either $\eta=0$ or cutoff profile is power law.
+In sec. \ref{sec:exact-vs-derivatives}, we saw precisely why the derivative expansion breaks compatibility
+in general and why these special cases restore it.
+We argued in sec. \ref{sec:incompatibility} that if the equations are incompatible they are overconstrained
+since there are then an infinite number of secondary constraints,
+and thus not even $t$-dependent solutions can exist.
+We confirmed this latter conclusion by example in sec. \ref{sec:incompatible-no-solns}.
+In sec. \ref{sec:truncations},
+we also saw that the fixed point equations and Ward identities together generically overconstrain the
+system when expanded in terms of vertices beyond the six-point level.
+
+Even if the equations are compatible the msWI can still forbid fixed points.
+In sec. \ref{sec:forbids} the reason was laid out particularly clearly. The Ward identity
+\begin{align}
+  \frac{\partial \bar V}{\partial \bar\chi} - \frac{\partial \bar V}{\partial \bar\varphi} + \bar \gamma \, \bar V = \bar \gamma
+  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{r - \frac{1}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bar\varphi}\bar V} \,,
+\end{align}
+(which is compatible for power-law $r$),
+forces the effective potential $\bV$ to depend on $t$ through
+\begin{align}
+  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \,
+  \ln \left[ \bar{f} \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc \right) \right] ,
+\end{align}
+whenever this dimensionless combination is similarly forced to be $t$-dependent.
+For example we see that fixed points with respect to $k$ are forbidden for exponential parametrisations
+$f(\phi) = \mathrm e ^ \phi$  if the field grows a non-zero anomalous dimension.
+It is clear that the reasons for this conflict are general and not tied to the derivative expansion
+of the conformally truncated model \textit{per se}.
+Therefore this issue could provide important constraints for example on the exponential parametrisations
+recently advocated in the literature
+\cite{Demmel:2015zfa,Eichhorn:2013xr,Eichhorn:2015bna,Nink:2014yya,Percacci:2015wwa,
+Ohta:2015efa,Gies:2015tca}.
+
+For full quantum gravity, such conflict between $k$-fixed points and background independence may also
+show up clearly in a vertex expansion, as discussed in \ref{sec:truncations},
+or generically it may not become visible until the six-point level.
+However for full quantum gravity, if we are to follow the standard procedure, we must also fix the gauge.
+The original msWI, which formally expresses background independence before gauge fixing,
+will no longer be compatible with the flow equation.
+Instead we must use the appropriate version which has contributions from the background dependence of
+the gauge fixing and ghost terms as well as from cutoff terms for the ghost action itself.
+However background independence is then only restored in the limit $k\to0$ after going ``on-shell''
+(assuming such an appropriate property can be defined).
+This last step is required to recover quantities that are independent of the gauge fixing.
+If we are to continue with a flow equation for a Legendre effective action
+\cite{Wetterich:1992yh,Morris:1993qb} then to get around this obstruction,
+the Vilkovisky-DeWitt covariant effective action seems called for
+\cite{Branchina:2003ek,Donkin:2012ud,Demmel:2014hla,Safari:2015dva},
+with the msWI replaced by the corresponding modified Nielsen identities where the r\^ole of the background
+field is played by the ``base point'' \cite{Pawlowski:2003sk}.
+
+Returning to the present study, it seems surely significant that
+whenever the msWI equations  are actually compatible with the flow equations,
+it is possible to combine them and thus uncover background independent variables,
+including a background independent notion of scale, $\hk$.
+These are not only independent of $\chi$ but also independent of the parametrisation $f$.
+Of course such an underlying description has only been shown in this $\mathcal{O}(\partial^2)$ approximation and
+in conformally truncated gravity, and one might doubt that this happy circumstance could be generalised to
+full quantum gravity, and not only for the reasons outlined above.
+However we also saw in sec. \ref{sec:counting} that if modified Ward identities are to be compatible with
+the flow equations then in terms of vertices, the information they contain becomes highly redundant
+at sufficiently high order (the six-point level in our case).
+This in itself suggests the existence of a simpler description.
+Finally very recently a formulation for non-perturbative RG has been proposed where computations can be
+made without ever introducing a background metric (or gauge fixing) \cite{Morris:2016nda}.
+
+
+\section*{Chapter 3}
+
+This paper extends earlier investigations of scalar-tensor
+gravity, where we used the exponential parametrization of the metric.
+The {\it a priori} motivation of this parametrization is that
+it respects the nonlinear structure of the space of riemannian metrics.
+It appears a posteriori that it leads to better behaved flows:
+there are no infrared singularities \cite{Percacci:2015wwa,Falls:2015qga}
+and the equations can be made gauge-independent even off-shell
+\cite{Falls:2015qga}.
+Quite generally, the use of the exponential parametrization
+in conjunction with the physical gauge $\xi_\mu'=\nabla_\mu h=0$
+leads to simpler equations.
+In the theory considered here, they are sufficiently simple
+that analytic scaling solutions can be found.
+We have given here the form of such solutions in any dimensions
+and for any number of scalar fields.
+Relative to our earlier work, the advantage of having more than
+one scalar field is that there exists a global solution (FP4)
+with $f\geq 0$ everywhere.
+
+One interesting by-product of this analysis is the confirmation
+of upper bounds on the number of scalars, for compatibility with
+a fixed point with positive $f$.
+This result is not confirmed when one uses a scalar-free cutoff
+but we have argued that this is probably not physically correct.
+
+As is often the case when taking the large $N$ limit we have been
+able to construct the exact analytical solutions
+and show that they are unphysical in the type-I cutoff scheme.
+
+We have also investigated in $d=3$ the existence of the gravitationally
+dressed Wilson-Fisher scaling solution for various finite N.
+In particular we have shown that physically acceptable solution do exist
+for small $N$ and given details for the case $N=2$.
+
+We hope that these tools will prove useful also in the search
+of global solutions for $f(R)$ truncations,
+where several results have been obtained recently
+\cite{Benedetti:2012dx,Benedetti:2013jk,Demmel:2012ub,Dietz:2012ic,Dietz:2013sba,Demmel:2015oqa},
+but a clear picture is still missing.
+Another important direction of investigation is the inclusion of other matter fields,
+in particular fermions~\cite{Zanusso:2009bs,Vacca:2010mj,Eichhorn:2011pc,Vacca:2015nta}.
+If the picture we have found up to now will be confirmed also in more sophisticated truncations,
+the possibility to define a consistent QFT of matter-gravity interactions
+will be a guidance in the understanding of several aspects of fundamental/effective physics.
+We find already interesting to start to investigate possible implications at
+phenomenological level for example in cosmology.
+
+
+\section*{Chapter 4}
+
+In this work, we discuss how setting up a Renormalization Group flow for gravity-matter systems,
+in order to investigate the viability of the asymptotic safety scenario for gravity and the Standard Model,
+necessitates a distinction between couplings of matter to the background metric and couplings to
+fluctuations of the metric.
+We take a first step in disentangling the scale-dependence of the different couplings by studying
+the running of a vertex at which two scalar fields interact with the metric fluctuation field.
+From this vertex we define an avatar of the Newton coupling, $g_3$.
+We observe that the so-defined Newton coupling features an interacting fixed point at $N_S=0$
+where only metric fluctuations drive the Renormalization Group flow.
+The universal critical exponent at this fixed point is close to that of other approximations and definitions.
+We consider this rather strong evidence for the asymptotic safety scenario  in the pure-gravity case,
+that complements previous results.
+We emphasize that this is the first evidence for asymptotic-safety in gravity-matter interactions,
+as all previous results related to the Newton coupling defined from background or fluctuation
+gravitational interactions.
+Our result is therefore a new hint that formulating an asymptotically safe theory of gravity
+and matter could be phenomenologically viable.\newline
+
+We also investigate the anomalous dimensions for different components of the graviton,
+and find a large negative anomalous dimension $\eta_{\rm TT}$ for the TT mode,
+which is not too far from the single-metric approximation $\eta_N=-2$.
+Such a large negative anomalous dimension implies a strongly UV suppressed propagator of the form
+$p^{-2+\eta_{TT}}$. The corresponding propagator in real space is reminiscent of a lower-dimensional setting.
+Thus our result is in line with other indications for some form of dynamical dimensional reduction
+in asymptotically safe gravity
+\cite{Lauscher:2001ya, Lauscher:2005qz, Reuter:2011ah, Rechenberger:2012pm, Calcagni:2013vsa},
+however see also \cite{DOdorico:2015jtl}.
+
+On the other hand, the  $\sigma$-anomalous dimension has the opposite sign.
+This suggests that different tensor structures in gravity exhibit different running---reminiscent
+of the difference between the transverse and longitudinal gluons in the infrared regime
+in Yang-Mills theory in Landau gauge.
+This result is an indication that one should also disentangle the flow of different tensor structures
+at the level of the vertices.
+We moreover observe a difference to results in the linear parametrization,
+where the anomalous dimensions are typically smaller in  absolute value.
+
+Within functional Renormalization Group flows, it is never possible to find a finite-dimensional
+closed truncation, as higher-order couplings always couple back into the flow of lower-order ones.
+For instance, the flow of the coupling $g_3$ depends on the higher-order coupling $g_5$ through
+a tadpole diagram. Thus, one should evaluate the flow for $g_5$,
+which itself depends on $g_7$ and so on, necessitating some approximation to close the truncation.
+Typical choices in the literature include setting higher-order couplings to zero,
+or equating them to lower order ones. In our results,
+we explicitly keep the dependence on all couplings that enter $\beta_{g_3}$,
+enabling us to study the reliability of different approximations:
+We observe that the choice of approximation for those couplings for which no beta function is
+determined explicitly, quantitatively alters the properties of the fixed point: By treating,
+e.g., the pure-gravity couplings $G_3$ and $G_4$ as external parameters, we observe that the
+fixed point in $g_3$ persists for all values of these couplings that we have investigated,
+but, e.g., anomalous dimensions and the critical exponent change.
+It is reassuring that the existence of a fixed point does not  depend on making specific choices
+for couplings for which no beta function is determined, as of course all results in the literature
+make specific choices for these couplings. On the other hand,
+our investigation of the dependence of fixed-point properties on these choices highlights that quantitatively
+more precise results require
+ more elaborate truncation schemes which disentangle some of these couplings.
+
+
+In the case $N_S>0$, scalar fluctuations have a significant impact.
+If we work in the approximation where we set the anomalous dimension for the scalar matter field to zero,
+$\eta_S=0$, we observe that matter fluctuations  have a destabilizing effect on the gravitational fixed point,
+and move it toward larger values.
+This observation is in accordance with the general scenario discussed at the level of the
+background couplings in \cite{Dona:2013qba, Dona:2014pla},
+where it is argued that the inclusion of dynamical matter degrees of freedom will impact
+the microscopic dynamics for gravity, and an increasing number of scalars leads to a growth of the
+fixed point value for the Newton coupling. In \cite{Meibohm:2015twa} a similar behavior
+is found for the fluctuation coupling $G_3$.
+The increasing fixed-point value leads to an increase in the anomalous dimension for the graviton.
+As our regularization scheme requires $\eta<2$ for all anomalous dimensions,
+the region of $N_S \geq 14$ requires a re-investigation with a different regularization
+scheme and/or significantly larger truncations.
+We should therefore take care when interpreting our present results.
+Keeping in mind this word of caution, we observe that scalar matter seems to have a significant
+effect on an interacting fixed point and could potentially destabilize it.
+On the other hand, it is reassuring to observe that $N_S=4$,
+which is of course the phenomenologically most relevant case as it corresponds to the number of
+scalar fields in the Standard Model,
+admits a gravitational fixed point in our setting,
+again in line with results in \cite{Dona:2013qba, Dona:2014pla, Meibohm:2015twa}.
+
+Including a scalar anomalous dimension $\eta_S$ leads to a very significant change
+of the fixed-point properties already at $N_S=1$.
+Based on a mode-counting argument, we
+expect that this strong effect of a single scalar field only arises within our truncation,
+and such significant effects of matter should not be expected for small $N_S$.
+We also identify a direction in which an extension of our truncation would potentially
+lead to $\mathcal{O}(1)$ changes of the anomalous dimension for scalars:
+Quantum-gravity effects induce non-vanishing momentum-dependent self-interactions
+for scalars \cite{Eichhorn:2012va}, which will couple into $\eta_S$ via a tadpole diagram.
+If we take into account quantum-gravity induced matter self-interactions, not only $\eta_S$ will change.
+Among the diagrams contributing to $\beta_{g_3}$,
+there will also be one that features a closed scalar loop,
+and thus yields a contribution that scales with $N_S$. Within our present approximation,
+there is no such explicit contribution, and the $N_S$ dependence only arises through the anomalous dimensions.
+
+Moreover, it will be interesting to understand the parametrization and gauge-dependence of our result.
+As the matter-gravity vertices differ signficiantly between,
+e.g., Landau gauge and linear parametrization on the one hand,
+and unimodular gauge and exponential parametrization on the other hand,
+the structure of the beta function for $g_3$ as well as $G_3$ could be significantly different.
+Thus, it will be interesting to understand whether the observations in the present work as
+well as in \cite{Meibohm:2015twa} persist,
+if the system $\beta_{g_3}, \beta_{G_3}$ is analyzed in the two different parametrizations.
+In particular, it will be interesting to see whether the sign of the contribution
+$\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametrization.
 
 
 
