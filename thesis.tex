@@ -3705,17 +3705,63 @@ Thus $FP_1$ has slightly better chances of being
 a true fixed point, but in the present approximations
 it cannot be reliably assessed.
 
-
-
 \begin{figure}
-\includegraphics[width=0.45\linewidth]{g3_Ns_equalcouplings.pdf} \quad \includegraphics[width=0.45\linewidth]{theta_Ns_equalcouplings.pdf}\newline
-\includegraphics[width=0.45\linewidth]{etah_Ns_equalcouplings.pdf} \quad \includegraphics[width=0.45\linewidth]{etasigma_Ns_equalcouplings.pdf}\newline
-\includegraphics[width=0.45\linewidth]{etas_Ns_equalcouplings.pdf}
-\caption{\label{FPNsequalcouplings} We show results in the semi-perturbative approximation:
-We plot the fixed-point value for $g_3$ as a function of $N_S$ (left upper panel)
-and the value of the critical exponent $\theta$ (right upper panel), as well as the anomalous dimensions.}
-\end{figure}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+          group style={group size=2 by 3, horizontal sep=10pt, vertical sep=10pt},
+          width=0.5\linewidth,
+          xmin=0, xmax=100,
+          xtick={0,20,40,60,80},
+          legend pos=north west,
+          legend cell align=left,
+          grid=major,
+          grid style=dashed,
+        ]
+        \nextgroupplot[ % 1
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={fixed point value $g_3^\star$},
+        ]
+        \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_g3.dat};
 
+        \nextgroupplot[ % 2
+          xlabel={number of scalars $N_S$},
+          xlabel near ticks, xticklabel pos=top,
+          ylabel={critical exponent $\theta$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_critical_exponent.dat};
+
+        \nextgroupplot[ % 3
+          xticklabels={,,},
+          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+        ]
+        \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_TT.dat};
+
+        \nextgroupplot[ % 4
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_\sigma$},
+          ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_sigma.dat};
+
+        \nextgroupplot[ % 5
+          xlabel={number of scalars $N_S$},
+          ylabel={anomalous dimension $\eta_S$},
+        ]
+        \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_s.dat};
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \caption{
+    Results for $\eta_S \neq 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$ in the semi-perturbative approximation:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$,
+    $\eta_{\sigma}$ and $\eta_S$ as a function of the number of scalars $N_S$.
+  }
+  \label{FPNsequalcouplings}
+\end{figure}
 
 We observe that already in the case $N_S=1$
 the anomalous dimensions of the graviton modes
