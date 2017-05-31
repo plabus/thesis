@@ -60,14 +60,35 @@
 \newdateformat{dateall}{\THEDAY th \monthname[\THEMONTH] \THEYEAR}
 
 %----------------------------------------------------------------------------------------
-% PGFPLOTS FOR PLOTTING IN LATEX
+% TikZ & PGFPLOTS SETUP (FOR PLOTTING IN LATEX)
 %----------------------------------------------------------------------------------------
 
+\usepackage{tikz}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.9}
-% Libraries to generate group plots
-\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{patterns}
 \usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math,calc}
+
+\tikzset{
+  midarrow/.style={draw, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
+  midarrow-rev/.style={draw, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{<}}}},
+}
+\tikzset{
+  TT/.style={decorate, draw=black,
+  decoration={coil,aspect=0.7,segment length=3.2pt,amplitude=2pt}}
+}
+\tikzset{
+  sigma/.style={dashed}
+}
+
+\usepgfplotslibrary{groupplots} % Libraries to generate group plots
 
 %----------------------------------------------------------------------------------------
 % MATHS FUNCTIONS
@@ -192,8 +213,8 @@ of a SISSA PhD Fellowship.\\
 
 \frontmatter % Use Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
+\chapter*{Abstract}
 
 \vfill
 \begin{center}
@@ -2751,7 +2772,7 @@ with the appropriate wave-function renormalization for all modes,  \cite{Litim:2
 %
 
 The purely metric diagrams contributing to $\eta_{\rm TT}$,
-cf.~Fig.~\ref{etahdiagsgrav} yield the following results.
+cf.~Fig.~\ref{fig:eta-diagrams-ch4} yield the following results.
 \bea
 \eta_{\rm TT} \big|_{\rm TT-tadpole} &=& \frac{145}{648 \pi}\, G_4\, (6-\eta_{\rm TT} ),\\
 \eta_{\rm TT}  \big|_{\sigma- \rm tadpole} &=&  \frac{29}{324 \pi}\, G_4\, (-6+\eta_{\sigma}),\\
@@ -2762,7 +2783,7 @@ cf.~Fig.~\ref{etahdiagsgrav} yield the following results.
  The subscripts in (\ref{TTsigmatwovertexetah}) -- (\ref{TTtwovertexetah})
 denote internal TT and $\sigma$ propagators in the two-vertex diagrams, respectively.
 Similarly, there are two diagrams containing scalar fluctuations,
-one of them a tadpole (cf.~Fig.~\ref{etahdiagsmatter}) which vanishes due to the
+one of them a tadpole (cf.~Fig.~\ref{fig:eta-diagrams-ch4}) which vanishes due to the
 momentum-structure of the vertex.
 \bea
 \eta_{\rm TT}\big|_{\rm S-tadpole}  &=& 0,\\
@@ -2812,44 +2833,29 @@ Comparing to the anomalous dimension $\eta_h$ for the graviton (without York dec
 in the linear parametrization,
 we observe that $\eta_{\rm TT}$ has the opposite,
 leading order \emph{negative} contribution from the pure-gravity fluctuations,
-cf.~Eq. 24 in \cite{Dona:2013qba}.
+cf.~Eq.~(24) in \cite{Dona:2013qba}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%% First figure with diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centering
-\hspace{11mm} \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 24cm 14cm 2cm]{gravG.pdf}
-\hspace{9mm} \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 24cm 14cm 2cm]{gravH.pdf}\newline
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{gravF.pdf}
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{gravE.pdf}
-\hspace{3mm} \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{gravC.pdf}
-\caption{\label{etahdiagsgrav} Metric diagrams contributing to the flow of $\eta_{\rm TT}$.
-Each diagram with n propagators occurs in n versions with the regulator insertion appearing on each
-of the n internal propagators in turn.
-Curly lines denote the transverse traceless metric mode and dashed lines the scalar graviton mode.
-Similar diagrams with external $\sigma$ lines contribute to the anomalous dimension $\eta_{\sigma}$.}
+  \begin{center}
+    \input{diagrams/eta-diagrams.tex}
+  \end{center}
+  \caption{
+    All diagrams contributing to the beta function of the anomalous dimensions
+    $\eta_{\rm TT}$ and $\eta_S$.
+    Each diagram displayed here is the sum of $n$ different terms, where each summand
+    is the same diagram, except that it carries an additional regulator,
+    inserted in exactly one of the $n$ propagators.
+    Similar diagrams with external $\sigma$ lines contribute to the
+    anomalous dimension $\eta_{\sigma}$.
+  }
+  \label{fig:eta-diagrams-ch4}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%% Second figure with diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\includegraphics[width=0.33\linewidth,clip=true,trim=3cm 24cm 14cm 2cm]{gravB.pdf}
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{gravA.pdf}
-\caption{\label{etahdiagsmatter} Matter diagrams contributing to the flow of $\eta_{\rm TT}$.
-Each diagram with n propagators occurs in n versions with the regulator insertion appearing on each of
-the n internal propagators in turn. Curly lines denote the transverse traceless metric mode and continuous
-lines the matter scalar.
-Similar diagrams with external $\sigma$ lines contribute to the anomalous dimension $\eta_{\sigma}$.}
-\end{figure}
 
-%
 \subsection{The anomalous dimension of the matter scalars}
-%
+
 Similarly, tadpole diagrams and two-vertex diagrams contribute to the flow of $\eta_S$,
-cf.~Fig.~\ref{etasdiags}.
+cf.~Fig.~\ref{fig:eta-diagrams-ch4}.
 \bea
 \eta_S\big|_{\rm TT-tadpole} &= &g_4\frac{5}{24\pi}\,(6-\eta_{\rm TT}), \label{etaS1}\\
 \eta_S\big|_{\sigma- \rm tadpole} &= & g_4\frac{1}{12 \pi} \, (-6+\eta_{\sigma}),\label{etaS2}\\
@@ -2861,26 +2867,8 @@ Overall, $\eta_S$ is positive at leading order, when $g_3>0, g_4>0$.
 This is the opposite behavior as that observed in the linear parameterization
 and the deDonder gauge, \cite{Dona:2013qba}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%% Third figure with diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\hspace{11mm} \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 24cm 14cm 2cm]{scalarD.pdf}\quad
-\hspace{9mm} \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 24cm 14cm 2cm]{scalarC.pdf}\newline
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{scalA.pdf}\quad
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{scalB.pdf}
-\caption{\label{etasdiags}Metric diagrams contributing to the flow of $\eta_S$.
-Each diagram with n propagators occurs in n versions with the regulator insertion appearing
-on each of the n internal propagators in turn.
-Curly lines denote the transverse traceless metric mode,
-dashed lines the scalar graviton mode and continuous lines the scalar.}
-\end{figure}
 
-
-%
 \subsection{The flow of the graviton-matter coupling}
-%
 
 The flow of the two scalar-one graviton vertex
 $\sqrt{g_3}$ is driven by three types of diagrams:
@@ -3044,7 +3032,7 @@ If we consider the scalar as an external field, and only integrate out metric fl
 we can still consider $g_3$ as our definition of the running Newton coupling.
 In that case $\beta_{g_3}$ is determined by the tadpole diagrams in
 Fig.~\ref{tadpolediags} and the last three diagrams in Fig.~\ref{twovertexdiags}.
-The anomalous dimensions only receive contributions from the diagrams in Fig.~\ref{etahdiagsgrav}
+The anomalous dimensions only receive contributions from the diagrams in Fig.~\ref{fig:eta-diagrams-ch4}
 that do not contain matter in the loops.
 They can be obtained from the general formulas simply putting $N_S=0$.
 Here we further put the anomalous dimension $\eta_S$ to zero.
