@@ -989,12 +989,14 @@ it then follows that $\mathcal{W_\omega}$ and thus $\mathcal{\dot W_\omega}$ wil
 \label{sec:exact-vs-derivatives}
 
 \begin{figure}
-  \centering
-  \includegraphics[scale=0.23]{two-loop-cropped.pdf}
-  % \vskip-30pt
-  \caption{The two-loop diagrams in \eqref{step1}.
+  \begin{center}
+    \input{diagrams/two-loop.tex}
+  \end{center}
+  \caption{
+    The two-loop diagrams in \eqref{step1}.
     Their symmetry immediately implies the identity \eqref{step2}.
-  Momentum flow is indicated in the case where the fluctuation field $\varphi$ is then set to zero.}
+    Momentum flow is indicated in the case where the fluctuation field $\varphi$ is then set to zero.
+  }
   \label{fig:two-loop}
 \end{figure}
 Recalling from \eqref{new-inverse} that $\Delta$ is an infrared regulated full propagator,
@@ -3168,13 +3170,14 @@ this is of course a serious shortcoming.
     \begin{tikzpicture}
       \begin{groupplot}[
           group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
-          width=0.5\linewidth,
+          width=0.49\linewidth,
           xmin=0, xmax=6,
-          % xtick={0,10,20,30,40},
+          xtick={0,2,4,6},
           legend pos=north east,
           legend cell align=left,
           grid=major,
           grid style=dashed,
+          ylabel absolute,
         ]
         \nextgroupplot[ % 1
           xlabel={fixed point value $G_3^\star$},
@@ -3205,6 +3208,7 @@ this is of course a serious shortcoming.
           xlabel={fixed point value $G_3^\star$},
           ylabel={anomalous dimension $\eta_\sigma$},
           ylabel near ticks, yticklabel pos=right,
+          ytick={0,0.5,1.0,1.5,2.0},
         ]
         \addplot[blue] table{data/plotdata4a.dat};
         \addplot[red] table{data/plotdata4b.dat};
@@ -3331,13 +3335,14 @@ and the fixed-point collision accordingly occurs at larger $N_S$.
     \begin{tikzpicture}
       \begin{groupplot}[
           group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
-          width=0.5\linewidth,
+          width=0.49\linewidth,
           xmin=0, xmax=50,
           xtick={0,10,20,30,40},
           legend pos=north west,
           legend cell align=left,
           grid=major,
           grid style=dashed,
+          % ylabel absolute,
         ]
         \nextgroupplot[ % 1
           xlabel={number of scalars $N_S$},
@@ -3405,13 +3410,14 @@ as the effect of varying $g_3$ on $G_{3\, \ast}$  remains to be studied.
     \begin{tikzpicture}
       \begin{groupplot}[
           group style={group size=2 by 2, horizontal sep=10pt, vertical sep=10pt},
-          width=0.5\linewidth,
+          width=0.49\linewidth,
           xmin=0, xmax=32,
           xtick={0,10,20,30,40},
           legend pos=north west,
           legend cell align=left,
           grid=major,
           grid style=dashed,
+          % ylabel absolute,
         ]
         \nextgroupplot[ % 1
           xlabel={number of scalars $N_S$},
@@ -3578,7 +3584,7 @@ it cannot be reliably assessed.
     \begin{tikzpicture}
       \begin{groupplot}[
           group style={group size=2 by 3, horizontal sep=10pt, vertical sep=10pt},
-          width=0.5\linewidth,
+          width=0.49\linewidth,
           xmin=0, xmax=100,
           xtick={0,20,40,60,80},
           legend pos=north west,
@@ -3598,12 +3604,14 @@ it cannot be reliably assessed.
           xlabel near ticks, xticklabel pos=top,
           ylabel={critical exponent $\theta$},
           ylabel near ticks, yticklabel pos=right,
+          ytick={1.5,2,2.5,3,3.5},
         ]
         \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_critical_exponent.dat};
 
         \nextgroupplot[ % 3
           xticklabels={,,},
           ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+          ytick={-2,-1,0,1,2},
         ]
         \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_TT.dat};
 
@@ -3617,6 +3625,7 @@ it cannot be reliably assessed.
         \nextgroupplot[ % 5
           xlabel={number of scalars $N_S$},
           ylabel={anomalous dimension $\eta_S$},
+          ytick={-5,-4,-3,-2,-1},
         ]
         \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_s.dat};
 
@@ -5242,9 +5251,9 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 %----------------------------------------------------------------------------------------
 
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
-% \nocite{*}
-\bibliography{allrefs}
+\nocite{*}
 \bibliographystyle{unsrt}
+\bibliography{allrefs}
 
 
 
