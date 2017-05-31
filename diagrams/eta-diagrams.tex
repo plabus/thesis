@@ -1,0 +1,233 @@
+\begin{tikzpicture}[
+    >=stealth,
+    scale=1.00,
+    thick,
+    % very thick,
+  ]
+
+  \tikzmath{
+    \radius    = 0.72; % radius of right circle
+    \dotradius = 0.07; % radius of the circles that make the dots
+  }
+
+  % define the distances between the Feynman diagrams
+  \coordinate  (dist5) at ( 0.0,  0.0);
+  \coordinate  (dist3) at ( 3.5,  0.0);
+  \coordinate  (dist4) at ( 7.0,  0.0);
+  \coordinate  (dist7) at (10.5,  0.0);
+
+  \coordinate  (dist1) at ( 0.0, -3.0);
+  \coordinate  (dist2) at ( 3.5, -3.0);
+  \coordinate  (dist6) at ( 7.0, -3.0);
+
+  \coordinate  (dist8) at ( 0.0, -6.0);
+  \coordinate  (dist9) at ( 3.5, -6.0);
+  \coordinate (dist10) at ( 7.0, -6.0);
+  \coordinate (dist11) at (10.5, -6.0);
+
+  %--------------
+  %  DIAGRAM 1  |
+  %--------------
+
+  % Loop composet out of circle with annotation
+  \draw[TT]   ($ (dist1) + (0, -\radius) $) arc (-90:270:\radius);
+  \draw[TT]   ($ (dist1) + (0,  \radius) $) node[above, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two external legs pointing outwards at bottom
+  \draw[TT]   ($ (dist1) + (-0.72*\radius, -1.97*\radius) $) -- ($ (dist1) + (0, -\radius)$)
+    node[left, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+  \draw[TT]   ($ (dist1) + ( 0.72*\radius, -1.97*\radius) $) -- ($ (dist1) + (0, -\radius)$)
+    node[right, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+
+  % One dot for vertex
+  \draw[fill] ($ (dist1) + (0, -\radius)                $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 2  |
+  %--------------
+
+  % Loop composet out of circle with annotation
+  \draw[sigma] ($ (dist2) + (0, -\radius) $) arc (-90:270:\radius);
+  \draw[sigma] ($ (dist2) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+
+  % Two external legs pointing outwards at bottom
+  \draw[TT]   ($ (dist2) + (-0.72*\radius, -1.97*\radius) $) -- ($ (dist2) + (0, -\radius)$)
+    node[left, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+  \draw[TT]   ($ (dist2) + ( 0.72*\radius, -1.97*\radius) $) -- ($ (dist2) + (0, -\radius)$)
+    node[right, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+
+  % One dot for vertex
+  \draw[fill] ($ (dist2) + (0, -\radius)                $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 3  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[sigma] ($ (dist3) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[TT]    ($ (dist3) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist3) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist3) + (0, -\radius) $) node[below, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two horizontal external legs
+  \draw[TT]    ($ (dist3) + (2.1*\radius, 0) $) -- ($ (dist3) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+  \draw[TT]    ($ (dist3) + (   -\radius, 0) $) -- ($ (dist3) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist3) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist3) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 4  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[sigma] ($ (dist4) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[sigma] ($ (dist4) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist4) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist4) + (0, -\radius) $) node[below, inner sep=2mm] {$\sigma$};
+
+  % Two horizontal external legs
+  \draw[TT]    ($ (dist4) + (2.1*\radius, 0) $) -- ($ (dist4) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+  \draw[TT]    ($ (dist4) + (   -\radius, 0) $) -- ($ (dist4) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist4) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist4) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 5  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[TT]    ($ (dist5) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[TT]    ($ (dist5) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist5) + (0,  \radius) $) node[above, inner sep=2mm] {$h_\mathrm{TT}$};
+  \draw        ($ (dist5) + (0, -\radius) $) node[below, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two horizontal external legs
+  \draw[TT]    ($ (dist5) + (2.1*\radius, 0) $) -- ($ (dist5) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+  \draw[TT]    ($ (dist5) + (   -\radius, 0) $) -- ($ (dist5) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist5) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist5) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 6  |
+  %--------------
+
+  % Loop composet out of circle with annotation
+  \draw        ($ (dist6) + (0, -\radius) $) arc (-90:270:\radius);
+  \draw        ($ (dist6) + (0,  \radius) $) node[above, inner sep=2mm] {$\phi$};
+
+  % Two external legs pointing outwards at bottom
+  \draw[TT]    ($ (dist6) + (-0.72*\radius, -1.97*\radius) $) -- ($ (dist6) + (0, -\radius)$)
+    node[left, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+  \draw[TT]    ($ (dist6) + ( 0.72*\radius, -1.97*\radius) $) -- ($ (dist6) + (0, -\radius)$)
+    node[right, midway, inner sep=3mm] {$h_\mathrm{TT}$};
+
+  % One dot for vertex
+  \draw[fill]  ($ (dist6) + (0, -\radius)                $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 7  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw        ($ (dist7) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw        ($ (dist7) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist7) + (0,  \radius) $) node[above, inner sep=2mm] {$\phi$};
+  \draw        ($ (dist7) + (0, -\radius) $) node[below, inner sep=2mm] {$\phi$};
+
+  % Two horizontal external legs
+  \draw[TT]    ($ (dist7) + (2.1*\radius, 0) $) -- ($ (dist7) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+  \draw[TT]    ($ (dist7) + (   -\radius, 0) $) -- ($ (dist7) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist7) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist7) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 8  |
+  %--------------
+
+  % Loop composet out of circle with annotation
+  \draw[TT]   ($ (dist8) + (0, -\radius) $) arc (-90:270:\radius);
+  \draw[TT]   ($ (dist8) + (0,  \radius) $) node[above, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two external legs pointing outwards at bottom
+  \draw       ($ (dist8) + (-0.72*\radius, -1.97*\radius) $) -- ($ (dist8) + (0, -\radius)$)
+    node[left, midway, inner sep=3mm] {$\phi$};
+  \draw       ($ (dist8) + ( 0.72*\radius, -1.97*\radius) $) -- ($ (dist8) + (0, -\radius)$)
+    node[right, midway, inner sep=3mm] {$\phi$};
+
+  % One dot for vertex
+  \draw[fill] ($ (dist8) + (0, -\radius)                $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 9  |
+  %--------------
+
+  % Loop composet out of circle with annotation
+  \draw[sigma] ($ (dist9) + (0, -\radius) $) arc (-90:270:\radius);
+  \draw[sigma] ($ (dist9) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+
+  % Two external legs pointing outwards at bottom
+  \draw       ($ (dist9) + (-0.72*\radius, -1.97*\radius) $) -- ($ (dist9) + (0, -\radius)$)
+    node[left, midway, inner sep=3mm] {$\phi$};
+  \draw       ($ (dist9) + ( 0.72*\radius, -1.97*\radius) $) -- ($ (dist9) + (0, -\radius)$)
+    node[right, midway, inner sep=3mm] {$\phi$};
+
+  % One dot for vertex
+  \draw[fill] ($ (dist9) + (0, -\radius)                $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 10  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw        ($ (dist10) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[TT]    ($ (dist10) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist10) + (0,  \radius) $) node[above, inner sep=2mm] {$\phi$};
+  \draw        ($ (dist10) + (0, -\radius) $) node[below, inner sep=2mm] {$h_\mathrm{TT}$};
+
+  % Two horizontal external legs
+  \draw        ($ (dist10) + (2.1*\radius, 0) $) -- ($ (dist10) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+  \draw        ($ (dist10) + (   -\radius, 0) $) -- ($ (dist10) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist10) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist10) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  %--------------
+  %  DIAGRAM 11  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw        ($ (dist11) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[sigma] ($ (dist11) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist11) + (0,  \radius) $) node[above, inner sep=2mm] {$\phi$};
+  \draw        ($ (dist11) + (0, -\radius) $) node[below, inner sep=2mm] {$\sigma$};
+
+  % Two horizontal external legs
+  \draw        ($ (dist11) + (2.1*\radius, 0) $) -- ($ (dist11) + (     \radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+  \draw        ($ (dist11) + (   -\radius, 0) $) -- ($ (dist11) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist11) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist11) + ( \radius, 0) $) circle [radius=\dotradius];
+
+\end{tikzpicture}
