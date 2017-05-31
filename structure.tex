@@ -24,9 +24,6 @@
 
 \usepackage{lipsum} % Inserts dummy text
 
-\usepackage{tikz} % Required for drawing custom shapes
-\usetikzlibrary{patterns}
-
 \usepackage[english]{babel} % English language/hyphenation
 
 \usepackage{enumitem} % Customize lists
@@ -450,7 +447,8 @@ innerbottommargin=5pt]{cBox}
 
 % A switch to conditionally include a picture, implemented by  Christian Hupfer
 \newif\ifusechapterimage
-\usechapterimagetrue
+% \usechapterimagetrue
+\usechapterimagefalse
 \newcommand{\thechapterimage}{}%
 \newcommand{\chapterimage}[1]{\ifusechapterimage\renewcommand{\thechapterimage}{#1}\fi}%
 \def\@makechapterhead#1{%
