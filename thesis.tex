@@ -94,6 +94,9 @@
 % MATHS FUNCTIONS
 %----------------------------------------------------------------------------------------
 
+% My Own Abbreviations
+\newcommand\hTT{ h_{\scriptscriptstyle{\mathrm{TT}}} }
+
 % Morris'es Abbreviations
 \newcommand\ie{\textit{i.e.}\ }
 \newcommand\eg{\textit{e.g.}\ }
@@ -396,7 +399,7 @@ whilst keeping the treatment of the gravitational interaction classical has led
 to the development of quantum field theory on curved backgrounds. This approach has
 been used in the context of early Universe cosmology and cosmological inflation with
 great (apparent) success. It however has introduced a great many new questions within
-the physics (and thermodynamics in particular) of black holes. This includes the
+the physics (and in particular thermodynamics) of black holes. This includes the
 infamous no-hair theorems, as well as the information paradox.
 
 The general consensus on how to resolve these issues is the quantisation of gravitation
@@ -444,13 +447,14 @@ approach.
 \addcontentsline{toc}{section}{List of Publications}
 
 The work presented in this thesis is based on the following publications:%
-\vspace{0.5em}
+\bigskip
 \begin{itemize}
   \setlength\itemsep{0.7em}
   \item \bibentry{Labus:2015ska}
   \item \bibentry{Dona:2015tnf}
   \item \bibentry{Labus:2016lkh}
 \end{itemize}
+
 
 %----------------------------------------------------------------------------------------
 % CHAPTER 1
@@ -2760,16 +2764,31 @@ where the right-hand sides are evaluated at $p=0$,
 and at vanishing external fields $h_{\mu \nu}^{TT}$, $\sigma$ and $\phi$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Results for $\eta_{\rm TT}$, $\eta_{\sigma}$ $\eta_S$ and $\beta_{g_3}$}
 \section{Results for beta functions and anomalous dimensions}
-%%
+
 For our explicit results, we will employ a regulator shape function of the form
 $R_{\Psi k}\left(p^2\right) = Z_{\Psi k} (p^2-k^2) \theta(k^2-p^2)$,
 with the appropriate wave-function renormalization for all modes,  \cite{Litim:2001up}.
 
+
 \subsection{The anomalous dimension of the graviton modes}
-%
+
+\begin{figure}
+  \begin{center}
+    \input{diagrams/eta-diagrams.tex}
+  \end{center}
+  \caption{
+    Diagrams which contribute to the flow of the anomalous dimensions
+    $\eta_{\rm TT}$ and $\eta_S$.
+    Diagrams similar to the once in the first two row, but with external $\sigma$ legs,
+    contribute to the anomalous dimension $\eta_{\sigma}$.
+  }
+  \label{fig:eta-diagrams-ch4}
+\end{figure}
+
+Each diagram displayed here is the sum of $n$ different terms, where each summand
+is the same diagram, except that it carries an additional regulator,
+inserted in exactly one of the $n$ propagators.
 
 The purely metric diagrams contributing to $\eta_{\rm TT}$,
 cf.~Fig.~\ref{fig:eta-diagrams-ch4} yield the following results.
@@ -2789,7 +2808,6 @@ momentum-structure of the vertex.
 \eta_{\rm TT}\big|_{\rm S-tadpole}  &=& 0,\\
 \eta_{\rm TT}\big|_{\rm S,\,S}  &=& N_S \, \frac{1}{24 \pi} g_3.
 \eea
-
 Similarly, our results for the anomalous dimension of the $\sigma$ mode read
 \bea
 \eta_{\sigma} \big|_{\rm TT-tadpole} &=& \frac{55}{648 \pi}G_4(6-\eta_{\rm TT}),\\
@@ -2798,13 +2816,11 @@ Similarly, our results for the anomalous dimension of the $\sigma$ mode read
 \eta_{\sigma}  \big|_{\sigma,\,\sigma} &=&\frac{1}{432\pi}G_3 (136 - 35 \eta_{\sigma}),\\
 \eta_{\sigma}  \big|_{TT,\,TT} &=& \frac{5}{432\pi}G_3(40-23\eta_{\rm TT}) .
 \eea
-
 The matter contributions are given by
 \bea
 \eta_{\sigma}\big|_{\rm S-tadpole}  &=& 0,\\
 \eta_{\sigma}\big|_{\rm S,\,S}  &=& N_S  \frac{1}{48 \pi}g_3 (8-3\eta_S).
 \eea
-
 In summary, we have
 \bea
 \eta_{\rm TT}&=&N_S\frac{1}{24 \pi}g_3 + \frac{1}{1728 \pi} G_3 (-2928 + 455 \eta_{\rm TT} - 35 \eta_{\sigma}) \nonumber\\
@@ -2835,22 +2851,6 @@ we observe that $\eta_{\rm TT}$ has the opposite,
 leading order \emph{negative} contribution from the pure-gravity fluctuations,
 cf.~Eq.~(24) in \cite{Dona:2013qba}.
 
-\begin{figure}
-  \begin{center}
-    \input{diagrams/eta-diagrams.tex}
-  \end{center}
-  \caption{
-    All diagrams contributing to the beta function of the anomalous dimensions
-    $\eta_{\rm TT}$ and $\eta_S$.
-    Each diagram displayed here is the sum of $n$ different terms, where each summand
-    is the same diagram, except that it carries an additional regulator,
-    inserted in exactly one of the $n$ propagators.
-    Similar diagrams with external $\sigma$ lines contribute to the
-    anomalous dimension $\eta_{\sigma}$.
-  }
-  \label{fig:eta-diagrams-ch4}
-\end{figure}
-
 
 \subsection{The anomalous dimension of the matter scalars}
 
@@ -2870,21 +2870,35 @@ and the deDonder gauge, \cite{Dona:2013qba}.
 
 \subsection{The flow of the graviton-matter coupling}
 
+\begin{figure}
+  \begin{center}
+    \input{diagrams/coupling-diagrams.tex}
+  \end{center}
+  \caption{
+    Diagrams which contribute to the beta function of the gravity-matter coupling
+    $\sqrt{g_3}$.
+  }
+  \label{fig:coupling-diagrams-ch4}
+\end{figure}
+
 The flow of the two scalar-one graviton vertex
 $\sqrt{g_3}$ is driven by three types of diagrams:
 First of all, there are three-vertex diagrams in which all vertices are $\sim \sqrt{g_3}$ themselves,
 cf.~Fig.~\ref{threevertexdiagsg3} (note that we do not distinguish between the coupling of two
 scalars and one $\sigma$ mode and the coupling of two scalars and the TT mode,
 although we use only the latter to read off the running of $g_3$.)
-\begin{figure}
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{1a.pdf}\quad \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{1b.pdf}\newline
-\caption{\label{threevertexdiagsg3} Three-vertex-diagrams contributing to the flow of $\sqrt{g_3}$,
-which feature only the coupling $\sqrt{g_3}$ itself at all vertices.
-Each diagram with n propagators occurs in n versions with the regulator insertion appearing on each
-of the n internal propagators in turn.
-Curly lines denote the transverse traceless metric mode,
-dashed lines the scalar graviton mode and continuous lines the scalar. }
-\end{figure}
+% \begin{figure}
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{1a.pdf}\quad \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{1b.pdf}\newline
+%   \caption{
+%     Three-vertex-diagrams contributing to the flow of $\sqrt{g_3}$,
+%     which feature only the coupling $\sqrt{g_3}$ itself at all vertices.
+%     Each diagram with n propagators occurs in n versions with the regulator insertion appearing on each
+%     of the n internal propagators in turn.
+%     Curly lines denote the transverse traceless metric mode,
+%     dashed lines the scalar graviton mode and continuous lines the scalar.
+%   }
+%   \label{threevertexdiagsg3} 
+% \end{figure}
 
 These three-vertex diagrams in Fig.~\ref{threevertexdiagsg3} only have a contribution from the $\sigma$ mode;
 the transverse traceless mode contributes to the running of the two-scalar-one-graviton-vertex
@@ -2898,28 +2912,28 @@ Note that the leading-order contribution to $\beta_{\sqrt{g_3}}$ comes with a po
 \frac{1}{80 \pi} g_3^{3/2}\, (30-\eta_{\sigma}-2\eta_S)\label{betag3threevertexg3}
 \eea
 
-\begin{figure}
-\centering
-\includegraphics[width=0.33\linewidth,clip=true,trim=3cm 23cm 14cm 2cm]{5a.pdf}\quad \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 23cm 14cm 2cm]{5b.pdf}
-\caption{\label{tadpolediags} Tadpole diagrams contributing to the flow of $\sqrt{g_3}$.
-Each diagram features a regulator insertion on each of the internal propagators, which we omit here.
-Curly lines denote the transverse traceless metric mode,
-dashed lines the scalar graviton mode and continuous lines the scalar.}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 23cm 14cm 2cm]{5a.pdf}\quad \includegraphics[width=0.33\linewidth,clip=true,trim=3cm 23cm 14cm 2cm]{5b.pdf}
+%   \caption{\label{tadpolediags} Tadpole diagrams contributing to the flow of $\sqrt{g_3}$.
+%     Each diagram features a regulator insertion on each of the internal propagators, which we omit here.
+%     Curly lines denote the transverse traceless metric mode,
+%   dashed lines the scalar graviton mode and continuous lines the scalar.}
+% \end{figure}
 
-\begin{figure}
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{3b.pdf}\quad
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{3a.pdf}\newline
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4c.pdf}\quad
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4a.pdf}\quad
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4b.pdf}
-\caption{\label{twovertexdiags} Two-vertex-diagrams contributing to the flow of $\sqrt{g_3}$.
-Each diagram occurs in two versions with the regulator insertion appearing on each of the two internal
-propagators in turn.Curly lines denote the transverse traceless metric mode,
-dashed lines the scalar graviton mode and continuous lines the scalar.
-The two diagrams in the first line feature only vertices that arise from the kinetic term for the scalar.
-The other three diagrams also feature pure-metric vertices which arise from the Einstein-Hilbert action.}
-\end{figure}
+% \begin{figure}
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{3b.pdf}\quad
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{3a.pdf}\newline
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4c.pdf}\quad
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4a.pdf}\quad
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{4b.pdf}
+%   \caption{\label{twovertexdiags} Two-vertex-diagrams contributing to the flow of $\sqrt{g_3}$.
+%     Each diagram occurs in two versions with the regulator insertion appearing on each of the two internal
+%     propagators in turn.Curly lines denote the transverse traceless metric mode,
+%     dashed lines the scalar graviton mode and continuous lines the scalar.
+%     The two diagrams in the first line feature only vertices that arise from the kinetic term for the scalar.
+%   The other three diagrams also feature pure-metric vertices which arise from the Einstein-Hilbert action.}
+% \end{figure}
 
 Additionally, there are tadpole diagrams and two-vertex diagrams,
 which contain the couplings $g_4$ and $g_5^{3/2}$,
@@ -2963,17 +2977,17 @@ yield the following contribution:
 \beta_{\sqrt{g_3}}\Big|_{\substack{\sigma,\,\rm TT,\,S\\ \rm 3-vertex}} &=& 0.\label{threevertexpuregravityvertex}
 \eea
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2c.pdf}
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2a.pdf}\newline
-\includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2b.pdf}
-\caption{\label{threevertexdiags} Three-vertex-diagrams contributing to the flow of $\sqrt{g_3}$,
-which also feature a pure-gravity vertex.
-Each diagram occurs in three versions with the regulator insertion appearing on each of the three
-internal propagators in turn. Curly lines denote the transverse traceless metric mode,
-dashed lines the scalar graviton mode and continuous lines the scalar.}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2c.pdf}
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2a.pdf}\newline
+%   \includegraphics[width=0.45\linewidth,clip=true,trim=3cm 25cm 12cm 2cm]{2b.pdf}
+%   \caption{\label{threevertexdiags} Three-vertex-diagrams contributing to the flow of $\sqrt{g_3}$,
+%     which also feature a pure-gravity vertex.
+%     Each diagram occurs in three versions with the regulator insertion appearing on each of the three
+%     internal propagators in turn. Curly lines denote the transverse traceless metric mode,
+%   dashed lines the scalar graviton mode and continuous lines the scalar.}
+% \end{figure}
 
 
 %%
