@@ -1,6 +1,10 @@
 ## Do not include any old thesises or lecture notes:
 lectures_and_thesises/*
 
+## Ignore the raw versions of the papers from now on:
+papers/*
+
+
 ## Do not include compiled pdf of thesis:
 thesis.pdf
 
