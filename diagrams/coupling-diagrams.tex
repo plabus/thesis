@@ -1,0 +1,363 @@
+\begin{tikzpicture}[
+    >=stealth,
+    scale=1.00,
+    thick,
+    % very thick,
+  ]
+
+  \tikzmath{
+    \radius    = 0.72; % radius of right circle
+    \dotradius = 0.07; % radius of the circles that make the dots
+  }
+
+  % define the distances between the Feynman diagrams
+  \coordinate   (dist1) at ( 0.0,  0.0);
+  \coordinate   (dist2) at ( 3.5,  0.0);
+  \coordinate   (dist3) at ( 7.0,  0.0);
+  \coordinate   (dist4) at (10.5,  0.0);
+
+  \coordinate   (dist5) at ( 0.0, -3.0);
+  \coordinate   (dist6) at ( 3.5, -3.0);
+  \coordinate   (dist7) at ( 7.0, -3.0);
+  \coordinate   (dist8) at (10.5, -3.0);
+
+  \coordinate   (dist9) at ( 0.0, -6.0);
+  \coordinate  (dist10) at ( 3.5, -6.0);
+  \coordinate  (dist11) at ( 7.0, -6.0);
+  \coordinate  (dist12) at (10.5, -6.0);
+
+  \draw (  -2,  1.5)  -- (   -2, -7.75);
+  \draw (12.25, 1.5)  -- (12.25, -7.75);
+  \draw (  -2,  1.5)  -- (12.25, 1.5);
+  \draw (  -2, -7.75) -- (12.25, -7.75);
+
+  %--------------
+  %  DIAGRAM 1  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist1) + (-2.1*\radius, 0.0*\radius) $) -- ($ (dist1) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Triangle loop: going up, going down, vertical
+  \draw[TT]    ($ (dist1) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist1) + ( 0.6*\radius,  1*\radius) $)
+    node[above, near start, inner sep=3mm] {$\hTT$};
+  \draw[TT]    ($ (dist1) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist1) + ( 0.6*\radius, -1*\radius) $)
+    node[below, near start, inner sep=2mm] {$\hTT$};
+  \draw        ($ (dist1) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist1) + ( 0.6*\radius, -1*\radius) $)
+    node[right, midway, inner sep=2mm] {$\phi$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist1) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist1) + ( 1.7*\radius,  1*\radius) $)
+    node[above, near end, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist1) + ( 0.6*\radius,-1.0*\radius) $) -- ($ (dist1) + ( 1.7*\radius, -1*\radius) $)
+    node[below, near end, inner sep=1mm] {$\phi$};
+
+  % Three dots for the vertices
+  \draw[fill]  ($ (dist1) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist1) + ( 0.6*\radius, 1.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist1) + ( 0.6*\radius,-1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist1) + (-1.5*\radius, 1.5*\radius) $) node[] {$\boxed{1}$};
+
+  %--------------
+  %  DIAGRAM 2  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist2) + (-2.1*\radius, 0.0*\radius) $) -- ($ (dist2) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Triangle loop: going up, going down, vertical
+  \draw[TT]    ($ (dist2) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist2) + ( 0.6*\radius,  1*\radius) $)
+    node[above, near start, inner sep=3mm] {$\hTT$};
+  \draw[sigma] ($ (dist2) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist2) + ( 0.6*\radius, -1*\radius) $)
+    node[below, near start, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist2) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist2) + ( 0.6*\radius, -1*\radius) $)
+    node[right, midway, inner sep=2mm] {$\phi$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist2) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist2) + ( 1.7*\radius,  1*\radius) $)
+    node[above, near end, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist2) + ( 0.6*\radius,-1.0*\radius) $) -- ($ (dist2) + ( 1.7*\radius, -1*\radius) $)
+    node[below, near end, inner sep=1mm] {$\phi$};
+
+  % Three dots for the vertices
+  \draw[fill]  ($ (dist2) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist2) + ( 0.6*\radius, 1.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist2) + ( 0.6*\radius,-1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist2) + (-1.5*\radius, 1.5*\radius) $) node[] {$\boxed{2}$};
+
+  %--------------
+  %  DIAGRAM 3  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist3) + (-2.1*\radius, 0.0*\radius) $) -- ($ (dist3) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Triangle loop: going up, going down, vertical
+  \draw[sigma] ($ (dist3) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist3) + ( 0.6*\radius,  1*\radius) $)
+    node[above, midway, inner sep=2mm] {$\sigma$};
+  \draw[sigma] ($ (dist3) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist3) + ( 0.6*\radius, -1*\radius) $)
+    node[below, midway, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist3) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist3) + ( 0.6*\radius, -1*\radius) $)
+    node[right, midway, inner sep=2mm] {$\phi$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist3) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist3) + ( 1.7*\radius,  1*\radius) $)
+    node[above, near end, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist3) + ( 0.6*\radius,-1.0*\radius) $) -- ($ (dist3) + ( 1.7*\radius, -1*\radius) $)
+    node[below, near end, inner sep=1mm] {$\phi$};
+
+  % Three dots for the vertices
+  \draw[fill]  ($ (dist3) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist3) + ( 0.6*\radius, 1.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist3) + ( 0.6*\radius,-1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist3) + (-1.5*\radius, 1.5*\radius) $) node[] {$\boxed{3}$};
+
+  %--------------
+  %  DIAGRAM 4  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist4) + (-2.1*\radius, 0.0*\radius) $) -- ($ (dist4) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Triangle loop: going up, going down, vertical
+  \draw        ($ (dist4) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist4) + ( 0.6*\radius,  1*\radius) $)
+    node[above, midway, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist4) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist4) + ( 0.6*\radius, -1*\radius) $)
+    node[below, midway, inner sep=1mm] {$\phi$};
+  \draw[TT]    ($ (dist4) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist4) + ( 0.6*\radius, -1*\radius) $)
+    node[right, midway, inner sep=2mm] {$\hTT$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist4) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist4) + ( 1.7*\radius,  1*\radius) $)
+    node[above, near end, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist4) + ( 0.6*\radius,-1.0*\radius) $) -- ($ (dist4) + ( 1.7*\radius, -1*\radius) $)
+    node[below, near end, inner sep=1mm] {$\phi$};
+
+  % Three dots for the vertices
+  \draw[fill]  ($ (dist4) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist4) + ( 0.6*\radius, 1.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist4) + ( 0.6*\radius,-1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist4) + (-1.5*\radius, 1.5*\radius) $) node[] {$\boxed{4}$};
+
+  %--------------
+  %  DIAGRAM 5  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist5) + (-2.1*\radius, 0.0*\radius) $) -- ($ (dist5) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Triangle loop: going up, going down, vertical
+  \draw        ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist5) + ( 0.6*\radius,  1*\radius) $)
+    node[above, midway, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist5) + ( 0.6*\radius, -1*\radius) $)
+    node[below, midway, inner sep=1mm] {$\phi$};
+  \draw[sigma] ($ (dist5) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist5) + ( 0.6*\radius, -1*\radius) $)
+    node[right, midway, inner sep=2mm] {$\sigma$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist5) + ( 0.6*\radius, 1.0*\radius) $) -- ($ (dist5) + ( 1.7*\radius,  1*\radius) $)
+    node[above, near end, inner sep=1mm] {$\phi$};
+  \draw        ($ (dist5) + ( 0.6*\radius,-1.0*\radius) $) -- ($ (dist5) + ( 1.7*\radius, -1*\radius) $)
+    node[below, near end, inner sep=1mm] {$\phi$};
+
+  % Three dots for the vertices
+  \draw[fill]  ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist5) + ( 0.6*\radius, 1.0*\radius) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist5) + ( 0.6*\radius,-1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist5) + (-1.5*\radius, 1.5*\radius) $) node[] {$\boxed{5}$};
+
+  %--------------
+  %  DIAGRAM 6  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[TT]    ($ (dist6) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[TT]    ($ (dist6) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist6) + (0,  \radius) $) node[above, inner sep=2mm] {$\hTT$};
+  \draw        ($ (dist6) + (0, -\radius) $) node[below, inner sep=2mm] {$\hTT$};
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist6) + (-1.0*\radius, 0) $) -- ($ (dist6) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\hTT$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist6) + ( 1.0*\radius, 0) $) -- ($ (dist6) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=3mm] {$\phi$};
+  \draw        ($ (dist6) + ( 1.0*\radius, 0) $) -- ($ (dist6) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist6) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist6) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist6) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{6}$};
+
+  %--------------
+  %  DIAGRAM 7  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[sigma] ($ (dist7) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[TT]    ($ (dist7) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist7) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist7) + (0, -\radius) $) node[below, inner sep=2mm] {$\hTT$};
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist7) + (-1.0*\radius, 0) $) -- ($ (dist7) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\hTT$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist7) + ( 1.0*\radius, 0) $) -- ($ (dist7) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=3mm] {$\phi$};
+  \draw        ($ (dist7) + ( 1.0*\radius, 0) $) -- ($ (dist7) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist7) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist7) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist7) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{7}$};
+
+  %--------------
+  %  DIAGRAM 8  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[sigma] ($ (dist8) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[sigma] ($ (dist8) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist8) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist8) + (0, -\radius) $) node[below, inner sep=2mm] {$\sigma$};
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist8) + (-1.0*\radius, 0) $) -- ($ (dist8) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\hTT$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist8) + ( 1.0*\radius, 0) $) -- ($ (dist8) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=3mm] {$\phi$};
+  \draw        ($ (dist8) + ( 1.0*\radius, 0) $) -- ($ (dist8) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist8) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist8) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist8) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{8}$};
+
+  %--------------
+  %  DIAGRAM 9  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[TT]    ($ (dist9) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw        ($ (dist9) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist9) + (0,  \radius) $) node[above, inner sep=2mm] {$\hTT$};
+  \draw        ($ (dist9) + (0, -\radius) $) node[below, inner sep=1mm] {$\phi$};
+
+  % External leg incoming from the left
+  \draw        ($ (dist9) + (-1.0*\radius, 0) $) -- ($ (dist9) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+
+  % Two external legs incoming from the right: above, below
+  \draw[TT]    ($ (dist9) + ( 1.0*\radius, 0) $) -- ($ (dist9) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=3mm] {$\hTT$};
+  \draw        ($ (dist9) + ( 1.0*\radius, 0) $) -- ($ (dist9) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist9) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist9) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist9) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{9}$};
+
+  %--------------
+  %  DIAGRAM 10  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[sigma] ($ (dist10) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw        ($ (dist10) + (-\radius, 0) $) arc (180: 360: \radius);
+  \draw        ($ (dist10) + (0,  \radius) $) node[above, inner sep=2mm] {$\sigma$};
+  \draw        ($ (dist10) + (0, -\radius) $) node[below, inner sep=1mm] {$\phi$};
+
+  % External leg incoming from the left
+  \draw        ($ (dist10) + (-1.0*\radius, 0) $) -- ($ (dist10) + (-2.1*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\phi$};
+
+  % Two external legs incoming from the right: above, below
+  \draw[TT]    ($ (dist10) + ( 1.0*\radius, 0) $) -- ($ (dist10) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=3mm] {$\hTT$};
+  \draw        ($ (dist10) + ( 1.0*\radius, 0) $) -- ($ (dist10) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\phi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist10) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist10) + ( \radius, 0) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist10) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{10}$};
+
+  %--------------
+  %  DIAGRAM 11  |
+  %--------------
+
+  % Loop composed out of one circle
+  \draw[TT]    ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) arc (-90:270:\radius);
+  \draw        ($ (dist11) + ( 0.0*\radius,  1.0*\radius) $) node[above, inner sep=2mm] {$\hTT$};
+
+  % Three external legs pointing down: left, middle, right
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + (-0.707*\radius, -1.843*\radius) $)
+    node[left, midway, inner sep=3mm] {$\phi$};
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.000*\radius, -2.100*\radius) $)
+    node[left, near end, inner sep=1mm] {$\phi$};
+  \draw[TT]    ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.707*\radius, -1.843*\radius) $)
+    node[right, midway, inner sep=3mm] {$\hTT$};
+
+  % One dot for the vertex
+  \draw[fill]  ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist11) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{11}$};
+
+  %--------------
+  %  DIAGRAM 12  |
+  %--------------
+
+  % Loop composed out of one circle
+  \draw[sigma] ($ (dist12) + ( 0.0*\radius, -1.0*\radius) $) arc (-90:270:\radius);
+  \draw        ($ (dist12) + ( 0.0*\radius,  1.0*\radius) $) node[above, inner sep=2mm] {$\sigma$};
+
+  % Three external legs pointing down: left, middle, right
+  \draw        ($ (dist12) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist12) + (-0.707*\radius, -1.843*\radius) $)
+    node[left, midway, inner sep=3mm] {$\phi$};
+  \draw        ($ (dist12) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist12) + ( 0.000*\radius, -2.100*\radius) $)
+    node[left, near end, inner sep=1mm] {$\phi$};
+  \draw[TT]    ($ (dist12) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist12) + ( 0.707*\radius, -1.843*\radius) $)
+    node[right, midway, inner sep=3mm] {$\hTT$};
+
+  % One dot for the vertex
+  \draw[fill]  ($ (dist12) + ( 0.0*\radius, -1.0*\radius) $) circle [radius=\dotradius];
+
+  % Number of diagram
+  \draw        ($ (dist12) + (-1.5*\radius,  1.5*\radius) $) node[] {$\boxed{12}$};
+
+\end{tikzpicture}
