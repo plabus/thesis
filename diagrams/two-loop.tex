@@ -27,13 +27,17 @@
 
   % Four dots and labels
   \draw[fill] (-\lradius, 0) circle [radius=\dotradius]
-    node[left, inner sep=0.2cm] {$\frac{\delta^3 \Gamma_k}{\delta \varphi^3}$};
+    node[left, inner sep=0.1cm]
+    % {$\frac{\delta^3 \Gamma_k}{\delta \varphi^3}$};
+    {$\Gamma_k^{(3)}$};
 
   \draw[fill] (0, \lradius) circle [radius=\dotradius]
     node[above, inner sep=0.2cm] {$\dot r$};
 
   \draw[fill] (\lradius, 0) circle [radius=\dotradius]
-    node[right, inner sep=0.2cm] {$\frac{\delta^3 \Gamma_k}{\delta \varphi^3}$};
+    node[right, inner sep=0.2cm]
+    % {$\frac{\delta^3 \Gamma_k}{\delta \varphi^3}$};
+    {$\Gamma_k^{(3)}$};
 
   \draw[fill] (0, -\lradius) circle [radius=\dotradius]
     node[below, inner sep=0.2cm] {$\frac{\delta r}{\delta \chi}$};
@@ -55,7 +59,9 @@
     node[above, inner sep=0.2cm] {$\dot r$};
 
   \draw[fill] ($ (dist) + (0,0) $) circle [radius=\dotradius]
-    node[right, inner sep=0.8cm] {$\frac{\delta^4 \Gamma_k}{\delta \varphi^4}$};
+    node[right, inner sep=0.6cm]
+    % {$\frac{\delta^4 \Gamma_k}{\delta \varphi^4}$};
+    {$\Gamma_k^{(4)}$};
 
   \draw[fill] ($ (dist) + (0, -2*\rradius) $) circle [radius=\dotradius]
     node[below, inner sep=0.2cm] {$\frac{\delta r}{\delta \chi}$};
