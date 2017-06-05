@@ -95,7 +95,12 @@
 %----------------------------------------------------------------------------------------
 
 % My Own Abbreviations
+\newcommand\TT{ \scriptscriptstyle{\mathrm{TT}} }
 \newcommand\hTT{ h_{\scriptscriptstyle{\mathrm{TT}}} }
+\newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
+\newcommand\hTTmunu{ h^{\scriptscriptstyle{\mathrm{TT}}}_{\mu\nu} }
+\newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{TT}}} }
+\newcommand\etaS{ \eta_{\scriptscriptstyle{\mathrm{S}}} }
 
 % Morris'es Abbreviations
 \newcommand\ie{\textit{i.e.}\ }
@@ -442,6 +447,11 @@ approach.
     \end{itemize}
 \end{itemize}
 
+\subsection*{Chapter 1}
+\subsection*{Chapter 2}
+\subsection*{Chapter 3}
+\subsection*{Chapter 4}
+\subsection*{Chapter 5}
 
 \section*{List of Publications}
 \addcontentsline{toc}{section}{List of Publications}
@@ -494,122 +504,89 @@ Wilson-Fisher fixed point, LPA, Scaling Solutions
 
 \chapter{Background Independence}
 
-\section{Introduction}
-\label{sec:introduction}
+As we have outline in the last chapter,
+non-perturbative renormalization group flows for quantum gravity \cite{Reuter:1996cp}
+have been formulated by utilising the technical device of splitting the metric in terms
+of a background metric and a fluctuation field---the background field formalism.
 
-Following ref. \cite{Reuter:1996cp},
-non-perturbative RG (renormalization group) flows for quantum gravity have been formulated
-by utilising the technical device of splitting the metric in terms of a background metric
-and a fluctuation field (see also the reviews
-\cite{Reuter:2012id, Percacci:2011fr, Niedermaier:2006wt, Nagy:2012ef, Litim:2011cp}).
-Physical results must then be independent of this split, in other words should be background independent.
-The background metric however is in particular also used (via the background Laplacian)
-to define the effective cutoff scale $k$.
+Physical results must however be independent of this arbitrary split,
+in other words should be background independent.
+The background metric however is in particular used
+to define the effective cutoff scale $k$ (via the background Laplacian).
 This breaks background independence at intermediate scales $k$ but such that background
 independence can be recovered in the limit $k\to0$ providing certain modified split Ward
 identities (msWIs) are imposed
 \cite{Pawlowski:2005xe, Litim:2002hj, Bridle:2013sra, Reuter:1997gx, Litim:1998nf, Litim:2002ce,
 Manrique:2009uh, Manrique:2010mq, Manrique:2010am, Dietz:2015owa, Safari:2015dva}.
+RG properties on the other hand are defined at intermediate scales $k$.
+There is therefore the potential for conflict in this formulation between RG notions such as fixed points,
+and the requirement of background independence.
+
+In this chapter we want to expand on the results of ref. \cite{Dietz:2015owa}, and study
+a truncated formulation of conformally reduced gravity. In this theory, the explicit dependence
+on the background field displays itself only in the cutoff operator, and not in the gauge
+fixing and ghost sector, as it would be for the full theory of quantum gravity.
+This simplifies the investigation considerably.
 
 An unsettling conclusion from the research reported in ref. \cite{Dietz:2015owa} is that the
-requirement of background independence in a theory of quantum gravity can actually be
-in conflict with renormalization group (RG) properties in flows formulated as above:
+requirement of background independence in a theory of quantum gravity may actually \textit{be}
+in conflict with renormalization group properties in flows formulated as above:
 fixed points under changes in the effective cutoff scale $k$, can be forbidden by the msWIs
 that are enforcing background independence.%
-\footnote{Very recently an alternative approach has been initiated which avoids
+\footnote{An alternative approach has been initiated which avoids
 these issues entirely since background independence is never broken \cite{Morris:2016nda}.}
 
 In the conformally truncated gravity model investigated in ref. \cite{Dietz:2015owa},
 this happens generically when the anomalous dimension $\eta$ is non-vanishing.
-It can however be avoided by a careful choice of parametrisation $f$
-(setting it to be a power of $\chi$ determined by its scaling dimension \cite{Dietz:2015owa}).
+It can however be avoided by a careful choice of parametrisation.
+% $f$ (setting it to be a power of $\chi$ determined by its scaling dimension \cite{Dietz:2015owa}).
 On the other hand it was shown in ref. \cite{Dietz:2015owa} that the situation is saved in all cases,
 at least in the conformally reduced gravity model,
 by the existence of an alternative background-independent description.
 This involves in particular a background-independent notion of scale, $\hat{k}$.
 This background independent description exists at a deeper underlying level since in terms
 of these background-independent variables, the RG fixed points and corresponding flows always exist,
-and are manifestly independent of the choice of parametrisation $f(\chi)$.
+and are manifestly independent of the choice of parametrisation.
+% $f(\chi)$.
 
-After approximating the exact RG flow equations and msWIs to second order in the derivative
-expansion (as will be reviewed later),
+After approximating the exact RG flow equations and msWIs to second order in the derivative expansion,
 the crucial technical insight was to notice that, just as in the scalar field theory model
 \cite{Bridle:2013sra}, the msWIs and RG flow equations can be combined into linear partial
-differential equations. It is the solution of the latter equations by the method of characteristics,
-that uncovers the background independent variables.
+differential equations.
+It is the solution of the latter equations that uncovers the background independent variables.
 And it is by comparing the description in these variables with the equivalent description
 in the original variables, that we see that fixed points in the original variables are
-in general forbidden by  background independence.
+in general forbidden by background independence.
 
 However in order to facilitate combining the RG flow equations and msWIs when the anomalous
 dimension $\eta\ne0$, the authors of ref. \cite{Dietz:2015owa} were led to a particular form
 of cutoff profile $R_k$, namely a power-law cutoff profile.
-We will show in this paper that in fact this cutoff profile plays a r\^ole that is much
+We will show in this chapter that in fact this cutoff profile plays a r\^ole that is much
 deeper than the convenience of this mathematical trick.
-Whilst at the exact level the msWIs are guaranteed to be compatible with the exact RG
-flow equation (for completeness and later purposes we provide a proof in sec. \ref{sec:exact}),
-this will typically not be the case once approximated.
-We will see that in the $O(\partial^2)$ derivative expansion approximation derived
-in ref. \cite{Dietz:2015owa},
-the msWI and flow equations are in fact compatible {if and only if} either the cutoff profile
-is power law, or we have the special case that $\eta=0$.
+To this end, we will introduce the notion of compatibility and investigate under which
+assumptions flow equation and msWIs are in fact compatible up to $\mathcal O(\partial^2)$
+in the derivative expansion.
+We will see that $\eta=0$ is sufficient to allow the derivative expansions of the exact RG and msWI equations
+to be compatible, and we will investigate the implications of background independence to the solutions
+of the combined system.
 
-If the msWIs are not compatible with the flow equations,
+But even if the msWIs are not compatible with the flow equations,
 it does not immediately follow that there are no simultaneous solution to the system of equations.
 However, as we argue in sec. \ref{sec:incompatibility} and verify by example in
-sec. \ref{sec:incompatible-no-solns} (see also sec. \ref{sec:truncations}),
+sec. \ref{sec:incompatible-no-solns},
+% (see also sec. \ref{sec:truncations}),
 if the msWIs are not compatible, the equations are overconstrained and it is for this reason that
 it is hopeless to expect any solutions.
 
-The example is furnished by choosing optimised cutoff profile and LPA, but keeping $\eta$ non-vanishing.
-In fact it is natural to expect $\eta$ to be non-vanishing at the LPA level for conformally truncated gravity,
-as explained in ref. \cite{Dietz:2016gzg}.
-Choosing a power-law form for $f$ the equations at first sight then look consistent and able
-to support fixed points. Although we already know that the msWI is in this case incompatible with the
-flow equation, it is still possible to combine the msWI and flow equation into a linear partial
-differential equation. Solving this, we confirm that for the combined system there are no solutions
-with $\eta\ne0$, supporting the arguments in sec. \ref{sec:incompatibility}.
-In sec. \ref{sec:truncations}, by considering the simplest polynomial truncation,
-we also verify very straightforwardly that there can be no fixed points.
+To investigate the combined system of the LPA flow and msWI equations,
+we will both use the trick of combining these equations into a linear partial differential equation,
+as well as studying polynomial truncations, since it seems likely that the latter is the only way we could
+investigate system using the exact non-perturbative flow equations.
+Viewed from this perspective, we will see that the problem is that if the RG fixed point equations
+and msWI equations are truly independent, then they will overconstrain the solutions if
+carried to sufficiently high order truncation.
 
-For power-law cutoff profile the equations are compatible, however we will see very
-clearly in sec. \ref{sec:forbids} why with $\eta\ne0$ and non-power-law parametrisation $f$,
-there can be no fixed points with respect to $k$.
-
-Actually, power law cutoff profiles have nice properties in  that they ensure that the derivative
-expansion approximation preserves the quantisation of the anomalous dimension in non-gravitational systems,
-\eg scalar field theory \cite{Morris:1994ie, Morris:1994jc, Morris:1998da}.%
-\footnote{Although as with the optimised cutoff \cite{Litim:2000ci, Litim:2001fd},
-they do not allow a derivative expansion to all orders \cite{Morris:2005ck, Morris:1999ba, Morris:2000hm}.}
-Nevertheless, given the unsettling nature of the conclusions in ref.
-\cite{Dietz:2015owa}, it is important to understand  to what extent the results depend on cutoff profile.
-
-Since $\eta=0$ is sufficient to allow the derivative expansions of the exact RG and msWI equations
-to be compatible, we can therefore investigate in this case the implications of background independence,
-whatever the cutoff profile. The conclusions are the same for any cutoff profile that is not power law,
-so for simplicity and to make the equations completely explicit,
-we take the popular and simple choice of optimised cutoff \cite{Litim:2000ci, Litim:2001fd}.
-Just as found for power law cutoff \cite{Dietz:2016gzg} in this case, background-independent variables exist,
-and $k$-fixed points exist; these coincide with the fixed points in background-independent variables.
-In terms of background-independent variables and at LPA level, the full line of fixed points
-is visible, confirming the findings for power-law cutoff \cite{Dietz:2016gzg}.
-
-Although we can show this by exact analysis of the LPA flow and msWI equations,
-using the trick of combining these equations into a linear partial differential equation,
-it is very instructive to analyse these equations without using this trick and also by considering
-only polynomial truncations, since it seems likely that this is the only way we could investigate this
-issue using the exact non-perturbative flow equations. Viewed from this perspective,
-we will see that the problem is that if the RG fixed point equations and msWI equations are truly independent,
-then they will overconstrain the solutions if carried to sufficiently high order truncation.
-Indeed, expanding in powers of the fluctuation field $\vp$ to the $m^{\rm th}$ level and
-background field $\chi$ to the $n^{\rm th}$ level, we get one fixed point equation for
-each $(m,n)$-point vertex \emph{and} one msWI equation per vertex.
-Even though each of these equations is open (depending on yet higher-point vertices) we will
-see that since there are two equations for every vertex, at sufficiently high order truncation there
-are more equations than vertices (indeed eventually double the number) and thus either the equations
-become highly redundant or the vertices are constrained to the point where there are no solutions.
-
-This analysis strongly suggests therefore that the full non-perturbative Ward identities would lead
+Our analysis suggests therefore that the full non-perturbative Ward identities would lead
 to important constraints on RG properties. Unfortunately it seems very challenging to investigate this,
 since we will see that the number of equations only exceeds the number of vertices for the first time
 at the six-point level.
@@ -623,9 +600,10 @@ In this section we give a quick resum\'e of the results we need and their contex
 from ref. \cite{Dietz:2015owa}.
 We arrive at conformally reduced gravity (in Euclidean signature) by writing:
 \begin{align}
-  \tilde g_{\mu\nu} = f(\tilde\phi) \hat g_{\mu\nu} = f(\chi +\tilde\varphi )\hat g_{\mu\nu}
+  \tilde g_{\mu\nu} = f(\tilde\phi) \, \hat g_{\mu\nu}
+                    = f(\chi +\tilde\varphi ) \, \hat g_{\mu\nu}
   \quad \text{and} \quad
-  \bar g_{\mu\nu} = f(\chi)\hat g_{\mu\nu} \,.
+  \bar g_{\mu\nu} = f(\chi) \, \hat g_{\mu\nu} \,.
   \label{conformal-reduction}
 \end{align}
 Here $\tilde g_{\mu\nu}$ is the metric that is integrated over in the partition function.
@@ -633,36 +611,26 @@ It is restricted to an overall conformal factor $f(\tilde\phi)$ times a fiducial
 in fact we set to flat: $\hat g_{\mu\nu}=\delta_{\mu\nu}$.
 
 Examples of parametrisations used previously in the literature include
-$f(\phi) = \exp(2\phi)$ \cite{Machado:2009ph} and $f(\phi)=\phi^2$ \cite{Manrique:2009uh,Bonanno:2012dg}.
+$f(\phi) = \mathrm{exp}(2\phi)$ \cite{Machado:2009ph} and
+$f(\phi) = \phi^2$ \cite{Manrique:2009uh, Bonanno:2012dg}.
 However we leave the choice of parametrisation $f$ unspecified.
 It is important to note however that $f$ cannot depend on $k$ since it is introduced at the bare level
-and has no relation to the infrared cutoff (moreover if $f$ depended on $k$,
-the flow equation \eqref{equ:flowGamma} would no longer hold).
+and has no relation to the infrared cutoff.
+% (moreover if $f$ depended on $k$, the flow equation \eqref{equ:flowGamma} would no longer hold).
 Later we will change to dimensionless variables using $k$ and in these variables it can be forced
 to depend on $k$ (see especially secs. \ref{sec:required-cutoff} and \ref{sec:forbids}).
 
 We split the total conformal factor field $\tilde\phi(x)$ into a background conformal factor
 field $\chi(x)$ and fluctuation conformal factor field $\tilde\vp(x)$.
-It is then the latter that is integrated over. Also as shown, we similarly parametrise the background
+It is then the latter that is integrated over in the path integral.
+This will yield the classical fluctuation field $\vp = \langle \tilde \vp \rangle$ and the total classical
+field $\phi = \langle \tilde \phi \rangle = \chi + \vp$, respectively.
+Also as shown, we similarly parametrise the background
 metric $\bar{g}_{\mu\nu}$ in terms of the background conformal factor field $\chi$.
-Introducing the classical fluctuation field $\vp = \langle \tilde \vp \rangle$ and total classical
-field $\phi = \langle \tilde \phi \rangle = \chi + \vp$, the effective action  satisfies the flow equation
-\begin{align}
-  \partial_t \Gamma_k[\vp,\chi] =
-  \frac{1}{2} \, \mathrm{Tr} \left[\frac{1}{\sqrt{\bar g}\sqrt{\bar g}}
-    \frac{\delta^2\Gamma_k}
-         {\delta \vp \delta \vp}+ R_k[\chi]\right]^{-1} \partial_t R_k[\chi]\,.
-  \label{equ:flowGamma}
-\end{align}
-Here we have introduced the RG time
-\begin{align}
-  t = \ln(k/\mu) \,,
-  \label{time}
-\end{align}
-with $\mu$ being a fixed reference scale, which can be thought of as being the usual arbitrary
-finite physical mass-scale.
-$R_k$ is the cutoff operator responsible for suppressing momentum modes below the
-infrared cutoff scale $k$, \cf \cite{Wetterich:1992yh, Morris:1993qb}.
+
+Precisely as in the last chapter, we will introduce a cutoff operator $R_k$
+which is responsible for suppressing momentum modes below the infrared cutoff scale $k$,
+in order to derive the non-perturbative flow equation.
 The crucial observation is that in the context of the background field method in quantum gravity the
 cutoff operator itself depends on the background field $\chi$.
 The reason for this is that the cutoff operator is a function of the covariant Laplacian of the
@@ -687,7 +655,8 @@ The effective action thus takes its most general form at this level of truncatio
   \right] .
   \label{trunc}
 \end{align}
-The msWI encodes the extent to which the effective action violates split symmetry:
+The modified split Ward identity encodes the extent to which the effective action violates
+\textit{split symmetry}:
 \begin{align}
   \tilde \vp(x) \mapsto \tilde \vp(x) + \eps(x) \,, \quad \chi(x) \mapsto \chi(x) -\eps(x)\,.
   \label{equ:split-symmetry}
@@ -716,14 +685,19 @@ The presence of the cutoff operator however causes the right hand side to be non
 It is only in the limit $k\rightarrow0$ (holding physical, \ie unscaled,
 momenta and fields fixed) that the cutoff operator drops out and background independence can be
 restored exactly. We note therefore that imposing the msWI in addition to the flow equation
-\eqref{equ:flowGamma} automatically ensures exact background independence in the limit $k\rightarrow0$.
-The observation we further explore in this paper is that restricting flows to
-satisfy \eqref{equ:sWiGamma} then has consequences for the RG properties,
-in particular fixed point behaviour, that follows from \eqref{equ:flowGamma}.
+automatically ensures exact background independence in the limit $k\rightarrow0$.
+The observation we further explore in this chapter is that restricting flows to
+satisfy the msWI then has consequences for the RG properties,
+in particular fixed point behaviour.
 
-Computing the flow equation and msWI in the derivative expansion \eqref{trunc} results in flow equations
-and modified split Ward identities\footnote{Although we always mean these modified identities,
-we will sometimes refer to them  simply as Ward identities.}, for the potential $V$:
+Computing the flow equation and msWI in the derivative expansion \eqref{trunc}, as done
+in ref. \cite{Dietz:2015owa}, results in flow equations
+and modified split Ward identities%
+\footnote{
+  Although we always mean these modified identities,
+  we will sometimes refer to them  simply as Ward identities.
+}%
+, for the potential $V$:
 \begin{align}
   \label{flowV}
   \partial_t V(\varphi,\chi)
@@ -735,7 +709,7 @@ we will sometimes refer to them  simply as Ward identities.}, for the potential 
     \partial_\chi R_p + \frac{d}{2}\partial_\chi \text{ln} f  R_p
   \right] ,
 \end{align}
-and for $K$:
+and for the kinetic function $K$:
 \begin{align}
   \label{flowK}
   f^{-1} \, \partial_t K(\varphi,\chi)
@@ -753,7 +727,7 @@ and for $K$:
 The $p$ subscripts denote the momentum dependence of $Q_p, P_p$ and the cutoff $R_p$ and as
 usual RG time derivatives are denoted also by a dot on top. $Q_p$ is defined as
 \begin{align}
-	Q_p = \left( \partial^2_\varphi V - p^2\frac{K}{f} + R_p \right)^{-1}.
+	Q_p = \left( \partial^2_\varphi V - p^2\frac{K}{f} + R_p \right)^{-1} ,
 	\label{Q}
 \end{align}
 and $P_p$ is given by
@@ -796,9 +770,11 @@ Computing $\dot{\mathcal{W}}$ by using the flow equation,
 we say that the msWI is compatible if $\dot{\mathcal{W}}=0$ then follows at scale $k$ without further
 constraints.
 
-In the first part of this section we rederive the flow equation and msWI for conformally reduced gravity
-but organised in a different way from ref. \cite{Dietz:2015owa} so as to make the next derivation more
-transparent. We then prove that they are compatible with one another.
+In the first part of this section we briefly outline the necessary steps to derive the flow equation
+and msWI for conformally reduced gravity.
+This derivation will be organised in a slightly different way from ref. \cite{Dietz:2015owa}
+and the last chapter so as to make the steps that will follow more transparent.
+We then prove that they are compatible with one another.
 So far, this is naturally to be expected since both are derived from the same partition function.
 For completeness we include it here in order to fully understand the issues once we consider derivative
 expansions. (For a proof of the exact case in a more general context see ref. \cite{Safari:2015dva}.)
@@ -832,7 +808,9 @@ msWI as matrix expressions. Thus we begin by rewriting the source term using mat
   \equiv \tilde\varphi_xT_{xy}J_y
   \equiv \tilde\varphi\cdot T\cdot J \,,
 \end{align}
-where $T_{xy}\equiv T(x,y)\equiv\sqrt{\bar g(x)}\delta(x-y)$ and the dot notation represents integration over position space.  Similarly, we write the cutoff action as
+where $T_{xy}\equiv T(x,y)\equiv\sqrt{\bar g(x)} \, \delta(x-y)$. We will use a generalised
+Einstein summation convention where repeated indices or equivalently the dot notation represent
+integration over position space. Similarly, we write the cutoff action as
 \begin{align}
   S_k[\tilde\varphi, \bar g] = \frac{1}{2} \int \mathrm d^d x \, \sqrt{\bar g(x)} \;
   \tilde\varphi(x) \, R_k[\bar g] \, \tilde\varphi(x)
@@ -847,56 +825,27 @@ where
 \end{align}
 and where the cutoff operator and its kernel are related according to
 \begin{align}
-	R_k(x,y) = R_{k,x}\frac{\delta(x-y)}{\sqrt{\bar g(y)}} \,.
+  R_k(x,y) = R_{k}[\bar g(x)] \, \frac{\delta(x-y)}{\sqrt{\bar g(y)}} \,.
 \end{align}
 We refrain from putting a $k$ subscript on $r_{xy}$ to avoid clutter with indices,
 but note that it still has $k$-dependence. Also note that now the factors of $\sqrt{\bar g}$ are no
 longer part of the integration; this is to enable all $\chi$-dependent quantities to be easily accounted
 for when acting with $\delta/\delta\chi$ later on.
-With these definitions in place, the RG time derivative of \eqref{Z} gives
+With these definitions in place, we may as before take the Legendre transform $\tilde\Gamma_{k}$ of $W_k$
+and from this define the effective average action
+$ \Gamma_k[\varphi,\bar g]=\tilde\Gamma_k[\varphi,\bar g]-S_k[\varphi,\bar g]$.
+Using similar steps as in the last chapter, we quickly arrive at the flow equation
+for the latter, which now reads
 \begin{align}
-	\dot W_k = -\frac{1}{2} \, \dot r_{xy} \left<\tilde\varphi_x \tilde\varphi_y \right>.
-	\label{W_flow}
-\end{align}
-In the usual way, we take the Legendre transform of $W_k$:
-\begin{align}
-	\tilde\Gamma_{k} = J\cdot T \cdot \varphi - W_k
-  \quad \text{with} \quad
-  T\cdot\varphi=\frac{\delta W_k}{\delta J}
-	\label{LTR}
-\end{align}
-and from this we define the effective average action
-\begin{align}
- 	\Gamma_k[\varphi,\bar g]=\tilde\Gamma_k[\varphi,\bar g]-S_k[\varphi,\bar g] \,.
-	\label{EAA}
-\end{align}
-From \eqref{LTR}, it also follows that
-\begin{align}
-  \langle\tilde\varphi_x \tilde\varphi_y \rangle =
-  \left[
-    \frac{\delta^{2}\tilde\Gamma_k}{\delta\varphi_x \delta\varphi_y}
-  \right]^{-1}
-  +\,\varphi_x \varphi_y \,.
-  \label{2pt}
-\end{align}
-Finally substituting \eqref{LTR} and \eqref{2pt} into \eqref{W_flow}, together with \eqref{EAA},
-we obtain the flow equation for the effective average action
-\begin{equation}
-  \dot \Gamma_k = \frac{1}{2} \, \mathrm{Tr}
-  \left[
-    \left(
-      \frac{\delta^{2}\Gamma_k}{\delta\varphi \delta\varphi} +r
-    \right)^{\!-1}\dot r
-  \right]
-	\equiv \frac{1}{2} \, \mathrm{Tr}\,\Delta\, \dot r \,,
-	\label{flow1}
-\end{equation}
-where
-\begin{align}
+  \dot \Gamma_k =
+  \frac{1}{2} \, \mathrm{Tr} \big[ \Delta \, \dot r \big] \,,
+  \quad \text{where} \quad
   \Delta_{xy}\equiv\left[\frac{\delta^{2}\Gamma_k}{\delta\varphi_x \delta\varphi_y}+r_{xy}\right]^{-1} .
-  \label{new-inverse}
+  \label{flow1}
 \end{align}
-The msWI is derived by applying the  split symmetry transformations \eqref{equ:split-symmetry},
+
+The msWI on the other hand is derived by applying the
+split symmetry transformations \eqref{equ:split-symmetry},
 with infinitesimal $\varepsilon(x)$, to the functional integral \eqref{Z}.
 The bare action is invariant under this shift, however the source term and cutoff action are not.
 It is the breaking of this symmetry that indicates background independence has been lost.
@@ -908,33 +857,35 @@ Applying these shifts to \eqref{Z} we obtain
 	+\frac{1}{2}\tilde\varphi\cdot\left(\frac{\delta r}{\delta\chi}\cdot\varepsilon\right)\cdot\tilde\varphi\right>.
 	\label{Wshift}
 \end{align}
-Under these same shifts, the Legendre transformation \eqref{LTR} gives
+Under these same shifts, the Legendre transformation of $W_k$ gives
 \begin{align}
 	\frac{\delta W_k}{\delta\chi}\cdot\varepsilon
 	= J\cdot\left(\frac{\delta T}{\delta\chi}\cdot\varepsilon\right)\cdot\varphi
 	- \frac{\delta\tilde\Gamma_k}{\delta\chi}\cdot\varepsilon \,.
 \end{align}
-Substituting the above relation into \eqref{Wshift} together with \eqref{EAA}, we obtain the msWI:
-\begin{equation}
-	\label{msWIuntrunc}
+Substituting this relation into \eqref{Wshift} together with
+$\Gamma_k=\tilde\Gamma_k-S_k$,
+we obtain the msWI
+\begin{align}
 	\frac{\delta \Gamma_k}{\delta\chi_\omega}-\frac{\delta \Gamma_k}{\delta\varphi_\omega}=
 	\frac{1}{2} \, \Delta_{xy}\,\frac{\delta r_{yx}}{\delta\chi_\omega} \,,
-\end{equation}
+	\label{msWIuntrunc}
+\end{align}
 where we have used the fact that the identity must hold for arbitrary $\varepsilon(\omega)$.
-Note that in deriving \eqref{msWIuntrunc} the contribution of the source term to the separate background
+Note that in deriving the msWI the contribution of the source term to the separate background
 field dependence of $\Gamma_k[\varphi,\chi]$ drops out.
 
-The equations just derived, \eqref{flow1} and \eqref{msWIuntrunc},
-appear at first sight to be in conflict with \eqref{equ:flowGamma} and \eqref{equ:sWiGamma} respectively.
-In particular  factors of $\sqrt{\bar g}$ are apparently missing. This is because the $\sqrt{\bar g}$ factors
-are absorbed in a different definition of the inverse kernel.
-Indeed the inverse kernel \eqref{new-inverse} now satisfies
+The msWI and flow equation just derived
+appear at first sight to be in conflict with results from the last chapter.
+In particular factors of $\sqrt{\bar g}$ seem to be missing.
+This is because these factors are absorbed in a different definition of the inverse kernel.
+Indeed the inverse kernel in \eqref{flow1} now satisfies
 \begin{align}
   \left[
     \frac{\delta^{2}\Gamma_k}{\delta\varphi_x \delta\varphi_y}+r_{xy}
   \right] \Delta_{yz} =\delta_{xz}
 \end{align}
-without a $\sqrt{\bar g}(y)$  included in the integration over $y$.
+without a $\sqrt{\bar g}(y)$ included in the integration over $y$.
 
 Now that we have derived the flow equation and msWI written in a convenient notation,
 we are ready to prove that they are compatible. We begin by defining
@@ -975,16 +926,16 @@ The first term in the last equality is in the form we want: a differential opera
 $\mathcal{W_\omega}$. We now expand out the second term with the aim of also putting it into the desired form.
 For the sake of neatness let us define
 \begin{align}
-		\Gamma_{x_1...x_n}\equiv \frac{\delta^n\Gamma_k}{\delta\varphi_{x_1}...\delta\varphi_{x_n}} \,.
+  \Gamma_{x_1...x_n}^{(n)} \equiv \frac{\delta^n\Gamma_k}{\delta\varphi_{x_1}...\delta\varphi_{x_n}} \,.
 \end{align}
 Expanding out the second term then gives
 \begin{align}
 \label{step1}
 	\left(\frac{\delta^2}{\delta\varphi_z\delta\varphi_{z'}}\Delta_{uu'}\right)
 	&\dot r_{u'u} \, \Delta_{z'y} \, \frac{\delta r_{yx}}{\delta\chi_\omega} \, \Delta_{xz}
-  = \Delta_{xz} \, \bigg(\Delta_{uv}\Gamma_{zvs}\Delta_{sv'}\Gamma_{z'v's'}\Delta_{s'u'} \nonumber\\
-  &+\Delta_{uv'}\Gamma_{v's'z'}\Delta_{s'v}\Gamma_{zvs}\Delta_{su'}
-	-\Delta_{uv'}\Gamma_{v's'zz'}\Delta_{s'u'}\bigg) \,
+  = \Delta_{xz} \, \bigg(\Delta_{uv}\Gamma^{(3)}_{zvs}\Delta_{sv'}\Gamma^{(3)}_{z'v's'}\Delta_{s'u'} \nonumber\\
+    &+\Delta_{uv'}\Gamma^{(3)}_{v's'z'}\Delta_{s'v}\Gamma^{(3)}_{zvs}\Delta_{su'}
+  -\Delta_{uv'}\Gamma^{(4)}_{v's'zz'}\Delta_{s'u'}\bigg) \,
 	\dot r_{u'u} \, \Delta_{z'y} \, \frac{\delta r_{yx}}{\delta\chi_\omega} \,.
 \end{align}
 Upon exchanging factors of $\Delta$ and relabelling indices, we find
@@ -999,7 +950,8 @@ which now has the structure we require.
 Thus we have shown that the RG time derivative of the msWI can be written as
 \begin{align}
 	\mathcal{\dot W}_{\omega}=-\frac{1}{2} \, \mathrm{Tr}
-	\left[\Delta \dot r\Delta\frac{\delta^2}{\delta\varphi\delta\varphi}\right]\mathcal{W}_{\omega} \,,
+	\left[\Delta \, \dot r \, \Delta \, \frac{\delta^2}{\delta\varphi\delta\varphi}\right]
+  \mathcal{W}_{\omega} \,,
 \end{align}
 \emph{i.e.} that it is proportional to the msWI itself.
 If $\Gamma_{k}$ satisfies $\mathcal{W_\omega}$ at some initial scale $k_0$,
@@ -1024,7 +976,7 @@ it then follows that $\mathcal{W_\omega}$ and thus $\mathcal{\dot W_\omega}$ wil
   }
   \label{fig:two-loop}
 \end{figure}
-Recalling from \eqref{new-inverse} that $\Delta$ is an infrared regulated full propagator,
+Recalling that $\Delta$ is an infrared regulated full propagator,
 we see from \eqref{step1} that the identity \eqref{step2} can be understood diagrammatically
 in terms of two-loop diagrams as sketched in fig. \ref{fig:two-loop}.
 The symmetry of these diagrams means that nothing changes if we
@@ -1577,7 +1529,7 @@ is maybe not so easy to see this way.)
 
 \subsection{Counting argument}\label{sec:counting}
 
-We already argued in the Introduction, that generically the coefficients become overconstained if we
+We already argued in the introduction, that generically the coefficients become overconstained if we
 consider a sufficiently high truncation. We now proceed to make a careful count and estimate the
 level at which this happens.
 
@@ -1611,36 +1563,15 @@ Up to some fixed order $r$ there will be thus coefficients $a_{ij}$ where $i$ an
 $0$ to $r+1$ and $i+j \leqslant r+1$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centering
-\begin{tikzpicture}[>=stealth]
-\draw (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle;
-\draw (1,0) -- (2,0) -- (2,-1) -- (1,-1) -- cycle;
-\draw (2,0) -- (3,0) -- (3,-1) -- (2,-1) -- cycle;
-\draw (3,0) -- (4,0) -- (4,-1) -- (3,-1) -- cycle;
-
-\draw (0,-1) -- (1,-1) -- (1,-2) -- (0,-2) -- cycle;
-\draw (1,-1) -- (2,-1) -- (2,-2) -- (1,-2) -- cycle;
-\draw (2,-1) -- (3,-1) -- (3,-2) -- (2,-2) -- cycle;
-
-\draw (0,-2) -- (1,-2) -- (1,-3) -- (0,-3) -- cycle;
-\draw (1,-2) -- (2,-2) -- (2,-3) -- (1,-3) -- cycle;
-
-\draw (0,-3) -- (1,-3) -- (1,-4) -- (0,-4) -- cycle;
-
-\draw (0.5,0.5) node {0}  (1.5,0.5) node {1}  (2.5,0.5) node {$\cdots$} (3.5,0.5) node {$r+1$};
-\draw (-0.5,-0.5) node {0}  (-0.5,-1.5) node {1}  (-0.5,-2.5) node {$\vdots$} (-0.5,-3.5) node {$r+1$};
-
-\draw (0.5,-0.5) node {$a_{00}$}  (1.5,-0.5) node {$a_{01}$}
-(2.5,-0.5) node {$\cdots$}  (3.5,-0.5) node {$a_{0,r+1}$};
-\draw (0.5,-1.5) node {$a_{10}$}  (1.5,-1.5) node {$\ddots$};
-\draw (0.5,-2.5) node {$\vdots$};
-\draw (0.5,-3.5) node {$a_{r+1,0}$};
-
-\draw (-0.25,0.5) node {$j$} (-0.5,0.25) node {$i$};
-\draw (-0.15,0.15) -- (-0.55,0.55);
-\end{tikzpicture}
-\caption{Coefficients of the potential appearing on the left sides of the equations.}
-\label{diag_lhs}
+  \begin{center}
+    \input{diagrams/coeff-lhs.tex}
+    \input{diagrams/coeff-rhs.tex}
+  \end{center}
+  \caption{
+    Coefficients of the potential appearing on the left sides of the equations (left diagram)
+    and in the expansion of the propagator (right diagram).
+  }
+  \label{fig:diag_lhs_rhs}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
@@ -1650,7 +1581,7 @@ $0$ to $r+1$ and $i+j \leqslant r+1$
   a_{1,r},\, \dots ,\, a_{2,r-1},\, \dots,\, a_{r+1,0}
   \bigg\rbrace \,,
 \end{align}
-(cf. figure \ref{diag_lhs}). This adds up to the following number of coefficients
+(cf. figure \ref{fig:diag_lhs_rhs}). This adds up to the following number of coefficients
 \begin{align}
   n_{\text{lhs}}(r) = \sum_{i=1}^{r+2} \, i = \frac{1}{2} \, r^2 + \frac{5}{2} \, r + 3 \,.
 \end{align}
@@ -1677,87 +1608,33 @@ then include terms
 Up to any fixed order $r$, $i$ and $j$ can take values between $0$ and $r$ such that $i+j = r$,
 and in total we will have the following coefficients on the right hand sides
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centering
-\begin{tikzpicture}[>=stealth]
-\draw (0,0) -- (1,0) -- (1,-1) -- (0,-1) -- cycle;
-\draw (1,0) -- (2,0) -- (2,-1) -- (1,-1) -- cycle;
-\draw (2,0) -- (3,0) -- (3,-1) -- (2,-1) -- cycle;
-\draw (3,0) -- (4,0) -- (4,-1) -- (3,-1) -- cycle;
-
-\draw (0,-1) -- (1,-1) -- (1,-2) -- (0,-2) -- cycle;
-\draw (1,-1) -- (2,-1) -- (2,-2) -- (1,-2) -- cycle;
-\draw (2,-1) -- (3,-1) -- (3,-2) -- (2,-2) -- cycle;
-
-\draw (0,-2) -- (1,-2) -- (1,-3) -- (0,-3) -- cycle;
-\draw (1,-2) -- (2,-2) -- (2,-3) -- (1,-3) -- cycle;
-
-\draw (0,-3) -- (1,-3) -- (1,-4) -- (0,-4) -- cycle;
-
-\draw (0.5,0.5) node {0}  (1.5,0.5) node {1}  (2.5,0.5) node {$\cdots$} (3.5,0.5) node {$r$};
-\draw (-0.5,-0.5) node {2}  (-0.5,-1.5) node {3}  (-0.5,-2.5) node {$\vdots$} (-0.5,-3.5) node {$r+2$};
-
-\draw (0.5,-0.5) node {$a_{20}$}  (1.5,-0.5) node {$a_{21}$}
-(2.5,-0.5) node {$\cdots$}  (3.5,-0.5) node {$a_{2,r}$};
-\draw (0.5,-1.5) node {$a_{30}$}  (1.5,-1.5) node {$\ddots$};
-\draw (0.5,-2.5) node {$\vdots$};
-\draw (0.5,-3.5) node {$a_{r+2,0}$};
-
-\draw (-0.25,0.5) node {$j$} (-0.5,0.25) node {$i$};
-\draw (-0.15,0.15) -- (-0.55,0.55);
-\end{tikzpicture}
-\caption{Coefficients of the potential appearing in the expansion of the propagator.}
-\label{diag_rhs}
-\end{figure}
+% \begin{figure}
+%   \begin{center}
+%     \input{diagrams/coeff-rhs.tex}
+%   \end{center}
+%   \caption{
+%     Coefficients of the potential appearing in the expansion of the propagator.
+%   }
+%   \label{diag_rhs}
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
   \bigg\lbrace
   a_{20},\, \dots ,\, a_{2,r},\, a_{30},\, \dots ,\, a_{3,r-1},\, \dots ,\, a_{4,r-2},\, \dots,\, a_{r+2,0}
   \bigg\rbrace \,,
 \end{align}
-(cf. figure \ref{diag_rhs}).
+(cf. figure \ref{fig:diag_lhs_rhs}).
 Most of these coefficients have however already been accounted for on the left hand sides
 c.f. (\ref{coeff_lhs}). The only ones not counted yet are
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centering
-\begin{tikzpicture}[>=stealth]
-\foreach \i in {0,...,6} {
-\draw[pattern=north east lines] (0+\i,0) rectangle (1+\i,-1); }
-
-\foreach \i in {0,...,5} {
-\draw[pattern=north east lines] (0+\i,-1) rectangle (1+\i,-2); }
-
-\foreach \i in {0,...,4} {
-\draw[pattern=crosshatch] (0+\i,-2) rectangle (1+\i,-3); }
-\draw[pattern=north west lines] (5,-2) rectangle (6,-3);
-
-\foreach \i in {0,...,3} {
-\draw[pattern=crosshatch] (0+\i,-3) rectangle (1+\i,-4); }
-\draw[pattern=north west lines] (4,-3) rectangle (5,-4);
-
-\foreach \i in {0,...,2} {
-\draw[pattern=crosshatch] (0+\i,-4) rectangle (1+\i,-5); }
-\draw[pattern=north west lines] (3,-4) rectangle (4,-5);
-
-\foreach \i in {0,...,1} {
-\draw[pattern=crosshatch] (0+\i,-5) rectangle (1+\i,-6); }
-\draw[pattern=north west lines] (2,-5) rectangle (3,-6);
-
-\draw[pattern=crosshatch] (0,-6) rectangle (1,-7);
-\draw[pattern=north west lines] (1,-6) rectangle (2,-7);
-\draw[pattern=north west lines] (0,-7) rectangle (1,-8);
-
-\draw (0.5,0.5) node {0}  (1.5,0.5) node {1}  (2.5,0.5) node {2} (3.5,0.5) node {$\cdots$}
-(4.5,0.5) node {$r-1$}  (5.5,0.5) node {$r$}  (6.5,0.5) node {$r+1$};
-\draw (-0.5,-0.5) node {0}  (-0.5,-1.5) node {1}  (-0.5,-2.5) node {2} (-0.5,-3.5) node {$\vdots$}
-(-0.5,-4.5) node {$r-1$}  (-0.5,-5.5) node {$r$}  (-0.5,-6.5) node {$r+1$}  (-0.5,-7.5) node {$r+2$};
-
-\draw (-0.25,0.5) node {$j$} (-0.5,0.25) node {$i$};
-\draw (-0.15,0.15) -- (-0.55,0.55);
-\end{tikzpicture}
-\caption{All the coefficients of the potential appearing on both sides of the equations.}
-\label{diag_combined}
+  \begin{center}
+    \input{diagrams/coeff-all.tex}
+  \end{center}
+  \caption{
+    All the coefficients of the potential appearing on both sides of the equations.
+  }
+  \label{fig:diag-all}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
@@ -1765,7 +1642,7 @@ c.f. (\ref{coeff_lhs}). The only ones not counted yet are
   a_{2,r},\, a_{3,r-1},\, a_{4,r-2},\, \dots,\, a_{r+2,0}
   \bigg\rbrace \,,
 \end{align}
-(cf. figure \ref{diag_combined}) which precisely add up to a further $r+1$ coefficients.
+(cf. figure \ref{fig:diag-all}) which precisely add up to a further $r+1$ coefficients.
 We also must include another two coefficients, namely $\eta$ and $d_f$.
 Finally, since $\gamma$ is in general some function of $\chi$ it is easy to see that
 \begin{align}
@@ -1795,6 +1672,8 @@ then from this level onwards some equations become redundant
 In the limit $r\to\infty$ fully half of the equations must become redundant if ($k$-)fixed points are
 to be consistent with background independence.
 
+~
+
 For the convenience of the reader we summarise our findings of this chapter,
 together with those of ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
 \footnote{
@@ -1803,7 +1682,7 @@ together with those of ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
   in these cases the cutoff term is independent of $k$.
 }
 
-\begin{table}
+\begin{table}[t]
   \begin{center}
     \begin{tabular}{ r@{\hskip 10mm}  l  r  l@{\hskip 10mm}  c  c  c  c  c  c  c }
       \toprule
@@ -1824,12 +1703,12 @@ together with those of ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
   \end{center}
   \caption[RG properties of the derivative expansion for conformally truncated gravity]
   {
-    RG properties of the derivative expansion for conformally truncated gravity,
-    when the msWI is also satisfied.
-    The results depend on whether the conformal factor develops an anomalous dimension $\eta$,
-    on the choice of cutoff profile $r$, and on how the metric is parametrised via $f$.
-    Depending also on its dimension $d_f$, $f$ can contain a massive parameter,
-    and thus run with $k$ when written in dimensionless terms, as listed in the table.
+    RG properties of the derivative expansion for conformally truncated gravity
+    with the msWI satisfied.
+    % The results depend on whether the conformal factor develops an anomalous dimension $\eta$,
+    % on the choice of cutoff profile $r$, and on how the metric is parametrised via $f$.
+    % Depending also on its dimension $d_f$, $f$ can contain a massive parameter,
+    % and thus run with $k$ when written in dimensionless terms, as listed in the table.
     $\widehat{\rm FP}$ indicates that a background-independent description exists,
     while (\xcancel{FP}) FP  indicates that $k$-fixed points are (not) allowed;
     the (in)equality shows how these relate to the $\hk$-fixed points.
@@ -2248,6 +2127,26 @@ A clear spike can be seen in the centre of each figure.
 }
 \label{WFN1N2}
 \end{figure}
+
+% \begin{figure}
+%   \begin{tikzpicture}
+%     \begin{axis}
+%       \addplot3 [surf] table {data/spikeplot1.dat};
+%     \end{axis}
+%   \end{tikzpicture}
+%   % \begin{tikzpicture}
+%   %   \begin{axis}
+%   %     \addplot3 [surf] gnuplot [raw gnuplot] {
+%   %         set dgrid3d 30,30 spline;
+%   %       splot 'data/spikeplot1.dat';
+%   %   };
+%   % \addplot3 [only marks] table {data/spikeplot1.dat};
+% % \end{axis}
+%   %   \end{tikzpicture}
+%   \caption{
+%     Does this work?
+%   }
+% \end{figure}
 
 For $N=2$ the solution can be approximated near the origin by
 \begin{align}
@@ -2712,29 +2611,36 @@ its only dependence on $N_S$ arises through the anomalous dimension $\eta_{\rm T
 
 %
 \subsection{Projection rules}
-%
-We use the transverse traceless mode $h_{\mu \nu}^{TT}$
-(satisfying $h^{TT\; \mu}_{\;\;\;\;\mu}=0$, $\bar{D}^{\mu}h_{\mu \nu}^{TT}=0$)
+
+We use the transverse traceless mode $\hTTmunu$
+% (satisfying $h^{TT\; \mu}_{\;\;\;\;\mu}=0$, $\bar{D}^{\mu}h_{\mu \nu}^{TT}=0$)
 to define the matter-gravity coupling $g_3$.
 As the running of $g_3$ can unambigously be extracted on a flat background,
 we will focus on the choice $\bar{g}_{\mu \nu} = \delta_{\mu \nu}$ in the following.
 
 To extract the running of $g_3$, we employ a projection rule as follows:
-\be
-\partial_t \sqrt{g_3} = \frac{8}{3} \frac{1}{\sqrt{32 \pi}}\left(p_{1\mu}p_{2\nu} \frac{\delta}{\delta h_{\mu \nu}^{TT}(p_3)} \frac{\delta}{\delta\phi(p_1)} \frac{\delta}{\delta\phi(p_2)} \partial_t \Gamma_k \right)\Big|_{(p^2)^2},\label{projectiong3}
-\ee
+\begin{align}
+  \partial_t \sqrt{g_3} = \frac{8}{3} \, \frac{1}{\sqrt{32 \pi}} \,
+  \left(
+    p_{1\mu} \, p_{2\nu}  \,
+    \frac{\delta}{\delta \hTTmunu(p_3)} \, \frac{\delta}{\delta\phi(p_1)} \, \frac{\delta}{\delta\phi(p_2)} \,
+    \partial_t \Gamma_k
+  \right) \bigg|_{(p^2)^2} \,,
+  \label{projectiong3}
+\end{align}
 where we use the symmetric configuration for the three momenta,
 such that an angle of $2\pi/3$ lies between them, and their absolute value is $|p_1| = |p_2|=|p_3| =p$.
-Note that the functional derivative with respect to the TT mode generates the projector
-%
-\be
-\label{projector}
-\mathcal{P}^{\rm TT}_{\mu\nu\kappa\lambda}=
-\frac{1}{2}\left(T_{\mu
-\kappa}T_{\nu \lambda}
-+ T_{\mu\lambda}T_{\nu \kappa} \right)
-- \frac{1}{d-1}T_{\mu\nu}T_{\kappa\lambda},
-\ee
+Note that the functional derivative with respect to the $\TT$ mode generates the projector
+\begin{align}
+  \mathcal{P}^{\rm TT}_{\mu\nu\kappa\lambda} = \frac{1}{2} \,
+  \left(
+    T_{\mu
+    \kappa}T_{\nu \lambda}
+    + T_{\mu\lambda}T_{\nu \kappa}
+  \right)
+  - \frac{1}{d-1} \, T_{\mu\nu}T_{\kappa\lambda},
+  \label{projector}
+\end{align}
 where $T_{\mu \nu}=\delta_{\mu\nu}-p_{\mu}p_{\nu}/p^2$.
 As we are using the transverse traceless component of the graviton for the projection,
 there is no mixing with nonminimal couplings that arise from the diffeomorphism-invariant
@@ -2748,40 +2654,43 @@ Any given vertex contains a large number of different tensor structures,
 and these are not necessarily all featuring the same running coupling.
 In particular, transverse traceless structures and scalar structures could be expected to exhibit
 prominent differences in their running. As a first step into this direction,
-we distinguish the wave-function renormalization for the TT mode and the $\sigma$ mode,
-$Z_{\rm TT}$ and $Z_{\sigma}$. On the other hand, we do not distinguish the couplings in the same fashion.
+we distinguish the wave-function renormalization for the $\TT$ mode and the $\sigma$ mode,
+$Z_{\TT}$ and $Z_{\sigma}$. On the other hand, we do not distinguish the couplings in the same fashion.
 
 To extract the flow of the wave-function renormalizations, we define projection rules as follows:
-\bea
-\partial_t Z_S
-&=& \left( \frac{\partial}{\partial p^2}\frac{\delta}{\delta \phi(-p)}\frac{\delta}{\delta \phi(p)} \partial_t \Gamma_k\right) ,\\
-\partial_t Z_{\rm TT}
-&=& \left( \frac{\partial}{\partial p^2} \frac{\mathcal P^{\rm TT}_{\mu \nu\kappa\lambda}(p)}{5} \frac{\delta^2}{\delta h^{TT}_{\mu \nu}(p) \delta h^{TT}_{\kappa \lambda}(-p)} \partial_t \Gamma_k\right),\\
-\partial_t Z_{\sigma}
-&=&-\frac{8}{3} \left( \frac{\partial}{\partial p^2}\frac{\delta}{\delta \sigma(-p)}\frac{\delta}{\delta \sigma(p)} \partial_t \Gamma_k\right),
-\eea
+\begin{align}
+  \partial_t Z_S &=
+  \frac{\partial}{\partial p^2} \, \frac{\delta}{\delta \phi(-p)} \, \frac{\delta}{\delta \phi(p)} \partial_t \Gamma_k \,, \\
+  \partial_t Z_{\TT} &=
+  \frac{\partial}{\partial p^2}  \, \frac{\mathcal P^{\TT}_{\mu \nu\kappa\lambda}(p)}{5}  \, \frac{\delta^2}{\delta \hTTmunu (p) \, \delta h^{\TT}_{\kappa \lambda}(-p)} \partial_t \Gamma_k \,, \\
+  \partial_t Z_{\sigma} &= -\frac{8}{3} \,
+  \frac{\partial}{\partial p^2} \, \frac{\delta}{\delta \sigma(-p)} \, \frac{\delta}{\delta \sigma(p)} \partial_t \Gamma_k \,,
+\end{align}
 where the right-hand sides are evaluated at $p=0$,
-and at vanishing external fields $h_{\mu \nu}^{TT}$, $\sigma$ and $\phi$.
+and at vanishing external fields $\hTTmunu$, $\sigma$ and $\phi$.
 
 
 \section{Results for beta functions and anomalous dimensions}
 
 For our explicit results, we will employ a regulator shape function of the form
-$R_{\Psi k}\left(p^2\right) = Z_{\Psi k} (p^2-k^2) \theta(k^2-p^2)$,
+\begin{align}
+  \nonumber
+  R_{\Psi k} \left( p^2\right) = Z_{\Psi k} \, (p^2-k^2) \, \theta(k^2-p^2) \,,
+\end{align}
 with the appropriate wave-function renormalization for all modes,  \cite{Litim:2001up}.
 
 
-\subsection{The anomalous dimension of the graviton modes}
+\subsection{The anomalous dimensions}
 
-\begin{figure}
+\begin{figure}[p]
   \begin{center}
     \input{diagrams/eta-diagrams.tex}
   \end{center}
   \caption{
-    Diagrams which contribute to the flow of the anomalous dimensions
-    $\eta_{\rm TT}$ and $\eta_S$.
+    Diagrams which contribute to the running of the anomalous dimensions
+    $\eta_{\rm TT}$ (first two rows) and $\eta_S$ (third~row).
     Diagrams similar to the once in the first two row, but with external $\sigma$ legs,
-    contribute to the anomalous dimension $\eta_{\sigma}$.
+    contribute to the running of the anomalous dimension $\eta_{\sigma}$.
   }
   \label{fig:eta-diagrams-ch4}
 \end{figure}
@@ -2790,47 +2699,91 @@ Each diagram displayed here is the sum of $n$ different terms, where each summan
 is the same diagram, except that it carries an additional regulator,
 inserted in exactly one of the $n$ propagators.
 
-The purely metric diagrams contributing to $\eta_{\rm TT}$,
-cf.~Fig.~\ref{fig:eta-diagrams-ch4} yield the following results.
-\bea
-\eta_{\rm TT} \big|_{\rm TT-tadpole} &=& \frac{145}{648 \pi}\, G_4\, (6-\eta_{\rm TT} ),\\
-\eta_{\rm TT}  \big|_{\sigma- \rm tadpole} &=&  \frac{29}{324 \pi}\, G_4\, (-6+\eta_{\sigma}),\\
-\eta_{\rm TT}  \big|_{TT,\,\sigma} &=&  \frac{25}{576 \pi}\, G_3 \, (16-\eta_{\rm TT}-\eta_{\sigma}),\label{TTsigmatwovertexetah}\\
-\eta_{\rm TT}  \big|_{\sigma,\,\sigma} &=&  \frac{1}{216 \pi}\, G_3 \, (-31+5\eta_{\sigma}),\label{sigmatwovertexetah}\\
-\eta_{\rm TT}  \big|_{TT,\,TT} &=&  \frac{5}{864 \pi}\, G_3 \, (-388+53\eta_{\rm TT} ).\label{TTtwovertexetah}
-\eea
- The subscripts in (\ref{TTsigmatwovertexetah}) -- (\ref{TTtwovertexetah})
-denote internal TT and $\sigma$ propagators in the two-vertex diagrams, respectively.
+{
+  \setlength{\extrarowheight}{10pt}
+  \begin{table}[p]
+    \begin{center}
+      \begin{tabular}{ l@{\hskip 5mm} r@{\hskip 7mm} r@{\hskip 7mm} r }
+        \toprule
+        diagram        &  $\etaTT$ & $\eta_\sigma$ & $\etaS$ \\
+        \midrule
+        1 / 1$^\star$  &  $\displaystyle -\frac{5 \, G_3}{864 \pi} \, \big( 388-53\etaTT \big)$
+                       &  $\displaystyle \frac{5 \,  G_3}{432\pi} \, \big(40-23\etaTT \big)$
+                       &  $0$                                              \\
+        2 / 2$^\star$  &  $\displaystyle \frac{25 \, G_3}{576 \pi} \, \big(16-\etaTT-\eta_{\sigma} \big)$
+                       &  $\displaystyle - \frac{5 \,  G_3}{144\pi} \, \big(16-\etaTT- \eta_{\sigma} \big)$
+                       &  $\displaystyle \frac{g_3}{16\pi} \, \big(16-\eta_{\sigma}-\etaS \big)$ \\
+        3              &  $\displaystyle -\frac{G_3}{216 \pi} \, \big(31-5\eta_{\sigma} \big)$
+                       &  $\displaystyle \frac{G_3}{432\pi} \, \big(136 - 35 \eta_{\sigma} \big)$
+                       &  ---                                              \\
+        4              &  $\displaystyle \frac{\NS \, g_3}{24 \pi}$
+                       &  $\displaystyle \frac{\NS \, g_3}{48 \pi} \, \big(8-3\etaS \big)$
+                       &  ---                                              \\
+        5 / 5$^\star$  &  $\displaystyle \frac{145 \, G_4}{648 \pi} \, \big(6-\etaTT  \big)$
+                       &  $\displaystyle \frac{55 \, G_4}{648 \pi}\big(6-\etaTT \big)$
+                       &  $\displaystyle \frac{5 \ g_4}{24\pi} \, \big(6-\etaTT \big)$            \\
+        6 / 6$^\star$  &  $\displaystyle -\frac{29 \, G_4}{324 \pi} \, \big(6-\eta_{\sigma} \big)$
+                       &  $\displaystyle -\frac{11 \, G_4}{324 \pi} \big(6-\eta_{\sigma} \big)$
+                       &  $\displaystyle -\frac{g_4}{12 \pi} \, \big(6-\eta_{\sigma} \big)$       \\
+        7              &  $0$
+                       &  $0$
+                       &  ---                                              \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
+    \caption[Coordinates and critical exponents of fixed points in perturbative approximation]
+    {
+      All individual contributions to the anomalous dimensions $\etaTT$, $\eta_\sigma$ and $\etaS$
+      coming from the diagrams displayed in Fig. \ref{fig:eta-diagrams-ch4} above.
+    }
+    \label{tab:eta_results}
+  \end{table}
+}
+
+% The purely metric diagrams contributing to $\eta_{\rm TT}$,
+% cf.~Fig.~\ref{fig:eta-diagrams-ch4} yield the following results.
+% \bea
+% \eta_{\rm TT} \big|_{\rm TT-tadpole} &=& \frac{145}{648 \pi}\, G_4\, (6-\eta_{\rm TT} ),\\
+% \eta_{\rm TT}  \big|_{\sigma- \rm tadpole} &=&  \frac{29}{324 \pi}\, G_4\, (-6+\eta_{\sigma}),\\
+% \eta_{\rm TT}  \big|_{TT,\,\sigma} &=&  \frac{25}{576 \pi}\, G_3 \, (16-\eta_{\rm TT}-\eta_{\sigma}),\label{TTsigmatwovertexetah}\\
+% \eta_{\rm TT}  \big|_{\sigma,\,\sigma} &=&  \frac{1}{216 \pi}\, G_3 \, (-31+5\eta_{\sigma}),\label{sigmatwovertexetah}\\
+% \eta_{\rm TT}  \big|_{TT,\,TT} &=&  \frac{5}{864 \pi}\, G_3 \, (-388+53\eta_{\rm TT} ).\label{TTtwovertexetah}
+% \eea
+% The subscripts in (\ref{TTsigmatwovertexetah}) -- (\ref{TTtwovertexetah})
+% denote internal TT and $\sigma$ propagators in the two-vertex diagrams, respectively.
 Similarly, there are two diagrams containing scalar fluctuations,
 one of them a tadpole (cf.~Fig.~\ref{fig:eta-diagrams-ch4}) which vanishes due to the
 momentum-structure of the vertex.
-\bea
-\eta_{\rm TT}\big|_{\rm S-tadpole}  &=& 0,\\
-\eta_{\rm TT}\big|_{\rm S,\,S}  &=& N_S \, \frac{1}{24 \pi} g_3.
-\eea
-Similarly, our results for the anomalous dimension of the $\sigma$ mode read
-\bea
-\eta_{\sigma} \big|_{\rm TT-tadpole} &=& \frac{55}{648 \pi}G_4(6-\eta_{\rm TT}),\\
-\eta_{\sigma}  \big|_{\sigma- \rm tadpole} &=& \frac{11}{324 \pi}G_4 (-6+\eta_{\sigma}) ,\\
-\eta_{\sigma}  \big|_{TT,\,\sigma} &=& \frac{5}{144\pi}G_3 (-16+\eta_{\rm TT}+ \eta_{\sigma}) ,\\
-\eta_{\sigma}  \big|_{\sigma,\,\sigma} &=&\frac{1}{432\pi}G_3 (136 - 35 \eta_{\sigma}),\\
-\eta_{\sigma}  \big|_{TT,\,TT} &=& \frac{5}{432\pi}G_3(40-23\eta_{\rm TT}) .
-\eea
-The matter contributions are given by
-\bea
-\eta_{\sigma}\big|_{\rm S-tadpole}  &=& 0,\\
-\eta_{\sigma}\big|_{\rm S,\,S}  &=& N_S  \frac{1}{48 \pi}g_3 (8-3\eta_S).
-\eea
+% \bea
+% \eta_{\rm TT}\big|_{\rm S-tadpole}  &=& 0,\\
+% \eta_{\rm TT}\big|_{\rm S,\,S}  &=& N_S \, \frac{1}{24 \pi} g_3.
+% \eea
+% Similarly, our results for the anomalous dimension of the $\sigma$ mode read
+% \bea
+% \eta_{\sigma} \big|_{\rm TT-tadpole} &=& \frac{55}{648 \pi}G_4(6-\eta_{\rm TT}),\\
+% \eta_{\sigma}  \big|_{\sigma- \rm tadpole} &=& \frac{11}{324 \pi}G_4 (-6+\eta_{\sigma}) ,\\
+% \eta_{\sigma}  \big|_{TT,\,\sigma} &=& \frac{5}{144\pi}G_3 (-16+\eta_{\rm TT}+ \eta_{\sigma}) ,\\
+% \eta_{\sigma}  \big|_{\sigma,\,\sigma} &=&\frac{1}{432\pi}G_3 (136 - 35 \eta_{\sigma}),\\
+% \eta_{\sigma}  \big|_{TT,\,TT} &=& \frac{5}{432\pi}G_3(40-23\eta_{\rm TT}) .
+% \eea
+% The matter contributions are given by
+% \bea
+% \eta_{\sigma}\big|_{\rm S-tadpole}  &=& 0,\\
+% \eta_{\sigma}\big|_{\rm S,\,S}  &=& N_S  \frac{1}{48 \pi}g_3 (8-3\eta_S).
+% \eea
 In summary, we have
-\bea
-\eta_{\rm TT}&=&N_S\frac{1}{24 \pi}g_3 + \frac{1}{1728 \pi} G_3 (-2928 + 455 \eta_{\rm TT} - 35 \eta_{\sigma}) \nonumber\\
-&{}&- \frac{29}{648 \pi} G_4 (-18+5 \eta_{\rm TT} - 2 \eta_{\sigma}),\label{etaTTcomplete}\\
-\eta_{\sigma}&=& N_S \frac{1}{48 \pi}(8-3 \eta_S)g_3 + \frac{1}{108 \pi} G_3 (24 - 25\eta_{\rm TT} - 5 \eta_{\sigma})\nonumber\\
-&{}& +\frac{11}{648 \pi} G_4(18-5\eta_{\rm TT}+2\eta_{\sigma})
-\label{etasigmacomplete}
-\eea
+\begin{align}
+  \etaTT      &= \frac{\NS \, g_3}{24 \pi} + \frac{G_3}{1728 \pi} \big( -2928 + 455 \etaTT - 35 \eta_\sigma \big)
+  - \frac{29 \, G_4}{648 \pi} \big( -18 + 5 \etaTT - 2 \eta_\sigma \big) \,,
+  \label{etaTTcomplete} \\
+  \eta_\sigma &= \frac{\NS \, g_3}{48 \pi} \big( 8-3 \etaS \big) + \frac{G_3}{108 \pi} \big( 24 - 25\etaTT - 5 \eta_\sigma \big)
+   +\frac{11 \, G_4}{648 \pi} \big( 18 - 5 \etaTT + 2 \eta_\sigma \big) \,,
+  \label{etasigmacomplete} \\
+  \etaS &= \frac{g_3}{16\pi} \, \big(16-\eta_{\sigma}-\etaS \big)
+  + \frac{g_4}{24 \pi} \, \big( 18 - 5 \etaTT + 2 \eta_{\sigma} \big)
+\end{align}
 
-Note that the sign of the matter contribution agrees for $\eta_{\rm TT}$ and $\eta_{\sigma}$
+Note that the sign of the matter contribution agrees for $\etaTT$ and $\eta_\sigma$
 and is the opposite one from that in the linear parametrization and deDonder gauge,
 \cite{Dona:2013qba}. Since the exponential parametrization and the linear parametrization
 can be understood as underlying two distinct definitions of the configuration space for
@@ -2838,48 +2791,33 @@ asymptotically safe quantum gravity, such a difference could possibly persist in
 and point towards a difference in the number of relevant directions in the two settings,
 see also \cite{Ohta:2015efa}.
 
-The two-vertex diagrams enter with opposite signs in $\eta_{\rm TT}$ as compared to $\eta_{\sigma}$.
+The two-vertex diagrams enter with opposite signs in $\etaTT$ as compared to $\eta_\sigma$.
 This will imply that the two anomalous dimensions will typically have values of similar magnitude
-but opposite sign. Thus, setting $\eta_{\sigma} = \eta_{\rm TT}$ does not seem to be a good approximation,
+but opposite sign. Thus, setting $\eta_\sigma = \etaTT$ does not seem to be a good approximation,
 if indeed this trend persists beyond our truncation.
 Moreover, this could suggest that even in calculations without a York decomposition,
 it might be necessary to disentangle the tensor structures of the graviton,
 and work with projection tensors.
 Comparing to the anomalous dimension $\eta_h$ for the graviton (without York decomposition)
 in the linear parametrization,
-we observe that $\eta_{\rm TT}$ has the opposite,
+we observe that $\etaTT$ has the opposite,
 leading order \emph{negative} contribution from the pure-gravity fluctuations,
 cf.~Eq.~(24) in \cite{Dona:2013qba}.
 
-
-\subsection{The anomalous dimension of the matter scalars}
-
 Similarly, tadpole diagrams and two-vertex diagrams contribute to the flow of $\eta_S$,
 cf.~Fig.~\ref{fig:eta-diagrams-ch4}.
-\bea
-\eta_S\big|_{\rm TT-tadpole} &= &g_4\frac{5}{24\pi}\,(6-\eta_{\rm TT}), \label{etaS1}\\
-\eta_S\big|_{\sigma- \rm tadpole} &= & g_4\frac{1}{12 \pi} \, (-6+\eta_{\sigma}),\label{etaS2}\\
-\eta_S\big|_{\rm TT-two-vertex} &=& 0, \\
-\eta_S\big|_{\sigma-\rm two-vertex} &=& g_3\frac{1}{16\pi} \, (16-\eta_{\sigma}-\eta_S)\label{etaS3}.
-\eea
-
-Overall, $\eta_S$ is positive at leading order, when $g_3>0, g_4>0$.
+% \bea
+% \eta_S\big|_{\rm TT-tadpole} &= &g_4\frac{5}{24\pi}\,(6-\eta_{\rm TT}), \label{etaS1}\\
+% \eta_S\big|_{\sigma- \rm tadpole} &= & g_4\frac{1}{12 \pi} \, (-6+\eta_{\sigma}),\label{etaS2}\\
+% \eta_S\big|_{\rm TT-two-vertex} &=& 0, \\
+% \eta_S\big|_{\sigma-\rm two-vertex} &=& g_3\frac{1}{16\pi} \, (16-\eta_{\sigma}-\eta_S)\label{etaS3}.
+% \eea
+Overall, $\etaS$ is positive at leading order, when $g_3>0, g_4>0$.
 This is the opposite behavior as that observed in the linear parameterization
 and the deDonder gauge, \cite{Dona:2013qba}.
 
 
 \subsection{The flow of the graviton-matter coupling}
-
-\begin{figure}
-  \begin{center}
-    \input{diagrams/coupling-diagrams.tex}
-  \end{center}
-  \caption{
-    Diagrams which contribute to the beta function of the gravity-matter coupling
-    $\sqrt{g_3}$.
-  }
-  \label{fig:coupling-diagrams-ch4}
-\end{figure}
 
 The flow of the two scalar-one graviton vertex
 $\sqrt{g_3}$ is driven by three types of diagrams:
@@ -2897,7 +2835,7 @@ although we use only the latter to read off the running of $g_3$.)
 %     Curly lines denote the transverse traceless metric mode,
 %     dashed lines the scalar graviton mode and continuous lines the scalar.
 %   }
-%   \label{threevertexdiagsg3} 
+%   \label{threevertexdiagsg3}
 % \end{figure}
 
 These three-vertex diagrams in Fig.~\ref{threevertexdiagsg3} only have a contribution from the $\sigma$ mode;
@@ -2906,11 +2844,10 @@ at a higher order in the momenta, when our projection prescription
 \eqref{projectiong3} is used.
 Note that the leading-order contribution to $\beta_{\sqrt{g_3}}$ comes with a positive sign.
 
-\bea
-\beta_{\sqrt{g_3}}\big|_{\rm TT\, 3-vertex} &=& 0 \\
-\beta_{\sqrt{g_3}}\big|_{\sigma \rm\, 3-vertex}  &=&
-\frac{1}{80 \pi} g_3^{3/2}\, (30-\eta_{\sigma}-2\eta_S)\label{betag3threevertexg3}
-\eea
+% \bea
+% \beta_{\sqrt{g_3}}\big|_{\rm TT\, 3-vertex} &=& 0 \\
+% \beta_{\sqrt{g_3}}\big|_{\sigma \rm\, 3-vertex}  &=& \frac{1}{80 \pi} g_3^{3/2}\, (30-\eta_{\sigma}-2\eta_S)\label{betag3threevertexg3}
+% \eea
 
 % \begin{figure}
 %   \centering
@@ -2942,40 +2879,40 @@ cf.~Fig.~\ref{tadpolediags} and Fig.~\ref{twovertexdiags}.
 The two tadpole diagrams contribute at $\mathcal{O}(g_5^{3/2})$ to the flow of $g_3$.
 Equation \eqref{TTtadpole} denotes the transverse traceless graviton contribution,
 and \eqref{sigmatadpole} the scalar graviton contribution.
-\bea
-\beta_{\sqrt{g_3}}\Big|_{\rm TT\, tadpole} &=&
--\frac{95}{648 \pi}g_5^{3/2} \, (6-\eta_{\rm TT}),\label{TTtadpole}\\
-\beta_{\sqrt{g_3}}\Big|_{\sigma \rm\, tadpole} &=&
-\frac{19}{324 \pi} g_5^{3/2}\, (6-\eta_{\sigma}). \label{sigmatadpole}
-\eea
+% \bea
+% \beta_{\sqrt{g_3}}\Big|_{\rm TT\, tadpole} &=&
+% -\frac{95}{648 \pi}g_5^{3/2} \, (6-\eta_{\rm TT}),\label{TTtadpole}\\
+% \beta_{\sqrt{g_3}}\Big|_{\sigma \rm\, tadpole} &=&
+% \frac{19}{324 \pi} g_5^{3/2}\, (6-\eta_{\sigma}). \label{sigmatadpole}
+% \eea
 
 The top two two-vertex diagrams in Fig.~\ref{twovertexdiags} contain only gravity-matter vertices,
 and contributes at $\mathcal{O}(\sqrt{g_3} g_4)$ to the flow of $\sqrt{g_3}$:
-\bea
-\beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,S\\\rm two-vertex}}  &=& 0,\\
-\beta_{\sqrt{g_3}}\Big|_{\substack{\rm \sigma,\,S\\\rm two-vertex}} &= &-\frac{5}{72 \pi} \sqrt{g_3} g_4 \, (16-\eta_{\sigma}-\eta_S).
-\eea
+% \bea
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,S\\\rm two-vertex}}  &=& 0,\\
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\rm \sigma,\,S\\\rm two-vertex}} &= &-\frac{5}{72 \pi} \sqrt{g_3} g_4 \, (16-\eta_{\sigma}-\eta_S).
+% \eea
 
 
 Finally, there are two-vertex and three-vertex diagrams which also contain the vertex $\sqrt{G_3}$,
 which arises from the Einstein-Hilbert action, cf.~Fig.~\ref{twovertexdiags}
 and Fig.~\ref{threevertexdiags}.
 The lower three diagrams in Fig.~\ref{twovertexdiags} yield
-\bea
-\beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,TT\\\rm two-vertex}}   &=& -\frac{5}{216 \pi}  g_4 \sqrt{G_3}\, (8-\eta_{\rm TT}),\\
-\beta_{\sqrt{g_3}}\Big|_{\substack{\rm \sigma,\,\sigma\\\rm two-vertex}}   &= &-\frac{1}{54 \pi} g_4 \sqrt{G_3} \, (-8 + \eta_{\sigma}), \\
-\beta_{\sqrt{g_3}}\Big|_{\substack{\sigma \rm,\,TT\\\rm two-vertex}}  &=& 0.
-\eea
+% \bea
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,TT\\\rm two-vertex}}   &=& -\frac{5}{216 \pi}  g_4 \sqrt{G_3}\, (8-\eta_{\rm TT}),\\
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\rm \sigma,\,\sigma\\\rm two-vertex}}   &= &-\frac{1}{54 \pi} g_4 \sqrt{G_3} \, (-8 + \eta_{\sigma}), \\
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\sigma \rm,\,TT\\\rm two-vertex}}  &=& 0.
+% \eea
 
 
 The three-vertex diagrams with a pure-gravity vertex, cf.~Fig.~\ref{threevertexdiags},
 yield the following contribution:
 
-\bea
-\beta_{\sqrt{g_3}}\Big|_{\substack{\sigma,\,\sigma,\,S \rm \\ \rm 3-vertex}} &=&\!\!\frac{1}{80\pi}g_3 \sqrt{G_3} \, (30-2\eta_{\sigma}-\eta_S),\\
-\beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,TT,\,S\\ \rm 3-vertex}} &=& 0, \\
-\beta_{\sqrt{g_3}}\Big|_{\substack{\sigma,\,\rm TT,\,S\\ \rm 3-vertex}} &=& 0.\label{threevertexpuregravityvertex}
-\eea
+% \bea
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\sigma,\,\sigma,\,S \rm \\ \rm 3-vertex}} &=&\!\!\frac{1}{80\pi}g_3 \sqrt{G_3} \, (30-2\eta_{\sigma}-\eta_S),\\
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\rm TT,\,TT,\,S\\ \rm 3-vertex}} &=& 0, \\
+% \beta_{\sqrt{g_3}}\Big|_{\substack{\sigma,\,\rm TT,\,S\\ \rm 3-vertex}} &=& 0.\label{threevertexpuregravityvertex}
+% \eea
 
 % \begin{figure}
 %   \centering
@@ -2988,6 +2925,56 @@ yield the following contribution:
 %     internal propagators in turn. Curly lines denote the transverse traceless metric mode,
 %   dashed lines the scalar graviton mode and continuous lines the scalar.}
 % \end{figure}
+
+\begin{figure}[p]
+  \begin{center}
+    \input{diagrams/coupling-diagrams.tex}
+  \end{center}
+  \caption{
+    Diagrams which contribute to the beta function of the gravity-matter coupling
+    $\sqrt{g_3}$.
+  }
+  \label{fig:coupling-diagrams-ch4}
+\end{figure}
+
+{
+  \setlength{\extrarowheight}{10pt}
+  \begin{table}[p]
+    \begin{center}
+      \begin{tabular}{ l r }
+        \toprule
+        diagram &  $\beta_{\sqrt{g_3}}$ \\
+        \midrule
+         1 &  $\displaystyle 0$ \\
+         2 &  $\displaystyle 0$ \\
+         3 &  $\displaystyle \frac{\sqrt{g_3^2 \, G_3 \,}}{80\pi} \, \big( 30 - 2\eta_\sigma - \etaS \big)$ \\
+         4 &  $\displaystyle 0$ \\
+         5 &  $\displaystyle \frac{\sqrt{g_3^3 \,}}{80 \pi} \, \big( 30 -\eta_\sigma - 2 \etaS \big)$ \\
+         6 &  $\displaystyle -\frac{5 \sqrt{g_4^2 \, G_3 \,}}{216 \pi}  \, \big( 8 - \etaTT \big)$ \\
+        \bottomrule
+      \end{tabular}
+      \hspace{3mm}
+      \begin{tabular}{ l r }
+        \toprule
+        diagram &  $\beta_{\sqrt{g_3}}$ \\
+        \midrule
+         7 & $\displaystyle 0$ \\
+         8 & $\displaystyle \frac{\sqrt{g_4 \, G_3 \,}}{54 \pi} \, \big( 8 - \eta_\sigma \big)$ \\
+         9 & $\displaystyle 0$ \\
+        10 & $\displaystyle -\frac{5 \sqrt{g_3 \, g_4^2 \,}}{72 \pi} \, \big( 16 - \eta_\sigma - \etaS \big)$ \\
+        11 & $\displaystyle -\frac{95 \sqrt{g_5^3 \,}}{648 \pi} \, \big( 6 - \etaTT \big)$ \\
+        12 & $\displaystyle \frac{19 \sqrt{g_5^3\,}}{324 \pi} \, \big( 6 - \eta_\sigma \big)$ \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
+    \caption[Coordinates and critical exponents of fixed points in perturbative approximation]
+    {
+      All individual contributions to the beta function of $\sqrt{g_3}$,
+      coming from the diagrams displayed in Fig.~\ref{fig:coupling-diagrams-ch4} above.
+    }
+    \label{tab:beta_function_results}
+  \end{table}
+}
 
 
 %%
@@ -3167,7 +3154,7 @@ this is of course a serious shortcoming.
   \label{puregravityFPetaapprox}
 \end{table}
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -3332,7 +3319,7 @@ see \cite{Meibohm:2015twa}. In the semi-perturbative approximation,
 the anomalous dimensions are slightly smaller,
 and the fixed-point collision accordingly occurs at larger $N_S$.
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -3407,7 +3394,7 @@ On the other hand, a non-trivial interplay between the gravity-matter coupling
 and the pure-gravity coupling at large $N_S$ is not excluded,
 as the effect of varying $g_3$ on $G_{3\, \ast}$  remains to be studied.
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -4994,19 +4981,18 @@ This implies
 %	Conclusions
 %----------------------------------------------------------------------------------------
 
-\chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
+\chapter*{Conclusions}
 
 \section*{Chapter 1}
-
-
 
 \section*{Chapter 2}
 
 If we construct the non-perturbative flow equation for quantum gravity by introducing a cutoff defined through
 a background metric then independence from this artificial metric can only be achieved if the appropriate
 modified split Ward identity is obeyed. However even if it is obeyed, background independence is guaranteed
-only in the limit $k\to0$. RG properties on the other hand are defined at intermediate scales $k$.
+only in the limit $k\to0$.
+RG properties on the other hand are defined at intermediate scales $k$.
 There is therefore the potential for conflict in this formulation between RG notions such as fixed points,
 and the requirement of background independence.
 Examples of such conflicts were uncovered in ref. \cite{Dietz:2015owa}.
@@ -5405,7 +5391,7 @@ We have that
 \eea
 In here, the covariant derivatives always act on everything to the right of them.
 
-From 
+From
 \be
 R_{\mu \nu} = \partial_{\lambda}\Gamma^{\lambda}_{\mu \nu} - \partial_{\nu}\Gamma^{\lambda}_{\lambda\mu} + \Gamma^{\lambda}_{\lambda\rho}\Gamma^{\rho}_{\mu \nu} - \Gamma^{\lambda}_{\nu \rho}\Gamma^{\rho}_{\mu \lambda}
 \ee
@@ -5445,7 +5431,7 @@ We then have that
 %
 \Bigl( -\frac{3}{8} \delta_{\rho\sigma} \delta_{\mu \nu}\delta_{\kappa \lambda} p^2 +\frac{3}{2} \delta_{\rho \sigma} \delta_{\kappa \lambda}p_{\mu}p_{\nu} + \frac{3}{2} \delta_{\mu \nu} \delta_{\kappa \lambda} p_{\rho}q_{\sigma} - \frac{3}{2} p_{\kappa}q_{\lambda} \delta_{\rho\sigma}\delta_{\mu \nu}\nonumber\\
 %
-&{}& - \frac{3}{2} p_{\rho}q_{\sigma} \delta_{\mu \nu}\delta_{\kappa \lambda} 
+&{}& - \frac{3}{2} p_{\rho}q_{\sigma} \delta_{\mu \nu}\delta_{\kappa \lambda}
 + 3 q_{\kappa} p_{\rho} \delta_{\sigma \mu}\delta_{\lambda \nu} - \frac{3}{4} \delta_{\rho \sigma} \delta_{\mu \kappa}\delta_{\nu \lambda}p \cdot q  - \frac{3}{2} \delta_{\rho \kappa} \delta_{\mu \nu}p _{\sigma}p_{\lambda} +3 p_{\kappa}p_{\rho}\delta_{\mu \sigma} \delta_{\lambda \nu} - \frac{3}{2} p_{\kappa}q_{\rho}\delta_{\mu \nu}\delta_{\lambda \sigma}
 \nonumber\\
 %
