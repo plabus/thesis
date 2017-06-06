@@ -31,7 +31,6 @@
 \usepackage{mathtools} % loads amsmath
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{bbold}
 
 \usepackage{pifont}
 \usepackage{slashed}
@@ -101,6 +100,9 @@
 \newcommand\hTTmunu{ h^{\scriptscriptstyle{\mathrm{TT}}}_{\mu\nu} }
 \newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{TT}}} }
 \newcommand\etaS{ \eta_{\scriptscriptstyle{\mathrm{S}}} }
+\newcommand{\bF}{\bar F}
+\newcommand{\bVstar}{\bar V_\star}
+\newcommand{\bFstar}{\bar F_\star}
 
 % Morris'es Abbreviations
 \newcommand\ie{\textit{i.e.}\ }
@@ -502,7 +504,7 @@ Wilson-Fisher fixed point, LPA, Scaling Solutions
 % CHAPTER 2
 %----------------------------------------------------------------------------------------
 
-\chapter{Background Independence}
+\chapter{Background Independence and the FRG}
 
 As we have outline in the last chapter,
 non-perturbative renormalization group flows for quantum gravity \cite{Reuter:1996cp}
@@ -1727,90 +1729,95 @@ Short review of \cite{Percacci:2016arh, Morris:2016spn}.
 % CHAPTER 3
 %----------------------------------------------------------------------------------------
 
-\chapter{Scalar Matter 1}
+\chapter{Non-minimally coupled Scalar-Tensor theories}
 
-\section{Introduction}
+After investigating issues of more technical nature introduced by
+the use of the background field method in non-perturbative RG flows
+of quantum gravity, we will now start our study of the inclusion of
+matter fields in an asymptotic safe gravitational quantum field theory.
+In this first chapter, we will investigate a scalar-tensor theory
+with $\NS$ scalar fields which are non-minimally coupled to the
+gravitational sector. We will thereby treat the metric field in a background
+approximation, where we set the fluctuation field to zero, and use
+a derivative expansion up to terms linear in the background Ricci
+scalar $\bar R$. We will then fixed the background to a $d$-dimensional
+sphere $\mathbb S^d$ and derive the flow equation using heat kernel
+techniques. We can then look for scaling solutions of our particular truncation
+and study there critical behaviour.
 
-In the last years many efforts have been devoted to studying the possibility of defining UV complete QFTs
-which may describe gravitational interactions,
-possibly in the presence of other matter fields.
-Such a program is defined within the paradigm of Asymptotic Safety \cite{Weinberg:1980gg}
-and can be seen as a bottom-up approach which seeks a consistent extension
-to UV of results of low energy effective field theories.
-It is related to the construction of the non perturbative RG flow of the effective action,
-which should show a UV interacting fixed point (in theory space)
-with a finite number of relevant directions.
+In the following chapters \ref{ch:astrid} and \ref{ch:jan} we will study a similar setup,
+but in a truly dynamic treatment, using a fluctuation field calculation.
+This will however force us to restrict ourselves to a minimally-coupled theory
+on a flat background $\mathbb R^4}$.
+In chapter \ref{ch:jan} we will additionally use the msWIs in combination with
+the flow equations to investigate further the r\^ole of the cutoff operator
+in the dynamics of the background.
 
-In a recent paper \cite{Percacci:2015wwa} two of us discussed
-fixed-functional solutions
-in a scalar-tensor theory with action containing a potential $V(\phi)$
-and a generic non-minimal interaction $-F(\phi)R$.
-These functions were subjected to a renormalization group flow
-depending on a cutoff $k$.
+In ref. \cite{Percacci:2015wwa} fixed-functional solutions
+in a scalar-tensor theory with an action containing a potential $V(\varphi)$
+and a generic non-minimal interaction $-F(\varphi) \bar R$ for a single scalar field
+where already discussed.
 It was found that in generic dimension $d$ the flow equations for the dimensionless
-functions $v(\varphi)=k^{-d}V(\phi)$ and $f(\varphi)=k^{2-d}F(\phi)$
-of the dimensionless field $\varphi=k^{1-d/2}\phi$
-admit some simple exact solutions where $v=v_0$ is constant and
-$f=f_0 + f_2 \, \varphi^2$.
-These solutions can have interesting applications to cosmology in $d=4$.
+functions $\bar V(\bar \varphi)= k^{-d} V(\varphi)$ and $\bar F(\bar\varphi)=k^{2-d}F(\varphi)$
+of the dimensionless field $\bar \varphi=k^{1-d/2}\varphi$
+admit some simple exact solutions where $\bar V=v_0$ is constant and
+$\bar F=f_0 + \bF_2 \, \varphi^2$ is a quadratic polynomial.
+These solutions can have interesting applications to cosmology in $d=4$,
 \cite{Henz:2013oxa}.
 Unfortunately it seems that one of these solutions,
-with $f_0$ and $f_2$ both non-zero, does not survive,
+with $f_0$ and $\bF_2$ both non-zero, does not survive,
 at least in the same form, when one applies the
-``renormalization group improvement'',
+``renormalisation group improvement'',
 while another, which remains unchanged by the
-``renormalization group improvement'',
-has $f_0=0$ but $f_2<0$, making its physical relevance questionable.
+``renormalisation group improvement'',
+has $f_0=0$ but $\bF_2<0$, making its physical relevance questionable.
 
-In this paper we consider the case when
-there are $N$ scalar fields, with an $O(N)$-invariant
-action of the general form
+In this chapter we will consider the case of $\NS$ scalar fields with
+an $O(\NS)$-invariant action of the general form
 \begin{align}
+  \Gamma_k [\varphi] =
+  \int \mathrm d^dx \, \sqrt{\bar g} \,
+  \left[ - F(\varphi) \bar R + \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \bar\nabla\varphi^i \right)^2 + V(\varphi)  \right] .
   \label{action}
-  \int \mathrm d^dx \, \sqrt{g} \,
-  \left[ V(\phi) + \frac{1}{2}\sum_{i=1}^N \left( \nabla\phi^i \right)^2 - F(\phi)R \right] .
 \end{align}
-where now $V$ and $F$ are functions of the radial degree of freedom
-and we use the notation $\phi=\sqrt{\sum_i \phi^i\phi^i}$ and for the dimensionless rescaled field
-$\varphi=\sqrt{\sum_i \varphi^i \varphi^i}$.
-(In section IV it will prove more convenient to think of
-$v$ and $f$ as functions of the variable $\rho=\varphi^2/2$.)
-The remaining $N-1$ angular degrees
-of freedom will be referred to as the Goldstone bosons.
-One of the main results of this note is to show that in the case
-when $N>1$ there exists also another solution with $f_0=0$ and $f_2>0$.
+where now $V$ and $F$ are functions of the radial degree%
+\footnote{
+Later on, it will sometimes prove more convenient to treat
+$V$ and $F$ as functions of the variable $\rho=\varphi^2/2$ instead.
+} scalar field
+$\varphi=\sqrt{\sum_i \varphi^i \varphi^i \,}$.
+The remaining $\NS-1$ angular degrees of freedom will be referred to as the Goldstone bosons.
+One of the main results of this chapter will be to show that in the case
+$\NS>1$ there exists a previously unobserved solution with $f_0=0$ and $\bF_2>0$.
 
-The other main result will be the confirmation,
-on employing a standard cutoff of ``type-I''
-(in the terminology of \cite{Codello:2008vh}),
-of the existence  of an upper bound on the number of scalars in order to obtain a FP with positive $f$.
-Such bounds have been discussed earlier but only for minimally
-coupled fields.
-We will see that the existence of the potential and of the non-minimal interactions does
-not substantially change the picture.
+The other main result will be the confirmation
+of the existence  of an upper bound on the number of scalar fields,
+if a fixed point with positive $f$ is to be observed.
+Such bounds have been discussed earlier in ref. \cite{Dona:2013qba},
+but only for minimally coupled fields.
+We will see that the existence of a potential and non-minimal interactions do
+not change this picture substantially.
 
-In the same scheme for $d=3$ we also discuss the existence
-of a non-trivial gravitationally dressed fixed point
-and give a specific solution for $N=2$.
+For $d=3$, we will also discuss the existence
+of a non-trivial gravitationally dressed Wilson-Fisher fixed point
+and give a specific solution for $\NS=2$.
 Finally we will employ an alternative coarse-graining scheme
 in order to test the scheme-dependence of the analytical scaling solutions.
 
 
-\section{Flow equations}
+\section{The flow equations}
 
 For the construction of the flow equations we follow the same steps
-as in \cite{Percacci:2015wwa}, which we briefly recall.
+as in ref. \cite{Percacci:2015wwa}, which we will briefly recall.
 The calculation is based on the background field method,
 but instead of the usual linear classical-background-plus-quantum-fluctuation split we
-use an exponential parametrization
-for the metric of the form
-$g_{\mu\nu}=\bar g_{\mu\rho}(e^h)^\rho{}_\nu$.
-This has some concrete practical advantages that will be
-mentioned later,
+use an exponential parametrization for the metric of the form
+$g_{\mu\nu} = \bar g_{\mu\rho}(e^h)^\rho{}_\nu$.
+This has some concrete practical advantages that will be mentioned later,
 but the original theoretical motivation is that it
 respects the non-linear nature of the metric.
-The fluctuation field is further decomposed into its irreducible
-spin-two, spin-one and spin-zero components $h_{\mu\nu}^{TT}$,
+The fluctuation field is further York decomposed into its irreducible
+spin-two, spin-one and spin-zero components $\hTTmunu$,
 $\xi_\mu$, $\sigma$ and $h$.
 Then one calculates the second variation of the action with
 respect to the fields, which appears as a central ingredient
@@ -1818,203 +1825,205 @@ in the flow equation.
 In order to have a diagonal Hessian we define new scalar fields
 that involve a mixture of $\sigma$ and $\phi$.
 We then choose a very simple ``unimodular physical gauge''
-which amounts simply to suppressing the fields $\xi$ and $h$.
-We describe briefly these steps in the Appendix.
-Finally we introduce a ``type I'' cutoff, which amounts to replacing
-all occurrences of $-\bnabla^2$ by $-\bnabla^2+R_k(-\bnabla^2)$
+which amounts simply to suppressing the fields $\xi_\mu$ and $h$.
+We describe the steps involved in the York decomposition, the
+gauge fixing and resulting Faddeev–Popov ghost sector app. \ref{app:York}.
+Further details concerning the derivation of the Hessian and the flow
+equations may be found in app. \ref{app:Hessian}.
+Finally we use a ``type I'' cutoff, which is introduced by replacing
+all occurrences of $-\bnabla^2$ with $-\bnabla^2+R_k(-\bnabla^2)$,
 \cite{Codello:2008vh}.
-In particular we will use the cutoff profile function
-$R_k(z)=\left(k^2-z\right)\theta\left(k^2-z\right)$~\cite{Litim:2001up}.
+In particular, we will use the optimised cutoff
+$R_k(z)=\left( k^2-z \right) \, \theta \! \left( k^2-z \right)$, \cite{Litim:2001up}.
 Note that this cutoff is ``spectrally adjusted'',
 in the sense that it depends on some running couplings,
 and also depends explicitly on the background scalar field,
 in addition to the background metric.
-Later we shall consider also other types of cutoff.
+Later we shall consider other types of cutoffs as well.
 
-In general dimension $d$ and for any number of scalars,
-denoting by a dot the derivative with respect to RG time $t=\log k$,
-the full flow equations are
+On a sphere $\mathbb S^d$ in general dimension $d$ and for any number of scalars $\NS$,
+we find the following flow equations in dimensionless variables
+% \bp = \bar \varphi
+% \bV = \bar V
+% \bF = \bar F
 \begin{align}
-  \dot v &= - d \, v + \frac{1}{2} (d-2) \, \varphi \, v'
+  \dot \bV &= - d \, \bV + \frac{1}{2} (d-2) \, \bp \, \bV'
     + c_d \; \frac{(d-1) \left( d^2 - d - 3 \right)} {d+2}
-    + c_d \; \frac{ (d-2) \, (d+1) \left[ 2 \dot f - (d-2) \varphi f' \right] }{4 \left( d+2 \right) f} \nonumber \\[3mm]
-  & + c_d \; \frac{ 2 \left( d^2 - 4 \right) f + (d - 2) \left( 1 + v'' \right) \left[ 2 \dot f - 6 f - (d - 2) \varphi f' \right] }
-                  { 2 \, (d+2) \left[ 2 (d-1) \left( f' \right)^2 + (d-2) f \left( 1 + v'' \right) \right] } \nonumber \\[3mm]
-  & + c_d \; \frac{ 4 \, (d - 1) f' \left[ 2 \dot f' + (d - 1) f' - (d - 2) \varphi f'' \right] }
-                  { 2 \, (d+2) \left[ 2 (d-1) f'{}^2 + (d-2) f \left( 1 + v'' \right) \right] }
-    + c_d \; \frac{(N-1)\varphi}{\varphi+v'} \,,
-  \label{flowvfull}
-\end{align}
-
-\begin{align}
-  \dot f &= (2-d) \, f + \frac{1}{2} (d-2) \, \varphi \, f'
+    + c_d \; \frac{ (d-2) \, (d+1) \left[ 2 \dot \bF - (d-2) \bp \bF' \right] }{4 \left( d+2 \right) \bF} \nonumber \\[3mm]
+  & + c_d \; \frac{ 2 \left( d^2 - 4 \right) \bF + (d - 2) \left( 1 + \bV'' \right) \left[ 2 \dot \bF - 6 \bF - (d - 2) \bp \bF' \right] }
+                  { 2 \, (d+2) \left[ 2 (d-1) \left( \bF' \right)^2 + (d-2) \bF \left( 1 + \bV'' \right) \right] } \nonumber \\[3mm]
+  & + c_d \; \frac{ 4 \, (d - 1) \bF' \left[ 2 \dot \bF' + (d - 1) \bF' - (d - 2) \bp \bF'' \right] }
+                  { 2 \, (d+2) \left[ 2 (d-1) \bF'{}^2 + (d-2) \bF \left( 1 + \bV'' \right) \right] }
+    + c_d \; \frac{(\NS-1)\bp}{\bp+\bV'} \,,
+    \label{flowvfull} \\[5mm]
+  \dot \bF &= (2-d) \, \bF + \frac{1}{2} (d-2) \, \bp \, \bF'
     - c_d \; \frac{d^6 - 2 d^5 - 15 d^4 - 46 d^3 + 38 d^2 + 96 d - 24}{12 (d+2) (d-1) d} \nonumber \\[3mm]
-  & - c_d \; \frac{ \left( d^5 - 17 d^3 - 60 d^2 + 4 d + 48 \right) \left[ 2 \dot f - (d - 2) \varphi f' \right] }
-    { 48 \, (d-1) \, d \, (d+2) \, f } \nonumber \\[3mm]
-  & - c_d \; \frac{ (d-2) f f'' + 2 f'{}^2 }
-                  { (d+2) f \left[ 2 (d-1) \left(f'\right)^2+(d-2) f \left(v''+1\right) \right]^2 }
-                  \times \bigg\{ (d-2) (d+2) f^2 \nonumber \\[3mm]
-  &          \quad \quad + (d-1) f'{}^2 \left[ (d-2) \varphi  f' - 2 \dot f \right]
-                  + 2 (d - 1) f f' \left[ (2-d) \varphi  f'' + (d+2) f' + 2 \dot f' \right] \bigg\} \nonumber \\[3mm]
-  & + c_d \; \frac{1}{ 24 \left[ 2 (d-1) \left(f'\right)^2+(d-2) f \left(v''+1\right) \right] }
-                  \times \bigg\{ f' \Big[ (d-2) \varphi  \Big( 4 (d-1) f'' \nonumber \\[3mm]
-                  &          \quad \quad + (d-2) \left( v'' + 1 \right) \Big) - 8 (d-1) \dot f' \Big] + 2 (d-2)  \left[ d\, f v''-\dot f \left(v''+1\right) \right] \bigg\} \nonumber \\[3mm]
-  & - c_d \; \frac{ d \, (N-1) \varphi }{ 12(\varphi + v' }
-    - c_d \; \frac{ (N-1)\varphi f'(\varphi)}{(\varphi + v'{}^2} \,,
+  & - c_d \; \frac{ \left( d^5 - 17 d^3 - 60 d^2 + 4 d + 48 \right) \left[ 2 \dot \bF - (d - 2) \bp \bF' \right] }
+    { 48 \, (d-1) \, d \, (d+2) \, \bF } \nonumber \\[3mm]
+  & - c_d \; \frac{ (d-2) \bF \bF'' + 2 \bF'{}^2 }
+                  { (d+2) \bF \left[ 2 (d-1) \left(\bF'\right)^2+(d-2) \bF \left(\bV''+1\right) \right]^2 }
+                  \times \bigg\{ (d-2) (d+2) \bF^2 \nonumber \\[3mm]
+  &          \quad \quad + (d-1) \bF'{}^2 \left[ (d-2) \bp  \bF' - 2 \dot \bF \right]
+                  + 2 (d - 1) \bF \bF' \left[ (2-d) \bp  \bF'' + (d+2) \bF' + 2 \dot \bF' \right] \bigg\} \nonumber \\[3mm]
+  & + c_d \; \frac{1}{ 24 \left[ 2 (d-1) \left( \bF' \right)^2 + (d-2) \bF \left(\bV''+1\right) \right] }
+                  \times \bigg\{ \bF' \Big[ (d-2) \bp  \Big( 4 (d-1) \bF'' \nonumber \\[3mm]
+                  &          \quad \quad + (d-2) \left( \bV'' + 1 \right) \Big) - 8 (d-1) \dot \bF' \Big] + 2 (d-2)  \left[ d\, \bF \bV''-\dot \bF \left(\bV''+1\right) \right] \bigg\} \nonumber \\[3mm]
+                  & - c_d \; \frac{ d \, (\NS-1) \bp }{ 12(\bp + \bV') }
+    - c_d \; \frac{ (\NS-1)\bp \bF'(\bp)}{\bp + \bV'{}^2} \,,
   \label{flowffull}
- \end{align}
+\end{align}
 where we introduced the $d$-dimensional volume coefficient
 \begin{align}
   \nonumber
   c_d = \frac{ 1 }{ (4\pi)^{d/2} \; \Gamma(d/2+1) } \,.
 \end{align}
-The only difference between the case $N=1$ discussed in \cite{Percacci:2015wwa}
-and the case of general $N$ is the addition to the beta functionals
-of $v$ and $f$ of the contribution of the Goldstone modes,
-which can be easily identified by the factor $N-1$.
-The ``RG-unimproved'' or ``one-loop''
-flow equations can be obtained by replacing in the r.h.s.
+The only difference between the case $\NS=1$ discussed in ref. \cite{Percacci:2015wwa}
+and the case of general $\NS$, is the additional contribution of the Goldstone modes,
+which can easily be identified by the factor $\NS-1$.
+The ``RG-unimproved'' or ``one-loop'' flow equations can be recovered by carrying out the replacement
 \begin{align}
   \nonumber
-  \dot f  \mapsto -         (d-2) \, f  + \frac{d-2}{2} \, \varphi \, f' \,,
+  \dot \bF  \mapsto -         (d-2) \, \bF  + \frac{d-2}{2} \, \bp \, \bF' \,,
   \qquad
-  \dot f' \mapsto - \frac{d-2}{2} \, f' + \frac{d-2}{2} \, \varphi  \, f'' \,.
+  \dot \bF' \mapsto - \frac{d-2}{2} \, \bF' + \frac{d-2}{2} \, \bp  \, \bF'' \,.
 \end{align}
-which is equivalent to setting $\dot F$ and $\dot F'$
-to zero in the equation for the dimensionful functions $V$ and $F$.
+on the right hand side of the equations, which is equivalent to setting $\dot F$ and $\dot F'$
+to zero in the flow equations of the dimensionful functions $V$ and $F$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scaling solutions}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We list here some simple analytic solutions
-that exist in any dimension.
-Making the ansatz that $v$ and $f$ are both constant leads
-to a fixed point FP1.
+In this section we list some simple analytic solutions which exist in any dimension $d$.
+Assuming an ansatz where both $\bV$ and $\bF$ are constant reveals a fixed point FP1.
 Using the simple, unimproved equations, it has the following coordinates:
 \begin{align}
-  v_* &=   c_d \left[ \frac{ (d-1)(d-2) }{ 2 \, d } + \frac{N-1}{d} \right] \,, \\
-  f_* &= - c_d \, \frac{d^5-4d^4-7d^3-50d^2+60d+24}{24 \, d \, (d-1) \, (d-2)}
-         - c_d \, \frac{(N-1) \, d}{12 \, (d-2)} \,.
+  \bVstar &=   c_d \left[ \frac{ (d-1)(d-2) }{ 2 \, d } + \frac{\NS-1}{d} \right] \,, \\
+  \bFstar &= - c_d \, \frac{d^5-4d^4-7d^3-50d^2+60d+24}{24 \, d \, (d-1) \, (d-2)}
+         - c_d \, \frac{(\NS-1) \, d}{12 \, (d-2)} \,.
 \end{align}
-We note that the first fraction in $f_*$ is positive for $d<6.17$.
-Thus for $N=1$ this is an upper bound on the dimension
+We note that the first fraction in $\bFstar$ is positive for $d<6.17$.
+Thus for $\NS=1$ this is an upper bound on the dimension
 dictated by positivity of Newton's constant.
 Having additional scalars lowers this bound.
-The bound becomes lower than four between $N=11$ and $N=12$.
+The bound becomes lower than four between $\NS=11$ and $\NS=12$.
 Thus, the fixed point has negative Newton's constant
-when there are more than $11$ scalars, a result that is in
-rough agreement with previous calculations \cite{Dona:2013qba}
-that also used a similar cutoff.
+when there are more than $11$ scalar fields, a result that is in
+rough agreement with previous calculations \cite{Dona:2013qba},
+where a similar cutoff has been used.
 
 If we include the RG improvement the coordinates of FP1 change to:
 \begin{align}
-  v_* &=  c_d \left[ \frac{(d^2-1)(d-2)}{d \, (d+2)} + \frac{N-1}{d} \right] \,, \\
-  f_* &= -c_d \, \frac{d^6-2d^5-15d^4-46d^3+38d^2+96d-24}{12 \, d \, (d-1) \, (d^2-4)}
-         -c_d \, \frac{(N-1) \, d}{12 \, (d-2)} \,.
+  \bVstar &=  c_d \left[ \frac{(d^2-1)(d-2)}{d \, (d+2)} + \frac{\NS-1}{d} \right] \,, \\
+  \bFstar &= -c_d \, \frac{d^6-2d^5-15d^4-46d^3+38d^2+96d-24}{12 \, d \, (d-1) \, (d^2-4)}
+         -c_d \, \frac{(\NS-1) \, d}{12 \, (d-2)} \,.
 \end{align}
-Now, for $N=1$ positivity of Newton's constant requires $d<5.73$,
-and the bound becomes lower than four between $N=14$ and $N=15$.
+Now, for $\NS=1$ positivity of Newton's constant requires $d<5.73$,
+and the bound becomes lower than four between $\NS=14$ and $\NS=15$.
 Thus, the fixed point has negative Newton's constant
-when there are more than $14$ scalars.
+when there are more than $14$ scalar fields.
 
-If we make the ansatz that $v$ is constant and $f$ is of the
-form $f_0 + f_2 \, \varphi^2$, there is a solution FP2
-for the unimproved fixed point equations
+If we make an ansatz where $\bV$ is constant and $\bF$ is of the
+form $\bF_0 + \bF_2 \, \bp^2$, there is a solution FP2
+for the unimproved fixed point equations which reads
 \begin{align}
-  v_*          &= c_d \left[\frac{(d-1) (d-2)}{2 \, d}+\frac{N-1}{d}\right] \,, \\
-  f_*(\varphi) &= c_d \left[ \frac{d^5-4 d^4-7 d^3-50 d^2+84 d+24}{24 \, d \, (d-1) \, (d-2)}
-                  - \frac{(N-1)(d^2-d+12)}{12 \, (d-1) \, (d-2)}\right]
-                  + \frac{\varphi^2}{2 \, (d-1)}\,.
+  \bVstar          &= c_d \left[\frac{(d-1) (d-2)}{2 \, d}+\frac{\NS-1}{d}\right] \,, \\
+  \bFstar(\bp) &= c_d \left[ \frac{d^5-4 d^4-7 d^3-50 d^2+84 d+24}{24 \, d \, (d-1) \, (d-2)}
+                  - \frac{(\NS-1)(d^2-d+12)}{12 \, (d-1) \, (d-2)}\right]
+                  + \frac{\bp^2}{2 \, (d-1)}\,.
 \end{align}
-We observe that while $f_2$ is always positive,
-$f_0$ becomes negative when either $d$ or $N$ become
-too large. For example for fixed $N=2$ this happens at $d\approx 5.8$
-and for fixed $d=4$ this happens for $N\approx 5.6$.
+We observe that while $\bF_2$ is always positive,
+$\bF_0$ becomes negative when either $d$ or $\NS$ become
+too large. For example for fixed $\NS=2$ this happens at $d\approx 5.8$
+and for fixed $d=4$ this happens for $\NS\approx 5.6$.
 The solution is probably unphysical in these cases.
 
 The same ansatz does not yield a solution for the improved equations.
 We suspect that there may be a solution
 with very similar properties but different functional form.
-The search of such generalization is beyond the scope of this paper.
+The search of such generalization is beyond the scope of this chapter however.
 
-If we make the ansatz that $v$ is constant and $f$ is proportional
-to $\varphi^2$ (i.e. that $f_0=0$), the fixed point equation is quadratic and admits two
+If we make the ansatz that $\bV$ is constant and $\bF$ is proportional
+to $\bp^2$ (i.e. that $\bF_0=0$), the fixed point equation is quadratic and admits two
 real solutions FP3 and FP4.
 They are the same for the improved and unimproved flow equations.
 The expressions for arbitrary $d$ are quite long, so
-we only give here the formulae for $d=3$
+we will only give here the formulae for $d=3$
 \begin{align}
-  v_* = \frac{N}{18\pi^2} \,, \qquad
-  f_* = - \frac{ 9N - 80 \pm \sqrt{9N^2-264N+5296} }{ 96 \, (N-1) } \, \varphi^2 \,,
+  \bVstar = \frac{\NS}{18\pi^2} \,, \qquad
+  \bFstar = - \frac{ 9N - 80 \pm \sqrt{9\NS^2-264\NS+5296} }{ 96 \, (\NS-1) } \, \bp^2 \,,
 \end{align}
 and $d=4$
 \begin{align}
-  v_* = \frac{2+N}{128\pi^2} \,, \qquad
-  f_* = - \frac{ 6N - 41 \pm \sqrt{4N^2-100N+1321} }{ 48 \, (N-1) } \, \varphi^2 \,.
+  \bVstar = \frac{2+\NS}{128\pi^2} \,, \qquad
+  \bFstar = - \frac{ 6N - 41 \pm \sqrt{4\NS^2-100\NS+1321} }{ 48 \, (\NS-1) } \, \bp^2 \,,
 \end{align}
 where the upper sign corresponds to FP3
 and the lower sign corresponds to FP4.
-We note that FP3 has a finite $N\to1$ limit,
+We note that FP3 has a finite $\NS\to1$ limit,
 while in the case of FP4 there is a divergence.
-In fact for $N=1$ the fixed point FP3 had already been seen
-in \cite{Percacci:2015wwa}, but FP4 does not exist in that case.
-Imposing that $f>0$ we find that FP3 is always unphysical
-while FP4 is acceptable for $0<N<15.33$ in $d=3$
-and $1<N<11.25$ in $d=4$.
+In fact, in the case of $\NS=1$ the fixed point FP3 had already been seen
+in ref. \cite{Percacci:2015wwa}, but FP4 does not exist in that case.
+Imposing that $\bF>0$ we find that FP3 is always unphysical
+while FP4 is acceptable for $0<\NS<15.33$ in $d=3$
+and $1<\NS<11.25$ in $d=4$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%
-\section{Large-$N$ limit}
-%%%%%%%%%%%%%%%%%%%%%%%
+\section{The large-$\NS$ limit}
 
-All the solutions described in the previous section
-have the property that the function $f_*$ is not
-positive if the number of scalars exceeds a certain limit.
-In order to confirm that this behaviour persists
-we consider here the large-$N$ limit of the flow.
-It is very convenient to change variable and use $\rho=\varphi^2/2$
-as the argument of the functions $v$ and $f$.
-It is easy to see that in the large-$N$ limit both the potentials $v$ and $f$ as well
-as $\rho$ scale linearly in $N$.
-In particular in such a limit the flow equations,
-in terms of all the quantities already rescaled by $N$, read simply
+All solutions described in the previous section
+have the property that the function $\bFstar$ becomes negative
+if the number of scalar fields exceeds a certain limit.
+In order to confirm that this behaviour indeed persists for larger $\NS$ as well,
+we will here consider the large-$\NS$ limit of the flow.
+Here, it is convenient to use the variable $\bar \rho=\bar \varphi^2/2$
+as the argument of the functions $\bV$ and $\bF$ instead of $\bar \varphi$.
+It is easy to see that in the large-$\NS$ limit $\bV$, $\bF$ as well
+as $\bar \rho$ scale linearly in $\NS$.
+In this limit the flow equations---in terms of already rescaled quantities---simply read
 \begin{align}
-  \dot v &= - d v    + (d-2) \, \rho \, v' + \frac{c_d}{1+v'} \,, \\
-  \dot f &= -(d-2) f + \left[ (d-2) \, \rho - \frac{c_d}{\left(1+v'\right)^2} \right] f'  - \frac{d}{12} \, \frac{c_d} {1+v'} \,.
+  \dot \bV &= - d \, \bV    + (d-2) \, \bar \rho \, \bV' + \frac{c_d}{1+\bV'} \,, \\
+  \dot \bF &= -(d-2) \bF + \left[ (d-2) \, \bar \rho - \frac{c_d}{\left(1+\bV'\right)^2} \right] \bF'  - \frac{d}{12} \, \frac{c_d} {1+\bV'} \,.
   \label{eqlargeN}
 \end{align}
-The fixed point equation for the scalar potential $v$ is the same as in flat space.
-There is a solution with a constant potential $v$ and one with a non-trivial one which
-is known analytically \cite{Marchais:2012}.
-In the first case the solution to Eqs.~(\ref{eqlargeN}) is given by
+The fixed point equation for the scalar potential $\bV$ is the same as in flat spacetime.
+It has two analytically known solutions, \cf ref. \cite{Marchais:2012}, one of which
+is constant and one of which is not.
+In the case of a constant potential the combined fixed point equations have the following solution:
 \begin{align}
-  v = \frac{c_d}{d} \,, \quad
-  f = -\left( \frac{d}{12 \, (d-2)} \, c_d + 2 \, a\right) +  2 \, a \, \frac{d-2}{c_d} \, \rho \,,
+  \bVstar &= \frac{c_d}{d} \,, \\
+  \bFstar(\bar\rho) &= -\left( \frac{d}{12 \, (d-2)} \, c_d + 2 \, a\right)
+  +  2 \, a \, \frac{d-2}{c_d} \, \bar \rho \,,
 \end{align}
-where $a$ is a constant of integration. For such a line of fixed points it is clear that,
-for $d>2$  and for any value of $a$, the function $f$ is unphysical since either the constant
-part or the coefficient of $\rho$ are negative.
+where $a$ is an arbitrary constant of integration.
+For $d>2$, any point on this line of solutions may be considered unphysical,
+since either the linear or the constant term in $\bF$ will become negative.
 
-In order to deal with the  second case with the non-trivial solution for $v$, its equation is best written,
-for $d$ not an even integer, in terms of $w(\rho)=v'(\rho)$ in the implicit form
+In order to deal with the second, non-trivial solution for $\bV$,
+the equation is best rewritten in its implicit form
 \begin{align}
-  \rho = \frac{d \, c_d}{4} \; _2F_1 \left( 2,\, 1 - \frac{d}{2};\, 2 - \frac{d}{2};\, -w \right) .
+  \bar \rho = \frac{d \, c_d}{4} \;
+  _2F_1 \left( 2,\, 1 - \frac{d}{2};\, 2 - \frac{d}{2};\, -w(\bar \rho) \right) ,
 \end{align}
-Therefore the scalar sector presents the Wilson Fisher type global scaling solution for $2<d<4$.
-Also the fixed point equation for $f$ can be further simplified in terms of $w$
-and defining a new function $g(w)=f(\rho)$ one has
+where $d$ is now an odd integer and $w(\bar \rho)=\bV'(\bar \rho)$.
+The Gaussian or ordinary hypergeometric function is thereby defined as:
+\begin{align}
+  {}_2F_1(a,b;c;z) = \sum_{n=0}^\infty \frac{(a)_n (b)_n}{(c)_n} \frac{z^n}{n!} \,.
+\end{align}
+The scalar sector therefore admits a Wilson-Fisher type global scaling solution as long as $2<d<4$.
+The fixed point equation for $\bF$ can also be simplified by rewriting it in terms of $w$
 \begin{align}
   0 = -(d-2) \, g + 2 \, w \, g' - \frac{d}{12} \, \frac{c_d}{1+w} \,,
 \end{align}
-which can be solved analytically and gives the implicit solution
+where we defined a new function $g(w(\bar \rho)) = \bF (\bar \rho)$.
+This equation can be solved analytically and its solution is implicitly given by
 \begin{align}
-  f(\rho) = g(w) = - \frac{d \, c_d}{12 \, (d-2)} \; _2F_1\left( 1,\, 1 - \frac{d}{2};\, 2 - \frac{d}{2};\, -w \right) ,
+  \bF(\bar \rho) = - \frac{d \, c_d}{12 \, (d-2)} \;
+  _2F_1\left( 1,\, 1 - \frac{d}{2};\, 2 - \frac{d}{2};\, -w(\bar \rho) \right) ,
 \end{align}
-which is always negative for $d>2$ and therefore such a fixed point for $2<d<4$ appears
-in the large $N$ limit to lead to negative gravitational interactions in the current formulation.
-We also note that in the asymptotic region $\rho\to\infty$ one has $f(\rho)= -\frac{2 }{3 d (d-2) } \rho$.
+which is always negative for $d>2$. For $2<d<4$, such a fixed point therefore appears
+to lead to a negative gravitational interactions in the large $\NS$ limit.
+We also note that in the asymptotic region
+$\bar \rho\to\infty$ one has $\bF(\bar \rho)= -\frac{2 }{3 d (d-2) } \bar \rho$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -2076,14 +2085,14 @@ since $\theta_2$ and $\theta_4$ become negative. In particular
 We note that the eigenvalues come in groups
 within which they are shifted by two.
 This behaviour had already been observed and
-explained in \cite{Narain:2009fy}.
+explained in ref. \cite{Narain:2009fy}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The gravitationally dressed Wilson-Fisher fixed point}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In \cite{Percacci:2015wwa} we looked for scaling solutions in $d=3$
+In ref. \cite{Percacci:2015wwa} we looked for scaling solutions in $d=3$
 with a potential resembling that of the Wilson-Fisher fixed point.
 We concentrated on the unimproved equations,
 and found a solution for sufficiently small $\varphi$
@@ -2097,13 +2106,13 @@ proved hard and we were unable to establish its global existence.
 Perhaps more important, the Hessian becomes ill-defined at the
 critical point, so that the equations themselves become unreliable.
 A little later, using more powerful numerical techniques,
-a global solution was found for the improved RG equation \cite{Borchardt:2015rxa}.
+a global solution was found for the improved RG equation ref. \cite{Borchardt:2015rxa}.
 The fixed point potential for this solution is again
 very similar to the Wilson-Fisher potential,
 but the function $f$ now has positive second derivative
 and is positive everywhere, avoiding the issues mentioned above.
 With hindsight this solution can be seen also with the
-simpler techniques used in \cite{Percacci:2015wwa}, such as
+simpler techniques used in ref. \cite{Percacci:2015wwa}, such as
 Taylor expansion and the shooting method.
 Near the origin it has the expansion
 \begin{align}
@@ -2191,18 +2200,18 @@ the cutoff depends on running couplings
 and there is an explicit breaking of the scalar split symmetry
 $\bar\phi^a\to\bar\phi^a+\epsilon^a$,
 $\delta\phi^a\to\delta\phi^a-\epsilon^a$.
-As discussed in \cite{Bridle:2013sra}, already in pure scalar theory
+As discussed in ref. \cite{Bridle:2013sra}, already in pure scalar theory
 the presence of the scalar background field
 in the cutoff action can lead to unphysical results.
 This argument casts doubts on the use of these cutoffs,
 and it is important to explore also cutoffs that
 do not have a prefactor $F$.
 In the Einstein-Hilbert truncation, where $F=1/(16\pi G)$,
-such cutoffs were called ``pure'' \cite{Narain:2009qa}.
+such cutoffs were called ``pure'' ref. \cite{Narain:2009qa}.
 Here we shall call them ``scalar-free''.
 It is important to keep in mind that any cutoff still
 depends on the background metric, and that this dependence will
-have to be dealt with by other means, see e.g. \cite{Dietz:2015owa,Becker:2014qya}.
+have to be dealt with by other means, see e.g. ref. \cite{Dietz:2015owa,Becker:2014qya}.
 Here we only get rid of the $\bar\phi$--dependence and have the scalar split Ward
 identity automatically fulfilled.
 In particular we shall add in the diagonal entries for $h^{TT}_{\,\mu\nu}$
@@ -2219,9 +2228,7 @@ For $d=4$ the equations read:
             - \frac{ f \left[ f (v''+1) \log\left( \frac{ 3 f'{}^2 }{ f (v''+1) } + 1 \right) - 3 f'{}^2 \right] }
                    { 144 \pi^2 f'{}^4 } \nonumber \\
   &         + \frac{ 3 \gamma \left[ - \gamma^2 + 4\gamma f - 2\gamma(\gamma-2f) \log \left( \frac{f}{\gamma} \right) - 3 f^2\right]}
-                   { 16 \pi ^2 (\gamma -f)^3}+\frac{(N-1) \varphi }{32 \pi ^2 \left(v'+\varphi \right)} \,,
-\end{align}
-\begin{align}
+                   { 16 \pi ^2 (\gamma -f)^3}+\frac{(N-1) \varphi }{32 \pi ^2 \left(v'+\varphi \right)} \,, \\
   \dot f &= - 2f + \varphi f' + \frac{19}{384\pi^2}
             + \frac{ f \left[\frac{6f'^2\left(f f''+f'^2\right)}{3f'^2+f\left(v''+1\right)}
             - \left(2 f f''+3 f'^2\right)
@@ -2236,7 +2243,7 @@ Unlike (\ref{flowvfull},\ref{flowffull}),
 these are transcendental equations and cannot be solved analytically.
 For a comparison we discuss
 only the  scaling solution FP1
-which is defined by $v(\varphi)=v_0$ and $f(\varphi)=f_0$.
+which is defined by $v(\varphi)=v_0$ and $f(\varphi)=\bF_0$.
 With this ansatz the fixed point conditions reduce to
 the following algebraic equations
 \begin{align}
@@ -2270,7 +2277,7 @@ can be found numerically and the corresponding eigenvalues are
 $-4$, $-2.272$, $-2$, $-0.272$, $0$.
 There are therefore four relevant and one marginal couplings.
 For $\gamma=0.006$ we have $v_{0*}=0.00353$, $f_{0*}=0.00670$,
-which are very close to the values found with the other cutoff in \cite{Percacci:2015wwa}.
+which are very close to the values found with the other cutoff in ref. \cite{Percacci:2015wwa}.
 The relevant eigenperturbations around this solution
 have eigenvalues $-4$, $-2.542$, $-2$, $-0.542$, $0$,
 which are also closer the the other cutoff.
@@ -2318,6 +2325,7 @@ and the beta function of $f$ would probably be regular for $f=0$.
 %----------------------------------------------------------------------------------------
 
 \chapter{Scalar Matter 2}
+\label{ch:astrid}
 
 \section{Introduction}
 %
@@ -3731,6 +3739,7 @@ would suggest that there could be an upper limit of scalars that is compatible w
 %----------------------------------------------------------------------------------------
 
 \chapter{Scalar Matter 3}
+\label{ch:jan}
 
 \section{Introduction}
 In gravity-matter systems the scatterings with gravitons are described
@@ -5251,7 +5260,11 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 
 \appendix
 \begin{appendices}
-\chapter{Hessian First Paper}
+\chapter{York decomposition and gauge fixing}
+\label{app:York}
+
+\chapter{Hessian and flow equations in scalar-tensor theories}
+\label{app:Hessian}
 
 The Hessian for gravity coupled to a single scalar has been
 given in \cite{Percacci:2015wwa}.
@@ -5373,7 +5386,8 @@ The ghost terms induced by the gauge fixing are given by:
 \end{align}
 
 
-\chapter{Variations of Einstein-Hilbert action}
+\chapter{Vertices and variations of the Einstein-Hilbert action}
+\label{app:EH}
 
 \section{Variations of $\Gamma_{\mu \nu}^{\kappa}$ in the exponential parameterization}
 
@@ -5498,6 +5512,10 @@ For the ghost candy, we find the following vertex
 \delta \Gamma_{k\, \rm gh}&=& \sqrt{64 \pi G} Z_c \int_{p,q} \bar{c}^{\mu} (p)h^{\kappa \lambda}(p-q)c^{\nu}(q) \Bigl(\left(p\cdot q+q^2\right) \delta_{\mu \kappa} \delta_{\nu\lambda} +p_{\kappa}(p_{\nu}-q_{\nu})\delta_{\mu \lambda} + p_{\kappa}q_{\mu}\delta_{\nu \lambda}\nonumber\\
 &{}& - p_{\mu}q_{\kappa}\delta_{\nu \lambda} - \frac{1}{2} p_{\mu}\left(p_{\nu}-q_{\nu}\right)\delta_{\kappa \lambda}\Bigr).
 \eea
+
+
+\chapter{The msWI from heat kernel techniques}
+\label{app:msWI}
 
 \end{appendices}
 
