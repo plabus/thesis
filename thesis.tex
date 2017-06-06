@@ -12,8 +12,8 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{book} % Default font size and left-justified equations
-% \documentclass[11pt,draft]{book} % Default font size and left-justified equations
+% \documentclass[11pt]{book} % Default font size and left-justified equations
+\documentclass[11pt,draft]{book} % Default font size and left-justified equations
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
 \input{structure} % Insert the structure.tex file which contains
                   % the majority of the structure behind the template
@@ -100,6 +100,7 @@
 \newcommand\hTTmunu{ h^{\scriptscriptstyle{\mathrm{TT}}}_{\mu\nu} }
 \newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{TT}}} }
 \newcommand\etaS{ \eta_{\scriptscriptstyle{\mathrm{S}}} }
+\newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}} }
 \newcommand{\bF}{\bar F}
 \newcommand{\bVstar}{\bar V_\star}
 \newcommand{\bFstar}{\bar F_\star}
@@ -504,7 +505,7 @@ Wilson-Fisher fixed point, LPA, Scaling Solutions
 % CHAPTER 2
 %----------------------------------------------------------------------------------------
 
-\chapter{Background Independence and the FRG}
+\chapter[Background Independence and the Functional Renormalisation Group]{Background Independence and the FRG}
 
 As we have outline in the last chapter,
 non-perturbative renormalization group flows for quantum gravity \cite{Reuter:1996cp}
@@ -1760,17 +1761,17 @@ where already discussed.
 It was found that in generic dimension $d$ the flow equations for the dimensionless
 functions $\bar V(\bar \varphi)= k^{-d} V(\varphi)$ and $\bar F(\bar\varphi)=k^{2-d}F(\varphi)$
 of the dimensionless field $\bar \varphi=k^{1-d/2}\varphi$
-admit some simple exact solutions where $\bar V=v_0$ is constant and
-$\bar F=f_0 + \bF_2 \, \varphi^2$ is a quadratic polynomial.
+admit some simple exact solutions where $\bar V = \bV_0$ is constant and
+$\bar F = \bF_0 + \bF_2 \, \bp^2$ is a quadratic polynomial.
 These solutions can have interesting applications to cosmology in $d=4$,
 \cite{Henz:2013oxa}.
 Unfortunately it seems that one of these solutions,
-with $f_0$ and $\bF_2$ both non-zero, does not survive,
+with $\bF_0$ and $\bF_2$ both non-zero, does not survive,
 at least in the same form, when one applies the
 ``renormalisation group improvement'',
 while another, which remains unchanged by the
 ``renormalisation group improvement'',
-has $f_0=0$ but $\bF_2<0$, making its physical relevance questionable.
+has $\bF_0=0$ but $\bF_2<0$, making its physical relevance questionable.
 
 In this chapter we will consider the case of $\NS$ scalar fields with
 an $O(\NS)$-invariant action of the general form
@@ -1788,11 +1789,11 @@ $V$ and $F$ as functions of the variable $\rho=\varphi^2/2$ instead.
 $\varphi=\sqrt{\sum_i \varphi^i \varphi^i \,}$.
 The remaining $\NS-1$ angular degrees of freedom will be referred to as the Goldstone bosons.
 One of the main results of this chapter will be to show that in the case
-$\NS>1$ there exists a previously unobserved solution with $f_0=0$ and $\bF_2>0$.
+$\NS>1$ there exists a previously unobserved solution with $\bF_0=0$ and $\bF_2>0$.
 
 The other main result will be the confirmation
 of the existence  of an upper bound on the number of scalar fields,
-if a fixed point with positive $f$ is to be observed.
+if a fixed point with positive $\bF$ is to be observed.
 Such bounds have been discussed earlier in ref. \cite{Dona:2013qba},
 but only for minimally coupled fields.
 We will see that the existence of a potential and non-minimal interactions do
@@ -1830,7 +1831,7 @@ We describe the steps involved in the York decomposition, the
 gauge fixing and resulting Faddeev–Popov ghost sector app. \ref{app:York}.
 Further details concerning the derivation of the Hessian and the flow
 equations may be found in app. \ref{app:Hessian}.
-Finally we use a ``type I'' cutoff, which is introduced by replacing
+Finally we use a type-I cutoff, which is introduced by replacing
 all occurrences of $-\bnabla^2$ with $-\bnabla^2+R_k(-\bnabla^2)$,
 \cite{Codello:2008vh}.
 In particular, we will use the optimised cutoff
@@ -2026,20 +2027,18 @@ We also note that in the asymptotic region
 $\bar \rho\to\infty$ one has $\bF(\bar \rho)= -\frac{2 }{3 d (d-2) } \bar \rho$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stability analysis}
-%%%%%%%%%%%%%%%%%%%%%%%
 
 We discuss here the linearisation of the flow in $d=4$ around the fixed point FP1.
 We begin with the simpler ``RG-unimproved'' case,
 which yields the following linearised equations:
 \begin{align}
   0 &= - (\lambda +4) \, \delta v
-       + \left[ \varphi - \frac{N-1}{32 \pi^2 \varphi} \right] \delta v'
+       + \left[ \bp - \frac{\NS-1}{32 \pi^2 \bp} \right] \delta v'
        - \frac{1}{32 \pi^2} \, \delta v'' \,, \\
   0 &= - (\lambda +2) \, \delta\! f
-       + \left[ \varphi - \frac{N-1}{32\pi^2\varphi} \right] \delta\! f'
-       + \frac{N-1}{96\pi^2\varphi} \, \delta v'
+       + \left[ \bp - \frac{\NS-1}{32\pi^2\bp} \right] \delta\! f'
+       + \frac{\NS-1}{96\pi^2\bp} \, \delta v'
        + \frac{1}{96\pi^2} \, \delta v''
        - \frac{1}{32\pi^2} \, \delta\! f' \,.
 \end{align}
@@ -2047,40 +2046,40 @@ In this case the critical exponents are equal to their classical values:
 \begin{align}
   \theta_1 &= 4 \,, \qquad w_1^t = (\delta u, \, \delta\! f)_1 = \vphantom{\frac 11}      ( 1,\, 0) \,, \nonumber \\
   \theta_3 &= 2 \,, \qquad w_3^t = (\delta u, \, \delta\! f)_3 = \vphantom{\frac 11}      ( 0,\, 1) \,, \nonumber \\
-  \theta_5 &= 0 \,, \qquad w_5^t = (\delta u, \, \delta\! f)_5 =                     \left( 0,\, -\frac{N}{32\pi^2}+\varphi^2 \right) .
+  \theta_5 &= 0 \,, \qquad w_5^t = (\delta u, \, \delta\! f)_5 =                     \left( 0,\, -\frac{\NS}{32\pi^2}+\bp^2 \right) .
 \end{align}
 The solution FP1 for the full fixed point equations in $d=4$ has coordinates
 \begin{align}
-  v^* = \frac{N+4}{128 \pi ^2} \,, \quad
-  f^* = \frac{169-12 N}{2304 \pi ^2} \,.
+  \bVstar = \frac{\NS+4}{128 \pi ^2} \,, \quad
+  \bFstar = \frac{169-12 \NS}{2304 \pi ^2} \,.
 \end{align}
 Linearising the full flow equations around this solution
 we get the eigenvalue equations for the eigenperturbations:
 \begin{align}
   0 &= - (\lambda + 4) \, \delta v
-       + \frac{72 \, \lambda}{169 - 12 N} \, \delta \!f
-       + \left[ \varphi - \frac{N-1}{32 \pi^2 \varphi} \right] \delta v'
-       + \frac{72 \, \varphi}{12N - 169} \, \delta\!f' - \frac{1}{32\pi^2} \, \delta v'' \,, \\
-  0 &=   \left[ \frac{3 \, \lambda \, (45-4N)}{12N - 169}-2 \right] \delta\!f
-       + \left[ \frac{3 \, (4N - 45) \, \varphi}{12N-169}
-       - \frac{N-1}{32\pi^2\varphi} \right] \delta\!f'
+       + \frac{72 \, \lambda}{169 - 12 \NS} \, \delta \!f
+       + \left[ \bp - \frac{\NS-1}{32 \pi^2 \bp} \right] \delta v'
+       + \frac{72 \, \bp}{12\NS - 169} \, \delta\!f' - \frac{1}{32\pi^2} \, \delta v'' \,, \\
+  0 &=   \left[ \frac{3 \, \lambda \, (45-4\NS)}{12\NS - 169}-2 \right] \delta\!f
+       + \left[ \frac{3 \, (4\NS - 45) \, \bp}{12\NS-169}
+       - \frac{\NS-1}{32\pi^2\bp} \right] \delta\!f'
        - \frac{1}{32\pi^2} \, \delta\!f'' \nonumber \\
        & \hspace{9.65cm}
-         + \frac{N-1}{96\pi^2\varphi} \, \delta v'
+         + \frac{\NS-1}{96\pi^2\bp} \, \delta v'
          + \frac{1}{96\pi^2} \, \delta v'' \,.
 \end{align}
 We can study the spectrum of the leading eigenvalues analytically.
-We find four relevant and one marginal direction for $N<\frac{45}{4}$,
-while for $\frac{45}{4}<N<\frac{169}{12}$ there are only two relevant and one marginal directions,
+We find four relevant and one marginal direction for $\NS<\frac{45}{4}$,
+while for $\frac{45}{4}<\NS<\frac{169}{12}$ there are only two relevant and one marginal directions,
 since $\theta_2$ and $\theta_4$ become negative. In particular
 \begin{alignat}{2}
   \theta_1 &= 4 \,,                                   && (\delta v, \, \delta\! f)_1 = \vphantom{\frac 11} (1, \, 0) \,, \nonumber \\
-  \theta_2 &= 2 + \frac{68}{ 3 (45 - 4N) } \,, \quad  && (\delta v, \, \delta\! f)_2 = \left( \frac{72}{12 N - 101}, \, 1 \right)  , \nonumber\\
-  \theta_3 &= 2 \,,                                   && (\delta v, \, \delta\! f)_3 = \left( -\frac{29 N}{544\pi^2} + \varphi^2, \, \frac{N(169 - 12 N)}{3264\pi^2}\right) , \nonumber\\
-  \theta_4 &= \frac{68}{ 3 (45 - 4N) } \,,            && (\delta v, \, \delta\! f)_4 = \bigg( -\frac{3N(48N(3 N - 76)+22475)}{16\pi^2(4N - 45)(6N - 59) (12N - 101)} \nonumber \\
-                                                    & && \hspace{1.8cm} + \frac{72}{12N - 101} \, \varphi^2, \,  - \frac{N(12N - 169)(12N-125)} {96\pi^2(4N - 45)(12 N - 101)}+\varphi^2\bigg) , \nonumber \\
-  \theta_5 &= 0 \,,                                   && (\delta v, \, \delta\! f)_5 = \bigg( \frac{29 N (N+2)}{17408\pi^4} - \frac{29(N+2)}{272\pi ^2} \, \varphi^2 + \varphi^4, \nonumber \\
-                                                    & && \hspace{2.4cm} \frac{N (N+2) (12 N - 227)}{224\pi ^4}-\frac{(N+2) (12 N - 169) }{1632\pi^2} \, \varphi^2 \bigg) .
+  \theta_2 &= 2 + \frac{68}{ 3 (45 - 4\NS) } \,, \quad  && (\delta v, \, \delta\! f)_2 = \left( \frac{72}{12 \NS - 101}, \, 1 \right)  , \nonumber\\
+  \theta_3 &= 2 \,,                                   && (\delta v, \, \delta\! f)_3 = \left( -\frac{29 \NS}{544\pi^2} + \bp^2, \, \frac{\NS(169 - 12 \NS)}{3264\pi^2}\right) , \nonumber\\
+  \theta_4 &= \frac{68}{ 3 (45 - 4\NS) } \,,            && (\delta v, \, \delta\! f)_4 = \bigg( -\frac{3\NS(48\NS(3 \NS - 76)+22475)}{16\pi^2(4\NS - 45)(6\NS - 59) (12\NS - 101)} \nonumber \\
+                                                    & && \hspace{1.1cm} + \frac{72}{12\NS - 101} \, \bp^2, \,  - \frac{\NS(12\NS - 169)(12\NS-125)} {96\pi^2(4\NS - 45)(12 \NS - 101)}+\bp^2\bigg) , \nonumber \\
+  \theta_5 &= 0 \,,                                   && (\delta v, \, \delta\! f)_5 = \bigg( \frac{29 \NS (\NS+2)}{17408\pi^4} - \frac{29(\NS+2)}{272\pi ^2} \, \bp^2 + \bp^4, \nonumber \\
+                                                    & && \hspace{1.6cm} \frac{\NS (\NS+2) (12 \NS - 227)}{224\pi ^4}-\frac{(\NS+2) (12 \NS - 169) }{1632\pi^2} \, \bp^2 \bigg) .
 \end{alignat}
 We note that the eigenvalues come in groups
 within which they are shifted by two.
@@ -2088,19 +2087,17 @@ This behaviour had already been observed and
 explained in ref. \cite{Narain:2009fy}.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The gravitationally dressed Wilson-Fisher fixed point}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In ref. \cite{Percacci:2015wwa} we looked for scaling solutions in $d=3$
 with a potential resembling that of the Wilson-Fisher fixed point.
 We concentrated on the unimproved equations,
-and found a solution for sufficiently small $\varphi$
+and found a solution for sufficiently small $\bp$
 whose potential is almost indistinguishable from the
-Wilson-Fisher potential, and with a function $f$
-that starts out positive at $\phi=0$ but has negative
+Wilson-Fisher potential, and with a function $\bF$
+that starts out positive at $\bp=0$ but has negative
 second derivative, such that it crosses zero at
-some critical value $\varphi\approx 0.92$.
+some critical value $\bp\approx 0.92$.
 The analysis of the solution beyond this critical value
 proved hard and we were unable to establish its global existence.
 Perhaps more important, the Hessian becomes ill-defined at the
@@ -2109,32 +2106,33 @@ A little later, using more powerful numerical techniques,
 a global solution was found for the improved RG equation ref. \cite{Borchardt:2015rxa}.
 The fixed point potential for this solution is again
 very similar to the Wilson-Fisher potential,
-but the function $f$ now has positive second derivative
+but the function $\bF$ now has positive second derivative
 and is positive everywhere, avoiding the issues mentioned above.
 With hindsight this solution can be seen also with the
 simpler techniques used in ref. \cite{Percacci:2015wwa}, such as
 Taylor expansion and the shooting method.
 Near the origin it has the expansion
 \begin{align}
-v &= 0.009355 - 0.029266 \, \varphi ^2 + 0.003591 \, \varphi ^4 + 1.14530 \, \varphi ^6 + \dots \,, \nonumber \\
-f &= 0.068604 + 0.172245 \, \varphi ^2 - 0.132631 \, \varphi ^4 + 0.39032 \, \varphi ^6 + \dots \,. \nonumber
+  \lim_{\bp \rightarrow 0} \bVstar(\bp) &= 0.009355 - 0.029266 \, \bp ^2 + 0.003591 \, \bp ^4 + 1.14530 \, \bp ^6 + \dots \,, \\
+  \lim_{\bp \rightarrow 0} \bFstar(\bp) &= 0.068604 + 0.172245 \, \bp ^2 - 0.132631 \, \bp ^4 + 0.39032 \, \bp ^6 + \dots \,.
 \end{align}
-We have looked for generalizations of this solution for $N>1$.
-Treating $N$ as a continuous variable, candidate scaling solutions
+We have looked for generalizations of this solution for $\NS>1$.
+Treating $\NS$ as a continuous variable, candidate scaling solutions
 can be found with the shooting method.
-We show, as an example, in Fig.~\ref{WFN1N2} the cases $N=1$ and $N=2$.
+We show, as an example, in Fig.~\ref{WFN1N2} the cases $\NS=1$ and $\NS=2$.
 A spiralling structure appears close to the fixed point which is characterized by a very sharp relative peak.
 \begin{figure}
-\includegraphics[width=7.5cm]{spike_d3N1.pdf}
-\
-\includegraphics[width=7.5cm]{spike_d3N2.pdf}
-\caption{The maximal value of the field reached in the numerical
-evolution before encountering a singularity, as a function
-of the initial conditions $v''(\varphi=0)$ and $f''(\varphi=0)$,
-for the case $d=3$ and $N=1$ (left panel) and $N=2$ (right panel).
-A clear spike can be seen in the centre of each figure.
-}
-\label{WFN1N2}
+  \includegraphics[width=7.5cm]{spike_d3N1.pdf}
+  \
+  \includegraphics[width=7.5cm]{spike_d3N2.pdf}
+  \caption{
+    The maximal value of the field reached in the numerical
+    evolution before encountering a singularity, as a function
+    of the initial conditions $\bV''(\bp=0)$ and $\bF''(\bp=0)$,
+    for the case $d=3$ and $\NS=1$ (left panel) and $\NS=2$ (right panel).
+    A clear spike can be seen in the centre of each figure.
+  }
+  \label{WFN1N2}
 \end{figure}
 
 % \begin{figure}
@@ -2157,37 +2155,33 @@ A clear spike can be seen in the centre of each figure.
 %   }
 % \end{figure}
 
-For $N=2$ the solution can be approximated near the origin by
+\noindent For $\NS=2$ the solution can be approximated near the origin by
 \begin{align}
-  v &= 0.014669 - 0.001482 \, \varphi ^2 - 0.438516 \, \varphi ^4 + 4.35302 \, \varphi ^6 + \dots \,, \nonumber \\
-  f &= 0.053294 + 0.263370 \, \varphi ^2 - 0.570919 \, \varphi ^4 + 1.43572 \, \varphi ^6 + \dots \,. \nonumber
+  \lim_{\bp \rightarrow 0} \bVstar(\bp) &= 0.014669 - 0.001482 \, \bp ^2 - 0.438516 \, \bp ^4 + 4.35302 \, \bp ^6 + \dots \,, \\
+  \lim_{\bp \rightarrow 0} \bFstar(\bp) &= 0.053294 + 0.263370 \, \bp ^2 - 0.570919 \, \bp ^4 + 1.43572 \, \bp ^6 + \dots \,.
 \end{align}
-The shape of the potential $v$ shows that the scaling solution is characterised by a broken phase.
-
-The asymptotic behaviour of the solution
-for large $\varphi$ is
+The shape of the potential $\bV$ shows that the scaling solution is characterised by a broken phase.
+The asymptotic behaviour of the solution for large $\bp$ is
 \begin{align}
-  u_{as}(\varphi) &= A \varphi ^6 + \frac{23}{1440 \pi ^4 B \varphi ^2}
-                     + \frac{240 \pi ^4 B^2 (16 B+5 N-4)-1357 A}{216000 \pi ^6 A B^2 \varphi ^4} + \dots \,, \\
-  f_{as}(\varphi) &= B \varphi ^2 + \frac{23}{36 \pi ^2}+\frac{1219}{25920 \pi ^4 B \varphi ^2}
-                     - \frac{71921 A+2160 \pi ^4 B^2 (16 B+5 N-4)}{4665600 \pi ^6 A B^2 \varphi ^4} + \dots \,.
+  \lim_{\bp \rightarrow \infty} \bVstar(\bp) &= A \bp ^6 + \frac{23}{1440 \pi ^4 B \bp ^2}
+                     + \frac{240 \pi ^4 B^2 (16 B+5 \NS-4)-1357 A}{216000 \pi ^6 A B^2 \bp ^4} + \dots \,, \\
+  \lim_{\bp \rightarrow \infty} \bFstar(\bp) &= B \bp ^2 + \frac{23}{36 \pi ^2}+\frac{1219}{25920 \pi ^4 B \bp ^2}
+                     - \frac{71921 A+2160 \pi ^4 B^2 (16 B+5 \NS-4)}{4665600 \pi ^6 A B^2 \bp ^4} + \dots \,.
 \end{align}
-For the case $N=2$ there is a very good match between the numerical solution
+For the case $\NS=2$ there is a very good match between the numerical solution
 found with the shooting method around the origin
-and the asymptotic behaviour given above for $A\simeq 5.149$ and $B\simeq 0.273$ around $\varphi\simeq0.65$.
+and the asymptotic behaviour given above for $A\simeq 5.149$ and $B\simeq 0.273$ around $\bp\simeq0.65$.
 Therefore we consider this as a good candidate for
 a global scaling solution for the gravitationally
 dressed ${\rm O(2)}$ scalar model.
 
-The critical exponents associated to this fixed point ($N=2$) have not been determined with
+The critical exponents associated to this fixed point ($\NS=2$) have not been determined with
 sufficient precision using polynomial methods.
-We can only report that they are not too far from the values obtained for the $N=1$ case.
+We can only report that they are not too far from the values obtained for the $\NS=1$ case.
 More sophisticated numerical methods must be used.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scalar-free cutoff}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 So far we have considered a type-I cutoff which in the gravitational
 sector has the general form $F(\bar\phi)R_k(-\bnabla^2)$.
@@ -2206,105 +2200,106 @@ in the cutoff action can lead to unphysical results.
 This argument casts doubts on the use of these cutoffs,
 and it is important to explore also cutoffs that
 do not have a prefactor $F$.
-In the Einstein-Hilbert truncation, where $F=1/(16\pi G)$,
-such cutoffs were called ``pure'' ref. \cite{Narain:2009qa}.
+In the Einstein-Hilbert truncation, where $F=1/(16\pi \GNewton)$,
+such cutoffs were called ``pure'', \cite{Narain:2009qa}.
 Here we shall call them ``scalar-free''.
 It is important to keep in mind that any cutoff still
 depends on the background metric, and that this dependence will
-have to be dealt with by other means, see e.g. ref. \cite{Dietz:2015owa,Becker:2014qya}.
+have to be dealt with by other means, see e.g. refs. \cite{Dietz:2015owa,Becker:2014qya}.
 Here we only get rid of the $\bar\phi$--dependence and have the scalar split Ward
 identity automatically fulfilled.
-In particular we shall add in the diagonal entries for $h^{TT}_{\,\mu\nu}$
-and $\sigma''$ of the Hessian given in Eq.~(\ref{hessfinal})  a cutoff $\gamma\, k^{d-2}(k^2-z)\theta(k^2-z)$,
+In particular we shall add in the diagonal entries for $\hTTmunu$
+and $\sigma''$ of the Hessian given in Eq.~(\ref{hessfinal})
+a cutoff $\gamma \, k^{d-2} \, (k^2-z) \, \theta(k^2-z)$,
 with the same sign of the Laplacian term, to implement the coarse-graining procedure.
 For all the other terms we shall use the more common
-$(k^2-z)\theta(k^2-z)$.
+$(k^2-z) \, \theta(k^2-z)$.
 
 We do not report here the form of the flow equations in any dimension,
 which contains hypergeometric functions.
 For $d=4$ the equations read:
 \begin{align}
-  \dot v &= - 4v + \varphi v' - \frac{1}{8\pi^2}
-            - \frac{ f \left[ f (v''+1) \log\left( \frac{ 3 f'{}^2 }{ f (v''+1) } + 1 \right) - 3 f'{}^2 \right] }
-                   { 144 \pi^2 f'{}^4 } \nonumber \\
-  &         + \frac{ 3 \gamma \left[ - \gamma^2 + 4\gamma f - 2\gamma(\gamma-2f) \log \left( \frac{f}{\gamma} \right) - 3 f^2\right]}
-                   { 16 \pi ^2 (\gamma -f)^3}+\frac{(N-1) \varphi }{32 \pi ^2 \left(v'+\varphi \right)} \,, \\
-  \dot f &= - 2f + \varphi f' + \frac{19}{384\pi^2}
-            + \frac{ f \left[\frac{6f'^2\left(f f''+f'^2\right)}{3f'^2+f\left(v''+1\right)}
-            - \left(2 f f''+3 f'^2\right)
-              \log\left(\frac{3 f'^2}{f(v''+1)}+1\right)\right]}{288 \pi ^2 f'^4} \nonumber \\
-  &         + \frac{ 10 \gamma  (\gamma -2 f) (\gamma -f)-5 \gamma  \left(\gamma ^2-3 \gamma  f+4 f^2\right) \log \left(\frac{f}{\gamma }\right)}
-                   { 96 \pi ^2 (\gamma -f)^3} \nonumber \\
-  &         + \frac{ \gamma\left[-\gamma +(\gamma-2f)\log\left(\frac{f}{\gamma}\right)+f\right]}
-                   {96\pi^2(\gamma-f)^2}
-            - \frac{(N-1) \varphi  \left(3 f'+v'(\varphi )+\varphi \right)}{96 \pi ^2 \left(v'+\varphi\right)^2} \,.
+  \dot \bV &= - 4 \bV + \bp \, \bV' - \frac{1}{8\pi^2}
+            - \frac{ \bF \left[ \bF (\bV''+1) \log\left( \frac{ 3 \bF'{}^2 }{ \bF (\bV''+1) } + 1 \right) - 3 \bF'{}^2 \right] }
+            { 144 \pi^2 \bF'{}^4 } \nonumber \\[3mm]
+  &         + \frac{ 3 \gamma \left[ - \gamma^2 + 4\gamma \bF - 2\gamma(\gamma-2\bF) \log \left( \frac{\bF}{\gamma} \right) - 3 \bF^2\right]}
+                   { 16 \pi ^2 (\gamma -\bF)^3}+\frac{(\NS-1) \bp }{32 \pi ^2 \left(\bV'+\bp \right)} \,, \\[5mm]
+  \dot \bF &= - 2\bF + \bp \bF' + \frac{19}{384\pi^2}
+            + \frac{ \bF \left[\frac{6\bF'^2\left(\bF \bF''+\bF'^2\right)}{3\bF'^2+\bF\left(\bV''+1\right)}
+            - \left(2 \bF \bF''+3 \bF'^2\right)
+          \log\left(\frac{3 \bF'^2}{\bF(\bV''+1)}+1\right)\right]}{288 \pi ^2 \bF'^4} \nonumber \\[3mm]
+  &         + \frac{ 10 \gamma  (\gamma -2 \bF) (\gamma -\bF)-5 \gamma  \left(\gamma ^2-3 \gamma  \bF+4 \bF^2\right) \log \left(\frac{\bF}{\gamma }\right)}
+          { 96 \pi ^2 (\gamma -\bF)^3} \nonumber \\[3mm]
+  &         + \frac{ \gamma\left[-\gamma +(\gamma-2\bF)\log\left(\frac{\bF}{\gamma}\right)+\bF\right]}
+                   {96\pi^2(\gamma-\bF)^2}
+            - \frac{(\NS-1) \bp  \left(3 \bF'+\bV'(\bp )+\bp \right)}{96 \pi ^2 \left(\bV'+\bp\right)^2} \,.
 \end{align}
-Unlike (\ref{flowvfull},\ref{flowffull}),
+Unlike eqns. (\ref{flowvfull}) and (\ref{flowffull}),
 these are transcendental equations and cannot be solved analytically.
-For a comparison we discuss
-only the  scaling solution FP1
-which is defined by $v(\varphi)=v_0$ and $f(\varphi)=\bF_0$.
+For a comparison we discuss only the  scaling solution FP1
+which is defined by $\bV(\bp)=\bV_0$ and $\bF(\bp)=\bF_0$.
 With this ansatz the fixed point conditions reduce to
 the following algebraic equations
 \begin{align}
   \label{eqpureFP1}
-  v_0 &= \frac{1}{128\pi^2(\gamma-f_0)^2}\left[ (N-10)\gamma^2-2(N-13)\gamma f_0+(N-4)f_0^2 - 12 \, \gamma^2 \, \frac{ \gamma - 2f_0 }{ \gamma - f_0} \, \log\left(\frac{f_0}{\gamma}\right) \right] \nonumber \\
-  0   &= -2f_0-\frac{4N-55}{384\pi^2} -\frac{f_0(\gamma+9f_0)}{96\pi^2(\gamma-f_0)^2} -\frac{\gamma\left(2\gamma^2-6\gamma f_0+9f_0^2\right) \log\left(\frac{f_0}{\gamma}\right)}{48\pi^2(\gamma-f_0)^3}
+  \bV_0 &= \frac{1}{128\pi^2(\gamma-\bF_0)^2} \bigg[ (\NS-10)\gamma^2-2(\NS-13)\gamma \bF_0+(\NS-4)\bF_0^2  \nonumber \\
+        &\hspace{8cm} -12 \, \gamma^2 \, \frac{ \gamma - 2\bF_0 }{ \gamma - \bF_0} \, \log \left( \frac{\bF_0}{\gamma} \right) \bigg] \\
+  0   &= -2\bF_0-\frac{4N-55}{384\pi^2} -\frac{\bF_0(\gamma+9\bF_0)}{96\pi^2(\gamma-\bF_0)^2} -\frac{\gamma\left(2\gamma^2-6\gamma \bF_0+9\bF_0^2\right) \log\left(\frac{\bF_0}{\gamma}\right)}{48\pi^2(\gamma-\bF_0)^3}
 \end{align}
 These can be solved numerically.
-The linearization of the flow equation around FP1 yields the following
+The linearisation of the flow equation around FP1 yields the following
 equations:
 \begin{align}
   0 &= - (\lambda+4) \, \delta v
        - \left[\frac{3\gamma\left(3f_0^2+5\gamma f_0-2\gamma^2\right)}
                     {16\pi^2f_0(f_0-\gamma)^3}
        + \frac{3 \gamma ^2 (\gamma -4f_0)}{8\pi^2(f_0-\gamma)^4}\log\left(\frac{f_0}{\gamma}\right)\right]\delta\! f  \nonumber \\
-    &  + \left(\varphi-\frac{N-1}{32\pi^2\varphi}\right)\delta v'
+    &  + \left(\bp-\frac{\NS-1}{32\pi^2\bp}\right)\delta v'
        - \frac{1}{32\pi^2} \, \delta v'' \\
   0 &= - (\lambda +2) \, \delta\! f
        + \left[ \frac{\gamma\left(37 f_0^2-11\gamma f_0+4\gamma^2\right)}
                     {96\pi^2 f_0(f_0-\gamma)^3}
        - \frac{\gamma f_0(2\gamma+3f_0)}{16\pi^2(f_0-\gamma)^4} \log\left(\frac{f_0}{\gamma }\right) \right] \delta\! f  \nonumber \\
-    &  + \left(\varphi-\frac{N-1}{32\pi^2\varphi}\right)\delta\! f'
-       + \frac{N-1}{96\pi^2\varphi} \, \delta v'
+    &  + \left(\bp-\frac{\NS-1}{32\pi^2\bp}\right)\delta\! f'
+       + \frac{\NS-1}{96\pi^2\bp} \, \delta v'
        + \frac{1}{96\pi^2} \, \delta v''
        - \frac{1}{32\pi^2} \, \delta\! f''
 \end{align}
 
-For $N=1$ and $\gamma=1$ we have $v_{0*}=0.03314$, $f_{0*}=0.01552$.
+For $\NS=1$ and $\gamma=1$ we have $\bV_{0 \, \star}=0.03314$, $\bF_{0 \, \star}=0.01552$.
 The relevant eigenperturbations around this solution
 can be found numerically and the corresponding eigenvalues are
 $-4$, $-2.272$, $-2$, $-0.272$, $0$.
 There are therefore four relevant and one marginal couplings.
-For $\gamma=0.006$ we have $v_{0*}=0.00353$, $f_{0*}=0.00670$,
+For $\gamma=0.006$ we have $\bV_{0\,\star}=0.00353$, $\bF_{0\,\star}=0.00670$,
 which are very close to the values found with the other cutoff in ref. \cite{Percacci:2015wwa}.
 The relevant eigenperturbations around this solution
 have eigenvalues $-4$, $-2.542$, $-2$, $-0.542$, $0$,
-which are also closer the the other cutoff.
+which are also closer the other cutoff.
 
-For $N=4$ and $\gamma=1$ the fixed point is at $v_{0*}=0.03635$, $f_{0*}=0.01413$.
+For $\NS=4$ and $\gamma=1$ the fixed point is at $\bV_{0\,\star}=0.03635$, $\bF_{0\,\star}=0.01413$.
 The linear perturbation analysis around the fixed point gives the following eigenvalues: $-4$, $-2.299$, $-2$, $-0.299$, $0$.
-If instead we choose $\gamma=0.006$, we have $v_{0*}=0.00669$, $f_{0*}=0.00549$,
+If instead we choose $\gamma=0.006$, we have $\bV_{0\,\star}=0.00669$, $\bF_{0\,\star}=0.00549$,
 and the eigenvalues are $-4$, $-2.682$, $-2$, $-0.682$, $0$.
 
 In this scalar-free cutoff scheme it is interesting to investigate the solutions of
-Eqs.~\eqref{eqpureFP1} for FP1 in the large $N$ limit.
+eqns.~\eqref{eqpureFP1} and \eqref{other_eqn} for FP1 in the large-$\NS$ limit.
 It is easy to see that in this limit they become
-\be
-v_0\approx \frac{16N-205}{512\pi^2} \quad , \quad
-f_0\approx \gamma\exp{\frac{55-4N}{16}}\ .
-\ee
+\begin{align}
+  \bV_{0 \, \star} \approx \frac{ 16 \NS - 205 }{ 512 \pi^2 } \quad , \quad
+  \bF_{0 \, \star} \approx \gamma\exp{\frac{ 55 - 4 \NS }{16}}\ .
+\end{align}
 We see that this behaviour is very different from the one obtained previously:
-in particular $f_0$ becomes exponentially small but never changes sign.
-Thus there is apparently no upper bound in $N$ from the requirement of having a positive $f_0$.
-This behavior is induced by the interplay between the $\log$ singularity
-in $f_0$ and the linear dependence in $N$ in the equations.
+in particular $\bF_{0 \, \star}$ becomes exponentially small but never changes sign.
+Thus there is apparently no upper bound in $\NS$ from the requirement of having a positive $\bF_{0 \, \star}$.
+This behaviour is induced by the interplay between the logarithmic singularity
+in $\bF_{0 \, \star}$ and the linear dependence in $\NS$ in the equations.
 This result is probably not physically correct for the following
-reason: in the ERGE one should use the Hessian defined as the second
-derivative of the Effective Average Action (EAA) with respect to the quantum field.
+reason: in the functional renormalisation group one should use the Hessian defined as the second
+derivative of the effective average action with respect to the quantum field.
 Instead in order to close the flow equation,
 we are using the second derivative of the
-EAA with respect to the background field.
+effective average action with respect to the background field.
 Even though the function $F$ does not appear in the cutoff,
 it does appear in the denominator, where the coefficient
 of $-\nabla^2$ is $F-\gamma k^{d-2}$.
@@ -2312,11 +2307,11 @@ This term is absent with the type-I cutoff and
 it is its presence with the scalar-free cutoff that gives rise
 to the logarithmic terms in the flow equation.
 In a proper bi-metric calculation the coefficient of
-$-\nabla^2$ in the denominator of the ERGE
+$-\nabla^2$ in the denominator of the functional renormalisation group equation
 would be $Z_h-\gamma k^{d-2}$, where $Z_h$ is the graviton
 wave function renormalization constant.
 The argument of the logarithmic term would then be $Z_h/\gamma$
-and the beta function of $f$ would probably be regular for $f=0$.
+and the beta function of $\bF$ would probably be regular for $\bF=0$.
 
 
 
