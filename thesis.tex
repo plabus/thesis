@@ -97,8 +97,11 @@
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand\TTspace{ -1pt }
 
+\newcommand\gmunu{ g_{\mu\nu} }
+\newcommand\bgmunu{ \bar g_{\mu\nu} }
 \newcommand\TT{ \scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}} }
 \newcommand\hTT{ h_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
+\newcommand\hmunu{ h_{\mu\nu} }
 \newcommand\hTTmunu{ h^{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}}_{\mu\nu} }
 
 \newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
@@ -108,6 +111,7 @@
 \newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}} }
 
 \newcommand{\bnabla}{\overbar \nabla}
+
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -168,7 +172,6 @@
 \newcommand{\hR}{\hat R}
 \newcommand{\hnabla}{\hat\nabla}
 \newcommand{\hg}{\hat g}
-\newcommand{\brho}{\bar{\rho}}
 \newcommand{\tilh}{\tilde h}
 \newcommand{\tth}{{h^{TT}}}
 \newcommand{\bt}{\bar\tau}
@@ -1786,7 +1789,7 @@ has $\bF_0=0$ but $\bF_2<0$, making its physical relevance questionable.
 In this chapter we will consider the case of $\NS$ scalar fields with
 an $O(\NS)$-invariant action of the general form
 \begin{align}
-  \Gamma_k [\varphi] =
+  \Gamma_k [\gmunu, \, \varphi] =
   \int \mathrm d^dx \, \sqrt{\bar g} \,
   \left[ - F(\varphi) \, \bar R + \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \bnabla\varphi^i \right)^2 + V(\varphi)  \right] ,
   \label{action}
@@ -2333,56 +2336,8 @@ and the beta function of $\bF$ would probably be regular for $\bF=0$.
 \chapter{Scalar Matter 2}
 \label{ch:astrid}
 
-\section{Introduction}
-%
-\subsection{Renormalization Group scale and bimetric structure of gravity}
-%
-The perturbative non-renormalizability of General Relativity means that,
-if we aim at a quantum field theoretic description of gravity, a non-perturbative route is necessary.
-An interacting fixed point of the Renormalization Group (RG) flow provides a notion
-of non-perturbative renormalizability, known as the asymptotic safety scenario \cite{Weinberg:1980gg}.
-Just as asymptotic freedom in non-Abelian gauge theories allows to define quantum field theories that
-are consistent and predictive at all scales,
-asymptotic safety could play the same role for quantum gravity, or,
-indeed, other gauge theories in $d=4$ dimensions \cite{Litim:2014uca, Litim:2015iea}
-or beyond \cite{Gies:2003ic}.
-Due to the interacting nature of the fixed point,
-one cannot quantize small metric fluctuations around a flat (or, e.g., cosmological) background.
-Instead quantum fluctuations of the metric can become arbitrarily large.
-This clearly suggests that the notion of a given background,
-available in the quantization of other gauge theories,
-is not present in gravity. This begs the question:
-What does it mean to construct a RG flow for quantum gravity?
-How to define coarse-graining, when spacetime itself,
-and therefore any measure of momentum-scales, is widely fluctuating?
-
-The solution lies in the use of the background field method \cite{Abbott:1980hw},
-where we split the full metric according to
-\begin{align}
-  g_{\mu\nu}=\bar g_{\mu\rho}(e^h)^\rho{}_\nu.
-  \label{exppara}
-\end{align}
-We then define the path-integral over all metric configurations as the path-integral
-over the fluctuation field $h_{\mu \nu}$,
-and the background metric $\bar{g}_{\mu \nu}$ can be used to set a scale.
-In particular, the fluctuation field can be decomposed into eigenfunctions of the background
-covariant Laplacian $-\bar{D}^2$, and those eigenmodes with large eigenvalues are declared to
-be the ``high-momentum" modes. In an RG flow from the ultraviolet (UV) to the infrared (IR),
-those modes are integrated out first.
-It is important to realize that the fluctuation field can have arbitrary amplitude,
-so this split does not entail a perturbative treatment,
-and in fact varying $h_{\mu \nu}$ allows to reach every possible Riemannian metric
-$g_{\mu \nu}$ \cite{Demmel:2015zfa}.
-The relation \eqref{exppara}, referred to as the exponential parameterization,
-has first been studied in the context of functional RG flows in a unimodular
-setting \cite{Eichhorn:2013xr,Eichhorn:2015bna},
-and has also been argued to be superior to the linear parameterization in the
-context of standard gravity \cite{Nink:2014yya, Percacci:2015wwa, Demmel:2015zfa,
-Ohta:2015efa, Gies:2015tca}.
-
-In this framework, the effective action at a scale $k$,
-where degrees of freedom of momenta higher than $k$ (as determined by $\bar{g}_{\mu \nu}$)
-have been integrated out, depends on the background metric and the fluctuation metric,
+The effective average action at a scale $k$
+depends on the background metric and the fluctuation metric,
 i.e., $\Gamma_k = \Gamma_k[\bar{g}_{\mu \nu}, h_{\mu \nu}]$.
 This dependence is such that one cannot recombine $\bar{g}_{\mu \nu}$
 and $h_{\mu \nu}$ to give the full metric.
@@ -2414,19 +2369,18 @@ i.e., free parameters
   Benedetti:2009rx, Eichhorn:2010tb, Groh:2010ta, Manrique:2011jc, Rechenberger:2012dt, Benedetti:2012dx,
   Dietz:2012ic, Falls:2013bv, Benedetti:2013jk, Ohta:2013uca, Demmel:2014sga, Falls:2014tra, Falls:2015qga,
   Falls:2015cta, Gies:2015tca, Demmel:2015oqa}.
-% For reviews, see \cite{ASreviews}.
 
-First explorations of the bimetric structure in asymptotically safe quantum gravity have indicated that the
+First explorations of the bi-metric structure in asymptotically safe quantum gravity have indicated that the
 evidence for asymptotic safety from the single-metric approximation is still present when
 resolving this approximation
 \cite{
   Manrique:2009uh, Manrique:2010mq, Manrique:2010am, Christiansen:2012rx, Codello:2013fpa,
   Christiansen:2014raa, Becker:2014qya, Christiansen:2015rva}.
-One should note that at this stage, only few couplings have been considered in a bimetric setting,
+One should note that at this stage, only few couplings have been considered in a bi-metric setting,
 and higher-order truncations could yield different results.
 As discussed in \cite{Bridle:2013sra} using the example of a scalar field,
 a single-metric approximation can result in spurious fixed points,
-and a treatment of the full bimetric structure is crucial.
+and a treatment of the full bi-metric structure is crucial.
 Within gravity-matter systems, a first step in this direction has been done in
 \cite{Dona:2013qba, Dona:2014pla}, where the anomalous dimension of the graviton and matter
 fields was evaluated in addition to the beta functions of the gravitational background couplings.
@@ -2435,9 +2389,7 @@ RG flows formulated in terms of fluctuation field gravitational couplings have b
 investigated and lend quantitative support to the results for the pure-gravity
 case in the single-metric approximation. The system has been extended to include the effect
 of matter fluctuations on pure-gravity-couplings in \cite{Meibohm:2015twa}.
-%
-\subsection{Quantum spacetime and matter}
-%
+
 In this work, we will make a step forward in disentangling the running of fluctuation and
 of background couplings, focusing on the matter-gravity sector.
 From a phenomenological point of view, the matter-gravity couplings are particularly interesting
@@ -2461,81 +2413,55 @@ we investigate the flow of a gravity-scalar-vertex,
 and show that it admits an interacting ultraviolet fixed point.
 We emphasize that the flow of this coupling is independent from the flow of the usual Newton coupling,
 defined with respect to gravitational vertices only.
-Our result therefore constitutes nontrivial evidence for the potential viability of asymptotic safety
+Our result therefore constitutes non-trivial evidence for the potential viability of asymptotic safety
 for a joint description of gravity and matter in our universe.
 
-%
-\section{Matter-gravity flows: Setup}
-%
 
-In the following we will analyse the Euclidean RG flow of the 1-graviton-2-scalar coupling.
-To derive its beta functions we will study the scale-dependence of the effective action $\Gamma_k$ which is governed by the Functional Renormalization Group equation \cite{Wetterich:1992yh, Morris:1993qb},
-a.k.a. the Wetterich equation:
-\be
-\partial_t \Gamma_k = \frac{1}{2} {\rm STr} \left[\left( \Gamma_k^{(2)}+R_k\right)^{-1} \partial_t R_k \right].
-\ee
-The FRGE is formulated in terms of the dimensionless scale derivative $\partial_t = k\partial_k$,
-and $\Gamma_k^{(2)}$ denotes the second functional derivative of the flowing action with respect
-to the fields (a matrix in field space).
-The supertrace $\rm STr$ includes a summation over the fields with an additional negative
-sign for Grassmannian fields, and a summation over the eigenvalues of the Laplacian in the kinetic term,
-that translates into a momentum-integral on a flat background.
-This equation depends on the full, field-dependent nonperturbative regularized propagator
-$\left(\Gamma_k^{(2)}+R_k \right)^{-1}$ which takes into account higher-loop effects while
-keeping a rather simple  one loop form.
-% For reviews, see \cite{FRGreviews}.
+\section{Matter-gravity flow setup}
 
-%
+In the following we will analyse the non-perturbative renormalisation group flow of the
+1-graviton-2-scalar coupling.
+
+
 \subsection{Truncation}
-%
-Our truncation consist in the Einstein-Hilbert action for the gravitational sector and
-a massless minimally coupled scalar field for the matter sector.
-To set it up, we start from an auxiliary action $\hat{\Gamma}$ given in terms of the full
-metric $g_{\mu \nu}$, which reads
-\be
-\hat{\Gamma}= \Gamma_{\rm EH}+ S_{\rm gf} + \Gamma_{\rm kin}.
-\ee
-Herein
-\be
-\Gamma_{\rm EH} = -\frac{1}{16 \pi G} \int d^4x \sqrt{g} R\,
-\ee
-and
-\be
-\Gamma_{\rm kin} = \frac{1}{2} \int d^4x \sqrt{g} g^{\mu \nu}\sum_{i=1}^{N_S}\partial_{\mu}\phi^i \partial_{\nu}\phi^i.
-\ee
-We drop a possible volume term in our calculation,
-as its fluctuations do not enter the RG flow in our choice of gauge, see below.
 
-In particular, we will employ a York decomposition of the fluctuation field
-\be
-h_{\mu \nu} = h_{\mu \nu}^{TT} + \bar{D}_{\mu}v_{\nu}+ \bar{D}_{\nu}v_{\mu} + \bar{D}_{\mu}\bar{D}_{\nu}\sigma - \frac{1}{4}\bar{D}^2 \bar{g}_{\mu \nu}\sigma + \frac{1}{4}\bar{g}_{\mu \nu}h,
-\ee
-with $\bar{D}^{\mu}h_{\mu \nu}^{TT}=0=h^{\mu\, \, TT}_{\mu}$ and $\bar{D}^{\mu}v_{\mu}=0$
-and  use the unimodular gauge, defined in \cite{Percacci:2015wwa},
-which imposes a constant conformal mode, i.e.
+Our truncation consist of the usual Einstein-Hilbert term for the gravitational sector minimally coupled
+to a massless scalar field in the matter sector.
+To set it up, we start from an auxiliary action $\hat{\Gamma}_k$ given in terms of the full
+metric $\gmunu$, which reads
 \begin{align}
-  h = \rm const \,,
+  \hat \Gamma_k[\bgmunu, \, \hmunu, \, \varphi] = \int d^4x \, \sqrt{g} \,
+  \left[
+    - \frac{R}{16 \pi \GNewton} + \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \nabla\varphi^i \right)^2
+  \right] .
 \end{align}
-in the exponential parameterization.
-Moreover, vector fluctuations are also gauged to zero,
-leaving contributions of $h_{\mu \nu}^{TT}$ and $\sigma$ to the running couplings.
-For details on the Faddeev-Popov ghost sector for this choice of gauge, see \cite{Percacci:2015wwa}.
-We will employ a redefinition of the form
-\begin{align}
-  \sigma \mapsto \sqrt{(\bar{D}^{2})^2+\frac{4}{3}\bar{D}^{\mu}\bar{R}_{\mu \nu}\bar{D}^{\nu}} \sigma \,,
-\end{align}
-that cancels part of the Jacobian from the York decomposition \cite{Dou:1997fg}.
+Note, that this is the same effective average action for $d=4$ as in the previous chapter with
+$F=1/(16\pi\GNewton)$ and $V=0$, but with the important difference that all gravitational
+dependences involve the full metric field and not just the background.
+We drop a possible volume term in our calculation,
+as its fluctuations do not enter the RG flow in our choice of gauge.
+
+As before, we will use the exponential parametrisation of the metric field,
+employ a York decomposition for the fluctuation field and use the unimodular physical gauge,
+details of which can be found in app. \ref{app:York}.
+Since fluctuations of $\xi_\mu$ and $h$ are gauged to zero,
+we are left with contributions of $\hTTmunu$ and $\sigma$ to the running couplings.
 
 To calculate the flow, we define a truncation in the following way:
-Starting from the action $\hat{\Gamma}$ we expand in powers of $h_{\mu \nu}$ up to fourth order,
-and then redefine $h_{\mu \nu} \rightarrow \sqrt{32 \pi G} h_{\mu\nu}$. In the nonperturbative FRG setting,
-the running of the prefactors of the terms at different order in $h_{\mu \nu}$ differs.
-We thus introduce several different ``avatars" of the Newton coupling, $G_3$, $G_4$, $g_3$,
-$g_4$ and $g_5$, and define our truncation to be
+Starting from the action $\hat\Gamma_k$ we expand in powers of $h_{\mu \nu}$ up to fourth order,
+and then redefine $h_{\mu \nu} \mapsto \sqrt{32 \pi \GNewton \,} \, h_{\mu\nu}$.
+In the non-perturbative renormalisation group setting,
+the running of the couplings of operators at different orders in $h_{\mu \nu}$ may very well differ.
+This is why we introduce several different ``avatars'' of the Newton coupling which we denote
+by $G_3$, $G_4$, $g_3$, $g_4$ and $g_5$, and define our truncation to be
 \begin{align}
-  \Gamma_{k, \, rhs} &= \sqrt{\frac{G_3}{G}} \, \Gamma_{EH}^{(3,0)} + \frac{G_4}{G} \, \Gamma_{EH}^{(4,0)} \nonumber \\
-                     & + \sqrt{\frac{g_3}{G}} \, \Gamma_{\rm kin}^{(1,2)} + \frac{g_4}{ G} \, \Gamma_{\rm kin}^{(2,2)} + \left(\frac{g_5}{ G}\right)^{3/2} \, \Gamma_{\rm kin}^{(3,2)}\nonumber\\
-                     & + \vphantom{ \sqrt{\frac{g_3}{G}} }\mbox{ quadratic terms }.
+  \Gamma_k^\mathrm{rhs} &=
+  \sqrt{ \frac{G_3}{\GNewton} \, } \, \hat\Gamma^{(3,\,0)}_k
+  + \frac{G_4}{\GNewton} \, \hat\Gamma^{(4,\,0)}_k
+  + \sqrt{ \frac{g_3}{\GNewton} \, } \, \hat\Gamma^{(1,\,2)}_k
+  + \frac{g_4}{ \GNewton} \, \hat\Gamma^{(2,\,2)}_k
+  + \left(\frac{g_5}{ \GNewton}\right)^{3/2} \, \hat\Gamma^{(3,\,2)}_k \nonumber \\
+  & + \vphantom{ \sqrt{\frac{g_3}{\GNewton}} }\mbox{ quadratic terms }.
   \label{gammarhs}
 \end{align}
 Here $\Gamma^{(n,m)}$ stands for the terms of $n$-th order in the fluctuation field $h_{\mu \nu}$
@@ -2543,54 +2469,57 @@ and $m$-th order in the scalar field.
 Note that the action that contains the scalar fields is quadratic,
 so we only have terms with $m=0,2$.
 Our redefinition of all separate prefactors of the different vertices allows us to explicitly distinguish
-these avatars of the Newton coupling, instead of approximating them all by $G$.
-One should not expect a universal definition of the Newton coupling to exist in the nonperturbative
-quantum gravity regime, similarly to what has been found in the perturbative regime in \cite{Anber:2011ut}.
+these avatars of the Newton coupling, instead of approximating them all by $\GNewton$.
+One should not expect a universal definition of the Newton coupling to exist in the non-perturbative
+quantum gravity regime, similarly to what has been found in the perturbative regime in
+ref. \cite{Anber:2011ut}.
 As replicas of Newton's coupling, $G_3$, $G_4$, $g_3$, $g_4$ and $g_5$ all have dimensionality $2-d$.
 This justifies the different powers with which they appear
-in the various terms in (\ref{gammarhs}).
+in the various terms in our truncation.
 
 In detail, the different terms on a flat background are given by:
 \begin{align}
-  \Gamma_{EH}^{(3,0)} &= -\frac{ 2 \, \sqrt{32\pi G} }{ 3! } \int \mathrm d^4x \;
+  \hat \Gamma^{(3,\, 0)}_k &= -\frac{ 2 \, \sqrt{32\pi \GNewton} }{ 3! } \int \mathrm d^4x \;
   \bigg[
     \frac{3}{2} \, h_{\mu\nu}(\partial_{\mu}h_{\kappa\lambda})\partial_{\nu}h_{\kappa\lambda}
     - 3 h_{\kappa \lambda}(\partial_{\lambda}h_{\mu\nu})\partial_{\mu}h_{\nu\kappa}
   \bigg] \,, \label{GammaG3} \\
-  \Gamma_{EH}^{(4,0)} &= - \frac{ 64\pi G }{ 4! }  \int \mathrm d^4x \;
+  \hat \Gamma^{(4,\, 0)}_k &= - \frac{ 64\pi \GNewton }{ 4! }  \int \mathrm d^4x \;
   \bigg[
     3h_{\mu\nu}h_{\kappa\lambda} (\partial_{\mu}h_{\kappa\rho})\partial_{\lambda}h_{\rho\nu}
     + h_{\nu\kappa}h_{\kappa\rho}(\partial_{\sigma}h_{\mu\nu})\partial_{\mu}h_{\rho\sigma} \nonumber \\
-    & \vphantom{ \frac{ 64\pi G }{ 4! } } - 3 h_{\mu\nu}h_{\nu\kappa}(\partial_{\kappa}h_{\rho\sigma})\partial_{\mu}h_{\rho\sigma}
+    & \vphantom{ \frac{ 64\pi \GNewton }{ 4! } } - 3 h_{\mu\nu}h_{\nu\kappa}(\partial_{\kappa}h_{\rho\sigma})\partial_{\mu}h_{\rho\sigma}
     + 4 h_{\mu\nu}h_{\nu\kappa}(\partial_{\mu}h_{\rho\sigma})\partial_{\sigma}h_{\rho\kappa}
     - 2 h_{\mu\nu}h_{\kappa \lambda}(\partial_{\lambda}h_{\nu\rho})\partial_{\rho}h_{\mu\kappa} \nonumber\\
-    & \vphantom{ \frac{ 64\pi G }{ 4! } } +  h_{\mu\nu}h_{\kappa\lambda}(\partial_{\rho}h_{\mu\kappa}) \partial_{\rho}h_{\nu\lambda}
+    & \vphantom{ \frac{ 64\pi \GNewton }{ 4! } } +  h_{\mu\nu}h_{\kappa\lambda}(\partial_{\rho}h_{\mu\kappa}) \partial_{\rho}h_{\nu\lambda}
     -  h_{\mu\nu}h_{\nu\kappa}(\partial_{\rho}h_{\mu\sigma})\partial_{\rho}h_{\kappa\sigma}
   \bigg] \,, \label{GammaG4}\\
-  \Gamma_{kin}^{(1,2)} &= - \frac{\sqrt{32 \pi  G}}{2}   \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag3} \\
-  \Gamma_{kin}^{(2,2)} &=   \frac{ 32 \pi  G}{2 }        \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag4} \\
-  \Gamma_{kin}^{(3,2)} &= - \frac{(32 \pi  G)^{3/2}}{2}  \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\lambda} \, h_{\lambda}^{\phantom{\lambda}\nu}
+  \hat \Gamma^{(1,\, 2)}_k &= - \frac{\sqrt{32 \pi  \GNewton}}{2}   \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag3} \\
+  \hat \Gamma^{(2,\, 2)}_k &=   \frac{ 32 \pi  \GNewton}{2 }        \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\nu} \, \sum_{i=1}^{N_S} \partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag4} \\
+  \hat \Gamma^{(3,\, 2)}_k &= - \frac{(32 \pi  \GNewton)^{3/2}}{2}  \int \mathrm d^4x \, \sqrt{\bar{g}} \; h^{\mu \rho} \, h_{\rho}^{\phantom{\rho}\lambda} \, h_{\lambda}^{\phantom{\lambda}\nu}
   \sum_{i=1}^{N_S}\partial_{\mu}\phi^i \, \partial_{\nu}\phi^i \,, \label{Gammag5}
 \end{align}
 where appropriate symmetrizations are understood implicitly, as $h_{\mu \nu} = h_{\nu \mu}$.
-Here, we have already imposed the gauge $h= \rm const$,
+Here, we have already imposed the gauge $h = \mathrm{const}$,
 and thus the trace of the fluctuation field can be dropped from the vertices.
-This simplifies the vertices considerably.
+This simplifies the vertices considerably. More details of the derivations of these vertices
+in the exponential parametrisation may be found in app. \ref{app:EH}.
 
-In an abuse of notation, we do not distinguish between dimensionful and dimensionless couplings,
-as all our beta functions will always be expressed in terms of the dimensionless couplings, only,
-whereas all couplings in Eq.~\eqref{GammaG3}- \eqref{Gammag5} are still dimensionful.
+In a slight abuse of notation, we will not distinguish between dimensionful and dimensionless couplings in
+this chapter,
+as all our beta functions will always be expressed in terms of the dimensionless couplings only,
+whereas all couplings in eqns.~\eqref{GammaG3}-\eqref{Gammag5} are still dimensionful.
 
-By the subscript $rhs$ in \eqref{gammarhs} we indicate that this action is used to define the
-vertices and propagators that enter the Wetterich equation.
-In other words, these are the fluctuation-field structures that \emph{induce} the Renormalization Group flow.
-In this paper we will not calculate the running of all these couplings but only the beta function
-of $g_3$, and the wave-function renormalizations $Z_\Psi$, with $\Psi=({\rm TT},\sigma,S)$.
-The wave-function renormalizations $Z_\Psi$ nevertheless couple into the beta-functions of the
-essential couplings in a nontrivial way via the anomalous dimensions
-\bea
-\eta_\Psi &=&-\partial_t\ln Z_\Psi\ .
-\eea
+By the superscript $\mathrm{rhs}$ in \eqref{gammarhs} we indicate that this action is used to define the
+vertices and propagators that enter the functional renormalisation group equation.
+In other words, these are the fluctuation-field structures that \emph{induce} the renormalization group flow.
+In this paper we will not calculate the running of all these couplings, but only the beta function
+of $g_3$, and the wave-function renormalisations $Z_I$, where $I = \{ \TT, \, \sigma, \, S \}$.
+The wave-function renormalisations $Z_I$ nevertheless couple into the beta-functions of the
+essential couplings in a non-trivial way via the anomalous dimensions
+\begin{align}
+  \eta_I = -\partial_t \log Z_I \,.
+\end{align}
 
 The running of $G_3$ has been calculated recently in \cite{Meibohm:2015twa} using a linear
 parametrization of the metric and a more conventional gauge.
