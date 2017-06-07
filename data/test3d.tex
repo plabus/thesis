@@ -1,0 +1,15 @@
+\documentclass[border= 5mm]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+
+\begin{document}
+    \begin{tikzpicture}
+    \begin{axis}
+    % \addplot3 [surf] gnuplot [raw gnuplot] {
+    %     set dgrid3d 30,30 spline;
+    %     splot 'spikeplot1.dat';
+    % };
+    \addplot3 [only marks] table {spikeplot1.dat};
+    \end{axis}
+    \end{tikzpicture}
+\end{document}
