@@ -2934,7 +2934,7 @@ obtain the beta function for $\sqrt{g_3}$,
 from which we derive the beta function of the dimensionless coupling $g_3$:
 \bea
 \beta_{g_3}& =&
-\left(2+\eta_{\rm TT}+2\eta_S\right)g_3
+\left(2+\etaTT+2\etaS\right)g_3
 +\frac{3}{4\pi}g_3^2
 + \frac{3}{4\pi}g_3^{3/2}\sqrt{G_3}
 \nonumber\\
@@ -2943,7 +2943,7 @@ from which we derive the beta function of the dimensionless coupling $g_3$:
 - \frac{19}{18 \pi} g_5^{3/2}\sqrt{g_3}
 \nonumber\\
 &+& \!\left(\frac{5}{108\pi}g_4 \sqrt{G_3}
-+ \frac{95}{324\pi} g_5^{3/2}\right)\sqrt{g_3}\eta_{\rm TT}
++ \frac{95}{324\pi} g_5^{3/2}\right)\sqrt{g_3}\etaTT
 \nonumber\\
 &+&\! \!\Bigl(-\frac{1}{40 \pi}g_3^{3/2}
 - \frac{1}{20 \pi} g_3 \sqrt{G_3}
@@ -2955,7 +2955,7 @@ from which we derive the beta function of the dimensionless coupling $g_3$:
 \\
 &+& \!\left(- \frac{1}{20 \pi}g_3^{3/2}
 - \frac{1}{40 \pi} g_3 \sqrt{G_3}
-+ \frac{5}{36 \pi}\sqrt{g_3} g_4 \right)\sqrt{g_3}\eta_S.
++ \frac{5}{36 \pi}\sqrt{g_3} g_4 \right)\sqrt{g_3}\etaS.
 \nonumber%\\
 %&{}&\label{betag3result}
 \eea
@@ -3050,7 +3050,7 @@ the RG flow onto it result in similar universal properties.
 
 The relatively large fixed-point value for $g_3$ is clearly responsible for the large absolute
 values of the anomalous dimensions, as $\eta \sim g_{3\,\ast}$: For instance,
-if we set $g_3=1$ by hand, we obtain $\eta_{\rm TT} = -0.28$ and $\eta_{\sigma} =0.20$.
+if we set $g_3=1$ by hand, we obtain $\etaTT = -0.28$ and $\eta_{\sigma} =0.20$.
 It has been observed previously that the exponential parameterization features a large fixed-point
 value for the Newton coupling in the single-metric approximation \cite{Percacci:2015wwa},
 and our definition of the fluctuation-field coupling exhibits similar behavior.
@@ -3070,13 +3070,13 @@ Ricci scalar counterparts.
 (This concurs with an observation made in \cite{Codello:2006in}.)
 
 
-Interestingly, the sign of $\eta_{\rm TT}$ is opposite to results in the
+Interestingly, the sign of $\etaTT$ is opposite to results in the
 linear parametrization \cite{Codello:2013fpa, Dona:2013qba, Christiansen:2014raa}.
-If we identify $\eta_{\sigma} = \eta_{\rm TT}$ we obtain a fixed point with the properties
+If we identify $\eta_{\sigma} = \etaTT$ we obtain a fixed point with the properties
 listed in Tab.~\ref{puregravityFPetaapprox}.
 We observe a comparable value for the critical exponent $\theta$ with  respect to the previous case.
 The anomalous dimension for the TT mode remains essentially the same.
-We see that the assumption $\eta_{\sigma}=\eta_{TT}$ even gives the wrong sign for $\eta_\sigma$.
+We see that the assumption $\eta_{\sigma}=\etaTT$ even gives the wrong sign for $\eta_\sigma$.
 Since the anomalous dimensions contribute to the scaling dimensions of operators,
 this is of course a serious shortcoming.
 
@@ -3133,7 +3133,7 @@ this is of course a serious shortcoming.
 
         \nextgroupplot[ % 3
           xlabel={fixed point value $G_{3\,\star}$},
-          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+          ylabel={anomalous dimension $\etaTT$},
         ]
         \addplot[blue] table{data/plotdata3a.dat};
         \addplot[red] table{data/plotdata3b.dat};
@@ -3198,10 +3198,10 @@ matrix in our approximation, where $G_3$ is treated as an external parameter, th
 We now supplement our beta functions by a beta function for the background Newton coupling,
 as obtained in \cite{Percacci:2015wwa}, where
 \be
-\beta_{\bar{G}}=2 \bar{G} - \frac{\bar{G}^2}{\pi} \left(\frac{15}{8}- \frac{5 \eta_{\rm TT}}{18 }+ \frac{\eta_{\sigma}}{24} \right).
+\beta_{\bar{G}}=2 \bar{G} - \frac{\bar{G}^2}{\pi} \left(\frac{15}{8}- \frac{5 \etaTT}{18 }+ \frac{\eta_{\sigma}}{24} \right).
 \ee
-We observe that $\eta_{\rm TT}$ and $\eta_{\sigma}$ enter with the opposite sign.
-At the fluctuation-field fixed point, $\eta_{\rm TT}<0$  and $\eta_{\sigma}>0$.
+We observe that $\etaTT$ and $\eta_{\sigma}$ enter with the opposite sign.
+At the fluctuation-field fixed point, $\etaTT<0$  and $\eta_{\sigma}>0$.
 This sign combination strengthens the gravitational fluctuation effects that induce a fixed point,
 lending further support to the observation that all modes of the graviton act towards asymptotic
 safety \cite{Reuter:2008qx, Reuter:2008wj}.
@@ -3215,11 +3215,11 @@ of $\bar{G}$, as they should---we obtain $\bar{G}_{\ast} = 3.04$ and $\theta=2$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In the following, we switch on scalar fluctuations,
 which adds several classes of diagrams to $\beta_{g_3}$ and additional contributions to
-$\beta_{g_3}$, $\eta_{\rm TT}$ and $\eta_{\sigma}$.
+$\beta_{g_3}$, $\etaTT$ and $\eta_{\sigma}$.
 Our main goal is to find out whether the pure-gravity results discussed above can be
 extended in a stable way to $\NS>0$,
 or whether scalars have a significant effect on the fixed point in our approximation.
-First, we will set $\eta_S=0$ by hand, while taking into account $\eta_{\rm TT}$ and $\eta_{\sigma}$.
+First, we will set $\etaS=0$ by hand, while taking into account $\etaTT$ and $\eta_{\sigma}$.
 The reason for this unequal treatment of fluctuation fields will become clear below.
 
 %
@@ -3231,7 +3231,7 @@ Unlike the beta functions for the background Newton coupling and the pure-gravit
 couplings $G_3$ and $G_4$, $\beta_{g_3}$ receives no correction from diagrams containing
 a scalar loop  in our approximation.
 Consequently, $\beta_{g_3}$ does not depend on $\NS$ explicitly, if we set all anomalous dimensions to zero.
-It only depends on $\NS$ if we include the anomalous dimensions $\eta_{\rm TT}$ and $\eta_{\sigma}$.
+It only depends on $\NS$ if we include the anomalous dimensions $\etaTT$ and $\eta_{\sigma}$.
 This gives rise to a beta function of the form
 \be
 \beta_{g_3}= 2g_3 -\frac{1}{3\pi}g_3^2\left(10-\frac{\NS}{8}\right)
@@ -3315,7 +3315,7 @@ and the fixed-point collision accordingly occurs at larger $\NS$.
     \end{tikzpicture}
   \end{center}
   \caption{
-    Results for $\eta_S = 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$:
+    Results for $\etaS = 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$:
     fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\etaTT$
     and $\eta_{\sigma}$ as a function of the number of scalars $\NS$ for both the full result and in the
     semi-perturbative approximation.
@@ -3375,7 +3375,7 @@ as the effect of varying $g_3$ on $G_{3 \, \star}$  remains to be studied.
 
         \nextgroupplot[ % 3
           xlabel={number of scalars $\NS$},
-          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+          ylabel={anomalous dimension $\etaTT$},
         ]
         \addplot[color=red,   only marks, mark=square,   mark size=1.3pt] table{data/plotdata11a.dat};
         \addplot[color=blue,  only marks, mark=triangle, mark size=1.7pt] table{data/plotdata11b.dat};
@@ -3394,8 +3394,8 @@ as the effect of varying $g_3$ on $G_{3 \, \star}$  remains to be studied.
     \end{tikzpicture}
   \end{center}
   \caption{
-    Results for $\eta_S = 0$, $g_3 = g_4 = g_5$ and $G_3 = G_4 \equiv G$:
-    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$
+    Results for $\etaS = 0$, $g_3 = g_4 = g_5$ and $G_3 = G_4 \equiv G$:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\etaTT$
     and $\eta_{\sigma}$ as a function of the number of scalars $\NS$.
   }
   \label{g3NsnoetasG3}
@@ -3407,15 +3407,15 @@ as the effect of varying $g_3$ on $G_{3 \, \star}$  remains to be studied.
 
 We now set all gravitational couplings and gravity-scalar couplings equal to the Newton
 coupling as defined from the gravity-matter interaction and include the anomalous dimension for the scalar,
-$\eta_S$. This yields a new contribution to $\beta_{g_3}$, which now reads
+$\etaS$. This yields a new contribution to $\beta_{g_3}$, which now reads
 \be
-\beta_{g_3}=2 g_3 + 2 g_3 \eta_S-
-\frac{1}{6\pi}g_3^2\left(20-\frac{\NS}{4}+\frac{23}{60}\eta_S\right)
+\beta_{g_3}=2 g_3 + 2 g_3 \etaS-
+\frac{1}{6\pi}g_3^2\left(20-\frac{\NS}{4}+\frac{23}{60}\etaS\right)
 +\mathcal{O}(g_3^3).
 \ee
 Using
 \be
-\eta_S = \frac{7}{4 \pi}g_3 + \mathcal{O}(g_3^2)
+\etaS = \frac{7}{4 \pi}g_3 + \mathcal{O}(g_3^2)
 \ee
 equation (\ref{norma}) gets replaced by
 \be
@@ -3544,7 +3544,7 @@ it cannot be reliably assessed.
 
         \nextgroupplot[ % 3
           xticklabels={,,},
-          ylabel={anomalous dimension $\eta_\mathrm{TT}$},
+          ylabel={anomalous dimension $\etaTT$},
           ytick={-2,-1,0,1,2},
         ]
         \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_TT.dat};
@@ -3558,7 +3558,7 @@ it cannot be reliably assessed.
 
         \nextgroupplot[ % 5
           xlabel={number of scalars $\NS$},
-          ylabel={anomalous dimension $\eta_S$},
+          ylabel={anomalous dimension $\etaS$},
           ytick={-5,-4,-3,-2,-1},
         ]
         \addplot[color=blue, only marks, mark=*, mark size=0.5pt] table{data/data_roberto_eta_s.dat};
@@ -3567,40 +3567,40 @@ it cannot be reliably assessed.
     \end{tikzpicture}
   \end{center}
   \caption{
-    Results for $\eta_S \neq 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$ in the semi-perturbative approximation:
-    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\eta_{\rm TT}$,
-    $\eta_{\sigma}$ and $\eta_S$ as a function of the number of scalars $\NS$.
+    Results for $\etaS \neq 0$ and $g_3 = g_4 = g_5 = G_3 = G_4$ in the semi-perturbative approximation:
+    fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\etaTT$,
+    $\eta_{\sigma}$ and $\etaS$ as a function of the number of scalars $\NS$.
   }
   \label{FPNsequalcouplings}
 \end{figure}
 
 We observe that already in the case $\NS=1$
 the anomalous dimensions of the graviton modes
-have opposite signs compared to the case when we neglected $\eta_S$,
+have opposite signs compared to the case when we neglected $\etaS$,
 and become rather large, as a consequence of a rather large absolute value of $g_3$.
 The critical exponent also differs considerably from the pure-gravity case.
 As a consequence, when we take into account the effect of
-$\eta_S$, it becomes hard to identify either of the fixed points
+$\etaS$, it becomes hard to identify either of the fixed points
 with the one that we found for $\NS=0$.
 
 These results could lead to different conclusions:
 the approximation $G=g$ might not be particularly reliable
 beyond small $\NS$, or, more likely, our current estimate
 for the scalar anomalous dimension needs improvement,
-and the results for $\eta_S=0$ might be closer to the correct result.
+and the results for $\etaS=0$ might be closer to the correct result.
 
 The significant change in the fixed-point properties from the pure-gravity case arises from
 the scalar anomalous dimension.
-Accordingly, the perturbative approximation, where $\eta_{TT}=\eta_{\sigma}=\eta_S=0$
+Accordingly, the perturbative approximation, where $\etaTT=\eta_{\sigma}=\etaS=0$
 features a fixed point at $g_3=2.57$ with $\theta=2$
 for all values of $\NS$.
-As $\eta_S$ has such a significant effect on the existence and properties of fixed points,
+As $\etaS$ has such a significant effect on the existence and properties of fixed points,
 it is important to understand
 whether our truncation already captures all major operators
-that determine $\eta_S$. Recall that metric fluctuations
+that determine $\etaS$. Recall that metric fluctuations
 induce non-vanishing momentum-dependent
 matter self-interactions, \eg of the form $\left(g^{\mu \nu} \partial_{\mu} \varphi \partial_{\nu}\varphi\right)^2$ \cite{Eichhorn:2012va}. As soon as these couplings
-are non-zero, they yield a nonvanishing contribution to $\eta_S$.
+are non-zero, they yield a nonvanishing contribution to $\etaS$.
 Our current truncation does not include these effects.
 We therefore conjecture that the results could improve
 once these further operators are included.
@@ -3608,10 +3608,10 @@ By a simple count of modes, $\NS=1$ should not
 dramatically change the results, and the case $\NS=1$
 should still feature a fixed point
 with properties similar to the pure-gravity one,
-just as exhibited by the approximation $\eta_S=0$.
-We tentatively suggest that the calculation with $\eta_S=0$,
+just as exhibited by the approximation $\etaS=0$.
+We tentatively suggest that the calculation with $\etaS=0$,
 which shows a destablizing effect setting in at $\NS\gg1$,
-might capture the full dynamics more accurately than our current estimate with $\eta_S \neq 0$.
+might capture the full dynamics more accurately than our current estimate with $\etaS \neq 0$.
 
 
 
@@ -3622,24 +3622,24 @@ for instance, $\beta_{\bar{G}} \sim \bar{G}^2$,
 as the prefactor of the curvature term in the Einstein-Hilbert action is $\frac{1}{16 \pi \bar{G}}$.
 All couplings that appear on the right-hand side from either propagators or vertices are always
 fluctuation field couplings.
-Accordingly, $\eta_{\rm TT}$, $\eta_{\sigma}$ and $\eta_S$,
+Accordingly, $\etaTT$, $\eta_{\sigma}$ and $\etaS$,
 which will appear on the right-hand side of $\beta_{\bar{G}}$,
 depend on the fluctuation-field couplings $g_3$, $g_4$, $g_5$, $G_3$, $G_4$ only.
 Thus we obtain the following matter contribution to the $\beta$ function for the background Newton coupling:
 \be
-\beta_{\bar{G}}\Big|_{\rm scalar}=\frac{\bar{G}^2}{24 \pi}\NS (4-\eta_S).
+\beta_{\bar{G}}\Big|_{\rm scalar}=\frac{\bar{G}^2}{24 \pi}\NS (4-\etaS).
 \ee
 
 Following \cite{Percacci:2015wwa},
 \bea
 \beta_{\bar{G}}=2 \bar{G}
 - \frac{\bar{G}^2}{\pi} \left(\frac{15}{8}
-- \frac{5 \eta_{\rm TT}}{18 }
+- \frac{5 \etaTT}{18 }
 + \frac{\eta_{\sigma}}{24}
--  \frac{\NS}{24} (4 - \eta_{S})\right).
+-  \frac{\NS}{24} (4 - \etaS)\right).
 \eea
 
-If we set $\eta_{\rm TT}= \eta_{\sigma}=0=\eta_S$, we obtain $\NS=45$ as the maximal
+If we set $\etaTT = \eta_{\sigma}=0=\etaS$, we obtain $\NS=45$ as the maximal
 number of scalars before the fixed point in $\bar{G}$ diverges.
 
 If we now use the approximation of equating all fluctuation couplings in the expressions
@@ -3650,7 +3650,7 @@ for $\NS=1$  at the fixed point $g_{\ast}=-13.9$.
  For the case $g_4=0=g_5$, $G_3=0=G_4$,
  the continuation of the pure-gravity fixed point in the background coupling ceases to exist beyond $\NS=9$.
 
-For the approximation where we set $\eta_S=0$, we obtain a bound at $\NS=12$,
+For the approximation where we set $\etaS=0$, we obtain a bound at $\NS=12$,
 which is close to the bound from the fluctuation coupling, at $\NS=14$.
 
 Note that fixed-point values for the background couplings are affected by a strong regulator dependence:
@@ -3665,7 +3665,7 @@ As this is clearly beyond the scope of the present work, we conclude that the mo
 assumption is that \emph{all} couplings must feature fixed points,
 and therefore divergences in the background couplings are not acceptable,
 even if the fluctuation couplings are well-behaved. Interpreted along these lines,
-the one-loop approximation, where we set $\eta_{\rm TT}=\eta_{\sigma}=0=\eta_S$ everywhere,
+the one-loop approximation, where we set $\etaTT=\eta_{\sigma}=0=\etaS$ everywhere,
 and only the background Newton coupling depends on $\NS$,
 would suggest that there could be an upper limit of scalars that is compatible with a viable fixed point.
 
