@@ -322,60 +322,6 @@ Gian~Paolo~Vacca%
 % https://www.quora.com/Why-must-there-be-a-quantum-theory-of-gravity
 % https://arxiv.org/abs/gr-qc/0606120
 
-\begin{itemize}
-  % \item various successes of QFT and GR:
-  % \item successful applications of QFT/SM
-  %   \begin{itemize}
-  %     \item prediction Higgs boson
-  %     \item prediction W, Z bosons, gluon, top and charm quark
-  %     \item anomalous magnetic dipole moment of the electron to error order $10^{-15}$
-  %     \item high precision of W and Z boson masses
-  %   \end{itemize}
-  % \item successful applications of GR
-  %   \begin{itemize}
-  %     \item classical: perihelion precession of Mercury's orbit, deflection of light by the Sun, gravitational redshift of light
-  %     \item modern: gravitational lensing, light travel time delay testing, equivalence principle, frame-dragging (Lense–Thirring precession),
-  %       gravitational waves, structure formation (?)
-  %   \end{itemize}
-  % \item failures of the SM
-  %   \begin{itemize}
-  %     \item SM predicts neutrinos to be massless
-  %     \item Hierarchy Problem (?)
-  %     \item Cosmological Constant Problem
-  %     \item no dark matter candidate
-  %     \item not enough CP violation
-  %     \item no inclusion of gravity
-  %   \end{itemize}
-  % \item failures of GR / where we expect QM should become significant
-  %   \begin{itemize}
-  %     \item black holes / Hawking temperature / information paradox
-  %     \item (very) early Universe cosmology / inflation (?)
-  %     \item dark energy / Cosmological Constant Problem
-  %   \end{itemize}
-  \item why we think we need a quantum theory of gravity
-  \item mention of various approaches to Quantum Gravity
-    \begin{itemize}
-      \item M-Theory, Supergravity
-      \item Loop Quantum Gravity / Spin Foams / Group field theory
-      \item Causal dynamical triangulation / Regge calculus
-      \item Causal sets
-    \end{itemize}
-  \item asymptotic safety and QG as a QFT
-    \begin{itemize}
-      \item EH as EFT at low energies
-      \item perturbative non-renormalisability
-      \item asymptotic safety / non-perturbative completion / interacting fixed points
-      \item application to gravity ---> Reuter etc.
-    \end{itemize}
-  \item non-perturbative tools in QFTs:
-    \begin{itemize}
-      \item conformal bootstrap and Hamiltonian truncation techniques
-      \item lattice techniques / simulations
-      \item entanglement entropy
-      \item (functional) Renormalisation Group ---> \cf next chapter
-    \end{itemize}
-\end{itemize}
-
 The undoubtedly most influential achievements of twentieth century theoretical physics
 are the discovery and understanding of
 quantum mechanics---including the subsequent construction of quantum field theories---%
@@ -437,19 +383,73 @@ The general consensus on how to resolve these issues is the quantisation of grav
 itself---often referred to as quantum gravity.
 Apart from the observation that all other known interactions are described by
 quantum mechanics, there are usually three arguments brought forward in favour of this
-approach.
-\begin{itemize}
-  \item Einstein field equations
-    \begin{align*}
-      R_{\mu \nu} - \tfrac{1}{2}R \, g_{\mu \nu} = \frac{8 \pi \, \GNewton }{c^4} \, T_{\mu \nu}
-    \end{align*}
-  \item Hawking temperature
-    \begin{align*}
-      \THawking = \frac{h \, c^3}{\GNewton \, \kBoltzmann} \, \frac {1}{4M}
-    \end{align*}
-  \item gravitational wave split experiment
-\end{itemize}
+approach.%
+\footnote{
+  Strictly speaking, all of the following arguments only show that there should be
+  a probabilistic theory of gravitation that is compatible with the known
+  framework of quantum mechanics used for the other known interactions.
+  However, gravity need not be neither quantised nor even a fundamental interaction.
+}%
+First of all, Einstein's field equations
+\begin{align*}
+  R_{\mu \nu} - \tfrac{1}{2} \, R \, g_{\mu \nu} = \frac{8 \pi \, \GNewton }{c^4} \, T_{\mu \nu} \,,
+\end{align*}
+the classical equations of motion of general relativity, couple geometry, \ie the gravitational
+field described by the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2} \, R \,g_{\mu\nu}$ to
+the energy-momentum tensor $T_{\mu\nu}$ of the present matter content. But since ordinary matter
+is described by quantum mechanics, the latter is actually a tensor of linear operators rather than
+of $c$-numbers. One way to make Einstein's field equations consistent would thus be to
+cast the Einstein tensor to an operator as well, \ie quantising the gravitational field.
 
+The second argument, is of similar spirit: Since we know of situations where both gravitational
+as well as quantum mechanical phenomena are strong, we need a theory that can consistently
+describe both phenomena at the same time. Namely, in black hole thermodynamics,
+the Hawking temperature of ordinary matter evaporating from a black hole is given by:
+\begin{align*}
+  \THawking = \frac{h \, c^3}{\GNewton \, \kBoltzmann} \, \frac {1}{4M} \,.
+\end{align*}
+Clearly, in natural units quantum mechanical, gravitational, special relativistic and
+statistical phenomena are of the same order of magnitude. Since however in quantum mechanics
+particles have mass associated with them, and mass couples to gravity, interactions have to
+be treated by their full non-linear dynamics given by general relativity,
+\ie taking back-reactions of the gravitational
+field into account. But since the matter field follows a quantum mechanical probability distribution
+the interfering gravitational field must possess a similar probabilistic description as well.
+
+Finally, gravitational waves must necessarily consist of elementary excitations, called gravitons,
+otherwise they could be used to determine the path of an electron in a double-slit experiment
+without disturbing the interference pattern of the electron field behind the slits. This would
+however violate Heisenberg's uncertainty principle.
+
+There have been many approaches towards a theory of gravity
+most notably M-theory,
+and its low energy limit supergravity,
+as well as approaches of canonical quantisation including loop
+quantum gravity, its path integral formulation of spin foams and
+group field theory. Furthermore, there are theories using an underlying
+lattice regularisation such as causal dynamical triangulation and
+Regge calculus. There are also approaches emphasising more of the geometrical
+nature of general relativity such as causal sets.
+All of these formulations, are going beyond the framework of quantum
+field theories, which however is so successfully applied within the standard model.
+
+
+\begin{itemize}
+  \item asymptotic safety and QG as a QFT
+    \begin{itemize}
+      \item EH as EFT at low energies
+      \item perturbative non-renormalisability
+      \item asymptotic safety / non-perturbative completion / interacting fixed points
+      \item application to gravity ---> Reuter etc.
+    \end{itemize}
+  \item non-perturbative tools in QFTs:
+    \begin{itemize}
+      \item conformal bootstrap and Hamiltonian truncation techniques
+      \item lattice techniques / simulations
+      \item entanglement entropy
+      \item (functional) Renormalisation Group ---> \cf next chapter
+    \end{itemize}
+\end{itemize}
 
 
 
