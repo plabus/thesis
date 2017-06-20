@@ -94,6 +94,10 @@
 %----------------------------------------------------------------------------------------
 
 % My Own Abbreviations
+\newcommand{\TikZ}{Ti\emph{k}Z }
+\newcommand{\pgfplots}{\textsc{pgfplots}}
+% \newcommand{\pgfplots}{\textsc{PGFPLOTS} }
+
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand\TTspace{ -1pt }
 
@@ -134,6 +138,7 @@
 \newcommand{\bg}{\overbar \gamma}
 
 % Morris'es Abbreviations
+\newcommand\apriori{\textit{a priori} }
 \newcommand\ie{\textit{i.e.}\ }
 \newcommand\eg{\textit{e.g.}\ }
 \newcommand\cf{\textit{cf.}\ }
@@ -421,7 +426,7 @@ otherwise they could be used to determine the path of an electron in a double-sl
 without disturbing the interference pattern of the electron field behind the slits. This would
 however violate Heisenberg's uncertainty principle.
 
-There have been many approaches towards a theory of gravity
+There have been many approaches towards a theory of quantum gravity
 most notably M-theory,
 and its low energy limit supergravity,
 as well as approaches of canonical quantisation including loop
@@ -430,54 +435,174 @@ group field theory. Furthermore, there are theories using an underlying
 lattice regularisation such as causal dynamical triangulation and
 Regge calculus. There are also approaches emphasising more of the geometrical
 nature of general relativity such as causal sets.
-All of these formulations, are going beyond the framework of quantum
-field theories, which however is so successfully applied within the standard model.
+All of these formulations are going beyond the framework of quantum
+field theories, however, in spite of its successful application within the standard model.
 
+An exception is the so-called asymptotic safety scenario which we want to study
+in this thesis. To understand its core idea, let us recall the modern view of
+quantum field theories. In contrast to the original understanding that a quantum
+field theory has to be (perturbatively) renormalisable in order to be a useful
+tool to predict physical quantities, today we regard quantum field theories
+as either fundamental or effective, depending on their ultraviolet behaviour.
+Namely, any theory without a mathematically well-behaved (\ie finite) ultraviolet
+limit, or equivalently one with infinitely many (infrared) relevant directions,
+may be called effective. These theories are far from useless, since they allow
+to predict \textit{any} physical observable after fixing
+only a finite number of parameters
+(for instance through a number of independent experiments),
+as long as the energy scale is kept below a certain ultraviolet cutoff at the
+same time. These effective quantum field theories have been used with great success
+in chiral perturbation theory, inflation and even general relativity.%
+\footnote{%
+  Actually, it is fair to say that the effective field theory of Einstein gravity
+  is the best known theory of quantum gravity today. Not only does it combine
+  quantum field theory with gravity in a true sense, it also allowed the calculation
+  of (at least in principle) falsifiable results, for instance in form of
+  corrections to the Newtonian potential.
+}
+However, they do not allow to extrapolate predictions towards arbitrary energy scales:
+this is because of the dependence of observables on infinitely many parameters, which
+would require infinitely many, independent experiments to fix them. Fundamental
+theories on the other hand only have a finite number of relevant directions which is
+to say, they have predictive power at all energy scales after measuring only a
+finite number of parameters. Long-known examples of the latter are perturbatively
+renormalisable theories without Landau poles---these include the class of Yang-Mills theories,
+which have proven to be an excellent tool,
+for instance to describe the strong interactions through quantum chromodynamics.
+However, since the late 1970s it is known that this scenario is not applicable to
+Einstein gravity, and that the latter is not perturbatively renormalisable.
 
-\begin{itemize}
-  \item asymptotic safety and QG as a QFT
-    \begin{itemize}
-      \item EH as EFT at low energies
-      \item perturbative non-renormalisability
-      \item asymptotic safety / non-perturbative completion / interacting fixed points
-      \item application to gravity ---> Reuter etc.
-    \end{itemize}
-  \item non-perturbative tools in QFTs:
-    \begin{itemize}
-      \item conformal bootstrap and Hamiltonian truncation techniques
-      \item lattice techniques / simulations
-      \item entanglement entropy
-      \item (functional) Renormalisation Group ---> \cf next chapter
-    \end{itemize}
-\end{itemize}
+The perturbative renormalisability of Yang-Mills theories may
+equally well be viewed as
+a collective fixed point of the beta functions of all couplings%
+\footnote{%
+  Strictly speaking it is enough for all \textit{essential} couplings
+  to have a fixed point, that is products and quotients of bare couplings
+  that appear in physical observables such as cross sections.
+}
+of the theory in the ultraviolet. That means that the energy scale dependence
+of the couplings becomes self-similar (\ie stable) when approaching arbitrary
+high energies. In Yang-Mills theories this is trivially satisfied, because
+the essential coupling converges to zero at high energies: quarks and gluons stop interacting
+with each other and become free, which is known as asymptotic freedom. The fixed
+point in this case is called \textit{free} or \textit{Gaussian}, and it allows
+the theory to be studied perturbatively in the ultraviolet. However, the values
+of the couplings at the fixed point do not have to be zero for the theory to
+be well-behaved in the ultraviolet---it suffices for them to remain finite.
+In the latter case the field degrees of freedom will interact with each other at
+high energies, which is why the fixed point is called \textit{interacting}.
+The general possibility of such a scenario for arbitrary quantum field theory
+was first proposed by Steven Weinberg in 1979, \cf Ref.~\cite{Weinberg:1980gg}.
+It is since referred to as asymptotic safety following the case of asymptotic
+freedom discovered earlier.
+The first approach to apply this idea to construct an ultraviolet complete quantum
+field theory of gravity was done in 1996 by Martin Reuter, \cf Ref.\cite{Reuter:1996cp}.
+Since then, a considerable amount of evidence has been found to support that such
+a theory could be constructed for the case of pure gravity.
 
+It is important to mention that the value of the couplings at the fixed point is not
+\apriori restricted in any way. In particular, the relevant dimensionless values
+may be of order one or greater, forbidding a conventional perturbative study of the theory
+at the fixed point by expanding physical observables in powers of the coupling.
+This is why the space of all quantum field theories of gravity must be scanned for
+candidate theories with non-perturbative tools. Of such there are only a few available,
+non of which is as matured as the perturbative tools developed in the last century, yet.
+The most notable non-perturbative tools are the conformal bootstrap,
+the lattice, entanglement entropy and the functional renormalisation group.
+The latter is the traditional tool which has been used in the vast majority
+of research concerning asymptotic safety in gravity and it is the one we will use
+throughout this thesis as well.
 
 
 \section*{Outline of the thesis}
 \addcontentsline{toc}{section}{Outline of the thesis}
 
-\begin{itemize}
-  \item Why to include matter fields and what to learn from it
-    \begin{itemize}
-      \item full QG must explain the existence of matter
-      \item relevant for astrophysical / cosmological test of QG
-      \item other?
-    \end{itemize}
-  \item Why background independence
-  \item What we are actually doing in this thesis
-    \begin{itemize}
-      \item ch. 1 fate of RG properties when RG is constraint to msWI
-      \item ch. 2 scalar field non-minimally coupled to curved background (heat kernel techniques, background calculation)
-      \item ch. 3 massless scalar field minimally coupled to flat background (vertex expansion, fluctuation calculation)
-      \item ch. 4 same as 3 in linear parametrisation \& using the msWI as well
-    \end{itemize}
-\end{itemize}
+One of the main open issues in asymptotic safety in quantum gravity is
+the inclusion of matter field degrees of freedom. Most of this thesis
+will deal with this issue in one way or another.
 
-\subsection*{Chapter 1}
-\subsection*{Chapter 2}
-\subsection*{Chapter 3}
-\subsection*{Chapter 4}
-\subsection*{Chapter 5}
+This is interesting and relevant for a number of reason. First of all,
+one may argue, that having an ultraviolet complete quantum field theory
+of gravity alone is not enough for at least two reasons:
+\textit{(a)} the inclusion of matter fields introduces new couplings into
+the theory which may behave very differently from the once which couple
+gravitons to one another and thus may interfere with asymptotic safety of
+pure gravity, or destabilise fixed points entirely;
+\textit{(b)} the commonly excepted \textit{effectiveness} of the
+standard model has to be dealt with.
+In principle it is possible that gravity could cure the instabilities
+of the Higgs sector and hence an asymptotically safe quantum
+field theory of everything could serve as a nice and elegant ultraviolet completion
+of the standard model.
+
+Initial studies of the inclusion of matter fields have indeed revealed that
+a large number of scalar fields may destabilise gravitational fixed points
+and thus predict an upper bound for the number of scalar matter fields
+present in the Universe, \cf Ref.~\cite{Dona:2013qba}. This is especially relevant
+for (effective) cosmological theories and (possibly supersymmetric) grand unified
+theories which usually incorporate large numbers of scalar fields.
+However, there are still many technical details that need to be addressed
+in order to solidify these predictions.
+
+A second major reason to study the behaviour of matter fields within a gravitational
+quantum field theory concerns the ability to compare predictions of the theory
+with experiments and observations. This is in particular true for astrophysical
+systems and cosmological test, where couplings between matter and gravity can
+be measured much more accurately than observables coming from purely gravitational
+effects. This includes the equivalence principle, perturbations of the
+cosmic microwave background, implications for inflationary models as well as
+even collider experiments.
+
+A second issue we will be (much less) concerned about in this thesis is one of
+more technical nature. Namely, we will study some of the implications, the use
+of the well-known background field method in quantum field theory has on renormalisation
+group properties when defining an energy scale with respect to this very background.%
+\footnote{%
+  \texit{A priori}, this has nothing to do with diffeomorphism invariance of
+  the quantum theory, which is emphasised by other approaches such as loop quantum gravity,
+  and may or may not hold at the fixed point in asymptotic safety.
+}
+This may be regarded as a mathematical consistency condition and could give
+interesting insides about the appropriate description of the renormalisation group.
+
+\bigskip
+\noindent
+The thesis is organised as follows:
+
+\medskip
+\textbf{Chapter 1} provides a technical introduction to asymptotic safety and the
+functional renormalisation group. We will establish most of the mathematical notions
+used in later chapters, including truncation schemes, forms of cutoffs and field
+parametrisations, as well as basic concepts of critical phenomena. This chapter includes
+a detailed case study of a scalar field theory.
+
+\medskip
+\textbf{Chapter 2} presents the foundation of the modified split Ward identities and
+its application to insure background independence. We study the implications of the
+combination of flow equation and Ward identity in the context of conformally reduced
+quantum gravity.
+
+\medskip
+\textbf{Chapter 3} studies scalar fields non-minimally coupled to a curved background
+in a background calculation using heat kernel techniques. We find functional fixed point
+solutions and study there linearised behaviour in more details. We discover various
+upper bounds for the number of scalar fields when demanding asymptotic safety for
+the combined system.
+
+\medskip
+\textbf{Chapter 4} augments the previous chapter by studying the dynamics
+of a three-leg vertex consisting of two massless scalar fields minimally coupled to
+the spin-two mode of a graviton about a flat background.
+We find qualitatively similar results as previously and in particular observe
+a fixed point destabilising effect induced by the too many scalar fields.
+
+\medskip
+\textbf{Chapter 5} repeats the calculation of chapter 4 with different technical choices
+such as field parametrisation and cutoff. This shall give an idea about the
+robustness of the results obtained so far and the sincerity of the upper bounds.
+We also use the Ward identity to remove background dependencies due to the
+cutoff operator.
+
 
 \section*{List of Publications}
 \addcontentsline{toc}{section}{List of Publications}
@@ -490,6 +615,15 @@ The work presented in this thesis is based on the following publications:%
   \item \bibentry{Dona:2015tnf}
   \item \bibentry{Labus:2016lkh}
 \end{itemize}
+\bigskip
+An overview, including the main subject of each chapter, technical details
+of the respective calculations, as well as the main source of reference, may be found in
+Fig.~\ref{fig:overview}.
+
+Most of the diagrams, tables, figures and plots in the original
+sources have been recreated for this thesis using \TikZ and \pgfplots, with the exception
+of Fig.~\ref{WFN1N2} which was originally created using Mathematica and reproduced here
+from Ref.~\cite{Labus:2015ska}. All typesetting has been done with \LaTeX.
 
 
 %----------------------------------------------------------------------------------------
