@@ -67,11 +67,14 @@
 \pgfplotsset{compat=newest}
 
 \usetikzlibrary{patterns}
-\usetikzlibrary{pgfplots.groupplots}
-\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{math}
+\usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
-\usetikzlibrary{math,calc}
+\usetikzlibrary{pgfplots.groupplots}
 
 \tikzset{
   midarrow/.style={draw, postaction={decorate},
@@ -607,6 +610,17 @@ cutoff operator.
 \section*{List of Publications}
 \addcontentsline{toc}{section}{List of Publications}
 
+\begin{figure}
+  \begin{center}
+    \input{diagrams/overview.tex}
+  \end{center}
+  \caption{
+    Overview of the chapter contents of the thesis including its main topic, some information
+    about technical details used in the calculations and the original reference (where applicable).
+  }
+  \label{fig:overview}
+\end{figure}
+
 The work presented in this thesis is based on the following publications:%
 \bigskip
 \begin{itemize}
@@ -614,6 +628,7 @@ The work presented in this thesis is based on the following publications:%
   \item \bibentry{Labus:2015ska}
   \item \bibentry{Dona:2015tnf}
   \item \bibentry{Labus:2016lkh}
+  \item \bibentry{Eichhorn:2017aaa}
 \end{itemize}
 \bigskip
 An overview, including the main subject of each chapter, technical details
@@ -622,8 +637,9 @@ Fig.~\ref{fig:overview}.
 
 Most of the diagrams, tables, figures and plots in the original
 sources have been recreated for this thesis using \TikZ and \pgfplots, with the exception
-of Fig.~\ref{WFN1N2} which was originally created using Mathematica and reproduced here
-from Ref.~\cite{Labus:2015ska}. All typesetting has been done with \LaTeX.
+of Fig.~\ref{WFN1N2} which was originally created using Mathematica,
+and was reproduced here from Ref.~\cite{Labus:2015ska}.
+All typesetting has been done with \LaTeX.
 
 
 %----------------------------------------------------------------------------------------
@@ -3953,7 +3969,7 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
 \nocite{*}
-\bibliographystyle{unsrt}
+\bibliographystyle{hunsrt}
 \bibliography{allrefs}
 
 
