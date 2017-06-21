@@ -1,0 +1,39 @@
+\begin{tikzpicture}[
+    >=stealth,
+    scale=1.00,
+  ]
+
+  % Main table
+  \matrix (table) [
+    matrix of nodes,
+    ]{
+    chapter & parametrisation & expansion scheme  & reference \\[2mm]
+    Ch. 1   & general         & general    &   \\
+    Ch. 2   & any             & derivative &  \cite{Labus:2016lkh} \\
+    Ch. 3   & exponential     & derivative &  \cite{Labus:2015ska} \\
+    Ch. 4   & exponential     & vertex     &  \cite{Dona:2015tnf} \\
+    Ch. 5   & linear          & vertex     &  \cite{Eichhorn:2017aaa} \\
+  };
+
+  % Top rule
+  \draw[line width=1.5pt] (-4.5,  2.00) -- (4.5,  2.00);
+  % Mid rule
+  \draw[line width=0.55pt](-4.5,  1.25) -- (4.5,  1.25);
+  % Bottom rule
+  \draw[line width=1.5pt] (-4.5, -2.00) -- (4.5, -2.00);
+
+  % Main topics on the right
+  \node                 at (-7.5,  1.63) {main topic};
+  \node[rectangle,draw] at (-7.5,  0.0)  {background independence};
+  \node[rectangle,draw] at (-7.5, -1.0)  {scalar matter + gravity};
+
+  % Arrows to "background independence"
+  \draw[->] (table-3-1.west) -- (-5.22,  0.00);
+  \draw[->] (table-6-1.west) -- (-5.20, -0.05);
+
+  % Arrows to "scalar matter"
+  \draw[->] (table-4-1.west) -- (-5.5, -0.9);
+  \draw[->] (table-5-1.west) -- (-5.5, -1.0);
+  \draw[->] (table-6-1.west) -- (-5.5, -1.1);
+
+\end{tikzpicture}
