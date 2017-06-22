@@ -3,6 +3,12 @@
     scale=1.00,
   ]
 
+  \tikzmath{
+    \rightdistance = -9.8; % right distance for one big table
+    % \rightdistance = -4.5; % right distance for one small table
+    %                        % and free-standing "main topic"
+  }
+
   % Main table
   \matrix (table) [
     matrix of nodes,
@@ -16,24 +22,24 @@
   };
 
   % Top rule
-  \draw[line width=1.5pt] (-4.5,  2.00) -- (4.5,  2.00);
+  \draw[line width=1.5pt] (\rightdistance,  2.00) -- (4.5,  2.00);
   % Mid rule
-  \draw[line width=0.55pt](-4.5,  1.25) -- (4.5,  1.25);
+  \draw[line width=0.55pt](\rightdistance,  1.25) -- (4.5,  1.25);
   % Bottom rule
-  \draw[line width=1.5pt] (-4.5, -2.00) -- (4.5, -2.00);
+  \draw[line width=1.5pt] (\rightdistance, -2.00) -- (4.5, -2.00);
 
   % Main topics on the right
-  \node                 at (-7.5,  1.63) {main topic};
+  \node                 at (-7.3,  1.63) {main topic};
   \node[rectangle,draw] at (-7.5,  0.0)  {background independence};
-  \node[rectangle,draw] at (-7.5, -1.0)  {scalar matter + gravity};
+  \node[rectangle,draw] at (-7.4, -1.0)  {scalar matter + gravity};
 
   % Arrows to "background independence"
   \draw[->] (table-3-1.west) -- (-5.22,  0.00);
   \draw[->] (table-6-1.west) -- (-5.20, -0.05);
 
   % Arrows to "scalar matter"
-  \draw[->] (table-4-1.west) -- (-5.5, -0.9);
-  \draw[->] (table-5-1.west) -- (-5.5, -1.0);
-  \draw[->] (table-6-1.west) -- (-5.5, -1.1);
+  \draw[->] (table-4-1.west) -- (-5.4, -0.9);
+  \draw[->] (table-5-1.west) -- (-5.4, -1.0);
+  \draw[->] (table-6-1.west) -- (-5.4, -1.1);
 
 \end{tikzpicture}
