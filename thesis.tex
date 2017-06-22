@@ -122,7 +122,8 @@
 \newcommand\THawking{ T_{\scriptscriptstyle{\mathrm{H}}} }
 
 \newcommand{\bnabla}{\overbar \nabla}
-\newcommand\Gback{ \GNewton }
+\newcommand{\bR}{\overbar R}
+\newcommand\Gback{ \GNewton } % background Newton coupling
 
 \newcommand{\FPone}  {\textsl{FP1}}
 \newcommand{\FPtwo}  {\textsl{FP2}}
@@ -185,7 +186,6 @@
 \newcommand{\lan}{\langle}
 \newcommand{\ran}{\rangle}
 \newcommand{\lra}{\leftrightarrow}
-\newcommand{\bR}{\bar R}
 \newcommand{\hR}{\hat R}
 \newcommand{\hnabla}{\hat\nabla}
 \newcommand{\hg}{\hat g}
@@ -3980,8 +3980,128 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 
 \appendix
 \begin{appendices}
+
 \chapter{York decomposition and gauge fixing}
 \label{app:York}
+
+\section{The exponential parametrisation}
+
+Our signature of the metric is $(-,\, +,\, \dots,\, +)$ and the Riemann and Ricci tensors are given as
+\begin{align}
+  R^\a{}_{\b\mu\nu} &= \partial_\mu \Gamma^{\alpha}_{\beta\nu} - \partial_\nu \Gamma^{\alpha}_{\beta\mu}
+                       + \Gamma^{\alpha}_{\mu\lambda} \Gamma^{\lambda}_{\beta\nu} - \Gamma^{\alpha}_{\nu\lambda} \G^{\lambda}_{\beta\mu} \,, \\
+  R_{\mu\nu} &= R^\alpha{}_{\mu \alpha \nu} \,,
+\end{align}
+respectively.
+In $d$ dimensions, any metric of given signature can be written as
+\begin{align}
+  g_{\mu\nu} = \theta^\rho{}_\mu \, \theta^\sigma{}_\nu  \, \bar g_{\rho\sigma}
+\end{align}
+where $\bar g_{\rho \sigma}$ is a fixed metric of the same signature
+and $\theta^\rho{}_\mu$ is a field with values in the group $GL(d)$.
+One can write $\theta=e^X$, where $X^\rho{}_\mu$ is a generic matrix.
+Let $Y_{\mu\nu} = \bar g_{\mu\rho} \, X^\rho{}_\nu$.
+It is possible to choose the matrix $X$ in such a way that $Y$ is symmetric.
+Then it is easy to check that
+\begin{align}
+  g &= \mathrm{exp}( X^T ) \, \bar g \, \mathrm{exp}(X)
+    = \mathrm{exp}(Y \bar{g}^{-1}) \, \bar g \, \mathrm{exp}(\bar g^{-1}Y) \nonumber \\
+    &= \bar g \, \mathrm{exp}(\bar g^{-1}Y) \, \mathrm{exp}(\bar g^{-1}Y)
+    = \bar g \, \mathrm{exp}(2X) \,.
+\end{align}
+We therefore parametrize the metric as
+\begin{align}
+  \label{decomp}
+  g_{\mu\nu} = \bar g_{\mu\rho} (e^h)^\rho{}_\nu \,,
+\end{align}
+where $\bar g_{\mu\rho}$ is a fixed but arbitrary background and $h=2X$.
+We will use the background metric $\bar g$ to raise and lower indices.
+Then due to the symmetry of $g_{\mu\nu}$ and $\bar g_{\mu\nu}$ also the tensor
+$h_{\mu\nu}=\bar g_{\mu\rho} \, h^\rho{}_\nu$ is symmetric.
+We may then expand the metric and its inverse in powers of the tensor
+$h_{\mu\nu}$ around the background $\bar g_{\mu\nu}$:
+\begin{align}
+  g_{\mu\nu} &= \bar g_{\mu\nu} + h_{\mu\nu}
+              + \frac{1}{2} \, h_{\mu\lambda} \, h^\lambda{}_\nu + \ldots \,, \\
+  g^{\mu\nu} &= \bar g^{\mu\nu}-h_{\mu\nu}
+              + \frac{1}{2} \, h^{\mu\lambda} \, h_\lambda{}^\nu + \ldots \,.
+\end{align}
+In contrast to the usual linear split between background and fluctuation of the form
+$g_{\mu\nu} = \bar g_{\mu\nu} + h_{\mu\nu}$, here also the covariant metric is
+non-polynomial in the quantum field $h^\mu{}_\nu$.
+In general we will denote the expansion of a quantity $Q$ as follows:
+$Q=Q^{(0)}+Q^{(1)}+Q^{(2)}+\ldots$,
+where $Q^{(n)}$ contains altogether $n$ powers of $h^\mu{}_\nu$.
+In general $Q^{(0)}=\bar Q$, \ie the quantity computed from the background metric.
+The linear terms above are the same as in the linear parametrization,
+but from the second order onwards they differ.
+
+\section{The York decomposition}
+
+We can split the metric fluctuation field in its spin components as follows:
+\begin{align}
+  h_{\mu\nu} = \hTTmunu
+             + \bnabla_\mu \, \xi_\nu
+             + \bnabla_\nu \, \xi_\mu
+             + \bnabla_\mu \bnabla_\nu \, \sigma
+             - \frac{1}{d} \, \bgmunu \, \bnabla^2\sigma
+             + \frac{1}{d} \, \bgmunu \, h \,,
+  \label{eq:york_decomposition}
+\end{align}
+where $\hTTmunu$ is the transverse and traceless spin-2 field satisfying
+$\bnabla^\mu \hTTmunu = 0$ and $h^{\TT}{}^\mu{}_\mu=0$, $\xi_\mu$ is the
+transverse spin-1 field satisfying $\bnabla^\mu \xi_\mu=0$, and
+$\sigma$ and $h$ are the two spin-0 degrees of freedom.
+The latter is the trace part of $h_{\mu\nu}$, $\Tr \, h_{\mu\nu} = h$,
+which justifies the slight abuse of notation. The above
+splitting is called York decomposition.
+
+One significant difference between linear and exponential parametrisation is that,
+due to the formula $\det e^{h_{\mu\nu}} = e^{\Tr \, h_{\mu\nu}}$, only the trace
+of $h_{\mu\nu}$ enters in the definition of the determinant, at all orders.
+In particular,
+\begin{align}
+  \sqrt{g} = e^{\nicefrac{h}{2}} \sqrt{\bar g} =
+  \sqrt{\bar g}
+  \left(
+    1 + \frac h2 + \frac{h^2}{8} + \ldots
+  \right) .
+\end{align}
+For later convenience we also give several quadratic expressions in $\hTTmunu$
+in terms of the spin components here, which will be useful to derive
+the Hessian in scalar-tensor theories. All these expressions hold on the
+sphere $\mathbb S^d$:
+\begin{align}
+  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \bnabla^2 h^{\mu\nu} &
+  = \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[
+    \hTTmunu \, \bnabla^2 \, h^{{\TT}\,\mu\nu}
+    - 2 \, \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right)
+    \left( \bnabla^2 + \frac{d+1}{d(d-1)} \bR \right) \xi^\mu \nonumber \\
+    & + \frac{d-1}{d} \, \sigma \, \bnabla^2
+    \left( \bnabla^2 + \frac{2\bR}{d-1} \right)
+    \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d} \, h \, \bnabla^2 \, h
+  \Big] \,, \\
+  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \nabla^\mu \nabla_\rho h^{\rho\nu} &=
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[
+    - \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right)^2 \xi^\mu
+    + \frac{(d-1)^2}{d^2} \, \sigma \, \bnabla^2
+    \left( \bnabla^2 + \frac{\bR}{d-1} \right)^2 \sigma \nonumber \\
+    & + \frac{2(d-1)}{d^2} \, h \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d^2} \, h \, \bnabla^2 \, h
+  \Big] \,, \\
+  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \, h^{\mu\nu} &=
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[\hTTmunu \, h^{{\TT}\,\mu\nu}
+    + 2 \, \xi_\mu \left( -\bnabla^2 - \frac{\bR}{d} \right) \xi^\mu \nonumber \\
+    & +\frac{d-1}{d} \, \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d} \, h^2
+  \Big] \,.
+  \label{hterms}
+\end{align}
+
 
 \chapter{Hessian and flow equations in scalar-tensor theories}
 \label{app:Hessian}
