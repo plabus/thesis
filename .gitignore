@@ -1,5 +1,9 @@
-## Do not include any old thesises or lecture notes:
+## Do not include any old thesises, lecture notes,
+## personally tex'ed notes or references:
 lectures_and_thesises/*
+notes/*
+references/*
+design_examples/*
 
 ## Ignore the raw versions of the papers from now on:
 papers/*
