@@ -12,8 +12,8 @@
 % PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{book} % Default font size and left-justified equations
-% \documentclass[11pt,draft]{book} % Default font size and left-justified equations
+\documentclass[11pt]{book}
+% \documentclass[11pt,draft]{book} % Use to see overflows
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
 \input{structure} % Insert the structure.tex file which contains
                   % the majority of the structure behind the template
@@ -2000,7 +2000,7 @@ that involve a mixture of $\sigma$ and $\phi$.
 We then choose a very simple ``unimodular physical gauge''
 which amounts simply to suppressing the fields $\xi_\mu$ and $h$.
 We describe the steps involved in the York decomposition, the
-gauge fixing and the resulting Faddeev–Popov ghost sector in app. \ref{app:York}.
+gauge fixing and the resulting Faddeev–Popov ghost sector in app. \ref{app:exp_param}.
 Further details concerning the derivation of the Hessian and the flow
 equations may be found in app. \ref{app:Hessian}.
 We will use a type-I cutoff, which is introduced by replacing
@@ -2603,7 +2603,7 @@ as its fluctuations do not enter the RG flow in our choice of gauge.
 As before, we will use the exponential parametrisation of the metric field,
 employ a York decomposition for the fluctuation field and use the unimodular physical gauge.
 We will specialise our calculation to a flat background $\mathbb R^4$ in four dimensions.
-Details of all the involved steps may be found in app. \ref{app:York}.
+Details of all the involved steps may be found in app. \ref{app:exp_param}.
 Since fluctuations of $\xi_\mu$ and $h$ are gauged to zero,
 we are left with contributions of $\hTTmunu$ and $\sigma$ to the running couplings.
 
@@ -3981,18 +3981,18 @@ $\sim N_S$ to $\beta_{g_3}$ and $\beta_{G_3}$ depends on the choice of parametri
 \appendix
 \begin{appendices}
 
-\chapter{York decomposition and gauge fixing}
-\label{app:York}
+\chapter{The exponential parametrisation}
+\label{app:exp_param}
 
-\section{The exponential parametrisation}
+In this appendix we will give some basic results concerning the exponential parametrisation
+of the metric field. This includes basic definitions, York decomposition, gauge fixing and
+ghost sector, as well as results for the variations of the Christoffel symbols, Ricci tensor
+and Ricci scalar curvature in the exponential parametrisation.
 
-Our signature of the metric is $(-,\, +,\, \dots,\, +)$ and the Riemann and Ricci tensors are given as
-\begin{align}
-  R^\a{}_{\b\mu\nu} &= \partial_\mu \Gamma^{\alpha}_{\beta\nu} - \partial_\nu \Gamma^{\alpha}_{\beta\mu}
-                       + \Gamma^{\alpha}_{\mu\lambda} \Gamma^{\lambda}_{\beta\nu} - \Gamma^{\alpha}_{\nu\lambda} \G^{\lambda}_{\beta\mu} \,, \\
-  R_{\mu\nu} &= R^\alpha{}_{\mu \alpha \nu} \,,
-\end{align}
-respectively.
+The signature of the metric we will use throughout is given by $(-,\, +,\, \dots,\, +)$.
+
+\section{Basic definitions}
+
 In $d$ dimensions, any metric of given signature can be written as
 \begin{align}
   g_{\mu\nu} = \theta^\rho{}_\mu \, \theta^\sigma{}_\nu  \, \bar g_{\rho\sigma}
@@ -4029,14 +4029,11 @@ $h_{\mu\nu}$ around the background $\bar g_{\mu\nu}$:
 In contrast to the usual linear split between background and fluctuation of the form
 $g_{\mu\nu} = \bar g_{\mu\nu} + h_{\mu\nu}$, here also the covariant metric is
 non-polynomial in the quantum field $h^\mu{}_\nu$.
-In general we will denote the expansion of a quantity $Q$ as follows:
-$Q=Q^{(0)}+Q^{(1)}+Q^{(2)}+\ldots$,
-where $Q^{(n)}$ contains altogether $n$ powers of $h^\mu{}_\nu$.
-In general $Q^{(0)}=\bar Q$, \ie the quantity computed from the background metric.
 The linear terms above are the same as in the linear parametrization,
-but from the second order onwards they differ.
+but from the second order onwards, they differ.
 
-\section{The York decomposition}
+
+\section{York decomposition}
 
 We can split the metric fluctuation field in its spin components as follows:
 \begin{align}
@@ -4056,10 +4053,369 @@ The latter is the trace part of $h_{\mu\nu}$, $\Tr \, h_{\mu\nu} = h$,
 which justifies the slight abuse of notation. The above
 splitting is called York decomposition.
 
-One significant difference between linear and exponential parametrisation is that,
+For later convenience we also give several quadratic expressions in $\hTTmunu$
+in terms of the spin components here, which will be useful to derive
+the Hessian in scalar-tensor theories. All these expressions hold on the
+sphere $\mathbb S^d$:
+\begin{align}
+  & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \bnabla^2 h^{\mu\nu}
+  = \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[
+    \hTTmunu \, \bnabla^2 \, h^{{\TT}\,\mu\nu}
+    - 2 \, \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right) \nonumber \\
+    & \qquad \times \left( \bnabla^2 + \frac{d+1}{d(d-1)} \bR \right) \xi^\mu
+    + \frac{d-1}{d} \, \sigma \, \bnabla^2
+    \left( \bnabla^2 + \frac{2\bR}{d-1} \right)
+    \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d} \, h \, \bnabla^2 \, h
+  \Big] \,, \\[2mm]
+  & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \nabla^\mu \nabla_\rho h^{\rho\nu} =
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[
+    - \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right)^2 \xi^\mu
+    + \frac{(d-1)^2}{d^2} \nonumber \\
+    & \qquad \times \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right)^2 \sigma
+    + \frac{2(d-1)}{d^2} \, h \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d^2} \, h \, \bnabla^2 \, h
+  \Big] \,, \\[2mm]
+  & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \, h^{\mu\nu} =
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Big[\hTTmunu \, h^{{\TT}\,\mu\nu}
+    + 2 \, \xi_\mu \left( -\bnabla^2 - \frac{\bR}{d} \right) \xi^\mu \nonumber \\
+    & \qquad + \frac{d-1}{d} \, \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
+    + \frac{1}{d} \, h^2
+  \Big] \,.
+  \label{hterms}
+\end{align}
+
+[Add field redefinitions here.]
+
+
+\section{Gauge fixing and ghost sector}
+
+\subsection{Conventional gauge fixing}
+
+[F should be 1 here.]
+Here we use the standard background gauge fixing term
+\be
+S_{GF}=\frac{F(\bphi)}{2\alpha}\int dx\sqrt{\bg}\,\bg^{\mu\nu}\chi_\mu\chi_\nu
+\ee
+with
+\be
+\chi_\mu=\bnabla_\rho h^\rho{}_\mu-\frac{\beta+1}{d}\bnabla_\mu(\tr h)\ .
+\ee
+Using the York decomposition, we find
+\be
+S_{GF}=\frac{F(\bphi)}{2\alpha}\int dx\sqrt{\bg}
+\left[\xi'_\mu\left(-\bnabla^2-\frac{\bR}{d}\right)\xi^{\prime\mu}
++
+\left(\frac{d-1}{d}\sqrt{-\bnabla^2-\frac{\bR}{d-1}}\sigma'+2\beta\sqrt{-\bnabla^2}\omega\right)^2\right]
+\ee
+
+\subsection{Transformation properties}
+
+The transformation of the metric under an infinitesimal diffeomorphism $\epsilon$
+is given by the Lie derivative
+\be
+\label{transfg}
+\delta_\epsilon g_{\mu\nu}=
+\Lie_\epsilon g_{\mu\nu}
+\equiv
+\epsilon^\rho\partial_\rho g_{\mu\nu}
++g_{\mu\rho}\partial_\nu\epsilon^\rho
++g_{\nu\rho}\partial_\mu\epsilon^\rho\ .
+\ee
+
+As usual, we have to define transformations of $\bg$ and $h$ which
+used in (\ref{decomp}) yield (\ref{transfg}).
+The simplest one is the background transformation.
+If we treat $\bg$ and $h$ as tensors under $\delta_\epsilon$, i.e.
+\be
+\delta^{(B)}_\epsilon\bg_{\mu\nu}=\Lie_\epsilon \bg_{\mu\nu}\ ;
+\qquad
+\delta^{(B)}_\epsilon h^\mu{}_\nu=\Lie_\epsilon h^\mu{}_\nu\ .
+\ee
+then also
+\be
+\delta^{(B)}_\epsilon(e^h)^\mu{}_\nu=\Lie_\epsilon(e^h)^\mu{}_\nu
+\ee
+and (\ref{transfg}) follows.
+
+By definition, the ``quantum'' gauge transformation of $h$ is such as to reproduce (\ref{transfg})
+when $\bg$ is held fixed:
+\be
+\delta^{(Q)}_\epsilon \bg_{\mu\nu}=0\ ;
+\qquad
+\bg_{\mu\rho}\delta^{(Q)}_\epsilon (e^h)^\rho{}_\nu
+=\Lie_\epsilon g_{\mu\nu}\ .
+\ee
+From the properties of the Lie derivative we have
+\be
+\Lie_\epsilon g_{\mu\nu}=\Lie_\epsilon \bg_{\mu\rho} (e^h)^\rho{}_\nu
++\bg_{\mu\rho}\Lie_\epsilon(e^h)^\rho{}_\nu
+=(\bnabla_\rho\epsilon_\mu+\bnabla_\mu\epsilon_\rho) (e^h)^\rho{}_\nu
++g_{\mu\lambda}(e^{-h})^\lambda{}_\rho\Lie_\epsilon(e^h)^\rho{}_\nu
+\ee
+Then we find
+\be
+(e^{-h}\delta^{(Q)}_\epsilon e^h)^\mu{}_\nu=
+(e^{-h}\Lie_\epsilon e^h)^\mu{}_\nu
++(e^{-h})^\mu{}_\rho(\bnabla^\rho\epsilon_\sigma+\bnabla_\sigma\epsilon^\rho)
+(e^h)^\sigma{}_\nu
+\ee
+Expanding for small $h$
+\be
+\delta^{(Q)}_\epsilon h^\mu{}_\nu=
+\bnabla^\mu\epsilon_\nu+\bnabla_\nu\epsilon^\mu
++\Lie_\epsilon h^\mu{}_\nu
++[\Lie_\epsilon\bar g,h]^\mu{}_\nu
++O(\epsilon h^2)\ .
+\ee
+The first three terms coincide with the quantum transformation when one uses
+the linear background decomposition.
+
+\subsection{Unimodular gauge}
+
+paper Percacci, Vacca p. 9f + ghosts
+
+
+\section{Variations of Christoffel symbols and curvature invariants}
+
+The Riemann and Ricci tensors in our conventions are given by
+\begin{align}
+  R^\a{}_{\b\mu\nu} &= \partial_\mu \Gamma^{\alpha}_{\beta\nu} - \partial_\nu \Gamma^{\alpha}_{\beta\mu}
+                       + \Gamma^{\alpha}_{\mu\lambda} \Gamma^{\lambda}_{\beta\nu} - \Gamma^{\alpha}_{\nu\lambda} \G^{\lambda}_{\beta\mu} \,, \\
+  R_{\mu\nu} &= R^\alpha{}_{\mu \alpha \nu} \,,
+\end{align}
+respectively.
+In the following, we will denote the expansion of a quantity $Q$ as follows:
+\begin{align}
+  Q = Q^{\scriptscriptstyle(0)} + Q^{\scriptscriptstyle(1)} +
+  Q^{\scriptscriptstyle(2)} + Q^{\scriptscriptstyle(3)} + \ldots \,,
+\end{align}
+where $Q^{\scriptscriptstyle(n)}$ contains altogether $n$ powers of $h^\mu{}_\nu$.
+In general we have $Q^{\scriptscriptstyle(0)} = \overbar Q$, \ie the quantity computed from the background metric.
+For the Christoffel symbols we will thus write as
+\begin{align}
+  \Gamma^\kappa_{\mu\nu} =
+  \overbar \Gamma^\kappa_{\mu\nu}
+  + \Gamma^{\kappa \, \scriptscriptstyle{(1)}}_{\mu\nu}
+  + \Gamma^{\kappa \, \scriptscriptstyle{(2)}}_{\mu\nu}
+  + \Gamma^{\kappa \, \scriptscriptstyle{(3)}}_{\mu\nu}
+  + \Gamma^{\kappa \, \scriptscriptstyle{(4)}}_{\mu\nu}
+  + \dots \,,
+\end{align}
+where
+\begin{align}
+  \Gamma_{\mu \nu}^{\kappa \, \scriptscriptstyle{(1)}} &=
+  \frac{1}{2} \, \bar{g}^{\kappa \rho}
+  \left(
+    \bnabla_{\mu} \, h_{\rho \nu}
+    + \bnabla_{\nu} \, h_{\rho \mu}
+    - \bnabla_{\rho} \, h_{\mu \nu}
+  \right) , \\[2mm]
+  \Gamma_{\mu \nu}^{\kappa \, \scriptscriptstyle{(2)}} &=
+  - \frac{1}{2} \, h^{\kappa \rho}
+  \left(
+    \bnabla_{\mu} \, h_{\rho \nu}
+    + \bnabla_{\nu} \, h_{\rho \mu}
+    - \bnabla_{\rho} \, h_{\mu \nu}
+  \right) \nonumber \\
+  & + \frac{1}{4}
+  \left(
+      \bnabla_{\mu}    \, h_{\nu\sigma}  \, h^{\sigma \kappa}
+    + \bnabla_{\nu}    \, h_{\mu \sigma} \, h^{\sigma \kappa}
+    - \bnabla^{\kappa} \, h_{\mu \sigma} \, h^{\sigma}{}_{\nu}
+  \right) , \\[2mm]
+  \Gamma_{\mu \nu}^{\kappa \, \scriptscriptstyle{(3)}} &= \frac{1}{12} \,
+  \Bigl[
+    3 \, h^{\kappa}{}_{\sigma} \, h^{\sigma \rho}
+    \left(
+        \bnabla_{\mu}  \, h_{\rho \nu}
+      + \bnabla_{\nu}  \, h_{\rho \mu}
+      - \bnabla_{\rho} \, h_{\mu \nu}
+    \right) \nonumber \\
+    & \vphantom{\frac{1}{2}}
+    - 3 \, h^{\kappa \rho}
+    \left(
+        \bnabla_{\mu}  \, h_{\rho \sigma} \, h^{\sigma}{}_{\nu}
+      + \bnabla_{\nu}  \, h_{\rho \sigma} \, h^{\sigma}{}_{\mu}
+      - \bnabla_{\rho} \, h_{\mu \sigma}  \, h^{\sigma}{}_{\nu}
+    \right) \nonumber \\
+    & \vphantom{\frac{1}{2}}
+    + \bnabla_{\nu}    \, h_{\mu \rho} \, h^{\rho \sigma} \, h_{\sigma}{}^{\kappa}
+    + \bnabla_{\mu}    \, h_{\nu \rho} \, h^{\rho \sigma} \, h_{\sigma}{}^{\kappa}
+    - \bnabla^{\kappa} \, h_{\mu \rho} \, h^{\rho \sigma} \, h_{\sigma\nu}
+  \Bigr] , \\[2mm]
+  \Gamma_{\mu \nu}^{\kappa \, \scriptscriptstyle{(4)}} &= \frac{1}{48} \,
+  \Bigl[
+    - 4 \, h^{\kappa \alpha} \, h_{\alpha \sigma} \, h^{\sigma \rho}
+    \left(
+        \bnabla_{\mu}  \, h_{\rho \nu}
+      + \bnabla_{\nu}  \, h_{\rho \mu}
+      - \bnabla_{\rho} \, h_{\mu \nu}
+    \right) \nonumber \\
+    & \vphantom{\frac {1}{48}}
+    + 6 \, h^{\kappa \sigma} \, h_{\sigma}{}^{\rho}
+    \left(
+        \bnabla_{\mu}  \, h_{\alpha \nu} \, h^{\alpha}{}_{\rho}
+      + \bnabla_{\nu}  \, h_{\mu \alpha} \, h^{\alpha}{}_{\rho}
+      - \bnabla_{\rho} \, h_{\mu \alpha} \, h^{\alpha}{}_{\nu}
+    \right) \nonumber \\
+    & \vphantom{\frac {1}{48}}
+    - 4 \, h^{\kappa \rho}
+    \left(
+        \bnabla_{\mu}  \, h_{\nu \alpha} \, h^{\alpha \sigma} \, h_{\sigma\rho}
+      + \bnabla_{\nu}  \, h_{\mu \alpha} \, h^{\alpha \sigma} \, h_{\sigma\rho}
+      - \bnabla_{\rho} \, h_{\mu \sigma} \, h^{\alpha \sigma} \, h_{\sigma \nu}
+    \right) \nonumber\\
+    & \vphantom{\frac {1}{48}}
+    + \bnabla_{\nu}    \, h_{\mu \sigma} \, h^{\sigma \alpha} \, h_{\alpha\rho}  \, h^{\rho \kappa}
+    + \bnabla_{\mu}    \, h_{\nu \sigma} \, h^{\sigma \alpha} \, h_{\alpha\rho}  \, h^{\rho \kappa}
+    - \bnabla^{\kappa} \, h_{\mu \sigma} \, h^{\sigma \alpha} \, h_{\alpha \rho} \, h^{\rho}{}_{\nu}
+  \Bigr] \,.
+\end{align}
+In here, the covariant derivatives always act on everything to the right of them.
+In similar fashion, with the definitions above, one finds for the Ricci tensor:
+\begin{align}
+  R^{\, \scriptscriptstyle(1)}_{\mu\nu} &= -\frac{1}{2} \,
+  \left(
+    \bnabla^2 \, h_{\mu\nu}
+    - \bnabla_\mu \, \bnabla_\rho \, h^\rho{}_\nu
+    - \bnabla_\nu \, \bnabla_\rho \, h^\rho{}_\mu
+    + \bnabla_\mu \, \bnabla_\nu  \, h
+  \right) \nonumber \\
+  & \vphantom{\frac{1}{2}}
+  + \frac{1}{2} \, \bR_{\mu\alpha} \, h^\alpha{}_\nu
+  + \frac{1}{2} \, \bR_{\nu\alpha} \, h^\alpha{}_\mu
+  - \bar g_{\alpha \rho} \, \bR^{\rho}{}_{\mu\beta\nu} \, h^{\alpha \beta} \,, \\[2mm]
+  R^{\, \scriptscriptstyle(2)}_{\mu\nu} &=
+   \frac12 \, \bnabla_\mu
+   \left(
+     h^{\alpha\beta} \, \bnabla_\nu \, h_{\alpha\beta}
+   \right)
+  -\frac12 \, \bnabla_\alpha
+  \left(
+    h^{\a\b}
+    \left(
+        \bnabla_\mu   \, h_{\nu\beta}
+      + \bnabla_\nu   \, h_{\mu\beta}
+      - \bnabla_\beta \, h_{\mu\nu}
+    \right)
+  \right) \nonumber\\
+  &
+  - \frac14
+  \left(
+      \bnabla_\mu    \, h^\beta{}_\alpha
+    + \bnabla_\alpha \, h^\beta{}_\mu
+    - \bnabla^\beta  \, h_{\alpha \mu}
+  \right)
+  \Big(
+      \bnabla_\beta  \, h^\alpha{}_\nu
+    + \bnabla_\nu    \, h^\alpha{}_\beta
+    - \bnabla^\alpha \, h_{\beta \nu}
+  \Big) \nonumber \\
+  &
+  + \frac{1}{4} \, \bnabla_\rho \, h
+  \Big(
+      \bnabla_\mu  \, h^\rho{}_\nu
+    + \bnabla_\nu  \, h^\rho{}_\mu
+    - \bnabla^\rho \, h_{\mu\nu}
+  \Big) \nonumber \\
+  &
+  + \frac{1}{4} \, \bnabla_\rho
+  \left(
+      \bnabla_\mu  \big( h^{\rho\lambda} \, h_{\lambda\nu}  \big)
+    + \bnabla_\nu  \big( h^{\rho\lambda} \, h_{\lambda\mu}  \big)
+    - \bnabla^\rho \big( h_{\mu\lambda}  \, h^\lambda{}_\nu \big)
+  \right)
+  - \frac{1}{4} \, \bnabla_\mu \, \bnabla_\nu \big( h^{\rho{}\sigma} \, h_{\rho\sigma} \big) \,, \\[2mm]
+  R^{\, \scriptscriptstyle(3)}_{\mu \nu} &=
+  \frac{1}{2} \, \bnabla_{\lambda}
+  \Big(
+    h^{\lambda\sigma} \, h^{\rho}{}_{\sigma} \, \bnabla_{\mu} \, h_{\rho \nu}
+  \Big)
+  - \frac{1}{4} \, \bnabla_{\lambda}
+  \Big(
+    h^{\lambda \sigma} \, h^{\rho}{}_{\sigma} \, \bnabla_{\rho} \, h_{\mu \nu}
+  \Big)
+  - \frac{1}{2} \, \bnabla_{\lambda}
+  \Big(
+    h^{\lambda \sigma} \, \bnabla_{\mu}
+    \big(
+      h_{\rho \sigma} \, h^{\rho}{}_{\nu}
+    \big)
+  \Big) \nonumber \\
+  & + \frac{1}{4} \, \bnabla_{\lambda}
+  \Big(
+    h^{\lambda \sigma} \, \bnabla_{\sigma} \big( h_{\mu \rho} \, h^{\rho}{}_{\nu} \big)
+  \Big)
+    + \frac{1}{6} \, \bnabla_{\lambda} \, \bnabla_{\mu} \,
+    \Big(
+      h^{\lambda}{}_{\sigma} \, h^{\sigma}{}_{\rho} \, h^{\rho}{}_{\nu}
+    \Big)
+    - \frac{1}{12} \, \bnabla^2
+    \Big(
+      h_{\mu \rho} \, h^{\rho}{}_{\sigma} \, h^{\sigma}{}_{\nu}
+    \Big) \nonumber \\
+  & - \frac{1}{4} \, h^{\rho\sigma}   \big( \bnabla_{\mu}    \, h_{\sigma \nu}   \big) \bnabla_{\rho} \, h
+    + \frac{1}{4} \, h^{\rho \sigma}  \big( \bnabla_{\sigma} \, h_{\mu \nu}      \big) \bnabla_{\rho} \, h
+    + \frac{1}{4} \, h^{\sigma}_{\nu} \big( \bnabla_{\mu}    \, h^{\rho \sigma}  \big) \bnabla_{\rho} \, h
+    \nonumber \\
+  & - \frac{1}{4} \, h_{\mu \sigma}     \big( \bnabla^{\rho}   \, h^{\sigma}{}_{\nu} \big) \bnabla_{\rho}    \, h
+    + \frac{1}{2} \, h^{\lambda \sigma} \big( \bnabla_{\rho}   \, h_{\nu \sigma}     \big) \bnabla_{\lambda} \, h^{\rho}{}_{\mu}
+    - \frac{1}{2} \, h^{\lambda \sigma} \big( \bnabla_{\sigma} \, h_{\nu \rho}       \big) \bnabla_{\lambda} \, h^{\rho}{}_{\mu} \nonumber \\
+  & \vphantom{\frac{1}{2}}
+    - \frac{1}{2} \, h^{\sigma}{}_{\nu} \big( \bnabla_{\rho}    \, h_{\lambda \sigma} \big) \bnabla^{\lambda} \, h^{\rho}{}_{\mu}
+    + \frac{1}{2} \, h^{\sigma \nu}     \big( \bnabla^{\lambda} \, h_{\rho \sigma}    \big) \bnabla_{\lambda} \, h^{\rho}{}_{\mu} \,,
+\end{align}
+where implicit symmetrizations in $\mu$ and $\nu$ are understood on the right hand sides,
+and we again use the notation $\Tr \, h_{\mu\nu} = h$. For the Ricci scalar we obtain the
+following results
+\begin{align}
+  R^{\scriptscriptstyle(1)} &=
+  \bnabla_\mu \, \bnabla_\nu  \, h^{\mu\nu}
+  - \bnabla^2 \, h
+  - \bR_{\mu\nu} \, h^{\mu\nu} \,, \\
+  R^{\scriptscriptstyle(2)} &=
+  \frac34 \, \bnabla_\alpha \, h_{\mu\nu} \, \bnabla^\alpha \, h^{\mu\nu}
+  + h_{\mu\nu} \, \bnabla^2 \, h^{\mu\nu}
+  - \bnabla_\rho \, h^\rho{}_\mu \, \bnabla_\sigma \, h^{\sigma\mu}
+  + \bnabla_\rho \, h^\rho{}_\mu \, \bnabla^\mu \, h
+  - 2 \, h_{\mu\nu} \, \bnabla^\mu \, \bnabla_\rho \, h^{\rho\nu} \nonumber \\
+  &
+  + h_{\mu\nu} \, \bnabla^\mu \, \bnabla^\nu \, h
+  - \frac12 \, \bnabla_\mu \, h_{\nu\alpha} \, \bnabla^\alpha \, h^{\mu\nu}
+  - \frac14 \, \bnabla_\mu \, h \, \bnabla^\mu \, h
+  + \bR_{\alpha\beta\gamma\delta} \, h^{\alpha\gamma} \, h^{\beta\delta} \nonumber \\
+  &
+  + \frac{1}{2} \, \bnabla_\mu \, \bnabla_\nu \, \big( h^{\mu\rho} \, h_\rho{}^\nu \big)
+  - \frac{1}{2} \, \bnabla^2 \big( h^{\mu\rho} \, h_{\mu\rho} \big)
+  - \frac{1}{2} \, \bR_{\mu\nu} \, h^{\mu\rho} \, h_\rho{}^\nu \,, \\
+  R^{\scriptscriptstyle(3)} &=
+  - \frac{1}{6} \, h^{\mu}{}_{\rho} \, h^{\rho}{}_{\sigma} \, h^{\sigma \nu} \, \bR_{\mu \nu}
+  + \frac{1}{4} \, h^{\mu}{}_{\rho} \, h^{\rho\nu} \, \bnabla^2 \, h_{\mu \nu}
+  - \frac{1}{4} \, h^{\mu}{}_{\rho} \, h^{\rho}{}_{\nu} \, \bnabla_{\nu} \, \bnabla_{\mu} \, h
+  \nonumber \\ &
+  + \frac{1}{2} \, h^{\mu \nu} \big( \bnabla_{\lambda} \, h^{\lambda \rho} \big) \bnabla_{\mu} \, h_{\rho \nu}
+  + \frac{1}{2} \, h^{\mu \nu} \, h^{\lambda \rho} \, \bnabla_{\lambda} \, \bnabla_{\mu} \, h_{\rho \nu}
+  - \frac{1}{2} \, h^{\mu \nu} \big( \bnabla_{\lambda} \, h^{\lambda \rho} \big) \bnabla_{\rho} \, h_{\mu \nu}
+  \nonumber \\ &
+  - \frac{1}{2} \, h^{\mu \nu} h^{\lambda \rho} \, \bnabla_{\lambda} \, \bnabla_{\rho} \, h_{\mu \nu}
+  - \frac{1}{4} \, h^{\mu \nu} \big( \bnabla_{\rho} \, h \big) \bnabla_{\mu} \, h^{\rho}{}_{\nu}
+  - \frac{1}{4} \, h^{\mu \nu} \big( \bnabla_{\nu} \, h^{\lambda}{}_{\rho} \big) \bnabla_{\mu} \, h^{\rho}{}_{\lambda}
+  \nonumber \\ &
+  - \frac{1}{4} \, h^{\rho \sigma} \big( \bnabla_{\mu} \, h_{\sigma}{}^{\mu} \big) \bnabla_{\rho} \, h
+  + \frac{1}{4} \, h^{\rho \sigma} \big( \bnabla_{\sigma} \, h \big) \bnabla_{\rho} \, h
+  + \frac{1}{2} \, h^{\mu \sigma} \big( \bnabla_{\rho} \, h^{\lambda}{}_{\sigma} \big) \bnabla^{\rho} \, h_{\mu\lambda} \,,
+\end{align}
+where we have dropped total derivatives in the third variation.
+
+One significant difference between the linear and the exponential parametrisation is that,
 due to the formula $\det e^{h_{\mu\nu}} = e^{\Tr \, h_{\mu\nu}}$, only the trace
 of $h_{\mu\nu}$ enters in the definition of the determinant, at all orders.
-In particular,
+In particular, the square root of the determinant appearing in integral
+measure of the action has the following expansion:
 \begin{align}
   \sqrt{g} = e^{\nicefrac{h}{2}} \sqrt{\bar g} =
   \sqrt{\bar g}
@@ -4067,40 +4423,93 @@ In particular,
     1 + \frac h2 + \frac{h^2}{8} + \ldots
   \right) .
 \end{align}
-For later convenience we also give several quadratic expressions in $\hTTmunu$
-in terms of the spin components here, which will be useful to derive
-the Hessian in scalar-tensor theories. All these expressions hold on the
-sphere $\mathbb S^d$:
-\begin{align}
-  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \bnabla^2 h^{\mu\nu} &
-  = \int \mathrm d^dx \, \sqrt{\bar g} \;
-  \Big[
-    \hTTmunu \, \bnabla^2 \, h^{{\TT}\,\mu\nu}
-    - 2 \, \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right)
-    \left( \bnabla^2 + \frac{d+1}{d(d-1)} \bR \right) \xi^\mu \nonumber \\
-    & + \frac{d-1}{d} \, \sigma \, \bnabla^2
-    \left( \bnabla^2 + \frac{2\bR}{d-1} \right)
-    \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
-    + \frac{1}{d} \, h \, \bnabla^2 \, h
-  \Big] \,, \\
-  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \nabla^\mu \nabla_\rho h^{\rho\nu} &=
-  \int \mathrm d^dx \, \sqrt{\bar g} \;
-  \Big[
-    - \xi_\mu \left( \bnabla^2 + \frac{\bR}{d} \right)^2 \xi^\mu
-    + \frac{(d-1)^2}{d^2} \, \sigma \, \bnabla^2
-    \left( \bnabla^2 + \frac{\bR}{d-1} \right)^2 \sigma \nonumber \\
-    & + \frac{2(d-1)}{d^2} \, h \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
-    + \frac{1}{d^2} \, h \, \bnabla^2 \, h
-  \Big] \,, \\
-  \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \, h^{\mu\nu} &=
-  \int \mathrm d^dx \, \sqrt{\bar g} \;
-  \Big[\hTTmunu \, h^{{\TT}\,\mu\nu}
-    + 2 \, \xi_\mu \left( -\bnabla^2 - \frac{\bR}{d} \right) \xi^\mu \nonumber \\
-    & +\frac{d-1}{d} \, \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
-    + \frac{1}{d} \, h^2
-  \Big] \,.
-  \label{hterms}
-\end{align}
+
+
+\section{Hessian of the Einstein-Hilbert action and propagators}
+
+\subsection{Hessian with and without York decomposition}
+
+Finally one can combine the expansion of $\sqrt{g}$ with that of $R$
+and integrate over spacetime.
+Dropping total derivatives one can then rewrite the second order
+terms in the expansion of the Hilbert action
+\bea
+\int d^dx\sqrt{\bg}\Bigl[&&\!\!\!\!\!\!
+\frac{1}{4}h_{\mu\nu}\bnabla^2 h^{\mu\nu}
+-\frac{1}{2}h_{\mu\nu}\bnabla^\mu\bnabla^\rho h_\rho{}^\nu
++\frac{1}{2}(\tr h)\bnabla_\mu\bnabla_\nu h^{\mu\nu}
+-\frac{1}{4}(\tr h)\bnabla^2 (\tr h)
+\nonumber\\
+&&
++\frac{1}{2}\bR_{\mu\rho\nu\sigma}h^{\mu\nu}h^{\rho\sigma}
+-\frac{1}{2}\bR_{\mu\nu}h^{\mu\nu}(\tr h)
++\frac{1}{8}\bR(\tr h)^2\Bigr]
+\eea
+
+YORK: should use h etc here.
+
+Collecting all terms we can rewrite the quadratic action in terms
+of the independent fields $\tth$, $\xi$, $\sigma$, $\omega$ and $\varphi$:
+\bea
+&&\int dx\sqrt{\bg}\Biggl[
+F(\bphi)\Biggl(
+\frac{1}{4}\tth_{\mu\nu}\left(-\bnabla^2+\frac{2\bR}{d(d-1)}\right)\tth^{\mu\nu}
+-\frac{(d-1)(d-2)}{4d^2}\sigma'\left(-\bnabla^2\right)\sigma'
+\nonumber\\
+&&
+-\frac{(d-1)(d-2)}{d}\omega\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
+-(d-1)(d-2)\omega\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega\Biggr)
+\nonumber\\
+&&
++F'(\bphi)\frac{d-1}{d}\varphi\left(
+\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
+-2d\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega
+\right)
+\nonumber\\
+&&
++\frac{1}{2}\varphi(-\bnabla^2+V''(\bphi)-F''(\bphi)\bR)\varphi
++V'(\bphi)d\omega\varphi
++\frac{1}{2}V(\bphi)d^2\omega^2\Biggr]
+\eea
+We note that the kinetic operator of the $\omega$ field is the
+conformal scalar operator.
+
+\subsection{Conventional gauge fixing}
+
+Adding the gauge fixing terms to the second variation of the action one obtains
+\bea
+\label{hesstot}
+&&\int dx\sqrt{\bg}\Biggl[
+F(\bphi)\Biggl(
+\frac{1}{4}\tth_{\mu\nu}\left(-\bnabla^2+\frac{2\bR}{d(d-1)}\right)\tth^{\mu\nu}
++\frac{1}{2\alpha}\xi'_\mu\left(-\bnabla^2-\frac{\bR}{d}\right)\xi^{\prime\mu}
+\nonumber\\
+&&
++\frac{(d-1)(2(d-1)-(d-2)\alpha)}{4d^2\alpha}
+\sigma'\left(-\bnabla^2-\frac{2\bR}{2(d-1)-(d-2)\alpha}\right)\sigma'
+\nonumber\\
+&&
+-\frac{(d-1)((d-2)\alpha-2\beta)}{d\alpha}\omega\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
+\nonumber\\
+&&
+-\frac{(d-1)(d-2)\alpha-2\beta^2}{\alpha}
+\omega\left(-\bnabla^2+\frac{\alpha(d-2)^2\bR}{2((d-1)(d-2)\alpha-2\beta^2)}\right)\omega\Biggr)
+\nonumber\\
+&&
++F'(\bphi)\frac{d-1}{d}\varphi\left(
+\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
+-2d\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega
+\right)
+\nonumber\\
+&&
++\frac{1}{2}\varphi(-\bnabla^2+V''(\bphi)-F''(\bphi)\bR)\varphi
++V'(\bphi)d\omega\varphi
++\frac{1}{2}V(\bphi)d^2\omega^2\Biggr]
+\eea
+
+\subsection{Unimodular gauge}
+
+check stuff from app. C here too.
 
 
 \chapter{Hessian and flow equations in scalar-tensor theories}
@@ -4226,60 +4635,20 @@ The ghost terms induced by the gauge fixing are given by:
 \end{align}
 
 
-\chapter{Vertices and variations of the Einstein-Hilbert action}
+\chapter{Vertices in the Einstein-Hilbert action}
 \label{app:EH}
 
-\section{Variations of $\Gamma_{\mu \nu}^{\kappa}$ in the exponential parametrization}
+\section{Vertices}
 
-We have that
-\bea
-\delta \Gamma_{\mu \nu}^{\kappa} &=& \frac{1}{2}\bar{g}^{\kappa \rho} \left(\bD_{\mu}h_{\rho \nu}+ \bD_{\nu}h_{\rho \mu} - \bD_{\rho}h_{\mu \nu} \right),\\
-%
-\delta^2 \Gamma_{\mu \nu}^{\kappa} &=&-h^{\kappa \rho}\left(\bD_{\mu}h_{\rho \nu}+ \bD_{\nu}h_{\rho \mu} - \bD_{\rho}h_{\mu \nu} \right)+ \frac{1}{2}\left(\bD_{\mu}h_{\nu\sigma}h^{\sigma \kappa} + \bD_{\nu} h_{\mu \sigma}h^{\sigma \kappa} - \bD^{\kappa}h_{\mu \sigma}h^{\sigma}{\nu} \right),\\
-%
-\delta^3 \Gamma_{\mu \nu}^{\kappa} &=&\frac{1}{2}\Bigl[ 3 h^{\kappa}_{\sigma} h^{\sigma \rho}\left(\bD_{\mu}h_{\rho \nu}+ \bD_{\nu}h_{\rho \mu} - \bD_{\rho}h_{\mu \nu} \right) -3 h^{\kappa \rho} \left(\bD_{\mu}h_{\rho \sigma}h^{\sigma}_{\nu}+ \bD_{\nu}h_{\rho \sigma}h^{\sigma}_{\mu} - \bD_{\rho}h_{\mu \sigma}h^{\sigma}_{\nu} \right)\nonumber\\
-&{}& +\bD_{\nu}h_{\mu \rho}h^{\rho \sigma}h_{\sigma}^{\kappa} + \bD_{\mu}h_{\nu \rho}h^{\rho \sigma}h_{\sigma}^{\kappa}- \bD^{\kappa}h_{\mu \rho}h^{\rho \sigma}h_{\sigma\nu}\Bigr]\\
-\delta^4 \Gamma_{\mu \nu}^{\kappa}&=& \frac{1}{2}\Bigl[ - 4 h^{\kappa \alpha}h_{\alpha \sigma}h^{\sigma \rho}\left(\bD_{\mu}h_{\rho \nu}+ \bD_{\nu}h_{\rho \mu} - \bD_{\rho}h_{\mu \nu} \right) + 6 h^{\kappa \sigma}h_{\sigma}^{\rho} \left( \bD_{\mu}h_{\alpha \nu}h^{\alpha}_{\rho} +\bD_{\nu} h_{\mu \alpha}h^{\alpha}_{\rho} - \bD_{\rho}h_{\mu \alpha}h^{\alpha}_{\nu}\right)\nonumber\\
-&{}& - 4h^{\kappa \rho}\left( \bD_{\mu}h_{\nu \alpha}h^{\alpha \sigma}h_{\sigma\rho} + \bD_{\nu}h_{\mu \alpha}h^{\alpha \sigma}h_{\sigma\rho}- \bD_{\rho}h_{\mu \sigma}h^{\alpha \sigma}h_{\sigma \nu} \right) \nonumber\\
-&{}&+ \bD_{\nu}h_{\mu \sigma}h^{\sigma \alpha}h_{\alpha\rho}h^{\rho \kappa}+\bD_{\mu}h_{\nu \sigma}h^{\sigma \alpha}h_{\alpha\rho}h^{\rho \kappa} - \bD^{\kappa}h_{\mu \sigma}h^{\sigma \alpha}h_{\alpha \rho}h^{\rho}_{\nu}\Bigr]
-\eea
-In here, the covariant derivatives always act on everything to the right of them.
-
-From
-\be
-R_{\mu \nu} = \partial_{\lambda}\Gamma^{\lambda}_{\mu \nu} - \partial_{\nu}\Gamma^{\lambda}_{\lambda\mu} + \Gamma^{\lambda}_{\lambda\rho}\Gamma^{\rho}_{\mu \nu} - \Gamma^{\lambda}_{\nu \rho}\Gamma^{\rho}_{\mu \lambda}
-\ee
-it then follows that
-
-\bea
-\delta R_{\mu \nu} &=& D_{\lambda}D_{\mu}h^{\lambda}_{\nu} - \frac{1}{2}D^2 h_{\mu \nu} - \frac{1}{2}D_{\nu}D_{\mu}h,\\
-%
-\mathcal{S}^{\mu \nu}\delta^2 R_{\mu \nu}&=&\mathcal{S}^{\mu \nu}\Bigl(- (D_{\lambda}h^{\lambda\rho})D_{\mu}h_{\rho \nu} - h^{\lambda\rho}D_{\lambda}D_{\mu}h_{\rho \nu} +(D_{\lambda}h^{\lambda \rho})D_{\rho}h_{\mu \nu} + h^{\lambda \rho}D_{\lambda}D_{\rho}h_{\mu \nu}+ (D_{\lambda}h^{\rho}_{\nu})D_{\mu}h^{\lambda}_{\rho} \nonumber\\
-&{}&+ h^{\rho}_{\nu}D_{\lambda}D_{\mu}h^{\lambda}_{\rho} - h_{\mu \rho}D^2 h^{\rho}_{\nu} + (D_{\rho}h) D_{\mu}h^{\rho}_{\nu} - \frac{1}{2}(D_{\rho}h)D^{\rho}h_{\mu \nu} - \frac{1}{2}(D_{\nu}h^{\lambda}_{\rho})D_{\mu}h^{\rho}_{\lambda} - (D_{\rho}h^{\lambda}_{\nu})D_{\lambda}h_{\mu}^{\rho}\Bigr),\\
-%
-\mathcal{S}^{\mu \nu}\delta^3 R_{\mu \nu} &=& \mathcal{S}^{\mu \nu}\Bigl(  3 D_{\lambda}(h^{\lambda\sigma}h^{\rho}_{\sigma}D_{\mu}h_{\rho \nu}) - \frac{3}{2} D_{\lambda}(h^{\lambda \sigma}h^{\rho}_{\sigma}D_{\rho}h_{\mu \nu}) - 3 D_{\lambda}(h^{\lambda \sigma}D_{\mu}(h_{\rho \sigma}h^{\rho}_{\nu})) + \frac{3}{2} D_{\lambda}(h^{\lambda \sigma}D_{\sigma}(h_{\mu \rho}h^{\rho}_{\nu}))\nonumber\\
-&{}&  +D_{\lambda}D_{\mu}(h^{\lambda}_{\sigma}h^{\sigma}_{\rho}h^{\rho}_{\nu})- \frac{1}{2} D^2 (h_{\mu \rho}h^{\rho}_{\sigma}h^{\sigma}_{\nu})\nonumber\\
-&{}&- \frac{3}{2} h^{\rho\sigma}(D_{\mu} h_{\sigma \nu})D_{\rho}h  + \frac{3}{2} h^{\rho \sigma}(D_{\sigma}h_{\mu \nu})D_{\rho}h + \frac{3}{2} h^{\sigma}_{\nu}(D_{\mu}h^{\rho \sigma})D_{\rho}h  - \frac{3}{2} h_{\mu \sigma}(D^{\rho}h^{\sigma}_{\nu})D_{\rho}h\nonumber\\
-&{}& + 3 h^{\lambda \sigma}(D_{\rho}h_{\nu \sigma})D_{\lambda}h^{\rho}_{\mu} - 3 h^{\lambda \sigma}(D_{\sigma}h_{\nu \rho})D_{\lambda}h^{\rho}_{\mu} - 3h^{\sigma}_{\nu} (D_{\rho}h_{\lambda \sigma})D^{\lambda} h^{\rho}_{\mu} + 3 h^{\sigma \nu} (D^{\lambda}h_{\rho \sigma})D_{\lambda}h^{\rho}_{\mu}\Bigr)
-\eea
-where $\mathcal{S}_{\mu \nu} = \mathcal{S}_{\nu \mu}$. Note that in $\delta^3 R_{\mu \nu}$ the first 2 lines do not contribute to $\delta^3 \int d^dx\, \sqrt{g}\, R$, as they are total derivatives.
-
-This yields
-\bea
-\delta^3 R &=& - h^{\mu}_{\rho}h^{\rho}_{\sigma}h^{\sigma \nu}R_{\mu \nu} + \frac{3}{2} h^{\mu}_{\rho}h^{\rho\nu}D^2 h_{\mu \nu} - \frac{3}{2} h^{\mu}_{\rho}h^{\rho}_{\nu}D_{\nu}D_{\mu}h + 3 h^{\mu \nu}(D_{\lambda}h^{\lambda \rho})D_{\mu}h_{\rho \nu} + 3 h^{\mu \nu}h^{\lambda \rho}D_{\lambda}D_{\mu}h_{\rho \nu} \nonumber\\
-&{}&- 3 h^{\mu \nu}(D_{\lambda}h^{\lambda \rho})D_{\rho}h_{\mu \nu} - 3 h^{\mu \nu}h^{\lambda \rho}D_{\lambda}D_{\rho}h_{\mu \nu} - \frac{3}{2} h^{\mu \nu}(D_{\rho}h) D_{\mu}h^{\rho}_{\nu} -\frac{3}{2}h^{\mu \nu}(D_{\nu}h^{\lambda}_{\rho})D_{\mu}h^{\rho}_{\lambda} - \frac{3}{2} h^{\rho \sigma} (D_{\mu} h_{\sigma}^{\mu})D_{\rho}h \nonumber\\
-&{}&+ \frac{3}{2}h^{\rho \sigma}(D_{\sigma}h)D_{\rho}h + 3 h^{\mu \sigma}(D_{\rho}h^{\lambda}_{\sigma})D^{\rho}h_{\mu \lambda},
-\eea
-where we have dropped total derivatives.
-
-We thus get (on a flat background)
+Note that in $\delta^3 R_{\mu \nu}$ the first 2 lines do not contribute to $\delta^3 \int d^dx\, \sqrt{g}\, R$,
+as they are total derivatives.
+On a flat background $\mathbb R^4$ we find
 \bea
 \delta^3 \sqrt{g}R &=&\frac{3}{2} h^2 \partial_{\mu}\partial_{\nu}h_{\lambda \mu} - \frac{3}{8} h^2 \partial^2 h - \frac{3}{2} h (\partial_{\mu}h)\partial_{\nu}h_{\mu \nu} - \frac{3}{2} h_{\mu \nu}(\partial_{\mu} h)(\partial_{\nu} h) + \frac{3}{2} h_{\mu \rho}h_{\rho \nu}\partial^2 h_{\mu \nu} - \frac{3}{2} h_{\mu \rho}h_{\rho \nu} \partial_{\mu}\partial_{\nu}h\nonumber\\
 &{}& +3 h_{\mu\nu} (\partial_{\lambda}h_{\lambda \rho}) \partial_{\mu}h_{\rho \nu} + 3 h_{\mu \nu}h_{\lambda \rho} \partial_{\lambda} \partial_{\mu} h_{\rho \nu} + \frac{3}{2} h_{\rho \lambda}(\partial_{\lambda}h_{\mu \nu})\partial_{\rho}h_{\mu \nu} - \frac{3}{2} h_{\mu \nu} (\partial_{\rho}h) \partial_{\mu}h_{\rho \nu} +3 h_{\sigma \mu} (\partial_{\rho}h_{\lambda \sigma}) \partial_{\rho}h_{\mu \lambda},
 \eea
 where we have used partial integrations freely.
-
-We then have that
+After Fourier transformation this gives the three-graviton vertex:
 \bea
 \delta^3 \Gamma_k &=& \frac{-1}{6} \frac{1}{16 \pi G} \int_{p,q} h_{\mu \nu}(p)h_{\kappa \lambda}(q) h_{\rho \sigma}(-p-q)
 %
@@ -4292,9 +4661,9 @@ We then have that
 &{}& + \frac{3}{2} \delta_{\mu \kappa} \delta_{\nu \lambda} p_{\rho}q_{\sigma} + 3 p\cdot q \delta_{\rho \kappa} \delta_{\sigma\mu}\delta_{\nu \lambda}
 \Bigr)
 \eea
-
-When $h=0$ is imposed (either on the level of the configuration space, as in unimodular gravity, or as a choice of gauge), only the last four terms remain, \ie the vertex simplifies very considerably.
-
+When $h=0$ is imposed (either on the level of the configuration space,
+as in unimodular gravity, or as a choice of gauge), only the last four terms remain,
+\ie the vertex simplifies very considerably.
 For the four-graviton vertex, we have the variation (which then needs to be symmetrized on all index pairs)
 \bea
 \Gamma_k^{(4)} &=& \frac{-1}{24}\frac{-1}{16 \pi G} \int_{p,q,l}h_{\mu \nu}(p)h_{\kappa \lambda}(q) h_{\rho \sigma}(l) h_{\gamma \delta}(-p-q-l) \Bigl(3 p \cdot q \delta_{\mu \rho}\delta_{\sigma \kappa}\delta_{\nu \gamma}\delta_{\lambda \delta} + 3 p \cdot q \delta_{\mu \kappa} \delta_{\rho \gamma}\delta_{\sigma \nu}\delta_{\lambda \delta} \nonumber\\
