@@ -4060,6 +4060,7 @@ which will be used to derive the Hessian of the Einstein-Hilbert action.
 All these expressions hold on any Einstein manifold, in particular the sphere $\mathbb S^d$
 and flat space $\mathbb R^d$. For the latter we have $\bR = 0$ and $\bnabla_\mu = \partial_\mu$.
 \begin{align}
+  \label{hterms1}
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \bnabla^2 h^{\mu\nu}
   = \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Big[
@@ -4071,6 +4072,7 @@ and flat space $\mathbb R^d$. For the latter we have $\bR = 0$ and $\bnabla_\mu 
     \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
     + \frac{1}{d} \, h \, \bnabla^2 \, h
   \Big] \,, \\[1mm]
+  \label{hterms2}
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \nabla^\mu \nabla_\rho h^{\rho\nu} =
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Big[
@@ -4080,6 +4082,7 @@ and flat space $\mathbb R^d$. For the latter we have $\bR = 0$ and $\bnabla_\mu 
     + \frac{2(d-1)}{d^2} \, h \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
     + \frac{1}{d^2} \, h \, \bnabla^2 \, h
   \Big] \,, \\[1mm]
+  \label{hterms3}
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \, h^{\mu\nu} =
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Big[\hTTmunu \, h^{{\TT}\,\mu\nu}
@@ -4087,7 +4090,6 @@ and flat space $\mathbb R^d$. For the latter we have $\bR = 0$ and $\bnabla_\mu 
     & \qquad + \frac{d-1}{d} \, \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
     + \frac{1}{d} \, h^2
   \Big] \,.
-  \label{hterms}
 \end{align}
 In order to simplify the form of the propagators for the various spin modes,
 and to recover the canonical momentum dependence, we will often use
@@ -4145,19 +4147,19 @@ as follows:
   \right] .
 \end{align}
 One then applies the Faddeev-Popov procedure, and exponentiates the resulting Faddeev-Popov determinant
-by introducing a Grassmann-valued vector field $C^{\mu}(x)$ with the following action
+by introducing a Grassmann-valued vector field $C^{\nu}(x)$ with the following action
 \begin{align}
-  S_{\mathrm{ghost}} = - \int \mathrm{d}^dx \, \sqrt{\bar{g}} \;
-  \overbar{C}_{\mu} \, M[\bar{g},\,h]^{\mu}{}_{\nu} \, C^{\nu} \,,
+  S_{\mathrm{ghost}} = - \int \mathrm{d}^dx \, \sqrt{\bar{g}} \;\;
+  \overbar{C}^{\mu} \, M_{\mu\nu} \, C^{\nu} \,,
 \end{align}
-where $\overbar{C}_{\mu}$ is the conjugate field and the inverse propagator is given by:
+where $\overbar{C}^{\mu}$ is the conjugate field and the inverse propagator is given by:
 \begin{align}
-  M[\bar g, \, h ]^{\mu}{}_{\nu} = \bar{g}^{\mu\rho} \, \bar{g}^{\sigma\lambda} \, \bnabla_\lambda
+  M[\bar g, \, h ]_{\mu\nu} = \bar{g}^{\sigma\lambda} \, \bnabla_\lambda
   \big(
-    g_{\rho\nu}     \nabla_{\sigma}
-    + g_{\sigma\nu} \nabla_{\rho}
+    g_{\mu\nu}     \nabla_{\sigma}
+    + g_{\sigma\nu} \nabla_{\mu}
   \big)
-  - \bar{g}^{\rho\sigma} \, \bar{g}^{\mu\lambda} \, \bnabla_\lambda \, g_{\sigma\nu} \nabla_{\rho} \,.
+  - \bar{g}^{\rho\sigma} \, \bnabla_\mu \, g_{\sigma\nu} \nabla_{\rho} \,.
 \end{align}
 One then has to integrate over ghost and anti-ghost configuration in the partition function.
 This will introduce interactions between graviton and ghost particles.
@@ -4239,7 +4241,7 @@ In this section we will list expansions for various curvature
 invariants in terms of the fluctuation field $h_{\mu\nu}$ around
 an arbitrary background in the exponential parametrisation.
 These results will be used later to derive Hessians and
-vertices in various scalar-tensor theories.
+vertices in various scalar-tensor theories of gravity.
 
 In our conventions, the Riemann and Ricci tensors are given by
 \begin{align}
@@ -4496,89 +4498,128 @@ measure of the action has the following expansion:
 
 \section{Hessian of the Einstein-Hilbert action and propagators}
 
+In this section we will use the results calculated so far to
+obtain the Hessian of pure gravity in the exponential parametrisation
+and the resulting graviton propagator in the gauges we have discussed
+earlier.
+
 \subsection{Hessian with and without York decomposition}
 
-Finally one can combine the expansion of $\sqrt{g}$ with that of $R$
-and integrate over spacetime.
-Dropping total derivatives one can then rewrite the second order
-terms in the expansion of the Hilbert action
-\bea
-\int d^dx\sqrt{\bg}\Bigl[&&\!\!\!\!\!\!
-\frac{1}{4}h_{\mu\nu}\bnabla^2 h^{\mu\nu}
--\frac{1}{2}h_{\mu\nu}\bnabla^\mu\bnabla^\rho h_\rho{}^\nu
-+\frac{1}{2}(\tr h)\bnabla_\mu\bnabla_\nu h^{\mu\nu}
--\frac{1}{4}(\tr h)\bnabla^2 (\tr h)
-\nonumber\\
-&&
-+\frac{1}{2}\bR_{\mu\rho\nu\sigma}h^{\mu\nu}h^{\rho\sigma}
--\frac{1}{2}\bR_{\mu\nu}h^{\mu\nu}(\tr h)
-+\frac{1}{8}\bR(\tr h)^2\Bigr]
-\eea
+To derive the Hessian of the Einstein-Hilbert action,
+one combines the expansions of $\sqrt{g}$ and of $R$
+and integrates over spacetime.
+Dropping total derivatives, one can then rewrite the second order
+terms in the expansion as follows:
+\begin{align}
+  \int d^dx \, \sqrt{\bar g} \;
+  \bigg[
+    \frac{1}{4} \, h_{\mu\nu} \, \bnabla^2 \, h^{\mu\nu}
+    - \frac{1}{2} \, h_{\mu\nu} \, \bnabla^\mu \, \bnabla^\rho \, h_\rho{}^\nu
+    + \frac{1}{2} \, h \, \bnabla_\mu \, \bnabla_\nu \, h^{\mu\nu}
+    - \frac{1}{4} \, h \, \bnabla^2 \, h
+    \nonumber \\
+    + \frac{1}{2} \, \bR_{\mu\rho\nu\sigma} \, h^{\mu\nu} \, h^{\rho\sigma}
+    - \frac{1}{2} \, \bR_{\mu\nu} \, h^{\mu\nu} \, h
+    + \frac{1}{8} \, \bR \, h^2
+  \bigg] \,.
+\end{align}
+We can then rewrite this expression in terms of the independent fields
+$\hTTmunu$, $\xi^\prime_\mu$, $\sigma^\prime$, and $h$,
+using the expressions Eqs.~(\ref{hterms1})--(\ref{hterms3}):
+\begin{align}
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Bigg[
+    \frac{1}{4} \, \hTTmunu
+    \left(
+      -\bnabla^2 + \frac{2\bR}{d(d-1)}
+    \right)
+    h^{{\TT} \mu\nu}
+    - \frac{(d-1)(d-2)}{4d^2} \, \sigma'
+    \left( -\bnabla^2 \right)
+    \sigma'
+    \nonumber \\
+    - \frac{(d-1)(d-2)}{2d^2} \,
+  h \, \sqrt{\left( -\bnabla^2 \right)^2 + \frac{\bR}{d-1} \bnabla^2 \, } \, \sigma'
+  - \frac{(d-1)(d-2)}{4d^2} \, h \left( -\bnabla^2 + \frac{(d-2)\bR}{2(d-1)} \right) h
+  \Bigg] .
+\end{align}
+Note that this expression is independent of the vector mode $\xi^\prime_\mu$,
+without fixing the gauge. Also note the infamous `wrong' sign of the kinetic terms of
+the scalar modes for any $d>2$.
 
-YORK: should use h etc here.
+\subsection{Propagators in the conventional gauges}
 
-Collecting all terms we can rewrite the quadratic action in terms
-of the independent fields $\tth$, $\xi$, $\sigma$, $\omega$ and $\varphi$:
-\bea
-&&\int dx\sqrt{\bg}\Biggl[
-F(\bphi)\Biggl(
-\frac{1}{4}\tth_{\mu\nu}\left(-\bnabla^2+\frac{2\bR}{d(d-1)}\right)\tth^{\mu\nu}
--\frac{(d-1)(d-2)}{4d^2}\sigma'\left(-\bnabla^2\right)\sigma'
-\nonumber\\
-&&
--\frac{(d-1)(d-2)}{d}\omega\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
--(d-1)(d-2)\omega\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega\Biggr)
-\nonumber\\
-&&
-+F'(\bphi)\frac{d-1}{d}\varphi\left(
-\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
--2d\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega
-\right)
-\nonumber\\
-&&
-+\frac{1}{2}\varphi(-\bnabla^2+V''(\bphi)-F''(\bphi)\bR)\varphi
-+V'(\bphi)d\omega\varphi
-+\frac{1}{2}V(\bphi)d^2\omega^2\Biggr]
-\eea
-We note that the kinetic operator of the $\omega$ field is the
-conformal scalar operator.
+Adding the conventional gauge fixing terms to the second variation of the action one obtains:
+\begin{align}
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Bigg[
+    \frac{1}{4} \, \hTTmunu
+    \left( -\bnabla^2 + \frac{2\bR}{d(d-1)} \right)
+    h^{{\TT} \mu\nu}
+    + \frac{1}{2\alpha} \, \xi'_\mu
+    \left( -\bnabla^2 - \frac{\bR}{d} \right)
+    \xi^{\prime\mu}
+    \nonumber \\
+    +\frac{(d-1) \big[ 2(d-1)-\alpha(d-2) \big]}{4 \alpha d^2} \,
+    \sigma' \,
+    \left( -\bnabla^2 - \frac{2\bR}{2(d-1)-\alpha(d-2)} \right)
+    \sigma'
+    \nonumber \\
+    - \frac{(d-1) \big[ \alpha(d-2)-2\beta \big]}{2 \alpha d^2} \,
+    h \, \sqrt{\left( -\bnabla^2 \right)^2 - \frac{\bR}{d-1} \, } \, \sigma'
+    \nonumber \\
+    - \frac{\alpha(d-1)(d-2)-2\beta^2}{4 \alpha d^2} \,
+    h
+    \Bigg(
+      - \bnabla^2 + \frac{\alpha(d-2)^2\bR}{2 \big[ \alpha(d-1)(d-2)-2\beta^2 \big]}
+    \Bigg)
+    h
+  \Bigg] \,.
+\end{align}
+This shows that for this particular gauge fixing procedure the vector mode will
+propagate unless $\alpha \rightarrow \infty$.
+In the de~Donder gauge where $\alpha = 1$ and $\beta=\nicefrac{d}{2}-1$, this expression
+becomes:
+\begin{align}
+  \dots
+\end{align}
+[propagator for $\hTTmunu$, $\xi^\prime_\mu$, $\sigma^\prime$, $h$, and all ghosts for de~Donder gauge (only) maybe even $d=4$]
 
-\subsection{Conventional gauge fixing}
+\subsection{Propagators in the unimodular gauge}
 
-Adding the gauge fixing terms to the second variation of the action one obtains
-\bea
-\label{hesstot}
-&&\int dx\sqrt{\bg}\Biggl[
-F(\bphi)\Biggl(
-\frac{1}{4}\tth_{\mu\nu}\left(-\bnabla^2+\frac{2\bR}{d(d-1)}\right)\tth^{\mu\nu}
-+\frac{1}{2\alpha}\xi'_\mu\left(-\bnabla^2-\frac{\bR}{d}\right)\xi^{\prime\mu}
-\nonumber\\
-&&
-+\frac{(d-1)(2(d-1)-(d-2)\alpha)}{4d^2\alpha}
-\sigma'\left(-\bnabla^2-\frac{2\bR}{2(d-1)-(d-2)\alpha}\right)\sigma'
-\nonumber\\
-&&
--\frac{(d-1)((d-2)\alpha-2\beta)}{d\alpha}\omega\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
-\nonumber\\
-&&
--\frac{(d-1)(d-2)\alpha-2\beta^2}{\alpha}
-\omega\left(-\bnabla^2+\frac{\alpha(d-2)^2\bR}{2((d-1)(d-2)\alpha-2\beta^2)}\right)\omega\Biggr)
-\nonumber\\
-&&
-+F'(\bphi)\frac{d-1}{d}\varphi\left(
-\sqrt{(-\bnabla^2)\left(-\bnabla^2-\frac{\bR}{d-1}\right)}\sigma'
--2d\left(-\bnabla^2+\frac{(d-2)\bR}{2(d-1)}\right)\omega
-\right)
-\nonumber\\
-&&
-+\frac{1}{2}\varphi(-\bnabla^2+V''(\bphi)-F''(\bphi)\bR)\varphi
-+V'(\bphi)d\omega\varphi
-+\frac{1}{2}V(\bphi)d^2\omega^2\Biggr]
-\eea
+[check stuff from app. C here too.]
+\bigskip
 
-\subsection{Unimodular gauge}
+\begin{align}
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Biggl[
+    \frac{1}{4} \, \hTTmunu
+    \left(
+      -\bnabla^2 + \frac{2\bR}{d(d-1)}
+    \right)
+    h^{{\TT} \mu\nu}
+    - \frac{(d-1)(d-2)}{4d^2} \, \sigma'
+    \left( -\bnabla^2 \right)
+    \sigma'
+  \Biggl]
+\end{align}
+[propagator for $\hTTmunu$, $\sigma^\prime$, ghost1 and ghost2 for unimodular gauge]
+\bigskip
 
-check stuff from app. C here too.
+\begin{align}
+  \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \Bigg[
+    \frac{1}{4} \,
+    \hTTmunu
+    \left(
+      -\bnabla^2 + \frac{2\bR}{d(d-1)}
+    \right)
+    h^{{\TT} \mu\nu}
+    - \frac{(d-1)(d-2)}{4d^2} \, h \left( -\bnabla^2 + \frac{(d-2)\bR}{2(d-1)} \right) h
+  \Bigg] .
+\end{align}
+[propagator for $\hTTmunu$, $h$, ghost1 for alternative gauge]
+
 
 
 \chapter{Hessian and flow equations in scalar-tensor theories}
