@@ -4105,24 +4105,66 @@ the following redefinitions of the fields:
 
 \section{Gauge fixing and ghost sector}
 
+As in any other gauge theory such as Yang-Mills, in gravity too we have
+to ``factor out'' spurious field configurations which are
+physically equivalent, when integrating over the fluctuation field
+$h_{\mu\nu}$ in the path integral. This can be done by fixing
+a gauge. In this section we review various choices to do so
+in the case of gravity.
+
 \subsection{Conventional gauge fixing}
 
-[F should be 1 here.]
-Here we use the standard background gauge fixing term
-\be
-S_{GF}=\frac{F(\bphi)}{2\alpha}\int dx\sqrt{\bg}\,\bg^{\mu\nu}\chi_\mu\chi_\nu
-\ee
-with
-\be
-\chi_\mu=\bnabla_\rho h^\rho{}_\mu-\frac{\beta+1}{d}\bnabla_\mu(\tr h)\ .
-\ee
-Using the York decomposition, we find
-\be
-S_{GF}=\frac{F(\bphi)}{2\alpha}\int dx\sqrt{\bg}
-\left[\xi'_\mu\left(-\bnabla^2-\frac{\bR}{d}\right)\xi^{\prime\mu}
-+
-\left(\frac{d-1}{d}\sqrt{-\bnabla^2-\frac{\bR}{d-1}}\sigma'+2\beta\sqrt{-\bnabla^2}\omega\right)^2\right]
-\ee
+The conventional way of fixing the gauge in gravity follows the
+same procedure as in Yang-Mills theory, namely, one adds a term
+\begin{align}
+  S_{\mathrm{gf}} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \bar g^{\mu\nu} \, \chi_\mu \, \chi_\nu \,,
+\end{align}
+to the action, where
+\begin{align}
+  \chi_\mu[\bar g, \, h] = \bnabla_\rho \,  h^\rho{}_\mu - \frac{\beta+1}{d} \, \bnabla_\mu \, h \,,
+\end{align}
+is the gauge condition, fixed on the background manifold,
+and $\alpha$ and $\beta$ are gauge parameters. One common choice of
+these parameters is the de~Donder, or harmonic gauge:
+\begin{align}
+  \alpha = 1 \quad \text{and} \quad \beta = \frac d2 - 1 \,.
+\end{align}
+Using the York decomposition and the field redefinitions of the last section,
+the gauge fixing term can also be expressed in terms of the spin components
+as follows:
+\begin{align}
+  S_{\mathrm{gf}} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \left[
+    \xi'_\mu \left( -\bnabla^2 -\frac{\bR}{d} \right) \xi^{\prime\mu}
+    +
+    \left(
+      \frac{d-1}{d} \, \sqrt{ -\bnabla^2 - \frac{\bR}{d-1} \, } \sigma'
+      + \frac{\beta}{d} \, \sqrt{ -\bnabla^2 \, } h
+    \right)^{\!\!\! 2} \,
+  \right] .
+\end{align}
+One then applies the Faddeev-Popov procedure, and exponentiates the resulting Faddeev-Popov determinant
+by introducing a Grassmann-valued vector field $C^{\mu}(x)$ with the following action
+\begin{align}
+  S_{\mathrm{ghost}} = - \int \mathrm{d}^dx \, \sqrt{\bar{g}} \;
+  \overbar{C}_{\mu} \, M[\bar{g},\,h]^{\mu}{}_{\nu} \, C^{\nu} \,,
+\end{align}
+where $\overbar{C}_{\mu}$ is the conjugate field and the inverse propagator is given by:
+\begin{align}
+  M[\bar g, \, h ]^{\mu}{}_{\nu} = \bar{g}^{\mu\rho} \, \bar{g}^{\sigma\lambda} \, \bnabla_\lambda
+  \big(
+    g_{\rho\nu}     \nabla_{\sigma}
+    + g_{\sigma\nu} \nabla_{\rho}
+  \big)
+  - \bar{g}^{\rho\sigma} \, \bar{g}^{\mu\lambda} \, \bnabla_\lambda \, g_{\sigma\nu} \nabla_{\rho} \,.
+\end{align}
+One then has to integrate over ghost and anti-ghost configuration in the partition function.
+This will introduce interactions between graviton and ghost particles.
+Also note that when applying the functional renormalisation group to theories
+gauge-fixed in this way, and additional cutoff operator for the ghost sector will have to be
+introduced.
+
 
 \subsection{Transformation properties}
 
