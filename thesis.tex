@@ -4235,7 +4235,13 @@ paper Percacci, Vacca p. 9f + ghosts
 
 \section{Variations of Christoffel symbols and curvature invariants}
 
-The Riemann and Ricci tensors in our conventions are given by
+In this section we will list expansions for various curvature
+invariants in terms of the fluctuation field $h_{\mu\nu}$ around
+an arbitrary background in the exponential parametrisation.
+These results will be used later to derive Hessians and
+vertices in various scalar-tensor theories.
+
+In our conventions, the Riemann and Ricci tensors are given by
 \begin{align}
   R^\a{}_{\b\mu\nu} &= \partial_\mu \Gamma^{\alpha}_{\beta\nu} - \partial_\nu \Gamma^{\alpha}_{\beta\mu}
                        + \Gamma^{\alpha}_{\mu\lambda} \Gamma^{\lambda}_{\beta\nu} - \Gamma^{\alpha}_{\nu\lambda} \G^{\lambda}_{\beta\mu} \,, \\
@@ -4244,8 +4250,12 @@ The Riemann and Ricci tensors in our conventions are given by
 respectively.
 In the following, we will denote the expansion of a quantity $Q$ as follows:
 \begin{align}
-  Q = Q^{\scriptscriptstyle(0)} + Q^{\scriptscriptstyle(1)} +
-  Q^{\scriptscriptstyle(2)} + Q^{\scriptscriptstyle(3)} + \ldots \,,
+  Q = Q^{\scriptscriptstyle(0)}
+  + Q^{\scriptscriptstyle(1)}
+  + Q^{\scriptscriptstyle(2)}
+  + Q^{\scriptscriptstyle(3)}
+  + Q^{\scriptscriptstyle(4)}
+  + \ldots \,,
 \end{align}
 where $Q^{\scriptscriptstyle(n)}$ contains altogether $n$ powers of $h^\mu{}_\nu$.
 In general we have $Q^{\scriptscriptstyle(0)} = \overbar Q$, \ie the quantity computed from the background metric.
@@ -4474,7 +4484,12 @@ measure of the action has the following expansion:
   \sqrt{g} = e^{\nicefrac{h}{2}} \sqrt{\bar g} =
   \sqrt{\bar g}
   \left(
-    1 + \frac h2 + \frac{h^2}{8} + \ldots
+    1
+    + \frac{h}{2}
+    + \frac{h^2}{8}
+    + \frac{h^3}{48}
+    + \frac{h^4}{384}
+    + \ldots
   \right) .
 \end{align}
 
