@@ -4054,10 +4054,11 @@ The latter is the trace part of $h_{\mu\nu}$, $\Tr \, h_{\mu\nu} = h$,
 which justifies the slight abuse of notation. The above
 splitting is called York decomposition.
 
-For later convenience we also give several quadratic expressions in $\hTTmunu$
-in terms of the spin components here, which will be useful to derive
-the Hessian in scalar-tensor theories. All these expressions hold on the
-sphere $\mathbb S^d$:
+For later convenience we will list several quadratic expressions in $\hTTmunu$,
+re-expressed in terms of their spin components, here,
+which will be used to derive the Hessian of the Einstein-Hilbert action.
+All these expressions hold on any Einstein manifold, in particular the sphere $\mathbb S^d$
+and flat space $\mathbb R^d$. For the latter we have $\bR = 0$ and $\bnabla_\mu = \partial_\mu$.
 \begin{align}
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \bnabla^2 h^{\mu\nu}
   = \int \mathrm d^dx \, \sqrt{\bar g} \;
@@ -4069,7 +4070,7 @@ sphere $\mathbb S^d$:
     \left( \bnabla^2 + \frac{2\bR}{d-1} \right)
     \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
     + \frac{1}{d} \, h \, \bnabla^2 \, h
-  \Big] \,, \\[2mm]
+  \Big] \,, \\[1mm]
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \nabla^\mu \nabla_\rho h^{\rho\nu} =
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Big[
@@ -4078,7 +4079,7 @@ sphere $\mathbb S^d$:
     & \qquad \times \sigma \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right)^2 \sigma
     + \frac{2(d-1)}{d^2} \, h \, \bnabla^2 \left( \bnabla^2 + \frac{\bR}{d-1} \right) \sigma
     + \frac{1}{d^2} \, h \, \bnabla^2 \, h
-  \Big] \,, \\[2mm]
+  \Big] \,, \\[1mm]
   & \int \mathrm d^dx \, \sqrt{\bar g} \; h_{\mu\nu} \, h^{\mu\nu} =
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Big[\hTTmunu \, h^{{\TT}\,\mu\nu}
@@ -4088,8 +4089,18 @@ sphere $\mathbb S^d$:
   \Big] \,.
   \label{hterms}
 \end{align}
-
-[Add field redefinitions here.]
+In order to simplify the form of the propagators for the various spin modes,
+and to recover the canonical momentum dependence, we will often use
+the following redefinitions of the fields:
+\begin{align}
+  \xi'_\mu &= \sqrt{-\bnabla^2-\frac{\bR}{d} \, } \, \xi_\mu \,, \\
+  \sigma'  &=
+  % \sqrt{-\bnabla^2}\sqrt{-\bnabla^2-\frac{\bR}{d-1} \, } \, \sigma \,.
+  \sqrt{
+    \left( -\bnabla^2 \right) ^2 + \frac{\bR}{d-1} \, \bnabla^2 \,
+  } \, \sigma \,.
+  \label{redef}
+\end{align}
 
 
 \section{Gauge fixing and ghost sector}
