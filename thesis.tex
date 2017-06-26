@@ -4600,7 +4600,7 @@ measure of the action has the following expansion:
 In this section we will use the results obtained so far to
 calculate the Hessian of the Einstein-Hilbert action
 \begin{align}
-  S_{\mathrm{EH}} = \int \mathrm d^dx \, \sqrt g \; R
+  S_{\scriptscriptstyle \mathrm{EH}} = \int \mathrm d^dx \, \sqrt g \, R
 \end{align}
 in the exponential parametrisation.
 We will also calculate
@@ -4632,7 +4632,7 @@ terms in the expansion as follows:
 \end{align}
 We can then rewrite this expression in terms of the independent fields
 $\hTTmunu$, $\xi^\prime_\mu$, $\sigma^\prime$, and $h$,
-using the expressions Eqs.~(\ref{hterms1})--(\ref{hterms3}):
+using the expressions Eqns.~(\ref{hterms1})--(\ref{hterms3}):
 \begin{align}
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Bigg[
@@ -4684,19 +4684,29 @@ Adding the conventional gauge fixing terms to the second variation of the action
   \Bigg] \,.
 \end{align}
 This shows that for this particular gauge fixing procedure the vector mode will
-propagate unless $\alpha \rightarrow \infty$.
-In the de~Donder gauge where $\alpha = 1$ and $\beta=\nicefrac{d}{2}-1$, this expression
-becomes:
+propagate unless we take the limit $\alpha \rightarrow \infty$.
+
+On a flat background $\mathbb R^4$ in four dimensions,
+using the de~Donder gauge where $\alpha = 1$ and $\beta=\nicefrac{d}{2}-1=1$,
+the propagators of the four independent fields thus become:
 \begin{align}
-  \dots
+  \Big[ \Gamma_k^{(h^{\TT},\,h^{\TT})}+R_k^{h^{\TT}} \Big]^{-1}_{\mu \nu \kappa \lambda}
+  &= \frac{ \delta_{\mu \kappa} \delta_{\nu \lambda} + \delta_{\mu\lambda} \delta_{\nu\kappa} }{ p^2 + r_k(p^2) } \,, \\
+  \Big[ \Gamma_k^{(\xi^\prime,\,\xi^\prime)}+R_k^{\xi^\prime} \Big]^{-1}_{\mu \nu}
+  &= \frac{ \delta_{\mu \nu} }{ p^2 + r_k(p^2) } \,, \\
+  \Big[ \Gamma_k^{(\sigma^\prime,\,\sigma^\prime)} + R_k^{\sigma^\prime} \Big]^{-1}
+  &= \frac{8}{3} \, \frac{1}{ p^2 + r_k(p^2) } \,, \\
+  \Big[ \Gamma_k^{(h,\,h)} + R_k^{h} \Big]^{-1}
+  &= - 8 \, \frac{1}{ p^2 + r_k(p^2) } \,.
 \end{align}
-[propagator for $\hTTmunu$, $\xi^\prime_\mu$, $\sigma^\prime$, $h$, and all ghosts for de~Donder gauge (only) maybe even $d=4$]
+Here we assumed the use of a type I cutoff, following the conventions in Ref.~\cite{Codello:2008vh}.
+Note that the de~Donder gauge also diagonalises the Hessian.
+[ghost sector???]
 
 \subsection{Propagators in the unimodular gauge}
 
-[check stuff from app. C here too.]
-\bigskip
-
+In the unimodular gauge, where $h=\mathrm{const.}$ and $\xi^\prime_\mu=0$,
+the Hessian takes a very simple form:
 \begin{align}
   \int \mathrm d^dx \, \sqrt{\bar g} \;
   \Biggl[
@@ -4708,24 +4718,31 @@ becomes:
     - \frac{(d-1)(d-2)}{4d^2} \, \sigma'
     \left( -\bnabla^2 \right)
     \sigma'
-  \Biggl]
+  \Biggl] \,.
 \end{align}
-[propagator for $\hTTmunu$, $\sigma^\prime$, ghost1 and ghost2 for unimodular gauge]
-\bigskip
-
+On a flat background $\mathbb R^4$ in four dimensions the propagators
+for $\hTTmunu$ and $\sigma^\prime$
+with a type I cutoff
+thus become
 \begin{align}
-  \int \mathrm d^dx \, \sqrt{\bar g} \;
-  \Bigg[
-    \frac{1}{4} \,
-    \hTTmunu
-    \left(
-      -\bnabla^2 + \frac{2\bR}{d(d-1)}
-    \right)
-    h^{{\TT} \mu\nu}
-    - \frac{(d-1)(d-2)}{4d^2} \, h \left( -\bnabla^2 + \frac{(d-2)\bR}{2(d-1)} \right) h
-  \Bigg] .
+  \Big[ \Gamma_k^{(h^{\TT},\,h^{\TT})}+R_k^{h^{\TT}} \Big]^{-1}_{\mu \nu \kappa \lambda}
+  &= \frac{ \delta_{\mu \kappa} \delta_{\nu \lambda} + \delta_{\mu\lambda} \delta_{\nu\kappa} }{ p^2 + r_k(p^2) } \,, \\
+  \Big[ \Gamma_k^{(\sigma^\prime,\,\sigma^\prime)} + R_k^{\sigma^\prime} \Big]^{-1}
+  &= - \frac{16}{3} \, \frac{1}{p^2} \,,
 \end{align}
-[propagator for $\hTTmunu$, $h$, ghost1 for alternative gauge]
+respectively. The ghost sector simply reads
+\begin{align}
+  S_{\,\mathrm{ghost}}
+  = \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \big[
+    C \, (-\bnabla^2) \, C
+    +  C_\mu \, \bar g^{\mu\nu}
+    ( -\bnabla^2 ) \, C_\nu
+  \big] \,,
+\end{align}
+with a real, anti-commuting scalar $C$,
+and a real, anti-commuting, transverse vector ghost field $C_\mu$.
+
 
 
 
