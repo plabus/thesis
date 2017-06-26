@@ -117,13 +117,14 @@
 \newcommand\ZS{ Z_{\scriptscriptstyle{\mathrm{S}}} }
 
 \newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
-\newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}} }
+\newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
 \newcommand\kBoltzmann{ k_{\scriptscriptstyle{\mathrm{B}}} }
 \newcommand\THawking{ T_{\scriptscriptstyle{\mathrm{H}}} }
 
 \newcommand{\bnabla}{\overbar \nabla}
 \newcommand{\bR}{\overbar R}
 \newcommand\Gback{ \GNewton } % background Newton coupling
+\newcommand{\Tr}{\mathrm{Tr}}
 
 \newcommand{\FPone}  {\textsl{FP1}}
 \newcommand{\FPtwo}  {\textsl{FP2}}
@@ -195,7 +196,6 @@
 \newcommand{\bphi}{\bar\phi}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\Det}{\mathrm{Det}}
-\newcommand{\Tr}{\mathrm{Tr}}
 \newcommand{\Lie}{{\cal L}}
 \newcommand{\rad}{\psi}
 \newcommand{\brad}{\bar\psi}
@@ -231,6 +231,7 @@
 \numberwithin{equation}{chapter}
 
 \begin{document}
+\frontmatter % Use Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 \includepdf{title_page.pdf}
 
 %----------------------------------------------------------------------------------------
@@ -253,8 +254,9 @@ of a SISSA PhD Fellowship.\\
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
-\frontmatter % Use Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
+% \clearpage
+% \phantomsection
 \addcontentsline{toc}{chapter}{Abstract}
 \chapter*{Abstract}
 
@@ -561,7 +563,7 @@ more technical nature. Namely, we will study some of the implications, the use
 of the well-known background field method in quantum field theory has on renormalisation
 group properties when defining an energy scale with respect to this very background.%
 \footnote{%
-  \texit{A priori}, this has nothing to do with diffeomorphism invariance of
+  \textit{A priori}, this has nothing to do with diffeomorphism invariance of
   the quantum theory, which is emphasised by other approaches such as loop quantum gravity,
   and may or may not hold at the fixed point in asymptotic safety.
 }
@@ -1151,11 +1153,11 @@ it then follows that $\mathcal{W_\omega}$ and thus $\mathcal{\dot W_\omega}$ wil
     Their symmetry immediately implies the identity \eqref{step2}.
     Momentum flow is indicated in the case where the fluctuation field $\varphi$ is then set to zero.
   }
-  \label{fig:two-loop}
+  \label{fig:twoloop}
 \end{figure}
 Recalling that $\Delta$ is an infrared regulated full propagator,
 we see from \eqref{step1} that the identity \eqref{step2} can be understood diagrammatically
-in terms of two-loop diagrams as sketched in Fig. \ref{fig:two-loop}.
+in terms of two-loop diagrams as sketched in Fig. \ref{fig:twoloop}.
 The symmetry of these diagrams means that nothing changes if we
 exchange $\dot{r}\leftrightarrow\delta r/\delta\chi$.
 This exchange immediately leads to the identity \eqref{step2}.
@@ -1176,7 +1178,7 @@ Eqn. \eqref{WIdot-2} in which two of these external legs are now joined to form 
 connected via $\dot{r}$.  However it is momenta external to \emph{this new loop} which are
 Taylor expanded in the derivative expansion of the flow equation
 (see also \cite{Morris:1999ba, Morris:2000hm}).
-This is illustrated in the diagram displayed in Fig. \ref{fig:two-loop}.
+This is illustrated in the diagram displayed in Fig. \ref{fig:twoloop}.
 In particular when the remaining external fluctuation field dependence is removed by setting $\varphi=0$,
 we have exactly the momentum dependence displayed in the figure.
 We see that a derivative expansion of the Ward identity involves Taylor expanding in small $p$,
@@ -1923,7 +1925,7 @@ and study there critical behaviour.
 In the following chapters \ref{ch:astrid} and \ref{ch:jan} we will study a similar setup,
 but in a truly dynamic treatment, using a fluctuation field calculation.
 This will however force us to restrict ourselves to a minimally-coupled theory
-on a flat background $\mathbb R^4}$.
+on a flat background $\mathbb R^4$.
 In chapter \ref{ch:jan} we will additionally use the msWIs in combination with
 the flow equations to investigate further the r\^ole of the cutoff operator
 in the dynamics of the background.
@@ -2381,7 +2383,7 @@ depend on the background metric, as we discussed in the last chapter.
 Here we only get rid of the $\chi^i$--dependences due to the (matter) scalar fields
 and have the scalar msWIs automatically fulfilled.
 In particular we shall add in the diagonal entries for $\hTTmunu$
-and $\sigma''$ of the Hessian given in Eq.~(\ref{hessfinal})
+and $\sigma''$ of the Hessian given in Eqn.~(\ref{hessfinal})
 a cutoff $\bg \, k^{d-2} \, (k^2-z) \, \theta(k^2-z)$,
 with the same sign of the Laplacian term, to implement the coarse-graining procedure.
 For all the other terms we shall use the more common
@@ -3199,7 +3201,7 @@ this is of course a serious shortcoming.
   \caption{
     Results for the pure gravity case $\NS = 0$, $g_3 = g_4 = g_5$ and $G_3 = G_4$:
     fixed point value for $g_3$, critical exponent $\theta$, and the anomalous dimensions $\etaTT$
-    and $\eta_{\sigma}$ as a function of the value $G_{3\n\star}$ at the fixed point.
+    and $\eta_\sigma$ as a function of the value $G_{3\,\star}$ at the fixed point.
   }
   \label{puregravityFP}
 \end{figure}
@@ -3870,7 +3872,7 @@ We emphasize that this is the first evidence for asymptotic-safety in gravity-ma
 as all previous results related to the Newton coupling defined from background or fluctuation
 gravitational interactions.
 Our result is therefore a new hint that formulating an asymptotically safe theory of gravity
-and matter could be phenomenologically viable.\newline
+and matter could be phenomenologically viable.
 
 We also investigate the anomalous dimensions for different components of the graviton,
 and find a large negative anomalous dimension $\eta_{\rm TT}$ for the TT mode,
@@ -4097,11 +4099,10 @@ the following redefinitions of the fields:
 \begin{align}
   \xi'_\mu &= \sqrt{-\bnabla^2-\frac{\bR}{d} \, } \, \xi_\mu \,, \\
   \sigma'  &=
-  % \sqrt{-\bnabla^2}\sqrt{-\bnabla^2-\frac{\bR}{d-1} \, } \, \sigma \,.
   \sqrt{
     \left( -\bnabla^2 \right) ^2 + \frac{\bR}{d-1} \, \bnabla^2 \,
   } \, \sigma \,.
-  \label{redef}
+  \label{fieldredefs}
 \end{align}
 
 
@@ -4152,7 +4153,7 @@ by introducing a Grassmann-valued vector field $C^{\nu}(x)$ with the following a
   S_{\mathrm{ghost}} = - \int \mathrm{d}^dx \, \sqrt{\bar{g}} \;\;
   \overbar{C}^{\mu} \, M_{\mu\nu} \, C^{\nu} \,,
 \end{align}
-where $\overbar{C}^{\mu}$ is the conjugate field and the inverse propagator is given by:
+where $\overbar{C}^{\mu}$ is the Dirac-conjugate field and the inverse propagator is given by:
 \begin{align}
   M[\bar g, \, h ]_{\mu\nu} = \bar{g}^{\sigma\lambda} \, \bnabla_\lambda
   \big(
@@ -4168,67 +4169,132 @@ gauge-fixed in this way, and additional cutoff operator for the ghost sector wil
 introduced.
 
 
-\subsection{Transformation properties}
+\subsection{Gauge transformation properties}
 
-The transformation of the metric under an infinitesimal diffeomorphism $\epsilon$
-is given by the Lie derivative
-\be
-\label{transfg}
-\delta_\epsilon g_{\mu\nu}=
-\Lie_\epsilon g_{\mu\nu}
-\equiv
-\epsilon^\rho\partial_\rho g_{\mu\nu}
-+g_{\mu\rho}\partial_\nu\epsilon^\rho
-+g_{\nu\rho}\partial_\mu\epsilon^\rho\ .
-\ee
+In this section we will study the transformation properties
+of the metric $g_{\mu\nu}$ under local gauge transformations
+\begin{align}
+  g_{\mu\nu}(x_\mu) \mapsto g^\prime_{\mu\nu}(x_\mu+y_\mu) \,
+\end{align}
+\ie diffeomorphisms of the space-time manifold.
+From these properties we will be able to infer how to fix
+the gauge symmetry when integrating
+over the metric field in the path integral.
 
-As usual, we have to define transformations of $\bg$ and $h$ which
-used in (\ref{decomp}) yield (\ref{transfg}).
-The simplest one is the background transformation.
-If we treat $\bg$ and $h$ as tensors under $\delta_\epsilon$, i.e.
-\be
-\delta^{(B)}_\epsilon\bg_{\mu\nu}=\Lie_\epsilon \bg_{\mu\nu}\ ;
-\qquad
-\delta^{(B)}_\epsilon h^\mu{}_\nu=\Lie_\epsilon h^\mu{}_\nu\ .
-\ee
-then also
-\be
-\delta^{(B)}_\epsilon(e^h)^\mu{}_\nu=\Lie_\epsilon(e^h)^\mu{}_\nu
-\ee
-and (\ref{transfg}) follows.
-
-By definition, the ``quantum'' gauge transformation of $h$ is such as to reproduce (\ref{transfg})
-when $\bg$ is held fixed:
-\be
-\delta^{(Q)}_\epsilon \bg_{\mu\nu}=0\ ;
-\qquad
-\bg_{\mu\rho}\delta^{(Q)}_\epsilon (e^h)^\rho{}_\nu
-=\Lie_\epsilon g_{\mu\nu}\ .
-\ee
-From the properties of the Lie derivative we have
-\be
-\Lie_\epsilon g_{\mu\nu}=\Lie_\epsilon \bg_{\mu\rho} (e^h)^\rho{}_\nu
-+\bg_{\mu\rho}\Lie_\epsilon(e^h)^\rho{}_\nu
-=(\bnabla_\rho\epsilon_\mu+\bnabla_\mu\epsilon_\rho) (e^h)^\rho{}_\nu
-+g_{\mu\lambda}(e^{-h})^\lambda{}_\rho\Lie_\epsilon(e^h)^\rho{}_\nu
-\ee
-Then we find
-\be
-(e^{-h}\delta^{(Q)}_\epsilon e^h)^\mu{}_\nu=
-(e^{-h}\Lie_\epsilon e^h)^\mu{}_\nu
-+(e^{-h})^\mu{}_\rho(\bnabla^\rho\epsilon_\sigma+\bnabla_\sigma\epsilon^\rho)
-(e^h)^\sigma{}_\nu
-\ee
-Expanding for small $h$
-\be
-\delta^{(Q)}_\epsilon h^\mu{}_\nu=
-\bnabla^\mu\epsilon_\nu+\bnabla_\nu\epsilon^\mu
-+\Lie_\epsilon h^\mu{}_\nu
-+[\Lie_\epsilon\bar g,h]^\mu{}_\nu
-+O(\epsilon h^2)\ .
-\ee
-The first three terms coincide with the quantum transformation when one uses
+The transformation of the metric under an infinitesimal diffeomorphism $\varepsilon_\mu$,
+a $d$-dimensional coordinate vector, is given by the Lie derivative
+\begin{align}
+  \delta_\varepsilon g_{\mu\nu} =
+  \Lie_\varepsilon   g_{\mu\nu}
+  \equiv
+   \varepsilon^\rho \, \partial_\rho g_{\mu\nu}
+  +g_{\mu\rho} \, \partial_\nu \varepsilon^\rho
+  +g_{\nu\rho} \, \partial_\mu \varepsilon^\rho \,.
+  \label{transfg}
+\end{align}
+Since we are using the background field method,
+we now have to choose the transformation of the background metric
+$\bar g_{\mu\nu}$ and the fluctuation field $h_{\mu\nu}$ in such a way,
+that when using the exponential parametrisation the
+combined transformations obey the last equation.
+The simplest way to do this, is to use the background transformation,
+which in the following we will denote with $\mathrm B$.
+If we treat $\bar g_{\mu\nu}$ and $h_{\mu\nu}$ as tensors under
+infinitesimal gauge transformations, \ie
+\begin{align}
+  \delta^{\scriptscriptstyle{(\mathrm B)}}_\varepsilon \bar g_{\mu\nu}
+  &= \Lie_\varepsilon \bar g_{\mu\nu} \,, \\
+  \delta^{\scriptscriptstyle{(\mathrm B)}}_\varepsilon h^\mu{}_\nu
+  &= \Lie_\varepsilon h^\mu{}_\nu \,,
+\end{align}
+then it also follows that
+\begin{align}
+  \delta^{\scriptscriptstyle{(\mathrm B)}}_\varepsilon (e^h)^\mu{}_\nu
+  = \Lie_\varepsilon (e^h)^\mu{}_\nu \,,
+\end{align}
+and Eqn. (\ref{transfg}) is satisfied.
+A more convenient choice when using the background field method
+however, is the so-called `quantum' gauge transformation $\mathrm Q$,
+where the background metric $\bar g_{\mu\nu}$ is held fixed, and only
+the fluctuation field $h_{\mu\nu}$ transforms in a non-trivial way:
+\begin{align}
+  \delta^{\scriptscriptstyle{(\mathrm Q)}}_\varepsilon \bar g_{\mu\nu} &= 0 \,, \\
+  \bar g_{\mu\rho} \, \delta^{\scriptscriptstyle{(\mathrm Q)}}_\varepsilon
+  (e^h)^\rho{}_\nu &= \Lie_\varepsilon g_{\mu\nu} \,.
+\end{align}
+The right-hand side of the second transformation may be written as
+\begin{align}
+  \Lie_\varepsilon g_{\mu\nu}
+  &= \big( \Lie_\varepsilon \bar g_{\mu\rho} \big) (e^h)^\rho{}_\nu
+  + \bar g_{\mu\rho} \big( \Lie_\varepsilon (e^h)^\rho{}_\nu \big) \nonumber \\
+  &= \big( \bnabla_\rho \varepsilon_\mu + \bnabla_\mu \varepsilon_\rho \big) (e^h)^\rho{}_\nu
+  + g_{\mu\lambda} \, (e^{-h})^\lambda{}_\rho \, \Lie_\varepsilon (e^h)^\rho{}_\nu \,,
+\end{align}
+where, in the second equation we used the properties of the Lie derivative
+and rewrote the background metric in terms of the full metric and the fluctuation
+field. By contracting with the inverse metric,
+we can use the last expression
+to re-express the fluctuation field transformation in terms of $h_{\mu\nu}$
+and the background metric only:
+\begin{align}
+  \big( e^{-h} \, \delta^{\scriptscriptstyle{(\mathrm Q)}}_\varepsilon e^h \big)^\mu{}_\nu
+  = \big( e^{-h} \, \Lie_\varepsilon  e^h)^\mu{}_\nu
+  + (e^{-h})^\mu{}_\rho \big( \bnabla^\rho \varepsilon_\sigma + \bnabla_\sigma \varepsilon^\rho \big)
+  (e^h)^\sigma{}_\nu \,.
+\end{align}
+This way, we can expand the last expression in powers of $h_{\mu\nu}$:
+\begin{align}
+  \delta^{\scriptscriptstyle{(\mathrm Q)}}_\varepsilon h^\mu{}_\nu=
+  \bnabla^\mu \varepsilon_\nu + \bnabla_\nu \varepsilon^\mu
+  + \Lie_\varepsilon h^\mu{}_\nu
+  + [\Lie_\varepsilon \bar g , \, h]^\mu{}_\nu
+  + \mathcal O(\varepsilon h^2) \,.
+\end{align}
+Note that
+the first three terms coincide with the quantum transformation when using
 the linear background decomposition.
+When using a background field approximation, where one eventually sets
+$h_{\mu\nu} = 0$, it is sufficient to evaluate the last expression
+at the lowest order in $h_{\mu\nu}$:
+\begin{align}
+  \delta^{\scriptscriptstyle{(\mathrm Q)}}_\varepsilon h^\mu{}_\nu=
+  \bnabla^\mu \varepsilon_\nu + \bnabla_\nu \varepsilon^\mu
+  + \mathcal O(h) \,.
+\end{align}
+In order to extract the transformation properties of single
+spin modes from this expression, we may split the coordinate
+transformation $\varepsilon_\mu$ into its transverse part
+$\varepsilon^{\scriptscriptstyle \mathrm T}_\mu$
+and its longitudinal part
+$\varepsilon$
+as follows
+\begin{align}
+  \varepsilon_\mu &= \varepsilon^{\scriptscriptstyle \mathrm T}_\mu +
+  \frac{\bnabla^\mu}{\sqrt{-\bnabla^2} \, } \, \varepsilon \,, \\
+  \bnabla^\mu \varepsilon^{\scriptscriptstyle \mathrm T}_\mu &= 0 \,,
+\end{align}
+where we introduced the normalisation in the denominator
+so that
+$\varepsilon^{\scriptscriptstyle \mathrm T}_\mu$
+and $\varepsilon$ have the same dimensionality.
+With the above transformation of the full fluctuation field
+to lowest order and the split of the coordinate transformation
+$\varepsilon$, one can derive the following infinitesimal
+gauge transformations for the York-decomposed fields:
+\begin{align}
+  \delta_\varepsilon \hTTmunu &= \vphantom{\frac 12} 0 \,, \\
+  \delta_\varepsilon \xi_\mu  &= \vphantom{\frac 12} \varepsilon^{\scriptscriptstyle \mathrm T}_\mu \,, \\
+  \delta_\varepsilon h        &=  -2 \, \vphantom{\frac 12} \sqrt{- \bnabla^2 \,} \varepsilon \,, \\
+  \delta_\varepsilon \sigma   &= \frac{2}{\sqrt{- \bnabla^2 \,}} \, \varepsilon \,.
+\end{align}
+Note that the transverse, traceless mode $\hTTmunu$ as well as the combination
+$h - \bnabla^2 \sigma$ are gauge invariant quantities.
+In terms of the rescaled fields we have
+\begin{align}
+  \delta_\varepsilon \xi^\prime_\mu  &= \sqrt{-\bnabla^2 - \frac{\bR}{d}} \; \varepsilon^{\scriptscriptstyle \mathrm T}_\mu \,, \\
+  \delta_\varepsilon \sigma^\prime   &= 2 \, \sqrt{-\bnabla^2 - \frac{\bR}{d-1}} \; \varepsilon \,.
+\end{align}
+
 
 \subsection{Unimodular gauge}
 
@@ -4498,10 +4564,18 @@ measure of the action has the following expansion:
 
 \section{Hessian of the Einstein-Hilbert action and propagators}
 
-In this section we will use the results calculated so far to
-obtain the Hessian of pure gravity in the exponential parametrisation
-and the resulting graviton propagator in the gauges we have discussed
-earlier.
+In this section we will use the results obtained so far to
+calculate the Hessian of the Einstein-Hilbert action
+\begin{align}
+  S_{\mathrm{EH}} = \int \mathrm d^dx \, \sqrt g \; R
+\end{align}
+in the exponential parametrisation.
+We will also calculate
+the resulting graviton propagators  on a flat background
+in the gauges we have discussed earlier.
+The latter will be used
+to evaluate Feynman diagrams when using the vertex expansion.
+
 
 \subsection{Hessian with and without York decomposition}
 
@@ -4627,7 +4701,7 @@ becomes:
 
 The Hessian for gravity coupled to a single scalar has been
 given in \cite{Percacci:2015wwa}.
-Here we discuss the changes introduced by having a scalar multiplet for the model of Eq.~(\ref{action}).
+Here we discuss the changes introduced by having a scalar multiplet for the model of Eqn.~(\ref{action}).
 The scalar field is decomposed into a background and
 fluctuation part $\phi^a=\bar{\phi}^a+\delta\phi^a$.
 The part of the Hessian which contains a dependence
@@ -4861,7 +4935,8 @@ and the work presented in it are my own. I confirm that:
 \vfill
 \item I have acknowledged all main sources of help.
 \vfill
-\item Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\item Where the thesis is based on work done by myself jointly with others,
+  I have made clear exactly what was done by others and what I have contributed myself.
 \end{itemize}
 \vfill
 
