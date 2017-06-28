@@ -1,23 +1,59 @@
-write abstract
-+++ add "is based on the following papers"
-write introduction
-write technical intro
-shorten chapter intro's
-make notation uniform
-redo figure 2.1 in tikZ
-redo figure 3.1 in pgfplots
-+++ loose summaries/conclusions (all?)
-beautify fig. 2.2--2.4 (?)
-write new developments in chapter 2
-change notation in chapter 4, s.t. it conforms with rest (York + \bar D)
-+++ loose maths symbols in headers in chapter 4
-unify all Feynman diagrams in chapter 4 on one (two) pages
-  with one caption only
-+++ redo plots in chapter 4 in pgfplots
-redo tables in pgfplotstable (??)
-all of chapter 5
-conclusions
-
 all sub-/superscripts that are not variables should be with \mathrm
 capital letters in sub/superscripts should probably be of smaller size
 all words in equations should be with \text
+
+
+TODO:
+=====
+
+Q: all appendices: do I need \GNewton somewhere?
+
+appendix A: ghost sector de Donder (maybe optinal)
+appendix B: derivation flow equation
+appendix C: calculating Feynman diagrams
+
+write new developments in chapter 2
+
+----------------------
+
+write technical intro
+conclusions 1--4
+
+----------------------
+
+chapter + conclusions 5
+
+----------------------
+
+write abstract
+fine tuning
+
+
+----------------------
+----------------------
+
+OPTINAL:
+========
+
+beautify fig. 2.2--2.3
+
+
+----------------------
+----------------------
+
+DONE:
+=====
+
++++ add "is based on the following papers"
++++ write introduction
++++ shorten chapter intro's
++++ make notation uniform
++++ redo figure 2.1 in tikZ
+--- redo figure 3.1 in pgfplots
++++ loose summaries/conclusions (all?)
++++ change notation in chapter 4, s.t. it conforms with rest (York + \bar D)
++++ loose maths symbols in headers in chapter 4
++++ unify all Feynman diagrams in chapter 4 on one (two) pages
++++   with one caption only
++++ redo plots in chapter 4 in pgfplots
+--- redo tables in pgfplotstable (??)
