@@ -687,6 +687,7 @@ Wilson-Fisher fixed point, LPA, Scaling Solutions
 %----------------------------------------------------------------------------------------
 
 \chapter{Background Independence in Quantum Gravity}
+\label{ch:tim}
 
 As we have outline in the last chapter,
 non-perturbative renormalization group flows for quantum gravity \cite{Reuter:1996cp}
@@ -2504,80 +2505,79 @@ and the beta function of $\bF$ would probably be regular for $\bF=0$.
 \chapter{Dynamics of Matter-Graviton Vertices}
 \label{ch:astrid}
 
-The effective average action at a scale $k$
-depends on the background metric and the fluctuation metric,
-\ie $\Gamma_k = \Gamma_k[\bar{g}_{\mu \nu}, h_{\mu \nu}]$.
+The effective average action of a gravitational quantum field theory
+at a finite energy scale $k$
+depends on both the background as well as the fluctuation field metric,
+\ie $\Gamma_k = \Gamma_k[\bar{g}_{\mu \nu}, h_{\mu \nu}]$,
+as we have already seen in Ch.~\ref{ch:tim}.
 This dependence is such that one cannot recombine $\bar{g}_{\mu \nu}$
-and $h_{\mu \nu}$ to give the full metric.
-This ``split-symmetry" breaking is due to two sources:
-The first is the gauge fixing term, which gauge-fixes the fluctuations with respect to the background,
-\eg using a harmonic gauge condition
-$F_{\nu}=\bar{D}^{\mu}h_{\mu \nu} -\frac{1}{2} \bar{D}_{\nu}h^{\kappa}_{\kappa}$.
-The second is the cutoff term, that is introduced into the path integral to implement
-a momentum-shell-wise integration: It acts as a mass-like term for fluctuations of low momenta and
-therefore has the structure $h_{\mu \nu} R^{\mu \nu \kappa \lambda} (y) h_{\kappa \lambda}$,
-where $y=-\bar{D}^2/k^2$ and $-\bar{D}^2$ denotes the background-covariant
-Laplacian\footnote{$R^{\mu \nu \kappa \lambda}$ should not be confused with the
-Riemann tensor.}.
-As a consequence, couplings of background operators and fluctuation operators do not share the same
-beta function. For instance, one can define a Newton coupling from the prefactor of the $\bar{R}$ term
-in the effective action, or from the momentum-squared part of the graviton three- point function or
+and $h_{\mu \nu}$ to give the full metric field,
+and modified split Ward identities have to be imposed additionally
+to recover split symmetry.
+This symmetry breaking is due to two sources:
+the gauge fixing term, which gauge-fixes the fluctuations with respect to the background,
+as well as the cutoff term, as we have seen already in the case of conformally
+reduced gravity in Ch.~\ref{ch:tim}.
+
+As a consequence, couplings of background field operators
+do not share the same beta function as the couplings of the fluctuation field operators.
+For instance, one could define a Newton coupling from the prefactor of the Einstein-Hilbert term
+in the effective action, from the momentum-squared part of the graviton three-point function or
 from a graviton-matter vertex.
-These three definitions of the Newton coupling obey a different Renormalization Group running.
+All of these three definitions of the Newton coupling obey a different renormalisation group running.
 Modified Ward-identities govern the background-field dependence of the results,
-and have to be imposed on the RG flow, but work along these lines is still in its infancy.
+and have to be imposed on the RG flow,
+but using them in practical calculations is still work in its infancy.
+We will have a glimpse on how to potentially subtract the background dependence
+due to the cutoff term by using these Ward identities in the next chapter.
 
 In the literature on asymptotically safe gravity, many results are obtained within a
 single-metric approximation, where the difference between background couplings and fluctuation couplings
 is ignored. There, one finds an interacting fixed point with a finite number of relevant couplings,
-\ie free parameters
-\cite{
+\ie free parameters, \cf Refs.~\cite{
   Reuter:1996cp, Dou:1997fg, Reuter:2001ag, Lauscher:2001ya, Lauscher:2002sq, Litim:2003vp,
   Fischer:2006fz, Machado:2007ea, Eichhorn:2009ah, Codello:2006in, Codello:2008vh,
   Benedetti:2009rx, Eichhorn:2010tb, Groh:2010ta, Manrique:2011jc, Rechenberger:2012dt, Benedetti:2012dx,
   Dietz:2012ic, Falls:2013bv, Benedetti:2013jk, Ohta:2013uca, Demmel:2014sga, Falls:2014tra, Falls:2015qga,
-  Falls:2015cta, Gies:2015tca, Demmel:2015oqa}.
+  Falls:2015cta, Gies:2015tca, Demmel:2015oqa
+}.
 
 First explorations of the bi-metric structure in asymptotically safe quantum gravity have indicated that the
 evidence for asymptotic safety from the single-metric approximation is still present when
-resolving this approximation
-\cite{
+resolving this approximation, \cf Refs.~\cite{
   Manrique:2009uh, Manrique:2010mq, Manrique:2010am, Christiansen:2012rx, Codello:2013fpa,
-  Christiansen:2014raa, Becker:2014qya, Christiansen:2015rva}.
-One should note that at this stage, only few couplings have been considered in a bi-metric setting,
+  Christiansen:2014raa, Becker:2014qya, Christiansen:2015rva
+}. One should note that at this stage only a few couplings have been considered in a bi-metric setting,
 and higher-order truncations could yield different results.
-As discussed in \cite{Bridle:2013sra} using the example of a scalar field,
+As discussed in Ref.~\cite{Bridle:2013sra} using the example of a scalar field,
 a single-metric approximation can result in spurious fixed points,
 and a treatment of the full bi-metric structure is crucial.
 Within gravity-matter systems, a first step in this direction has been done in
-\cite{Dona:2013qba, Dona:2014pla}, where the anomalous dimension of the graviton and matter
+Refs.~\cite{Dona:2013qba, Dona:2014pla}, where the anomalous dimension of the graviton and matter
 fields was evaluated in addition to the beta functions of the gravitational background couplings.
-In \cite{Christiansen:2014raa, Christiansen:2015rva},
-RG flows formulated in terms of fluctuation field gravitational couplings have been
+In Refs.~\cite{Christiansen:2014raa, Christiansen:2015rva},
+renormalisation group flows formulated in terms of fluctuation field gravitational couplings have been
 investigated and lend quantitative support to the results for the pure-gravity
 case in the single-metric approximation. The system has been extended to include the effect
-of matter fluctuations on pure-gravity-couplings in \cite{Meibohm:2015twa}.
+of matter fluctuations on pure-gravity-couplings in Ref.~\cite{Meibohm:2015twa}.
 
-In this work, we will make a step forward in disentangling the running of fluctuation and
-of background couplings, focusing on the matter-gravity sector.
-From a phenomenological point of view, the matter-gravity couplings are particularly interesting
-for several reasons: First of all, these could become relevant in experimental tests of quantum gravity,
-\eg in astrophysical or cosmological settings,
-where high enough energies to test quantum gravity effects might become reachable.
-Second, the existence of matter in our universe means that a quantum theory
-of spacetime by itself is not viable as a physical theory if it cannot accounted for matter as well.
-While one could hope that matter ``emerges" as additional effective excitations of spacetime at low scales,
-it seems unlikely that the quantum dynamics of spacetime does indeed provide all observed matter
-degrees of freedom with the correct properties, as encoded in the intricate structure of the standard model.
-Thus, we will here follow the route towards a joint quantum theory of gravity and matter.
-In the context of asymptotic safety, this implies that a viable fixed point must exist not only
-for the gravitational interactions, but also for matter-gravity interactions and matter self-interactions.
-As the Standard Model by itself is most likely not asymptotically safe, the effect of gravity
-is conjectured to  induce a fixed point \cite{Shaposhnikov:2009pv},
-see, \eg for evidence in this direction \cite{Zanusso:2009bs, Vacca:2010mj,
-Harst:2011zx, Eichhorn:2011pc, Eichhorn:2012va,Oda:2015sma}.
+In this chapter, we will make a step towards disentangling the running of the fluctuation field and
+background field couplings, focusing on the matter-gravity sector.
+In the context of asymptotic safety, this implies that a viable fixed point
+for the running of the effective average action must not only exist
+for the gravitational interactions, but also for matter-gravity interactions and the
+matter self-interactions.
+As the standard model by itself is most likely not asymptotically safe,
+the effect of gravity would have to induce a combined fixed point,
+as conjectured in Ref.~\cite{Shaposhnikov:2009pv},
+\cf for instance Refs.~\cite{Zanusso:2009bs, Vacca:2010mj,
+Harst:2011zx, Eichhorn:2011pc, Eichhorn:2012va,Oda:2015sma
+} for evidence in this direction.
+
 As a step towards showing that this could indeed be the case,
 we investigate the flow of a gravity-scalar-vertex,
+with one external spin-2 gravitational mode and two matter
+scalar fields,
 and show that it admits an interacting ultraviolet fixed point.
 We emphasize that the flow of this coupling is independent from the flow of the usual Newton coupling,
 defined with respect to gravitational vertices only.
@@ -2587,9 +2587,9 @@ for a joint description of gravity and matter in our universe.
 
 \section{Matter-gravity flow setup}
 
-In the following we will analyse the non-perturbative renormalisation group flow of the
+In this section we will summaries our setup to study the
+non-perturbative renormalisation group flow of the
 1-graviton-2-scalar coupling.
-
 
 \subsection{Truncation}
 
