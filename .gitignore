@@ -13,6 +13,7 @@ papers/*
 thesis.pdf
 
 ## Core latex/pdflatex auxiliary files:
+tags
 *.aux
 *.lof
 *.log
