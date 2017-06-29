@@ -5021,7 +5021,7 @@ of the minimally coupled scalar
   \partial_\nu \varphi^i \,,
 \end{align}
 since the rest of effective average action given above is independent of $\varphi$.
-We can expand the metric part of the kinetic term to third order in the graviton field $h_{ab}$,
+We can expand the metric part of the kinetic term to third order in the graviton field $h_{\mu\nu}$,
 using the expansions for the inverse metric and the determinant of the metric which where given
 in app.~\ref{app:exp_param}. This results in
 \begin{align}
@@ -5101,7 +5101,7 @@ following three flavours of 2-scalar-2-graviton vertices:
       \big( q_1 \cdot p_2 \big)
       \big( q_2 \cdot p_1 \big)
       }{
-      ||p_1||^2
+      ||p_1||^2 \,
       ||p_2||^2
     }
     + \frac{
@@ -5109,7 +5109,7 @@ following three flavours of 2-scalar-2-graviton vertices:
       \big( q_1 \cdot p_1 \big)
       \big( q_2 \cdot p_2 \big)
       }{
-      ||p_1||^2
+      ||p_1||^2 \,
       ||p_2||^2
     } \nonumber
     \right. \\
@@ -5135,27 +5135,109 @@ There are another two flavours of the
 2-scalar-3-graviton vertices we will need to evaluate all the diagrams.
 \begin{align}
   V^{ (2,\,3{\TT}) \, \mu\nu\rho\sigma\delta\gamma }
-  &= \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 12 }
+  = \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 12 }
   \Big(
       q_1^{(\mu} q_2^{\rho)} \mathds{1}^{\nu\sigma\gamma\delta}
-    + q_1^{(\mu} q_2^{\sigma)} \mathds{1}^{\nu\rho\gamma\delta}
+   &+ q_1^{(\mu} q_2^{\sigma)} \mathds{1}^{\nu\rho\gamma\delta}
     + q_1^{(\mu} q_2^{\gamma)} \mathds{1}^{\nu\rho\sigma\delta}
     + q_1^{(\mu} q_2^{\delta)} \mathds{1}^{\nu\rho\sigma\gamma}
     \nonumber \\
-    & \hspace{2.1cm} +
       q_1^{(\nu} q_2^{\rho)}   \mathds{1}^{\mu\sigma\gamma\delta}
-    + q_1^{(\nu} q_2^{\sigma)} \mathds{1}^{\mu\rho\gamma\delta}
+   &+ q_1^{(\nu} q_2^{\sigma)} \mathds{1}^{\mu\rho\gamma\delta}
     + q_1^{(\nu} q_2^{\gamma)} \mathds{1}^{\mu\rho\sigma\delta}
     + q_1^{(\nu} q_2^{\delta)} \mathds{1}^{\mu\rho\sigma\gamma}
     \nonumber \\
-    & \hspace{2.1cm} +
     q_1^{(\rho} q_2^{\gamma)}   \mathds{1}^{\mu\nu\sigma\delta}
-    + q_1^{(\rho} q_2^{\delta)} \mathds{1}^{\mu\nu\sigma\gamma}
+   &+ q_1^{(\rho} q_2^{\delta)} \mathds{1}^{\mu\nu\sigma\gamma}
     + q_1^{(\sigma} q_2^{\gamma)} \mathds{1}^{\mu\nu\rho\delta}
     + q_1^{(\sigma} q_2^{\delta)} \mathds{1}^{\mu\nu\rho\gamma}
-  \Big) , \\
-  V^{(2,\,{\TT}\,2\sigma)\,\mu\nu}
-  &= \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 1 }
+  \Big) ,
+\end{align}
+\begin{align}
+  &V^{(2,\,{\TT}\,2\sigma)\,\mu\nu}
+  = \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 2 }
+  \left(
+    \frac{1}{8} \, q_1^{(\mu} q_2^{\nu)}
+    - \frac 14 \, \frac{
+      \big( p_1 \cdot q_2 \big) \,
+      q_1^{(\mu} p_1^{\nu)}
+    }{ ||p_1||^2 }
+    - \frac 14 \, \frac{
+      \big( p_1 \cdot q_1 \big) \,
+      q_2^{(\mu} p_1^{\nu)}
+    }{ ||p_1||^2 }
+  \right.
+    \nonumber \\
+  & \left.
+    - \frac 14 \, \frac{
+      \big( p_2 \cdot q_2 \big) \,
+      q_1^{(\mu} p_2^{\nu)}
+    }{ ||p_2||^2 }
+    - \frac 14 \, \frac{
+      \big( p_2 \cdot q_1 \big) \,
+      q_2^{(\mu} p_2^{\nu)}
+    }{ ||p_2||^2 }
+    + \frac 13 \, \frac{
+      \big( q_1 \cdot p_1 \big)
+      \big( q_2 \cdot p_2 \big)
+      \,
+      p_1^{(\mu} p_2^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+  \right.
+    \nonumber \\
+  & \left.
+    + \frac 13 \, \frac{
+      \big( q_1 \cdot p_2 \big)
+      \big( q_2 \cdot p_1 \big)
+      \,
+      p_1^{(\mu} p_2^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+    + \frac 13 \, \frac{
+      \big( p_1 \cdot p_2 \big)
+      \big( q_2 \cdot p_2 \big)
+      \,
+      q_1^{(\mu} p_1^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+    + \frac 13 \, \frac{
+      \big( p_1 \cdot p_2 \big)
+      \big( q_2 \cdot p_1 \big)
+      \,
+      q_1^{(\mu} p_2^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+  \right.
+    \nonumber \\
+  & \left.
+    + \frac 13 \, \frac{
+      \big( p_1 \cdot p_2 \big)
+      \big( q_1 \cdot p_2 \big)
+      \,
+      q_2^{(\mu} p_1^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+    + \frac 13 \, \frac{
+      \big( p_1 \cdot p_2 \big)
+      \big( q_1 \cdot p_1 \big)
+      \,
+      q_2^{(\mu} p_2^{\nu)}
+      }{
+      ||p_1||^2 \,
+      ||p_2||^2
+    }
+  \right) ,
 \end{align}
 Note in particular, that the strength of the interaction is independent
 of the magnitude of the graviton momenta, and only depends on the angles
@@ -5221,9 +5303,7 @@ as before. For the 3-graviton vertices, with gauge fixing, that gives:
   - \frac{1}{2}  \, \partial_{\mu} h^{{\TT}}_{\rho\alpha }      \, \partial^{\nu}  \partial^{\mu} \sigma \, \partial^{\alpha } h^{{\TT}}_{\nu}{}^{\rho} \nonumber \\
   &+ \frac{1}{8} \, \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\rho}    h^{{\TT}}_{\nu\alpha } \, \partial^{\alpha } h^{{\TT} \nu\rho}
   - \frac{1}{16} \, \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\alpha } h^{{\TT}}_{\nu\rho}    \, \partial^{\alpha } h^{{\TT} \nu\rho}
-  % \\
-\end{align}
-\begin{align}
+  \\
   %%%%%%%%%%%%
   &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT \, \sigma^2)} =
      \frac{1}{4}  \, \partial_{\mu} \partial^{\alpha } \partial^{\rho} \sigma \, \partial_{\nu} h^{{\TT}}_{\rho\alpha } \, \partial^{\nu} \partial^{\mu} \sigma
