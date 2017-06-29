@@ -1,0 +1,50 @@
+2h 1\sigma
+  \frac{1}{4} \partial_{\mu}h^{{\TT} \rho\alpha } \partial_{\nu}h^{{\TT}}_{\rho\alpha } \partial^{\nu}\partial^{\mu}\sigma
+- \frac{1}{2} h^{{\TT}}_{\rho}{}^{\alpha } \partial_{\mu}h^{{\TT}}_{\nu\alpha } \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma
++ \frac{1}{2} h^{{\TT}}_{\rho}{}^{\alpha } \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma \partial_{\alpha }h^{{\TT}}_{\mu \nu}
+- \frac{1}{2} h^{{\TT}}_{\nu}{}^{\alpha } \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma \partial_{\alpha }h^{{\TT}}_{\mu \rho}
++ \frac{h^{{\TT} \rho\alpha } \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \partial_{\alpha }h^{{\TT}}_{\nu\rho}}{2 d}
+- \frac{1}{2} \partial_{\mu}h^{{\TT}}_{\rho\alpha } \partial^{\nu}\partial^{\mu}\sigma \partial^{\alpha }h^{{\TT}}_{\nu}{}^{\rho}
++ \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\rho}h^{{\TT}}_{\nu\alpha } \partial^{\alpha }h^{{\TT} \nu\rho}}{2 d}
+- \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\alpha }h^{{\TT}}_{\nu\rho} \partial^{\alpha }h^{{\TT} \nu\rho}}{4 d}
+
+
+1h 2\sigma
+\frac{1}{4} \partial_{\mu}\partial^{\alpha }\partial^{\rho}\sigma \partial_{\nu}h^{{\TT}}_{\rho\alpha } \partial^{\nu}\partial^{\mu}\sigma
++ \frac{1}{4} \partial_{\mu}h^{{\TT}}_{\rho\alpha } \partial_{\nu}\partial^{\alpha }\partial^{\rho}\sigma \partial^{\nu}\partial^{\mu}\sigma
+- \frac{1}{2} \partial_{\mu}\partial^{\alpha }\partial^{\rho}\sigma \partial^{\nu}\partial^{\mu}\sigma \partial_{\rho}h^{{\TT}}_{\nu\alpha }
++ \frac{h^{{\TT}}_{\nu\alpha } \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \partial_{\rho}\partial^{\alpha }\partial^{\rho}\sigma}{2 d}
+- \frac{1}{2} h^{{\TT}}_{\rho\alpha } \partial_{\mu}\partial^{\alpha }\partial_{\nu}\sigma \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma
++ \frac{1}{4} h^{{\TT}}_{\rho\alpha } \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma \partial^{\alpha }\partial_{\nu}\partial_{\mu}\sigma
+- \frac{1}{2} \partial_{\mu}h^{{\TT}}_{\rho\alpha } \partial^{\nu}\partial^{\mu}\sigma \partial^{\alpha }\partial_{\nu}\partial^{\rho}\sigma
+- \frac{(2 + d) h^{{\TT}}_{\nu\alpha } \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \partial^{\alpha }\partial_{\rho}\partial^{\rho}\sigma}{4 d^2}
++ \frac{\partial_{\mu}h^{{\TT}}_{\nu\alpha } \partial^{\nu}\partial^{\mu}\sigma \partial^{\alpha }\partial_{\rho}\partial^{\rho}\sigma}{2 d}
++ \frac{h^{{\TT}}_{\rho\alpha } \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \partial^{\alpha }\partial^{\rho}\partial_{\nu}\sigma}{2 d}
++ \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\nu}h^{{\TT}}_{\rho\alpha } \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma}{2 d}
++ \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\rho}h^{{\TT}}_{\nu\alpha } \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma}{2 d}
+- \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\alpha }h^{{\TT}}_{\nu\rho} \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma}{2 d}
+
+
+0h 3\sigma
+\frac{1}{4} \partial_{\mu}\partial^{\alpha }\partial^{\rho}\sigma \partial_{\nu}\partial_{\alpha }\partial_{\rho}\sigma \partial^{\nu}\partial^{\mu}\sigma
+- \frac{(2 + d) \partial_{\mu}\partial_{\rho}\partial^{\rho}\sigma \partial_{\nu}\partial_{\alpha }\partial^{\alpha }\sigma \partial^{\nu}\partial^{\mu}\sigma}{4 d^2}
++ \frac{\partial_{\mu}\partial_{\alpha }\partial^{\alpha }\sigma \partial^{\nu}\partial^{\mu}\sigma \partial_{\rho}\partial_{\nu}\partial^{\rho}\sigma}{2 d}
++ \frac{\partial_{\mu}\partial_{\nu}\partial^{\rho}\sigma \partial^{\nu}\partial^{\mu}\sigma \partial_{\rho}\partial_{\alpha }\partial^{\alpha }\sigma}{2 d}
++ \frac{(2 + d) \partial_{\mu}\partial^{\mu}\sigma \partial_{\rho}\partial_{\alpha }\partial^{\alpha }\sigma \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma}{4 d^3}
+- \frac{\partial_{\mu}\partial^{\mu}\sigma \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma \partial_{\alpha }\partial_{\rho}\partial^{\alpha }\sigma}{2 d^2}
+- \frac{\partial_{\mu}\partial^{\mu}\sigma \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma \partial_{\alpha }\partial^{\alpha }\partial_{\rho}\sigma}{2 d^2}
+- \frac{1}{2} \partial_{\mu}\partial_{\rho}\partial_{\alpha }\sigma \partial^{\nu}\partial^{\mu}\sigma \partial^{\alpha }\partial_{\nu}\partial^{\rho}\sigma
++ \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\nu}\partial_{\alpha }\partial_{\rho}\sigma \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma}{2 d}
+- \frac{\partial_{\mu}\partial^{\mu}\sigma \partial_{\alpha }\partial_{\rho}\partial_{\nu}\sigma \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma}{4 d}
+
+
+4vertices
+
+4h 0\sigma
+  \frac{1}{8} h^{{\TT} \mu\nu} h^{{\TT} \rhod} \partial_{\nu}h^{{\TT}}_{d\alpha } \partial_{\rho}h^{{\TT}}_{\mu}{}^{\alpha }
+- \frac{1}{8} h^{{\TT}}_{\mu}{}^{\rho} h^{{\TT} a\nu} \partial_{\nu}h^{{\TT} d\alpha } \partial_{\rho}h^{{\TT}}_{d\alpha }
+- \frac{1}{12} h^{{\TT} \mu\nu} h^{{\TT} \rhod} \partial_{d}h^{{\TT}}_{\nu\alpha } \partial^{\alpha }h^{{\TT}}_{\mu\rho}
++ \frac{1}{24} h^{{\TT} \mu\nu} h^{{\TT} \rhod} \partial_{\alpha }h^{{\TT}}_{\nud} \partial^{\alpha }h^{{\TT}}_{\mu\rho}
++ \frac{1}{6} h^{{\TT}}_{\mu}{}^{\rho} h^{{\TT} \mu\nu} \partial_{\rho}h^{{\TT}}_{d\alpha } \partial^{\alpha }h^{{\TT}}_{\nu}{}^{d}
++ \frac{1}{24} h^{{\TT}}_{\mu}{}^{\rho} h^{{\TT} \mu\nu} \partial_{d}h^{{\TT}}_{\rho\alpha } \partial^{\alpha }h^{{\TT}}_{\nu}{}^{d}
+- \frac{1}{24} h^{{\TT}}_{\mu}{}^{\rho} h^{{\TT} \mu\nu} \partial_{\alpha }h^{{\TT}}_{\rhod} \partial^{\alpha }h^{{\TT}}_{\nu}{}^{d}

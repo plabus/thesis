@@ -5206,16 +5206,53 @@ Note that both of these expressions reduce considerably once the gauge condition
 $h=0$ is applied. The result of doing so yields Eqns.~(\ref{GammaG3}) and (\ref{GammaG4}).
 We then have to decompose the full tensor fields $h_{\mu\nu}$ into their spin components
 as before. For the 3-graviton vertices, with gauge fixing, that gives:
-\begin{alignat}{2}
-  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT^3)} &&=
+\begin{align}
+  %%%%%%%%%%%%
+  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT^3)} =
   \frac{1}{4} \, h^{{\TT}\mu \nu} \, \partial_{\mu} h^{{\TT}\rho \sigma} \, \partial_{\nu} h^{{\TT}}_{\rho \sigma}
   - \frac{1}{2} \, h^{{\TT}\mu \nu} \, \partial_{\nu} h^{{\TT}}_{\rho \sigma} \, \partial^{\sigma} h^{{\TT}}_{\quad \mu}{}^{\rho}\\
-  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT^2 \, \sigma)} &&=
+  %%%%%%%%%%%%
+  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT^2 \, \sigma)} =
+    \frac{1}{4}  \, \partial_{\mu} h^{{\TT} \rho\alpha }        \, \partial_{\nu}  h^{{\TT}}_{\rho\alpha } \, \partial^{\nu}  \partial^{\mu} \sigma
+  - \frac{1}{2}  \,                h^{{\TT}}_{\rho}{}^{\alpha } \, \partial_{\mu}  h^{{\TT}}_{\nu\alpha }  \, \partial^{\rho} \partial^{\nu} \partial^{\mu}\sigma
+  + \frac{1}{2}  \,                h^{{\TT}}_{\rho}{}^{\alpha } \, \partial^{\rho} \partial^{\nu} \partial^{\mu} \sigma \, \partial_{\alpha } h^{{\TT}}_{\mu \nu} \nonumber \\
+  &- \frac{1}{2} \,                h^{{\TT}}_{\nu}{}^{\alpha }  \, \partial^{\rho} \partial^{\nu} \partial^{\mu} \sigma \, \partial_{\alpha } h^{{\TT}}_{\mu \rho}
+  + \frac{1}{8}  \,                h^{{\TT} \rho\alpha }        \, \partial^{\nu}  \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\alpha } h^{{\TT}}_{\nu\rho}
+  - \frac{1}{2}  \, \partial_{\mu} h^{{\TT}}_{\rho\alpha }      \, \partial^{\nu}  \partial^{\mu} \sigma \, \partial^{\alpha } h^{{\TT}}_{\nu}{}^{\rho} \nonumber \\
+  &+ \frac{1}{8} \, \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\rho}    h^{{\TT}}_{\nu\alpha } \, \partial^{\alpha } h^{{\TT} \nu\rho}
+  - \frac{1}{16} \, \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\alpha } h^{{\TT}}_{\nu\rho}    \, \partial^{\alpha } h^{{\TT} \nu\rho}
+  % \\
+\end{align}
+\begin{align}
+  %%%%%%%%%%%%
+  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT \, \sigma^2)} =
+     \frac{1}{4}  \, \partial_{\mu} \partial^{\alpha } \partial^{\rho} \sigma \, \partial_{\nu} h^{{\TT}}_{\rho\alpha } \, \partial^{\nu} \partial^{\mu} \sigma
+   + \frac{1}{4}  \, \partial_{\mu} h^{{\TT}}_{\rho\alpha } \, \partial_{\nu} \partial^{\alpha } \partial^{\rho} \sigma \, \partial^{\nu} \partial^{\mu} \sigma \nonumber \\
+  &- \frac{1}{2}  \, \partial_{\mu} \partial^{\alpha } \partial^{\rho} \sigma \, \partial^{\nu} \partial^{\mu} \sigma \, \partial_{\rho} h^{{\TT}}_{\nu\alpha }
+   + \frac{1}{8}  \, h^{{\TT}}_{\nu\alpha }  \, \partial^{\nu} \partial_{\mu} \partial^{\mu} \sigma \, \partial_{\rho}\partial^{\alpha }\partial^{\rho}\sigma
+   - \frac{1}{2}  \, h^{{\TT}}_{\rho\alpha } \, \partial_{\mu}\partial^{\alpha }\partial_{\nu}\sigma \, \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma \nonumber \\
+  &+ \frac{1}{4}  \, h^{{\TT}}_{\rho\alpha } \, \partial^{\rho}\partial^{\nu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial_{\nu}\partial_{\mu}\sigma
+   - \frac{1}{2}  \, \partial_{\mu}h^{{\TT}}_{\rho\alpha } \, \partial^{\nu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial_{\nu}\partial^{\rho}\sigma
+   - \frac{3}{32} \, h^{{\TT}}_{\nu\alpha } \, \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial_{\rho}\partial^{\rho}\sigma \nonumber \\
+  &+ \frac{1}{8}  \, \partial_{\mu}h^{{\TT}}_{\nu\alpha } \, \partial^{\nu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial_{\rho}\partial^{\rho}\sigma
+   + \frac{1}{8}  \, h^{{\TT}}_{\rho\alpha } \, \partial^{\nu}\partial_{\mu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial^{\rho}\partial_{\nu}\sigma
+   + \frac{1}{8}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\nu}h^{{\TT}}_{\rho\alpha } \, \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma \nonumber \\
+  &+ \frac{1}{8}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\rho}h^{{\TT}}_{\nu\alpha } \, \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma
+   - \frac{1}{8}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\alpha }h^{{\TT}}_{\nu\rho} \, \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma
   \\
-  &\sqrt{g} \, R \; \Big|_{\mathcal O(\hTT \, \sigma^2)} &&=
-  \\
-  &\sqrt{g} \, R \; \Big|_{\mathcal O(\sigma^3)} &&=
-\end{alignat}
+  %%%%%%%%%%%%
+  &\sqrt{g} \, R \; \Big|_{\mathcal O(\sigma^3)} =
+     \frac{1}{4}   \, \partial_{\mu}\partial^{\alpha }\partial^{\rho}\sigma \, \partial_{\nu}\partial_{\alpha }\partial_{\rho}\sigma \, \partial^{\nu}\partial^{\mu}\sigma
+   - \frac{3}{32}  \, \partial_{\mu}\partial_{\rho}\partial^{\rho}\sigma \, \partial_{\nu}\partial_{\alpha }\partial^{\alpha }\sigma \, \partial^{\nu}\partial^{\mu}\sigma \nonumber \\
+  &+ \frac{1}{8}   \, \partial_{\mu}\partial_{\alpha }\partial^{\alpha }\sigma \, \partial^{\nu}\partial^{\mu}\sigma \, \partial_{\rho}\partial_{\nu}\partial^{\rho}\sigma
+   + \frac{1}{8}   \, \partial_{\mu}\partial_{\nu}\partial^{\rho}\sigma \, \partial^{\nu}\partial^{\mu}\sigma \, \partial_{\rho}\partial_{\alpha }\partial^{\alpha }\sigma
+   + \frac{3}{128} \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\rho}\partial_{\alpha }\partial^{\alpha }\sigma \, \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma \nonumber \\
+  &- \frac{1}{32}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma \, \partial_{\alpha }\partial_{\rho}\partial^{\alpha }\sigma
+   - \frac{1}{32}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial^{\rho}\partial_{\nu}\partial^{\nu}\sigma \, \partial_{\alpha }\partial^{\alpha }\partial_{\rho}\sigma
+   - \frac{1}{2}   \, \partial_{\mu}\partial_{\rho}\partial_{\alpha }\sigma \, \partial^{\nu}\partial^{\mu}\sigma \, \partial^{\alpha }\partial_{\nu}\partial^{\rho}\sigma \nonumber \\
+  &+ \frac{1}{8}   \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\nu}\partial_{\alpha }\partial_{\rho}\sigma \, \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma
+   - \frac{1}{16}  \, \partial_{\mu}\partial^{\mu}\sigma \, \partial_{\alpha }\partial_{\rho}\partial_{\nu}\sigma \, \partial^{\alpha }\partial^{\rho}\partial^{\nu}\sigma
+\end{align}
 To obtain the vertices in momentum space---which will be necessary for the evaluation of
 Feynman diagrams---we have to Fourier transform the last expressions and
 take the derivative with respect to the three respective graviton fields.
@@ -5226,17 +5263,18 @@ using the following rule
   \mapsto - p_{1i} \, \mathds{1}^{\mu\nu}_{cd}
   \left[
     p_{2j} \, \mathds{1}^{\rho\sigma}_{ef} \mathds{1}^{\gamma\delta}_{ab} +  p_{3j} \, \mathds{1}^{\rho\sigma}_{ab} \mathds{1}^{\gamma\delta}_{ef}
-  \right] \nonumber \\
-  - p_{2i} \, \mathds{1}^{\rho\sigma}_{cd}
+  \right]
+  &- p_{2i} \, \mathds{1}^{\rho\sigma}_{cd}
   \left[
     p_{1j} \, \mathds{1}^{\mu\nu}_{ef} \mathds{1}^{\gamma\delta}_{ab} +  p_{3j}\, \mathds{1}^{\mu\nu}_{ab} \mathds{1}^{\gamma\delta}_{ef}
   \right] \nonumber \\
-  - p_{3i} \, \mathds{1}^{\gamma\delta}_{cd}
+  &- p_{3i} \, \mathds{1}^{\gamma\delta}_{cd}
   \left[
     p_{1j} \,\mathds{1}^{\rho\sigma}_{ab} \mathds{1}^{\mu\nu}_{ef} + p_{2j}\, \mathds{1}^{\rho\sigma}_{ef} \mathds{1}^{\mu\nu}_{ab}
-  \right]
+  \right] ,
 \end{align}
-and ensuring energy conservation $\sum_{i} p_i = 0$. Similar rules for the other combinations
+and ensuring energy conservation $\sum_{i} p_i = 0$.
+Similar rules for the other combinations
 of fields are easy to derive
 and can conveniently be implemented in computer algebra software.%
 \footnote{%
@@ -5245,7 +5283,7 @@ and can conveniently be implemented in computer algebra software.%
   of Ch.~\ref{ch:astrid}.
 }
 For the sake of saving space we will refrain from given the explicit expressions
-of the vertices in momentum space as well as the York decomposed from of the
+of the vertices in momentum space as well as the York decomposed form of the
 forth variation of the Einstein-Hilbert action.
 
 \section{Calculating Feynman diagrams}
