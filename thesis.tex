@@ -32,7 +32,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{dsfont}
-\usepackage{bbold}
+% \usepackage{bbold}
 
 \usepackage{pifont}
 \usepackage{nicefrac} % for \nicefrac macro giving nice fractions in exponent
@@ -4136,11 +4136,11 @@ The conventional way of fixing the gauge in gravity follows the
 same procedure as in Yang-Mills theory, namely, one adds a term
 \begin{align}
   S_{\mathrm{gf}} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
-  \chi_\mu \, \bar g^{\mu\nu} \, \chi_\nu \,,
+  F_\mu \, \bar g^{\mu\nu} \, F_\nu \,,
 \end{align}
 to the action, where
 \begin{align}
-  \chi_\mu[\bar g, \, h] = \bnabla_\rho \,  h^\rho{}_\mu - \frac{\beta+1}{d} \, \bnabla_\mu \, h \,,
+  F_\mu[\bar g, \, h] = \bnabla_\rho \,  h^\rho{}_\mu - \frac{\beta+1}{d} \, \bnabla_\mu \, h \,,
 \end{align}
 is the gauge condition, fixed on the background manifold,
 and $\alpha$ and $\beta$ are gauge parameters. One common choice of
@@ -4717,7 +4717,24 @@ the propagators of the four independent fields thus become:
 \end{align}
 Here we assumed the use of a type I cutoff, following the conventions in Ref.~\cite{Codello:2008vh}.
 Note that the de~Donder gauge also diagonalises the Hessian.
-[ghost sector???]
+The ghost action on a flat background reads
+\begin{align}
+  S_{\,\mathrm{ghost}}
+  = \int \mathrm d^4x \;
+  \Big[
+    \overbar C_\mu \, \bar g^{\mu\nu}
+    \big( - \partial^2 \big) \, C_\nu
+  \Big] \,,
+\end{align}
+which yields the following propagator in momentum space:
+\begin{align}
+  \Big[ \Gamma_k^{(\overbar C_\mu,\,C_\nu)}+R_k^{C_\mu} \Big]^{-1}_{\mu \nu}
+  &= \frac 12 \, \frac{ \delta_{\mu \nu} }{ p^2 + r_k(p^2) } \,.
+\end{align}
+Note that contrary to the case of the unimodular gauge (which we will
+see shortly), even on a flat background the conventional gauge fixing
+introduces infinitely many interaction terms amongst ghost fields
+and the gravitational modes.
 
 \subsection{Propagators in the unimodular gauge}
 
@@ -4749,11 +4766,11 @@ thus become
 respectively. The ghost sector on a flat background simply reads
 \begin{align}
   S_{\,\mathrm{ghost}}
-  = \int \mathrm d^dx \, \sqrt{\bar g} \;
+  = \int \mathrm d^4x \;
   \Big[
-    C \, \big( -\bnabla^2 \big) \, C
+    C \, \big( -\partial^2 \big) \, C
     +  C_\mu \, \bar g^{\mu\nu}
-    \big( -\bnabla^2 \big) \, C_\nu
+    \big( -\partial^2 \big) \, C_\nu
   \Big] \,,
 \end{align}
 with a real, anti-commuting scalar $C$,
@@ -4762,7 +4779,7 @@ Introducing an additional type I cutoff operator for each ghost,
 we find the following propagators in momentum space:
 \begin{align}
   \Big[ \Gamma_k^{(C_\mu,\,C_\nu)}+R_k^{C_\mu} \Big]^{-1}_{\mu \nu}
-  &= \frac 12 \frac{ \delta_{\mu \nu} }{ p^2 + r_k(p^2) } \,, \\
+  &= \frac 12 \, \frac{ \delta_{\mu \nu} }{ p^2 + r_k(p^2) } \,, \\
   \Big[ \Gamma_k^{(C,\,C)} + R_k^{C} \Big]^{-1}
   &= \frac{1}{2} \, \frac{1}{ p^2 + r_k(p^2) } \,.
 \end{align}
