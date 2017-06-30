@@ -110,6 +110,7 @@
 \newcommand\bgmunu{ \bar g_{\mu\nu} }
 \newcommand\TT{ \scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}} }
 \newcommand\hTT{ h_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
+\newcommand\hT{ h^{\scriptscriptstyle{\mathrm{T}} } }
 \newcommand\hmunu{ h_{\mu\nu} }
 \newcommand\hTTmunu{ h^{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}}_{\mu\nu} }
 
@@ -132,6 +133,8 @@
 \newcommand{\FPtwo}  {\textsl{FP2}}
 \newcommand{\FPthree}{\textsl{FP3}}
 \newcommand{\FPfour} {\textsl{FP4}}
+
+\newcommand{\weyl} {\delta_\varepsilon}
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -1902,9 +1905,71 @@ together with those of Ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
 \end{table}
 
 
-\section{New developments}
+\section{Towards background independence in full quantum gravity}
 
-Short review of \cite{Percacci:2016arh, Morris:2016spn}.
+First attempts to go beyond conformally truncated gravity and study background
+independence in theories of the full metric field have been made in
+Refs.~\cite{Morris:2016spn, Percacci:2016arh}. In this case split symmetry
+takes the much more general form
+\begin{align}
+  \bar g_{\mu \nu}(x) \mapsto \bar g_{\mu\nu}(x) + \varepsilon_{\mu\nu}(x) \,,
+  \quad
+  h_{\mu \nu}(x) \mapsto h_{\mu\nu}(x) - \varepsilon_{\mu\nu}(x) \,,
+\end{align}
+which is a $\nicefrac{d(d+1)}{2}$ parameter set of space-time dependent transformations.
+
+In addition to the cutoff operator, in theories of the full metric field
+there is another source of split symmetry breaking. Namely, since gravity is a
+gauge theory, when integrating over the fluctuation field in the path integral
+a gauge has to be fixed in order to remove spurious gauge configuration.
+This will generate a functional determinant in the path integral which can be rewritten via
+the Faddeev-Popov procedure through the introduction of a number of auxiliary fields,
+the so-called ghosts. Since gauge fixing should remove spurious gauge configurations
+the gauge condition has to be implied on the fluctuation field $h_{\mu\nu}$ using
+covariant derivatives of the background metric, in such a way that there necessarily
+is an asymmetry between these two fields introduced. This is a then an additional
+(potential) source of split symmetry breaking.
+
+In Ref.~\cite{Morris:2016spn}, this issue has been addressed for the first time
+using a linear split for background and fluctuation field, and restricting
+the set of split symmetry transformations to background scale transformations,
+also called background Weyl transformations%
+\footnote{
+  Here and in the following, we always
+  adhere to the transformation conventions of Ref.~\cite{Percacci:2016arh}.
+  The results of Ref.~\cite{Morris:2016spn} may then be obtained via
+  $\varepsilon \mapsto -\varepsilon$ (and setting $\varepsilon = 1$).
+}
+\begin{align}
+  \bar g_{\mu \nu}(x) \mapsto (1 + 2 \varepsilon) \, \bar g_{\mu\nu}(x) \,,
+\end{align}
+where $\varepsilon$ is a space-time constant.
+Using a linear parametrisation of the metric, background and fluctuation field
+thus transform as%
+\footnote{
+  In the following we assume the background to be a compact manifold
+  (such that the volume is finite). Then $\overbar h$ is the zero mode
+  of the background Laplacian $-\bnabla^2$.
+}%
+\begin{align}
+  \weyl \bar g_{\mu \nu} = + 2 \, & \varepsilon \, \bar g_{\mu\nu} \,, \\
+  \weyl      h_{\mu \nu} = - 2 \, & \varepsilon \,      h_{\mu\nu} \,.
+\end{align}
+If we additionally use the York decomposition of the fluctuation field
+(\cf App.~\ref{app:exp_param}) and further decompose the trace part as
+\begin{align}
+  h(x) = \overbar h + h^\perp(x)
+\end{align}
+where $\overbar h$ and $h^\perp(x)$ are orthogonal to each other,
+in such a way that
+$\langle \overbar h,\,h^\perp \rangle \equiv \overbar h \int \mathrm d^dx \, h^\perp = 0$,
+one can the derive the following transformation laws:
+\begin{align}
+  \weyl h^\perp &= - 2 \, \varepsilon \, h^\perp \,, \\
+  \weyl \overbar h^\pert &= - 2 \, \varepsilon \, ( \overbar h + d ) \,, \\
+  \weyl      \hT_{\mu \nu} &= 0 \,.
+\end{align}
+
 
 
 
