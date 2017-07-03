@@ -981,12 +981,12 @@ proportional to a second functional derivative with respect to $\varphi$ acting 
 the msWI and it is with this in mind that we proceed (see also Ref.\cite{Safari:2015dva}).
 
 We begin by considering the following Euclidean functional integral over the fluctuation field~$\tilde\varphi$
-\begin{equation}
+\begin{align}
   \mathrm e^{W_k} = \int \mathcal{D}\tilde\varphi \;
   \mathrm e^{-S[\chi+\tilde\varphi]-S_k[\tilde\varphi,\, \bar g]
   + S_{\mathrm{src}}[\tilde\varphi, \, \bar g]} \,.
   \label{Z}
-\end{equation}
+\end{align}
 This integral is regulated in the UV (as it must be), however we leave this regularisation implicit
 in what follows. Compatibility can be shown most easily by presenting both the flow equation and the
 msWI as matrix expressions. Thus we begin by rewriting the source term using matrix notation like so
@@ -1326,12 +1326,12 @@ Inserting \eqref{DB} and \eqref{Bdot} into \eqref{flowWA1} we obtain
 where we have introduced the commutator-like construct $[A,B]_{qp} = A_q B_p - B_qA_p$.
 
 When $A = V$ the above expression simplifies considerably to
-\begin{equation}
+\begin{align}
 \label{flowWV}
 	 \mathcal{\dot W}^{(V)}=-  \int_p  Q^2_p  \dot R_p\, \bigg( \partial^2_{\varphi} \mathcal{W}^{(V)}
 	  - p^2  \mathcal{W}^{(K)} \bigg) - \int_{p,q}   Q^2_p\, \bigg(  \partial_{\varphi}^2 Q_q
 	  - 2 p^2 P_q \bigg) [ \dot R , \partial_{\chi} R + \gamma R ]_{qp} \,,
-\end{equation}
+\end{align}
 which we see contains only terms that contain either the Ward identities or the
 `commutator' $[ \dot R , \partial_{\chi} R + \gamma R ]_{qp}$.
 On the other hand for the flow of the $K/f$ msWI, the terms do not collect,
@@ -1918,16 +1918,16 @@ takes the much more general form
 \end{align}
 which is a $\nicefrac{d(d+1)}{2}$ parameter set of space-time dependent transformations.
 
-In addition to the cutoff operator, in theories of the full metric field
+In addition to the cutoff operator, in theories of the full metric field,
 there is another source of split symmetry breaking. Namely, since gravity is a
 gauge theory, when integrating over the fluctuation field in the path integral
-a gauge has to be fixed in order to remove spurious gauge configuration.
+a gauge has to be fixed in order to remove spurious gauge configurations.
 This will generate a functional determinant in the path integral which can be rewritten via
 the Faddeev-Popov procedure through the introduction of a number of auxiliary fields,
 the so-called ghosts. Since gauge fixing should remove spurious gauge configurations
 the gauge condition has to be implied on the fluctuation field $h_{\mu\nu}$ using
-covariant derivatives of the background metric, in such a way that there necessarily
-is an asymmetry between these two fields introduced. This is a then an additional
+covariant derivatives of the background metric, in such a way, that one necessarily
+has to introduce an asymmetry between these two fields. This is a then an additional
 (potential) source of split symmetry breaking.
 
 In Ref.~\cite{Morris:2016spn}, this issue has been addressed for the first time
@@ -1945,18 +1945,18 @@ also called background Weyl transformations%
 \end{align}
 where $\varepsilon$ is a space-time constant.
 Using a linear parametrisation of the metric, background and fluctuation field
-thus transform as%
-\footnote{
-  In the following we assume the background to be a compact manifold
-  (such that the volume is finite). Then $\overbar h$ is the zero mode
-  of the background Laplacian $-\bnabla^2$.
-}%
+thus transform as
 \begin{align}
   \weyl \bar g_{\mu \nu} = + 2 \, & \varepsilon \, \bar g_{\mu\nu} \,, \\
   \weyl      h_{\mu \nu} = - 2 \, & \varepsilon \,      h_{\mu\nu} \,.
 \end{align}
 If we additionally use the York decomposition of the fluctuation field
-(\cf App.~\ref{app:exp_param}) and further decompose the trace part as
+(\cf App.~\ref{app:exp_param}) and further decompose the trace part as%
+\footnote{
+  In the following we assume the background to be a compact manifold
+  (such that the volume is finite). Then $\overbar h$ is the zero mode
+  of the background Laplacian $-\bnabla^2$.
+}%
 \begin{align}
   h(x) = \overbar h + h^\perp(x)
 \end{align}
@@ -1969,7 +1969,144 @@ one can the derive the following transformation laws:
   \weyl \overbar h^\pert &= - 2 \, \varepsilon \, ( \overbar h + d ) \,, \\
   \weyl      \hT_{\mu \nu} &= 0 \,.
 \end{align}
+From this it is easy to see that the following field combinations are invariant
+under background rescaling:
+\begin{align}
+  \hT_{\mu\nu}, \; \bar g_{\mu\nu}, \; \left( 1 + \frac{\overbar h }{d} \right) \bar g_{\mu\nu} \,.
+\end{align}
+Having established the transformation laws of the background and the fluctuation fields,
+one next has to establish the transformation properties of the full quantum
+effective action, which will be derived from a partition that now reads
+\begin{align}
+  \mathrm e^{W_k} = \int \mathcal{D}\tilde h_{\mu\nu} \;
+  \mathrm e^{
+    - S[g_{\mu\nu}]
+    - S_k[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+    + S_{\mathrm{gf}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+    + S_{\mathrm{ghost}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+    + S_{\mathrm{aux}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+    + S_{\mathrm{src}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+  } \,.
+\end{align}
+It includes the classical gravitational action, the cutoff operator, the gauge fixing
+term, the resulting ghost action, the action of auxiliary fields, introduced through
+changes of variables, as well as the usual source terms. The strategy of
+Ref.~\cite{Morris:2016spn} was to derive the flow equation as well as the (modified)
+Ward identity of background scaling, and again try to combine and solve those two equations
+to uncover a background (scale) independent description of the renormalisation group.
+Using the linear parametrisation of the fluctuation field,
+this was possible if and only if the space-time dimension takes the value $d=6$.
 
+The first term in the action we shall look at is the gauge fixing. In Ref.~\cite{Morris:2016spn},
+a conventional gauge fixing was assumed
+\begin{align}
+  S_\mathrm{gf} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \; \bar g^{\mu\nu} F_\mu F_\nu \,,
+\end{align}
+where the gauge fixing condition $F_\mu$ is linear in $h_{\mu\nu}$ and only contains terms
+with covariant derivatives
+\begin{align}
+  F_\mu = \bnabla_\rho \, h^\rho{}_\mu - \frac{\beta + 1}{d} \, \bnabla_\mu \, h
+        = \bnabla_\rho \, \hT^\rho{}_\mu - \frac{\beta}{d} \, \bnabla_\mu \, h \,.
+\end{align}
+One can than show that the gauge condition transforms homogeneously
+\begin{align}
+  \weyl F_\mu = 2 \, \varepsilon \, F_\mu \,,
+\end{align}
+and at least in Landau-DeWitt gauge ($\alpha=0$, $\beta=1$), the gauge fixing
+is manifestly invariant under background rescaling:
+\begin{align}
+  \weyl S_\mathrm{gf} = 0 \,.
+\end{align}
+Furthermore, because of the particular form of the gauge fixing, the ghost action
+will always be bilinear in the fluctuation fields and only depend on the transformation
+properties of the background. The same is true for the auxiliary action, since it
+arises from functional Jacobians of fluctuations around the background. Consequently,
+we can always arrange the transformations (or equivalently the mass dimensions)
+of the ghost and auxiliary fields to make their respective actions invariant
+under background rescaling
+\begin{align}
+  \weyl S_\mathrm{ghost} = \weyl S_\mathrm{aux} = 0 \,.
+\end{align}
+The last part of the action to consider is the cutoff action
+\begin{align}
+  S_k = \sum_u \int \mathrm d^dx \, \sqrt{\bar g} \; u \, R_u \, u \,,
+\end{align}
+where we sum over all fluctuation fields $u$ and define the cutoff operators by
+\begin{align}
+  R_u = \Gamma^{(2u)}_k (P_k) - \Gamma^{(2u)}_k (\overbar \Delta) \,,
+\end{align}
+in such a way, that we effectively replace
+\begin{align}
+  \overbar \Delta \mapsto P_k(\overbar \Delta) \equiv \overbar \Delta + k^2 \, r(\overbar\Delta/k^2)
+\end{align}
+in the Hessian $\Gamma^{(2)}_k$. Here, $r(y)$ is a dimensionless cutoff profile, and
+$\overbar \Delta = -\bnabla^2 + \overbar E$ is a second order differential operator with
+endomorphism $E$. With this definitions and the transformation properties of the various
+fluctuation fields one can show that
+\begin{align}
+  \weyl S_k =
+  2d \int \mathrm d^dx \, \sqrt{\bar g} \; R_h \, h
+  - \frac 12 \int \mathrm d^dx \, \sqrt{\bar g} \; \sum_u u \, \dot R_u \, u
+  - \frac {d-6}2 \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \smashoperator{\sum_{u=\hT_{\mu\nu},\,h}} u \, R_u \, u \,.
+\end{align}
+The first two terms in this transformation will generate an anomaly in the modified Ward
+identity that is proportional to the renormalisation group flow, and it will be this
+contribution that enables one to combine the Ward identity and the flow equation. The
+third term however, is an additional anomaly that only vanishes in $d=6$. Moreover,
+one can show, that using the background field method%
+\footnote{%
+  In this approximation scheme, also called single-metric approximation, one
+  replaces derivatives w.r.t. the fluctuation field with derivatives w.r.t. background
+  field and then sets the former to zero. This scheme was and is very popular
+  to do actual calculations and we will use it in the next chapter.
+}
+$d=6$ is a necessary and sufficient condition for compatibility of the Ward identity and
+the flow equation.
+In the compatible case, one can combine the two equations as
+\begin{align}
+  \weyl \Gamma_k = \sum_u \frac{ \delta \Gamma_k }{ \delta u } \, \weyl u
+  = \varepsilon \, \dot \Gamma_k \,,
+\end{align}
+and we see that the only anomaly of background scale symmetry is given by the
+beta function of the effective average action itself.
+It is then possible, by means of the method of characteristics, to obtain
+solutions to the last equation of the form
+\begin{align}
+  \Gamma_k [ \bar g_{\mu\nu} ] (\overbar h) =
+  \hat \Gamma_{\hat k} [ \hat g_{\mu\nu} ] \,,
+\end{align}
+such that the (dynamical) dependence of the fluctuation field $\overbar h$
+gets incorporated into new variables
+\begin{align}
+  \hat k = \frac{ k }{ \sqrt{ 1 + \nicefrac{ \overbar h }{d} \, }} \,,
+  \quad \text{and} \quad
+  \hat g_{\mu\nu} = \sqrt{ 1 + \frac{ \overbar h }{d} \, } \,
+  \bar g_{\mu\nu} \,,
+\end{align}
+and the new action $\hat \Gamma$ obeys a formally equivalent flow equation
+as the old single-metric approximated action. That is, solutions to the flow
+equations in the latter approximation scheme respect background scale invariance,
+albeit the interpretation of the renormalisation group procedure completely
+changed under the light of this investigation.
+
+The rather unsatisfactory condition of $d=6$ has subsequently been weakened in
+Ref.~\cite{Percacci:2016arh}. There it was shown that using the exponential
+parametrisation of the metric fluctuation field (\cf App.~\ref{app:exp_param})
+all terms proportional to $(d-6)$ in the transformation laws of the cutoff action
+disappear. In addition, it was necessary to guarantee that no dimensionful
+parameters enter neither the gauge fixing term nor the cutoff operator
+(the latter is known as a `pure' cutoff, \cf Sec.~\ref{sec:purecutoff}).
+The former could than
+be made invariant by itself, as in the case of the linear parametrisation,
+by using a higher derivative gauge fixing action
+\begin{align}
+  S_\mathrm{gf} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
+  \bar g^{\mu\nu} \, F_\mu \, \overbar \Delta^{\frac d2 - 1} \, F_\nu \,,
+\end{align}
+with the gauge condition given above (for any values of the parameters
+$\alpha$ and $\beta$), or using the unimodular gauge (\cf again
+App.~\ref{app:exp_param}).
 
 
 
@@ -2426,6 +2563,7 @@ dressed ${\mathrm O(2)}$ scalar model.
 
 
 \section{The scalar-free cutoff}
+\label{sec:purecutoff}
 
 So far we have only considered type-I cutoffs which in the gravitational
 sector has the general form $F(\chi^i)R_k(-\bnabla^2)$, where again we denote
