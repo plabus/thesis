@@ -3,20 +3,23 @@ capital letters in sub/superscripts should probably be of smaller size
 all words in equations should be with \text
 
 
+Questions:
+==========
+
+all appendices: do I need \GNewton somewhere?
+ln ---> log everywhere
+S_k (or else) ---> \Delta S_k (or what?)
+
+
 TODO:
 =====
 
-Q: all appendices: do I need \GNewton somewhere?
-
-appendix A: ghost sector de Donder (maybe optinal)
+write technical intro
 appendix B: derivation flow equation
 appendix C: calculating Feynman diagrams
 
-write new developments in chapter 2
-
 ----------------------
 
-write technical intro
 conclusions 1--4
 
 ----------------------
@@ -44,6 +47,8 @@ beautify fig. 2.2--2.3
 DONE:
 =====
 
++++ write new developments in chapter 2
++++ appendix A: ghost sector de Donder (maybe optinal)
 +++ add "is based on the following papers"
 +++ write introduction
 +++ shorten chapter intro's
