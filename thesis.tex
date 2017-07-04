@@ -14,7 +14,15 @@
 
 \documentclass[11pt]{book}
 % \documentclass[11pt,draft]{book} % Use to see overflows
-\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+\usepackage[
+top=3cm,
+bottom=3cm,
+left=3.2cm,
+right=3.2cm,
+headsep=10pt,
+letterpaper,
+% showframe
+]{geometry} % Page margins
 \input{structure} % Insert the structure.tex file which contains
                   % the majority of the structure behind the template
 
@@ -134,7 +142,9 @@
 \newcommand{\FPthree}{\textsl{FP3}}
 \newcommand{\FPfour} {\textsl{FP4}}
 
-\newcommand{\weyl} {\delta_\varepsilon}
+\newcommand{\LambdaUV}{ \Lambda_{\scriptscriptstyle{\mathrm{UV}}} }
+\newcommand{\SLambda}{ S_{\scriptscriptstyle{\Lambda}} }
+\newcommand{\weyl}{\delta_\varepsilon}
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -662,16 +672,324 @@ All typesetting has been done with \LaTeX.
 
 \section{The Wilsonian Renormalisation Group}
 
-% \subsection{Quantum field theory basics}
+In this section we will introduce the functional renormalisation group as
+a tool to solve a quantum field theory. In particular, we will see how to
+formalise Wilson's idea of a functional renormalisation group for the action
+of a quantum field theory by introducing smooth infrared cutoff operators
+which will depend on the energy scale. We will then introduce a scale-dependent
+effective average action and derive its exact renormalisation group equation.
+Finally, we will discuss some strategies how to obtain approximate solutions
+to the exact equation.
 
-% \subsection{Wilson's idea}
 
-\subsection{The effective average action}
+\subsection{Observables in quantum field theories}
 
-smooth cutoff examples and types of cutoffs, optimised cutoff
-parametrisation of fields (?) ---> linear, exponential
+In order to solve a quantum field theory, one is interested in
+being able to calculate any physical observable the theory may predict.
+This will in particular include the existence of particles---elementary
+or bound---as well as their properties, such as masses or charges,
+but also their behaviour when interacting amongst each other, which
+can be quantified using cross-sections.
+All of these observables may be expressed using the kinematics
+of the theory, as well as its dynamical content, the latter of
+which is completely encoded in the so-called $n$-point correlation
+functions
+\begin{align}
+  C_n(x_1, \, x_2,\, \dots, \, x_n) =
+  \big\langle  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \big\rangle \,.
+\end{align}
+These are functional expectation values of products of $n$ field
+operators at different space-time positions and they may be
+calculated using the path integral formalism via
+\begin{align}
+  \big\langle  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \big\rangle
+  = \frac{1}{Z} \int \mathcal D \Phi \;
+  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \, e^{-S \lbrack \Phi \rbrack } \,,
+\end{align}
+where $Z$ is a normalisation constant, known as the partition function,
+$\Phi$ represent the field content of the theory and $e^{-S \lbrack \Phi \rbrack}$
+is the Euclidean Boltzmann factor---the (quantum) probability distribution
+which weights every field configuration in the path integral
+according to its classical action.
 
-\subsection{The exact flow of the effective average action}
+\noindent
+A more elegant way to obtain any $n$-point correlation function is
+by means of the generating functional $W \lbrack \Phi \rbrack$, which is defined
+via the relation
+\begin{align}
+  e^{ -W \lbrack \Phi \rbrack }
+  = \int \mathcal D \Phi \;
+  e^{-S \lbrack \Phi \rbrack + \int J \cdot \Phi } \,,
+\end{align}
+and taking derivatives with respect to the source term $J$
+\begin{align}
+  C_n(x_1, \, x_2,\, \dots, \, x_n) =
+  \frac{ \delta W }{ \delta J(x_1) \, \delta J(x_2) \, \dots \, \delta J(x_n) } \bigg|_{J=0} \;,
+\end{align}
+which are evaluated at $J=0$. Solving a quantum field theory can
+thus equivalently be viewed as calculating the generating functional
+(or its image under some one-to-one mapping, such as the
+Legendre transformation).
+One very common way to do so approximately, is through perturbation
+theory. There, one separates the action into a kinetic term, which
+describes the freely propagating fields, and a potential term,
+which in turn includes the vertices of the theory, \ie the way fields
+interact amongst themselves. It is then the latter that is expanded
+in powers of some small quantity, such as a coupling parameter,
+in order to calculate perturbations around the free theory.
+Not only relies this approach on the existence of a small expansion
+parameter, it is also by its very nature bound to hide non-analytic
+(or non-perturbative) dependencies of observables within the quantum field theory.
+
+An alternative method to calculate the generating functional is based
+on Wilson's idea of a functional renormalisation group, and is motivated
+by the following observation. With regards to its defining relation,
+the generating functional $W$ can be viewed as the quantum equivalent
+of the classical (or bare) action $S$.
+It is obtained by integrating over all possible quantum mechanical
+configurations multiplied with their classical Boltzmann weight.
+Furthermore, one can show that the perturbative expansion
+(if applicable) of any correlation function
+calculated with action $S$ is equivalent to the same expansion
+calculated with the `quantum action' $W$, retaining only tree-level
+diagrams. This motivates the definition of an energy scale dependent
+action $\SLambda$, which is obtained by integrating out
+only momentum modes $|q|$ that are higher%
+\footnote{%
+  In addition we have to regularise the theory in the ultraviolet,
+  for instance via a cutoff $\LambdaUV$. However, the details
+  of such a procedure are irrelevant for the renormalisation group
+  equation discussed here, as will become clear shortly.
+}
+than some given cutoff scale $\Lambda$
+\begin{align}
+  e^{ - \SLambda \lbrack \Phi \rbrack }
+  = \smashoperator{ \int_{ \Lambda \, \leq \, |q| \, \leq \, \LambdaUV } }
+  \mathcal D \Phi \;
+  e^{-S \lbrack \Phi \rbrack} \,.
+\end{align}
+The generating functional may then be recovered by integrating out
+the remaining modes
+\begin{align}
+  e^{ - W \lbrack \Phi \rbrack }
+  = \smashoperator{ \int_{ 0 \, \leq \, |q| \, \leq \, \Lambda } }
+  \mathcal D \Phi \;
+  e^{-\SLambda \lbrack \Phi \rbrack} \,.
+\end{align}
+In this way, we can define a scale dependent quantum action which
+describes physics at same given energy scale $\Lambda$ in terms of
+its tree-level diagrams. In particular, we may quantify the dependence
+of $\SLambda$ on the energy scale
+through its beta functional $\nicefrac{ \mathrm d\SLambda }{ \mathrm d\Lambda }$,
+which can be defined through a first-order integro-differential equation
+\begin{align}
+  \frac{ \mathrm d \SLambda }{ \mathrm d \Lambda }
+  = \lim_{ \delta \Lambda \rightarrow 0 }
+  \frac{ S_{\scriptscriptstyle{\Lambda+\delta\Lambda}} - \SLambda }{ \delta \Lambda } \,.
+\end{align}
+Wilson's renormalisation group thus gives us another strategy to
+solve a quantum field theory. In order to do so, we have to find the solution to
+the renormalisation group equation with the boundary condition
+$S_\LambdaUV = S$,
+and subsequently integrate towards the infrared,
+$W = \lim_{\Lambda \rightarrow 0} \SLambda$.
+
+Although this approach does not seem to be any easy than calculating
+the original generating functional $W$ directly, it does
+offer a number of advantages:
+\bigskip
+\begin{itemize}
+  \setlength\itemsep{1.2mm}
+  \item
+    The renormalisation group is conceptually simple and physically intuitive.
+  \item
+    The beta function is finite. In particular, ultraviolet divergences
+    that may appear on the right hand side of the renormalisation group
+    equation cancel each other.
+  \item
+    The renormalisation group is non-perturbative, as it does not rely on the use of a small
+    expansion parameter.
+  \item
+    The renormalisation group equation has a simple one-loop form.%
+    \footnote{
+      One sees that as follows: ...
+    }
+\end{itemize}
+\bigskip
+\nointent
+Note that the cutoff $\Lambda$ may be thought of as an ultraviolet cutoff,
+since for any given $\SLambda$, it cuts off the high momentum modes in
+the path integral, when calculating the partition function.
+However, in the definition of $\SLambda$ itself, it is an infrared cutoff
+for the high energy modes that get integrated out. For the differential
+equation that is the renormalisation group equation, this distinction
+clearly does not play any r\^ole. To formalise Wilson's idea and
+establish a tool for practical calculations, we will introduce
+a smooth infrared cutoff (opposed to the sharp cutoff used before)
+and use the Legendre transform of the generating function $W$ to
+derive an exact functional renormalisation group equation.
+
+
+\subsection{Smooth cutoff operators}
+
+Our aim for this section is it to introduce a concept of a scale dependent
+classical (or bare) action which can then be integrated over in the path
+integral to obtain a scale dependent quantum action.
+
+In order to do this, for any given energy scale $k$ we want to distinguish
+modes with low momenta $|q|<k$ and modes with high momenta $|q|>k$.
+Since it is the high momentum modes we want to integrate out, they should
+remain undisturbed by the cutoff procedure, \ie propagate as given by
+the theory. The low momentum modes however, should be suppressed, \ie
+not be excited and nor propagate. Furthermore, we want to
+alter only the propagation of any mode, and not the interaction structure.
+This is why we choose to introduce a bilinear term in the fields,
+which in momentum space simply reads
+\begin{align}
+  \Delta S_k [\phi] = \frac 12 \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
+  \varphi(-q) \, R_k(q^2) \, \varphi(q) \,.
+\end{align}
+Although we will outline the case of a scalar field here first, it will be
+easy to generalise this procedure to other types of fields later on.
+One should think of the regulator or cutoff operator $R_k(q^2)$ as a scale-dependent
+mass term. To make this idea more precise, let us have a look
+at the propagator that results from the introduction of this regulator term
+\begin{align}
+  G_k(q^2) = \frac{1}{ q^2 + R_k(q^2) } \,.
+\end{align}
+This shows clearly, that we indeed introduced an infrared cutoff.
+To follow the strategy outlined above, all high momentum modes
+should be left unchanged and thus should acquire a mass
+$m_k = R_k(q^2) \approx 0$ whenever $|q| > k$. Furthermore,
+we may want to make sure that the limit $R_k \rightarrow 0$
+happens sufficiently fast (\eg exponentially). The low momentum
+modes on the other hand should obtain a mass $m_k = R_k(q^2) \approx k$,
+for all $|q| < k$, such that their energy always remains below the mass gap.
+It is often beneficent to choose the transition between these two regimes
+to be smooth. This is because when dealing with the vertex expansion
+approximation scheme of the renormalisation group equation or with
+anomalous dimension, their are often times derivatives acting on the cutoff
+operator. However, one of the most popular choices of the cutoff operator,
+the optimised cutoff, is merely continuous.
+
+\begin{figure}
+  \begin{center}
+    \begin{enumerate}
+      \setlength\itemsep{1.5mm}
+      \item
+        For any $k$ fixed, $R_k(q^2)$ is monotonically decreasing.
+      \item
+        For any $q^2$ fixed, $R_k(q^2)$ is monotonically increasing.
+      \item
+        For any $q^2 > k^2$, $R_k(q^2) \rightarrow 0$ sufficiently fast.
+      \item
+        $\lim_{k \rightarrow 0} R_k(q^2) = 0$.
+      \item
+        $R_k(0) = k^2$.
+    \end{enumerate}
+  \end{center}
+  \caption{Formal requirements on a (standard) cutoff operator.}
+  \label{fig:standardcutoff}
+\end{figure}
+
+We summarise the requirements on the cutoff operator%
+\footnote{%
+  The requirements listed here characterise a so-called
+  standard cutoff. However, we will not be dealing with
+  non-standard cutoffs in this thesis.
+}
+in Fig.~\ref{fig:standardcutoff}. Requirements 1--3
+have been explained above%
+\footnote{%
+  It might be easier to understand requirement 2, by realising
+  that for decreasing $k$ the mass gap should reduce for all
+  momentum modes $q^2$ simultaneously.
+}
+and simply implement our cutoff strategy. Requirement 4
+is self-evident, as it guarantees to match the standard case when the
+cutoff is switched off. The last requirement will turn out to guarantee that
+we recover the universal one-loop beta functions for dimensionless
+variables. It may be viewed as a normalisation condition.
+
+After this technical motivation, let us now list some examples of
+cutoff operators used in actual calculations. Assigning canonical
+dimensions to all fields, we can factor out the dimensional
+dependence in the cutoff operator and write
+\begin{align}
+  R_k(q^2) = k^2 \, r(y) \,,
+\end{align}
+where $y=\nicefrac{q^2}{k^2}$ is the dimensionless momentum
+of the modes which get integrated over in the path integral
+in units of the squared scale $k^2$, and $r(y)$ is a dimensionless
+function, usually called the (cutoff) profile function.
+Some popular choices of profile functions include:
+\begin{align}
+  r(y) &= \frac{ y }{ e^y - 1} \,, \\
+  r(y) &= \frac{ y^2 }{ e^{y^2} - 1} \,, \\
+  r(y) &= \vphantom{ \frac{ y^2 }{ e^{y^2} - 1} } (1-y) \, \theta(1-y) \,.
+\end{align}
+The last profile function,
+the optimised cutoff, \cf Refs.~\cite{Litim:2000ci,Litim:2001up},
+is by far the most widely used.
+We display the shapes of these three profiles and the propagator that
+result in Fig.~\ref{fig:profiles}.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+          group style={group size=2 by 1, horizontal sep=10pt, vertical sep=10pt},
+          width=0.49\linewidth,
+          xmin=0, xmax=3,
+          legend pos=north east,
+          legend cell align=left,
+          grid=major,
+          grid style=dashed,
+          ylabel absolute,
+        ]
+        \nextgroupplot[ % 1
+          xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
+          ylabel={cutoff profile $\; r(y)$},
+          ymin=0.0, ymax=1.0,
+          ytick={0.0,0.25,0.50,0.75,1.0},
+        ]
+        \addplot[blue,thick,samples=50]{ x / ( exp(x) - 1 )};
+        \addplot[green,thick,samples=100]{ x^2 / ( exp(x^2) - 1 )};
+        \addplot[red,thick,domain=0:1,thick]{ 1 -x };
+        \addplot[red,thick,domain=1:3,thick]{ 0.002 };
+        \legend{
+          \, $\frac{ y }{ e^y - 1}$,
+          \, $\frac{ y^2 }{ e^{y^2} - 1}$,
+          \, $\vphantom{\frac{ y^2 }{ e^{y^2} - 1}} \scriptstyle{(1-y) \, \theta(1-y)}$
+        }
+
+        \nextgroupplot[ % 2
+          xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
+          ylabel near ticks, yticklabel pos=right,
+          ylabel={propagator $\; k^2 \, G_k(q^2)$},
+          ymin=0.0, ymax=1.5,
+        ]
+        \addplot[black,thick,dashed,samples=50,domain=0.1:3]{ 1/x };
+        \addplot[blue,thick,samples=50]{ 1/( x + x / ( exp(x) - 1 ))};
+        \addplot[green,thick,samples=100]{ 1/( x + x^2 / ( exp(x^2) - 1 ))};
+        \addplot[red,domain=0:1,thick]{ 1 - 0.002 };
+        \addplot[red,domain=1:3,thick]{ 1/x };
+        \legend{
+          \, $\frac{ 1 }{ y }$,
+        }
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \caption{
+    (Left) Standard profile functions and
+    (right) their resulting propagators.
+  }
+  \label{fig:profiles}
+\end{figure}
+
+
+\subsection{The effective average action and its exact flow}
 
 \subsection{Approximation schemes}
 truncation, vertex and derivative expansion, the LPA
@@ -1965,9 +2283,9 @@ in such a way that
 $\langle \overbar h,\,h^\perp \rangle \equiv \overbar h \int \mathrm d^dx \, h^\perp = 0$,
 one can the derive the following transformation laws:
 \begin{align}
-  \weyl h^\perp &= - 2 \, \varepsilon \, h^\perp \,, \\
-  \weyl \overbar h^\pert &= - 2 \, \varepsilon \, ( \overbar h + d ) \,, \\
-  \weyl      \hT_{\mu \nu} &= 0 \,.
+  \weyl h^\perp       &= - 2 \, \varepsilon \, h^\perp \,, \\
+  \weyl \overbar h    &= - 2 \, \varepsilon \, \big( \overbar h + d \big) \,, \\
+  \weyl \hT_{\mu \nu} &= 0 \,.
 \end{align}
 From this it is easy to see that the following field combinations are invariant
 under background rescaling:
@@ -1976,7 +2294,7 @@ under background rescaling:
 \end{align}
 Having established the transformation laws of the background and the fluctuation fields,
 one next has to establish the transformation properties of the full quantum
-effective action, which will be derived from a partition that now reads
+effective action, which will be derived from a partition function that now reads
 \begin{align}
   \mathrm e^{W_k} = \int \mathcal{D}\tilde h_{\mu\nu} \;
   \mathrm e^{
@@ -2005,8 +2323,8 @@ a conventional gauge fixing was assumed
 where the gauge fixing condition $F_\mu$ is linear in $h_{\mu\nu}$ and only contains terms
 with covariant derivatives
 \begin{align}
-  F_\mu = \bnabla_\rho \, h^\rho{}_\mu - \frac{\beta + 1}{d} \, \bnabla_\mu \, h
-        = \bnabla_\rho \, \hT^\rho{}_\mu - \frac{\beta}{d} \, \bnabla_\mu \, h \,.
+  F_\mu = \bnabla_\rho \, h{}^\rho{}_\mu - \frac{\beta + 1}{d} \, \bnabla_\mu \, h
+  = \bnabla_\rho \, \hT{}^\rho{}_\mu - \frac{\beta}{d} \, \bnabla_\mu \, h \,.
 \end{align}
 One can than show that the gauge condition transforms homogeneously
 \begin{align}
@@ -5357,7 +5675,7 @@ There are another two flavours of the
   V^{ (2,\,3{\TT}) \, \mu\nu\rho\sigma\delta\gamma }
   = \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 12 }
   \Big(
-      q_1^{(\mu} q_2^{\rho)} \mathds{1}^{\nu\sigma\gamma\delta}
+      q_1^{(\mu} q_2^{\rho)}   \mathds{1}^{\nu\sigma\gamma\delta}
    &+ q_1^{(\mu} q_2^{\sigma)} \mathds{1}^{\nu\rho\gamma\delta}
     + q_1^{(\mu} q_2^{\gamma)} \mathds{1}^{\nu\rho\sigma\delta}
     + q_1^{(\mu} q_2^{\delta)} \mathds{1}^{\nu\rho\sigma\gamma}
@@ -5367,8 +5685,8 @@ There are another two flavours of the
     + q_1^{(\nu} q_2^{\gamma)} \mathds{1}^{\mu\rho\sigma\delta}
     + q_1^{(\nu} q_2^{\delta)} \mathds{1}^{\mu\rho\sigma\gamma}
     \nonumber \\
-    q_1^{(\rho} q_2^{\gamma)}   \mathds{1}^{\mu\nu\sigma\delta}
-   &+ q_1^{(\rho} q_2^{\delta)} \mathds{1}^{\mu\nu\sigma\gamma}
+      q_1^{(\rho}   q_2^{\gamma)} \mathds{1}^{\mu\nu\sigma\delta}
+   &+ q_1^{(\rho}   q_2^{\delta)} \mathds{1}^{\mu\nu\sigma\gamma}
     + q_1^{(\sigma} q_2^{\gamma)} \mathds{1}^{\mu\nu\rho\delta}
     + q_1^{(\sigma} q_2^{\delta)} \mathds{1}^{\mu\nu\rho\gamma}
   \Big) ,
