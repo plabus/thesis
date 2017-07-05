@@ -786,6 +786,7 @@ which can be defined through a first-order integro-differential equation
   \frac{ \mathrm d \SLambda }{ \mathrm d \Lambda }
   = \lim_{ \delta \Lambda \rightarrow 0 }
   \frac{ S_{\scriptscriptstyle{\Lambda+\delta\Lambda}} - \SLambda }{ \delta \Lambda } \,.
+  \label{eq:wilsonRG}
 \end{align}
 Wilson's renormalisation group thus gives us another strategy to
 solve a quantum field theory. In order to do so, we have to find the solution to
@@ -803,17 +804,18 @@ offer a number of advantages:
   \item
     The renormalisation group is conceptually simple and physically intuitive.
   \item
-    The beta function is finite. In particular, ultraviolet divergences
-    that may appear on the right hand side of the renormalisation group
-    equation cancel each other.
-  \item
-    The renormalisation group is non-perturbative, as it does not rely on the use of a small
-    expansion parameter.
+    The renormalisation group is non-perturbative.
+    In particular, it does not rely on the use of a small expansion parameter.
   \item
     The renormalisation group equation has a simple one-loop form.%
     \footnote{
       One sees that as follows: ...
     }
+  \item
+    The resulting beta function is finite.
+    In particular, ultraviolet divergences
+    that may appear on the right hand side of the renormalisation group
+    equation cancel each other.
 \end{itemize}
 \bigskip
 \nointent
@@ -940,7 +942,6 @@ result in Fig.~\ref{fig:profiles}.
       \begin{groupplot}[
           group style={group size=2 by 1, horizontal sep=10pt, vertical sep=10pt},
           width=0.49\linewidth,
-          xmin=0, xmax=3,
           legend pos=north east,
           legend cell align=left,
           grid=major,
@@ -950,10 +951,11 @@ result in Fig.~\ref{fig:profiles}.
         \nextgroupplot[ % 1
           xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
           ylabel={cutoff profile $\; r(y)$},
+          xmin=0, xmax=3,
           ymin=0.0, ymax=1.0,
           ytick={0.0,0.25,0.50,0.75,1.0},
         ]
-        \addplot[blue,thick,samples=50]{ x / ( exp(x) - 1 )};
+        \addplot[blue,thick,samples=100]{ x / ( exp(x) - 1 )};
         \addplot[green,thick,samples=100]{ x^2 / ( exp(x^2) - 1 )};
         \addplot[red,thick,domain=0:1,thick]{ 1 -x };
         \addplot[red,thick,domain=1:3,thick]{ 0.002 };
@@ -967,15 +969,16 @@ result in Fig.~\ref{fig:profiles}.
           xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
           ylabel near ticks, yticklabel pos=right,
           ylabel={propagator $\; k^2 \, G_k(q^2)$},
-          ymin=0.0, ymax=1.5,
+          xmin=0, xmax=6,
+          ymin=0.0, ymax=2,
         ]
-        \addplot[black,thick,dashed,samples=50,domain=0.1:3]{ 1/x };
-        \addplot[blue,thick,samples=50]{ 1/( x + x / ( exp(x) - 1 ))};
+        \addplot[black,thick,dashed,samples=50,domain=0.1:6]{ 1/x };
+        \addplot[blue,thick,samples=100]{ 1/( x + x / ( exp(x) - 1 ))};
         \addplot[green,thick,samples=100]{ 1/( x + x^2 / ( exp(x^2) - 1 ))};
         \addplot[red,domain=0:1,thick]{ 1 - 0.002 };
-        \addplot[red,domain=1:3,thick]{ 1/x };
+        \addplot[red,domain=1:6,thick]{ 1/x };
         \legend{
-          \, $\frac{ 1 }{ y }$,
+          $\frac{ 1 }{ y }$,
         }
 
       \end{groupplot}
@@ -983,13 +986,268 @@ result in Fig.~\ref{fig:profiles}.
   \end{center}
   \caption{
     (Left) Standard profile functions and
-    (right) their resulting propagators.
+    (right) their resulting propagators in units of
+    the squared cutoff scale $k^2$.
+    The free propagator is added here as reference.
   }
   \label{fig:profiles}
 \end{figure}
 
 
 \subsection{The effective average action and its exact flow}
+
+Having defined a scale dependent cutoff operator for the
+classical action, we can now proceed and define a scale
+dependent generating functional via
+\begin{align}
+  e^{ W_k \lbrack J \rbrack }
+  = \int \mathcal D \tilde \varphi \;
+  e^{
+    - S \lbrack \tilde \varphi \rbrack
+    - \Delta S_k \lbrack \tilde \varphi \rbrack
+    + \int \mathrm d^dx \; J(x) \, \tilde \varphi(x)
+  } \,.
+\end{align}
+It will turn out to be more convenient
+to pass to the
+functional Legendre transform
+of $W_k[J]$, called the effective
+average action, which is defined by
+\begin{align}
+  \hat \Gamma_k [\varphi] = - W_k[J] + \int \mathrm d^dx \; J(x) \, \varphi(x) \,.
+\end{align}
+Here we have introduced a new variable $\varphi$ as
+the functional derivative of the old functional $W_k$ with
+respect to the old variable $J$:
+\begin{align}
+  \frac{ \delta W_k }{ \delta J(x) }
+  = \langle \tilde \varphi(x) \rangle
+  \equiv \varphi (x) \,.
+\end{align}
+The first equality holds by definition of the generating functional
+$W_k$ and the new variable is called the classical field, since
+it is exactly this expectation value that appears in the classical
+action. The last relation must be invertible such that the old
+variable may be expressed in terms of the new one, $J=J[\phi]$.
+We can then take the functional derivative of the new function
+$\hat \Gamma_k$ with respect to the new variable $\phi$ in order
+to discover that
+\begin{align}
+  \frac{ \delta \hat \Gamma_k }{ \delta \varphi (x) }
+  = - \int \mathrm d^dy \; \frac{ \delta W_k }{ \delta J(y) } \,
+  \frac{ \delta J(y) }{ \delta \varphi(x) }
+  + \int \mathrm d^dy \; \frac{ \delta J(y) }{ \delta \varphi(x) } \, \varphi(x)
+  + \int \mathrm d^dy \; J(y) \, \delta(x-y)
+  = J(x) \,,
+\end{align}
+where we made use of the definition of the new variable $\varphi$. Making
+use of this observation, we can write the exponential of the negative
+effective average action as
+\begin{align}
+  e^{ - \hat \Gamma_k \lbrack \varphi \rbrack }
+  = \int \mathcal D \tilde \varphi \;
+  e^{
+    - S \lbrack \tilde \varphi \rbrack
+    - \Delta S_k \lbrack \tilde \varphi \rbrack
+    + \int \mathrm d^dx \;
+    \frac{ \delta \hat \Gamma_k }{ \delta \varphi (x) }
+    \, \big( \tilde \varphi(x) - \varphi(x) \big)
+  } \,.
+\end{align}
+We can now perform a change of the integration variable
+to $\tilde \chi = \tilde \varphi - \varphi$, to obtain
+(assuming invariance of the integration measure under
+constant shifts):
+\begin{align}
+  e^{ - \hat \Gamma_k \lbrack \varphi \rbrack }
+  = \int \mathcal D \tilde \chi \;
+  e^{
+    - S \lbrack \tilde \chi + \varphi \rbrack
+    - \Delta S_k \lbrack \tilde \chi + \varphi \rbrack
+    + \int \mathrm d^dx \;
+    \frac{ \delta \hat \Gamma_k }{ \delta \varphi (x) }
+    \, \tilde \chi(x)
+  } \,.
+\end{align}
+We will now shift the effective average action by the
+cutoff action in order to obtain a more beautiful final
+expression:
+\begin{align}
+  \Gamma_k \equiv \hat \Gamma_k - \Delta S_k \,.
+\end{align}
+Observing that due to the bilinear form of the cutoff action
+we have
+\begin{align}
+  - \Delta S_k [ \tilde \chi + \varphi ]
+  + \Delta S_k [ \varphi ]
+  + \int \mathrm d^dx \;
+  \frac{ \delta \Delta S_k }{ \delta \varphi (x) }
+  \, \tilde \chi(x)
+  = - \Delta S_k [ \tilde \chi ] \,,
+\end{align}
+we finally arrive at the following expression:
+\begin{align}
+  e^{ - \Gamma_k \lbrack \varphi \rbrack }
+  = \int \mathcal D \tilde \chi \;
+  e^{
+    - S \lbrack \tilde \chi + \varphi \rbrack
+    - \Delta S_k \lbrack \tilde \chi \rbrack
+    + \int \mathrm d^dx \;
+    \frac{ \delta \Gamma_k }{ \delta \varphi (x) }
+    \, \tilde \chi(x)
+  } \,.
+\end{align}
+From the last identity, one can show using the
+formal requirements on a standard cutoff that
+\begin{align}
+  \lim_{k \rightarrow 0} \Gamma_k = \Gamma
+  \quad \text{and} \quad
+  \lim_{k \rightarrow \infty} \Gamma_k = S \,,
+\end{align}
+where $\Gamma$ is the usual effective action
+define without the cutoff action $\Delta S_k$.
+
+We are now ready to derive the exact renormalisation
+group equation. To this end we define a renormalisation
+group time
+\begin{align}
+  t \equiv \log \left( \frac k{\mu} \right) ,
+\end{align}
+where $\mu$ is an arbitrary energy scale. Then from
+the definition of the effective average action we
+have
+\begin{align}
+  \frac{ \mathrm d \Gamma_k }{ \mathrm dt }
+  = - \frac{ \mathrm d W_k }{ \mathrm dt }
+  - \frac{ \mathrm d \Delta S_k }{ \mathrm dt } \,.
+\end{align}
+The first term can be re-expressed by observing
+that
+\begin{align}
+  \frac{ \mathrm d e^{W_k} }{ \mathrm dt }
+  = \dot W_k \, e^{W_k}
+  = \int \mathcal D \tilde \varphi \;
+  \big( - \Delta \dot S_k \big) \,
+  e^{
+    - S \lbrack \tilde \varphi \rbrack
+    - \Delta S_k \lbrack \tilde \varphi \rbrack
+    + \int \mathrm d^dx \; J(x) \, \tilde \varphi(x)
+  }
+  = \big\langle - \Delta \dot S_k \big\rangle \, e^{W_k} \,,
+\end{align}
+where we used dots to denote derivatives with respect to
+time $t$. This expression implies
+\begin{align}
+  \dot W_k
+  = \big\langle - \Delta \dot S_k \big\rangle
+  = - \frac 12
+  \left\langle
+    \int \mathrm d^dx \; \tilde \varphi (x) \, \dot R_k \, \tilde \varphi(x)
+  \right\rangle .
+\end{align}
+% where $R^*$ is the cutoff operator in real space
+Using the fact that the cutoff operator $R_k$ is independent
+of the field $\tilde \varphi$ we can write the renormalisation
+group time derivative of the effective average action as
+\begin{align}
+  \frac{ \mathrm d \Gamma_k }{ \mathrm dt }
+  = \frac 12 \, \Tr
+  \left[
+    \big(
+      \langle \tilde \varphi \tilde \varphi \rangle
+      - \langle \tilde \varphi \rangle ^ 2
+    \big)
+    \, \dot R_k
+  \right] ,
+\end{align}
+where the trace operator $\Tr$ indicates integration
+over space-time and momentum. To make further progress, we
+first note that the definition of $W_k$ implies
+\begin{align}
+  \frac{ \delta^2 W_k }{ \delta J(x) \, \delta J(y) }
+  =
+  \big\langle \tilde \varphi (x) \, \tilde \varphi (y) \big\rangle
+  - \big\langle \tilde \varphi (x) \big\rangle \big\langle \tilde \varphi (y) \big\rangle \,,
+\end{align}
+and that we can furthermore re-express the second derivative
+acting on $W_k$ as
+\begin{align}
+  \frac{ \delta^2 W_k }{ \delta J \, \delta J }
+  = \frac{ \delta \varphi }{ \delta J }
+  = \left( \frac{ \delta J }{ \delta \varphi } \right) ^{\!\! -1}
+  = \left( \frac{ \delta^2 \hat \Gamma_k }{ \delta \varphi \, \delta \varphi } \right) ^{\!\! -1} \,.
+\end{align}
+Here, the first equality follows from the definition of the classical field,
+and the last equality from the definition of the Legendre transform.%
+\footnote{%
+  Note that $W_k$ is a functional of $J$ only.
+}
+This finally enables us to write
+\begin{align}
+  \big\langle \tilde \varphi (x) \, \tilde \varphi (x) \big\rangle
+  - \big\langle \tilde \varphi (x) \big\rangle \big\langle \tilde \varphi (x) \big\rangle
+  = \left( \frac{ \delta^2 \hat \Gamma_k }{ \delta \varphi(x) \, \delta \varphi(x) } \right) ^{\!\! -1} \,.
+\end{align}
+Substituting the definition of $\Gamma_k$ into the last expression,
+we can obtain the exact or functional renormalisation group equation,
+also called Wetterich equation, as follows
+\begin{align}
+  % \boxed{
+    \frac{ \mathrm d \Gamma_k }{ \mathrm dt }
+    = \frac 12 \; \Tr
+    \left[
+      \left(
+        \frac{ \delta^2 \Gamma_k }{ \delta \varphi \, \delta \varphi } + R_k
+      \right) ^{\!\!-1}
+      \! \dot R_k
+    \right] .
+  % }
+\end{align}
+Having formalised Wilson's idea of a functional renormalisation group,
+and arrived at a rigorous equivalent to Eqn.~(\ref{eq:wilsonRG}),
+some comments are in order. Let us in particular reappraise the
+features which we considered advantageous of an renormalisation group approach:
+\bigskip
+\begin{itemize}
+  \setlength\itemsep{1.2mm}
+  \item
+    \textit{The renormalisation group is conceptually simple and physically intuitive.}
+    In particular, it is generic and may be applied to any quantum field theory,
+    may it be fundamental or effective.
+  \item
+    \textit{The renormalisation group is non-perturbative.}
+    This is true, since no approximation is made on the way of deriving the
+    equation.
+  \item
+    \textit{The renormalisation group equation has a simple one-loop form.}
+    In particular, it contains a closed loop on its right hand side,
+    composed of a full (regularised)  propagator and an insertion
+    of the running cutoff operator $\dot R_k$.
+    The full propagator, obtained from the quantum effective action contains
+    all the non-perturbative information.
+    The origin of the one-loop form is manifestly due to the bilinear
+    cutoff operator. If one would choose to include higher order terms,
+    higher order vertices would appear in the renormalisation group equation.
+  \item
+    \textit{The resulting beta function is finite.}
+    This is due to the fact that $\dot R_k(q^2)$ goes to zero
+    sufficiently fast whenever $q^2 > k^2$, thus guaranteeing convergence
+    of the momentum integrals in the ultraviolet. The cutoff operator
+    $R_k$ additionally imparts an infrared regularisation
+    by introducing a mass gap whenever $k \neq 0$.
+\end{itemize}
+\bigskip
+\nointent
+Moreover, given an effective action at some scale $k_0$ the
+effective average action can be defined at any other scale $k$
+via the function renormalisation group equation. This allows
+in particular, as we already anticipated, to calculated the
+quantum effective action $\Gamma$ at $k=0$, given that
+$\Gamma_k$ has been fixed at some scale $k$ for one reason or another.
+Lastly note, that no reference to ultraviolet physics is made
+anywhere in the exact renormalisation group equation, \ie
+all quantities involved only depend on some intermediate scale $k$.
+
 
 \subsection{Approximation schemes}
 truncation, vertex and derivative expansion, the LPA
