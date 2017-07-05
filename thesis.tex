@@ -714,10 +714,10 @@ according to its classical action.
 
 \noindent
 A more elegant way to obtain any $n$-point correlation function is
-by means of the generating functional $W \lbrack \Phi \rbrack$, which is defined
+by means of the generating functional $W \lbrack J \rbrack$, which is defined
 via the relation
 \begin{align}
-  e^{ -W \lbrack \Phi \rbrack }
+  e^{ W \lbrack J \rbrack }
   = \int \mathcal D \Phi \;
   e^{-S \lbrack \Phi \rbrack + \int J \cdot \Phi } \,,
 \end{align}
@@ -771,7 +771,7 @@ than some given cutoff scale $\Lambda$
 The generating functional may then be recovered by integrating out
 the remaining modes
 \begin{align}
-  e^{ - W \lbrack \Phi \rbrack }
+  e^{ W }
   = \smashoperator{ \int_{ 0 \, \leq \, |q| \, \leq \, \Lambda } }
   \mathcal D \Phi \;
   e^{-\SLambda \lbrack \Phi \rbrack} \,.
@@ -793,7 +793,7 @@ solve a quantum field theory. In order to do so, we have to find the solution to
 the renormalisation group equation with the boundary condition
 $S_\LambdaUV = S$,
 and subsequently integrate towards the infrared,
-$W = \lim_{\Lambda \rightarrow 0} \SLambda$.
+$W = - \lim_{\Lambda \rightarrow 0} \SLambda$.
 
 Although this approach does not seem to be any easy than calculating
 the original generating functional $W$ directly, it does
