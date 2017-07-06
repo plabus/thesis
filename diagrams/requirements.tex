@@ -1,0 +1,57 @@
+\begin{tikzpicture}
+  \tikzmath{
+    \vert = 0.85; % vertical distance between requirements
+  }
+
+  \coordinate (base) at (-10.0,  1.45);
+
+  \node[right] (one)   at ($ (base) - (0,0.0*\vert) $) {1. For any $k$ fixed, $R_k(q^2)$ is monotonically decreasing.};
+  \node[right] (two)   at ($ (base) - (0,1.0*\vert) $) {2. For any $q^2$ fixed, $R_k(q^2)$ is monotonically increasing.};
+  \node[right] (three) at ($ (base) - (0,2.0*\vert) $) {3. For any $q^2 > k^2$, $R_k(q^2) \rightarrow 0$ sufficiently fast.};
+  \node[right] (four)  at ($ (base) - (0,3.0*\vert) $) {4. $\lim_{k \rightarrow 0} R_k(q^2) = 0$.};
+  \node[right] (five)  at ($ (base) - (0,4.0*\vert) $) {5. $R_k(0) = k^2$.};
+
+  \node[
+    draw,
+    thick,
+    fit={(one) (two) (three) (four) (five)},
+    inner sep=8pt
+  ] (box) {};
+
+  \begin{groupplot}[
+    group style={group size=1 by 2, horizontal sep=10pt, vertical sep=14pt},
+    width=3cm,
+    height=2.1cm,
+    scale only axis,
+    ]
+
+    \nextgroupplot[
+    xlabel={$q^2$},
+    ylabel={$R_{1}(q^2)$},
+    xlabel near ticks, xticklabel pos=top,
+    ylabel near ticks, yticklabel pos=right,
+    xmin=0, xmax=2,
+    ymin=0.0, ymax=1.0,
+    xtick={0,1.0,2.0},
+    ytick={0,0.5,1.0},
+    % xlabel shift = -5 pt
+    ]
+    \addplot[red,thick,domain=0:1,thick]{ 1 - x };
+    \addplot[red,thick,domain=1:2,thick]{ 0.002 };
+
+    \nextgroupplot[ % 2
+    xlabel={$k$},
+    ylabel={$R_k(1)$},
+    ylabel near ticks, yticklabel pos=right,
+    xmin=0, xmax=2,
+    ymin=0.0, ymax=1.0,
+    xtick={0,1.0,2.0},
+    ytick={0,0.5,1.0},
+    ]
+    \addplot[red,thick,domain=0:1,thick]{ 0.002 };
+    \addplot[red,thick,domain=1:2,thick]{ x^2 - 1 };
+    % \addplot[red,thick,samples=200,domain=0.1:1]{ 1 - 1/x };
+  \end{groupplot}
+
+
+\end{tikzpicture}
