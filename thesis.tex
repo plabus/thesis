@@ -80,6 +80,7 @@ letterpaper,
 \usetikzlibrary{matrix}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
+\usetikzlibrary{fit}
 \usetikzlibrary{math}
 \usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathmorphing}
@@ -696,37 +697,55 @@ which is completely encoded in the so-called $n$-point correlation
 functions
 \begin{align}
   C_n(x_1, \, x_2,\, \dots, \, x_n) =
-  \big\langle  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \big\rangle \,.
+  \big\langle  \Phi(x_1) \, \Phi(x_2) \, \dots \, \Phi(x_n) \big\rangle \,,
 \end{align}
-These are functional expectation values of products of $n$ field
+where the variables $\Phi$ represent (possibly distinct) quantum fields,
+which may additionally carry indices of space-time or internal symmetries.
+The correlation functions are functional expectation values of products of $n$ field
 operators at different space-time positions and they may be
 calculated using the path integral formalism via
 \begin{align}
-  \big\langle  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \big\rangle
+  \big\langle  \Phi(x_1) \, \Phi(x_2) \, \dots \, \Phi(x_n) \big\rangle
   = \frac{1}{Z} \int \mathcal D \Phi \;
-  \varphi(x_1) \, \varphi(x_2) \, \dots \, \varphi(x_n) \, e^{-S \lbrack \Phi \rbrack } \,,
+  \Phi(x_1) \, \Phi(x_2) \, \dots \, \Phi(x_n) \, e^{-S \lbrack \Phi \rbrack } \,,
+  \label{eq:expvalue}
 \end{align}
-where $Z$ is a normalisation constant, known as the partition function,
-$\Phi$ represent the field content of the theory and $e^{-S \lbrack \Phi \rbrack}$
+where the partition function $Z = \int \mathcal D \Phi \; e^{-S[\Phi]}$ serves as a
+normalisation constant, $\mathcal D \Phi$ represents the integration measure,
+which iterates over all possible field configurations, and $e^{-S \lbrack \Phi \rbrack}$
 is the Euclidean Boltzmann factor---the (quantum) probability distribution
 which weights every field configuration in the path integral
 according to its classical action.
 
-\noindent
 A more elegant way to obtain any $n$-point correlation function is
-by means of the generating functional $W \lbrack J \rbrack$, which is defined
-via the relation
+by means of the generating functional $W \lbrack J \rbrack$
+which is the logarithm of the partition function, to the latter of which
+a source term
+% $\int \mathrm d^dx \; J(x) \, \Phi(x)$
+has been added:%
+\footnote{%
+  Summation over distinct fields and symmetry indices is explicitly
+  understood.
+}
 \begin{align}
+  Z[J] =
   e^{ W \lbrack J \rbrack }
   = \int \mathcal D \Phi \;
-  e^{-S \lbrack \Phi \rbrack + \int J \cdot \Phi } \,,
+  e^{
+    - S \lbrack \Phi \rbrack
+    + \int \mathrm d^dx \; J(x) \, \Phi(x)
+  } \,.
+  \label{eq:modpartitionfct}
 \end{align}
-and taking derivatives with respect to the source term $J$
+Taking derivatives with respect to the source term $J$ and evaluating
+the expression at $J=0$ yields an efficient procedure to obtain
+any correlation function:
 \begin{align}
   C_n(x_1, \, x_2,\, \dots, \, x_n) =
-  \frac{ \delta W }{ \delta J(x_1) \, \delta J(x_2) \, \dots \, \delta J(x_n) } \bigg|_{J=0} \;,
+  \frac{ \delta W }{ \delta J(x_1) \, \delta J(x_2) \, \dots \, \delta J(x_n) }
+  \; \bigg|_{J=0} .
 \end{align}
-which are evaluated at $J=0$. Solving a quantum field theory can
+Solving a quantum field theory can
 thus equivalently be viewed as calculating the generating functional
 (or its image under some one-to-one mapping, such as the
 Legendre transformation).
@@ -768,10 +787,10 @@ than some given cutoff scale $\Lambda$
   \mathcal D \Phi \;
   e^{-S \lbrack \Phi \rbrack} \,.
 \end{align}
-The generating functional may then be recovered by integrating out
+The partition function may then be recovered by integrating out
 the remaining modes
 \begin{align}
-  e^{ W }
+  Z
   = \smashoperator{ \int_{ 0 \, \leq \, |q| \, \leq \, \Lambda } }
   \mathcal D \Phi \;
   e^{-\SLambda \lbrack \Phi \rbrack} \,.
@@ -809,7 +828,13 @@ offer a number of advantages:
   \item
     The renormalisation group equation has a simple one-loop form.%
     \footnote{
-      One sees that as follows: ...
+      This can be seems by rewriting the numerator of the right hand side
+      in a perturbative loop expansion. Since the integral is linear
+      in its upper and lower boundary, one integrates over a momentum
+      shell of thickness $\delta q = \delta \Lambda$,
+      such that in each diagram closed loops contribute
+      $\nicefrac{\delta \Lambda}{q} \rightarrow 0$, which
+      leaves a one-loop contribution only.
     }
   \item
     The resulting beta function is finite.
@@ -818,7 +843,6 @@ offer a number of advantages:
     equation cancel each other.
 \end{itemize}
 \bigskip
-\nointent
 Note that the cutoff $\Lambda$ may be thought of as an ultraviolet cutoff,
 since for any given $\SLambda$, it cuts off the high momentum modes in
 the path integral, when calculating the partition function.
@@ -844,22 +868,65 @@ Since it is the high momentum modes we want to integrate out, they should
 remain undisturbed by the cutoff procedure, \ie propagate as given by
 the theory. The low momentum modes however, should be suppressed, \ie
 not be excited and nor propagate. Furthermore, we want to
-alter only the propagation of any mode, and not the interaction structure.
-This is why we choose to introduce a bilinear term in the fields,
-which in momentum space simply reads
+alter only the propagation of a given mode, and not its interaction structure.
+This is why we choose to add to the classical action a cutoff term that is
+bilinear in the fields which we want to regulate.
+
+In the most general case of a quantum field theory in curved space-time,
+we first have to choose an operator $\mathcal O_\Delta$ which is
+a functional of a first or second order differential operator $\Delta$ and
+which we leave unspecified for the moment.
+Second, we have to calculate the eigenspectrum of the latter
 \begin{align}
-  \Delta S_k [\phi] = \frac 12 \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
+  \mathcal O_\Delta \, \varphi_n = \lambda_n \, \varphi_n \,.
+\end{align}
+Then we can expand the quantum field $\varphi(x)$ we want to regularise in terms
+of its generalised Fourier coefficients $\phi_n$ as
+\begin{align}
+  \varphi (x) = \sum_n \; \phi_n \, \varphi_n(x) \,,
+\end{align}
+where for the moment we assumed a discrete spectrum of $\mathcal O_\Delta$
+which we label by integers $n$.
+We will outline the case of a scalar field here first,
+and comment on how to generalise this procedure to other types of fields
+at the end of the section. The cutoff term we want to add to the classical
+action, can then be written in its most general form in two distinct ways
+\begin{align}
+  \Delta S_k [\varphi]
+  = \frac 12 \int \mathrm d^dx \;
+  \varphi(x) \, R_k[ \mathcal O_\Delta ] \, \varphi(x)
+  = \frac 12 \sum_n \;
+  \phi_n \, R_k(\lambda_n) \, \phi_n \,.
+\end{align}
+The second expression is often the most convenient form of the cutoff
+term when it comes to evaluating functional traces, as the ones that
+will appear in the functional renormalisation group equation, see below.
+Since it is common practise,
+we will denote the cutoff kernel $R_k[ \mathcal O_\Delta ]$
+and its Fourier transform with the same symbol, and add its
+explicit argument as appropriate.
+
+For a physically more transparent presentation, let us now specialise
+to the case of a flat space-time
+and $\mathcal O_\Delta = \partial^\mu \partial_\mu$.
+The generalised Fourier transformation in this case simply becomes
+the usual continuous transformation and the cutoff term in
+momentum space assumes the form:%
+\footnote{
+  Here again we denote Fourier transforms, including the fields themselves,
+  with the same symbols as the original variable.
+}
+\begin{align}
+  \Delta S_k [\varphi] = \frac 12 \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
   \varphi(-q) \, R_k(q^2) \, \varphi(q) \,.
 \end{align}
-Although we will outline the case of a scalar field here first, it will be
-easy to generalise this procedure to other types of fields later on.
-One should think of the regulator or cutoff operator $R_k(q^2)$ as a scale-dependent
+One should think of the regulator $R_k(q^2)$ as a scale-dependent
 mass term. To make this idea more precise, let us have a look
-at the propagator that results from the introduction of this regulator term
+at the propagator that results from the introduction of this regulator term:
 \begin{align}
   G_k(q^2) = \frac{1}{ q^2 + R_k(q^2) } \,.
 \end{align}
-This shows clearly, that we indeed introduced an infrared cutoff.
+It shows clearly, that we indeed introduced an infrared cutoff.
 To follow the strategy outlined above, all high momentum modes
 should be left unchanged and thus should acquire a mass
 $m_k = R_k(q^2) \approx 0$ whenever $|q| > k$. Furthermore,
@@ -876,24 +943,18 @@ the optimised cutoff, is merely continuous.
 
 \begin{figure}
   \begin{center}
-    \begin{enumerate}
-      \setlength\itemsep{1.5mm}
-      \item
-        For any $k$ fixed, $R_k(q^2)$ is monotonically decreasing.
-      \item
-        For any $q^2$ fixed, $R_k(q^2)$ is monotonically increasing.
-      \item
-        For any $q^2 > k^2$, $R_k(q^2) \rightarrow 0$ sufficiently fast.
-      \item
-        $\lim_{k \rightarrow 0} R_k(q^2) = 0$.
-      \item
-        $R_k(0) = k^2$.
-    \end{enumerate}
+    \input{diagrams/requirements.tex}
   \end{center}
-  \caption{Formal requirements on a (standard) cutoff operator.}
+  \caption{
+    (Left) Formal requirements on a (standard) cutoff operator.
+    (Right) Graphical illustration of the first two requirements, using
+    the optimised cutoff as an example. The upper panel shows $R_k(q^2)$
+    with $k=1$ fixed, and in the lower panel $q^2=1$ is fixed.
+  }
   \label{fig:standardcutoff}
 \end{figure}
 
+\noindent
 We summarise the requirements on the cutoff operator%
 \footnote{%
   The requirements listed here characterise a so-called
@@ -955,8 +1016,8 @@ result in Fig.~\ref{fig:profiles}.
           ymin=0.0, ymax=1.0,
           ytick={0.0,0.25,0.50,0.75,1.0},
         ]
-        \addplot[blue,thick,samples=100]{ x / ( exp(x) - 1 )};
-        \addplot[green,thick,samples=100]{ x^2 / ( exp(x^2) - 1 )};
+        \addplot[blue,thick,samples=100]{ x / ( exp(x) - 1 ) };
+        \addplot[green,thick,samples=100]{ x^2 / ( exp(x^2) - 1 ) };
         \addplot[red,thick,domain=0:1,thick]{ 1 -x };
         \addplot[red,thick,domain=1:3,thick]{ 0.002 };
         \legend{
@@ -993,12 +1054,76 @@ result in Fig.~\ref{fig:profiles}.
   \label{fig:profiles}
 \end{figure}
 
+\noindent
+Let us now introduce a cutoff classification that has been
+developed in Ref.~\cite{Codello:2008vh}. It is of practical
+importance and relies on the observation that the Hessian
+of the effective average action, which appears in the
+functional renormalisation group equation, as we will see
+shortly, is generically proportional to a differential
+operator
+\begin{align}
+  \Delta = - \nabla^2 + \mathbb E \,,
+\end{align}
+where $\nabla$ is the covariant derivative with respect to
+the gauge connection(s), including gravity as well as internal
+symmetries, and $\mathbb E$ is a endomorphism which may include
+mass terms or curvature invariants. Since the cutoff term will
+be added to this Hessian, it will turn out computationally
+handy to chose the operator $\mathcal O_\Delta$ of which the cutoff
+kernel is a functional to include parts of the operator $\Delta$.
+To express the classification, we have to split
+the endomorphism $\mathbb E = \mathbb E_1 + \mathbb E_2$
+into a part $\mathbb E_1$ which has no scale dependent
+couplings and a part $\mathbb E_2$ which contains
+renormalisation group dependent couplings only.
+Then the following three types of cutoff operators
+are defined:
+\bigskip
+\begin{itemize}
+  \setlength\itemsep{2.0mm}
+  \item
+    {\makebox[2cm]{type I:\hfill}   {$\mathcal O_\Delta = - \nabla^2$}}
+  \item
+    {\makebox[2cm]{type II:\hfill}  {$\mathcal O_\Delta = - \nabla^2 + \mathbb E_1$}}
+  \item
+    {\makebox[2cm]{type III:\hfill} {$\mathcal O_\Delta = - \nabla^2 + \mathbb E_1 + \mathbb E_2$}}
+\end{itemize}
+\bigskip
+Note that when using a type III cutoff, the spectrum of the operator
+$\mathcal O_\Delta$ will change along the renormalisation group
+flow.
+
+To conclude this section let us now comment on the case
+of having several (possibly multi-component) fields.
+The cutoff term is then expressed through a matrix relation
+\begin{align}
+  \Delta S_k [ \Phi_{\mathcal A} ]
+  = \int \mathrm d^dx \;
+  \Phi_{\mathcal A} \, R^{\mathcal A \mathcal B}_k \, \Phi_{\mathcal B}
+\end{align}
+where $\mathcal A$ and $\mathcal B$ iterate over the number
+of fields as well as their space-time and possibly internal
+indices. Although one could in principle mix different fields
+with the same symmetry structure in this way,
+$R^{\mathcal A \mathcal B}_k$ is usually chosen to be diagonal
+in field space. Also note that this introduces the additional
+freedom of choosing the tensor structure of the cutoff.
+In practise however, one usually uses the tensor structure
+found in the respective Hessian.
+
 
 \subsection{The effective average action and its exact flow}
 
 Having defined a scale dependent cutoff operator for the
 classical action, we can now proceed and define a scale
-dependent generating functional via
+dependent generating functional via%
+\footnote{%
+  From now on,
+  we will add a tilde above fields which get integrated over in the
+  path integral in order to be able to use the same letter for said
+  field to denote its classical equivalent, \cf below.
+}
 \begin{align}
   e^{ W_k \lbrack J \rbrack }
   = \int \mathcal D \tilde \varphi \;
@@ -1008,20 +1133,37 @@ dependent generating functional via
     + \int \mathrm d^dx \; J(x) \, \tilde \varphi(x)
   } \,.
 \end{align}
-It will turn out to be more convenient
-to pass to the
-functional Legendre transform
-of $W_k[J]$, called the effective
-average action, which is defined by
+It will turn out to be more convenient to pass to the
+functional Legendre transform of $W_k[J]$,
+called the effective average action, which is defined by
 \begin{align}
   \hat \Gamma_k [\varphi] = - W_k[J] + \int \mathrm d^dx \; J(x) \, \varphi(x) \,.
 \end{align}
 Here we have introduced a new variable $\varphi$ as
 the functional derivative of the old functional $W_k$ with
-respect to the old variable $J$:
+respect to the old variable $J$:%
+\footnote{%
+  Having a finite source function $J(x)$ we can define a
+  functional expectation value via
+  \begin{align*}
+    \big\langle  \mathcal O[\Phi] \big\rangle_J
+    \equiv \frac{1}{Z[J]} \int \mathcal D \Phi \;
+    \mathcal O[\Phi] \,
+    e^{
+      - S \lbrack \Phi \rbrack
+      + \int \mathrm d^dx \; J(x) \, \Phi(x)
+    } \,,
+    \label{eq:expvalueJ}
+  \end{align*}
+  for any field operator $\mathcal O[\Phi]$. This generalises
+  Eqn.~\eqref{eq:expvalue} using the modified partition
+  function Eqn.~\eqref{eq:modpartitionfct}. Since we do not
+  directly want to evaluate partition functions,
+  we can always assume $J$ to be non-zero and drop the explicit index.
+}
 \begin{align}
   \frac{ \delta W_k }{ \delta J(x) }
-  = \langle \tilde \varphi(x) \rangle
+  = \big\langle \tilde \varphi(x) \big\rangle
   \equiv \varphi (x) \,.
 \end{align}
 The first equality holds by definition of the generating functional
@@ -1121,8 +1263,7 @@ have
   = - \frac{ \mathrm d W_k }{ \mathrm dt }
   - \frac{ \mathrm d \Delta S_k }{ \mathrm dt } \,.
 \end{align}
-The first term can be re-expressed by observing
-that
+The first term can be re-expressed by observing that
 \begin{align}
   \frac{ \mathrm d e^{W_k} }{ \mathrm dt }
   = \dot W_k \, e^{W_k}
@@ -1145,10 +1286,10 @@ time $t$. This expression implies
     \int \mathrm d^dx \; \tilde \varphi (x) \, \dot R_k \, \tilde \varphi(x)
   \right\rangle .
 \end{align}
-% where $R^*$ is the cutoff operator in real space
 Using the fact that the cutoff operator $R_k$ is independent
-of the field $\tilde \varphi$ we can write the renormalisation
-group time derivative of the effective average action as
+of the field $\tilde \varphi$ we can write the
+% renormalisation group
+time derivative of the effective average action as
 \begin{align}
   \frac{ \mathrm d \Gamma_k }{ \mathrm dt }
   = \frac 12 \, \Tr
@@ -1161,7 +1302,9 @@ group time derivative of the effective average action as
   \right] ,
 \end{align}
 where the trace operator $\Tr$ indicates integration
-over space-time and momentum. To make further progress, we
+over space-time and momentum, as well as summation over
+space-time and internal indices, as appropriate.
+To make further progress, we
 first note that the definition of $W_k$ implies
 \begin{align}
   \frac{ \delta^2 W_k }{ \delta J(x) \, \delta J(y) }
@@ -1217,7 +1360,7 @@ features which we considered advantageous of an renormalisation group approach:
   \item
     \textit{The renormalisation group is non-perturbative.}
     This is true, since no approximation is made on the way of deriving the
-    equation.
+    equation, hence the name ``exact''.
   \item
     \textit{The renormalisation group equation has a simple one-loop form.}
     In particular, it contains a closed loop on its right hand side,
@@ -1237,7 +1380,6 @@ features which we considered advantageous of an renormalisation group approach:
     by introducing a mass gap whenever $k \neq 0$.
 \end{itemize}
 \bigskip
-\nointent
 Moreover, given an effective action at some scale $k_0$ the
 effective average action can be defined at any other scale $k$
 via the function renormalisation group equation. This allows
