@@ -1500,11 +1500,72 @@ Similarly, we can express the running of the first three $n$-point
 functions as follows:
 \begin{align}
 \end{align}
-We will use the derivative expansion later on in chapters 4 and 5, and
+We will use the vertex expansion later on in chapters 4 and 5, and
 in particular make use of the diagrammatic representation in terms
 of Feynman diagrams.
 
+
 Let us now turn to the second approximation scheme, the derivative expansion.
+As the name already suggests, in this approximation scheme one expands the
+effective average into functions of fixed order of the (covariant)
+derivative. This is in particular useful in flat space-time, where
+this is essentially an expansion in powers of the running momentum
+scale squared, $k^2$. It has the advantage, that an operator of fixed power
+(and index structure) in the derivatives is allowed to be an arbitrary function of
+constant field configurations $\bp$, and not only a polynomial in the
+latter. In this way, one can study non-analytic truncations of the effective
+average action, and in particular truncations with infinitely many
+monomial operators. The functional renormalisation group equation
+then becomes a system of coupled partial differential equations
+for the scale-dependent functions of the fields.
+
+To illustrate this scheme, let us consider the example of a single
+scalar quantum field theory with a $\mathbb Z_2$ symmetry,
+\ie with an action that is invariant under the transformation
+$\varphi \mapsto -\varphi$. The most general effective
+average action to $\mathcal O(\partial^4)$ in the derivative
+expansion than reads:
+\begin{align}
+  \Gamma_k [\varphi] &=
+  \int \mathrm d^dx
+  \bigg[
+    V_k (\varphi)
+     + \frac 12 \, Z_k (\varphi) \big( \partial_\mu \varphi \, \partial^\mu \varphi \big)
+     + \frac 12 \, W^{(1)}_k (\varphi) \big( \partial_\mu \partial^\mu \varphi \, \partial_\nu \partial^\nu \varphi \big) \\
+    &+ \frac 12 \, W^{(2)}_k (\varphi) \big( \varphi \, \partial_\mu \varphi \, \partial^\mu \varphi \, \partial_\nu \partial^\nu \varphi \big)
+     + \frac 14 \, W^{(3)}_k (\varphi) \big( \partial_\mu \varphi \, \partial^\mu \varphi \, \partial_\nu \varphi \, \partial^\nu \varphi \big)
+     + \mathcal O (\partial ^6)
+  \bigg] \,.
+\end{align}
+Here the effective potential $V_k$, the wave-function renormalisation
+$Z_k$ and the three forth order functions $W^{(i)}$ are all
+arbitrary functions of $\varphi$. To extract their renormalisation
+group running, one has to obtain the flow of the $n$-point
+function of the effective average action first, and then evaluate
+the resulting expression on constant field configurations $\bp$.
+The number $n$ is hereby given by the power of $\varphi$ that is
+`outside' the function in the term of the action, respectively.
+So to extract the running of $V_k$ one would consider the running
+of the zero-point function, while for $Z_k$ and $W^{(1)}_k$ one would
+consider the running of the two-point function.
+At second order in the derivatives, this would yield a system
+of the following form
+\begin{align}
+  \partial_t V_k(\bp) &= \mathfrak F_V [ V_k^{''}, \, Z_k ] \,, \\
+  \partial_t Z_k(\bp) &= \mathfrak F_Z [ V_k^{''}, \, V_k^{'''}, \,
+  Z_k, \, Z_k^{'}, \, Z_k^{''} ] \,,
+\end{align}
+where $\mathfrak F_V$ and $\mathfrak F_Z$ are functionals of $V_k$
+and $Z_k$, and primes denote derivatives with respect to the
+(constant) field variable $\bp$. The derivative expansion to zeroth order,
+where only a function $V_k$ is kept, is commonly referred to as the
+local potential approximation.
+
+We will revised the very example of a $\mathbb Z_2$ invariant scalar
+field theory soon, when we will study critical behaviour and non-trivial fixed points
+in the next part of this chapter. We will also use this
+approximation schemes in chapters 2 and 3.
+
 
 \section{Asymptotic Safety}
 
