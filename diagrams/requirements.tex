@@ -3,7 +3,7 @@
     \vert = 0.85; % vertical distance between requirements
   }
 
-  \coordinate (base) at (-10.0,  1.45);
+  \coordinate (base) at (-10.0,  1.5);
 
   \node[right] (one)   at ($ (base) - (0,0.0*\vert) $) {1. For any $k$ fixed, $R_k(q^2)$ is monotonically decreasing.};
   \node[right] (two)   at ($ (base) - (0,1.0*\vert) $) {2. For any $q^2$ fixed, $R_k(q^2)$ is monotonically increasing.};
@@ -19,38 +19,39 @@
   ] (box) {};
 
   \begin{groupplot}[
-    group style={group size=1 by 2, horizontal sep=10pt, vertical sep=14pt},
+    group style={group size=1 by 2, horizontal sep=10pt, vertical sep=10pt},
     width=3cm,
     height=2.1cm,
     scale only axis,
+    major tick length=2pt,
     ]
 
-    \nextgroupplot[
+    \nextgroupplot[ % 1
     xlabel={$q^2$},
     ylabel={$R_{1}(q^2)$},
     xlabel near ticks, xticklabel pos=top,
+    xlabel style={at={(0.75,1.08)}},
     ylabel near ticks, yticklabel pos=right,
-    xmin=0, xmax=2,
-    ymin=0.0, ymax=1.0,
+    xmin=-0.1, xmax=2.1,
+    ymin=-0.1, ymax=1.1,
     xtick={0,1.0,2.0},
     ytick={0,0.5,1.0},
-    % xlabel shift = -5 pt
     ]
     \addplot[red,thick,domain=0:1,thick]{ 1 - x };
-    \addplot[red,thick,domain=1:2,thick]{ 0.002 };
+    \addplot[red,thick,domain=1:2,thick]{ 0 };
 
     \nextgroupplot[ % 2
     xlabel={$k$},
     ylabel={$R_k(1)$},
+    xlabel style={at={(0.75,-0.08)}},
     ylabel near ticks, yticklabel pos=right,
-    xmin=0, xmax=2,
-    ymin=0.0, ymax=1.0,
+    xmin=-0.1, xmax=2.1,
+    ymin=-0.1, ymax=1.1,
     xtick={0,1.0,2.0},
     ytick={0,0.5,1.0},
     ]
-    \addplot[red,thick,domain=0:1,thick]{ 0.002 };
-    \addplot[red,thick,domain=1:2,thick]{ x^2 - 1 };
-    % \addplot[red,thick,samples=200,domain=0.1:1]{ 1 - 1/x };
+    \addplot[red,thick,domain=0:1,thick]{ 0 };
+    \addplot[red,thick,domain=1:1.42,thick]{ x^2 - 1 };
   \end{groupplot}
 
 
