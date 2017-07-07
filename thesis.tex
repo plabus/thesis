@@ -146,6 +146,7 @@ letterpaper,
 \newcommand{\LambdaUV}{ \Lambda_{\scriptscriptstyle{\mathrm{UV}}} }
 \newcommand{\SLambda}{ S_{\scriptscriptstyle{\Lambda}} }
 \newcommand{\weyl}{\delta_\varepsilon}
+\newcommand\Ntrunc{ N_{\scriptscriptstyle{\mathrm{trunc}}} }
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -1290,7 +1291,7 @@ This finally enables us to write
 \end{align}
 Substituting the definition of $\Gamma_k$ into the last expression,
 we can obtain the exact or functional renormalisation group equation,
-also called Wetterich equation, as follows
+also called Wetterich or simply flow equation, as follows
 \begin{align}
   % \boxed{
     \frac{ \mathrm d \Gamma_k }{ \mathrm dt }
@@ -1349,7 +1350,161 @@ all quantities involved only depend on some intermediate scale $k$.
 
 
 \subsection{Approximation schemes}
-truncation, vertex and derivative expansion, the LPA
+
+Now that we have derived an exact renormalisation group equation,
+we can discuss strategies how to search for solutions of said equation.
+To this end, after having specialised the field content, as well as
+global and local (gauge) symmetries, one has to search for solutions
+in the space of all quantum field theories with the given properties.
+Namely, the effective average action assumes the form
+\begin{align}
+  \Gamma_k[\Phi] = \sum_{i \in \mathcal I} \; g_i(k) \, \mathcal O_i [\Phi] \,,
+\end{align}
+which is an infinite sum over a countable set $\mathcal I$,
+where $\mathcal O_i [\Phi]$ represent all operators which can be build
+with the given fields $\Phi$ and covariant derivatives in such a way
+that they are scalars under all specified symmetry groups. The coefficients
+$g_i(k)$ are hereby scale-dependent coupling constants which in their entirety reflect
+the renormalisation group running of the effective average action.
+Plugging this expression back into the flow equation yields an equivalent
+description in terms of infinitely many coupled equations
+in terms of the infinitely many coefficients $g_i(k)$ and their
+first derivatives $\dot g_i(k)$ with respect to the renormalisation
+group time.
+
+Clearly there is not much hope to find an exact solution to the exact
+equation even for the simplest possible choice of field content and
+symmetry structure. This is why one has to rely on approximation schemes
+to find only approximate solutions to the exact equation. In this
+section we will introduce the two schemes which are the most relevant for
+practical computations and which will be used throughout this thesis.
+But before going into the details of these schemes, let us add some
+general remarks how to approximate the effective average action in most
+cases.
+
+Since we are dealing with a non-perturbative formulation of quantum field
+theories, in the most general case there is no (obvious) expansion
+parameter available that could reliably be used for the full energy
+range from the ultraviolet to the infrared. This is why one often decides
+to solve only a finite subset of the infinitely many equation in full theory
+space. This approach is called truncation, and effectively shrinks the
+index set $\mathcal I$ to some finite, or
+infinite, proper subset $\overbar{\mathcal I}$. In the latter case
+one usually assumes some functional form for the operators, such as in the
+case of $f(R)$ gravity. The choice of the operators involved
+in this approximation is arbitrary, but in practise one often chooses
+to use the lowest (mass) dimensional operators---as one would do also
+in perturbation theory.
+
+Truncations are hard to justify \textit{a priori}, as the renormalisation
+group equation couples all operators to every other, at least indirectly.
+That is, even setting the running coupling to zero at some scale would
+therefore likely imply that it is non-zero at other scales.
+Hence a truncation restricts the dynamics possible in the solution quantum
+field theory. The common strategy to circumvent this issue is to
+subsequently enlarge the truncate space and include higher dimensional operators.
+Stability in the behaviour of couplings which were already been included
+in previously studied approximations, can than be interpreted as apparent
+convergence of the approximate solution. In the framework of asymptotic
+safety this procedure can indeed be used to recover well-know
+critical behaviour in scalar field theories.
+
+Both of the approximation schemes we want to introduce here make use
+of truncations of theory space. The first one, the vertex expansion,
+is based on rewriting the sum over all possible operators as a
+functional Taylor expansion around some given field configuration
+$\bp(x)$:%
+\footnote{%
+  For simplicity of notation, we will once more return to the
+  case of having a single scalar as field content in the theory.
+}
+\begin{align}
+  \Gamma_k [\varphi] =
+  \sum_{n=0}^{\infty} \; \frac{1}{n!}
+  \int \mathrm d^dx_1
+  \int \mathrm d^dx_2
+  \; \dots \,
+  \int \mathrm d^dx_n \;
+  \Gamma_{x_1 x_2 \dots x_n}^{(n)} \,
+  \prod_{i=1}^n
+  \big( \varphi(x_i) - \bp(x_i) \big)
+\end{align}
+where we introduced the scale-dependent interaction vertices via
+\begin{align}
+  \Gamma_{x_1 x_2 \dots x_n}^{(n)}[\varphi] \equiv
+  \frac{\delta^n\Gamma_k}{\delta\varphi(x_1) \, \delta\varphi(x_2) \, \dots \, \delta\varphi(x_n)} \,,
+\end{align}
+which are functional derivatives of the full effect average action. These
+vertices give their name to the approximation scheme. When plugging the
+Taylor expansion back into the renormalisation group equation, we will
+obtain a hierarchy of flow equations for each vertex. As we will explicitly
+see shortly, these equations are coupled and in particular will the flow of
+the $n$-point vertex depend on itself, as well as the $n+1$ and the $n+2$
+vertex. That is, to make the scheme useful (and indeed approximate)
+we will truncate the resulting system of equations by setting
+$\dot \Gamma^{(n)} = 0$ for all $n>\Ntrunc$ and some initial choice of $\Ntrunc$.
+Assuming that for any given scale $k$ all vertices $\Gamma^{(n)}$ give
+contributions of the same order to the functional traces in the flow equations,
+due to the combinatorial factor $\nicefrac{1}{n!}$ in the Taylor expansion,
+one might indeed be confident that this approximation scheme is useful.
+However, this has to be verified be increasing $\Ntrunc$ iteratively
+and investigating the stability of the obtained results.
+
+To explicitly obtain the flow of some $n$-point vertex, one has to take
+$n$ functional derivatives of the renormalisation group equation with respect
+to the field variable $\varphi(x)$. To do this for the first few vertices
+let us introduce a shorthand for the regularised full quantum propagator:
+\begin{align}
+  \Delta_{xy} [\varphi] \equiv
+  \left[
+    \frac{\delta^{2}\Gamma_k}{\delta\varphi(x) \, \delta\varphi(y)} + R_k(x,y)
+  \right]^{-1} .
+\end{align}
+Taking one and two functional derivatives, we may than express the running one-
+and two-point function in a very compact manner:
+\begin{align}
+  \partial_t \Gamma^{(1)}_{x} &=
+  - \frac 12 \, \Tr
+  \left[
+    \Delta_{ab} \,
+    \Gamma^{(3)}_{bcx} \,
+    \Delta_{cd} \,
+    \partial_t R_{k,da}
+  \right] , \\
+  \partial_t \Gamma^{(2)}_{x} &=
+  \Tr
+  \left[
+    \Delta_{ab} \,
+    \Gamma^{(3)}_{bcx} \,
+    \Delta_{cd} \,
+    \Gamma^{(3)}_{dey} \,
+    \Delta_{ef} \,
+    \partial_t R_{k,fa}
+  \right]
+  - \frac 12 \, \Tr
+  \left[
+    \Delta_{ab} \,
+    \Gamma^{(4)}_{bcxy} \,
+    \Delta_{cd} \,
+    \partial_t R_{k,da}
+  \right] .
+\end{align}
+It is in many ways very instructive to re-express the right hand sides of
+these equation in terms of Feynman diagrams. Denoting propagators
+as solid lines, the functional traces as closed loops and the regulator
+insertion $\partial_t R_k$ with the symbol ..., we can iconographically express the
+functional renormalisation group equation as:
+\begin{align}
+\end{align}
+Similarly, we can express the running of the first three $n$-point
+functions as follows:
+\begin{align}
+\end{align}
+We will use the derivative expansion later on in chapters 4 and 5, and
+in particular make use of the diagrammatic representation in terms
+of Feynman diagrams.
+
+Let us now turn to the second approximation scheme, the derivative expansion.
 
 \section{Asymptotic Safety}
 
