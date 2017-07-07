@@ -1,0 +1,52 @@
+\begin{tikzpicture}
+  \begin{groupplot}[
+    group style={group size=2 by 1, horizontal sep=10pt, vertical sep=10pt},
+    width=0.49\linewidth,
+    legend pos=north east,
+    legend cell align=left,
+    grid=major,
+    grid style=dashed,
+    ylabel absolute,
+    major tick length=2pt,
+    ]
+
+    \nextgroupplot[ % 1
+    xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
+    ylabel={cutoff profile $\; r(y)$},
+    xmin=-0.1, xmax=3.1,
+    ymin=-0.03, ymax=1.03,
+    ytick={0.0,0.25,0.50,0.75,1.0},
+    legend style={at={(0.97,0.973)}},
+    ]
+    \addplot[blue,  thick, domain=0.01:3, samples=100]{ x / ( exp(x) - 1 ) };
+    \addplot[green, thick, domain=0.01:3, samples=100]{ x^2 / ( exp(x^2) - 1 ) };
+    \addplot[red,   thick, domain=0:1]{ 1 - x };
+    \addplot[red,   thick, domain=1:3]{ 0 };
+    \legend{
+      \, $\frac{ y }{ e^y - 1}$,
+      \, $\frac{ y^2 }{ e^{y^2} - 1}$,
+      \, $\vphantom{\frac{ y^2 }{ e^{y^2} - 1}} \scriptstyle{(1-y) \, \theta(1-y)}$
+    }
+
+    \nextgroupplot[ % 2
+    xlabel={momentum $y=\nicefrac{q^2}{k^2}$},
+    ylabel near ticks, yticklabel pos=right,
+    ylabel={propagator $\; k^2 \, G_k(q^2)$},
+    xmin=-0.1, xmax=4.1,
+    ymin=-0.05, ymax=2.05,
+    legend style={at={(0.978,0.978)},inner sep=5pt},
+    ]
+    \addplot[black, thick, domain=0.5:4, samples=50, dashed]{ 1/x };
+    \addplot[blue,  thick, domain=-0.01:4,   samples=100]{ 1/( x + x / ( exp(x) - 1 ))};
+    \addplot[green, thick, domain=-0.01:4,   samples=100]{ 1/( x + x^2 / ( exp(x^2) - 1 ))};
+    \addplot[red,   thick, domain=0:1]{ 1 };
+    \addplot[red,   thick, domain=1:4]{ 1/x };
+    \legend{
+      \, $\nicefrac{ 1 }{ y }$,
+      \, $\frac{1 - e^{-y}}{y}$,
+      \, $\frac{1 - e^{-y^2}}{y^2}$,
+      \, $\frac 1{y + (1 - y) \, \theta (1 - y)}$,
+    }
+
+  \end{groupplot}
+\end{tikzpicture}
