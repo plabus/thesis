@@ -1,0 +1,28 @@
+\begin{tikzpicture}[
+  line width=0.20mm,
+  scale=0.5,
+  ]
+
+  \tikzmath{
+    \radius       = 0.72; % radius of right circle
+    \insertradius = 0.20; % radius for regulator insertion
+    \degs         = 45;   % angle of insertion X
+    \dotradius    = 0.07; % radius of the circles that make the dots
+    \leg          = 0.7;  % length external legs
+  }
+
+  % Position of the regulator insertion
+  \coordinate (X) at (0, \radius);
+  \coordinate (A) at (-\radius, 0);
+  \coordinate (B) at (0, -\radius);
+  \coordinate (C) at (\radius, 0);
+
+  % Regulator insertion \dot R_k
+  \fill[white] (X) circle (\insertradius);
+  \draw (X) circle (\insertradius);
+  \draw (X) -- ($ (X) + ( {cos(\degs)*\insertradius}, {sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + (-{cos(\degs)*\insertradius}, {sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + ( {cos(\degs)*\insertradius},-{sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + (-{cos(\degs)*\insertradius},-{sin(\degs)*\insertradius}) $);
+
+\end{tikzpicture}

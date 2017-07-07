@@ -1416,7 +1416,7 @@ functional Taylor expansion around some given field configuration
 $\bp(x)$:%
 \footnote{%
   For simplicity of notation, we will once more return to the
-  case of having a single scalar as field content in the theory.
+  case of a single scalar field.
 }
 \begin{align}
   \Gamma_k [\varphi] =
@@ -1471,7 +1471,7 @@ and two-point function in a very compact manner:
     \Delta_{cd} \,
     \partial_t R_{k,da}
   \right] , \\
-  \partial_t \Gamma^{(2)}_{x} &=
+  \partial_t \Gamma^{(2)}_{xy} &=
   \Tr
   \left[
     \Delta_{ab} \,
@@ -1492,18 +1492,41 @@ and two-point function in a very compact manner:
 It is in many ways very instructive to re-express the right hand sides of
 these equation in terms of Feynman diagrams. Denoting propagators
 as solid lines, the functional traces as closed loops and the regulator
-insertion $\partial_t R_k$ with the symbol ..., we can iconographically express the
-functional renormalisation group equation as:
+insertion $\partial_t R_k$ with the symbol
+\input{diagrams/insertion.tex}
+\hspace{-2.8mm}
+, we can iconographically express the
+functional renormalisation group equation as
 \begin{align}
+  \partial_t \Gamma_k = \frac12 \;
+  \input{diagrams/gamma0.tex} \;.
 \end{align}
 Similarly, we can express the running of the first three $n$-point
 functions as follows:
 \begin{align}
+  \partial_t \Gamma^{(1)}_{x} &=
+  - \, \frac12 \;
+  \input{diagrams/gamma1.tex} \;, \\
+  \partial_t \Gamma^{(2)}_{xy} &=
+  \input{diagrams/gamma2a.tex}
+  - \frac12 \;
+  \input{diagrams/gamma2b.tex} \;,
+  \\
+% \end{align}
+% \begin{align}
+  \partial_t \Gamma^{(3)}_{xyz} &=
+  - \, 3 \;
+  \input{diagrams/gamma3a.tex}
+  - \frac12 \;
+  \input{diagrams/gamma3b.tex}
+  + \input{diagrams/gamma3c.tex}
+  + \input{diagrams/gamma3d.tex}
+  + \input{diagrams/gamma3e.tex}
+  \;.
 \end{align}
 We will use the vertex expansion later on in chapters 4 and 5, and
 in particular make use of the diagrammatic representation in terms
 of Feynman diagrams.
-
 
 Let us now turn to the second approximation scheme, the derivative expansion.
 As the name already suggests, in this approximation scheme one expands the
