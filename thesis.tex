@@ -1371,7 +1371,7 @@ in the space of all quantum field theories with the given properties.
 Namely, the effective average action assumes the form
 \begin{align}
   \Gamma_k[\Phi] = \sum_{i \in \mathcal I} \; g_i(k) \, \mathcal O_i [\Phi] \,,
-  \label{expansionGamma}
+  \label{eq:expansionGamma}
 \end{align}
 which is an infinite sum over a countable index set $\mathcal I$.
 Here, the $\mathcal O_i [\Phi]$ represent all monomial operators
@@ -1627,13 +1627,14 @@ $\lim_{k \rightarrow \infty} \Gamma_k = S$. Similarity, in the infrared
 the effective average action approaches the full quantum effective
 action, which contains all the information of the quantum field theory,
 $\lim_{k \rightarrow 0} \Gamma_k = \Gamma$. As we have already said,
-this allows us in principle to solve a quantum field theory by
+this latter property allows us in principle to solve any
+quantum field theory by
 integrating a well-defined differential equation instead of
 calculating the ill-defined path integral. To do this, we fix
-any effective average action in theory space a some scale $k_0$
-and integrate the flow towards in infrared.
+the effective average action in theory space at some initial scale $k_0$
+and integrate the flow towards the infrared.
 
-However, the first property mentioned above gives us an other
+However, the first of the above properties provides us with another
 tool to investigate quantum field theories. Namely, integrating
 the exact flow equation towards the ultraviolet, we can study
 the high-energy behaviour of a quantum field theory in terms of
@@ -1641,7 +1642,7 @@ the convergence or divergence of its coupling constants.
 
 Generically, one would assumes that at least one of the infinitely
 many couplings $g_i(k)$ in the expansion of
-Eqn.~\eqref{expansionGamma} tends to infinity when taking
+Eqn.~\eqref{eq:expansionGamma} tends to infinity when taking
 the limit $k \rightarrow \infty$. This happens indeed for instance
 in quantum electrodynamics where the divergent coupling is said to have a
 Landau pole. An equivalent behaviour restricts the
@@ -1656,10 +1657,16 @@ They may, however, still perfectly well be used to make
 independent predictions in their range of validity
 after matching only a finite number of (relevant) couplings
 at some (infrared) energy scale.
+In this sense, the standard model is also an effective field
+theory, since it does not seem to be well-defined beyond the
+Planck scale. Nonetheless, after determining its 19 free
+parameters by experiments, it has great predictive power in
+its range of validity.
 
-The other possible behaviour of a quantum field theory
-is the case where none of the couplings of the theory
-diverges. This may be interpreted geometrically in such a way,
+The other possible behaviour a quantum field theory
+may exhibit when flowing towards the ultraviolet,
+is the one for which none of the couplings of the theory
+diverge. This may be interpreted geometrically in such a way,
 that the trajectory
 of the effective average action under the exact renormalisation
 group flow is restricted to a finite subset of theory space.
@@ -1679,17 +1686,17 @@ field theory is quantum chromodynamics. More generally,
 the same behaviour manifests itself for Yang-Mills theories as long as the
 number of fermions is smaller than some symmetry group-dependent
 upper limit. In the latter case the theory becomes free
-in the ultraviolet, which was quite suggestively called
+in the ultraviolet, which was quite suggestively named
 \textit{asymptotic freedom}. We will see that
-in our language, asymptotic freedom corresponds to a fixed
-point of the effective action
+in the renormalisation group language,
+asymptotic freedom corresponds to a fixed
+point of the effective average action
 under the exact renormalisation group flow,
-for which all couplings assume the value zero.
+for which all couplings vanish.
 This fixed point is also known as the Gaussian fixed point.
-However, there may exist non-trivial (interacting) fixed points
-which have non-zero values for (at least some of) the couplings
-of the theory, in which case
-the theory is said to become \textit{asymptotically save}.
+However, there may also exist non-trivial fixed points
+which have non-zero values for (at least some of) the couplings.
+In this case the theory is said to be \textit{asymptotically save}.
 This scenario was discovered and coined ``asymptotic safety''
 by Steven Weinberg in 1979, \cf Ref.~\cite{Weinberg:1980gg}.
 
@@ -1705,7 +1712,8 @@ quantum field theory of some given field content and
 gauge symmetries. A particular strategy to do so,
 is to first search for ultraviolet fixed points in theory space
 and then to find a renormalisation group trajectory that
-emanates from one of these very fixed points and matches
+emanates from one of these very fixed points and flows
+towards the infrared in such a way that it matches
 the known values of the physical couplings in the infrared.
 This strategy may in particular be used to try to construct
 a quantum field theory of gravity.
@@ -1717,6 +1725,61 @@ Before investigating fixed points and renormalisation group
 properties in a more quantitative manner, some remarks
 about the rescaling and essentiality of couplings
 of the effective average action are in order.
+One may naïvely think that theory space is spanned by
+all couplings $g_i(k)$ for the expansion of
+Eqn.~\eqref{eq:expansionGamma}. However integrating
+from a scale $k$ towards a scale $k + \delta k$
+results in a change of physical length and energy scales.
+Consequently, all dimensionful quantities (such as the couplings
+and the fields themselves) would need to be rescaled accordingly.
+This issue is most easily circumvented by introducing
+dimensionless couplings
+\begin{align}
+  \overbar g_i(k) = k^{-d_i} \, g_i(k) \,,
+\end{align}
+where $d_i$ is the (classical) mass dimension of
+the coupling $g_i$. In the same way one also introduces
+a `coupling' $Z^{(\varphi)}_k$, the so-called wave-function
+renormalisation, as a prefactor to the canonical kinetic term
+to avoid the need to rescale the field variables.
+For a scalar field, for instance, we may write
+\begin{align}
+  \frac 12 \, Z^{(\varphi)}_k \big( \partial \varphi \big)^2
+  = \frac 12 \, Z^{(\varphi)}_k \, k^{-2 \, d_\varphi} \big( \partial \bp \big)^2 \,,
+\end{align}
+where $d_\varphi = \nicefrac d2 -1$ is the classical dimension
+of a scalar field. Instead of rescaling the fields, such that
+that they are canonically normalised for every value of $k$,
+one absorbs this dependence into the coupling $Z_k$
+itself. We will often use the anomalous dimension $\eta_\varphi$
+instead of the wave-function renormalisation in the following,
+which are related via
+\begin{align}
+  \eta_\varphi \equiv - \frac{\mathrm d \log Z^{(\varphi)}_k}{\mathrm d \log k} \,.
+\end{align}
+The definition is such that at a fixed point
+$\partial_t \log Z^{(\varphi)}_k = - \eta_\varphi^\star$
+we have
+\begin{align}
+  \frac 12 \, Z^{(\varphi)}_k \, k^{-2d_\varphi} \big( \partial \bp \big)^2
+  = \frac 12 \, k^{-2d_\varphi - \eta^\star_\varphi} \big( \partial \bp \big)^2 \,,
+\end{align}
+that is, $\eta_\varphi$ indeed measures the anomaly of the dimension
+of the field $\varphi$ with respect to its classical value. Note
+that we still could have absorbed $Z^{(\varphi)}_k$ by a redefinition
+of the field variables and an according redefinition of the other couplings.
+This would however introduce an additional term in the beta functions
+of the dimensionless couplings $\overbar g_i$, as we will see shortly.
+
+The latter remark however applies quite generally, and one calls
+a coupling inessential if it can be removed from the Lagrangian
+by a (local) field redefinition. Couplings for which this is not possible
+are called essential. Putting these two things together
+we see that the actual physical theory space is parametrised by the
+essential, dimensionless couplings $\overbar g_i(k)$ only.
+
+
+
 
 \subsection{case example: scalar field theory}
 Wilson-Fisher fixed point, LPA, Scaling Solutions
