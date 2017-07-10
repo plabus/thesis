@@ -1083,6 +1083,7 @@ found in the respective Hessian.
 
 
 \subsection{The effective average action and its exact flow}
+\label{sec:floweqn}
 
 Having defined a scale dependent cutoff operator for the
 classical action, we can now proceed and define a scale
@@ -1370,6 +1371,7 @@ in the space of all quantum field theories with the given properties.
 Namely, the effective average action assumes the form
 \begin{align}
   \Gamma_k[\Phi] = \sum_{i \in \mathcal I} \; g_i(k) \, \mathcal O_i [\Phi] \,,
+  \label{expansionGamma}
 \end{align}
 which is an infinite sum over a countable index set $\mathcal I$.
 Here, the $\mathcal O_i [\Phi]$ represent all monomial operators
@@ -1604,8 +1606,118 @@ approximation schemes in chapters 2 and 3.
 
 \section{Asymptotic Safety}
 
-\subsection{fixed points, conformal field theories and critical phenomena}
-anomalous dimension, RG improvement, critical exponents
+In this section we will finally present the idea of asymptotic safety
+using the language of the renormalisation group developed in the last
+section. We will start with a general classification of quantum
+field theories and their relation to the renormalisation group,
+introducing the concepts of fixed points and conformal field
+theories along the way. After that we will give an introduction
+on how to use these ideas for practical calculations, studying
+the case example of a scalar field theory. In particular,
+we will make use of the local potential approximation and
+investigate scaling solutions such as the Wilson-Fisher fixed point.
+
+
+\subsection{Fixed points, conformal field theories and critical phenomena}
+
+As we have mentioned in Sec.~\ref{sec:floweqn}, the effective
+average action flows under the exact renormalisation group equation
+towards the bare action in the ultraviolet,
+$\lim_{k \rightarrow \infty} \Gamma_k = S$. Similarity, in the infrared
+the effective average action approaches the full quantum effective
+action, which contains all the information of the quantum field theory,
+$\lim_{k \rightarrow 0} \Gamma_k = \Gamma$. As we have already said,
+this allows us in principle to solve a quantum field theory by
+integrating a well-defined differential equation instead of
+calculating the ill-defined path integral. To do this, we fix
+any effective average action in theory space a some scale $k_0$
+and integrate the flow towards in infrared.
+
+However, the first property mentioned above gives us an other
+tool to investigate quantum field theories. Namely, integrating
+the exact flow equation towards the ultraviolet, we can study
+the high-energy behaviour of a quantum field theory in terms of
+the convergence or divergence of its coupling constants.
+
+Generically, one would assumes that at least one of the infinitely
+many couplings $g_i(k)$ in the expansion of
+Eqn.~\eqref{expansionGamma} tends to infinity when taking
+the limit $k \rightarrow \infty$. This happens indeed for instance
+in quantum electrodynamics where the divergent coupling is said to have a
+Landau pole. An equivalent behaviour restricts the
+(renormalised) quartic coupling in $\varphi^4$-theory to be zero,
+which is known as quantum triviality. These kind of theories
+are called effective, since historically they were thought of
+arising from fundamental theories in which some (high-energy)
+degrees of freedom got ``integrated out''. In the language of the
+exact renormalisation group, they simply do not admit a
+well-defined ultraviolet limit, $k \rightarrow \infty$.
+They may, however, still perfectly well be used to make
+independent predictions in their range of validity
+after matching only a finite number of (relevant) couplings
+at some (infrared) energy scale.
+
+The other possible behaviour of a quantum field theory
+is the case where none of the couplings of the theory
+diverges. This may be interpreted geometrically in such a way,
+that the trajectory
+of the effective average action under the exact renormalisation
+group flow is restricted to a finite subset of theory space.
+The simplest possibility of such a scenario is the existence
+of a so-called fixed point of the beta functions of all couplings
+of the theory. This means that there exists a value
+for each coupling in the theory which will not
+change under the renormalisation group flow.
+We will see this in more detail shortly. Quantum field
+theories that exhibit such a well-defined ultraviolet
+limit under the exact renormalisation group flow---in one way or
+another---are called fundamental, because one can make sense of
+them mathematically at any energy scale.
+
+Historically the most important case of such a fundamental quantum
+field theory is quantum chromodynamics. More generally,
+the same behaviour manifests itself for Yang-Mills theories as long as the
+number of fermions is smaller than some symmetry group-dependent
+upper limit. In the latter case the theory becomes free
+in the ultraviolet, which was quite suggestively called
+\textit{asymptotic freedom}. We will see that
+in our language, asymptotic freedom corresponds to a fixed
+point of the effective action
+under the exact renormalisation group flow,
+for which all couplings assume the value zero.
+This fixed point is also known as the Gaussian fixed point.
+However, there may exist non-trivial (interacting) fixed points
+which have non-zero values for (at least some of) the couplings
+of the theory, in which case
+the theory is said to become \textit{asymptotically save}.
+This scenario was discovered and coined ``asymptotic safety''
+by Steven Weinberg in 1979, \cf Ref.~\cite{Weinberg:1980gg}.
+
+This classification of quantum field theories according
+to their renormalisation group behaviour in the ultraviolet
+opens up another powerful application of the exact
+renormalisation group. That is, instead of solving a given
+quantum field theory by integrating its flow equation
+towards the infrared, one can also study all trajectories
+of a given theory space, and choose a trajectory that is
+ultraviolet-finite in order to define a fundamental
+quantum field theory of some given field content and
+gauge symmetries. A particular strategy to do so,
+is to first search for ultraviolet fixed points in theory space
+and then to find a renormalisation group trajectory that
+emanates from one of these very fixed points and matches
+the known values of the physical couplings in the infrared.
+This strategy may in particular be used to try to construct
+a quantum field theory of gravity.
+A corresponding program has been initiated
+by Martin Reuter in 1996, \cf Ref.~\cite{Reuter:1996cp},
+and is the main motivation underlying this thesis.
+
+Before investigating fixed points and renormalisation group
+properties in a more quantitative manner, some remarks
+about the rescaling and essentiality of couplings
+of the effective average action are in order.
+
 \subsection{case example: scalar field theory}
 Wilson-Fisher fixed point, LPA, Scaling Solutions
 
