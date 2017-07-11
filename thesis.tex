@@ -1618,7 +1618,7 @@ we will make use of the local potential approximation and
 investigate scaling solutions such as the Wilson-Fisher fixed point.
 
 
-\subsection{Fixed points, conformal field theories and critical phenomena}
+\subsection{Fixed points and ultraviolet critical surfaces}
 
 As we have mentioned in Sec.~\ref{sec:floweqn}, the effective
 average action flows under the exact renormalisation group equation
@@ -1732,8 +1732,9 @@ from a scale $k$ towards a scale $k + \delta k$
 results in a change of physical length and energy scales.
 Consequently, all dimensionful quantities (such as the couplings
 and the fields themselves) would need to be rescaled accordingly.
-This issue is most easily circumvented by introducing
-dimensionless couplings
+This issue is most easily circumvented
+if one works with
+dimensionless couplings only. They can be defined via
 \begin{align}
   \overbar g_i(k) = k^{-d_i} \, g_i(k) \,,
 \end{align}
@@ -1767,21 +1768,61 @@ we have
 that is, $\eta_\varphi$ indeed measures the anomaly of the dimension
 of the field $\varphi$ with respect to its classical value. Note
 that we still could have absorbed $Z^{(\varphi)}_k$ by a redefinition
-of the field variables and an according redefinition of the other couplings.
+of the field variables and according redefinitions of the other couplings.
 This would however introduce an additional term in the beta functions
 of the dimensionless couplings $\overbar g_i$, as we will see shortly.
 
-The latter remark however applies quite generally, and one calls
+The latter remark however applies quite generally. In particular, one calls
 a coupling inessential if it can be removed from the Lagrangian
 by a (local) field redefinition. Couplings for which this is not possible
 are called essential. Putting these two things together
 we see that the actual physical theory space is parametrised by the
 essential, dimensionless couplings $\overbar g_i(k)$ only.
+In most of this thesis, for simplicity, we will work with
+the stronger requirement that the beta functions of \textit{all}
+dimensionless couplings vanish at a fixed point.
+
+Let us now discuss how to precisely extract the scale-dependence
+of the coordinates of theory space from the exact renormalisation
+group equation. Taking the scale-derivative $\partial_t$
+of the expansion Eqn.~\eqref{eq:expansionGamma}, and using the
+exact flow equation we get
+\begin{align}
+  \sum_{i \in \mathcal I} \; \partial_t g_i(k) \, \mathcal O_i [\Phi]
+  = \partial_t \Gamma_k[\Phi]
+  = \frac 12 \; \Tr
+  \left[
+    \left(
+      \frac{ \delta^2 \Gamma_k }{ \delta \varphi \, \delta \varphi } + R_k
+    \right) ^{\!\!-1}
+    \! \dot R_k
+  \right]
+  = \sum_{i \in \mathcal I} \; \beta_i(g_j, k) \, \mathcal O_i [\Phi] \,,
+\end{align}
+where we assumed that the result of performing the functional trace
+can again be expanded in monomials of the field operators and covariant
+derivatives. The prefactors $\beta_i$ in this expansion are called
+the beta functions of the couplings $g_i$ and will in general depend
+on all other couplings $g_j$ as well as explicitly on the scale $k$.
+Passing to dimensionless variables and equating the running coupling
+$\partial_t g_i$ with its respective beta function, we find the following
+infinite system of coupled flow equations for the dimensionless
+couplings of the theory
+\begin{align}
+  \partial_t \overbar g_i =
+  - d_i \, \overbar g_i + \beta_i(k^{-d_j} g_j, k=1)
+  \equiv \overbar \beta_i(\overbar g_j) \,.
+\end{align}
+In practical computations, this system may be reduced to a finite one,
+using one of the approximation schemes discussed in the last section.
+The first term of the dimensionless beta function $\overbar \beta_i$
+is the classical contribution,
+which is proportional to the classical mass dimension
+of the coupling. The second term however, the quantum contribution,
+will be the one of importance in order to induce a non-trivial fixed point.
 
 
-
-
-\subsection{case example: scalar field theory}
+\subsection{Case study: scalar field theory}
 Wilson-Fisher fixed point, LPA, Scaling Solutions
 
 
