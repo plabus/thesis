@@ -1803,30 +1803,200 @@ where we assumed that the result of performing the functional trace
 can again be expanded in monomials of the field operators and covariant
 derivatives. The prefactors $\beta_i$ in this expansion are called
 the beta functions of the couplings $g_i$ and will in general depend
-on all other couplings $g_j$ as well as explicitly on the scale $k$.
+on all other couplings $g_j$ as well as on the scale $k$, explicitly.
 Passing to dimensionless variables and equating the running coupling
 $\partial_t g_i$ with its respective beta function, we find the following
-infinite system of coupled flow equations for the dimensionless
+infinite system%
+\footnote{
+  In practical computations, this system may be reduced to a finite one,
+  using one of the approximation schemes discussed in the last section.
+}
+of coupled flow equations for the dimensionless
 couplings of the theory
 \begin{align}
   \partial_t \overbar g_i =
   - d_i \, \overbar g_i + \beta_i(k^{-d_j} g_j, k=1)
   \equiv \overbar \beta_i(\overbar g_j) \,.
 \end{align}
-In practical computations, this system may be reduced to a finite one,
-using one of the approximation schemes discussed in the last section.
 The first term of the dimensionless beta function $\overbar \beta_i$
 is the classical contribution,
 which is proportional to the classical mass dimension
-of the coupling. However, as we will see shortly, it is the second term,
-the quantum contribution,
-which may induce a non-trivial fixed point.
+of the coupling. However, as we will see shortly,
+it is the second term, the quantum contribution,
+which will be responsible for asymptotic safety to
+occur or not.
 
 Has we have hinted already above, the easiest way to guarantee that all
-couplings of the theory remain finite in the ultraviolet limit of the
-renormalisation group flow, is to demand that all couplings are scale
-invariant, \ie they do change their value along the flow,
-$\partial_t g_i = 0$.
+couplings of the theory remain finite in the ultraviolet limit
+% of the renormalisation group flow,
+is to demand that they are all scale-invariant,
+\ie do not change their value along the flow,
+$\partial_t \overbar g_i = 0, \; \forall i \in \mathcal I$.
+A solution vector
+$\big\lbrace \overbar g_i^\star \big\rbrace_{i \in \mathcal I}$
+to this system of equations is called a fixed point,%
+\footnote{
+  A fixed point is in fact a stationary point for
+  the couplings themselves,
+  $\partial_t \overbar g_i = 0$,
+  a zero of the beta functions
+  $\beta_i (\overbar g_j^\star) = 0$,
+  and a fixed point in
+  the usual mathematical sense,
+  \ie $T_k(\overbar g_i^\star) = \overbar g_i^\star$,
+  for the map
+  $T_k:\mathcal T \rightarrow \mathcal T$
+  that maps a point at scale $k$ in theory space
+  to another point at scale
+  $k+\delta k$ in theory space.
+}
+and may be found as a root to the
+system of coupled algebraic equations that results
+from setting the dimensionless beta functions to zero%
+% \footnote{
+%   Once again, in principle it is sufficient to do this
+%   for all essential couplings only.
+% }
+\begin{align}
+  \overbar \beta_i(\overbar g_j) = 0 , \quad \forall i \in \mathcal I\,.
+\end{align}
+In the following we will call this system the fixed point equations.
+
+Assuming a solution vector to this system exists, the first thing we will
+be interested in, is whether this fixed point is reached in the ultraviolet
+or in the infrared. To decided which one is the case,
+we need to define a notion of subsets in theory space, that are
+attracted by the fixed point. This is done via so-called
+critical surfaces:
+\medskip
+\begin{itemize}
+  \setlength\itemsep{1.2mm}
+  \item
+    The \textit{infrared critical surface}
+    is the set of all points which flow towards the fixed point
+    in the limit $k \rightarrow 0$
+  \item
+    The \textit{ultraviolet critical surface}
+    is the set of all points which flow towards the fixed point
+    in the limit $k \rightarrow \infty$
+\end{itemize}
+\medskip
+We may then call a fixed point an infrared fixed point, if
+and only if its infrared critical surface is non-empty,
+and an ultraviolet fixed point if the same holds for its
+ultraviolet critical surface.
+It is the latter we will mostly be interested in.
+
+To obtain the dimensionality of the critical surfaces,
+we can linearise the flow equations about
+the fixed point. Introducing new variables
+\begin{align}
+  \hat g_i = \overbar g_i - \overbar g_i^\star \,,
+\end{align}
+due to the vanishing of the beta functions at
+the fixed point, the flow reduces to
+\begin{align}
+  \partial_t \hat g_i =
+  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_i}
+  \Bigg|_{ \overbar g_k = \overbar g_k^\star }
+  \hspace{-7mm}
+  \hat g_j
+  + \mathcal O (\hat g_i \hat g_j) \,.
+\end{align}
+Diagonalising the Jacobian
+$\nicefrac{ \partial \overbar \beta_i }{ \partial \overbar g_i}$,
+it is straightforward to see that the linearised
+flow equations for the eigenvectors
+$g_i^{\scriptscriptstyle{(d)}}$
+assume the form%
+\footnote{
+  There is no summation over the index $i$ on the left hand side.
+}
+\begin{align}
+  \partial_t \hat g_i^{\scriptscriptstyle{(d)}} =
+  \lambda_i \,
+  \hat g_i^{\scriptscriptstyle{(d)}}
+  + \mathcal O (\hat g_i^{\scriptscriptstyle{(d)}} \hat g_j^{\scriptscriptstyle{(d)}}) \,,
+\end{align}
+where $\lambda_i$ are the eigenvalues of the Jacobian.
+In particular, using the definition of the renormalisation
+group time $t$, we can integrate the system to obtain
+the \textit{linear} perturbations around the fixed point:
+\begin{align}
+  \hat g_i^{\scriptscriptstyle{(d)}} \propto \left( \frac{k}{\mu} \right) ^{\lambda_i} .
+\end{align}
+This gives as all the information we need to determine
+the dimensionality of the critical surfaces of the fixed
+point. Namely, we have to distinguish three cases:
+\bigskip
+\begin{enumerate}
+  \setlength\itemsep{3.0mm}
+  \item
+    {
+      \makebox[2.2cm]{$\lambda_i < 0$:\hfill}{$\hat g_i^{\scriptscriptstyle{(d)}}$ diverges in the infrared $\Leftrightarrow$ repelled by fixed point} \\
+      \makebox[2.1cm]{[relevant]\hfill}      {$\hat g_i^{\scriptscriptstyle{(d)}}$ vanishes in the ultraviolet $\Leftrightarrow$ attracted by fixed point}
+    }
+  \item
+    {
+      \makebox[2.2cm]{$\lambda_i = 0$:\hfill}{$\hat g_i^{\scriptscriptstyle{(d)}}$ remains at fixed point
+      $\Leftrightarrow$ attraction/repulsion beyond linear analysis} \\
+      \makebox[2.1cm]{[marginal]\hfill}{}
+    }
+  \item
+    {
+      \makebox[2.2cm]{$\lambda_i > 0$:\hfill}{$\hat g_i^{\scriptscriptstyle{(d)}}$ vanishes in the infrared $\Leftrightarrow$ attracted by fixed point}\\
+      \makebox[2.1cm]{[irrelevant]\hfill}                {$\hat g_i^{\scriptscriptstyle{(d)}}$ diverges in the ultraviolet $\Leftrightarrow$ repelled by fixed point}
+    }
+\end{enumerate}
+\bigskip
+Directions $\hat g_i^{\scriptscriptstyle{(d)}}$ of the first
+category flow towards the fixed point in the ultraviolet
+limit, and are called (infrared) relevant. The irrelevant
+directions
+on the other hand,
+that correspond to positive eigenvalues $\lambda_i > 0$,
+flow towards the fixed point in the infrared limit.
+Marginal directions finally, may be either (marginally)
+relevant or irrelevant---this has to be decided
+through the behaviour of the quadratic perturbations
+around the fixed point.
+
+The above analysis shows that the directions (\ie the
+eigenvectors) corresponding to the \textit{negative}
+eigenvalues of the Jacobian of the beta functions
+span the ultraviolet critical surface of the fixed point.
+In particular, the number of negative eigenvalues
+is equal to the dimensionality of the ultraviolet critical
+surface.%
+\footnote{
+  Such statements are always understood modulo the behaviour
+  of the marginal directions.
+}
+
+In order for an ultraviolet fixed point to exist,
+there must hence be at least one negative eigenvalue
+of the Jacobian of the beta functions. Moreover,
+to be able to define a predictive fundamental
+quantum field theory through this fixed point,
+we also have to demand that the number of relevant
+directions is finite. This may be understood looking
+at the three-dimensional cartoon in Fig.~\ref{fig:uvsurface}.
+[fix uv directions in ir, irrelevant directions are
+predicted]
+...This explains the origin of the terms `relevant'
+and `irrelevant'.
+
+
+
+
+
+% [add possible form, with cartoon -> solutions or not]
+% [critical surfaces]
+% [eigenvalues and critical exponents]
+% [GFP and perturbation theory]
+% [NGFP and CFT data]
+% [final cartoon of theory space]
+
 
 
 \subsection{Case study: scalar field theory}
