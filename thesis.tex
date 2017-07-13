@@ -682,6 +682,8 @@ Although the framework of asymptotic safety is quite generic
 and could well be studied with other non-perturbative tools, the
 language of the renormalisation group turns out to be particularly useful
 to explain the core ideas of asymptotic safety.
+Our presentation is heavily influenced by
+Refs.~\cite{Percacci:2011fr, percacci2017introduction}.
 
 \section{The Wilsonian Renormalisation Group}
 
@@ -692,7 +694,14 @@ of a quantum field theory by introducing smooth energy scale-dependent
 infrared cutoff operators: We will then introduce a scale-dependent
 effective average action and derive its exact renormalisation group equation.
 Finally, we will discuss some strategies how to obtain approximate solutions
-to the exact equation.
+to the exact equation. For reviews of the topics, \cf
+\cite{
+  Berges:2000ew,
+  Aoki:2000wm,
+  Pawlowski:2005xe,
+  Gies:2006wv,
+  Rosten:2010vm
+}.
 
 
 \subsection{Observables in quantum field theories}
@@ -1616,6 +1625,17 @@ on how to use these ideas for practical calculations, studying
 the case example of a scalar field theory. In particular,
 we will make use of the local potential approximation and
 investigate scaling solutions such as the Wilson-Fisher fixed point.
+For general reviews of asymptotic safety, \cf
+\cite{
+  Niedermaier:2006wt,
+  Niedermaier:2006ns,
+  Litim:2008tt,
+  Litim:2011cp,
+  Percacci:2007sz,
+  Reuter:2012id,
+  Reuter:2012xf,
+  Nagy:2012ef
+}.
 
 
 \subsection{Fixed points and ultraviolet critical surfaces}
@@ -1986,17 +2006,54 @@ predicted]
 ...This explains the origin of the terms `relevant'
 and `irrelevant'.
 
-
-
-
-
-% [add possible form, with cartoon -> solutions or not]
-% [critical surfaces]
-% [eigenvalues and critical exponents]
-% [GFP and perturbation theory]
-% [NGFP and CFT data]
-% [final cartoon of theory space]
-
+Now that we have established how to categorise
+a given fixed point as ultraviolet or infrared,
+and how to quantitatively determine the predictivity
+of the theory defined by such a fixed point,
+we can study the existence of fixed points
+in a general context.
+Let us first have a look at the
+free (massless) theory, for which
+all (essential) couplings are zero.%
+\footnote{
+  In this case, the rescaling of the couplings
+  in order to achieve $Z=1$ does not have any consequence,
+  since $\overbar g_i = 0$.
+}
+Clearly this
+theory is scale-invariant, and thus has vanishing
+beta functions. The respective fixed point
+$\big\lbrace \overbar g_i^\star = 0 \big\rbrace_{i \in \mathcal I}$
+is called the Gaussian fixed point.
+To study its properties we may expand the dimensionless
+beta functions as follows
+\begin{align}
+  \overbar \beta_i =
+  - d_i \, \overbar g_i
+  + \alpha_{ij} \, \overbar g_j
+  + \frac 12 \, \alpha_{ijk} \, \overbar g_j \, \overbar g_k
+  + \mathcal O(\overbar g_i\overbar g_j\overbar g_k) \,.
+\end{align}
+This expansion cannot have a constant term, for
+it would spoil $\beta_i(g_j=0) = 0$. Furthermore,
+we have $\alpha_{ii} = 0$, because otherwise
+the classical scaling would be violated. This
+has the immediate consequence that the Jacobian
+\begin{align}
+  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_i}
+  \Bigg|_{ \overbar g_k = 0 }
+  \hspace{-7mm}
+  = - d_i \, \delta_{ij} + \alpha_{ij} \,,
+\end{align}
+has eigenvalues given by $-d_i$. But this in turn
+implies that the relevant directions, which span
+the ultraviolet critical surface, are given
+by monomial operators of positive classical mass
+dimension, $d_i > 0$. This is nothing but the
+property of perturbative power counting renormalisability.
+What is more, since for any fixed space-time dimension $d$,
+there are only finitely many such (local) operators, the ultraviolet
+critical surface cannot be infinite-dimensional.
 
 
 \subsection{Case study: scalar field theory}
