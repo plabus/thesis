@@ -93,6 +93,8 @@ letterpaper,
   decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
   midarrow-rev/.style={draw, postaction={decorate},
   decoration={markings,mark=at position .55 with {\arrow[draw]{<}}}},
+  midarrow-dashed/.style={draw, dashed, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
 }
 \tikzset{
   TT/.style={decorate, draw=black,
@@ -1913,7 +1915,7 @@ This fixed point will then attract some couplings in the ultraviolet
 limit and others in the infrared limit. The notion
 of an infrared or ultraviolet fixed point,
 thus only has meaning, if there is single couling.%
-\footnote{
+\footnote{%
   In the literature, however, fixed points are often refered to
   as ultraviolet if their ultraviolet critical surfaces is
   non-empty.
@@ -1944,8 +1946,8 @@ flow equations for the eigenvectors
 $g_i^{\scriptscriptstyle{(d)}}$
 assume the form%
 \footnote{
-  \label{foot:nosum}
   There is no summation over the index $i$ on the right hand side.
+  \label{foot:nosum}
 }
 \begin{align}
   \partial_t \hat g_i^{\scriptscriptstyle{(d)}} =
@@ -1966,7 +1968,7 @@ point. Namely, we have to distinguish three cases:
 
 \bigskip
 \noindent
-\fbox{\parbox{\textwidth}{%
+\fbox{\parbox{\textwidth-2.5mm}{%
 \begin{enumerate}
   \setlength\itemsep{3.0mm}
   \item
