@@ -83,6 +83,7 @@ letterpaper,
 \usetikzlibrary{fit}
 \usetikzlibrary{math}
 \usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{pgfplots.groupplots}
@@ -879,7 +880,7 @@ derive an exact functional renormalisation group equation.
 
 \subsection{Smooth cutoff operators}
 
-Our aim for this section is it to introduce a concept of a scale dependent
+Our aim for this subsection is it to introduce a concept of a scale dependent
 classical (or bare) action which can then be integrated over in the path
 integral to obtain a scale dependent quantum action.
 
@@ -910,7 +911,7 @@ where for the moment we assumed a discrete spectrum of $\mathcal O_\Delta$
 which we label by integers $n$.
 We will outline the case of a scalar field here first,
 and comment on how to generalise this procedure to other types of fields
-at the end of the section. The cutoff term we want to add to the classical
+at the end of the subsection. The cutoff term we want to add to the classical
 action, can then be written in its most general form in two distinct ways
 \begin{align}
   \Delta S_k [\varphi]
@@ -1072,7 +1073,7 @@ Note that when using a type III cutoff, the spectrum of the operator
 $\mathcal O_\Delta$ will change along the renormalisation group
 flow.
 
-To conclude this section let us now comment on the case
+To conclude this subsection let us now comment on the case
 of having several (possibly multi-component) fields.
 The cutoff term is then expressed through a matrix relation
 \begin{align}
@@ -1399,7 +1400,7 @@ Clearly there is not much hope to find an exact solution to the exact
 equation even for the simplest possible choice of field content and
 symmetry structure. This is why one has to rely on approximation schemes
 to find only approximate solutions to the exact equation. In this
-section we will introduce the two schemes which are the most relevant for
+subsection we will introduce the two schemes which are the most relevant for
 practical computations and which will be used throughout this thesis.
 But before going into the details of these schemes, let us add some
 general remarks how to approximate the effective average action in most
@@ -1638,7 +1639,7 @@ For general reviews of asymptotic safety, \cf
 }.
 
 
-\subsection{Fixed points and ultraviolet critical surfaces}
+\subsection{Fixed points and fundamental quantum field theories}
 
 As we have mentioned in Sec.~\ref{sec:floweqn}, the effective
 average action flows under the exact renormalisation group equation
@@ -1806,7 +1807,7 @@ Let us now discuss how to precisely extract the scale-dependence
 of the coordinates of theory space from the exact renormalisation
 group equation. Taking the scale-derivative $\partial_t$
 of the expansion Eqn.~\eqref{eq:expansionGamma}, and using the
-exact flow equation we get
+exact flow equation we find
 \begin{align}
   \sum_{i \in \mathcal I} \; \partial_t g_i(k) \, \mathcal O_i [\Phi]
   = \partial_t \Gamma_k[\Phi]
@@ -1843,14 +1844,14 @@ is the classical contribution,
 which is proportional to the classical mass dimension
 of the coupling. However, as we will see shortly,
 it is the second term, the quantum contribution,
-which will be responsible for asymptotic safety to
-occur or not.
+which will be responsible for whether asymptotic safety
+occurs or not, and how predictive the resulting theory may be.
 
-Has we have hinted already above, the easiest way to guarantee that all
+As we have hinted already above, the easiest way to guarantee that all
 couplings of the theory remain finite in the ultraviolet limit
 % of the renormalisation group flow,
-is to demand that they are all scale-invariant,
-\ie do not change their value along the flow,
+is to demand that each of them is scale-invariant,
+\ie does not change its value along the flow,
 $\partial_t \overbar g_i = 0, \; \forall i \in \mathcal I$.
 A solution vector
 $\big\lbrace \overbar g_i^\star \big\rbrace_{i \in \mathcal I}$
@@ -1878,7 +1879,7 @@ from setting the dimensionless beta functions to zero%
 %   for all essential couplings only.
 % }
 \begin{align}
-  \overbar \beta_i(\overbar g_j) = 0 , \quad \forall i \in \mathcal I\,.
+  \overbar \beta_i(\overbar g_j) = 0 \,, \quad \forall i \in \mathcal I\,.
 \end{align}
 In the following we will call this system the fixed point equations.
 
@@ -1901,13 +1902,24 @@ critical surfaces:
     in the limit $k \rightarrow \infty$
 \end{itemize}
 \medskip
-We may then call a fixed point an infrared fixed point, if
-and only if its infrared critical surface is non-empty,
-and an ultraviolet fixed point if the same holds for its
-ultraviolet critical surface.
-It is the latter we will mostly be interested in.
+% We may then call a fixed point an infrared fixed point, if
+% and only if its infrared critical surface is non-empty,
+% and an ultraviolet fixed point if the same holds for its
+% ultraviolet critical surface.
+% It is the latter we will mostly be interested in.
+Note that a generic fixed point may well have both a non-empty
+infrared as well as a non-empty ultraviolet critical surface.
+This fixed point will then attract some couplings in the ultraviolet
+limit and others in the infrared limit. The notion
+of an infrared or ultraviolet fixed point,
+thus only has meaning, if there is single couling.%
+\footnote{
+  In the literature, however, fixed points are often refered to
+  as ultraviolet if their ultraviolet critical surfaces is
+  non-empty.
+}
 
-To obtain the dimensionality of the critical surfaces,
+To obtain the dimension of the critical surfaces,
 we can linearise the flow equations about
 the fixed point. Introducing new variables
 \begin{align}
@@ -1917,26 +1929,29 @@ due to the vanishing of the beta functions at
 the fixed point, the flow reduces to
 \begin{align}
   \partial_t \hat g_i =
-  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_i}
+  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_j}
   \Bigg|_{ \overbar g_k = \overbar g_k^\star }
   \hspace{-7mm}
   \hat g_j
-  + \mathcal O (\hat g_i \hat g_j) \,.
+  + \mathcal O \big( \hat g^2 \big) \,.
 \end{align}
 Diagonalising the Jacobian
-$\nicefrac{ \partial \overbar \beta_i }{ \partial \overbar g_i}$,
+$\nicefrac{ \partial \overbar \beta_i }{ \partial \overbar g_j}
+= S_{ia} \, \delta_{ab} \, \lambda_b \, S^{-1}_{bj}$
+at the fixed point,
 it is straightforward to see that the linearised
 flow equations for the eigenvectors
 $g_i^{\scriptscriptstyle{(d)}}$
 assume the form%
 \footnote{
-  There is no summation over the index $i$ on the left hand side.
+  \label{foot:nosum}
+  There is no summation over the index $i$ on the right hand side.
 }
 \begin{align}
   \partial_t \hat g_i^{\scriptscriptstyle{(d)}} =
   \lambda_i \,
   \hat g_i^{\scriptscriptstyle{(d)}}
-  + \mathcal O (\hat g_i^{\scriptscriptstyle{(d)}} \hat g_j^{\scriptscriptstyle{(d)}}) \,,
+  + \mathcal O \big( \hat g_i^{\scriptscriptstyle{(d)} \, 2} \big) \,,
 \end{align}
 where $\lambda_i$ are the eigenvalues of the Jacobian.
 In particular, using the definition of the renormalisation
@@ -1946,9 +1961,12 @@ the \textit{linear} perturbations around the fixed point:
   \hat g_i^{\scriptscriptstyle{(d)}} \propto \left( \frac{k}{\mu} \right) ^{\lambda_i} .
 \end{align}
 This gives as all the information we need to determine
-the dimensionality of the critical surfaces of the fixed
+the dimension of the critical surfaces of the fixed
 point. Namely, we have to distinguish three cases:
+
 \bigskip
+\noindent
+\fbox{\parbox{\textwidth}{%
 \begin{enumerate}
   \setlength\itemsep{3.0mm}
   \item
@@ -1967,8 +1985,9 @@ point. Namely, we have to distinguish three cases:
       \makebox[2.2cm]{$\lambda_i > 0$:\hfill}{$\hat g_i^{\scriptscriptstyle{(d)}}$ vanishes in the infrared $\Leftrightarrow$ attracted by fixed point}\\
       \makebox[2.1cm]{[irrelevant]\hfill}                {$\hat g_i^{\scriptscriptstyle{(d)}}$ diverges in the ultraviolet $\Leftrightarrow$ repelled by fixed point}
     }
-\end{enumerate}
+\end{enumerate}}}
 \bigskip
+
 Directions $\hat g_i^{\scriptscriptstyle{(d)}}$ of the first
 category flow towards the fixed point in the ultraviolet
 limit, and are called (infrared) relevant. The irrelevant
@@ -1978,15 +1997,24 @@ that correspond to positive eigenvalues $\lambda_i > 0$,
 flow towards the fixed point in the infrared limit.
 Marginal directions finally, may be either (marginally)
 relevant or irrelevant---this has to be decided
-through the behaviour of the quadratic perturbations
-around the fixed point.
+through the behaviour of the quadratic or higher
+perturbations around the fixed point.
+
+To adhere to conventions coming from the theory of critical
+phenomena, we will often use the so-called \textit{scaling}
+or \textit{critical exponents} $\theta_i$ instead of the
+eigenvalues $\lambda_i$, which are simply defined by:
+\begin{align}
+  \theta_i \equiv - \lambda_i \,.
+\end{align}
 
 The above analysis shows that the directions (\ie the
 eigenvectors) corresponding to the \textit{negative}
 eigenvalues of the Jacobian of the beta functions
-span the ultraviolet critical surface of the fixed point.
+span the tangent space to the
+ultraviolet critical surface at the fixed point.
 In particular, the number of negative eigenvalues
-is equal to the dimensionality of the ultraviolet critical
+is equal to the dimension of the ultraviolet critical
 surface.%
 \footnote{
   Such statements are always understood modulo the behaviour
@@ -2006,8 +2034,8 @@ predicted]
 ...This explains the origin of the terms `relevant'
 and `irrelevant'.
 
-Now that we have established how to categorise
-a given fixed point as ultraviolet or infrared,
+Now that we have established how to find the baisins
+of attraction of a fixed point in the ultraviolet and the infrared,
 and how to quantitatively determine the predictivity
 of the theory defined by such a fixed point,
 we can study the existence of fixed points
@@ -2026,34 +2054,250 @@ beta functions. The respective fixed point
 $\big\lbrace \overbar g_i^\star = 0 \big\rbrace_{i \in \mathcal I}$
 is called the Gaussian fixed point.
 To study its properties we may expand the dimensionless
-beta functions as follows
+beta functions as follows%
+\footnote{
+  See footnote \ref{foot:nosum}.
+}
 \begin{align}
   \overbar \beta_i =
   - d_i \, \overbar g_i
   + \alpha_{ij} \, \overbar g_j
-  + \frac 12 \, \alpha_{ijk} \, \overbar g_j \, \overbar g_k
-  + \mathcal O(\overbar g_i\overbar g_j\overbar g_k) \,.
+  + \alpha_{ijk} \, \overbar g_j \, \overbar g_k
+  + \mathcal O \big( \overbar g^3 \big) \,.
 \end{align}
 This expansion cannot have a constant term, for
-it would spoil $\beta_i(g_j=0) = 0$. Furthermore,
-we have $\alpha_{ii} = 0$, because otherwise
-the classical scaling would be violated. This
-has the immediate consequence that the Jacobian
+it would spoil
+$\overbar \beta_i(\overbar g_j^\star) = 0$
+with $\overbar g_j^\star = 0$.
+Furthermore, we have $\alpha_{ij} \neq 0$,
+only for $j>i$,
+% This is a non-trivial statement,
+which can be verified
+considering which Feynman diagrams may enter the
+beta functions.
+It has the immediate consequence that the Jacobian
 \begin{align}
-  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_i}
+  \frac{ \partial \overbar \beta_i }{ \partial \overbar g_j}
   \Bigg|_{ \overbar g_k = 0 }
   \hspace{-7mm}
   = - d_i \, \delta_{ij} + \alpha_{ij} \,,
 \end{align}
-has eigenvalues given by $-d_i$. But this in turn
-implies that the relevant directions, which span
-the ultraviolet critical surface, are given
-by monomial operators of positive classical mass
-dimension, $d_i > 0$. This is nothing but the
-property of perturbative power counting renormalisability.
+has eigenvalues given by $-d_i$.
+But this in turn implies that the relevant directions,
+which determine the dimensionality of the ultraviolet critical surface,
+are given by monomial operators of positive classical mass dimension,
+$d_i > 0$.
+This is nothing but the property of perturbative power-counting renormalisability.
+
 What is more, since for any fixed space-time dimension $d$,
-there are only finitely many such (local) operators, the ultraviolet
-critical surface cannot be infinite-dimensional.
+there are only finitely many such (local) operators,
+the ultraviolet critical surface cannot be infinite-dimensional.
+That is, if such a fixed point exists, the resulting theory predicts
+that all infinitely many power-counting non-renormalisable couplings
+vanish in the ultraviolet. This is precisely the case of asymptotic
+freedom, and the origin of the immense predictivity of a theory
+defined via an ultraviolet Gaussian fixed point.
+We can now also understand, that perturbation theory covers
+the part of theory space around the Gaussian fixed point
+for which all couplings remain small, $\overbar g_i < 1$.
+
+However, note that power-counting renormalisability is only a
+necessary but not a sufficient condition for the existence of such an ultraviolet
+fixed point. This may be illustrated using the case of a single
+coupling. Passing back to dimensionful variables, the above expansion
+reads:
+\begin{align}
+  \partial_t g =
+  \beta(g) =
+  \alpha \, g^2
+  + \mathcal O \big( g^3 \big) \,,
+  \label{eq:betafctqcd}
+\end{align}
+which can easily be integrated to yield
+\begin{align}
+  g(k) =
+  \frac{
+    g(\mu)
+  }{
+    1 - \alpha \, g(\mu) \log \left( \frac k{\mu} \right)
+  } \,.
+\end{align}
+Since for the ultraviolet regime, $k>\mu$, the logarithm
+is positive, we have to choose $\alpha$ negative
+in order to guarantee that the denominator never
+vanishes. Than we have indeed
+\begin{align}
+  \lim_{k \rightarrow \infty}
+  g(k) =
+  \lim_{k \rightarrow \infty}
+  \Bigg[
+    \frac{ 1 }{ | \alpha | \log \left( \frac k{\mu} \right) }
+    + \mathcal O \big( k^{-1} \big)
+  \Bigg]
+  = 0 \,,
+\end{align}
+the behaviour of an asymptotically free coupling.
+That is, in this simple case the sign of the second
+derivative of the beta function determines whether
+the Gaussian fixed point is an infrared or an ultraviolet
+fixed point, \cf also Fig.~\ref{fig:shapesbetafunctions}.
+
+\begin{figure}
+  \begin{center}
+    \input{diagrams/shapes.tex}
+  \end{center}
+  \vspace*{-5mm}
+  \caption{
+    Cartoon of the possible shapes of a quadratic beta function
+    in a 1+1 dimensional theory space with non-negative
+    value of the coupling at the fixed point.
+    The blue curve develops
+    an infrared (IR) Gaussian fixed point (GFP) as in the case of QED.
+    The red curve features an ultraviolet (UV) Gaussian fixed point
+    with $\alpha = -1$, \cf Eqn.~\eqref{eq:betafctqcd}, as it
+    appears in Yang-Mills theories such as QCD.
+    The red curve finally, $\beta(g) = 2 \, g - g^2$, develops
+    both an infrared Gaussian fixed point, as well as an
+    ultraviolet non-Gaussian fixed point (NGFP),
+    as in perturbative Einstein gravity.
+  }
+  \label{fig:shapesbetafunctions}
+\end{figure}
+
+For the case of a non-trivial, also called
+an \textit{interacting} or \textit{non-Gaussian fixed point}
+one can say much less in general.
+The cartoon Fig.~\ref{fig:shapesbetafunctions} which
+covers the case of a single coupling,
+illustrates how such a fixed point may arise.
+Note in particular
+that the value of the couplings at the
+interacting fixed point
+is not restricted by any means, and may very well
+be $\overbar g_i^\star \gg 1$,
+which would disallow for a perturbative treatment.
+More severely yet, the quantum contributions,
+which may induce non-trivial solutions to the fixed point
+equations
+\begin{align}
+  \overbar \beta_i(\overbar g_j) =
+  - d_i \, \overbar g_i +
+  \text{quantum corrections} \,,
+\end{align}
+in the first place,
+may also alter the signs of the eigenvalues of the Jacobian
+of the beta functions at the fixed point:
+\begin{align}
+  \lambda_i =
+  - d_i +
+  \text{quantum corrections}' \,.
+\end{align}
+In this way,
+an alleged ultraviolet critical surface
+may become infinite-dimensional, which would in turn spoil
+the predictivity of theory, as we would have to fix
+an infinite number of independent parameters through
+experiments.
+However, as long as these quantum corrections remain smaller
+than the classical contributions, in particular
+if the fixed point lies close to the Gaussian one, we
+would expect the ultraviolet critical surface to be finite
+dimensional.
+
+The scale-invariant quantum field theory defined by the fixed point
+itself is a conformal field theory.
+In particular, expanding the flow equations to second order
+around the fixed point in the diagonal directions
+\begin{align}
+  \partial_t \hat g_i^{\scriptscriptstyle{(d)}} =
+  \lambda_i \,
+  \hat g_i^{\scriptscriptstyle{(d)}}
+  +
+  \left(
+    S_{ia}^{-1} \,
+    \frac{ \partial^2 \overbar \beta_a }
+    { \partial \overbar g_b \partial \overbar g_c }
+    \Bigg|_{ \overbar g_d = \overbar g_d^\star }
+    \hspace{-7mm}
+    S_{bj} \,
+    S_{ck}
+  \right)
+  \hat g_j^{\scriptscriptstyle{(d)}}
+  \hat g_k^{\scriptscriptstyle{(d)}}
+  + \mathcal O \big( \hat g^{\scriptscriptstyle{(d)} \, 3} \big) \,,
+\end{align}
+we can match it with the expansion of conformal perturbation
+theory
+\begin{align}
+  \partial_t \hat g_i^{\scriptscriptstyle{(d)}} =
+  -2 \, \big( 1 - \Delta_i \big) \,
+  \hat g_i^{\scriptscriptstyle{(d)}}
+  +
+  \pi \, c_{ijk} \,
+  \hat g_j^{\scriptscriptstyle{(d)}}
+  \hat g_k^{\scriptscriptstyle{(d)}}
+  + \mathcal O \big( \hat g^{\scriptscriptstyle{(d)} \, 3} \big) \,,
+\end{align}
+where $\Delta_i$ are the scaling dimensions and $c_{ijk}$
+are the structure constants. Together they specify the
+dynamics of the conformal field theory completely.
+We can thus reconstruct the conformal field theory at the fixed
+point by setting
+\begin{align}
+  \Delta_i &= \frac{\lambda_i + 2}{2} \,, \\
+  c_{ijk} &= \frac{1}{\pi} \,
+  \left(
+    S_{ia}^{-1} \,
+    \frac{ \partial^2 \overbar \beta_a }
+    { \partial \overbar g_b \partial \overbar g_c }
+    \Bigg|_{ \overbar g_d = \overbar g_d^\star }
+    \hspace{-7mm}
+    S_{bj} \,
+    S_{ck}
+  \right) .
+\end{align}
+
+\begin{figure}
+  \begin{center}
+    \input{diagrams/theoryspace.tex}
+  \end{center}
+  \caption{
+    A sketch of theory space.
+  }
+  \label{fig:theoryspace}
+\end{figure}
+\bigskip
+\noindent
+To summarise this subsection, we draw a sketch of theory
+space in Fig.~\ref{fig:theoryspace}.
+We have seen, that in order to define a fundamental
+quantum field theory, we can integrate the functional
+renormalisation group equation from an ultraviolet
+fixed point, characterised by a conformal field theory
+$\Gamma_\infty = S_{\mathrm{\scriptscriptstyle{UV}}}$
+towards the infrared,
+fixing the relevant critical exponents at some
+intermediate scale $k_0$. This allows (in principle)
+to solve the quantum field theory and obtain
+an effective action $\Gamma$. We have also seen
+that such a fixed point may be a trivial Gaussian
+fixed point, describing
+a free theory,
+or a non-trivial non-Gaussian fixed point, describing an
+interacting quantum field theory. The former case
+is known as asymptotic freedom, whilst the latter case
+is called asymptotic safety. The theory space containing
+the Gaussian fixed point, where the dimensionless essential
+couplings remain small is accessible through perturbation
+theory. Finally, effective field theories may be understood
+as trajectories in theory space which do not
+lie on any ultraviolet critical surface. Consequently
+at least one of the couplings in the theory will diverge
+at some finite value of the running scale $k$, but it is still
+well-defined when restricted to not exceed some finite
+ultraviolet cutoff scale
+$k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}$.
+
 
 
 \subsection{Case study: scalar field theory}
