@@ -1,0 +1,87 @@
+\begin{tikzpicture}[
+  framed,
+  inner frame sep=10pt,
+  >=stealth,
+  scale=1.00,
+]
+
+  \tikzmath{
+    \radius    = 0.20; % radius of CFT circle
+    \radiusgfp = 1.75; % radius of perturbation theory circle
+    \dotradius = 0.07; % radius of FP dot
+    \dotgamma  = 0.04; % radius of \Gamma dot
+  }
+
+  \coordinate (base) at ( 0.5,  0.0 );
+
+  \coordinate (cft1)    at ( 4.0,  -0.5 );
+  \coordinate (cft2)    at ( 4.5,  -6.0 );
+  \coordinate (cft3)    at ( 7.0,  -5.2 );
+  \coordinate (ngfp)    at ( 6.7,  -2.8 );
+
+  \coordinate (gfp)     at ( 1.0,  -3.0 );
+  \coordinate (dist1)    at ( -0.3, -0.9 );
+  \coordinate (dist2)    at ( 0.35, -0.05 );
+  \coordinate (dist3)    at ( 0.0, -0.35 );
+  \coordinate (dist4)    at ( -0.25, -0.55 );
+
+  \coordinate (cutoff)  at ( 6.0,  -1.5 );
+  \coordinate (gammak0) at ( 4.6,  -3.5 );
+  \coordinate (gamma00) at ( 1.8,  -3.7 );
+  \coordinate (gamma01) at ( 3.6,  -4.7 );
+
+  % Title
+  \node[rectangle,draw] (title) at (base) {Theory Space};
+
+  % Annotations for CFTs, GFP & NGFP
+  \node[inner sep=4mm] at (cft1) [anchor=south] {CFT/NGFP};
+  \node[inner sep=2mm] at (gfp) [anchor=south] {GFP};
+  \node[inner sep=3mm] at (ngfp) [anchor=west]
+    {$S_{\mathrm{\scriptscriptstyle{UV}}} = \Gamma_\infty$};
+
+  % Fixed point dotes and circles
+  \fill[black] (cft1) circle (\dotradius);
+  \draw        (cft1) circle (\radius);
+  \fill[black] (cft2) circle (\dotradius);
+  \draw        (cft2) circle (\radius);
+  \fill[black] (cft3) circle (\dotradius);
+  \draw        (cft3) circle (\radius);
+  \fill[black] (ngfp) circle (\dotradius);
+  \draw        (ngfp) circle (\radius);
+  \fill[black] (gfp)  circle (\dotradius);
+  \draw        (gfp)  circle (\radiusgfp);
+
+  % Additional Gamma dots
+  \fill[black] (cutoff) circle (\dotgamma);
+  \fill[black] (gammak0) circle (\dotgamma);
+  \fill[black] (gamma00) circle (\dotgamma);
+  \fill[black] (gamma01) circle (\dotgamma);
+
+  % Additional annotations
+  \node[inner sep=1mm] at (cutoff) [anchor=south west]
+    {$\Gamma_{k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}}$};
+  \node[inner sep=0.5mm] at (gammak0) [anchor=south east]
+    {$\Gamma_{k_0}$};
+  \node[inner sep=1mm] at (gamma00) [anchor=north east]
+    {$\Gamma$};
+  \node[inner sep=1mm] at (gamma01) [anchor=north east]
+    {$\Gamma$};
+
+  % Arrow for pert theory / non-pert theory
+  \node[align=center] (pert) at (0.6, -5.5) [anchor=north] {perturbation theory\\applicable};
+  \draw[->] (pert) -- ($ (gfp) + (dist1)$);
+  \node[align=center] (nonpert) at (7.0, -6.0) [anchor=north] {non-perturbative\\tools needed};
+  \draw[->] (nonpert) -- ($ (cft2) + (dist2)$);
+  \draw[->] (nonpert) -- ($ (cft3) + (dist3)$);
+  \draw[->] (nonpert) -- ($ (gammak0) + (dist4)$);
+
+  % Trajectories NGFP
+  \draw[midarrow] (ngfp)    .. controls ( 6.0, -3.8 ) and ( 5.0, -2.3 ) .. (gammak0);
+  \draw[midarrow] (gammak0) .. controls ( 4.5, -3.9 ) and ( 3.6, -3.9 ) .. (gamma01);
+  \node[align=center] at (6.0, -3.9) {fundamental\\QFT};
+
+  % Trajectories EFT
+  \draw[midarrow] (cutoff) .. controls ( 5.0, -3.0 ) and  ( 3.0, -1.7 ) .. (gamma00)
+    node[midway, above, inner sep=0.3cm] {EFT};
+
+\end{tikzpicture}
