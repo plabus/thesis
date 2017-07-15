@@ -37,9 +37,9 @@
   \node[rectangle,draw] (title) at (base) {Theory Space};
 
   % Annotations for CFTs, GFP & NGFP
-  \node[inner sep=3mm] at (cft3) [anchor=west] {NGFP/CFT};
+  \node[inner sep=4mm] at (cft3) [anchor=west] {NGFP/CFT};
   \node[inner sep=1mm] at (gfp) [anchor=north east] {GFP};
-  \node[inner sep=3mm] at (ngfp) [anchor=west]
+  \node[inner sep=4mm] at (ngfp) [anchor=west]
     {$S_{\mathrm{\scriptscriptstyle{UV}}} = \Gamma_\infty$};
 
   % Fixed point dotes and circles
@@ -74,9 +74,11 @@
     {$\Gamma$};
 
   % Arrow for pert theory / non-pert theory
-  \node[align=center] (pert) at (0.6, -5.5) [anchor=north] {perturbation theory\\applicable};
+  \node[align=center] (pert) at (0.6, -5.5) [anchor=north]
+  {\footnotesize{perturbation theory}\\[-1mm]\footnotesize{applicable}};
   \draw[->] (pert) -- ($ (gfp) + (dist1)$);
-  \node[align=center] (nonpert) at (7.0, -6.0) [anchor=north] {non-perturbative\\techniques required};
+  \node[align=center] (nonpert) at (7.0, -6.0) [anchor=north]
+  {\footnotesize{non-perturbative}\\[-1mm]\footnotesize{techniques required}};
   \draw[->] (nonpert) -- ($ (cft2) + (dist2)$);
   \draw[->] (nonpert) -- ($ (cft3) + (dist3)$);
   \draw[->] (nonpert) -- ($ (gammak0) + (dist4)$);
@@ -84,19 +86,20 @@
   % Trajectories NGFP
   \draw[midarrow] (ngfp)    .. controls ( 6.0, -3.8 ) and ( 5.0, -2.3 ) .. (gammak0);
   \draw[midarrow] (gammak0) .. controls ( 4.5, -3.9 ) and ( 3.6, -3.9 ) .. (gamma01);
-  \node[align=center] at (6.0, -3.9) {fundamental\\QFT};
+  \node[align=center] at (6.0, -3.7) {\footnotesize{fundamental}\\[-1mm]\footnotesize{QFT}};
 
   % Trajectories EFT
   \draw[midarrow-dashed] (divergence) .. controls ( 7.5, -1.0 ) and ( 6.5, -0.5 ) .. (cutoff);
   \draw[midarrow] (cutoff) .. controls ( 5.0, -3.0 ) and  ( 3.0, -1.7 ) .. (gamma00)
-    node[midway, above, inner sep=0.1cm, align=center] {effective\\QFT};
+  node[midway, above, inner sep=0.2cm, align=center]
+  {\footnotesize{effective}\\[-1mm]\footnotesize{QFT}};
 
   % Trajectories QCD
   % \fill[black] (2.2,-1.1) circle (\dotgamma);
   \draw[midarrow] (gfp)     .. controls ( 1.0,  -2.0 ) and ( 1.3, -1.6 ) .. (helpqcd)
-    node[midway, left, inner sep=0.20cm, align=center] {QCD};
+    node[midway, left, inner sep=0.20cm, align=center] {\footnotesize QCD};
   \draw[midarrow-dashed] (helpqcd) .. controls ( 2.2, -1.1 ) and ( 3.4, -0.9 ) .. (gamma02)
-    node[midway, above, inner sep=0.15cm, align=center] {\footnotesize ?};
+    node[midway, above, inner sep=0.20cm, align=center] {\footnotesize ?};
 
 
 \end{tikzpicture}
