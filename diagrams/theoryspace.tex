@@ -14,13 +14,13 @@
 
   \coordinate (base) at ( 0.5,  0.0 );
 
-  \coordinate (cft1)    at ( 4.0,  -0.5 );
+  \coordinate (cft1)    at ( 7.3,  -0.2 );
   \coordinate (cft2)    at ( 4.5,  -6.0 );
   \coordinate (cft3)    at ( 7.0,  -5.2 );
   \coordinate (ngfp)    at ( 6.7,  -2.8 );
 
   \coordinate (gfp)     at ( 1.0,  -3.0 );
-  \coordinate (dist1)   at ( -0.3, -0.9 );
+  \coordinate (dist1)   at ( -0.3, -1.3 );
   \coordinate (dist2)   at ( 0.35, -0.05 );
   \coordinate (dist3)   at ( 0.0, -0.35 );
   \coordinate (dist4)   at ( -0.25, -0.55 );
@@ -28,15 +28,17 @@
   \coordinate (divergence) at ( 8.0,  0.0 );
   \coordinate (cutoff)     at ( 6.0, -1.5 );
   \coordinate (gammak0)    at ( 4.6, -3.5 );
-  \coordinate (gamma00)    at ( 1.8, -3.7 );
-  \coordinate (gamma01)    at ( 3.6, -4.7 );
+  \coordinate (gamma00)    at ( 1.8, -3.7 ); % Gamma of EFT
+  \coordinate (gamma01)    at ( 3.6, -4.7 ); % Gamma of fund QFT
+  \coordinate (gamma02)    at ( 3.6, -0.3 ); % Gamma of QCD
+  \coordinate (helpqcd)    at ( 1.9, -1.3 ); % Help dot for QCD
 
   % Title
   \node[rectangle,draw] (title) at (base) {Theory Space};
 
   % Annotations for CFTs, GFP & NGFP
-  \node[inner sep=4mm] at (cft1) [anchor=south] {CFT/NGFP};
-  \node[inner sep=2mm] at (gfp) [anchor=south] {GFP};
+  \node[inner sep=3mm] at (cft3) [anchor=west] {NGFP/CFT};
+  \node[inner sep=1mm] at (gfp) [anchor=north east] {GFP};
   \node[inner sep=3mm] at (ngfp) [anchor=west]
     {$S_{\mathrm{\scriptscriptstyle{UV}}} = \Gamma_\infty$};
 
@@ -57,6 +59,7 @@
   \fill[black] (gammak0) circle (\dotgamma);
   \fill[black] (gamma00) circle (\dotgamma);
   \fill[black] (gamma01) circle (\dotgamma);
+  \fill[black] (gamma02) circle (\dotgamma);
 
   % Additional annotations
   \node[inner sep=0.75mm] at (cutoff) [anchor=north west]
@@ -67,11 +70,13 @@
     {$\Gamma$};
   \node[inner sep=1mm] at (gamma01) [anchor=north east]
     {$\Gamma$};
+  \node[inner sep=1.5mm] at (gamma02) [anchor=west]
+    {$\Gamma$};
 
   % Arrow for pert theory / non-pert theory
   \node[align=center] (pert) at (0.6, -5.5) [anchor=north] {perturbation theory\\applicable};
   \draw[->] (pert) -- ($ (gfp) + (dist1)$);
-  \node[align=center] (nonpert) at (7.0, -6.0) [anchor=north] {non-perturbative\\tools needed};
+  \node[align=center] (nonpert) at (7.0, -6.0) [anchor=north] {non-perturbative\\techniques required};
   \draw[->] (nonpert) -- ($ (cft2) + (dist2)$);
   \draw[->] (nonpert) -- ($ (cft3) + (dist3)$);
   \draw[->] (nonpert) -- ($ (gammak0) + (dist4)$);
@@ -84,6 +89,14 @@
   % Trajectories EFT
   \draw[midarrow-dashed] (divergence) .. controls ( 7.5, -1.0 ) and ( 6.5, -0.5 ) .. (cutoff);
   \draw[midarrow] (cutoff) .. controls ( 5.0, -3.0 ) and  ( 3.0, -1.7 ) .. (gamma00)
-    node[midway, above, inner sep=0.3cm] {EFT};
+    node[midway, above, inner sep=0.1cm, align=center] {effective\\QFT};
+
+  % Trajectories QCD
+  % \fill[black] (2.2,-1.1) circle (\dotgamma);
+  \draw[midarrow] (gfp)     .. controls ( 1.0,  -2.0 ) and ( 1.3, -1.6 ) .. (helpqcd)
+    node[midway, left, inner sep=0.20cm, align=center] {QCD};
+  \draw[midarrow-dashed] (helpqcd) .. controls ( 2.2, -1.1 ) and ( 3.4, -0.9 ) .. (gamma02)
+    node[midway, above, inner sep=0.15cm, align=center] {\footnotesize ?};
+
 
 \end{tikzpicture}
