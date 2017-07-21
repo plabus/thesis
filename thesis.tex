@@ -1374,6 +1374,7 @@ all quantities involved only depend on some intermediate scale $k$.
 
 
 \subsection{Approximation schemes}
+\label{sec:approxschemes}
 
 Now that we have derived an exact renormalisation group equation,
 we can discuss strategies how to search for solutions of said equation.
@@ -1532,14 +1533,13 @@ functions as follows:
 \begin{align}
   \partial_t \Gamma^{(1)}_{x} &=
   - \, \frac12 \;
-  \input{diagrams/gamma1.tex} \;, \\
+  \input{diagrams/gamma1.tex} \;,
+  \label{eq:deriv1} \\
   \partial_t \Gamma^{(2)}_{xy} &=
   \input{diagrams/gamma2a.tex}
   - \frac12 \;
   \input{diagrams/gamma2b.tex} \;,
-  \\
-% \end{align}
-% \begin{align}
+  \label{eq:deriv2} \\
   \partial_t \Gamma^{(3)}_{xyz} &=
   - \, 3 \;
   \input{diagrams/gamma3a.tex}
@@ -1549,6 +1549,8 @@ functions as follows:
   + \input{diagrams/gamma3d.tex}
   + \input{diagrams/gamma3e.tex}
   \;.
+  \label{eq:deriv3} \\
+  \label{eq:deriv4}
 \end{align}
 We will use the vertex expansion later on in chapters 4 and 5, and
 in particular make use of the diagrammatic representation in terms
@@ -1940,7 +1942,8 @@ the fixed point, the flow reduces to
 Diagonalising the Jacobian
 $\nicefrac{ \partial \overbar \beta_i }{ \partial \overbar g_j}
 = S_{ia} \, \delta_{ab} \, \lambda_b \, S^{-1}_{bj}$
-at the fixed point,
+at the fixed point%
+---which is also known as the stability matrix---%
 it is straightforward to see that the linearised
 flow equations for the eigenvectors
 $g_i^{\scriptscriptstyle{(d)}}$
@@ -2307,7 +2310,145 @@ $k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}$.
 
 
 \subsection{Case study: scalar field theory}
-Wilson-Fisher fixed point, LPA, Scaling Solutions
+
+In the last section of this chapter we want to use
+the techniques and ideas introduced so far to study
+quantum field theories with a single scalar field
+which posses a $\mathbb Z_2$ symmetry, such that the
+action is invariant under the transformation
+$\varphi \mapsto - \varphi$.
+
+In particular, we will
+use the functional renormalisation group, first to
+study a very crude $\varphi^4$ approximation, and
+second to investigate the local potential approximation
+of the derivative expansion. The former gives a first
+hint of the existence of a non-trivial infrared fixed point
+in $d=3$, the Wilson-Fisher fixed point. In the latter
+we will use polynomial approximations, as well
+as the method of spike plots, to study the existence of
+scaling solutions.
+
+\subsubsection{$\varphi^4$-theory}
+
+The simplest possible approximation of the full $\mathbb Z_2$
+scalar field theory one can study is to assume the following
+ansatz of the effective average action
+\begin{align}
+  \Gamma_k [\varphi] = \int \mathrm d^dx \;
+  \bigg[
+  \frac 12 \, \partial^\mu \varphi \partial_\mu \varphi
+  + \frac 12 \, m_k^2 \, \varphi^2
+  + \frac {1}{4!} \, \lambda_k \, \varphi^4
+  \bigg] \,.
+\end{align}
+Here the squared mass $m_k^2$ and the $\varphi^4$-coupling
+$\lambda_k$ are the two scale-dependent couplings of the
+theory.
+Note that this ansatz is much more restrictive than to assume
+as similar form of the bare or ultraviolet action of the theory.
+This is because in the latter case the effective average action
+(and the infrared effective action in particular) would contain
+all operators allowed by symmetry, which appear through the procedure
+of integrating out the scalar field in the path integral. Here instead,
+the effective average action is restricted to contain only three
+terms at \textit{any} energy scale.
+
+To extract the running of the couplings in this approximation,
+we can use the derivative expansion which we studied in
+Sec.~\ref{sec:approxschemes}. Using Eqns.~\eqref{eq:deriv2} and \eqref{eq:deriv4}
+and evaluating the two- and four-point function at
+vanishing external momenta, we find
+\begin{align}
+  \partial_t \Gamma^{(2)}_k(0,0) =
+  \partial_t m_k^2 &=
+  - \frac 12 \, \lambda_k \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
+  G_k(q^2) \, \partial_t R_k(q^2) \, G_k(q^2) \,, \\
+  \partial_t \Gamma^{(4)}_k(0,0,0,0) =
+  \partial_t \lambda_k &=
+  3 \, \lambda_k^2 \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
+  G_k(q^2) \, \partial_t R_k(q^2) \, G_k^2(q^2) \,,
+\end{align}
+where the full regulated propagator in momentum space reads
+\begin{align}
+  G_k(q^2) = \frac 1 { q^2 + m_k^2 + R_k(q^2) } \,.
+\end{align}
+If we choose to use the optimised cutoff, we can evaluate the
+integrals on the right hand sides explicitly. Using
+$\partial_t R_k(q^2) = 2 \, k^2 \, \theta(k^2 - q^2)$
+the dimensionful beta functions become:
+\begin{align}
+  \partial_t m_k^2 &=
+  - c_d \, k^{d-2} \,
+  \frac{ \lambda_k }{ \big[ 1 + \nicefrac{m_k^2}{k^2} \big] ^2 } \,, \\
+  \partial_t \lambda_k &=
+  6 \, c_d \, k^{d-4} \,
+  \frac{ \lambda_k }{ \big[ 1 + \nicefrac{m_k^2}{k^2} \big] ^3 } \,,
+\end{align}
+where for later convenience we introduce the $d$-dimensional
+volume coefficient
+\begin{align}
+  c_d = \frac{ 1 }{ (4\pi)^{d/2} \; \Gamma(d/2+1) } \,.
+\end{align}
+Before searching for fixed points we now have to pass to
+dimensionless variables
+$\overbar m_k^2 = \nicefrac{ m_k^2 }{ k^2 }$ and
+$\overbar \lambda_k = \nicefrac{ \lambda_k }{ k^{4-d} }$, as we have
+explained above. In this variables the flow equations
+assume the form
+\begin{align}
+  \overbar \beta_{ \overbar m_k^2 } &=
+  \partial_t \overbar m_k^2 =
+  - 2 \, \overbar m_k^2
+  - \frac{ c_d \, \overbar \lambda_k }{ \big[ 1 + \overbar m_k^2 \big] ^2 } \,, \\
+  \overbar \beta_{ \overbar \lambda_k } &=
+  \partial_t \overbar \lambda_k =
+  (d-4) \, \overbar \lambda_k
+  + \frac{ 6 \, c_d \,\overbar \lambda_k }{ \big[ 1 + \overbar m_k^2 \big] ^3 } \,.
+\end{align}
+If we now set the beta functions to zero we find the following solutions
+to the fixed point equations:
+\begin{alignat}{2}
+  \text{G:} \quad &\overbar m_k^{2 \, \star} = 0 \,, \quad
+  &&\overbar \lambda^\star = 0 \,, \\
+  \text{WF:} \quad &\overbar m_k^{2 \, \star} = \frac{ d - 4 }{ 16 - d } \,, \quad
+  &&\overbar \lambda^\star =  \frac{ 288 }{ c_d } \, \frac{ d - 4 }{ (d - 16)^3 } \,.
+\end{alignat}
+The first solution is the familiar Gaussian fixed point (G). The second one however,
+is a non-trivial fixed point, known as the Wilson-Fisher fixed point (WF),
+which has first been discovered in $d=3$ and belongs to the Ising (bi-critical)
+universality class.
+Note that the second
+one coincides with the first one in $d=4$ where only the Gaussian fixed point exists.
+
+We can now also linearise the flow about the fixed points
+to obtain critical exponents. To this end, we first calculate the stability
+matrices:
+\begin{align}
+  M_{\mathrm{G}} &=
+  \begin{pmatrix*}[l]
+    -2    & 0 \\
+    -c_d  & d - 4
+  \end{pmatrix*} \,, \\
+  M_{\mathrm{WF}} &=
+  \begin{pmatrix*}[l]
+    -\frac{d+2}{3}                & -\frac{72}{c_d} \frac{ (d-4)^2 }{ (d-16)^2 }  \\
+    -c_d \, \frac{(d-16)^2}{144}  & 4 - d
+  \end{pmatrix*} \,.
+\end{align}
+The critical exponents can then be found as the negative of the eigenvalues:
+\begin{align}
+  \text{G:} \quad &\big\lbrace 2 ,\, 4 - d \big\rbrace \,, \\
+  \text{WF:} \quad &\left\lbrace
+  - \frac 16 \left( 10 - 4d \pm \sqrt{ 484 - 200 d + 22 d^2 } \right)
+    \right\rbrace .
+\end{align}
+
+\subsubsection{The local potential approximation}
+
+% Derivation of dimensionless flow equation,
+% Polynomial Approximations w/ optimised cutoff and Wilson-Fisher fixed point,
+% Scaling solutions, spike plots
 
 
 
@@ -3883,7 +4024,8 @@ we find the following flow equations in dimensionless variables
     - c_d \; \frac{ (\NS-1)\bp \bF'(\bp)}{\bp + \bV'{}^2} \,,
   \label{flowffull}
 \end{align}
-where we introduced the $d$-dimensional volume coefficient
+where we recall that the $d$-dimensional volume coefficient $c_d$
+was given by
 \begin{align}
   \nonumber
   c_d = \frac{ 1 }{ (4\pi)^{d/2} \; \Gamma(d/2+1) } \,.
