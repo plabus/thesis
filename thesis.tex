@@ -2446,6 +2446,131 @@ The critical exponents can then be found as the negative of the eigenvalues:
 
 \subsubsection{The local potential approximation}
 
+After having used the exact renormalisation group equation
+to extract the scale-dependence of the finitely many perturbatively
+renormalisable couplings, we now want to study truly functional
+approximations of the effective average action, where we study the
+behaviour of a large number or possibly even infinitely many couplings
+at the same time.
+
+As we have seen in Sec.~\ref{sec:approxschemes}, one of the approximation
+schemes available to do this is the derivative expansion.
+In particular, because of Lorentz symmetry, we can write the effective
+average action in this approximation as a series in even powers of the
+space-time derivative $\partial_\mu$
+\begin{align}
+  \Gamma_k = \Gamma_{0,k}  + \Gamma_{2,k} +  \Gamma_{4,k} + \mathcal O(\partial^6) \,,
+\end{align}
+where each of these terms has to be invariant under the transformation
+$\varphi \mapsto - \varphi$ by itself. We will here study the
+local potential approximation (LPA)
+\begin{align}
+  \Gamma_k [\varphi] = \int \mathrm d^dx \;
+  \left[
+    \frac 12 \, \partial^\mu \varphi \partial_\mu \varphi
+    + V_k (\varphi)
+  \right] ,
+\end{align}
+which corresponds to the zeroth order of the derivative expansion
+with the addition of a canonical kinetic term, so that the
+scalar field can propagate. The effective potential $V_k$ is
+allowed to be a function of $\varphi$ and carries implicitly
+infinitely many monomials and couplings of the scalar field.
+
+In the second order of the derivative
+expansion we would introduce a wave-function renormalisation
+$Z_k(\varphi)$ as a prefactor to the kinetic term. Sometimes
+an intermediate approximation where $Z_k$ is a scale-depend
+number only, is used. In this way one can study the running of
+the anomalous dimension of the scalar field. We will refer to
+this approximation as the ``RG-improvement''.
+
+To extract the renormalisation group dependence of the effective
+potential $V_k$, we first have to calculate the regulated inverse
+propagator in our approximation:
+\begin{align}
+  \Gamma_k^{(2)} + R_k = -\partial^2 + R_k(-\partial^2) + V_k'' \,,
+\end{align}
+where primes denote derivatives with respect to the field $\varphi$.
+In the following chapters we will sometimes abbreviate the combination
+$P_k(-\partial^2) = -\partial^2 + R_k(-\partial^2)$. We can now write
+the flow equation as
+\begin{align}
+  \partial_t \Gamma_k = \frac 12 \,
+  \Tr \left[
+    \frac{ \partial_t R_k }{ -\partial^2 + R_k + V_k'' }
+  \right] ,
+\end{align}
+where as before the traces includes an integration over space-time
+and momenta. It can be evaluate with the following strategy: For
+some general function $W(-\partial^2)$ we can rewrite the trace as an
+integral over its Fourier-transform and integrate explicitly over
+the angular dependence
+\begin{align}
+  \Tr \; W(-\partial^2)
+  =
+  \int \mathrm d^dx
+  \int \frac{ \mathrm d^dq }{ (2\pi)^d } \;
+  \tilde W(q^2)
+  =
+  \frac{ \mathrm{vol} \big( \mathbb S^{d-1}  \big) }{ (2\pi)^d }
+  \int \mathrm d^dx
+  \int_0^\infty \mathrm dq \, q^{d-1} \;
+  \tilde W(q^2) \,,
+\end{align}
+where
+$\mathrm{vol} \big( \mathbb S^{d-1}  \big)
+= \frac{ 2 \, \pi^{\nicefrac d2} }{ \Gamma \left( \nicefrac d2 \right) }$
+is the surface of the $d$ dimensional sphere.
+It is also often times convenient to pass to momentum squared
+as the integration variable $z \equiv q^2$,
+such that the integration measure becomes
+\begin{align}
+  \mathrm dq \, q^{d-1} =
+  \frac 12 \, \mathrm dz \, z^{\nicefrac d2 - 1} \,.
+\end{align}
+Finally, we define the so-called $Q$-functionals as
+\begin{align}
+  Q_n[W] \equiv \frac{ 1 }{ \Gamma(n) }
+  \int_0^\infty \mathrm dz \, z^{n-1} \; \tilde W(z) \,,
+\end{align}
+such that the trace can be evaluated as
+\begin{align}
+  \Tr \; W(-\partial^2)
+  =
+  \frac{1}{ (4\pi)^{\nicefrac d2} }
+  \int \mathrm d^dx \; Q_{\nicefrac d2}[W] \,.
+\end{align}
+Now we are able to evaluate the left hand side of the exact
+renormalisation group equation. Note that the right hand
+side contains already the scale-derivative of the effective potential we
+are looking for, albeit integrate over space-time.
+To make further progress
+we can choose the set the field configuration to a constant,
+which truly makes the potential a function of the parameter $\varphi$,
+rather than a functional of the space-time function $\varphi(x)$.
+Then the space-time volume factor cancels on both sides of the flow
+equation, and we obtain for the dimensionful beta function of the
+effective potential as
+\begin{align}
+  \partial_t V_k (\varphi) =
+  \frac{1}{ 2 \,(4\pi)^{\nicefrac d2} } \;
+  Q_{\nicefrac{d}{2}}
+  \left[
+    \frac{ \partial_t R_k }{ -\partial^2 + R_k + V_k'' }
+  \right] .
+\end{align}
+Note that the value of the $Q$-functional depends on the choice of
+the cutoff. In general it is good practise to test results for the values
+of fixed points and critical exponents against changes of the cutoff.
+This will give a measure of the robustness and convergence of the results.
+Here, however, we will only use the optimised cutoff, since it allows
+the integrals to be evaluated analytically.
+
+
+
+
+
 % Derivation of dimensionless flow equation,
 % Polynomial Approximations w/ optimised cutoff and Wilson-Fisher fixed point,
 % Scaling solutions, spike plots
@@ -2457,6 +2582,7 @@ The critical exponents can then be found as the negative of the eigenvalues:
 %----------------------------------------------------------------------------------------
 
 \chapter{Background Independence in Quantum Gravity}
+
 \label{ch:tim}
 
 As we have outline in the last chapter,
