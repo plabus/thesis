@@ -2531,7 +2531,9 @@ such that the integration measure becomes
 \end{align}
 Finally, we define the so-called $Q$-functionals as
 \begin{align}
-  Q_n[W] \equiv \frac{ 1 }{ \Gamma(n) }
+  Q_n[W]
+  \equiv
+  \frac{ 1 }{ \Gamma(n) }
   \int_0^\infty \mathrm dz \, z^{n-1} \; \tilde W(z) \,,
 \end{align}
 such that the trace can be evaluated as
@@ -2546,8 +2548,8 @@ renormalisation group equation. Note that the right hand
 side contains already the scale-derivative of the effective potential we
 are looking for, albeit integrate over space-time.
 To make further progress
-we can choose the set the field configuration to a constant,
-which truly makes the potential a function of the parameter $\varphi$,
+we can choose to set the field configuration constant,
+which truly makes the potential a function of the variable $\varphi$,
 rather than a functional of the space-time function $\varphi(x)$.
 Then the space-time volume factor cancels on both sides of the flow
 equation, and we obtain for the dimensionful beta function of the
@@ -2560,12 +2562,53 @@ effective potential as
     \frac{ \partial_t R_k }{ -\partial^2 + R_k + V_k'' }
   \right] .
 \end{align}
-Note that the value of the $Q$-functional depends on the choice of
-the cutoff. In general it is good practise to test results for the values
+Note that the value of the $Q$-functional on the right hand side
+depends on the choice of
+the cutoff.
+In general it is good practise to test resulting values
 of fixed points and critical exponents against changes of the cutoff.
 This will give a measure of the robustness and convergence of the results.
-Here, however, we will only use the optimised cutoff, since it allows
+Here, however, for illustrative purposes,
+we will only use the optimised cutoff, since it allows
 the integrals to be evaluated analytically.
+
+In particular, for any $n,l>0$ and any function $A_k \in \mathcal O (\partial^0)$,
+we have for the optimised cutoff
+\begin{align}
+  Q_{n}
+  \left[
+    \frac{ \partial_t R_k }{ -\partial^2 + R_k + A_k }
+  \right]
+  &=
+  \frac{ 1 }{ \Gamma(n) }
+  \int_0^\infty \mathrm dz \, z^{n-1} \;
+  \frac{ 2 k^2 \, \theta (k^2-z) + 2 k^2 (k^2-z) \, \delta (k^2-z) }
+  { \Big[ z + (k^2-z) \, \theta (k^2-z) + A_k \Big]^l } \nonumber \\
+  &=
+  \frac{ 1 }{ \Gamma(n) }
+  \int_0^\infty \mathrm dz \, z^{n-1} \;
+  \frac{ 2 k^2 }{ \big[ k^2 + A_k \big] ^ l } \nonumber \\
+  &=
+  \frac{ 2 }{ \Gamma(n+1) }
+  \frac{ k^{2(n-l+1)} }{ \big[ 1 + \overbar A_k \big] ^ l } \,,
+\end{align}
+where $\overbar A_k = \nicefrac{A_k}{k^2}$ is the dimensionless function.
+Using this result, the dimensionful beta function of the effective
+potential assumes a simple form
+\begin{align}
+  \partial_t V_k (\varphi) =
+  \frac{ c_d \, k^{d+2} }{ k^2 + V'' } \,.
+\end{align}
+We now have to introduce dimensionless fields
+$\bp = k^{ - \frac{d-2}{2} } \varphi$, so that
+we can write the dimensionless potential
+as $\overbar V(\bp) = k^{-d} V(\bp \, k^{\frac{d-2}{2} })$,
+and the dimensionless beta function becomes
+\begin{align}
+  \partial_t \overbar V_k (\bp) =
+  -d \, \bV + \frac{d-2}{2} \, \bp \, \bV' + \frac{ c_d }{ 1 + \overbar V '' } \,.
+\end{align}
+
 
 
 
