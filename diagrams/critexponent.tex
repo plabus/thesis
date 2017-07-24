@@ -1,0 +1,63 @@
+\pgfplotstableread[
+  col sep=semicolon,
+  trim cells,
+]
+{
+N     ; nu        ; exponents
+2     ; 0.542722  ; $1.8426$, $-1.1759$
+3     ; 0.593218  ; $1.6857$, $-1.1328$, $-12.220$
+4     ; 0.630711  ; $1.5855$, $-0.9565$, $-8.8239$
+5     ; 0.650547  ; $1.5372$, $-0.7805$, $-6.5218$
+6     ; 0.654883  ; $1.5270$, $-0.6614$, $-4.8441$
+7     ; 0.651887  ; $1.5340$, $-0.6191$, $-3.7419$
+8     ; 0.649136  ; $1.5405$, $-0.6331$, $-3.1637$
+9     ; 0.648617  ; $1.5417$, $-0.6581$, $-2.9859$
+10    ; 0.649169  ; $1.5404$, $-0.6667$, $-3.0531$
+}\mydata
+
+\pgfplotstableset{
+  every head row/.style={before row=\toprule,
+  after row=\midrule},
+  every last row/.style={after row=\bottomrule},
+  columns/N/.style={
+     column name={$N$},
+    column type=l,
+  },
+  columns/nu/.style={
+    column name={$\nu$},
+    column type=l,
+  },
+  columns/exponents/.style={
+    column name={$\theta_{1,2,3}$},
+    string type,
+    column type=l,
+  },
+  precision=5,
+}
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.45\linewidth,
+    grid=major,
+    grid style=dashed,
+    ylabel absolute,
+    xlabel={truncation order $N$},
+    ylabel={mass critical exponent $\nu$},
+    name=myplot
+]
+\addplot table[x=N,y=nu] {\mydata};
+\end{axis}
+\node [right=of myplot] {\pgfplotstabletypeset\mydata};
+\end{tikzpicture}
+% \begin{tabular}{c c l}
+% $N$  &   $\nu$      &  critical exponents \\
+% 2    &   0.542722   &  1.8426, -1.1759 \\
+% 3    &   0.593218   &  1.6857, -1.1328, -12.220 \\
+% 4    &   0.630711   &  1.5855, -0.9565, -8.8239, -32.5175 \\
+% 5    &   0.650547   &  1.5372, -0.7805, -6.5218, -22.0216, -60.3036 \\
+% 6    &   0.654883   &  1.5270, -0.6614, -4.8441, -15.802, -40.150, -93.467 \\
+% 7    &   0.651887   &  1.5340, -0.6191, -3.7419, -11.762, -29.108, -63.190, -132.03 \\
+% 8    &   0.649136   &  1.5405, -0.6331, -3.1637, -9.1703, -22.347, -47.206, -92.227, -177.97 \\
+% 9    &   0.648617   &  1.5417, -0.6581, -2.9859, -7.5021, -17.913, -37.308, -70.872, -128.20, -232.55 \\
+% 10   &   0.649169   &  1.5404, -0.6667, -3.0531, -6.4201, -14.776, -30.482, -57.078, -100.42, -171.24, -295.61
+% \end{tabular}
