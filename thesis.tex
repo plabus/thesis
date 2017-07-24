@@ -1528,18 +1528,21 @@ functional renormalisation group equation as
   \partial_t \Gamma_k = \frac12 \;
   \input{diagrams/gamma0.tex} \;.
 \end{align}
-Similarly, we can express the running of the first three $n$-point
+Similarly, we can express the running of the first four $n$-point
 functions as follows:
 \begin{align}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \partial_t \Gamma^{(1)}_{x} &=
   - \, \frac12 \;
   \input{diagrams/gamma1.tex} \;,
   \label{eq:deriv1} \\
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \partial_t \Gamma^{(2)}_{xy} &=
-  \input{diagrams/gamma2a.tex}
+  \, \input{diagrams/gamma2a.tex}
   - \frac12 \;
   \input{diagrams/gamma2b.tex} \;,
   \label{eq:deriv2} \\
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \partial_t \Gamma^{(3)}_{xyz} &=
   - \, 3 \;
   \input{diagrams/gamma3a.tex}
@@ -1548,9 +1551,29 @@ functions as follows:
   + \input{diagrams/gamma3c.tex}
   + \input{diagrams/gamma3d.tex}
   + \input{diagrams/gamma3e.tex}
-  \;.
+  \;,
   \label{eq:deriv3} \\
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \partial_t \Gamma^{(4)}_{xyzw} &=
+  \, 3 \; \input{diagrams/gamma4a.tex}
+  - \frac12 \; \input{diagrams/gamma4b.tex}
+  - \input{diagrams/gamma4d1.tex}
+  - \input{diagrams/gamma4d2.tex}
+  - \input{diagrams/gamma4d3.tex}
+  \nonumber \\
+  &
+  + \frac12 \; \input{diagrams/gamma4c1.tex}
+  + \frac12 \; \input{diagrams/gamma4c2.tex}
+  + \frac12 \; \input{diagrams/gamma4c3.tex}
+  + \frac12 \; \input{diagrams/gamma4c4.tex}
+  \nonumber \\[3mm]
+  &
+  + \frac12 \; \input{diagrams/gamma4e1.tex}
+  + \frac12 \; \input{diagrams/gamma4e2.tex}
+  + \frac12 \; \input{diagrams/gamma4e3.tex}
+  \;.
   \label{eq:deriv4}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{align}
 We will use the vertex expansion later on in chapters 4 and 5, and
 in particular make use of the diagrammatic representation in terms

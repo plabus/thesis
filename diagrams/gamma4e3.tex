@@ -1,0 +1,43 @@
+\begin{tikzpicture}[line width=0.20mm,scale=0.5,baseline=-0.1cm]
+
+  \tikzmath{
+    \radius       = 0.72; % radius of right circle
+    \insertradius = 0.20; % radius for regulator insertion
+    \degs         = 45;   % angle of insertion X
+    \dotradius    = 0.07; % radius of the circles that make the dots
+    \leg          = 0.7;  % length external legs
+  }
+
+  % Position of the regulator insertion
+  \coordinate (X) at (0, \radius);
+  \coordinate (A) at (-\radius, 0);
+  \coordinate (B) at (0, -\radius);
+  \coordinate (C) at (\radius, 0);
+
+  % Loop composet out of a circle
+  \draw  (0, -\radius) arc (-90:270:\radius);
+
+  % Regulator insertion \dot R_k
+  \fill[white] (X) circle (\insertradius);
+  \draw (X) circle (\insertradius);
+  \draw (X) -- ($ (X) + ( {cos(\degs)*\insertradius}, {sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + (-{cos(\degs)*\insertradius}, {sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + ( {cos(\degs)*\insertradius},-{sin(\degs)*\insertradius}) $);
+  \draw (X) -- ($ (X) + (-{cos(\degs)*\insertradius},-{sin(\degs)*\insertradius}) $);
+
+  % external legs
+  \draw[fill] (A) circle [radius=\dotradius];
+  \draw (A) -- ($ (A) + (-{cos(\degs)*\leg}, {sin(\degs)*\leg}) $)
+  node[above, inner sep=0.7mm] {$\scriptstyle x$};
+
+  \draw (A) -- ($ (A) + (-{cos(\degs)*\leg},-{sin(\degs)*\leg}) $)
+  node[below, inner sep=0.7mm] {$\scriptstyle w$};
+
+  \draw[fill] (C) circle [radius=\dotradius];
+  \draw (C) -- ($ (C) + ({cos(\degs)*\leg}, {sin(\degs)*\leg}) $)
+  node[above, inner sep=0.7mm] {$\scriptstyle y$};
+
+  \draw (C) -- ($ (C) + ({cos(\degs)*\leg},-{sin(\degs)*\leg}) $)
+  node[below, inner sep=0.7mm] {$\scriptstyle z$};
+
+\end{tikzpicture}
