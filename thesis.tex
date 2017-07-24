@@ -2461,10 +2461,15 @@ matrices:
 \end{align}
 The critical exponents can then be found as the negative of the eigenvalues:
 \begin{align}
-  \text{G:} \quad &\big\lbrace 2 ,\, 4 - d \big\rbrace \,, \\
-  \text{WF:} \quad &\left\lbrace
-  - \frac 16 \left( 10 - 4d \pm \sqrt{ 484 - 200 d + 22 d^2 } \right)
-    \right\rbrace .
+  \text{G:}&
+  \qquad
+  \theta_1 = 2 \,,
+  \quad
+  \theta_2 = 4 - d \,, \\
+  \text{WF:}&
+  \qquad
+  \theta_{1,2} = - \frac 16 \left( 10 - 4d \pm \sqrt{ 484 - 200 d + 22 d^2 } \, \right) .
+  \label{eq:critexpperttheory}
 \end{align}
 
 \subsubsection{The local potential approximation}
@@ -2614,10 +2619,11 @@ we have for the optimised cutoff
   &=
   \frac{ 2 }{ \Gamma(n+1) }
   \frac{ k^{2(n-l+1)} }{ \big[ 1 + \overbar A_k \big] ^ l } \,,
+  \label{eq:Qfuncoptcutoff}
 \end{align}
 where $\overbar A_k = \nicefrac{A_k}{k^2}$ is the dimensionless function.
 Using this result, the dimensionful beta function of the effective
-potential assumes a simple form
+potential assumes the simple form
 \begin{align}
   \partial_t V_k (\varphi) =
   \frac{ c_d \, k^{d+2} }{ k^2 + V'' } \,.
@@ -2632,14 +2638,133 @@ and the dimensionless beta function becomes
   -d \, \bV + \frac{d-2}{2} \, \bp \, \bV' + \frac{ c_d }{ 1 + \overbar V '' } \,.
 \end{align}
 
+\subsubsection{Polynomial truncations}
 
+Before attempting to solve the fixed point equation resulting from
+this flow equation in full generality, let us study a simple polynomial
+approximation. For this we may write
+the dimensionful effective potential,
+respecting the $\mathbb Z_2$ symmetry,
+as
+\begin{align}
+  V(\varphi^2) = \sum_{n=0}^N
+  \frac{ \lambda_{2n} }{ (2n)! } \, \varphi^{2n} \,.
+\end{align}
+In this way, we can extract the beta functions for the
+couplings $\lambda_{2n}$ by taking derivatives
+of the beta function of the potential
+with respect to the field and setting it to zero
+subsequently
+\begin{align}
+  \beta_{2n} = \frac{ \partial^{2n} }{ \partial \varphi^{2n} }
+  \, \partial_t V_k \Big|_{\varphi = 0 } \,.
+\end{align}
+We can then pass once again to dimensionless variables
+$\overbar \lambda_{2n} \equiv k^{d(n-1)-2n} \lambda_{2n}$,
+such that the dimensionless beta functions read
+\begin{align}
+  \overbar \beta_{2n} =
+  \big[ d(n-1)-2n \big] \, \overbar \lambda_{2n}
+  + k^{d(n-1)-2n} \, \beta_{2n} \,.
+\end{align}
+Using the result Eqn.~\eqref{eq:Qfuncoptcutoff} and the dimensionful
+beta function of the potential we obtain the following first
+five beta functions for the couplings
+\begin{align}
+  \overbar \beta_0 &=
+  -d \, \overbar \lambda_0 + \frac{ c_d }{ 1 + \overbar \lambda_2 } \,, \\
+  \overbar \beta_2 &=
+  -2 \overbar \lambda_2 - \frac{ c_d \, \overbar \lambda_4 }{ \big( 1 + \overbar \lambda_2 \big)^2 } \,, \\
+  \overbar \beta_4 &=
+  \big( d - 4 \big) \, \overbar \lambda_4
+  - \frac{ c_d \, \overbar \lambda_6 }{ \big( 1 + \overbar \lambda_2 \big)^2 }
+  + \frac{ 6 \, c_d \, \overbar \lambda_4^2 }{ \big( 1 + \overbar \lambda_2 \big)^3 } \,, \\
+  \overbar \beta_6 &=
+  \big( 2d - 6 \big) \, \overbar \lambda_6
+  - \frac{ c_d \, \overbar \lambda_8 }{ \big( 1 + \overbar \lambda_2 \big)^2 }
+  + \frac{ 30 \, c_d \, \overbar \lambda_4 \, \overbar \lambda_6 }{ \big( 1 + \overbar \lambda_2 \big)^3 }
+  - \frac{ 90 \, c_d \, \overbar \lambda_4^3 }{ \big( 1 + \overbar \lambda_2 \big)^4 } \,, \\
+  \overbar \beta_8 &=
+  \big( 3d - 8 \big) \, \overbar \lambda_6
+  - \frac{ c_d \, \overbar \lambda_{10} }{ \big( 1 + \overbar \lambda_2 \big)^2 }
+  + \frac{ 56 \, c_d \, \overbar \lambda_4 \, \overbar \lambda_8 }{ \big( 1 + \overbar \lambda_2 \big)^3 }
+  + \frac{ 70 \, c_d \, \overbar \lambda_6^2 }{ \big( 1 + \overbar \lambda_2 \big)^3 }
+  - \frac{ 1260 \, c_d \, \overbar \lambda_4^2 \, \overbar \lambda_6 }{ \big( 1 + \overbar \lambda_2 \big)^4 }
+  + \frac{ 2520 \, c_d \, \overbar \lambda_4^4 }{ \big( 1 + \overbar \lambda_2 \big)^5 } \,.
+\end{align}
+These equations can now in particular be used to study the Wilson-Fisher fixed point
+in $d=3$ in some more detail. Starting from the simplest truncation
+for which $N=2$,
+\begin{align}
+  \overbar \beta_2 &=
+  -2 \overbar \lambda_2 - \frac{1}{6\pi^2} \, \frac{ \overbar \lambda_4 }{ \big( 1 + \overbar \lambda_2 \big)^2 } \,, \\
+  \overbar \beta_4 &=
+  - \overbar \lambda_4
+  + \frac{1}{\pi^2} \, \frac{ \overbar \lambda_4^2 }{ \big( 1 + \overbar \lambda_2 \big)^3 } \,,
+\end{align}
+one set the beta functions to zero and finds a non-trivial fixed point at
+\begin{align}
+  \overbar \lambda_2^\star = - \frac{ 1 }{ 13 } \approx -0.0769 \,,
+  \quad
+  \overbar \lambda_4^\star = \frac{ 1728 \pi^2 }{ 2197 } \approx 7.76 \,.
+\end{align}
+Again, one may linearise the flow around this fixed point to extract the critical
+exponents using the eigenvalues of the stability matrix. These yields the two
+critical exponents
+\begin{align}
+  \theta_1 = 1.843 \,,
+  \quad
+  \theta_2 = - 1.176 \,,
+\end{align}
+precisely the same that we found in the
+``perturbative'' $\varphi^4$-analysis, \cf Eqn.\eqref{eq:critexpperttheory}.
+However, we may now enlarge the system including the
+dimensionless coupling $\lambda_6 = \overbar \lambda_6$. Then the system becomes
+\begin{align}
+  \overbar \beta_2 &=
+  -2 \overbar \lambda_2 - \frac{1}{6\pi^2} \, \frac{ \overbar \lambda_4 }{ \big( 1 + \overbar \lambda_2 \big)^2 } \,, \\
+  \overbar \beta_4 &=
+  - \, \overbar \lambda_4
+  - \frac{1}{6\pi^2} \, \frac{ \overbar \lambda_6 }{ \big( 1 + \overbar \lambda_2 \big)^2 }
+  + \frac{1}{\pi^2} \, \frac{ \overbar \lambda_4^2 }{ \big( 1 + \overbar \lambda_2 \big)^3 } \,, \\
+  \overbar \beta_6 &=
+    \frac{5}{\pi^2} \frac{ \overbar \lambda_4 \, \overbar \lambda_6 }{ \big( 1 + \overbar \lambda_2 \big)^3 }
+  - \frac{15}{\pi^2} \frac{ \overbar \lambda_4^3 }{ \big( 1 + \overbar \lambda_2 \big)^4 } \,.
+\end{align}
+Again, we find a single non-Gaussian fixed point with the following
+fixed point values and critical exponents:
+\begin{align}
+  \overbar \lambda_2^\star &= - \frac{ 1 }{ 7 } \approx -0.1429 \,,
+  \quad
+  \overbar \lambda_4^\star = \frac{ 432 \pi^2 }{ 343 } \approx 12.43 \,,
+  \quad
+  \overbar \lambda_6^\star = \frac{ 93312 \pi^4 }{ 16807 } \approx 540.8 \,, \\
+  \vphantom{ \frac 17 }
+  \theta_1 &= 1.686 \,,
+  \quad
+  \theta_2 = - 1.133 \,,
+  \quad
+  \theta_3 = - 12.22 \,.
+\end{align}
+Note that the first two critical exponents are fairly close to the previous values
+and that there is now an additional irrelevant direction, which is very different
+from its perturbative value zero. One can now continue with this procedure by including
+the running of the perturbatively non-renormalisable coupling $\lambda_8$. However,
+starting at this order, one finds an additional, second non-trivial solution to the system
+of fixed point equations.
 
+Solely within the polynomial truncation one cannot decide which one of these fixed points,
+or even whether both of them are physical. However, it is always possible to identify
+one of the solutions as the continuation of a previously encountered fixed point.
+Unsurprisingly, the number of solutions grows with the order of the polynomial, since
+this approximation provides a system of $N$ equations for $N$ unknowns.
 
+Polynomial truncations are very useful to quantify solutions numerically and extract
+critical exponents. However, we can neither prove that a true solution for
+the whole effective potential exists, nor that the additional fixed point solutions
+are artefacts of the approximation.
 
-
-% Derivation of dimensionless flow equation,
-% Polynomial Approximations w/ optimised cutoff and Wilson-Fisher fixed point,
-% Scaling solutions, spike plots
+\subsubsection{Scaling solutions}
 
 
 
