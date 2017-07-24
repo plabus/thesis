@@ -14,9 +14,22 @@ S_k (or else) ---> \Delta S_k (or what?)
 TODO:
 =====
 
-write technical intro
-appendix B: derivation flow equation
-appendix C: calculating Feynman diagrams
+write technical intro:
+  - figure spikeplots
+  - figure UV critical surface
+  - explanation section 1.2 about how
+    uv critical surface fixes/predicts IR irrelevant couplings
+    (including origin of the name (ir)relevant directions)
+
+add references:
+  - general background independece (Reuter etc)
+  - spike plots Morris
+
+appendix B:
+  - derivation flow equation
+
+appendix C:
+  - calculating Feynman diagrams
 
 ----------------------
 
