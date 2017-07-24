@@ -1,0 +1,31 @@
+\begin{tikzpicture}[
+  >=stealth,
+  scale=1.00,
+  ]
+
+  \begin{axis}[
+    width=12cm,
+    grid=major,
+    grid style=dashed,
+    ylabel absolute,
+    legend pos=north west,
+    legend cell align=left,
+    xlabel={$\sigma$},
+    ylabel={$\Phi(d,\sigma)$},
+    xmin=-1.0,
+    xmax=0.6,
+    ymin=0,
+    ymax=1.5,
+    no marks,
+    ylabel absolute,
+    thick,
+    ]
+    \addplot[blue] table {data/spiked4small.dat};
+    \addplot[red]  table {data/spiked3small.dat};
+    \legend{
+      \, $d=4$,
+      \, $d=3$
+    }
+  \end{axis}
+
+\end{tikzpicture}
