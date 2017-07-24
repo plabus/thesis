@@ -2760,12 +2760,78 @@ Unsurprisingly, the number of solutions grows with the order of the polynomial, 
 this approximation provides a system of $N$ equations for $N$ unknowns.
 
 Polynomial truncations are very useful to quantify solutions numerically and extract
-critical exponents. However, we can neither prove that a true solution for
+critical exponents. However, using them we can neither prove that a true solution for
 the whole effective potential exists, nor that the additional fixed point solutions
 are artefacts of the approximation.
 
 \subsubsection{Scaling solutions}
 
+To address this issue, one has to study the full behaviour of the fixed point
+equation for the effective potential
+\begin{align}
+  0 = -d \, \bV^\star + \frac{d-2}{2} \, \bp \, \bV^\star' + \frac{ c_d }{ 1 + \bV^\star '' } \,.
+  \label{eq:fixedpointeqnlpa}
+\end{align}
+Since this is a second order ordinary differential equation, each of its
+solutions---called scaling solutions---can be parametrised in terms of
+two boundary conditions. Since the potential contains only even powers
+of the field variable, its first derivatives has to vanish at the origin,
+$\bV^\star'(0) = 0$. If we furthermore fix the value of the second
+derivative at zero $\bV^\star ''(0) = \sigma$, the two conditions
+read
+\begin{align}
+  \bV^\star'(0) = 0
+  \quad
+  \text{and}
+  \quad
+  \bV^\star ''(0) = \sigma
+  \; \Leftrightarrow \;
+  \bV^\star(0) = \frac{c_d}{d \big( 1 + \sigma \big)}
+  \label{eq:bcconditions}
+\end{align}
+Since the fixed point equation is non-linear, one has to use numerical methods to
+solve it.
+In doing so, one observes that for most $\sigma$'s the solutions end
+up in a singularity at finite values of the field variable $\bp$.
+To find a value for $\sigma$, for which a solution is defined for all real numbers
+$\mathbb R$ instead, one proceeds as follows.
+First one defines a function $\Phi(d,\sigma)$,
+which maps the (continuous) dimension $d$ and the parameter $\sigma$ to the
+maximal value of the field variable $\bp$, for which a solution to
+Eqn.~\eqref{eq:fixedpointeqnlpa} with boundary conditions \eqref{eq:bcconditions}
+can be found.
+Since we are interested in solutions which are defined for any value of $\bp$,
+we have to look for divergences in $\Phi(d,\sigma)$. To this end
+one may numerically calculate $\Phi(d,\sigma)$ and look for `spikes'
+in the plot of $\Phi$ as a functions of $\sigma$.
+Extracting a critical value for $\sigma$ in this way, one is than able to
+integrate the fixed point equation to find a scaling solution for the effective
+potential.
+
+\begin{figure}
+  \begin{center}
+    % \input{diagrams/spikeplots.tex}
+  \end{center}
+  \vspace*{-4mm}
+  \caption{
+    Spike plots
+  }
+  \label{fig:spikeplots}
+\end{figure}
+
+We illustrate this approach in Fig.\ref{fig:spikeplots}.
+Although this procedure may be applied to continuous, fractal dimensions, we focus
+on the cases $d=4$ and $d=3$ here. Note that the spike at $\sigma = -1$ is due
+to the pole in the denominator of the last term in the fixed point equation and
+does not correspond to a true solution of the system.
+As we have seen before, in $d=4$ there is only one fixed point, the trivial
+Gaussian fixed point at $\sigma = 0$, where we have
+\begin{align}
+  \bV^\star = \mathrm{const.} = \frac { 1 }{ 128 \pi^2 }
+\end{align}
+In $d=3$, there is however an additional spike for $\sigma^\star = -0.19$,
+which corresponds to the Wilson-Fisher fixed point. The resulting potential
+has two minima and belongs to the bi-critical Ising universality class.
 
 
 %----------------------------------------------------------------------------------------
