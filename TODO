@@ -15,7 +15,6 @@ TODO:
 =====
 
 write technical intro:
-  - figure spikeplots
   - figure UV critical surface
   - explanation section 1.2 about how
     uv critical surface fixes/predicts IR irrelevant couplings
@@ -24,6 +23,8 @@ write technical intro:
 add references:
   - general background independece (Reuter etc)
   - spike plots Morris
+
+add corrections Percacci
 
 appendix B:
   - derivation flow equation
