@@ -3878,7 +3878,8 @@ Substituting expression \eqref{powlaw-gamma} for $\bg$ into the msWI \eqref{msWI
 and multiplying through by $\bc$,
 we can read off from this and the flow \eqref{flowComplete_opt} the zeroth level equations:
 \begin{align}
-  d_V a_{00} = \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  2a_{20}}\,,\qquad 2\rho\, a_{00} = \frac{\rho}{3} \frac{1}{1 -  2a_{20}}\,.
+  d_V a_{00}     &= \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  2a_{20}} \,, \\
+  2\rho\, a_{00} &= \frac{\rho}{3} \, \frac{1}{1 -  2a_{20}} \,.
 \end{align}
 Since $\rho$ cannot vanish and $a_{20}$ cannot diverge,
 combining these equations gives $d_V = d_R+\eta/2$ which from \eqref{dimensions} implies $\eta=0$.
@@ -3910,8 +3911,8 @@ and hence up to order $r$ there are
   n_{\text{eqn}}(r) = \sum_{i=0}^{r} 2\,(i+1) = r^2 + 3r + 2
 \end{align}
 equations.
-
-To count the coefficients appearing in these $n_{\text{eqn}}(r)$ equations let us start with the left hand sides.
+To count the coefficients appearing in these $n_{\text{eqn}}(r)$ equations
+let us start with the left hand sides.
 First note that
 \begin{align}
   \label{proportionality}
@@ -3928,6 +3929,7 @@ $0$ to $r+1$ and $i+j \leqslant r+1$
     \input{diagrams/coeff-lhs.tex}
     \input{diagrams/coeff-rhs.tex}
   \end{center}
+  \vspace*{-2mm}
   \caption{
     Coefficients of the potential appearing on the left sides of the equations (left diagram)
     and in the expansion of the propagator (right diagram).
@@ -3942,11 +3944,10 @@ $0$ to $r+1$ and $i+j \leqslant r+1$
   a_{1,r},\, \dots ,\, a_{2,r-1},\, \dots,\, a_{r+1,0}
   \bigg\rbrace \,,
 \end{align}
-(\cf figure \ref{fig:diag_lhs_rhs}). This adds up to the following number of coefficients
+\cf Fig.~\ref{fig:diag_lhs_rhs}. This adds up to the following number of coefficients
 \begin{align}
   n_{\text{lhs}}(r) = \sum_{i=1}^{r+2} \, i = \frac{1}{2} \, r^2 + \frac{5}{2} \, r + 3 \,.
 \end{align}
-
 Including the coefficients of the right hand side,
 we have to be careful not to double count any coefficients that have already been taken account of on the
 left hand sides. Let us suppose we have fixed the cutoff and let us assume that for the
@@ -3959,8 +3960,8 @@ expansion of the propagator
 \end{align}
 Since we can always arrange the $\bar\varphi$--derivatives to act first,
 the expression in the square brackets will involve terms $\bar V^{(2,0)} \cdots \, \bar V^{(i+2,0)}$.
-Using (\ref{proportionality}), we see that the expression given in (\ref{expansion_propagator}) will
-then include terms
+Using Eqn.~\eqref{proportionality}, we see that the expression given in Eqn.~\eqref{expansion_propagator}
+will then include the following terms
 \begin{align}
   \bigg\lbrace
   a_{20},\, a_{21},\, \dots ,\, a_{2i},\, a_{30},\, \dots ,\, a_{3i},\, \dots,\, a_{i+2,0},\, \dots,\, a_{i+2,j}
@@ -3968,25 +3969,14 @@ then include terms
 \end{align}
 Up to any fixed order $r$, $i$ and $j$ can take values between $0$ and $r$ such that $i+j = r$,
 and in total we will have the following coefficients on the right hand sides
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}
-%   \begin{center}
-%     \input{diagrams/coeff-rhs.tex}
-%   \end{center}
-%   \caption{
-%     Coefficients of the potential appearing in the expansion of the propagator.
-%   }
-%   \label{diag_rhs}
-% \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
   \bigg\lbrace
   a_{20},\, \dots ,\, a_{2,r},\, a_{30},\, \dots ,\, a_{3,r-1},\, \dots ,\, a_{4,r-2},\, \dots,\, a_{r+2,0}
   \bigg\rbrace \,,
 \end{align}
-(\cf figure \ref{fig:diag_lhs_rhs}).
-Most of these coefficients have however already been accounted for on the left hand sides
-\cf (\ref{coeff_lhs}). The only ones not counted yet are
+\cf again Fig.~\ref{fig:diag_lhs_rhs}.
+Most of these coefficients have however already been accounted for on the left hand sides and
+the only ones not counted yet are
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
   \begin{center}
@@ -4001,9 +3991,10 @@ Most of these coefficients have however already been accounted for on the left h
 \begin{align}
   \bigg\lbrace
   a_{2,r},\, a_{3,r-1},\, a_{4,r-2},\, \dots,\, a_{r+2,0}
-  \bigg\rbrace \,,
+  \bigg\rbrace \,.
 \end{align}
-(\cf figure \ref{fig:diag-all}) which precisely add up to a further $r+1$ coefficients.
+This is displayed graphically in Fig.~\ref{fig:diag-all}.
+They precisely add up to a further $r+1$ coefficients.
 We also must include another two coefficients, namely $\eta$ and $d_f$.
 Finally, since $\gamma$ is in general some function of $\chi$ it is easy to see that
 \begin{align}
