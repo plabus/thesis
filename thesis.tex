@@ -2867,8 +2867,8 @@ and belongs to the bi-critical Ising universality class.
 
 \label{ch:tim}
 
-As we have outline in the last chapter,
-non-perturbative renormalization group flows for quantum gravity \cite{Reuter:1996cp}
+Following ref. \cite{Reuter:1996cp},
+non-perturbative renormalization group flows for quantum gravity
 have been formulated by utilising the technical device of splitting the metric in terms
 of a background metric and a fluctuation field---the background field formalism.
 
@@ -2896,13 +2896,12 @@ requirement of background independence in a theory of quantum gravity may actual
 in conflict with renormalization group properties in flows formulated as above:
 fixed points under changes in the effective cutoff scale $k$, can be forbidden by the msWIs
 that are enforcing background independence.%
-\footnote{An alternative approach has been initiated which avoids
-these issues entirely since background independence is never broken \cite{Morris:2016nda}.}
+% \footnote{An alternative approach has been initiated which avoids
+% these issues entirely since background independence is never broken \cite{Morris:2016nda}.}
 
 In the conformally truncated gravity model investigated in Ref. \cite{Dietz:2015owa},
 this happens generically when the anomalous dimension $\eta$ is non-vanishing.
 It can however be avoided by a careful choice of parametrisation.
-% $f$ (setting it to be a power of $\chi$ determined by its scaling dimension \cite{Dietz:2015owa}).
 On the other hand it was shown in Ref. \cite{Dietz:2015owa} that the situation is saved in all cases,
 at least in the conformally reduced gravity model,
 by the existence of an alternative background-independent description.
@@ -2910,7 +2909,6 @@ This involves in particular a background-independent notion of scale, $\hat{k}$.
 This background independent description exists at a deeper underlying level since in terms
 of these background-independent variables, the RG fixed points and corresponding flows always exist,
 and are manifestly independent of the choice of parametrisation.
-% $f(\chi)$.
 
 After approximating the exact RG flow equations and msWIs to second order in the derivative expansion,
 the crucial technical insight was to notice that, just as in the scalar field theory model
@@ -2937,7 +2935,6 @@ But even if the msWIs are not compatible with the flow equations,
 it does not immediately follow that there are no simultaneous solution to the system of equations.
 However, as we argue in sec. \ref{sec:incompatibility} and verify by example in
 sec. \ref{sec:incompatible-no-solns},
-% (see also sec. \ref{sec:truncations}),
 if the msWIs are not compatible, the equations are overconstrained and it is for this reason that
 it is hopeless to expect any solutions.
 
@@ -3375,8 +3372,8 @@ On the other hand we see that if $\dot{r}$ and $\delta r/\delta\chi$ have the sa
 dependence then the identity \eqref{step2} is restored because it is no longer possible
 to distinguish the two loops.
 Returning the placement of $\sqrt{\bar{g}}$ from \eqref{odd-r} to the integration measure,
-this in fact would give us the relation \eqref{same-p-dependence} that is necessary and
-sufficient for compatibility of the Ward identities within the derivative expansion,
+this in fact would give us relation \eqref{same-p-dependence} which, as we will see,
+is necessary and sufficient for compatibility of the Ward identities within the derivative expansion,
 and which we will now derive directly within the derivative expansion.
 
 
@@ -3384,7 +3381,7 @@ and which we will now derive directly within the derivative expansion.
 
 We now proceed to calculate the flow of the msWI for the system truncated
 at $\mathcal{O}(\partial^2)$ as described in sec. \ref{sec:review},
-and investigate directly under which circumstances it vanishes.
+and investigate directly under what circumstances it vanishes.
 Let us start by writing the flow equations and msWIs for both $V$ and $K$ in the following form
 so that we can study both cases simultaneously:
 \begin{align}
@@ -3523,7 +3520,7 @@ For a general cutoff $R_p$, these two additional commutator terms neither vanish
 other terms of the flow.
 
 If $[ \dot R , \partial_{\chi} R + \gamma R ]_{qp}$ vanishes,
-the flow \eqref{flowWV} of the V msWI is automatically satisfied providing that both
+the flow \eqref{flowWV} of the $V$ msWI is automatically satisfied providing that both
 the $K$ and $V$ msWI are also satisfied. In this case we have by rearrangement that
 \begin{align}
   \left(
@@ -3877,8 +3874,9 @@ the background field, we write:
   \label{pot-expand}
   \bar V(\bar\varphi,\bar\chi) = \sum_{n,\,m=0}^{\infty} a_{nm} \, \bar\varphi^n \, \bar\chi^m\,.
 \end{align}
-Substituting \eqref{powlaw-gamma} into \eqref{msWI_opt} and multiplying through by $\bc$,
-we can read off from this and \eqref{flowComplete_opt} the zeroth level equations:
+Substituting expression \eqref{powlaw-gamma} for $\bg$ into the msWI \eqref{msWI_opt}
+and multiplying through by $\bc$,
+we can read off from this and the flow \eqref{flowComplete_opt} the zeroth level equations:
 \begin{align}
   d_V a_{00} = \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  2a_{20}}\,,\qquad 2\rho\, a_{00} = \frac{\rho}{3} \frac{1}{1 -  2a_{20}}\,.
 \end{align}
@@ -4183,7 +4181,7 @@ with covariant derivatives
   F_\mu = \bnabla_\rho \, h{}^\rho{}_\mu - \frac{\beta + 1}{d} \, \bnabla_\mu \, h
   = \bnabla_\rho \, \hT{}^\rho{}_\mu - \frac{\beta}{d} \, \bnabla_\mu \, h \,.
 \end{align}
-One can than show that the gauge condition transforms homogeneously
+One can then show that the gauge condition transforms homogeneously
 \begin{align}
   \weyl F_\mu = 2 \, \varepsilon \, F_\mu \,,
 \end{align}
