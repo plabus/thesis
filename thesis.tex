@@ -509,7 +509,7 @@ a collective fixed point of the beta functions of all couplings%
   to have a fixed point, that is products and quotients of bare couplings
   that appear in physical observables such as cross sections.
 }
-of the theory in the ultraviolet. That means that the energy scale dependence
+of the theory in the ultraviolet. That means that the energy scale-dependence
 of the couplings becomes self-similar (\ie stable) when approaching arbitrary
 high energies. In Yang-Mills theories this is trivially satisfied, because
 the essential coupling converges to zero at high energies: quarks and gluons stop interacting
@@ -678,7 +678,7 @@ All typesetting has been done with \LaTeX.
 
 In this chapter we will explain the idea of asymptotic safety in a
 more rigorous way than in the introduction,
-and in particular introduced to the notation
+and in particular introduce the notation
 used in the rest of this thesis.
 To this end, we will first study the functional renormalisation group
 equation and its related concepts.
@@ -710,8 +710,8 @@ to the exact equation. For reviews of the topics, \cf
 
 \subsection{Observables in quantum field theories}
 
-In order to solve a quantum field theory, one is interested in
-being able to calculate any physical observable the theory may predict.
+In order to solve a quantum field theory, one has to be
+able to calculate any physical observable the theory may predict.
 This will in particular include the existence of particles---elementary
 or bound---as well as their properties, such as masses or charges,
 but also their behaviour when interacting amongst each other, which
@@ -781,7 +781,7 @@ which in turn includes the vertices of the theory, \ie the way fields
 interact amongst themselves. It is then the latter that is expanded
 in powers of some small quantity, such as a coupling parameter,
 in order to calculate perturbations around the free theory.
-Not only relies this approach on the existence of a small expansion
+Not only does this approach rely on the existence of a small expansion
 parameter, it is also by its very nature bound to hide non-analytic
 (or non-perturbative) dependencies of observables within the quantum field theory.
 
@@ -796,7 +796,7 @@ Furthermore, one can show that the perturbative expansion
 (if applicable) of any correlation function
 calculated with action $S$ is equivalent to the same expansion
 calculated with the `quantum action' $W$, retaining only tree-level
-diagrams. This motivates the definition of an energy scale dependent
+diagrams. This motivates the definition of an energy scale-dependent
 action $\SLambda$, which is obtained by integrating out
 only momentum modes $|q|$ that are higher%
 \footnote{%
@@ -820,7 +820,7 @@ the remaining modes
   \mathcal D \Phi \;
   e^{-\SLambda \lbrack \Phi \rbrack} \,.
 \end{align}
-In this way, we can define a scale dependent quantum action which
+In this way, we can define a scale-dependent quantum action which
 describes physics at same given energy scale $\Lambda$ in terms of
 its tree-level diagrams. In particular, we may quantify the dependence
 of $\SLambda$ on the energy scale
@@ -839,7 +839,7 @@ $S_\LambdaUV = S$,
 and subsequently integrate towards the infrared,
 $W = - \lim_{\Lambda \rightarrow 0} \SLambda$.
 
-Although this approach does not seem to be any easy than calculating
+Although this approach does not seem any easier than calculating
 the original generating functional $W$ directly, it does
 offer a number of advantages:
 \bigskip
@@ -864,8 +864,8 @@ offer a number of advantages:
   \item
     The resulting beta function is finite.
     In particular, ultraviolet divergences
-    that may appear on the right hand side of the renormalisation group
-    equation cancel each other.
+    that may appear in $\SLambda$ cancel out when taking the difference
+    on the right hand side of the renormalisation group equation.
 \end{itemize}
 \bigskip
 Note that the cutoff $\Lambda$ may be thought of as an ultraviolet cutoff,
@@ -883,16 +883,16 @@ derive an exact functional renormalisation group equation.
 
 \subsection{Smooth cutoff operators}
 
-Our aim for this subsection is it to introduce a concept of a scale dependent
+Our aim for this subsection is it to introduce a concept of a scale-dependent
 classical (or bare) action which can then be integrated over in the path
-integral to obtain a scale dependent quantum action.
+integral to obtain a scale-dependent quantum action.
 
 In order to do this, for any given energy scale $k$ we want to distinguish
 modes with low momenta $|q|<k$ and modes with high momenta $|q|>k$.
 Since it is the high momentum modes we want to integrate out, they should
 remain undisturbed by the cutoff procedure, \ie propagate as given by
-the theory. The low momentum modes however, should be suppressed, \ie
-not be excited and nor propagate. Furthermore, we want to
+the theory. The low momentum modes however, should be suppressed,
+\ie they should not propagate. Furthermore, we want to
 alter only the propagation of a given mode, and not its interaction structure.
 This is why we choose to add to the classical action a cutoff term that is
 bilinear in the fields which we want to regulate.
@@ -959,10 +959,10 @@ we may want to make sure that the limit $R_k \rightarrow 0$
 happens sufficiently fast (\eg exponentially). The low momentum
 modes on the other hand should obtain a mass $m_k = R_k(q^2) \approx k$,
 for all $|q| < k$, such that their energy always remains below the mass gap.
-It is often beneficent to choose the transition between these two regimes
+It is often beneficial to choose the transition between these two regimes
 to be smooth. This is because when dealing with the vertex expansion
 approximation scheme of the renormalisation group equation or with
-anomalous dimension, their are often times derivatives acting on the cutoff
+anomalous dimensions, there are often times derivatives acting on the cutoff
 operator. However, one of the most popular choices of the cutoff operator,
 the optimised cutoff, is merely continuous.
 
@@ -984,7 +984,7 @@ the optimised cutoff, is merely continuous.
 We summarise the requirements on the cutoff operator%
 \footnote{%
   The requirements listed here characterise a so-called
-  standard cutoff. However, we will not be dealing with
+  standard cutoff. We will not be dealing with
   non-standard cutoffs in this thesis.
 }
 in Fig.~\ref{fig:standardcutoff}. Requirements 1--3
@@ -1056,7 +1056,7 @@ handy to chose the operator $\mathcal O_\Delta$ of which the cutoff
 kernel is a functional to include parts of the operator $\Delta$.
 To express the classification, we have to split
 the endomorphism $\mathbb E = \mathbb E_1 + \mathbb E_2$
-into a part $\mathbb E_1$ which has no scale dependent
+into a part $\mathbb E_1$ which has no scale-dependent
 couplings and a part $\mathbb E_2$ which contains
 renormalisation group dependent couplings only.
 Then the following three types of cutoff operators
@@ -1098,7 +1098,7 @@ found in the respective Hessian.
 \subsection{The effective average action and its exact flow}
 \label{sec:floweqn}
 
-Having defined a scale dependent cutoff operator for the
+Having defined a scale-dependent cutoff operator for the
 classical action, we can now proceed and define a scale
 dependent generating functional via%
 \footnote{%
@@ -1117,8 +1117,8 @@ dependent generating functional via%
   } \,.
 \end{align}
 It will turn out to be more convenient to pass to the
-functional Legendre transform of $W_k[J]$,
-called the effective average action, which is defined by
+functional Legendre transform of $W_k[J]$
+which is defined by
 \begin{align}
   \hat \Gamma_k [\varphi] = - W_k[J] + \int \mathrm d^dx \; J(x) \, \varphi(x) \,.
 \end{align}
@@ -1165,9 +1165,9 @@ to discover that
   + \int \mathrm d^dy \; J(y) \, \delta(x-y)
   = J(x) \,,
 \end{align}
-where we made use of the definition of the new variable $\varphi$. Making
-use of this observation, we can write the exponential of the negative
-effective average action as
+where we made use of the definition of the new variable $\varphi$.
+With this observation,
+we can write the exponential of the negative Legendre transform as
 \begin{align}
   e^{ - \hat \Gamma_k \lbrack \varphi \rbrack }
   = \int \mathcal D \tilde \varphi \;
@@ -1194,12 +1194,14 @@ constant shifts):
     \, \tilde \chi(x)
   } \,.
 \end{align}
-We will now shift the effective average action by the
+We will now shift the Legendre transform by the
 cutoff action in order to obtain a more beautiful final
 expression:
 \begin{align}
   \Gamma_k \equiv \hat \Gamma_k - \Delta S_k \,.
 \end{align}
+The resulting functional $\Gamma_k$ is called the
+effective average action.
 Observing that due to the bilinear form of the cutoff action
 we have
 \begin{align}
@@ -1366,9 +1368,9 @@ features which we considered advantageous of an renormalisation group approach:
 Moreover, given an effective action at some scale $k_0$ the
 effective average action can be defined at any other scale $k$
 via the function renormalisation group equation. This allows
-in particular, as we already anticipated, to calculated the
+in particular, as we already anticipated, to calculate the
 quantum effective action $\Gamma$ at $k=0$, given that
-$\Gamma_k$ has been fixed at some scale $k$ for one reason or another.
+$\Gamma_k$ has been fixed at some scale $k$.
 Lastly note, that no reference to ultraviolet physics is made
 anywhere in the exact renormalisation group equation, \ie
 all quantities involved only depend on some intermediate scale $k$.
@@ -1426,13 +1428,13 @@ in perturbation theory.
 
 Truncations are hard to justify \textit{a priori}, as the renormalisation
 group equation couples all operators to every other, at least indirectly.
-That is, even setting the running coupling to zero at some scale would
+That is, even setting some running coupling to zero at some scale would
 therefore likely imply that it is non-zero at other scales.
 Hence a truncation restricts the dynamics possible in the solution quantum
 field theory. The common strategy to circumvent this issue is to
-subsequently enlarge the truncate space and include higher dimensional operators.
+subsequently enlarge the truncated space and include higher dimensional operators.
 Stability in the behaviour of couplings which were already been included
-in previously studied approximations, can than be interpreted as apparent
+in previously studied approximations, can then be interpreted as apparent
 convergence of the approximate solution. In the framework of asymptotic
 safety this procedure can indeed be used to recover well-know
 critical behaviour in scalar field theories.
@@ -1462,7 +1464,7 @@ where we introduced the scale-dependent interaction vertices via
   \Gamma_{x_1 x_2 \dots x_n}^{(n)}[\varphi] \equiv
   \frac{\delta^n\Gamma_k}{\delta\varphi(x_1) \, \delta\varphi(x_2) \, \dots \, \delta\varphi(x_n)} \,,
 \end{align}
-which are functional derivatives of the full effect average action. These
+which are functional derivatives of the full effective average action. These
 vertices give their name to the approximation scheme. When plugging the
 Taylor expansion back into the renormalisation group equation, we will
 obtain a hierarchy of flow equations for each vertex. As we will explicitly
@@ -1488,7 +1490,7 @@ let us introduce a shorthand for the regularised full quantum propagator:
     \frac{\delta^{2}\Gamma_k}{\delta\varphi(x) \, \delta\varphi(y)} + R_k(x,y)
   \right]^{-1} .
 \end{align}
-Taking one and two functional derivatives, we may than express the running one-
+Taking one and two functional derivatives, we may then express the running one-
 and two-point function in a very compact manner:
 \begin{align}
   \partial_t \Gamma^{(1)}_{x} &=
@@ -1599,7 +1601,7 @@ scalar quantum field theory with a $\mathbb Z_2$ symmetry,
 \ie with an action that is invariant under the transformation
 $\varphi \mapsto -\varphi$. The most general effective
 average action to $\mathcal O(\partial^4)$ in the derivative
-expansion than reads:
+expansion then reads:
 \begin{align}
   \Gamma_k [\varphi] &=
   \int \mathrm d^dx
@@ -1613,7 +1615,7 @@ expansion than reads:
   \bigg] \,.
 \end{align}
 Here the effective potential $V_k$, the wave-function renormalisation
-$Z_k$ and the three forth order functions $W^{(i)}$ are all
+$Z_k$ and the three fourth order functions $W^{(i)}$ are all
 arbitrary functions of $\varphi$. To extract their renormalisation
 group running, one has to obtain the flow of the $n$-point
 function of the effective average action first, and then evaluate
@@ -1636,7 +1638,7 @@ and $Z_k$, and primes denote derivatives with respect to the
 where only a function $V_k$ is kept, is commonly referred to as the
 local potential approximation.
 
-We will revised the very example of a $\mathbb Z_2$ invariant scalar
+We will review the very example of a $\mathbb Z_2$ invariant scalar
 field theory soon, when we will study critical behaviour and non-trivial fixed points
 in the next part of this chapter. We will also use this
 approximation schemes in chapters 2 and 3.
@@ -1689,7 +1691,7 @@ the exact flow equation towards the ultraviolet, we can study
 the high-energy behaviour of a quantum field theory in terms of
 the convergence or divergence of its coupling constants.
 
-Generically, one would assumes that at least one of the infinitely
+Generically, one would assume that at least one of the infinitely
 many couplings $g_i(k)$ in the expansion of
 Eqn.~\eqref{eq:expansionGamma} tends to infinity when taking
 the limit $k \rightarrow \infty$. This happens indeed for instance
@@ -1697,8 +1699,8 @@ in quantum electrodynamics where the divergent coupling is said to have a
 Landau pole. An equivalent behaviour restricts the
 (renormalised) quartic coupling in $\varphi^4$-theory to be zero,
 which is known as quantum triviality. These kind of theories
-are called effective, since historically they were thought of
-arising from fundamental theories in which some (high-energy)
+are called effective, since historically they were thought to
+arise from fundamental theories in which some (high-energy)
 degrees of freedom got ``integrated out''. In the language of the
 exact renormalisation group, they simply do not admit a
 well-defined ultraviolet limit, $k \rightarrow \infty$.
@@ -1715,7 +1717,7 @@ its range of validity.
 The other possible behaviour a quantum field theory
 may exhibit when flowing towards the ultraviolet,
 is the one for which none of the couplings of the theory
-diverge. This may be interpreted geometrically in such a way,
+diverges. This may be interpreted geometrically in such a way,
 that the trajectory
 of the effective average action under the exact renormalisation
 group flow is restricted to a finite subset of theory space.
@@ -1745,8 +1747,8 @@ for which all couplings vanish.
 This fixed point is also known as the Gaussian fixed point.
 However, there may also exist non-trivial fixed points
 which have non-zero values for (at least some of) the couplings.
-In this case the theory is said to be \textit{asymptotically save}.
-This scenario was discovered and coined ``asymptotic safety''
+In this case the theory is said to be \textit{asymptotically safe}.
+This scenario was discovered and called ``asymptotic safety''
 by Steven Weinberg in 1979, \cf Ref.~\cite{Weinberg:1980gg}.
 
 This classification of quantum field theories according
@@ -1757,8 +1759,8 @@ quantum field theory by integrating its flow equation
 towards the infrared, one can also study all trajectories
 of a given theory space, and choose a trajectory that is
 ultraviolet-finite in order to define a fundamental
-quantum field theory of some given field content and
-gauge symmetries. A particular strategy to do so,
+quantum field theory with some given field content and
+symmetries. A particular strategy to do so,
 is to first search for ultraviolet fixed points in theory space
 and then to find a renormalisation group trajectory that
 emanates from one of these very fixed points and flows
@@ -2019,9 +2021,8 @@ point. Namely, we have to distinguish three cases:
 
 Directions $\hat g_i^{\scriptscriptstyle{(d)}}$ of the first
 category flow towards the fixed point in the ultraviolet
-limit, and are called (infrared) relevant. The irrelevant
-directions
-on the other hand,
+limit, and are called relevant.
+The irrelevant directions on the other hand,
 that correspond to positive eigenvalues $\lambda_i > 0$,
 flow towards the fixed point in the infrared limit.
 Marginal directions finally, may be either (marginally)
@@ -2063,7 +2064,7 @@ predicted]
 ...This explains the origin of the terms `relevant'
 and `irrelevant'.
 
-Now that we have established how to find the baisins
+Now that we have established how to find the basins
 of attraction of a fixed point in the ultraviolet and the infrared,
 and how to quantitatively determine the predictivity
 of the theory defined by such a fixed point,
@@ -2120,9 +2121,9 @@ This is nothing but the property of perturbative power-counting renormalisabilit
 
 What is more, since for any fixed space-time dimension $d$,
 there are only finitely many such (local) operators,
-the ultraviolet critical surface cannot be infinite-dimensional.
+the ultraviolet critical surface is finite-dimensional.
 That is, if such a fixed point exists, the resulting theory predicts
-that all infinitely many power-counting non-renormalisable couplings
+that all (infinitely many) power-counting non-renormalisable couplings
 vanish in the ultraviolet. This is precisely the case of asymptotic
 freedom, and the origin of the immense predictivity of a theory
 defined via an ultraviolet Gaussian fixed point.
@@ -2154,7 +2155,7 @@ which can easily be integrated to yield
 Since for the ultraviolet regime, $k>\mu$, the logarithm
 is positive, we have to choose $\alpha$ negative
 in order to guarantee that the denominator never
-vanishes. Than we have indeed
+vanishes. Then we have indeed
 \begin{align}
   \lim_{k \rightarrow \infty}
   g(k) =
@@ -2194,7 +2195,7 @@ fixed point, \cf also Fig.~\ref{fig:shapesbetafunctions}.
 \end{figure}
 
 For the case of a non-trivial, also called
-an \textit{interacting} or \textit{non-Gaussian fixed point}
+an \textit{interacting} or \textit{non-Gaussian fixed point},
 one can say much less in general.
 The cartoon Fig.~\ref{fig:shapesbetafunctions} which
 covers the case of a single coupling,
@@ -2325,11 +2326,11 @@ the Gaussian fixed point, where the dimensionless essential
 couplings remain small is accessible through perturbation
 theory. Finally, effective field theories may be understood
 as trajectories in theory space which do not
-lie on any ultraviolet critical surface. Consequently
-at least one of the couplings in the theory will diverge
-at some finite value of the running scale $k$, but it is still
-well-defined when restricted to not exceed some finite
-ultraviolet cutoff scale
+lie on any ultraviolet critical surface.
+Consequently at least one of the couplings in the theory will diverge
+at some finite value of the running scale $k$.
+However, the theory is still well-defined
+up to some finite ultraviolet cutoff scale
 $k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}$.
 
 
