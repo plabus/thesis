@@ -2362,7 +2362,7 @@ ansatz of the effective average action
 \begin{align}
   \Gamma_k [\varphi] = \int \mathrm d^dx \;
   \bigg[
-  \frac 12 \, \partial^\mu \varphi \partial_\mu \varphi
+  \frac 12 \, \partial^\mu \varphi \, \partial_\mu \varphi
   + \frac 12 \, m_k^2 \, \varphi^2
   + \frac {1}{4!} \, \lambda_k \, \varphi^4
   \bigg] \,.
@@ -2371,10 +2371,11 @@ Here the squared mass $m_k^2$ and the $\varphi^4$-coupling
 $\lambda_k$ are the two scale-dependent couplings of the
 theory.
 Note that this ansatz is much more restrictive than to assume
-as similar form of the bare or ultraviolet action of the theory.
+the same form for the bare or ultraviolet action of the theory.
 This is because in the latter case the effective average action
 (and the infrared effective action in particular) would contain
-all operators allowed by symmetry, which appear through the procedure
+all operators allowed by the $\mathbb Z_2$ symmetry,
+which appear through the procedure
 of integrating out the scalar field in the path integral. Here instead,
 the effective average action is restricted to contain only three
 terms at \textit{any} energy scale.
@@ -2583,7 +2584,7 @@ which truly makes the potential a function of the variable $\varphi$,
 rather than a functional of the space-time function $\varphi(x)$.
 Then the space-time volume factor cancels on both sides of the flow
 equation, and we obtain for the dimensionful beta function of the
-effective potential as
+effective potential
 \begin{align}
   \partial_t V_k (\varphi) =
   \frac{1}{ 2 \,(4\pi)^{\nicefrac d2} } \;
@@ -2595,8 +2596,8 @@ effective potential as
 Note that the value of the $Q$-functional on the right hand side
 depends on the choice of
 the cutoff.
-In general it is good practise to test resulting values
-of fixed points and critical exponents against changes of the cutoff.
+In general it is good practise to test values
+of fixed points and critical exponents against changes of the cutoff profile.
 This will give a measure of the robustness and convergence of the results.
 Here, however, for illustrative purposes,
 we will only use the optimised cutoff, since it allows
@@ -2615,10 +2616,18 @@ we have for the optimised cutoff
   \frac{ 2 k^2 \, \theta (k^2-z) + 2 k^2 (k^2-z) \, \delta (k^2-z) }
   { \Big[ z + (k^2-z) \, \theta (k^2-z) + A_k \Big]^l } \nonumber \\
   &=
+  \vphantom{
+    \frac{ 2 k^2 \, \theta (k^2-z) + 2 k^2 (k^2-z) \, \delta (k^2-z) }
+    { \Big[ z + (k^2-z) \, \theta (k^2-z) + A_k \Big]^l }
+  }
   \frac{ 1 }{ \Gamma(n) }
   \int_0^\infty \mathrm dz \, z^{n-1} \;
   \frac{ 2 k^2 }{ \big[ k^2 + A_k \big] ^ l } \nonumber \\
   &=
+  \vphantom{
+    \frac{ 2 k^2 \, \theta (k^2-z) + 2 k^2 (k^2-z) \, \delta (k^2-z) }
+    { \Big[ z + (k^2-z) \, \theta (k^2-z) + A_k \Big]^l }
+  }
   \frac{ 2 }{ \Gamma(n+1) }
   \frac{ k^{2(n-l+1)} }{ \big[ 1 + \overbar A_k \big] ^ l } \,,
   \label{eq:Qfuncoptcutoff}
@@ -2809,8 +2818,8 @@ read
 \end{align}
 Since the fixed point equation is non-linear, one has to use numerical methods to
 solve it.
-In doing so, one observes that for most $\sigma$'s the solutions end
-up in a singularity at finite values of the field variable $\bp$.
+In doing so, one observes that for most values of $\sigma$ the solutions end
+up in a singularity at a finite value of the field variable $\bp$.
 To find a value for $\sigma$, for which a solution is defined for all real numbers
 $\mathbb R$ instead, one proceeds as follows.
 First one defines a function $\Phi(d,\sigma)$,
@@ -2869,7 +2878,7 @@ The resulting potential has two minima and is shown in the inset in Fig.~\ref{fi
 
 \label{ch:tim}
 
-Following ref. \cite{Reuter:1996cp},
+Following Ref.~\cite{Reuter:1996cp},
 non-perturbative renormalization group flows for quantum gravity
 have been formulated by utilising the technical device of splitting the metric in terms
 of a background metric and a fluctuation field---the background field formalism.
@@ -4074,8 +4083,16 @@ together with those of Ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
 \section{Towards background independence in full quantum gravity}
 
 First attempts to go beyond conformally truncated gravity and study background
-independence in theories of the full metric field have been made in
-Refs.~\cite{Morris:2016spn, Percacci:2016arh}. In this case split symmetry
+independence in theories of the full metric field using similar ideas as
+the ones of this chapter have been made in
+Refs.~\cite{Morris:2016spn, Percacci:2016arh}.
+For alternative approaches also see
+Refs.~\cite{
+  Donkin:2012ud, Manrique:2009uh, Manrique:2010mq, Manrique:2010am,
+  Becker:2014qya, Christiansen:2012rx, Christiansen:2014raa
+}.
+
+In the case of full quantum gravity split symmetry
 takes the much more general form
 \begin{align}
   \bar g_{\mu \nu}(x) \mapsto \bar g_{\mu\nu}(x) + \varepsilon_{\mu\nu}(x) \,,
