@@ -2336,6 +2336,7 @@ $k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}$.
 
 
 \subsection{Case study: scalar field theory}
+\label{sec:casestudy}
 
 In the last section of this chapter we want to use
 the techniques and ideas introduced so far to study
@@ -2567,6 +2568,7 @@ Finally, we define the so-called $Q$-functionals as
   \equiv
   \frac{ 1 }{ \Gamma(n) }
   \int_0^\infty \mathrm dz \, z^{n-1} \; \tilde W(z) \,,
+  \label{eq:Qfunctionals}
 \end{align}
 such that the trace can be evaluated as
 \begin{align}
@@ -7261,9 +7263,9 @@ Without loss of generality we can now separate the radial field component from t
 Goldstone bosons by fixing the background to be
 \begin{align}
   \bp^i &= 0, \quad i = 1,\, \dots,\, N-1, \\
-  \bp^N &= \lambda
+  \bp^N &= \overbar \rho
 \end{align}
-such that $\bp = \lambda$ and define $\varphi^N = \deltap$. Then we have
+such that $\bp = \overbar \rho$ and define $\varphi^N = \deltap$. Then we have
 \begin{align}
   \varphi_i \, \projR    \, \varphi_j &= \deltap^2 \,, \\
   \varphi_i \, \projperp \, \varphi_j &= \sum_{i=1}^{N-1} \varphi^i \varphi^i \,.
@@ -7299,7 +7301,7 @@ we obtain the full Hessian
     +\frac{1}{2} \, \deltap \, \Big( -\bnabla^2 + \bV'' - \bF'' \, \bR \, \Big) \, \deltap
     +\frac{1}{2} \, \sum_{i=1}^{N-1} \deltap^i
     \left(
-      -\bnabla^2 +\frac{1}{\bp} \, \big( \bV' - \bF' \, \bR \big) \right) \deltap^i \nonumber \\
+      -\bnabla^2 +\frac{1}{\overbar \rho} \, \big( \bV' - \bF' \, \bR \big) \right) \deltap^i \nonumber \\
     - \, \frac{(d-1)}{d} \, \bF' \, \deltap \,
     \sqrt{ - \bnabla^2 \left( -\bnabla^2 - \frac{\bR}{d-1} \right) \, } \, \sigma^{\prime}
   \Bigg] .
@@ -7331,7 +7333,7 @@ and the diagonal Hessian reads
     \bigg) \deltap \nonumber \\
     +\,\frac{1}{2} \, \sum_{i=1}^{N-1} \deltap^i
     \left(
-      -\bnabla^2 + \frac{1}{\bp} \, \big( \bV' - \bF' \, \bR \big)
+      -\bnabla^2 + \frac{1}{\overbar \rho} \, \big( \bV' - \bF' \, \bR \big)
     \right)
     \deltap^i
   \Bigg] .
@@ -7351,36 +7353,91 @@ The ghost action induced by the unimodular gauge fixing was given by:
 \section{Derivation of the flow equations}
 
 To obtain the flow equations of the functions $V(\varphi)$
-and $F(\varphi)$, respectively, we start with the Hessian given above and
+and $F(\varphi)$, respectively, we will essentially follow the
+same steps as in Sec.~\ref{sec:casestudy} for scalar field theories.
+We start with the Hessian given above and
 define cutoff operators of type I with the help of the following matrix equation
 \begin{align}
-  \Gamma_k^{(2)} + R_k \equiv \Gamma_k^{(2)} \bigg|_{-\bar{\nabla}^2 \mapsto P_k(-\bar{\nabla}^2)}\,,
-  \label{cutoff}
+  \Gamma_k^{(2)} + R_k \equiv \Gamma_k^{(2)} \bigg|_{-\bnabla^2 \mapsto P_k(-\bnabla^2)} \,.
+  \label{eq:cutoffappB}
 \end{align}
-where we will employ the Litim cutoff $P_k(p^2) = p^2 + (k^2-p^2) \, \theta(k^2-p^2)$.
-
-Since $\partial_t \Gamma_k = \int \mathrm{d}^d x \sqrt{g} \left[ \partial_t V(\varphi) - \partial_t F(\varphi) R\right]$
-for constant field configurations we can write
+Throughout, we will employ the Litim cutoff, such that the regulated
+inverse propagator reads $P_k(p^2) = p^2 + (k^2-p^2) \, \theta(k^2-p^2)$.
+To extract the scale-dependence of the functions $V(\varphi)$ and
+$F(\varphi)$, we first set the field configuration $\varphi$ to a constant such that
 \begin{align}
-  \partial_t V &=   \frac{1}{\mathrm{vol}} \, \partial_t \Gamma_k                                 \, \bigg|_{R=0} \,, \\
-  \partial_t F &= - \frac{1}{\mathrm{vol}} \, \frac{\partial}{\partial R} \, \partial_t \Gamma_k  \, \bigg|_{R=0} \,.
+  \partial_t \Gamma_k =
+  \Big[ \partial_t V(\varphi) - \partial_t F(\varphi) \, \bR \Big] \int \mathrm{d}^d x \, \sqrt{\bar g} \,.
 \end{align}
-In particular, at $\mathcal{O}(R^0)$ we have
+% The volume coefficient $\mathrm{vol} \equiv \int \mathrm{d}^d x \sqrt{\bar g}$
+% will later also factor out in the functional traces, so that it
+% effectively drops out of the calculation.
+With this result, we can once more use the beta function of the
+effective average action as a generating functional for the
+beta functions of $V(\varphi)$ and $F(\varphi)$:
 \begin{align}
-  \Tr \, W[\Phi] = \frac{B_0^{\Phi}}{(4\pi)^{d/2}} \; Q_{d/2} \Big( W[\Phi] \Big) \,.
+  \partial_t V &=   \frac{1}{\mathrm{vol}} \, \partial_t \Gamma_k                                 \, \bigg|_{\bR=0} \,, \\
+  \partial_t F &= - \frac{1}{\mathrm{vol}} \, \frac{\partial}{\partial R} \, \partial_t \Gamma_k  \, \bigg|_{\bR=0} \,,
 \end{align}
-The most general type of function quadratic in the fields we encounter here is
-$a(t)(-\bar{\nabla}^2)+b$ so that with the cutoff operator defined above
-we find
+where we abbreviate the volume coefficient
+$\mathrm{vol} \equiv \int \mathrm{d}^d x \sqrt{\bar g}$.
+To evaluate these expressions, we have to calculate the functional
+traces on the right hand side of the flow equation for the
+effective average action as a power series in $\bR$.
+To evaluate functional traces on a $d$-dimensional sphere $\mathbb S^d$,
+we may use the method of heat kernels.
+Following Ref.~\cite{Codello:2008vh}, we can write the trace of some operator
+$W(\Delta)$ as
 \begin{align}
-  W[\Phi] = \frac{ \dot R_k }{ \Gamma_k^{(2)} + R_k }
-  = \frac{ \dot a  \, (k^2-z) + 2ak^2 }{ a \big[ z+(k^2-z) \, \theta(k^2-z) \big] + b } \; \theta(k^2-z) \,,
+  \Tr \, W(\Delta) =
+  \frac{1}{(4 \pi)^{\nicefrac d2}}
+  \Big[
+    B_0(\Delta) \, Q_{\nicefrac d2 }  \big[ W \big]
+    + B_2(\Delta) \, Q_{\nicefrac d2 - 1 }  \big[ W \big]
+    + B_4(\Delta) \, Q_{\nicefrac d2 - 2 }  \big[ W \big]
+    + \dots
+  \Big]
+  \label{heatkernelexpansion}
 \end{align}
-which yields
+where for type I cutoff we have $\Delta = -\bnabla^2$, and the $Q$-functionals
+are the same as defined in Eqn.~\eqref{eq:Qfunctionals}. The heat kernel coefficients
 \begin{align}
-  \dot V = c_d \, k^d \, \sum_{\Phi} \bigg[  \, \frac{a+\dot{a}/(d+2)}{a+b/k^2} \; \Tr \, \mathrm b_0^\Phi \bigg] \,,
+  B_n = \int \mathrm d^dx \, \sqrt{g} \; \Tr \, \mathbf{b_n}
 \end{align}
-where $a$ and $b$ are evaluated at $R=0$.
+depend on the background curvature and scale as
+$\Tr \, \mathbf{b_n} \in \mathcal O ( \bR^{\, \nicefrac n2 } )$
+in the curvature invariants.
+In particular, at the lowest order $\mathcal{O}(\bR^0)$ we have
+\begin{align}
+  \Tr \, W(-\bnabla^2) = \frac{B_0(-\bnabla^2)}{(4\pi)^{\nicefrac d2}} \; Q_{\nicefrac d2} \big[ W \big] \,.
+\end{align}
+For all fields $\Phi$ in $\Gamma_k^{(2)}$, the most general form of the Hessian we encounter here is
+$A_k^{(\Phi)} \big(-\bnabla^2\big) + B_k^{(\Phi)}$,
+with scale-dependent coefficients $A_k^{(\Phi)}$ and $B_k^{(\Phi)}$,
+of which the latter may depend on $\bR$.
+With the cutoff operator \eqref{eq:cutoffappB} we thus find
+\begin{align}
+  \tilde W^{(\Phi)} = \frac{ \dot R_k }{ \Gamma_k^{(2)} + R_k }
+  = \frac{  (k^2-z) \partial_t A_k^{(\Phi)} + 2 k^2 A_k^{(\Phi)} }
+  { A_k^{(\Phi)} \Big[ z+(k^2-z) \, \theta(k^2-z) \Big] + B_k^{(\Phi)} }
+  \; \theta(k^2-z) \,.
+\end{align}
+With this expression of $\tilde W^{(\Phi)}$ we can calculate $Q_{\nicefrac d2} \big[ W \big]$
+analytically, and we find for the flow of the potential $V$
+\begin{align}
+  \partial_t V = c_d \, k^d \, \sum_{\Phi}
+  \Bigg[
+    \frac{ A_k^{(\Phi)} + \frac{ \partial_t A_k^{(\Phi)} }{ d+2 } }
+    { A_k^{(\Phi)} + \nicefrac{ B_k^{(\Phi)} }{ k^2 } } \; \Tr \, \mathbf{b_0}^{(\Phi)}
+  \Bigg] \,,
+\end{align}
+where $B_k^{(\Phi)}$ is evaluated at $\bR=0$, and
+$\Phi = \big\{ \hTTmunu, \sigma^{\prime\prime}, \deltap, \deltap^i, C, C_\mu \big\}$.
+Note that the volume coefficient appearing on both sides cancelled.
+Inserting the coefficients for the various fields and passing to dimensionless
+variables will then result in Eqn.~\eqref{flowvfull}.
+For the function $F(\varphi)$ one proceeds in a similar manner,
+collecting contributions to \eqref{heatkernelexpansion} at $\mathcal O(\bR)$.
 
 
 \chapter{Running of interaction vertices}
