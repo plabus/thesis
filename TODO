@@ -7,7 +7,6 @@ Questions:
 ==========
 
 all appendices: do I need \GNewton somewhere?
-ln ---> log everywhere
 S_k (or else) ---> \Delta S_k (or what?)
 
 
@@ -19,18 +18,6 @@ write technical intro:
   - explanation section 1.2 about how
     uv critical surface fixes/predicts IR irrelevant couplings
     (including origin of the name (ir)relevant directions)
-
-add references:
-  - general background independece (Reuter etc)
-  - spike plots Morris
-
-add corrections Percacci
-
-appendix B:
-  - derivation flow equation
-
-appendix C:
-  - calculating Feynman diagrams
 
 ----------------------
 
@@ -52,14 +39,28 @@ fine tuning
 OPTINAL:
 ========
 
-beautify fig. 2.2--2.3
-
+ln ---> log everywhere
 
 ----------------------
 ----------------------
+
 
 DONE:
 =====
+
+beautify fig. 2.2--2.3
+
+appendix C:
+  - calculating Feynman diagrams
+
+appendix B:
+  - derivation flow equation
+
+add references:
+  - general background independece (Reuter etc)
+  - spike plots Morris
+
+add corrections Percacci
 
 +++ write new developments in chapter 2
 +++ appendix A: ghost sector de Donder (maybe optinal)
