@@ -5136,7 +5136,7 @@ where we use the symmetric configuration for the three momenta,
 such that an angle of $2\pi/3$ lies between them, and their absolute value is $|p_1| = |p_2|=|p_3| =p$.
 Note that the functional derivative with respect to the $\mathrm{TT}$ mode generates the projector
 \begin{align}
-  \mathcal{P}^{\rm TT}_{\mu\nu\kappa\lambda} = \frac{1}{2} \,
+  \mathcal{P}^{\TT}_{\mu\nu\kappa\lambda} = \frac{1}{2} \,
   \left(
     T_{\mu
     \kappa}T_{\nu \lambda}
@@ -5166,7 +5166,9 @@ To extract the flow of the wave-function renormalisations, we define projection 
   \partial_t \ZS &=
   \frac{\partial}{\partial p^2} \, \frac{\delta}{\delta \varphi(-p)} \, \frac{\delta}{\delta \varphi(p)} \, \partial_t \hat \Gamma_k \,, \\
   \partial_t \ZTT &=
-  \frac{\partial}{\partial p^2}  \, \frac{\mathcal P^{\TT}_{\mu \nu\kappa\lambda}(p)}{5}  \, \frac{\delta^2}{\delta \hTTmunu (p) \, \delta h^{\TT}_{\kappa \lambda}(-p)} \, \partial_t \hat \Gamma_k \,, \\
+  \frac{\partial}{\partial p^2}  \, \frac{\mathcal P^{\TT}_{\mu \nu\kappa\lambda}(p)}{5}
+  \, \frac{\delta^2}{\delta \hTTmunu (p) \, \delta h^{\TT}_{\kappa \lambda}(-p)} \, \partial_t \hat \Gamma_k
+  \label{eq:projectZTT}\,, \\
   \partial_t Z_{\sigma} &= -\frac{8}{3} \,
   \frac{\partial}{\partial p^2} \, \frac{\delta}{\delta \sigma(-p)} \, \frac{\delta}{\delta \sigma(p)} \, \partial_t \hat \Gamma_k \,,
 \end{align}
@@ -7369,15 +7371,12 @@ $F(\varphi)$, we first set the field configuration $\varphi$ to a constant such 
   \partial_t \Gamma_k =
   \Big[ \partial_t V(\varphi) - \partial_t F(\varphi) \, \bR \Big] \int \mathrm{d}^d x \, \sqrt{\bar g} \,.
 \end{align}
-% The volume coefficient $\mathrm{vol} \equiv \int \mathrm{d}^d x \sqrt{\bar g}$
-% will later also factor out in the functional traces, so that it
-% effectively drops out of the calculation.
 With this result, we can once more use the beta function of the
 effective average action as a generating functional for the
 beta functions of $V(\varphi)$ and $F(\varphi)$:
 \begin{align}
   \partial_t V &=   \frac{1}{\mathrm{vol}} \, \partial_t \Gamma_k                                 \, \bigg|_{\bR=0} \,, \\
-  \partial_t F &= - \frac{1}{\mathrm{vol}} \, \frac{\partial}{\partial R} \, \partial_t \Gamma_k  \, \bigg|_{\bR=0} \,,
+  \partial_t F &= - \frac{1}{\mathrm{vol}} \, \frac{\partial}{\partial \bR} \, \partial_t \Gamma_k  \, \bigg|_{\bR=0} \,,
 \end{align}
 where we abbreviate the volume coefficient
 $\mathrm{vol} \equiv \int \mathrm{d}^d x \sqrt{\bar g}$.
@@ -7515,10 +7514,10 @@ In order to disentangle the different spin components, one applies
 the York decomposition to the last expression.
 Passing to momentum space, we then find the following two vertices:
 \begin{align}
-  V^{(2,\,{\TT})\,\mu\nu}
+  V^{(2,{\TT})\,\mu\nu}
   &= \sqrt{ 32 \pi g_3 } \;
   q_1^{(\mu} q_2^{\nu)} \,, \\
-  V^{(2,\,\sigma)}
+  V^{(2,\sigma)}
   &= \sqrt{ 32 \pi g_3 } \;
   \left[
     \frac 14  \big( q_1 \cdot q_2 \big)
@@ -7534,7 +7533,7 @@ respectively.
 Proceeding in a similar fashion yields the
 following three flavours of 2-scalar-2-graviton vertices:
 \begin{align}
-  V^{ (2,\,2{\TT}) \, \mu\nu\rho\sigma }
+  V^{ (2,2{\TT}) \, \mu\nu\rho\sigma }
   &= - \frac{ 32 \pi g_4 }{ 4 }
   \left(
     q_1^{(\mu} q_2^{\rho)} \delta^{\nu\sigma}
@@ -7542,7 +7541,7 @@ following three flavours of 2-scalar-2-graviton vertices:
     + q_1^{(\nu} q_2^{\rho)} \delta^{\nu\sigma}
     + q_1^{(\nu} q_2^{\sigma)} \delta^{\nu\rho}
   \right) , \\
-  V^{(2,\,{\TT}\,\sigma)\,\mu\nu}
+  V^{(2,{\TT}\,\sigma)\,\mu\nu}
   &= \frac{ 32 \pi g_4 }{ 4 }
   \left(
     q_1^{(\mu} q_2^{\nu)}
@@ -7555,7 +7554,7 @@ following three flavours of 2-scalar-2-graviton vertices:
       q_2^{(\mu} p_1^{\nu)}
     }{ ||p_1||^2 }
   \right) , \\
-  V^{(2,\,2\sigma)}
+  V^{(2,2\sigma)}
   &= - \frac{ 32 \pi g_4 }{ 2 }
   \left(
     \frac{
@@ -7596,7 +7595,7 @@ following three flavours of 2-scalar-2-graviton vertices:
 There are another two flavours of the
 2-scalar-3-graviton vertices we will need to evaluate all the diagrams.
 \begin{align}
-  V^{ (2,\,3{\TT}) \, \mu\nu\rho\sigma\delta\gamma }
+  V^{ (2,3{\TT}) \, \mu\nu\rho\sigma\gamma\delta }
   = \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 12 }
   \Big(
       q_1^{(\mu} q_2^{\rho)}   \mathds{1}^{\nu\sigma\gamma\delta}
@@ -7616,7 +7615,7 @@ There are another two flavours of the
   \Big) ,
 \end{align}
 \begin{align}
-  &V^{(2,\,{\TT}\,2\sigma)\,\mu\nu}
+  &V^{(2,{\TT}\,2\sigma)\,\mu\nu}
   = \frac{ \big( 32 \pi g_5 \big) ^\nicefrac 32 }{ 2 }
   \left(
     \frac{1}{8} \, q_1^{(\mu} q_2^{\nu)}
@@ -7829,6 +7828,146 @@ of the vertices in momentum space as well as the York decomposed form of the
 forth variation of the Einstein-Hilbert action.
 
 \section{Calculating Feynman diagrams}
+
+In this section we want to illustrate how to evaluate the Feynman diagrams
+of Figs.~\ref{fig:eta-diagrams-ch4} and \ref{fig:coupling-diagrams-ch4},
+using the rather simple example of the scalar $\varphi$ candy diagram
+contributing to the beta function of the wave-function renormalisation
+$\ZTT$ of the graviton, \cf diagram 4 in Fig.~\ref{fig:eta-diagrams-ch4}.
+
+\begin{figure}
+  \begin{center}
+    \input{diagrams/scalarcandy.tex}
+  \end{center}
+  \vspace*{-5mm}
+  \caption{
+    Scalar candy
+  }
+  \label{fig:scalarcandy}
+\end{figure}
+
+For the convenience of the reader, we display one of the two versions
+of the diagram including some additional annotation in Fig.~\ref{fig:scalarcandy}.
+The second version of this diagram, which is not displayed here,
+has the regulator insertion on the lower propagator in the loop and will
+give the same contribution as the first version.
+The diagram $D_4$ displayed in Fig.~\ref{fig:scalarcandy} can be calculated as
+\begin{align}
+  D_4 = \int \frac{\mathrm{d}^4 q}{(2\pi)^4} \;
+  \bigg[
+  \partial_t R_k^{(\varphi)}(q^2) \;
+  G_k^{(\varphi)}(q^2) \;
+  V^{(2,{\TT})\,\mu\nu} \big( q, -(p+q) \big) \nonumber \\
+  \times \;
+  G_k^{(\varphi)} \big( (p+q)^2 \big) \;
+  V^{(2,{\TT})\,\rho\sigma} \big( p+q, -q \big) \;
+  \frac{ \mathcal{P}^{\TT}_{\mu\nu\rho\sigma} }{ 5 }
+  \bigg]
+  \,,
+\end{align}
+where we recall that the projector $\mathcal{P}^{\TT}_{\mu\nu\kappa\lambda}$
+was given by
+\begin{align}
+  \mathcal{P}^{\TT}_{\mu\nu\kappa\lambda}
+  &= \frac{1}{2} \,
+  \left(
+    T_{\mu
+    \kappa}T_{\nu \lambda}
+    + T_{\mu\lambda}T_{\nu \kappa}
+  \right)
+  - \frac{1}{d-1} \, T_{\mu\nu}T_{\kappa\lambda} \,, \\
+  T_{\mu \nu} &= \delta_{\mu\nu}- \frac{ p_{\mu}p_{\nu} }{ p^2 } \,.
+\end{align}
+The latter appears because of the projection rule Eqn.~\eqref{eq:projectZTT},
+and we will have to make sure to evaluate the diagram at $\mathcal O(p^2)$.
+Using the expression of the vertex from the last section and the formula
+for the projector above, we can evaluate the tensor contraction
+% $\mathcal C$
+to be
+\begin{align}
+  % \mathcal C =
+  V^{(2,{\TT})\,\mu\nu} \big( q, -(p+q) \big) \,
+  V^{(2,{\TT})\,\rho\sigma} \big( p+q, -q \big) \,
+  \frac{ \mathcal{P}^{\TT}_{\mu\nu\rho\sigma} }{ 5 }
+  =
+  \frac{ 64 \pi }{ 15 } \, g_3 \big( x^2 - 1 \big) ^2 q^4 \,,
+  \label{eq:contribution1}
+\end{align}
+where the angular variable $x$ is define via
+% the modulus of the momenta $p$ and $q$
+\begin{align}
+  x \equiv  \frac{ p^\mu q_\mu }{ p \, q } \,.
+\end{align}
+Next, using the optimised cutoff and its first derivative
+\begin{align}
+  R_k^{(\varphi)}
+  &= \ZS \, (k^2 - q^2) \, \theta (k^2 - q^2) \\
+  \partial_t R_k^{(\varphi)} \,,
+  &= \dot \ZS \, (k^2 - q^2) \, \theta (k^2 - q^2)
+  + 2 k^2 \ZS \, \theta (k^2 - q^2)
+  + 2 k^2 \ZS \, (k^2 - q^2) \, \delta (k^2 - q^2) \,,
+\end{align}
+we see that upon integration we have
+\begin{align}
+  \partial_t R_k^{(\varphi)}(q^2) \,
+  G_k^{(\varphi)}(q^2)
+  =
+  \ZS \, \frac{ 2 k^2 - \etaS ( k^2 - q^2 ) }{ k^2 } \,
+  \theta (k^2 - q^2)
+  \,.
+  \label{eq:contribution2}
+\end{align}
+The third and last contribution to the momentum integral
+is coming from the second propagator, and has to be expanded up
+to $\mathcal O(p^2)$
+\begin{align}
+  G_k^{(\varphi)} \big( (p+q)^2 \big)
+  &=
+  G_k^{(\varphi)} ( q^2 )
+  + \frac{1}{2} \, G_k''^{(\varphi)} ( q^2 ) \, p^2
+  + \mathcal O(p^4) \nonumber \\
+  &=
+  \frac{ 1 }{ k^2 }
+  - \frac{ 2 x^2 p^2 q^2 }{ k^6 }
+  \big[
+    2 q^2 \delta (k^2 - q^2)
+    + q^2 (k^2 - q^2) \, \delta' (k^2 - q^2)
+  \big] \,,
+  \label{eq:contribution3}
+\end{align}
+where the second equality holds upon integration, when multiplied
+with $\theta (k^2 - q^2)$.
+
+If we now collect the contributions
+\eqref{eq:contribution1},
+\eqref{eq:contribution2} and
+\eqref{eq:contribution3},
+and integrate over the two independent angular variables in
+momentum $q_\mu$, such that we replace the measure by
+\begin{align}
+  \int \frac{\mathrm{d}^4q}{(2\pi)^4} \mapsto
+  \frac{ 1 }{ 4 \pi^3 } \, \frac{1}{2}
+  \int_{-1}^{1} \mathrm dx \; \sqrt{ 1-x^2 }
+  \int_{0}^{\infty} \mathrm{d}z \; z \,,
+\end{align}
+where $z = q^2$, we can evaluate the integral and find
+\begin{align}
+  D_4 =
+  - \frac{g_3 Z k^2}{ 24 \pi } \,.
+\end{align}
+Using the fact, that we have two diagrams for each and every of the
+$\NS$ scalar fields, we find from the flow equation
+\begin{align}
+  \partial_t \ZTT = - \etaTT \, Z \subseteq
+  \frac 12 \, \Big( 2 \NS D_4 \Big)
+\end{align}
+that the contribution the gravitational anomalous dimension
+is given by
+\begin{align}
+  \etaTT \subseteq
+  \frac{\NS \, \overbar g_3 }{ 24 \pi } \,,
+\end{align}
+which agrees with the result listed in Tab.~\ref{tab:eta-results}.
 
 
 
