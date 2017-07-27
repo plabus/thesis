@@ -1,33 +1,37 @@
 \begin{tikzpicture}[
-
-    scale=1.00,
-    thick,
-    % very thick,
+  scale=1.50,
+  >=stealth,
+  thick,
   ]
 
-  \tikzmath{
-    \radius    = 1.72; % radius of right circle
-    \dotradius = 0.07; % radius of the circles that make the dots
-  }
+  \draw (0,0) circle (1cm) node[below, inner sep=16mm] {$\varphi$};
+  \fill[white] (0,1) circle (0.1cm);
+  \draw (0,1) circle (0.1cm) node[above, inner sep=2mm] {$\partial_t R_k$};
 
-  % define the distances between the Feynman diagrams
-  \coordinate  (base) at (0.0, 0.0);
+  \draw (0,1) -- ( 0.071, 1.071);
+  \draw (0,1) -- (-0.071, 1.071);
+  \draw (0,1) -- ( 0.071, 0.929);
+  \draw (0,1) -- (-0.071, 0.929);
 
-  % Loop composed out of two segments + annotation
-  \draw        ($ (base) + (-\radius, 0) $) arc (180:   0: \radius);
-  \draw        ($ (base) + (-\radius, 0) $) arc (180: 360: \radius);
-  \draw        ($ (base) + (0,  \radius) $) node[above, inner sep=2mm] {$\varphi$};
-  \draw        ($ (base) + (0, -\radius) $) node[below, inner sep=2mm] {$\varphi$};
+  \draw[TT] (-2.5, 0.0) -- (-1.0, 0.0) node[above, midway, inner sep=2mm] {$\hTT$};
+  \draw[TT] ( 1.0, 0.0) -- ( 2.5, 0.0) node[above, midway, inner sep=2mm] {$\hTT$};
+  \node at (-2.8, 0.0) {$\scriptstyle{(\mu\nu)}$};
+  \node at ( 2.8, 0.0) {$\scriptstyle{(\rho\sigma)}$};
 
-  % Two horizontal external legs
-  \draw[TT]    ($ (base) + (2.1*\radius, 0) $) -- ($ (base) + (     \radius, 0) $)
-    node[above, midway, inner sep=2mm] {$\hTT$};
-  \draw[TT]    ($ (base) + (   -\radius, 0) $) -- ($ (base) + (-2.1*\radius, 0) $)
-    node[above, midway, inner sep=2mm] {$\hTT$};
-  % \node at ($-2.1*\radius, 0$) {$(\mu \nu)$};
+  \draw[->] (-2.2, -0.25) -- (-1.4, -0.25) node[midway, below] {$p$};
+  \draw[->] ( 1.4, -0.25) -- ( 2.2, -0.25) node[midway, below] {$p$};
 
-  % Two dots for vertices
-  \draw[fill]  ($ (base) + (-\radius, 0) $) circle [radius=\dotradius];
-  \draw[fill]  ($ (base) + ( \radius, 0) $) circle [radius=\dotradius];
+  \draw[<-] (-1.1,-0.4) .. controls (-0.82,-0.82) .. (-0.4,-1.1);
+  \draw[->] (0.4,-1.1) .. controls (0.82,-0.82) .. (1.1,-0.4);
+  \node at (-1.3,-0.9) {$-p-q$};
+  \node at ( 1.2,-0.9) {$p+q$};
+
+  \draw[<-] (0.4,1.1) .. controls (0.82,0.82) .. (1.1,0.4);
+  \draw[->] (-0.4,1.1) .. controls (-0.82,0.82) .. (-1.1,0.4);
+  \node at ( 1.0, 0.9) {$q$};
+  \node at ( -1.1, 0.9) {$-q$};
+
+  \draw[fill] (-1,0) circle [radius=0.03];
+  \draw[fill] (1,0) circle [radius=0.03];
 
 \end{tikzpicture}
