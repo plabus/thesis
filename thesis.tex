@@ -154,6 +154,7 @@ letterpaper,
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
+\newcommand{\bK}{\overbar K}
 \newcommand{\bF}{\overbar F}
 \newcommand{\bVstar}{\bV_\star}
 \newcommand{\bFstar}{\bF_\star}
@@ -163,6 +164,7 @@ letterpaper,
 \newcommand{\deltap}{\delta \varphi}
 \newcommand{\brho}{\overbar \rho}
 \newcommand{\bg}{\overbar \gamma}
+\newcommand{\bc}{\overbar \chi}
 \newcommand{\projR}{ P_{\scriptscriptstyle\mathrm R}^{ij} }
 \newcommand{\projperp}{ P_{\scriptscriptstyle \perp}^{ij} }
 
@@ -180,7 +182,6 @@ letterpaper,
 % Morris'es Maths Definitions
 \newcommand{\eps}{\varepsilon}
 \newcommand{\vp}{\varphi}
-\newcommand{\bc}{\bar \chi}
 \newcommand{\hV}{\hat V}
 \newcommand{\hp}{\hat \phi}
 \newcommand{\hk}{\hat k}
@@ -3607,8 +3608,14 @@ we can make these scaling dimensions explicit by employing the RG scale $k$.
 We denote the new dimensionless quantities with a bar. We have
 \begin{align}
   \label{dim-vars}
-  \varphi = k^{\eta/2}\bar\varphi, \quad \chi = k^{\eta/2}\bar\chi, \quad f(\chi) = k^{d_f}\bar f(\chi),\nonumber\\
-  V(\varphi,\chi) = k^{d_V}\bar V(\bar\varphi,\bar\chi), \quad K(\varphi, \chi) = k^{d_R- 2 + d_f} \bar  K(\bar\varphi,\bar\chi),
+  \varphi = k^{\eta/2} \bp,
+  \quad
+  \chi = k^{\eta/2} \bc,
+  \quad
+  f(\chi) = k^{d_f} \bar f(\chi),\nonumber\\
+  V(\varphi,\chi) = k^{d_V} \bV (\bp,\bc),
+  \quad
+  K(\varphi, \chi) = k^{d_R- 2 + d_f} \bK (\bp,\bc),
 \end{align}
 where
 \begin{align}
@@ -3687,33 +3694,38 @@ uncovering a line of fixed points, consistent with the findings for power-law cu
 \label{sec:forbids}
 
 We use the change to dimensionless variables \eqref{dim-vars} and \eqref{equ:cutoff}.
-In the LPA we discard the flow and Ward identity for $K$, and set $\bar K=1$.
+In the LPA we discard the flow and Ward identity for $K$, and set $\bK=1$.
 The result, for general cutoff profile $r(\hat{p}^2)$, is:
 \begin{align}
   \label{flow}
-  \partial_t \bar V + d_V \bar V - \frac{\eta}{2} \, \bar\varphi \, \frac{\partial \bar V}{\partial \bar\varphi} - \frac{\eta}{2} \, \bar\chi \, \frac{\partial \bar V}{\partial \bar\chi} &=
-  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{d_R\, r - \frac{d_V}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bar\varphi}\bar V}\,,\\
+  \partial_t \bV + d_V \bV - \frac{\eta}{2} \, \bp \, \frac{\partial \bV}{\partial \bp} - \frac{\eta}{2} \, \bc \, \frac{\partial \bV}{\partial \bc} &=
+  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{d_R\, r - \frac{d_V}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bp}\bV}\,,\\
   \label{msWI}
-  \frac{\partial \bar V}{\partial \bar\chi} - \frac{\partial \bar V}{\partial \bar\varphi} + \bar \gamma \, \bar V &= \bar \gamma
-  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{r - \frac{1}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bar\varphi}\bar V} \,,
+  \frac{\partial \bV}{\partial \bc} - \frac{\partial \bV}{\partial \bp} + \bg \, \bV &= \bg
+  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{r - \frac{1}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bp}\bV} \,,
 \end{align}
-where $r'$ means $dr(\hat{p}^2)/d\hat{p}$ and from the change to dimensionless variables we find:
+where $r'$ means $\nicefrac{\mathrm dr}{\mathrm d\hat{p}}$
+and from the change to dimensionless variables we find:
 \begin{align}
   \label{fbar-general}
-  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \log
+  \bg = \frac{d}{2} \, \frac{\partial}{\partial\bc} \log
   \left[
-    \bar{f}\left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc\right)
+    \bar f \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc\right)
   \right]\,.
 \end{align}
 Note that since $f$ cannot depend on $t$ (see the discussion in sec. \ref{sec:review}),
 once we go to dimensionless (\ie scaled) variables, $\bar{f}$ is in general forced to depend on
 $t$ if $\chi$ has non-vanishing scaling dimension $\eta$.
-At the ($k$-)fixed point we must have $\partial_t \bar V = 0$. We see at once why fixed points are
-generically forbidden by the msWI: the fixed point potential $\bar{V}$ would have to be independent of $t$,
+At the ($k$-)fixed point we must have $\partial_t \bV = 0$. We see at once why fixed points are
+generically forbidden by the msWI: the fixed point potential $\bV$ would have to be independent of $t$,
 but through \eqref{msWI} and \eqref{fbar-general} this is impossible in general since $\bV$ is forced
 to be dependent on explicit $t$-dependence in $\bar{f}$ through the Ward identity.
-This is true even in the case of power-law cutoff profile\footnote{And indeed this issue was highlighted,
-but in a different way in Ref. \cite{Dietz:2015owa}.} which as we have seen allows \eqref{msWI} to be
+This is true even in the case of power-law cutoff profile%
+\footnote{
+  And indeed this issue was highlighted,
+  but in a different way in Ref.~\cite{Dietz:2015owa}.
+}
+which as we have seen allows \eqref{msWI} to be
 compatible with the flow \eqref{flow}.
 
 At first sight an escape from this problem is simply to set $f$ to be power law.
@@ -3750,20 +3762,23 @@ Specialising to optimised cutoff and (for simplicity) the most interesting case 
 the equations read
 \begin{align}
   \label{flowComplete_opt}
-  \partial_t\bar{V}+
-  d_V \bar V - \frac{\eta}{2} \, \bar \varphi \, \partial_{\bar\varphi}\bar V -\frac{\eta}{2} \, \bar \chi \, \partial_{\bar\chi}\bar V &= \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  \partial^2_{\bar\varphi}\bar V},\\
+  \partial_t \bV + d_V \bV - \frac{\eta}{2} \, \bp \, \partial_{\bp} \bV -\frac{\eta}{2} \, \bc \,
+  \partial_{\bc} \bV
+  &= \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  \partial^2_{\bp} \bV},\\
   \label{msWI_opt}
-  \partial_{\bar\chi}\bar V - \partial_{\bar\varphi}\bar V + \bar{\gamma} \, \bar V &= \frac{\bar{\gamma}}{6} \, \frac{1}{1 - \partial^2_{\bar\varphi}\bar V}\,.
+  \partial_{\bc} \bV - \partial_{\bp} \bV + \bg \, \bV
+  &= \frac{\bg}{6} \, \frac{1}{1 - \partial^2_{\bp} \bV}\,.
 \end{align}
 Choosing power law $f$ and thus \eqref{powlaw-gamma} there is no explicit $t$ dependence and apparently
 these equations can work together. Combining them by eliminating their right hand sides, we get
 \begin{align}
   \label{pde1}
-  2\partial_t\bar{V}+\eta \, \bar{V}-\left(\eta \, \bar\varphi-\alpha \, \bc\right)\partial_{\bar{\varphi}}\bar{V}-(\eta+\alpha) \, \bar\chi \, \partial_{\bar{\chi}} \bar{V}=0\,,
+  2\partial_t \bV + \eta \, \bV - \left(\eta \, \bp - \alpha \, \bc\right)\partial_{\bp} \bV - (\eta+\alpha) \, \bc \, \partial_{\bc} \bV = 0\,,
 \end{align}
-where we have introduced the constant $\alpha = (d_R+\eta/2)/\rho$.
+where we have introduced the constant $\alpha = \nicefrac{(d_R+\eta/2)}{\rho}$.
 This equation can be solved by the method of characteristics
-(see \eg the appendix in Ref. \cite{Dietz:2015owa}). Parametrising the characteristic curves with $t$, they are generated by the following equations:
+(see \eg the appendix in Ref.~\cite{Dietz:2015owa}).
+Parametrising the characteristic curves with $t$, they are generated by the following equations:
 \begin{align}
   \frac{\mathrm d\bV}{\mathrm dt} = -\frac{\eta}{2} \, \bV\,,
   \quad
@@ -3803,7 +3818,7 @@ We will uncover consistent background independent variables for which the full l
 visible \cite{Dietz:2016gzg}.
 
 Since $\eta=0$, in the equations \eqref{flowComplete_opt} and \eqref{msWI_opt},
-we also have $d_R=d_V=2(2-d_f)$ and $\bar{\gamma}=2\partial_{\bc}\log\bar{f}(\bc)$.
+we also have $d_R=d_V=2(2-d_f)$ and $\bg = 2\partial_{\bc}\log\bar{f}(\bc)$.
 Note that from \eqref{equ:cutoff}, $d_f=2$ is excluded otherwise the IR cutoff no longer depends on $k$.
 Also note that since $\eta=0$ we can drop the bars on $\chi$ and $\vp$.
 Combining the equations into a linear partial differential equation we get
@@ -3889,16 +3904,18 @@ Expanding the dimensionless potential and the equations in a double power series
 the background field, we write:
 \begin{align}
   \label{pot-expand}
-  \bar V(\bar\varphi,\bar\chi) = \sum_{n,\,m=0}^{\infty} a_{nm} \, \bar\varphi^n \, \bar\chi^m\,.
+  \bV(\bp,\bc) = \sum_{n,\,m=0}^{\infty} a_{\scriptscriptstyle nm} \, \bp^n \, \bc^m\,.
 \end{align}
 Substituting expression \eqref{powlaw-gamma} for $\bg$ into the msWI \eqref{msWI_opt}
 and multiplying through by $\bc$,
 we can read off from this and the flow \eqref{flowComplete_opt} the zeroth level equations:
 \begin{align}
-  d_V a_{00}     &= \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  2a_{20}} \,, \\
-  2\rho\, a_{00} &= \frac{\rho}{3} \, \frac{1}{1 -  2a_{20}} \,.
+  d_V a_{\scriptscriptstyle 00}
+  &= \left(  \frac{d_R}{6} + \frac{\eta}{12} \right) \frac{1}{1 -  2a_{\scriptscriptstyle 20}} \,, \\
+  2\rho\, a_{\scriptscriptstyle 00}
+  &= \frac{\rho}{3} \, \frac{1}{1 -  2a_{\scriptscriptstyle 20}} \,.
 \end{align}
-Since $\rho$ cannot vanish and $a_{20}$ cannot diverge,
+Since $\rho$ cannot vanish and $a_{\scriptscriptstyle 20}$ cannot diverge,
 combining these equations gives $d_V = d_R+\eta/2$ which from \eqref{dimensions} implies $\eta=0$.
 Thus we recover already from the zeroth order level that fixed points are excluded unless $\eta=0$.
 (Of course the real reason, namely that the equations are incompatible,
@@ -3916,10 +3933,10 @@ We concentrate on fixed point solutions to the LPA system \eqref{flow},
 \eqref{msWI} and \eqref{fbar-general} where either $\eta=0$ or we choose power-law $f$,
 so that explicit $t$ dependence does not already rule out such solutions.
 We introduce the short-hand notation
-$\bar V ^{(n,m)}=\partial_{\bar \varphi}^n \partial_{\bar \chi}^m \bar V(\bp,\bc)$.
+$\bV ^{(n,m)}=\partial_{\bp}^n \partial_{\bc}^m \bV(\bp,\bc)$.
 To obtain the system at order $r$ we have to plug the expansion of the potential \eqref{pot-expand}
 into both the fixed point equation and msWI, act on them with operators
-$\frac{\partial^{i+j}}{\partial \bar\varphi^i \, \partial \bar\chi^j}$ such that $i+j=r$,
+$\frac{\partial^{i+j}}{\partial \bp^i \, \partial \bc^j}$ such that $i+j=r$,
 before finally setting the fields to zero.
 In particular, for any fixed value $r_{\star}$ we have $2 \, (r_{\star}+1)$ equations
 and hence up to order $r$ there are
@@ -3933,12 +3950,14 @@ let us start with the left hand sides.
 First note that
 \begin{align}
   \label{proportionality}
-  \bar V^{(i,j)} \bigg|_{\bar\varphi = \bar\chi = 0}
-  \propto a_{ij} \,.
+  \bV^{(i,j)} \Big|_{\bp = \bc = 0}
+  \propto a_{\scriptscriptstyle ij} \,.
 \end{align}
 That is, for any fixed pair $(i,j)$ the left hand side of (\ref{msWI}) will contain the coefficients
-$a_{ij}$, $a_{i+1,j}$ and $a_{i,j+1}$, whereas the left hand side of (\ref{flow}) will only contain $a_{ij}$.
-Up to some fixed order $r$ there will be thus coefficients $a_{ij}$ where $i$ and $j$ run from
+$a_{\scriptscriptstyle ij}$, $a_{\scriptscriptstyle i+1,j}$ and $a_{\scriptscriptstyle i,j+1}$,
+whereas the left hand side of (\ref{flow}) will only contain $a_{\scriptscriptstyle ij}$.
+Up to some fixed order $r$ there will be thus coefficients $a_{\scriptscriptstyle ij}$
+where $i$ and $j$ run from
 $0$ to $r+1$ and $i+j \leqslant r+1$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -3957,8 +3976,9 @@ $0$ to $r+1$ and $i+j \leqslant r+1$
 \begin{align}
   \label{coeff_lhs}
   \bigg\lbrace
-  a_{00},\, a_{01},\, \dots ,\, a_{0,r+1},\, a_{10},\, \dots ,\,
-  a_{1,r},\, \dots ,\, a_{2,r-1},\, \dots,\, a_{r+1,0}
+  a_{\scriptscriptstyle 00},\, a_{\scriptscriptstyle 01},\,
+  \dots ,\, a_{\scriptscriptstyle 0,r+1},\, a_{\scriptscriptstyle 10},\, \dots ,\,
+  a_{\scriptscriptstyle 1,r},\, \dots ,\, a_{\scriptscriptstyle 2,r-1},\, \dots,\, a_{\scriptscriptstyle r+1,0}
   \bigg\rbrace \,,
 \end{align}
 \cf Fig.~\ref{fig:diag_lhs_rhs}. This adds up to the following number of coefficients
@@ -3968,27 +3988,33 @@ $0$ to $r+1$ and $i+j \leqslant r+1$
 Including the coefficients of the right hand side,
 we have to be careful not to double count any coefficients that have already been taken account of on the
 left hand sides. Let us suppose we have fixed the cutoff and let us assume that for the
-moment $\bar{\gamma} =$ const. Then all additional coefficients on the right hand side come from the
-expansion of the propagator
+moment $\bg=\mathrm{const.}$
+Then all additional coefficients on the right hand side come from the expansion of the propagator
 \begin{align}
   \label{expansion_propagator}
-  \frac{\partial^{i+j}}{\partial \bar\varphi^i \, \partial \bar\chi^j} \, \left( \frac{1}{1 - \bar V^{(2,0)}} \right) \bigg|_{\bar\varphi = \bar\chi = 0} =
-  \frac{\partial^{j}}{\partial \bar\chi^j} \left[ \frac{\partial^{i-1}}{\partial \bar\varphi^{i-1}} \left( \frac{\bar V^{(3,0)}}{(1 - \bar V^{(2,0)})^2} \right) \right] \Bigg|_{\bar\varphi = \bar\chi = 0}\, .
+  \frac{\partial^{i+j}}{\partial \bp^i \, \partial \bc^j} \, \left( \frac{1}{1 - \bV^{(2,0)}} \right) \bigg|_{\bp = \bc = 0} =
+  \frac{\partial^{j}}{\partial \bc^j} \left[ \frac{\partial^{i-1}}{\partial \bp^{i-1}} \left( \frac{\bV^{(3,0)}}{(1 - \bV^{(2,0)})^2} \right) \right] \Bigg|_{\bp = \bc = 0}\, .
 \end{align}
-Since we can always arrange the $\bar\varphi$--derivatives to act first,
-the expression in the square brackets will involve terms $\bar V^{(2,0)} \cdots \, \bar V^{(i+2,0)}$.
+Since we can always arrange the $\bp$--derivatives to act first,
+the expression in the square brackets will involve terms $\bV^{(2,0)} \dots \, \bV^{(i+2,0)}$.
 Using Eqn.~\eqref{proportionality}, we see that the expression given in Eqn.~\eqref{expansion_propagator}
 will then include the following terms
 \begin{align}
   \bigg\lbrace
-  a_{20},\, a_{21},\, \dots ,\, a_{2i},\, a_{30},\, \dots ,\, a_{3i},\, \dots,\, a_{i+2,0},\, \dots,\, a_{i+2,j}
+  a_{\scriptscriptstyle 20},\, a_{\scriptscriptstyle 21},\, \dots ,\,
+  a_{\scriptscriptstyle 2i},\, a_{\scriptscriptstyle 30},\, \dots ,\,
+  a_{\scriptscriptstyle 3i},\, \dots,\,
+  a_{\scriptscriptstyle i+2,0}, \, \dots,\, a_{\scriptscriptstyle i+2,j}
   \bigg\rbrace \,.
 \end{align}
 Up to any fixed order $r$, $i$ and $j$ can take values between $0$ and $r$ such that $i+j = r$,
 and in total we will have the following coefficients on the right hand sides
 \begin{align}
   \bigg\lbrace
-  a_{20},\, \dots ,\, a_{2,r},\, a_{30},\, \dots ,\, a_{3,r-1},\, \dots ,\, a_{4,r-2},\, \dots,\, a_{r+2,0}
+  a_{\scriptscriptstyle 20},\, \dots ,\,
+  a_{\scriptscriptstyle 2,r},\, a_{\scriptscriptstyle 30},\, \dots ,\,
+  a_{\scriptscriptstyle 3,r-1},\, \dots ,\,
+  a_{\scriptscriptstyle 4,r-2},\, \dots, \, a_{\scriptscriptstyle r+2,0}
   \bigg\rbrace \,,
 \end{align}
 \cf again Fig.~\ref{fig:diag_lhs_rhs}.
@@ -4007,7 +4033,8 @@ the only ones not counted yet are
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
   \bigg\lbrace
-  a_{2,r},\, a_{3,r-1},\, a_{4,r-2},\, \dots,\, a_{r+2,0}
+  a_{\scriptscriptstyle 2,r},\, a_{\scriptscriptstyle 3,r-1},\,
+  a_{\scriptscriptstyle 4,r-2},\, \dots,\, a_{\scriptscriptstyle r+2,0}
   \bigg\rbrace \,.
 \end{align}
 This is displayed graphically in Fig.~\ref{fig:diag-all}.
@@ -4015,7 +4042,7 @@ They precisely add up to a further $r+1$ coefficients.
 We also must include another two coefficients, namely $\eta$ and $d_f$.
 Finally, since $\gamma$ is in general some function of $\chi$ it is easy to see that
 \begin{align}
-  \frac{d^r}{d \bar\chi^r} \, \bar{\gamma} \propto \frac{d^r}{d \bar\chi^r} \, \left( \frac{f'}{f}\right) \subseteq
+  \frac{d^r}{d \bc^r} \, \bg \propto \frac{d^r}{d \bc^r} \, \left( \frac{f'}{f}\right) \subseteq
   \bigg\lbrace f, f', \dots, f^{(r+1)}   \bigg\rbrace \,,
 \end{align}
 which gives us an additional $(r+2)$ coefficients from the Taylor expansion of $f$.
