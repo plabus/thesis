@@ -12,15 +12,8 @@ all appendices: do I need \GNewton somewhere?
 TODO:
 =====
 
-write technical intro:
-  - figure UV critical surface
-  - explanation section 1.2 about how
-    uv critical surface fixes/predicts IR irrelevant couplings
-    (including origin of the name (ir)relevant directions)
 
-----------------------
-
-conclusions 1--4
+conclusions 4
 
 ----------------------
 
@@ -38,6 +31,12 @@ fine tuning
 OPTINAL:
 ========
 
+in write technical intro:
+  - figure UV critical surface
+  - explanation section 1.2 about how
+    uv critical surface fixes/predicts IR irrelevant couplings
+    (including origin of the name (ir)relevant directions)
+
 
 ----------------------
 ----------------------
@@ -45,6 +44,8 @@ OPTINAL:
 
 DONE:
 =====
+
+conclusions 1--3
 
 overbars for V and K in Ch. 2
 ln ---> log everywhere

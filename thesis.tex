@@ -6168,94 +6168,88 @@ as well as critical behaviour. To illustrate the tools and ideas introduced
 in this chapter, we concluded with the study of a $\mathbb Z_2$ invariant
 scalar field theory. This included the investigation of the
 Gaussian and Wilson-Fisher fixed point in $d=4$ and $d=3$ in a
-$\varphi^4$--approximation, as well as the local potential approximation.
+$\varphi^4$--approximation, as well as the local potential approximation
+of the derivative expansion.
 We calculated the mass critical exponent $\nu$ using a polynomial truncation
 and studied scaling solutions using shooting methods.
 
 \section*{Chapter 2}
 
-If we construct the non-perturbative flow equation for quantum gravity by introducing a cutoff defined through
-a background metric then independence from this artificial metric can only be achieved if the appropriate
-modified split Ward identity is obeyed. However even if it is obeyed, background independence is guaranteed
-only in the limit $k\to0$.
-RG properties on the other hand are defined at intermediate scales $k$.
-There is therefore the potential for conflict in this formulation between RG notions such as fixed points,
+In the second chapter we studied the issue of background field independence in quantum gravity.
+It occurs when constructing the functional renormalisation group equation for gravity by introducing a
+cutoff operator defined through a background metric. In this case, independence from the artificial
+metric can only be achieved if the appropriate modified split Ward identity is obeyed.
+However even if it is obeyed, background independence is guaranteed
+only in the infrared limit $k\to0$.
+Renormalisation group properties on the other hand are defined at intermediate scales $k$.
+There is therefore the potential for conflict in this formulation between
+renormalisation group notions such as fixed points,
 and the requirement of background independence.
-Examples of such conflicts were uncovered in Ref. \cite{Dietz:2015owa}.
 
-In this paper we have further investigated these issues.
-The first question that needs to be addressed is whether the msWI,
-$\mathcal{W}=0$, is compatible with the exact RG flow equation, \ie such that $\dot{\mathcal{W}}=0$ then follows.
-At the exact level, this latter compatibility is guaranteed since they are both identities derived from the
-partition function (see also sec. \ref{sec:exact}).
-Within the derivative expansion approximation of conformally truncated gravity considered in Ref.
-\cite{Dietz:2015owa} (reviewed in sec. \ref{sec:review}),
-we have shown  in secs. \ref{sec:compatibility-at-d2} and \ref{sec:required-cutoff},
-that this compatibility follows if and only if either $\eta=0$ or cutoff profile is power law.
-In sec. \ref{sec:exact-vs-derivatives}, we saw precisely why the derivative expansion breaks compatibility
-in general and why these special cases restore it.
-We argued in sec. \ref{sec:incompatibility} that if the equations are incompatible they are overconstrained
-since there are then an infinite number of secondary constraints,
-and thus not even $t$-dependent solutions can exist.
-We confirmed this latter conclusion by example in sec. \ref{sec:incompatible-no-solns}.
-In sec. \ref{sec:truncations},
-we also saw that the fixed point equations and Ward identities together generically overconstrain the
-system when expanded in terms of vertices beyond the six-point level.
+In this chapter we have continued an investigation of these issues
+in the setup of conformally truncated gravity, which was initiated in Ref.~\cite{Dietz:2015owa}.
+The first question that needs to be addressed is whether the Ward identity,
+is compatible with the exact renormalisation group equation.
+At the exact level, compatibility is guaranteed since both identities
+are derived from the same partition function.
+Within the approximation of the derivative expansion,
+we have shown that compatibility holds if and only if either the anomalous
+dimension vanishes or the cutoff profile is power law.
+We have also shown why precisely the derivative expansion breaks compatibility
+in general and why the special cases above, restore it.
+Moreover, we argued that if the equations are incompatible they are overconstrained
+since then there is an infinite number of secondary constraints,
+and thus not even scale-dependent solutions can exist.
+We confirmed this latter conclusion by an example.
+Using a counting argument, we also saw that the fixed point equations and Ward identities together
+generically overconstrain the system when expanded in terms of vertices beyond the six-point level.
 
-Even if the equations are compatible the msWI can still forbid fixed points.
-In sec. \ref{sec:forbids} the reason was laid out particularly clearly. The Ward identity
-\begin{align}
-  \frac{\partial \bar V}{\partial \bar\chi} - \frac{\partial \bar V}{\partial \bar\varphi} + \bar \gamma \, \bar V = \bar \gamma
-  \int_0^{\infty} \mathrm d\hat p \, \hat p^{d-1} \; \frac{r - \frac{1}{d} \, \hat p \, r'}{\hat p^2 + r - \partial^2_{\bar\varphi}\bar V} \,,
-\end{align}
-(which is compatible for power-law $r$),
-forces the effective potential $\bV$ to depend on $t$ through
-\begin{align}
-  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \,
-  \log \left[ \bar{f} \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc \right) \right] ,
-\end{align}
-whenever this dimensionless combination is similarly forced to be $t$-dependent.
-For example we see that fixed points with respect to $k$ are forbidden for exponential parametrisations
-$f(\phi) = \mathrm e ^ \phi$  if the field grows a non-zero anomalous dimension.
+However, even if the equations are compatible the Ward identity can still forbid fixed points.
+We have seen this explicitly in the local potential approximation.
+For example, we have seen that fixed points with respect to $k$ are forbidden
+for the exponential parametrisation if the field grows a non-zero anomalous dimension.
 It is clear that the reasons for this conflict are general and not tied to the derivative expansion
 of the conformally truncated model \textit{per se}.
-Therefore this issue could provide important constraints for example on the exponential parametrisations
-recently advocated in the literature
-\cite{Demmel:2015zfa,Eichhorn:2013xr,Eichhorn:2015bna,Nink:2014yya,Percacci:2015wwa,
-Ohta:2015efa,Gies:2015tca}.
 
-For full quantum gravity, such conflict between $k$-fixed points and background independence may also
-show up clearly in a vertex expansion, as discussed in \ref{sec:truncations},
-or generically it may not become visible until the six-point level.
+For full quantum gravity, such conflicts between $k$-fixed points and
+background independence may also show up clearly in a vertex expansion,
+but generically it may not become visible until the six-point level.
 However for full quantum gravity, if we are to follow the standard procedure, we must also fix the gauge.
-The original msWI, which formally expresses background independence before gauge fixing,
+The original Ward identity, which formally expresses background independence before gauge fixing,
 will no longer be compatible with the flow equation.
 Instead we must use the appropriate version which has contributions from the background dependence of
 the gauge fixing and ghost terms as well as from cutoff terms for the ghost action itself.
-However background independence is then only restored in the limit $k\to0$ after going ``on-shell''
-(assuming such an appropriate property can be defined).
-This last step is required to recover quantities that are independent of the gauge fixing.
-If we are to continue with a flow equation for a Legendre effective action
-\cite{Wetterich:1992yh,Morris:1993qb} then to get around this obstruction,
-the Vilkovisky-DeWitt covariant effective action seems called for
-\cite{Branchina:2003ek,Donkin:2012ud,Demmel:2014hla,Safari:2015dva},
-with the msWI replaced by the corresponding modified Nielsen identities where the r\^ole of the background
-field is played by the ``base point'' \cite{Pawlowski:2003sk}.
+These issues have been adressed in
+Refs.~\cite{Morris:2016spn, Percacci:2016arh},
+which we have reviewed here as well.
+% However background independence is then only restored in the limit $k\to0$, and after going ``on-shell'',
+% assuming such an appropriate property can be defined.
+% This last step is required to recover quantities that are independent of the gauge fixing.
 
-Returning to the present study, it seems surely significant that
-whenever the msWI equations  are actually compatible with the flow equations,
-it is possible to combine them and thus uncover background independent variables,
-including a background independent notion of scale, $\hk$.
-These are not only independent of $\chi$ but also independent of the parametrisation $f$.
-Of course such an underlying description has only been shown in this $\mathcal{O}(\partial^2)$ approximation and
-in conformally truncated gravity, and one might doubt that this happy circumstance could be generalised to
-full quantum gravity, and not only for the reasons outlined above.
-However we also saw in sec. \ref{sec:counting} that if modified Ward identities are to be compatible with
-the flow equations then in terms of vertices, the information they contain becomes highly redundant
-at sufficiently high order (the six-point level in our case).
-This in itself suggests the existence of a simpler description.
-Finally very recently a formulation for non-perturbative RG has been proposed where computations can be
-made without ever introducing a background metric (or gauge fixing) \cite{Morris:2016nda}.
+% If we are to continue with a flow equation for a Legendre effective action
+% % \cite{Wetterich:1992yh,Morris:1993qb}
+% then to get around this obstruction,
+% the Vilkovisky-DeWitt covariant effective action seems called for
+% \cite{Branchina:2003ek, Donkin:2012ud, Demmel:2014hla, Safari:2015dva},
+% with the Ward identity replaced by the corresponding modified Nielsen identities
+% where the r\^ole of the background
+% field is played by the ``base point'' \cite{Pawlowski:2003sk}.
+
+% Returning to the present study, it seems surely significant that
+% whenever the msWI equations  are actually compatible with the flow equations,
+% it is possible to combine them and thus uncover background independent variables,
+% including a background independent notion of scale, $\hk$.
+% These are not only independent of $\chi$ but also independent of the parametrisation $f$.
+% Of course such an underlying description has only been shown in this $\mathcal{O}(\partial^2)$
+% approximation and
+% in conformally truncated gravity, and one might doubt that this happy circumstance could be generalised to
+% full quantum gravity, and not only for the reasons outlined above.
+% However we also saw in sec. \ref{sec:counting} that if modified Ward identities are to be compatible with
+% the flow equations then in terms of vertices, the information they contain becomes highly redundant
+% at sufficiently high order (the six-point level in our case).
+% This in itself suggests the existence of a simpler description.
+% Finally very recently a formulation for non-perturbative RG has been proposed where computations can be
+% made without ever introducing a background metric (or gauge fixing) \cite{Morris:2016nda}.
 
 
 \section*{Chapter 3}
