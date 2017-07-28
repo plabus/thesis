@@ -186,7 +186,7 @@ letterpaper,
 \newcommand{\hk}{\hat k}
 \newcommand{\hc}{\hat \chi}
 \newcommand{\hatt}{\hat t}
-\newcommand{\dclnf}{\,\partial_\chi\! \ln\! f \,}
+\newcommand{\dclnf}{\,\partial_\chi\! \log\! f \,}
 
 % Percacci's Maths Definitions
 \def\theequation{\thesection .\arabic{equation}}
@@ -3049,7 +3049,7 @@ leading to the msWI:
   \right]^{-1}
   \frac{1}{\sqrt{\bar g}}
   \left[
-    \frac{\delta R_k[\chi] }{\delta \chi}+\frac{d}{2}\dclnf R_k[\chi]
+    \frac{\delta R_k[\chi] }{\delta \chi}+\frac{d}{2} \dclnf R_k[\chi]
   \right] .
   \label{equ:sWiGamma}
 \end{align}
@@ -3075,12 +3075,12 @@ and modified split Ward identities%
 \begin{align}
   \label{flowV}
   \partial_t V(\varphi,\chi)
-  &= f(\chi)^{-\frac{d}{2}} \int \mathrm dp\, p^{d-1} \; Q_p \dot R_p \,, \\
+  &= f(\chi)^{-\frac{d}{2}} \int \mathrm dp \, p^{d-1} \; Q_p \dot R_p \,, \\
   \label{msWIV}
-  \partial_\chi V - \partial_\varphi V + \frac{d}{2} \, \partial_\chi \text{ln} f V
-  &= f(\chi)^{-\frac{d}{2}} \int \mathrm dp\, p^{d-1} \; Q_p
+  \partial_\chi V - \partial_\varphi V + \frac{d}{2} \dclnf V
+  &= f(\chi)^{-\frac{d}{2}} \int \mathrm dp \, p^{d-1} \; Q_p
   \left[
-    \partial_\chi R_p + \frac{d}{2}\partial_\chi \text{ln} f  R_p
+    \partial_\chi R_p + \frac{d}{2} \dclnf R_p
   \right] ,
 \end{align}
 and for the kinetic function $K$:
@@ -3091,11 +3091,11 @@ and for the kinetic function $K$:
   \label{msWIK}
   f^{-1}
   \left[
-    \partial_\chi K- \partial_\varphi K + \frac{d-2}{2} \, \partial_\chi \text{ln}f \, K
+    \partial_\chi K- \partial_\varphi K + \frac{d-2}{2} \dclnf K
   \right]
   &= 2 f^{-\frac{d}{2}} \int \mathrm dp \, p^{d-1} \; P_p(\varphi,\chi)
   \left[
-    \partial_{\chi} R_p + \frac{d}{2} \, \partial_\chi \mathrm{ln} f R_p
+    \partial_{\chi} R_p + \frac{d}{2} \dclnf R_p
   \right].
 \end{align}
 The $p$ subscripts denote the momentum dependence of $Q_p, P_p$ and the cutoff $R_p$ and as
@@ -3412,7 +3412,7 @@ Here we have also introduced the shorthand notation
 \begin{align}
   \label{gamma}
   \int_p \equiv f(\chi)^{-\frac{d}{2}} \int \mathrm dp \,p^{d-1} \,,
-  \quad \gamma \equiv \frac{d}{2} \, \partial_\chi \mathrm{ln} f \,,
+  \quad \gamma \equiv \frac{d}{2} \dclnf \,,
   \quad \text{and} \quad \bar\partial \equiv \partial_\varphi - \partial_\chi\,.
 \end{align}
 It will also be useful to have to hand the following relations:
@@ -3700,7 +3700,7 @@ The result, for general cutoff profile $r(\hat{p}^2)$, is:
 where $r'$ means $dr(\hat{p}^2)/d\hat{p}$ and from the change to dimensionless variables we find:
 \begin{align}
   \label{fbar-general}
-  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc}\ln
+  \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \log
   \left[
     \bar{f}\left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc\right)
   \right]\,.
@@ -3803,28 +3803,28 @@ We will uncover consistent background independent variables for which the full l
 visible \cite{Dietz:2016gzg}.
 
 Since $\eta=0$, in the equations \eqref{flowComplete_opt} and \eqref{msWI_opt},
-we also have $d_R=d_V=2(2-d_f)$ and $\bar{\gamma}=2\partial_{\bc}\ln\bar{f}(\bc)$.
+we also have $d_R=d_V=2(2-d_f)$ and $\bar{\gamma}=2\partial_{\bc}\log\bar{f}(\bc)$.
 Note that from \eqref{equ:cutoff}, $d_f=2$ is excluded otherwise the IR cutoff no longer depends on $k$.
 Also note that since $\eta=0$ we can drop the bars on $\chi$ and $\vp$.
 Combining the equations into a linear partial differential equation we get
 \begin{align}
   \label{pde2}
-  \partial_t\bV +\frac{2-d_f}{\partial_{\chi}\ln\bar{f}} \,
+  \partial_t\bV +\frac{2-d_f}{\partial_{\chi}\log\bar{f}} \,
   \left(\partial_{\vp}\bV-\partial_{\chi}\bV\right) =0\,,
 \end{align}
 whose characteristic curves satisfy
 \begin{align}
   \label{eta0curves}
-  \frac{\mathrm d\chi}{\mathrm dt}=\frac{d_f-2}{\partial_{\chi}\ln\bar{f}}\,,
+  \frac{\mathrm d\chi}{\mathrm dt}=\frac{d_f-2}{\partial_{\chi}\log\bar{f}}\,,
   \quad
-  \frac{\mathrm d\vp}{\mathrm dt}=\frac{2-d_f}{\partial_{\chi}\ln\bar{f}}\,,
+  \frac{\mathrm d\vp}{\mathrm dt}=\frac{2-d_f}{\partial_{\chi}\log\bar{f}}\,,
   \quad
   \frac{\mathrm d\bV}{\mathrm dt}=0\,.
 \end{align}
 Solving the first equation gives:
 \begin{align}
   \label{hatt}
-  \hatt = t+\frac{\ln\bar{f}}{2-d_f}\,,
+  \hatt = t+\frac{\log\bar{f}}{2-d_f}\,,
 \end{align}
 where the integration constant $\hatt$ is thus the background independent definition of RG time
 (see the appendix to Ref. \cite{Dietz:2015owa}). Exponentiating,
@@ -3865,7 +3865,7 @@ Finally, the fixed points are readily found from \eqref{bi-flow} similarly to Re
   \frac{\mathrm d^2\hV}{\mathrm d\phi^2} = 1-\frac{1}{6\hV}
 \end{align}
 is equivalent to Newton's equation for acceleration with respect to `time' $\phi$ of a particle
-of unit mass at `position' $\hV$ in a potential $U=-\hV+ (\ln\hV)/6$.
+of unit mass at `position' $\hV$ in a potential $U=-\hV+ (\log\hV)/6$.
 In this way it can be verified that there is a line of fixed points ending at the Gaussian fixed point,
 which is here $\hV=1/6$, in agreement with the findings for power-law cutoff in \cite{Dietz:2016gzg}.
 
@@ -6160,7 +6160,7 @@ In sec. \ref{sec:forbids} the reason was laid out particularly clearly. The Ward
 forces the effective potential $\bV$ to depend on $t$ through
 \begin{align}
   \bar{\gamma} = \frac{d}{2} \, \frac{\partial}{\partial\bc} \,
-  \ln \left[ \bar{f} \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc \right) \right] ,
+  \log \left[ \bar{f} \left({\rm e}^{\eta t/2}\mu^{\eta/2}\bc \right) \right] ,
 \end{align}
 whenever this dimensionless combination is similarly forced to be $t$-dependent.
 For example we see that fixed points with respect to $k$ are forbidden for exponential parametrisations
