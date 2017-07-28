@@ -7,7 +7,6 @@ Questions:
 ==========
 
 all appendices: do I need \GNewton somewhere?
-S_k (or else) ---> \Delta S_k (or what?)
 
 
 TODO:
@@ -47,6 +46,8 @@ ln ---> log everywhere
 
 DONE:
 =====
+
+S_k (or else) ---> \Delta S_k
 
 beautify fig. 2.2--2.3
 

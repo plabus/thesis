@@ -3169,8 +3169,11 @@ the msWI and it is with this in mind that we proceed (see also Ref.\cite{Safari:
 We begin by considering the following Euclidean functional integral over the fluctuation field~$\tilde\varphi$
 \begin{align}
   \mathrm e^{W_k} = \int \mathcal{D}\tilde\varphi \;
-  \mathrm e^{-S[\chi+\tilde\varphi]-S_k[\tilde\varphi,\, \bar g]
-  + S_{\mathrm{src}}[\tilde\varphi, \, \bar g]} \,.
+  \mathrm e^{
+    - S[\chi+\tilde\varphi]
+    - \Delta S_k[\tilde\varphi,\, \bar g]
+    + S_{\mathrm{src}}[\tilde\varphi, \, \bar g]
+  } \,.
   \label{Z}
 \end{align}
 This integral is regulated in the UV (as it must be), however we leave this regularisation implicit
@@ -3186,7 +3189,7 @@ where $T_{xy}\equiv T(x,y)\equiv\sqrt{\bar g(x)} \, \delta(x-y)$. We will use a 
 Einstein summation convention where repeated indices or equivalently the dot notation represent
 integration over position space. Similarly, we write the cutoff action as
 \begin{align}
-  S_k[\tilde\varphi, \bar g] = \frac{1}{2} \int \mathrm d^d x \, \sqrt{\bar g(x)} \;
+  \Delta S_k[\tilde\varphi, \bar g] = \frac{1}{2} \int \mathrm d^d x \, \sqrt{\bar g(x)} \;
   \tilde\varphi(x) \, R_k[\bar g] \, \tilde\varphi(x)
   \equiv \frac{1}{2}\tilde\varphi_x r_{xy} \tilde\varphi_{y}
   \equiv\frac{1}{2}\,\tilde\varphi\cdot r \cdot\tilde\varphi \,,
@@ -3207,7 +3210,7 @@ longer part of the integration; this is to enable all $\chi$-dependent quantitie
 for when acting with $\delta/\delta\chi$ later on.
 With these definitions in place, we may as before take the Legendre transform $\tilde\Gamma_{k}$ of $W_k$
 and from this define the effective average action
-$ \Gamma_k[\varphi,\bar g]=\tilde\Gamma_k[\varphi,\bar g]-S_k[\varphi,\bar g]$.
+$\Gamma_k[\varphi,\bar g] = \tilde\Gamma_k[\varphi,\bar g] - \Delta S_k[\varphi,\bar g]$.
 Using similar steps as in the last chapter, we quickly arrive at the flow equation
 for the latter, which now reads
 \begin{align}
@@ -3238,7 +3241,7 @@ Under these same shifts, the Legendre transformation of $W_k$ gives
 	- \frac{\delta\tilde\Gamma_k}{\delta\chi}\cdot\varepsilon \,.
 \end{align}
 Substituting this relation into \eqref{Wshift} together with
-$\Gamma_k=\tilde\Gamma_k-S_k$,
+$\Gamma_k = \tilde\Gamma_k - \Delta S_k$,
 we obtain the msWI
 \begin{align}
 	\frac{\delta \Gamma_k}{\delta\chi_\omega}-\frac{\delta \Gamma_k}{\delta\varphi_\omega}=
@@ -4167,7 +4170,7 @@ effective action, which will be derived from a partition function that now reads
   \mathrm e^{W_k} = \int \mathcal{D}\tilde h_{\mu\nu} \;
   \mathrm e^{
     - S[g_{\mu\nu}]
-    - S_k[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
+    - \Delta S_k[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
     + S_{\mathrm{gf}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
     + S_{\mathrm{ghost}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
     + S_{\mathrm{aux}}[\bar g_{\mu\nu},\, \tilde h_{\mu\nu}]
@@ -4215,7 +4218,7 @@ under background rescaling
 \end{align}
 The last part of the action to consider is the cutoff action
 \begin{align}
-  S_k = \sum_u \int \mathrm d^dx \, \sqrt{\bar g} \; u \, R_u \, u \,,
+  \Delta S_k = \sum_u \int \mathrm d^dx \, \sqrt{\bar g} \; u \, R_u \, u \,,
 \end{align}
 where we sum over all fluctuation fields $u$ and define the cutoff operators by
 \begin{align}
@@ -4230,7 +4233,7 @@ $\overbar \Delta = -\bnabla^2 + \overbar E$ is a second order differential opera
 endomorphism $E$. With this definitions and the transformation properties of the various
 fluctuation fields one can show that
 \begin{align}
-  \weyl S_k =
+  \weyl \big( \Delta S_k \big) =
   2d \int \mathrm d^dx \, \sqrt{\bar g} \; R_h \, h
   - \frac 12 \int \mathrm d^dx \, \sqrt{\bar g} \; \sum_u u \, \dot R_u \, u
   - \frac {d-6}2 \int \mathrm d^dx \, \sqrt{\bar g} \;
