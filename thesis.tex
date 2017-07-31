@@ -738,7 +738,8 @@ calculated using the path integral formalism via
 \end{align}
 where the partition function $Z = \int \mathcal D \Phi \; e^{-S[\Phi]}$ serves as a
 normalisation constant, $\mathcal D \Phi$ represents the integration measure,
-which iterates over all possible field configurations, and $e^{-S \lbrack \Phi \rbrack}$
+% which iterates over all possible field configurations,
+and $e^{-S \lbrack \Phi \rbrack}$
 is the Euclidean Boltzmann factor---the (quantum) probability distribution
 which weights every field configuration in the path integral
 according to its classical action.
@@ -824,15 +825,17 @@ the remaining modes
 In this way, we can define a scale-dependent quantum action which
 describes physics at same given energy scale $\Lambda$ in terms of
 its tree-level diagrams. In particular, we may quantify the dependence
-of $\SLambda$ on the energy scale
-through its beta functional $\nicefrac{ \mathrm d\SLambda }{ \mathrm d\Lambda }$,
-which can be defined through a first-order integro-differential equation
+of $\SLambda$ on the energy scale through its
+beta functional $\nicefrac{ \mathrm d\SLambda }{ \mathrm d\Lambda }$,
+which can be obtained via
 \begin{align}
   \frac{ \mathrm d \SLambda }{ \mathrm d \Lambda }
   = \lim_{ \delta \Lambda \rightarrow 0 }
   \frac{ S_{\scriptscriptstyle{\Lambda+\delta\Lambda}} - \SLambda }{ \delta \Lambda } \,.
   \label{eq:wilsonRG}
 \end{align}
+This equation will become a first-order integro-differential equation
+once the definition of $\SLambda$ is used on the right hand side.
 Wilson's renormalisation group thus gives us another strategy to
 solve a quantum field theory. In order to do so, we have to find the solution to
 the renormalisation group equation with the boundary condition
@@ -899,19 +902,18 @@ This is why we choose to add to the classical action a cutoff term that is
 bilinear in the fields which we want to regulate.
 
 In the most general case of a quantum field theory in curved space-time,
-we first have to choose an operator $\mathcal O_\Delta$ which is
-a functional of a first or second order differential operator $\Delta$ and
+we have to choose a first or second order differential operator $\Delta$
 which we leave unspecified for the moment.
-Second, we have to calculate the eigenspectrum of the latter
+Then we have to calculate the eigenspectrum of the latter
 \begin{align}
-  \mathcal O_\Delta \, \varphi_n = \lambda_n \, \varphi_n \,.
+  \Delta \, \varphi_n = \lambda_n \, \varphi_n \,.
 \end{align}
-Then we can expand the quantum field $\varphi(x)$ we want to regularise in terms
+Next we can expand the quantum field $\varphi(x)$ we want to regularise in terms
 of its generalised Fourier coefficients $\phi_n$ as
 \begin{align}
   \varphi (x) = \sum_n \; \phi_n \, \varphi_n(x) \,,
 \end{align}
-where for the moment we assumed a discrete spectrum of $\mathcal O_\Delta$
+where for the moment we assumed a discrete spectrum of $\Delta$
 which we label by integers $n$.
 We will outline the case of a scalar field here first,
 and comment on how to generalise this procedure to other types of fields
@@ -920,7 +922,7 @@ action, can then be written in its most general form in two distinct ways
 \begin{align}
   \Delta S_k [\varphi]
   = \frac 12 \int \mathrm d^dx \;
-  \varphi(x) \, R_k[ \mathcal O_\Delta ] \, \varphi(x)
+  \varphi(x) \, R_k[ \Delta ] \, \varphi(x)
   = \frac 12 \sum_n \;
   \phi_n \, R_k(\lambda_n) \, \phi_n \,.
 \end{align}
@@ -928,13 +930,13 @@ The second expression is often the most convenient form of the cutoff
 term when it comes to evaluating functional traces, as the ones that
 will appear in the functional renormalisation group equation, see below.
 Since it is common practise,
-we will denote the cutoff kernel $R_k[ \mathcal O_\Delta ]$
+we will denote the cutoff kernel $R_k[ \Delta ]$
 and its Fourier transform with the same symbol, and add its
 explicit argument as appropriate.
 
 For a physically more transparent presentation, let us now specialise
 to the case of a flat space-time
-and $\mathcal O_\Delta = \partial^\mu \partial_\mu$.
+and $\Delta = \partial^\mu \partial_\mu$.
 The generalised Fourier transformation in this case simply becomes
 the usual continuous transformation and the cutoff term in
 momentum space assumes the form:%
@@ -1046,15 +1048,18 @@ functional renormalisation group equation, as we will see
 shortly, is generically proportional to a differential
 operator
 \begin{align}
-  \Delta = - \nabla^2 + \mathbb E \,,
+  % \Delta =
+  - \nabla^2 + \mathbb E \,,
 \end{align}
 where $\nabla$ is the covariant derivative with respect to
 the gauge connection(s), including gravity as well as internal
 symmetries, and $\mathbb E$ is a endomorphism which may include
 mass terms or curvature invariants. Since the cutoff term will
 be added to this Hessian, it will turn out computationally
-handy to chose the operator $\mathcal O_\Delta$ of which the cutoff
-kernel is a functional to include parts of the operator $\Delta$.
+handy to chose the operator $\Delta$,
+of which the cutoff kernel is a functional,
+to include parts of $- \nabla^2 + \mathbb E$.
+% the operator $\Delta$.
 To express the classification, we have to split
 the endomorphism $\mathbb E = \mathbb E_1 + \mathbb E_2$
 into a part $\mathbb E_1$ which has no scale-dependent
@@ -1066,15 +1071,15 @@ are defined:
 \begin{itemize}
   \setlength\itemsep{2.0mm}
   \item
-    {\makebox[2cm]{type I:\hfill}   {$\mathcal O_\Delta = - \nabla^2$}}
+    {\makebox[2cm]{type I:\hfill}   {$\Delta = - \nabla^2$}}
   \item
-    {\makebox[2cm]{type II:\hfill}  {$\mathcal O_\Delta = - \nabla^2 + \mathbb E_1$}}
+    {\makebox[2cm]{type II:\hfill}  {$\Delta = - \nabla^2 + \mathbb E_1$}}
   \item
-    {\makebox[2cm]{type III:\hfill} {$\mathcal O_\Delta = - \nabla^2 + \mathbb E_1 + \mathbb E_2$}}
+    {\makebox[2cm]{type III:\hfill} {$\Delta = - \nabla^2 + \mathbb E_1 + \mathbb E_2$}}
 \end{itemize}
 \bigskip
 Note that when using a type III cutoff, the spectrum of the operator
-$\mathcal O_\Delta$ will change along the renormalisation group
+$\Delta$ will change along the renormalisation group
 flow.
 
 To conclude this subsection let us now comment on the case
@@ -1085,7 +1090,7 @@ The cutoff term is then expressed through a matrix relation
   = \int \mathrm d^dx \;
   \Phi_{\mathcal A} \, R^{\mathcal A \mathcal B}_k \, \Phi_{\mathcal B}
 \end{align}
-where $\mathcal A$ and $\mathcal B$ iterate over the number
+where $\mathcal A$ and $\mathcal B$ run over the number
 of fields as well as their space-time and possibly internal
 indices. Although one could in principle mix different fields
 with the same symmetry structure in this way,
@@ -2053,7 +2058,7 @@ surface.%
   of the marginal directions.
 }
 
-In order for an ultraviolet fixed point to exist,
+In order for a fixed point to be an ultraviolet attractor,
 there must hence be at least one negative eigenvalue
 of the Jacobian of the beta functions. Moreover,
 to be able to define a predictive fundamental
@@ -2237,7 +2242,7 @@ would expect the ultraviolet critical surface to be finite
 dimensional.
 
 The scale-invariant quantum field theory defined by the fixed point
-itself is a conformal field theory.
+is often a conformal field theory.
 In particular, expanding the flow equations to second order
 around the fixed point in the diagonal directions
 \begin{align}
@@ -2354,7 +2359,7 @@ of the derivative expansion. The former gives a first
 hint of the existence of a non-trivial infrared fixed point
 in $d=3$, the Wilson-Fisher fixed point. In the latter
 we will use polynomial approximations, as well
-as the method of spike plots, to study the existence of
+as the method of shooting, to study the existence of
 scaling solutions.
 
 \subsubsection{$\varphi^4$--theory}
@@ -2481,7 +2486,7 @@ The critical exponents can then be found as the negative of the eigenvalues:
 \subsubsection{The local potential approximation}
 
 After having used the exact renormalisation group equation
-to extract the scale-dependence of the finitely many perturbatively
+to extract the scale-dependence of two perturbatively
 renormalisable couplings, we now want to study truly functional
 approximations of the effective average action, where we study the
 behaviour of a large number or possibly even infinitely many couplings
@@ -2512,12 +2517,12 @@ allowed to be a function of $\varphi$ and carries implicitly
 infinitely many monomials and couplings of the scalar field.
 
 In the second order of the derivative
-expansion we would introduce a wave-function renormalisation
-$Z_k(\varphi)$ as a prefactor to the kinetic term. Sometimes
-an intermediate approximation where $Z_k$ is a scale-depend
+expansion we would introduce a function
+$Z_k(\varphi)$ as a prefactor to the kinetic term.
+Sometimes an intermediate approximation where $Z_k$ is a scale-depend
 number only, is used. In this way one can study the running of
-the anomalous dimension of the scalar field. We will refer to
-this approximation as the ``RG-improvement''.
+the anomalous dimension of the scalar field.
+% We will refer to this approximation as the ``RG-improvement''.
 
 To extract the renormalisation group dependence of the effective
 potential $V_k$, we first have to calculate the regulated inverse
@@ -2820,9 +2825,9 @@ read
   \bV^\star(0) = \frac{c_d}{d \big( 1 + \sigma \big)} \,.
   \label{eq:bcconditions}
 \end{align}
-Since the fixed point equation is non-linear, one has to use numerical methods to
-solve it.
-In doing so, one observes that for most values of $\sigma$ the solutions end
+Since the fixed point equation is non-linear,
+one has to use numerical methods to solve it.
+In doing so, one observes that for almost all values of $\sigma$ the solution ends
 up in a singularity at a finite value of the field variable $\bp$.
 To find a value for $\sigma$, for which a solution is defined for all real numbers
 $\mathbb R$ instead, one proceeds as follows.
@@ -8039,7 +8044,7 @@ which agrees with the result listed in Tab.~\ref{tab:eta-results}.
 \addcontentsline{toc}{chapter}{Declaration of Authorship}
 
 \noindent I, Peter Labus, declare that this thesis titled,
-``Matter Fields in Asymptotically Save Quantum Field Theories of Gravity''
+``Matter Fields in Asymptotically Safe Quantum Field Theories of Gravity''
 and the work presented in it are my own. I confirm that:
 \vfill
 
