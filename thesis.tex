@@ -738,7 +738,6 @@ calculated using the path integral formalism via
 \end{align}
 where the partition function $Z = \int \mathcal D \Phi \; e^{-S[\Phi]}$ serves as a
 normalisation constant, $\mathcal D \Phi$ represents the integration measure,
-% which iterates over all possible field configurations,
 and $e^{-S \lbrack \Phi \rbrack}$
 is the Euclidean Boltzmann factor---the (quantum) probability distribution
 which weights every field configuration in the path integral
@@ -751,7 +750,7 @@ a source term
 % $\int \mathrm d^dx \; J(x) \, \Phi(x)$
 has been added:%
 \footnote{%
-  Summation over distinct fields and symmetry indices is explicitly
+  Summation over distinct fields and symmetry indices is implicitly
   understood.
 }
 \begin{align}
@@ -788,19 +787,21 @@ parameter, it is also by its very nature bound to hide non-analytic
 (or non-perturbative) dependencies of observables within the quantum field theory.
 
 An alternative method to calculate the generating functional is based
-on Wilson's idea of a functional renormalisation group, and is motivated
-by the following observation. With regards to its defining relation,
-the generating functional $W$ can be viewed as the quantum equivalent
-of the classical (or bare) action $S$.
-It is obtained by integrating over all possible quantum mechanical
-configurations multiplied with their classical Boltzmann weight.
-Furthermore, one can show that the perturbative expansion
-(if applicable) of any correlation function
-calculated with action $S$ is equivalent to the same expansion
-calculated with the `quantum action' $W$, retaining only tree-level
-diagrams. This motivates the definition of an energy scale-dependent
-action $\SLambda$, which is obtained by integrating out
-only momentum modes $|q|$ that are higher%
+on Wilson's idea of a functional renormalisation group.
+% , and is motivated
+% by the following observation. With regards to its defining relation,
+% the generating functional $W$ can be viewed as the quantum equivalent
+% of the classical (or bare) action $S$.
+% It is obtained by integrating over all possible quantum mechanical
+% configurations multiplied with their classical Boltzmann weight.
+% Furthermore, one can show that the perturbative expansion
+% (if applicable) of any correlation function
+% calculated with action $S$ is equivalent to the same expansion
+% calculated with the `quantum action' $W$, retaining only tree-level diagrams.
+% This motivates the definition of an energy scale-dependent
+In order to construct it, we first need to define an energy scale-dependent
+action $\SLambda$. It is obtained via integrating out only those
+momentum modes $|q|$ in the path integral that are higher%
 \footnote{%
   In addition we have to regularise the theory in the ultraviolet,
   for instance via a cutoff $\LambdaUV$. However, the details
@@ -822,9 +823,10 @@ the remaining modes
   \mathcal D \Phi \;
   e^{-\SLambda \lbrack \Phi \rbrack} \,.
 \end{align}
-In this way, we can define a scale-dependent quantum action which
-describes physics at same given energy scale $\Lambda$ in terms of
-its tree-level diagrams. In particular, we may quantify the dependence
+In this way, we can define a scale-dependent generating functional which
+describes physics at same given energy scale $\Lambda$.
+% in terms of its tree-level diagrams.
+In particular, we may quantify the dependence
 of $\SLambda$ on the energy scale through its
 beta functional $\nicefrac{ \mathrm d\SLambda }{ \mathrm d\Lambda }$,
 which can be obtained via
@@ -834,8 +836,8 @@ which can be obtained via
   \frac{ S_{\scriptscriptstyle{\Lambda+\delta\Lambda}} - \SLambda }{ \delta \Lambda } \,.
   \label{eq:wilsonRG}
 \end{align}
-This equation will become a first-order integro-differential equation
-once the definition of $\SLambda$ is used on the right hand side.
+Note that this equation will become a first-order integro-differential equation
+once the definition of $\SLambda$ is employed on its right hand side.
 Wilson's renormalisation group thus gives us another strategy to
 solve a quantum field theory. In order to do so, we have to find the solution to
 the renormalisation group equation with the boundary condition
