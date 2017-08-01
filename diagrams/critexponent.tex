@@ -41,6 +41,11 @@ N     ; nu        ; exponents
     grid=major,
     grid style=dashed,
     ylabel absolute,
+    yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=2,
+      },
     xlabel={truncation order $N$},
     ylabel={mass critical exponent $\nu$},
     name=myplot
