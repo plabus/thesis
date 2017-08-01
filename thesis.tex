@@ -97,6 +97,9 @@ letterpaper,
   decoration={markings,mark=at position .55 with {\arrow[draw]{<}}}},
   midarrow-dashed/.style={draw, dashed, postaction={decorate},
   decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
+  midarrow-dashed-thick/.style={
+    draw, thick, dashed, postaction={decorate},
+  decoration={markings,mark=at position .50 with {\arrow[draw]{>}}}},
 }
 \tikzset{
   TT/.style={decorate, draw=black,
@@ -2067,13 +2070,29 @@ surface.%
   of the marginal directions.
 }
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
     \input{diagrams/uvcritsurf.tex}
   \end{center}
   \vspace*{-2mm}
   \caption{
-    Cartoon UV critical surface
+    Three-dimensional cartoon of a two-dimensional
+    ultraviolet critical surface
+    $\mathcal S_{\scriptscriptstyle{\mathrm{UV}}}$
+    in theory space. There are two relevant directions
+    $\hat g_1$ and $\hat g_2$, as well as one irrelevant
+    direction $\hat g_3$. Arrows point in the direction of
+    decreasing energy.
+    Points $\Gamma$ that lie on the ultraviolet critical
+    surface flow towards the fixed point $\Gamma_{\!\star}$ in the
+    ultraviolet limit and their trajectories represent fundamental
+    quantum field theories. Points $\Gamma'$ outside the critical
+    surface flow away from the fixed point in the ultraviolet, although
+    their trajectory might approach the ultraviolet critical surface
+    at some point along the flow.
+    The trajectories of these theories represent effective field theories
+    with some cutoff
+    $\Lambda_{\mathrm{\scriptscriptstyle{max}}}$.
   }
   \label{fig:uvsurface}
 \end{figure}
@@ -2084,11 +2103,23 @@ to be able to define a predictive fundamental
 quantum field theory through this fixed point,
 we also have to demand that the number of relevant
 directions is finite. This may be understood looking
-at the three-dimensional cartoon in Fig.~\ref{fig:uvsurface}.
-[fix uv directions in ir, irrelevant directions are
-predicted]
-...This explains the origin of the terms `relevant'
-and `irrelevant'.
+at the three-dimensional cartoon in Fig.~\ref{fig:uvsurface}:
+Since we want to define a fundamental quantum field
+theory, we have to choose a renormalisation group trajectory
+that lies within the ultraviolet critical surface.
+To do so, we thus need to fix $n$ parameters for the $n$
+relevant directions $\hat g_i$, for instance in the deep infrared
+through $n$ independent experiments. All the irrelevant
+critical exponents will then automatically be fixed by the requirement
+for the trajectory to lie in the ultraviolet critical surface,
+\ie they are predicted by the theory.
+That is, the fewer relevant direction an asymptotically safe theory
+has, the more predictive it is. In particular, having
+infinitely many relevant direction would require
+to fix infinitely many couplings in the infrared, and thus
+make the usefulness of the theory dubious.
+The above also shows the origin of the terminology `relevant' and `irrelevant',
+since the respective couplings have to be either measure or are predicted.
 
 Now that we have established how to find the basins
 of attraction of a fixed point in the ultraviolet and the infrared,
@@ -2322,7 +2353,7 @@ point by setting
     A cartoon of theory space. The Gaussian (GFP) and non-Gaussian (NGFP)
     fixed points are represented with big dots. Other points in theory
     space are denoted with small dots. Trajectories in theory space
-    respresent quantum field theories, and arrows point in the direction
+    represent quantum field theories, and arrows point in the direction
     for decreasing energy scale $k$.
   }
   \label{fig:theoryspace}
@@ -2864,7 +2895,7 @@ Extracting a critical value for $\sigma$ in this way, one is then able to
 integrate the fixed point equation to find a scaling solution for the effective
 potential.
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
     \input{diagrams/spikeplots.tex}
   \end{center}
