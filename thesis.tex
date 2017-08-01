@@ -75,6 +75,7 @@ letterpaper,
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{scalerel}
 \pgfplotsset{compat=newest}
 
 \usetikzlibrary{patterns}
@@ -2066,6 +2067,16 @@ surface.%
   of the marginal directions.
 }
 
+\begin{figure}
+  \begin{center}
+    \input{diagrams/uvcritsurf.tex}
+  \end{center}
+  \vspace*{-2mm}
+  \caption{
+    Cartoon UV critical surface
+  }
+  \label{fig:uvsurface}
+\end{figure}
 In order for a fixed point to be an ultraviolet attractor,
 there must hence be at least one negative eigenvalue
 of the Jacobian of the beta functions. Moreover,

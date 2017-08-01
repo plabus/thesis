@@ -12,8 +12,14 @@ all appendices: do I need \GNewton somewhere?
 TODO:
 =====
 
+open issues chaper 3:
+  -- explain RG improvement
+
 open issues chaper 1:
-  -- RG improvement?
+  -- caption UV critical surface
+  -- explanation section 1.2 about how
+     uv critical surface fixes/predicts IR irrelevant couplings
+     (including origin of the name (ir)relevant directions)
 
 ----------------------
 
@@ -31,11 +37,6 @@ fine tuning
 OPTINAL:
 ========
 
-in write technical intro:
-  - figure UV critical surface
-  - explanation section 1.2 about how
-    uv critical surface fixes/predicts IR irrelevant couplings
-    (including origin of the name (ir)relevant directions)
 
 
 ----------------------
@@ -45,11 +46,12 @@ in write technical intro:
 DONE:
 =====
 
-2 issue chaper 1:
+issues chaper 1:
   -- Infliction potential?
   -- motivation scale-dependent W_k
+  -- figure UV critical surface
 
-2 issues Introduction:
+issues Introduction:
   -- historical facts
   -- validity EFTs
 

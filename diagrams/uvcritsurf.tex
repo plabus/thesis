@@ -1,37 +1,6 @@
-\documentclass[crop,tikz,border=5mm]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
-
-\usepackage{scalerel}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.8}
-\usetikzlibrary{math}
-\usetikzlibrary{calc}
-\usetikzlibrary{positioning}
-\usetikzlibrary{patterns}
-\usetikzlibrary{matrix}
-\usetikzlibrary{positioning}
-\usetikzlibrary{arrows}
-\usetikzlibrary{fit}
-\usetikzlibrary{math}
-\usetikzlibrary{calc}
-\usetikzlibrary{backgrounds}
-\usetikzlibrary{decorations.pathmorphing}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{pgfplots.groupplots}
-
-\tikzset{
-  midarrow/.style={draw, postaction={decorate},
-  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
-  midarrow-rev/.style={draw, postaction={decorate},
-  decoration={markings,mark=at position .55 with {\arrow[draw]{<}}}},
-  midarrow-dashed/.style={draw, dashed, postaction={decorate},
-  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
-}
-
-\begin{document}
-
 \begin{tikzpicture}[
   >=stealth,
-  scale=1.00,
+  scale=1.20,
   ]
 
   \tikzmath{
@@ -40,7 +9,7 @@
     \radiusb   = 0.95*\radius; % radius of the circle for UV critical surface
     \degs      = 35;
     \degsinv   = 180-\degs;
-    \dotradius = 0.03; % radius of the circles that make the dots
+    \dotradius = 0.05; % radius of the circles that make the dots
     \basex     = 6.5;
     \basey     =-0.5;
   }
@@ -78,9 +47,9 @@
   \end{axis}
 
   % The UV critical surface itself
-  \draw[thick,domain=\degs:\degsinv] plot ({\radius*cos(\x)+\basex}, {\radius*sin(\x)+\basey});
-  \draw[thick,] ($ (base) + ({ cos(\degs)*\radius}, {sin(\degs)*\radius}) $) arc (90:128.2:\radiusa);
-  \draw[thick,] ($ (base) + ({-cos(\degs)*\radius}, {sin(\degs)*\radius}) $) arc (90: 41.5:\radiusb);
+  \draw[very thick,domain=\degs:\degsinv] plot ({\radius*cos(\x)+\basex}, {\radius*sin(\x)+\basey});
+  \draw[very thick,] ($ (base) + ({ cos(\degs)*\radius}, {sin(\degs)*\radius}) $) arc (90:128.2:\radiusa);
+  \draw[very thick,] ($ (base) + ({-cos(\degs)*\radius}, {sin(\degs)*\radius}) $) arc (90: 41.5:\radiusb);
 
   % The FP with annotation
   \draw[fill] (FP) circle [radius=\dotradius];
@@ -88,11 +57,11 @@
 
   % The small (diagonalised) coordinate system
   \draw[->] (FP) -- ($ (FP) + (dirx) $);
-  \node at ($ (FP) + ( 0.38,-0.52) $) {$\scriptscriptstyle{\hat g}_{\scaleto{1}{2pt}}$};
+  \node at ($ (FP) + ( 0.38,-0.57) $) {$\hat g_1$};
   \draw[->] (FP) -- ($ (FP) + (diry) $);
-  \node at ($ (FP) + (-0.55,-0.46) $) {$\scriptscriptstyle{\hat g}_{\scaleto{2}{2pt}}$};
+  \node at ($ (FP) + (-0.55,-0.52) $) {$\hat g_2$};
   \draw[->] (FP) -- ($ (FP) + (dirz) $);
-  \node at ($ (FP) + (-0.15, 0.56) $) {$\scriptscriptstyle{\hat g}_{\scaleto{3}{2pt}}$};
+  \node at ($ (FP) + (-0.20, 0.56) $) {$\hat g_3$};
 
   % Annotation UV and IR critical surface
   \node at (SUV) {$\mathcal S_{\scriptscriptstyle{\mathrm{UV}}}$};
@@ -105,15 +74,13 @@
 
   % fundamental theory, with trajectory and dot
   \draw[fill] (Gamma) circle [radius=\dotradius] node[left] {$\Gamma$};
-  \draw[midarrow] (FP) arc (90:114:1.4*\radius);
+  \draw[midarrow, thick] (FP) arc (90:114:1.4*\radius);
 
   % Effective trajectory
   \draw[fill] (A) circle [radius=\dotradius]
   node[left] {$\Gamma_{k=\Lambda_{\mathrm{\scriptscriptstyle{max}}}}$};
   \draw[fill] (B) circle [radius=\dotradius]
   node[above] {$\Gamma'$};
-  \draw[midarrow-dashed] (A)  .. controls (controlAB) .. (B);
+  \draw[midarrow-dashed, thick] (A)  .. controls (controlAB) .. (B);
 
 \end{tikzpicture}
-
-\end{document}
