@@ -6199,6 +6199,1269 @@ would suggest that there could be an upper limit of scalars that is compatible w
 \label{ch:jan}
 
 
+\section{Introduction}
+In quantum gravity, quantum fluctuations of matter and geometry induce a scale dependence of the Newton coupling, just as quantum fluctuations of matter induce running matter couplings in the Standard Model. Therefore, a central object of interest in quantum gravity becomes the running Newton coupling and in particular its high-energy behavior. In practice, different ways of reading off the scale-dependence of the Newton coupling can be implemented.
+Specifically, in gravity-matter systems the scatterings with gravitons are described
+by $G_{\vec n}$ with $\vec n=(n_h, n_c,n_\varphi,n_\psi,....)$. Here,
+$\phi=(h_{\mu\nu},c_{\mu},\varphi,\psi,...)$ and $n_{\phi_i}$ stands for the number
+of fields $\phi_i$ involved (notation from \cite{Meibohm:2016mkp}. These couplings can be viewed as ``avatars" of the Newton coupling.
+In
+the present case we limit ourselves to a gravity-scalar system. % and
+%suppress the number of ghosts for the sake of accessibility. This
+%leaves us with a two-index coupling
+We focus on pure-graviton and graviton-scalar couplings, which leaves us with a two-index coupling.
+\begin{align}
+G_{(n_h,n_\varphi)}\,.
+\end{align}
+For example, the coupling $G_{(3, 0)}$ relates to the scattering of
+three gravitons, derived from the pure gravity part of the effective
+action. The coupling $G_{(1,2)}$ relates to the scattering of a
+graviton on two scalars derived from the kinetic term of the
+scalars. This coupling to gravity is also present in the free scalar
+theory or free approximation and can be considered to be the
+fundamental coupling of the scalars to gravity. If diffeomorphism invariance is intact, these couplings are of course all equal to each other. Additionally, the scale-dependence of the Newton coupling can also be read off using the background-field formalism, where it is of course associated to the running prefactor of the curvature term in the action and will be referred to as $\bar{G}$. The main focus of this paper will be to compare the scale dependence of these couplings under the impact of quantum fluctuations of the metric and of $N_S$ scalar fields, and in various approximations.
+
+The present functional renormalisation group approach builds on a
+gauge-fixed approach to quantum gravity. The gauge fixing is implemented with the help of the background field formalism, such that background gauge dependence is respected. In contrast to non-Abelian gauge theories, the use of the background field method is unavoidable in setting up a Renormalisation Group flow in the geometric phase of quantum gravity, as the distinction of high-momentum and low-momentum modes, inherent to the coarse-graining procedure, requires the introduction of a background. 
+The resulting effective
+action $\Gamma[\bar g_{\mu\nu},h_{\mu\nu}]$ is not diffeomorphism-invariant but
+satisfies non-trivial Slavnov-Taylor identities (STIs). Moreover, the
+introduction of a background metric $\bar g_{\mu\nu}$ is inherent to the
+gauge-fixed approach, and in a seemingly counter-intuitive way,
+background independence of the setting is encoded in the STIs together
+with the Nielsen-identity (NI) or split Ward identity (SWI), that
+relates derivatives with respect to the background metric and those
+with respect to the fluctuation graviton field $h_{\mu\nu}$. The relation
+between background metric and fluctuation field is not necessarily
+linear, but in the present work we (mostly) consider the linear split,
+\begin{align}\label{eq:linpara}
+  g_{\mu \nu}=\bar g_{\mu \nu}+h_{\mu \nu}.
+\end{align}
+Additionally, we rescale the fluctuation field $h_{\mu\nu}$ by a dimensionfull constant of mass-dimension -1, such that $h_{\mu\nu}$ has a canonical dimension 1 for the bosonic fluctuation field $h_{\mu \nu}$. If we derive all pure-graviton and graviton-matter indices from a diffeomorphism invariant action containing an Einstein-Hilbert term with Newton coupling $\bar{G}_N$, then that dimensionfull constant should be $\sqrt{\bar{G}_N}$. In a second step, we then reabsorb the corresponding power of $\bar{G}_N$ in a the fluctuation field vertices. 
+
+
+Additionally to the above we introduce a infrared regularisation term
+with infrared cutoff scale $k$ to the fluctuation field $h$, that is
+quadratic in $h$. This is a direct violation of diffeomorphism
+invariance and leads to modified STIs, the mSTIs, as well as modified
+SWIs, the mSWIs. In the limit $k\to\infty$ these deviations from the
+standard STI,NI/SWI may play a crucial r$\hat{\rm o}$le for the correct
+description of the physical dynamics that is described in the
+limit $k\to 0$.
+
+In spite of the above properties, we expand the effective action in
+terms of diffeomorphism-invariant terms and diffeomorphism-variant
+corrections that depend on the gauge fixing as well as the infrared
+regularisation. If the latter terms were missing, the different
+$G_{(n_h,n_\varphi)}$ would be identical and a
+unique Newton coupling $G$ would be present. This property indeed
+holds for the diffeomorphism-invariant effective action
+\begin{align}
+\Gamma[g_{\mu\nu}]= \Gamma[g_{\mu\nu},0]\,.
+\end{align}
+This already sets its vertices $\Gamma^{(n)}[\bar g_{\mu\nu}]$ apart from
+$\delta^n/\delta h^n \Gamma[\bar g_{\mu\nu},h_{\mu\nu}]$. In renormalisable theories with
+dimensionless couplings these couplings have a two-loop universality,
+the first two non-vanishing coefficients of the $\beta$-function are
+scheme independent in mass-independent RG-schemes. This also relates
+the momentum-dependence of vertices.
+
+In gravity, the couplings are not dimensionless and universality is
+missing (except for the $R^2$-coupling). Still, in a
+diffeomorphism-invariant action the couplings would agree which again
+would restricts the momentum-dependence of vertices. In the full
+setting with mSTIs and mNIs we may hope for {\it effective
+  universality} based on the underlying diffeomorphism invariance. For
+example, such a property is crucial for the applicability of the
+background approximation, and is also implicitly underlying most other
+approximations used in gravity. It is also important for the
+convergence properties of the expansion schemes.
+
+
+\section{Present work}
+
+In the present work we shed light onto the above questions. To that end
+we compare two ``versions" of the Newton coupling: The first is
+defined from the three-graviton vertex, as in
+\cite{Christiansen:2015rva,Meibohm:2015twa}, and its dimensionless
+version is called $G_{(3,0)}$. The second one is defined from the
+graviton-two-scalar vertex as in \cite{Dona:2015tnf}, and is called
+$G_{(1,2)}$. We use a symmetric momentum configuration. For the analytical
+results, we project at $p=0$. For the numerical results, we employ a
+bilocal projection, as in
+\cite{Christiansen:2015rva,Meibohm:2015twa}.\newline We also compare
+to the background Newton coupling, $\bar{G}$. We use the gauge
+$\alpha=0, \beta=1$.
+
+We define our truncation as follows: 
+Starting from an Einstein-Hilbert term (augmented by a gauge fixing and ghost action) and a kinetic term for the scalar,
+\begin{eqnarray}
+S &=& S_{\rm EH} + S_{\rm gf} + S_{\rm gh} + S_{\rm scalar}\nonumber\\
+&=& -\frac{1}{16 \pi G_N} \int \mathrm d^4 x\, \sqrt{g}\left(R - 2 \Lambda \right)+ S_{\rm gf} + S_{\rm gh} \nonumber\\
+&{}&+\frac{1}{2}\sum_{i=1}^{N_S} \int \mathrm  d^4 x\, \sqrt{g} g^{\mu \nu} \partial_{\mu}\varphi^i\partial_{\nu}\varphi^i\,,
+\end{eqnarray}
+we insert the linear parameterisation Eq.~\eqref{eq:linpara} and 
+expand to fifth order in $h_{\mu \nu}$ in the Einstein-Hilbert term and 
+to third order in $h_{\mu \nu}$ in the kinetic term for the scalar. 
+Then, we take into account the fact that the breaking of background independence 
+results in a different running of the three-graviton from the four- and five-graviton vertex,
+as well as a different graviton-scalar vertices. 
+Accordingly, we introduce separate dimensionfull couplings, denoted by $\bar{G}_{(n_h, n_{\varphi})}$ in front of these vertices. 
+Similarly, we distinguish the different incarnations of the cosmological constant 
+by introducing the dimensionfull graviton mass parameter $\bar{\mu}$ associated to $- 2 \Lambda$ and 
+the momentum-independent part of the $n$-graviton vertex, $\bar{\lambda}_n$.
+Therefore, our flowing action now reads
+\begin{eqnarray}
+\Gamma_k& =& Z_h \int \mathrm d^4 x\, h_{\mu \nu} \left(S_{G_N}^{(2,0)}\right)^{\mu \nu \kappa \lambda}h_{\kappa \lambda} \nonumber\\
+&{}&+ Z_h \bar{\mu}\, \int \mathrm  d^4 x\, h_{\mu \nu} \left(S_{\Lambda}^{(2,0)}\right)^{\mu \nu \kappa \lambda}h_{\kappa \lambda} \dots \mbox{ to complete }
+\end{eqnarray}
+{\colmr Wollen wir das wirklich so aufschreiben?}
+Observe that the beta-function for $\bar{G}_{(4,0)}$ depends on $\bar{G}_{6,0}$ and 
+that for $\bar{G}_{(5,0)}$ on $\bar{G}_{(6,0)}$ and $\bar{G}_{(7,0)}$, 
+which we have excluded from our truncation. 
+Deriving beta-functions for $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}$ as well as $\bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ within our truncation 
+would thus yield only partial results, as important contributions to those beta functions would be missing. 
+Instead, we derive only the beta functions for $\bar{G}_{(3,0)}$ and $\bar{G}_{(2,1)}$. 
+All vertices which enter the flow of those couplings in a diagrammatic expansion of the flow equation are present within our truncation.
+To close the system of beta-functions, we therefore leave $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}, \bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ as well as $\bar{\lambda}_4, \bar{\lambda}_5$ as free parameters for now. 
+These free parameters will show up in $\beta_{G_{(3,0)}}$ and $\beta_{G_{(2,1)}}$.
+Later, we will have the choice of either equating them to one of the lower-order couplings, or setting them to zero.
+
+\section{Analytical results}
+In the following, all pure-graviton couplings will be set equal to $G_{(3,0)}$, i.e., $G_{n,0}= G_{(3,0)}$, and 
+all graviton-matter couplings will be set equal to $G_{(1,2)}$, i.e., $G_{n,m}=G_{(1,2)}$ (for $m>0$). 
+We then obtain
+%
+\begin{eqnarray}
+\beta_{G_{(3,0)}}&=& \beta_{G_{(3,0)}}|_{\rm grav} + 2 G_{(3,0)} + 3G_{(3,0)}\, \eta_h \phantom{\frac{1}{1}}\nonumber\\
+&{}& - G_{(3,0)}^{1/2} \,G_{(1,2)}^{3/2}\, N_S\frac{86+\eta_S}{1140 \pi}, \label{eq:betaG3}\\
+%
+\beta_{G_{(1,2)}}&=& \left(2 +\eta_h+ 2\eta_S\right)G_{(1,2)}  +  \frac{2\sqrt{G_{(1,2)}}}{3\pi} \Bigl(-G_{(1,2)}^{3/2} \frac{6-\eta_h}{(\mu+1)^2} \nonumber\\
+&{}&+ \sqrt{G_{(3,0)}}G_{(1,2)} \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3} \Bigr)\label{eq:betag3},\\
+%
+\beta_{\bar{G}}&=& 2 \bar{G}+ \beta_{\bar{G}}\Big|_{\rm grav} %+ \bar{G} \frac{144 \pi (1-2 \lambda)^2}{72\pi (1-2 \lambda)^2 + \bar{G} (-17+12 \lambda(-3+5 \lambda))}\nonumber\\
+%&{}&+\bar{G}^2 \frac{-277+ 36 (9-5 \lambda)\lambda}{72 \pi(1-2 \lambda) + \bar{G}(-17+12 \lambda(-3+5 \lambda))}\nonumber\\
++ \bar{G}^2\, N_S\, \frac{1}{24\pi}(4-\eta_S).
+\end{eqnarray}
+%
+The shown background results are the same as in \cite{Dona:2013qba} since the contribution from the scalar loop is independent of the gauge.
+Our focus is on the $N_S$-dependent part. 
+If we neglect for now that $\eta_h$ can have an $N_S$ dependence, we obtain a picture that suggests very strong violations of diffeomorphism invariance: 
+Whereas the $N_S$ dependence in $\beta_{G_{(3,0)}}$ comes with $-\,\sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}$, there is no $N_S$ dependence in $\beta_{G_{(1,2)}}$ (as there is no closed scalar loop that contributes). 
+Finally, the $N_S$ dependence in $\beta_{\bar{G}}$ comes with $+ \bar{G}^2$. 
+In particular, let us focus on the comparison of the background flow with the fluctuation flow, which clearly feature an opposite sign. 
+In the case of the background flow, the background-field dependence of the regulator yields extra contributions to the flow, which are absent in the case of the fluctuation coupling. 
+The background-field approximation does therefore not provide a reliable result for this case.
+
+
+Let us now add the graviton anomalous dimension, for which
+\begin{equation}
+\eta_h = -\eta_h\Big|_{\rm grav} + G_{(1,2)} \frac{N_S}{24 \pi}.
+\end{equation}
+If we insert this into Eq.~\eqref{eq:betaG3} and \eqref{eq:betag3}, we obtain the contribution $\sim N_S$ as follows:
+\begin{eqnarray}
+\beta_{G_{(3,0)}}\Big|_{N_S}&=& 3 G_{(3,0)} G_{(1,2)} \frac{N_S}{24 \pi}  - G_{(3,0)}^{1/2} \,G_{(1,2)}^{3/2}\, N_S\frac{86+\eta_S}{1140 \pi}\nonumber\\
+&=& g^2  N_S \frac{113}{2280 \pi} \approx 0.016\, g^2 N_S,\nonumber\\
+\beta_{G_{(1,2)}} \Big|_{N_S}&=& G_{(1,2)}^2 \frac{N_S}{24 \pi}\nonumber\\
+&\approx& 0.013 \,g^2 N_S.
+\end{eqnarray}
+where we have set $G_{(1,2)} = G_{(3,0)} = g$ in the second lines of both equations.
+These two results agree rather well, with a 16 \% deviation of the coefficients. 
+Thus, taking into account a nontrivial graviton anomalous dimension leads to a very similar behavior for those two different couplings, as suggested by diffeomorphism invariance.
+Further, we observe that the same sign of the coefficient as in $\beta_{G_{(1,2)}}$ has been obtained within the exponential parameterization and the so-called physical gauge, see Eq.~59 in \cite{Dona:2015tnf}.
+
+For the background coupling, the coefficient is larger by a factor of 4. Nevertheless, the three definitions of the coupling share the qualitative behavior, and their fixed points grow as a function of $N_S$.
+The running of the Newton coupling thus features an ``effective" universality, i.e., different definitions of the coupling lead to qualitative agreement on the running.
+
+
+The agreement between the fluctuation results and the background result relies on the dominance of the graviton anomalous dimension in the case of the fluctuation results,
+which yields an opposite sign for the $N_S$-dependence of the flow of the coupling as compared to that of the vertex (which does not include $\eta_h$).
+Note that the flow of the 3-graviton vertex itself has the opposite sign from the background result, and the equality of the signs only appears at the level of the couplings.
+At present, it is unclear whether the qualitative agreement of the background approximation with the fluctuation result has a deeper reason, or is accidental.
+Thus, we stress that it is necessary to evaluate gravitational RG flows at the level of the fluctuations couplings.
+
+\section{Numerical results}
+Here, we will use a bilocal projection for the Newton couplings, and will include the anomalous dimension projected at $k$.
+Our projection prescriptions are
+%
+\begin{eqnarray}
+\dot G_{(3,0)} &=& 2G_{(3,0)} + 3 \eta_h(k^2) G_{(3,0)} -\frac{24}{19}\left(\eta_h(k^2)
+    -\eta_h(0)\right)\lambda_3\ G_{(1,2)} \\
+     &{}&+ \frac{64}{171}
+  \frac{(32\pi)^2\sqrt{G_{(3,0)}}}{k}\left(\text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(k^2)-
+    \text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(0)\right),\nonumber\\
+    \dot G_{(1,2)} &=& 2 G_{(1,2)} + \eta_h(k^2)G_{(1,2)} +2 \eta_S(k^2)G_{(1,2)}\\
+    &{}&+ \frac{32 \pi\, \sqrt{G_{(1,2)}}}{k}\frac{8}{3}\text{Flow}^{(h\varphi\varphi)}_{{\rm TT},G_{(1,2)}}(k^2).\nonumber
+\end{eqnarray}
+%
+Here, the notation ${\rm TT}, G_{(3,0)}/G_{(1,2)}$ indicates a contraction of the right-hand-side of the Wetterich equation with the projector onto the corresponding coupling, as in \cite{Meibohm:2015twa} and \cite{Dona:2013qba}.
+
+We then obtain a qualitatively similar behaviour with $N_S$ as in the analytical case, cf.~\autoref{fig:NewtoncouplingFPs}. 
+In particular, all three Newton couplings are driven to larger fixed-point values when $N_S$ is increased. 
+Remarkably, the quantitative deviations between the three different couplings are not even particularly large.
+
+Moreover, the behaviour is in agreement with that of $G_{(1,2)}$ in \cite{Dona:2015tnf}, which employed a different choice of parameterisation, gauge, and projection. 
+This robustness with respect to (unphysical) variations of the scheme is encouraging.
+
+%
+\begin{figure}[b!]
+\includegraphics[width=\linewidth]{NS_findiff_all_hss_all_g_new.pdf}
+\caption{We show the fixed-point values for the three Newton couplings: 
+	The three-graviton coupling (red continuous line), the graviton-scalar-coupling (blue dashed line) and the background coupling (dot-dashed orange line).}
+\label{fig:NewtoncouplingFPs}
+\end{figure}
+%
+
+%
+\begin{widetext}
+\begin{figure*}[t!]
+\includegraphics[width=\textwidth]{NS_findiff_all_hss_b.pdf}
+\caption{We plot fixed-point values, critical exponents and anomalous dimensions as a function of $N_S$.
+	The line at $N_S \approx 17$ shows where $\eta_h(0)$ exceeds two, and the line at $N_S \approx 45$ shows where $\eta_h(k^2)$ also exceeds 2.}
+\label{fig:allFPvalues}
+\end{figure*}
+\end{widetext}
+%
+
+As the fluctuation Newton couplings enter the graviton anomalous dimension, $\eta_h$ increases as a function of $N_S$, cf.~\autoref{fig:allFPvalues}.
+This implies that the bounds on $\eta_h$, discussed in \cite{Meibohm:2015twa}, are violated at large $N_S$.
+
+%
+\subsection{Effective gravitational coupling}
+%
+Metric fluctuations enter the diagrams with a propagator of the form $\frac{G_{(n,m)}}{1+\mu} = g_{\rm eff,\,1}$ and $\frac{G_{(n,m)}}{\left(1+\mu\right)^2}= g_{\rm eff, \, 2}$,
+which we define as the two effective gravitational couplings. 
+The second is the effective coupling associated to a graviton propagator with an insertion of $\partial_t R_k$.
+For the flow of matter vertices, it is immediately apparent that these are the only two combinations of $G_{(n,m)}$ and $\mu$ that can appear.
+The case of pure-gravity flows features additional factors of $G_{(n,0)}$ at the vertices associated to the number of external gravitons.
+Accordingly, the beta functions contain different powers of $1/(1+\mu)$ than powers of $G_{(3,0)}$. 
+However, each internal graviton line is associated to either of the two above effective couplings.
+% On the other hand, the effect of metric fluctuations on matter couplings is encoded within the effective coupling $g_{\rm eff}$.
+As $\mu$ stays approximately constant as $N_S$ increases, while $G_{(3,0)}$ increases, $g_{\rm eff,\,1/2}$ increase as well, cf.~\autoref{fig:effectiveG}.
+
+%
+\begin{figure}[!t]
+\includegraphics[width=\linewidth]{NS_findiff_all_hss_eff_g.pdf}
+\caption{\label{fig:effectiveG} We plot the effective gravitational
+  strength $G_{(3,0)}/(1+\mu)$ and $G_{(3,0)}/(1+\mu)^2$. The latter appears
+  on propagators with the regulator insertion, whereas the former
+  appears on propagators where the regulator insertion sits on another
+  one of the internal legs of a diagram.}
+\end{figure}
+%
+%
+\subsection{Large $N_S$ limit}
+%
+In the limit of large $N_S$, all loops which are not given by closed
+scalar loops, are suppressed by $\frac{1}{N_S}$. We assume that this
+suppression is not counteracted by a scaling of couplings with $N_S$.
+Accordingly, the results within our truncation simplify to the
+following
+%
+\begin{eqnarray}
+\beta_{G_{(3,0)}} &=& 2 G_{(3,0)} + 3 G_{(3,0)} \eta_h - \sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}N_S\, \frac{86}{1140 \pi},\\
+\beta_{G_{(1,2)}}&=& 2 G_{(1,2)} + G_{(1,2)} \eta_h,\\
+\eta_h &=& G_{(1,2)} N_S \frac{1}{24 \pi},\\
+\eta_S&=&0.
+\end{eqnarray}
+%
+As the system is only driven by scalar fluctuations, the increase of
+$\eta_h$ does not pose a problem for the choice of regulator.
+
+This system admits three fixed points
+\begin{eqnarray}
+G_{3\, \ast}&=&0,\, g_{3\, \ast}= 0,\quad \theta_{1,2} =-2,\\
+G_{3\, \ast}&=&-\frac{355008 \pi}{9025 N_S},\, g_{3\, \ast}= -\frac{48 \pi}{N_S},\quad \theta_{1,2} =2,\\
+G_{3\, \ast}&=&0,\, g_{3\, \ast}= -\frac{48 \pi}{N_S},\quad
+\theta_1=2, \theta_2 \rightarrow - i\, \infty .
+\end{eqnarray}
+
+Due to the presence of the Gau\ss{}ian fixed point, the fixed point at
+negative $G_{(3,0)}, G_{(1,2)}$ cannot be connected to positive values of the
+Newton coupling in the infrared.
+
+
+\section{Nielsen identity \& applications} \label{sec:Nielsen-id}
+Now we exploit the Nielsen identity (NI) or split Ward identity (sWI) to
+improve upon the background field approximation. Related derivations
+and application in the present context can be found in
+\cite{Litim:2002ce,Litim:2002hj,Pawlowski:2003sk,PawlowskiH,Pawlowski:2005xe,Donkin,Donkin:2012ud}. In
+general split Ward identities have also been discussed in
+% \cite
+{Reuter-Wetterich1997,Reuter1998ff,Morrisetal2013ff,Safari2015
+% }
+{\coljmp please fill in}.
+
+With the introduction of a background field,
+the effective action becomes a functional of both
+the dynamical fluctuation field $\Delta\Phi$ and the auxiliary
+background field $\bar\Phi$
+\begin{align}
+\Gamma_k=\Gamma_k[\bar\Phi,\Delta\Phi].
+\end{align}
+In the present case of
+gravity coupled to scalar matter the background and fluctuation fields read
+\begin{align}
+  \bar\Phi=(\bar g, 0,0,\bar \phi)\,,\qquad \Delta\Phi= (h,C,\bar
+  C,\varphi)\,,
+\end{align}
+respectively,
+where the full metric field is given by $g=\bar g+h$ and full scalar field
+by $\phi=\bar\phi+\varphi$.
+
+In scalar theories it is easily seen that for
+vanishing cutoff $k=0$ the effective action is a functional of
+the full field
+$\phi=\bar\phi+\varphi$ only.
+This is due to the fact that the classical action has
+this property,
+$S_{\text{\tiny cl}}[\bar\phi,\varphi]=S_{\text{\tiny
+    cl}}[\bar\phi+\varphi]$.
+The shift symmetry is then broken
+by introducing the cutoff term $R_k=R_k[\bar\phi]$.
+The resulting difference in the field dependencies is
+then expressed by the NI or sWI as follows
+\cite{Litim:2002hj}
+\begin{align}\label{eq:scalarNIk}
+	\0{\delta \Gamma_k}{\delta\bar\phi}-\0{\delta
+	\Gamma_k}{\delta\varphi} =
+	\012\, \Tr \left(
+		G_k[\bar\phi,\varphi]\,
+		\0{\delta R_k[\bar\phi]}{\delta \bar\phi}
+	\right) \,,
+\end{align}
+for applications see e.g.\ \dots%\cite{Morrisetal}.
+For flows towards the
+infrared Eq. \eq{eq:scalarNIk} suggests
+to use the background approximation
+\begin{align}\label{eq:backapprox}
+	\Gamma_k[\bar\phi,\varphi]\approx \Gamma_k[\bar\phi,\varphi=0]\,,
+\end{align}
+which is exact for $k=0$.
+However, for flows towards the UV ($k\to\infty$)
+the background approximation
+is spoiled by powercounting leading
+terms in the effective action,
+even in asymptotically safe scalar theories.
+
+In gauge theories the situation is even more complicated.
+In this case
+there are two sources for a genuine background dependence.
+Besides the cutoff term which is present in scalar theories as well,
+there is an additional source coming from the gauge fixing sector
+$S_{\text{\tiny gauge}}=S_{\text{\tiny gf}}+S_{\text{\tiny ghost}}$.
+Both the gauge fixing term $S_{\text{\tiny gf}}$ and the
+ghost term $S_{\text{\tiny ghost}}$ have to depend on the background
+gauge field if background gauge invariance is demanded.
+This shows that the motivation for introducing the background field, namely
+background gauge invariance, leads to a genuine background
+dependence of the effective action.
+
+In the present application to the gravity scalar system we
+drop the background scalar, as we have a free scalar theory and only
+deal with the background metric. Then the simple scalar NI of Eq.
+\eq{eq:scalarNIk} turns into
+\begin{align}\nonumber
+	\0{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\0{\delta
+	\Gamma_k}{\delta h_{\mu\nu}} =& \012 \,\01{\sqrt{\bar g}} \Tr\, \0{\delta \sqrt{\bar g}
+	R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\\[2ex]
+	&+\left\langle \0{\delta S_{\text{\tiny
+	gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
+	-\0{\delta S_{\text{\tiny gauge}}[\bar g,h]
+}{\delta h_{\mu\nu}}\right\rangle \,,
+\label{eq:gaugeNIk}
+\end{align}
+where the second line originates from the genuine background field
+dependence of the gauge fixing sector and we have dropped the
+dependence of the other fields. The regulator $R_k$ is a matrix in field
+space,
+\begin{align}
+	R_k= \left( \begin{array}{cccc} R_h & 0 & 0 & 0\\
+	0 &0& R_c&  0 \\
+	0 &-R_c &0 &0 \\
+0 & 0& 0& R_\varphi\end{array}\right)\,.
+\end{align}
+and the trace involves a symplectic metric in the ghost subsector. The
+second line in \eq{eq:gaugeNIk} survives in the limit $k\to 0$. This
+casts some doubt on the use of background field approximations even
+for infrared flows.
+
+Indeed, in Yang-Mills theories in covariant gauges the fluctuation
+propagator shows the Yang-Mills mass gap that signals confinement while
+the background propagator has no mass gap. Identifying the former with
+the latter in the flow leads to a loss of confinement: within the
+background field approximation the potential of the order parameter,
+the Polyakov loop variable $\langle \tr \, \CP \exp \, i g_s
+\int_0^{1/T} A_0 dt\rangle $, does not show the confining minimum
+which is directly related to the mass gap in the gluon propagator in
+covariant gauges. Whether or not all confining properties are lost is
+difficult to access. However, at least in the standard vertex
+expansion scheme this statement holds. This expansion scheme also
+underlies most quantum gravity computations. Despite the fact that the
+physics mechanisms working in infrared QCD are certainly qualitatively
+different from that working in UV gravity....
+
+
+
+We work with the approximation
+\begin{align}
+	\lim_{k\to \infty} \left(\0{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\0{\delta
+		\Gamma_k}{\delta h_{\mu\nu}} \right)\simeq \012 \Tr\, \0{1}{ \sqrt{\bar g} } \0{\delta\sqrt{\bar g} R_k[\bar
+	g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\,,
+\label{eq:gravappNIk}\end{align}
+where the have dropped the second line with the gauge fixing
+contributions: they account for the difference of the wave function
+renormalisation of the fluctuating graviton and the background
+graviton propagator.
+
+
+We only
+want to improve on the regulator-induced part of the background field
+approximation.
+Note also that if one compares the contributions
+of the cutoff term and the gauge fixing sector to the UV flow,
+combinatorial arguments suggest that the cutoff term is of
+dominant importance.
+This is because it couples to all fluctuations modes
+of the graviton, while the contributions of the gauge fixing sector
+couple directly to the longitudinal modes only: the derivative of the gauge
+fixing term is proportional to $h*F(\bar g) \delta F/\delta \bar g
+h$.
+% This suggests the dominance of the cutoff terms in the UV where
+% the only scale is the cutoff scale.
+
+Strictly speaking, however, this
+argument only applies to renormalisation group invariant quantities
+such as the Newton coupling $g_N$ with
+\begin{align}
+	\mu\0{d}{d\mu} g_N=0\,,
+\end{align}
+where $\mu$ is the renormalisation group scale of the underlying
+theory. In summary, this leads us to a modified background field
+approximation for the two-point function by taking the $h$-derivative
+of \eq{eq:gravappNIk}.
+Applying the operator $\delta_{\bar g} + \delta_h$ once more to
+\eq{eq:gravappNIk} and dropping mixed derivatives then results in
+\begin{align}
+	\0{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\simeq 
+	\0{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}  \notag \\
+	&-\012 \left(\0{\delta}{\delta\bar g_{\rho\sigma}}+\0{\delta}{\delta h_{\rho\sigma}}
+		\right) \Tr\left[ \0{1}{\sqrt{\bar g}}\0{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar
+	g, h]\right]\,.
+\label{eq:gravpropNIk}
+\end{align}
+We have shown at the example of Yang-Mills theory, that the
+fluctuation field derivative of the term in the square brackets on the
+right hand side of \eq{eq:gravpropNIk} gives sub-leading
+contributions only.
+In analogy we assume that the same feature holds in
+gravity, and arrive at the final approximation for the fluctuating
+two-point function
+\begin{align} \label{eq:modback}
+	\0{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\approx \0{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}  
+	- \0{\delta}{\delta \bar g_{\rho\sigma}} \int \0{1}{\sqrt{\bar g}}\0{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\0{\delta
+	\Gamma_k}{\delta R_k}\,,
+\end{align}
+This approximation has been used in gravity e.g.\ in
+\cite{Donkin,Donkin:2012ud}. Apart from the standard background
+two-point function it contains a second, purely regulator induced term.
+The flow of this term is simply given by
+\eq{eq:FA}, which we recall was given by
+\begin{align}\label{eq:Fg}
+	F_{\text{\tiny RG}}(x)= \int_{x_0}^x \mathrm dx' \; \0{\partial R_k(x')}{\partial x'} \, G_k(x', \bar R = 0)\,,
+\end{align}
+where we have restricted ourselves to IR-finite regulators.
+Note, that $F_{\text{\tiny RG}}$ depends on the parameter $x_0$.
+This dependence drops out later, since we take a $\delta_{\bar g}$ derivative.
+For simplicity we set $x_0=0$ in this work.
+As a reminder, these equations stem from
+\begin{align}
+ \partial_t \delta_{\bar g} \Gamma_k = \delta_{\bar g} \partial_t \Gamma_k \,.
+\end{align}
+With the approximation that the leading background dependence stems from the regulator insertion, this entails the equation
+\begin{align} \label{eq:commuted-flow}
+ \012 \partial_t \Tr \left[ \01{\sqrt{\bar g}} G_k \0{\delta  \sqrt{\bar g} R_k}{ \delta \bar g_{\mu\nu}}  \right]
+ = \012 \0{\delta}{\delta \bar g_{\mu\nu}} \Tr \left[ G_k \partial_t R_k \right] \,,
+\end{align}
+see \cite{Litim:2002ce} for a similar equation in the context of a Yang-Mills theory.
+We further note that
+\begin{align}
+ \0{\delta}{\delta \bar g_{\mu\nu}} F_{\text{\tiny RG}}(\bar \Delta) 
+ &= \0{\delta}{\delta \bar g_{\mu\nu}} \int_{0}^{\bar\Delta} d x' \0{\partial R_k(x')}{\partial x'} G_k(x', \bar R = 0) \notag \\
+ &= \0{\delta \bar \Delta}{ \delta \bar g_{\mu\nu}} \0{\partial R_k(\bar \Delta)}{\partial \bar \Delta} G_k(\bar \Delta, \bar R = 0) \notag \\ 
+ &= \0{\delta R_k(\bar \Delta)}{ \delta \bar g_{\mu\nu}} G_k(\bar \Delta, \bar R = 0)  \,, \label{eq:der-F}
+\end{align}
+is actually (almost) the left hand side of \eqref{eq:commuted-flow}.
+
+\Eq{eq:Fg} can straightforwardly be computed with heat-kernel methods.
+Similarly to our Yang-Mills example we have for IR-finite regulators
+\begin{align}\nonumber 
+  \012 \Tr&\left[ \0{1}{\sqrt{\bar g}}\0{\delta \sqrt{\bar g} \, R_k(\bar \Delta)}{\delta \bar g_{\mu\nu}}\,G_k(\bar \Delta, \bar R )\right]\\[2ex]  
+  =&\frac{1}{2} \, \Tr\, \0{\delta }{\delta \bar g_{\mu\nu}} F_{\text{\tiny{RG}}}(\bar\Delta) 
+  +\frac{1}{2} \Tr \, \0{1}{\sqrt{\bar g}}\0{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}}\, R_k(\bar \Delta) G_k (\bar \Delta, \bar R ) \,.
+\label{eq:g-Rkg}
+\end{align}
+Moreover, in gravity the luxury of using a background field for gauge
+invariance turns into the necessity of using a background metric in
+the gauge fixing sector (if one insists on linear gauge fixing in the
+fluctuation field $h$). For UV flows the cutoff contributions have
+leading contributions to relevant operators such as the two-, three-,
+and four-point functions. In terms of diffeomorphism invariant objects
+this relates to the running of cosmological constant $\Lambda$,
+curvature scalar $R$ and curvature scalar squared $R^2$, the presumably
+minimal set of relevant operators in asymptotically safe quantum
+gravity.
+
+In \cite{Manrique:2010am} the so-called bi-metric approach to quantum
+gravity was put forward aiming at a distinction of the fluctuating
+part of the metric and the background metric. For computational
+reasons the following approximation was considered,
+\begin{align}
+	\Gamma_k[\bar g,h]= \Gamma_{\text{EH},k}[g]+\bar \Gamma_{\text{EH},k}[\bar g]+M_k \int d^4 x \sqrt{g}
+	\left(\0{\sqrt{\bar g}}{\sqrt{g}}\right)^n\,,
+\end{align}
+where $\Gamma_{\text{EH}},\bar \Gamma_{\text{EH}}$ is the
+Einstein-Hilbert actions with cutoff-dependent parameters. In later
+extended computations, \cite{Becker:2014qya}, the last term has been
+dropped, $M_k=0$. Evidently, this approximation violates the approximated NI
+\eq{eq:gravpropNIk} and only holds if
+\begin{align}
+	\0{\delta}{\delta h_{\rho\sigma}} \Tr\left[\01{\sqrt{\bar g}}\0{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar
+	g_{\mu\nu}}\, G_k[\bar g, h]\right]\approx 0\,,
+\end{align}
+at least at $h=0$.
+
+
+\section{Background flow equations}
+%
+We start with the derivation of the background flow equations.
+These are on the one hand necessary for comparison and on the other hand we can express the level one couplings as background plus a Nielsen identity
+We use a {\it type\,I} Litim regulator and the gauge $\alpha=0=\beta$.
+Furthermore we specialise the background to a sphere in four dimensions.
+The results for gravity part of the background flows agree with e.g.~\cite{Gies:2015tca}
+and the scalar part agrees with e.g.~\cite{Dona:2013qba}.
+The details of the computation are given in appendix \ref{app:traces}.
+
+The flow of the background couplings is given by
+\begin{align}
+ \partial_t \bar G &= (2 + \eta_N) \bar G \,,\\
+ \partial_t \bar \Lambda &= - 4 \bar \Lambda + \0{\bar \Lambda}{\bar G} \partial_t \bar G + 8 \pi \bar G \Flow_{\bar \Gamma}\bigg|_{\sqrt{\bar g} \text{-terms}} \,,\\
+ \eta_N &= 16 \pi \bar G \Flow_{\bar \Gamma}\bigg|_{\sqrt{\bar g} \bar R \text{-terms}} \,,
+\end{align}
+where
+\begin{widetext}
+\begin{align}
+  \Flow_{\bar \Gamma} =& \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg\lbrace
+    \bigg[
+      \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
+      + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda} 
+      - 4
+      - \frac{2}{3} \, \eta_h
+      + \frac{4}{3} \, \eta_c
+      + N_s
+    \bigg] k^4 
+    \notag \\
+    &\hspace{.7cm}
+    + \bigg[
+      - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
+      - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
+      + \frac{1}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - \frac 43 \lambda} 
+      - \frac{23}{12}
+      - \frac{7}{18} \, \eta_h
+      + \frac{14}{18} \, \eta_c
+      + \frac {1}{3} N_s
+    \bigg] k^2 \bar R 
+    \notag \\
+    &\hspace{.7cm}
+    + \bigg[
+        \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac{1}{216} \frac{1}{1 - 2 \lambda} 
+      + \frac{29}{1080} \frac{1}{1 - \frac 43 \lambda}
+      - \frac{149}{270}
+      + \frac {29}{1080} N_s
+    \bigg] \bar R^2
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+\end{widetext}
+Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
+In this case the background couplings are non-dynamical spectators.
+We obtain the usual background field approximation by setting $\lambda=\bar\Lambda$, $\eta_h=\eta_N$ and $\eta_c=0$.
+
+
+\section{Level one couplings via Nielsen identities}
+%
+In this section we compute the level one couplings via a Nielsen identity from the background flow equations of the last section.
+As derived in \autoref{sec:Nielsen-id}, we have made the approximation
+\begin{align}
+ \0{\delta}{\delta h_{\mu\nu}} \partial_t \Gamma_k \approx  \0{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k  
+ - \partial_t \left( \012 \Tr \01{\sqrt{\bar g}} \0{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k \right)
+ \,.
+\end{align}
+Consequently we are interested in evaluating the quantity
+\begin{align}
+  \nonumber
+  I \equiv&\, \frac 12 \, \Tr
+  \left[
+    \frac{1}{\sqrt{\bar g}} \, G_k \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k \Big)
+  \right]\\%[2ex]
+  =&\,
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - F_{\text{\tiny RG}}  \Big]
+  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, F_{\text{\tiny RG}} \Big)  \,,
+  \label{eq:def-I}
+\end{align}
+which gives us, combined with the background flows, the flows for the level one couplings.
+In \eqref{eq:def-I} $F_{\text{\tiny RG}}(\bar \Delta)$ is the functional introduced in \eqref{eq:FA}.
+% Here it seems that the $x_0$ dependence of $F_{\text{\tiny RG}}$ does not drop out anymore,
+% since $\Tr F_{\text{\tiny RG}}$ appears without a $\delta_{\bar g}$ derivative.
+% This is, however, a false conclusion since only in $\Tr \delta_{\bar g} F_{\text{\tiny RG}}$ the $x_0$ part vanishes
+% while in $\delta_{\bar g} \Tr F_{\text{\tiny RG}}$ the derivative hits the $\sqrt{\bar g}$ part of the trace
+% and the $x_0$ part of this term precisely cancels the $x_0$ part of $\Tr F_{\text{\tiny RG}}$ without a $\delta_{\bar g}$ derivative.
+All traces appearing in \eqref{eq:def-I} can be evaluated using heat kernel techniques.
+Details of the computation and intermediate results can be found in appendix \ref{app:traces}.
+
+
+The results for $I$ are given by
+\begin{widetext}
+% \begin{align}
+%   \notag
+%   I =& \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
+%   \bigg\lbrace
+%     \bigg[
+%     \frac 5{12} \frac{1}{1 - 2 \lambda}
+%     + \frac 1{12} \frac{1}{1 - \frac 43 \lambda}
+%     - \frac{1}{3}
+%     + \frac{1}{12}N_s
+%     \bigg] k^4 
+%     +\bigg[
+%       - \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+%       - \frac {5}{16} \frac{1}{1 - 2 \lambda}
+%       + \frac {1}{16} \frac{1}{1 - \frac 43 \lambda}
+%       - \frac {71}{288}
+%       + \frac {1}{16} N_s
+%     \bigg] k^2 \bar R
+%     \\ 
+%     &\hspace{1.1cm}
+%     + \bigg[
+%       \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+%       + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+%       - \frac {1}{432} \frac{1}{1 - 2 \lambda} 
+%       + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+%       - \frac {169}{1440}
+%       + \frac {29}{4320} N_s
+%     \bigg] \bar R^2
+%   \bigg\rbrace
+%     + \mathcal O (\bar R^3) \,.
+% \end{align}
+\begin{align}
+  \notag
+  8I =& \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
+  \bigg\lbrace
+    \bigg[
+    \frac {10}{3} \frac{1}{1 - 2 \lambda}
+    + \frac 2{3} \frac{1}{1 - \frac 43 \lambda}
+    - \frac{8}{3}
+    + \frac{2}{3}N_s
+    \bigg] k^4 
+    +\bigg[
+      - \frac {20}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {5}{2} \frac{1}{1 - 2 \lambda}
+      + \frac {1}{2} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {71}{36}
+      + \frac {1}{2} N_s
+    \bigg] k^2 \bar R
+    \\ 
+    &\hspace{1.1cm}
+    + 8\cdot \bigg[
+      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {1}{432} \frac{1}{1 - 2 \lambda} 
+      + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {169}{1440}
+      + \frac {29}{4320} N_s
+    \bigg] \bar R^2
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+\end{widetext}
+
+The flow equations for the level one couplings can now be expressed by flow of the background couplings plus the improvement from the Nielsen identity, to wit
+\begin{align}
+ \partial_t \bar G_1 &= (2 + \eta_{N,1}) \bar G_1 \,, \\
+ \partial_t \bar \Lambda_1 &= - 4 \bar \Lambda_1 + \0{\bar \Lambda_1}{\bar G_1} \partial_t \bar G_1 + 8 \pi \bar G_1 \left(  \Flow_{\bar \Gamma} - 8 I \right) \bigg|_{\sqrt{\bar g} \text{-terms}} \,, \\
+ \eta_{N,1} &= 16 \pi \bar G_1 \left(\Flow_{\bar \Gamma} - 8 I  \right)\bigg|_{\sqrt{\bar g} \bar R \text{-terms}} \,.
+\end{align}
+The quantities in $I$ and $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
+Hence the level one couplings are non-dynamical spectators.
+We can make an approximation in order to obtain a closed equation for the level one couplings, 
+which is a similar approximation as the standard background field approximation.
+For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\eta_{N,1}$ and $\eta_c=0$.
+
+\begin{figure*}[!ht]
+\includegraphics[width=0.49\textwidth]{Background-g-comparison}
+\hfill
+\includegraphics[width=0.49\textwidth]{Fluctuation-g-comparison}
+\caption{Comparison of different gravitational couplings.
+In the left panel the background gravitational coupling is plotted with different input on the right hand side.
+In the right panel the highest dynamical coupling of different systems is plotted.
+The first system is the pure background system, the second is the level one improved background system and the last one is the fully fluctuating system.}
+\label{fig:Comparison-of-g}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\includegraphics[width=0.49\textwidth]{Background-lam-comparison}
+\hfill
+\includegraphics[width=0.49\textwidth]{Fluctuation-lam-comparison}
+\caption{Comparison of different $\lambda$ couplings.
+In the left panel the background cosmological constant coupling is plotted with different input on the right hand side.
+In the right panel the highest dynamical $\lambda$ coupling of different systems is plotted.
+The first system is the pure background system, the second is the level one improved background system and the last one is the fully fluctuating system.
+In the right panel all couplings are bound by the value $\012$, while in the left panel only $\bar \Lambda*(\eta_N,\bar\Lambda^*)$ is bound by that value.}
+\label{fig:Comparison-of-lam}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\includegraphics[width=0.49\textwidth]{All-g-from-fluc}
+\hfill
+\includegraphics[width=0.49\textwidth]{All-lam-from-fluc}
+\caption{
+Comparison of different level-$n$ gravitational couplings (left) and 'cosmological constants' (right).
+All couplings were evaluated with the input of the full fluctuation system on the right hand side.
+While the gravitational couplings behave qualitatively similar, the level-$n$ 'cosmological constants' display significant differences in their behaviour.
+This emphasises again the necessity to treat the graviton mass parameter in a fluctuation computation.
+}
+\label{fig:All-from-fluc}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\includegraphics[width=0.49\textwidth]{All-g-from-mu}
+\hfill
+\includegraphics[width=0.49\textwidth]{All-lam-from-mu}
+\caption{Comparison of different level-$n$ gravitational couplings (left) and 'cosmological constants' (right).
+Here we combined the flow equation for the graviton mass parameter $\mu$ with different flow equations for the Newton's coupling.
+All couplings behave qualitatively similar and thus we conclude that the correct treatment of the graviton mass parameter is essential for qualitatively reliable results.}
+\label{fig:All-from-mu}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusions}
+
+The flow equation for the graviton mass parameter is the most important one.
+
+\vspace{.5cm}
+\noindent \textbf{Acknowledgments} We thank N.~Christiansen,
+S.~Lippoldt and R.~Percacci for discussions. MR
+acknowledges funding from IMPRS-PTFS. This work is supported by EMMI
+and by ERC-AdG-290623.
+
+
+
+\newpage
+
+\appendix
+
+\section{Evaluation of traces} \label{app:traces}
+
+In this appendix we want to give a more detailed outline on how to
+calculate the trace expression
+\begin{align}\nonumber
+ I \equiv&\, \frac 12 \, \Tr
+  \left[
+    \frac{1}{\sqrt{\bar g}} \, G_k(\bar \Delta) \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k(\bar\Delta) \Big)
+  \right]\\[2ex] \nonumber
+=&\,
+\frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k + \frac 12 \, \Tr \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, F_{\text{\tiny RG}}\\[2ex] \nonumber
+=&\,
+\frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
++ \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}} \\ \notag
+&- \frac 12 \, \Tr \, \bigg[ \frac{1}{\sqrt{\bar g}} \left( \frac{\delta}{\delta \bar g_{\mu\nu}} \sqrt{\bar g} \right) F_{\text{\tiny RG}} \bigg] \\[2ex] \notag
+=&\,
+\frac 14 \, \bar g^{\mu\nu} \, \Tr \, \Big( G_k R_k - F_{\text{\tiny RG}} \Big)
++ \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}} \\[2ex]
+=&\,
+\frac 12 \, \bar g^{\mu\nu} \, \Big( I_1 - I_2 \Big) + \frac{\delta}{\delta \bar g_{\mu\nu}} \, I_2 \,.
+\end{align}
+For ease of notation we introduced
+\begin{align}
+  I_1 &\equiv \frac 12 \, \Tr \, G_k R_k \,, \\
+  I_2 &\equiv \frac 12 \, \Tr \, F_{\text{\tiny RG}} \,,
+\end{align}
+and we recall that
+\begin{align}
+	F_{\text{\tiny RG}}(x)= \int_{0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \bar R = 0) \,.
+\end{align}
+For later convenience we will also abbreviate the background flow by
+\begin{align}
+  I_3 &\equiv \frac 12 \, \Tr \, G_k \dot R_k \,.
+\end{align}
+Following \cite{Codello:2008vh}, we may write
+\begin{align}
+  I_1 =& \,
+  \frac{1}{32 \pi^2}
+  \Big[ B_0(\bar\Delta) Q_2(R_kG_k)
+    + B_2(\bar\Delta) Q_1(R_kG_k) \notag \\
+  & + B_4(\bar\Delta) Q_0(R_kG_k)
+  \Big]
+  + \mathcal O (R^3) \,,
+\end{align}
+where
+\begin{align}
+  Q_n[W] &= \frac 1{\Gamma(n)} \, \int \mathrm dx \; x^{n-1} \, W(x) \,, \\
+  B_n &= \int \mathrm d^dx \, \sqrt{\bar g} \; \tr \, b_n \,,
+\end{align}
+and $\tr \, b_n(\bar\Delta_s) \propto R^{n/2}$ are the  heat kernel coefficients.
+We are interested in the function
+\begin{align}
+  W(x) = \frac{r_k(x)}{[x+r_k(x)+a \, \lambda \, k^2]^b} \,,
+\end{align}
+with constants $a$ and $b$, and dimensionless cosmological constant $\lambda$.
+Using the optimized cutoff function
+\begin{align}
+  r_k(x) = (k^2-x) \, \theta( k^2-x) \,,
+\end{align}
+one finds
+\begin{align}
+  Q_2 &= \frac 16 \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \label{eq:threshold-I1-const}\\
+  Q_1 &= \frac 12 \frac {k^{4-2b}}{(1 + a \lambda)^b} \,, \label{eq:threshold-I1-lin} \\
+  Q_0 &= \frac {k^{2-2b}}{(1 + a \lambda)^b} \,. \label{eq:threshold-I1-quad}
+\end{align}
+In the limit $\beta = 0$ and $\alpha \rightarrow 0$,
+the trace of $R_k G_k$ can be evaluated following the procedure in
+\cite{Gies:2015tca} and is given by the sum of the contributions
+of the four modes $h^{TT}_{\mu\nu}, \xi^{\mu}, h$ and $\sigma$. They are given
+(in that order) for $\eta_h=0=\eta_c$ by
+\begin{align}
+  & \frac{r_k(x)}{x+r_k(x) - 2 \, \lambda \, k^2} - \frac 23 \, \bar R \, \frac{r_k(x)}{(x+r_k(x) - 2 \, \lambda \, k^2) ^2} \notag \\
+    &\hspace*{0.7cm} + \frac 49 \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x) - 2 \, \lambda \, k^2) ^3} \\
+  & \frac{r_k(x)}{x+r_k(x)} + \frac 14 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} + \frac{1}{16} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \\
+  & \frac{r_k(x)}{x+r_k(x) - \frac 43 \, \lambda \, k^2} \\
+  & \frac{r_k(x)}{x+r_k(x)} + \frac 13 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} + \frac{1}{9} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3}
+\end{align}
+The vector and scalar ghost contributions are given by
+\begin{align}
+  & - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 12 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} - \frac{1}{8} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \,, \\
+  & - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 23 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} - \frac{2}{9} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \,.
+\end{align}
+Furthermore, on the sphere we have
+\begin{align}
+  B_0(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_0 \,, \\
+  B_2(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_2 \,, \\
+  B_4(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_4 \,,
+\end{align}
+where the trace coefficients are given in \autoref{tab:coeff}.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{  c  c  c  c  }
+			% \toprule
+      \hline
+			        & TTT & VT & S \\
+			% \midrule
+      \hline
+      $\tr \, b_0$ & 5 & 3 & 1 \\
+      $\tr \, b_2$ & $-\frac 56 R$  & $\frac 14 R$  & $\frac 16 R$  \\
+      $\tr \, b_4$ & $-\frac {1}{432} R^2$  & $-\frac {7}{1440} R^2$  & $\frac {29}{2160} R^2$  \\
+			% \bottomrule
+      \hline
+		\end{tabular}
+	\end{center}
+  \caption{Heat kernel coefficients for transverse traceless tensors (TTT), transverse vectors (VT)
+  and scalars (S) on $S^4$.}
+	\label{tab:coeff}
+\end{table}
+
+By specialising the coefficients $a$ and $b$ in the general expression above and evaluating the sum over
+all spin modes, we find
+\begin{align}
+  &I_1 = \,  \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg\lbrace
+    \bigg[
+    \frac 56 \frac{1}{1 - 2 \lambda}
+    + \frac 16 \frac{1}{1 - \frac 43 \lambda}
+    - \frac 23
+    \bigg] k^4 \bar R^0 \notag \\
+    &+ \bigg[
+      - \frac {5}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {5}{12} \frac{1}{1 - 2 \lambda}
+      + \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {7}{18}
+    \bigg] k^2 \bar R^1 \notag \\
+    &+ \bigg[
+      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {1}{432} \frac{1}{1 - 2 \lambda} \notag  \\
+      & \quad + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {169}{1440}
+    \bigg] k^0 \bar R^2
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+
+In similar fashion, one can calculate
+\begin{align}
+  I_2 = \, \frac{1}{32\pi^2} \, &F_\text{\tiny RG}(-\partial_\tau)
+  \Big[
+    B_0(\bar\Delta_s) \, \tau^{-2} +
+    B_2(\bar\Delta_s) \, \tau^{-1} \notag \\
+    &+ B_4(\bar\Delta_s) \, \tau^{0}
+  \Big] \bigg|_{\tau=0}
+    + \mathcal O(\bar R^3) \label{eq:I2-in-heatkernel}
+\end{align}
+where we used \eq{eq:tau_expansion}. In particular, by utilizing the
+identities
+\begin{align}
+  \frac 1{\tau^2} &= \int_0^\infty \mathrm dx \; x \, e^{-\tau x} \bigg|_{\tau=0} \\
+  \frac 1\tau &= \int_0^\infty \mathrm dx \; e^{-\tau x} \bigg|_{\tau=0}
+\end{align}
+one can evaluate the action of the differential operators, and we find
+\begin{align}
+  F_\text{\tiny RG}(-\partial_\tau) \tau^{-2} &= \int_0^\infty \mathrm dx \; x \, F_\text{\tiny RG}(x) \notag \\
+  &= - \frac 13 \frac{k^{6-2b}}{(1+a\lambda)^b} \label{eq:threshold-I2-const} \\
+  F_\text{\tiny RG}(-\partial_\tau) \tau^{-1} &= \int_0^\infty \mathrm dx \; F_\text{\tiny RG}(x) \notag \\
+  &= - \frac 12 \frac{k^{4-2b}}{(1+a\lambda)^b} \label{eq:threshold-I2-lin} \\
+  F_\text{\tiny RG}(-\partial_\tau) \tau^0    &= F_\text{\tiny RG}(0) \notag \\
+  &= 0 \label{eq:threshold-I2-quad}
+\end{align}
+where the last equalities hold for the general function
+\begin{align}
+  F_\text{\tiny RG}(x) &= \int^{x}_0 \mathrm dy \; \frac{r'_k(y)}{(y+r_k(y)+a \, \lambda \, k^2)^b} \notag \\
+  &=  -\frac{x}{(1 + a \lambda)^b } \,,\quad \text{for } x \leq k^2 \,,
+\end{align}
+using the optimized cutoff as before.
+Specializing the coefficients $a$ and $b$ for the various spin modes and summing the contributions
+we get
+\begin{align}
+  &I_2 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg\lbrace
+    \bigg[
+    - \frac 53 \frac {1}{1 - 2 \lambda}
+    - \frac 13 \frac {1}{1 - \frac 43 \lambda}
+    + \frac 43
+    \bigg] k^4 \bar R^0 \notag \\
+    &+ \bigg[
+        \frac {5}{12} \frac{1}{1 - 2 \lambda}
+      - \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
+      + \frac {5}{24}
+    \bigg] k^2 \bar R^1
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+
+Finally, the right-hand side of the flow equation $I_3$ can be evaluated
+in the same way as $I_1$, where the Heat Kernel Functionals now depend on
+\begin{align}
+  \tilde W(x) = \frac{\dot r_k(x)}{[x+r_k(x)+a \, \lambda \, k^2]^b} \,.
+\end{align}
+Using $\dot r_k(x) = 2 \, k^2 \, \theta(k^2-x)$ for the optimized cutoff, we find
+\begin{align}
+  Q_2[\tilde W] &= \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \\
+  Q_1[\tilde W] &= \frac {2 \, k^{4-2b}}{(1 + a \lambda)^b} \,, \\
+  Q_0[\tilde W] &= \frac {2 \, k^{2-2b}}{(1 + a \lambda)^b} \,.
+\end{align}
+With these relations, we find
+\begin{align}
+  &I_3 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg\lbrace
+    \bigg[
+      \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
+      + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda} \notag \\
+      & \quad - 4
+      - \frac{2}{3} \, \eta_h
+      + \frac{4}{3} \, \eta_c
+    \bigg] k^4 \bar R^0 \notag \\
+    &+ \bigg[
+      - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
+      - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
+      + \frac{1}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - \frac 43 \lambda} \notag \\
+      & \quad - \frac{23}{12}
+      - \frac{7}{18} \, \eta_h
+      + \frac{14}{18} \, \eta_c
+    \bigg] k^2 \bar R^1 \notag \\
+    &+ \bigg[
+        \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac{1}{216} \frac{1}{1 - 2 \lambda} \notag \\
+      & \quad + \frac{29}{1080} \frac{1}{1 - \frac 43 \lambda}
+      - \frac{149}{270}
+    \bigg] k^0 \bar R^2
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+
+We now want to evaluate $I$, and in particular the first derivative
+with respect to the background field.
+Since $S^4$ is an Einstein manifold, and in particular
+\begin{align}
+  \bar R_{\mu\nu} = \01d \bar R\, \bar g_{\mu\nu} \,,
+\end{align}
+this gives 
+\begin{align}
+  \frac{\delta \bar R}{\delta \bar g_{\mu\nu}} =  - \01d \bar R\, \bar g^{\mu\nu} + \, \bar g^{\alpha\beta} \frac{\delta \bar R_{\alpha\beta}}{\delta \bar g_{\mu\nu}} \,.
+\end{align}
+We further know
+\begin{align}
+\frac{\delta \bar R_{\alpha\beta}}{\delta \bar g_{\mu\nu}} = \bar \Delta_\rho \0{\delta \Gamma^\rho_{\alpha\beta}}{\delta \bar g_{\mu\nu}} 
+				  - \bar \Delta_\alpha \0{\delta \Gamma^\rho_{\rho\beta}}{\delta  \bar g_{\mu\nu}} \,.
+\end{align}
+These terms are total derivatives and will not contribute.
+Note that this doesn't hold anymore when the derivative of $\bar R^2$ is evaluated, but we don't need the $\bar R^2$ derivative anyway.
+This gives
+\begin{align}
+  \frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}} &= \012 \sqrt{\bar g}\, \bar g^{\mu\nu} \,,\\
+  \frac{\delta \sqrt{\bar g} \bar R}{\delta \bar g_{\mu\nu}} &= \frac 14  \sqrt{\bar g}\, \bar g^{\mu\nu} \bar R \,.
+\end{align}
+
+
+Using these relations, we can finally evaluate $I$ to be
+\begin{align}
+  \notag
+  I &= \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
+  \bigg\lbrace
+    \bigg[
+    \frac 5{12} \frac{1}{1 - 2 \lambda}
+    + \frac 1{12} \frac{1}{1 - \frac 43 \lambda}
+    - \frac{1}{3}
+    \bigg] k^4 \bar R^0 \\ \notag
+    &+\bigg[
+      - \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {5}{16} \frac{1}{1 - 2 \lambda}
+      + \frac {1}{16} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {71}{288}
+    \bigg] k^2 \bar R^1 \\ \notag
+    &+ \bigg[
+      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {1}{432} \frac{1}{1 - 2 \lambda} \notag  \\
+      & \quad + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {169}{1440}
+    \bigg] k^0 \bar R^2
+  \bigg\rbrace
+    + \mathcal O (\bar R^3) \,.
+\end{align}
+
+For a pure scalar field we find the following results:
+\begin{align}
+  I_1^s
+  &= \frac{ \sqrt{ \bar g} }{ 32 \pi^2 }
+  \bigg[
+      \frac{1}{6} \, k^4
+    + \frac{1}{12} \, k^2 \, \bar R
+    + \frac{29}{2160} \, \bar R^2
+  \bigg]
+  + \mathcal O (\bar R^3) \,, \\
+  I_2^s
+  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg[
+    - \frac{1}{3} \, k^4
+    - \frac{1}{12} \, k^2 \, \bar R
+  \bigg]
+  + \mathcal O (\bar R^3) \,, \\
+  I_3^s
+  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg[
+  k^4
+  + \frac{1}{3} \, k^2 \, \bar R
+  + \frac{29}{1080} \, \bar R^2
+  \bigg]
+  + \mathcal O (\bar R^3) \,.
+\end{align}
+
+This implies
+\begin{align}
+  I^s &= \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 }
+  \bigg[
+    \frac{1}{12} \, k^4 + \frac{1}{16} \, k^2 \bar R + \frac{29}{4320} \, \bar R^2
+  \bigg]
+  + \mathcal O (\bar R^3) \,.
+\end{align}
+
+\section{Nielsen Identities and Yang-Mills}
+
+Let us now briefly illustrate the use of the NI
+in the case of
+pure Yang-Mills theory in a covariant gauge (cf. in particular
+\cite{PawlowskiH}, Chapter IV C, page 61ff) for the example of the
+universal one-loop beta function.
+Splitting the full field as
+$A_\mu=\bar A_\mu+a_\mu$,
+the covariant background gauge reads
+\begin{align}
+	\bar D_\mu a_\mu \equiv (\partial_\mu + i\,g\,\bar A_\mu) \, a_\mu=0\,.
+\end{align}
+The beta function of the coupling can be read off from that of the
+running of the $\tr \,\bar F^2$-term in the background effective
+action $\Gamma_k[\bar A]=\Gamma_k[\bar A, a=0]$.
+The beta function can then be derived from the flow as follows
+\begin{align}\label{eq:betabarA}
+	\dot \Gamma_k[\bar A]\Big|_{\tr \bar F^2} = - 2 \bar \beta_g
+	S_{\text{\tiny YM}}[\bar A]\,,
+\end{align}
+which comes about due to background gauge invariance.
+It turns out that regulators that scale in the infrared as
+\begin{align}\label{eq:IRRk}
+	p^2 \, r \left( \0{p^2}{k^2} \right)
+	\sim k^2  \left( \0{k^2}{p^2} \right)^{n-1}\,,
+\end{align}
+lead to a background beta function $\bar \beta_g = (1+n)
+\beta_{g,\rm 1-loop}$ and are hence regulator-dependent. In turn the
+beta function computed from the fluctuation diagrams is
+regulator-independent, $\beta_g=\beta_{g,\rm 1-loop}$, which reflects
+the one-loop universality of the Yang-Mills beta function.
+This result is surprising as the beta function is a universal
+quantity.
+
+This puzzle can be resolved as follows. First we notice
+that an evaluation of the fluctuation correlation functions reveals
+the correct one-loop beta function. Secondly, in the background
+field approximation the $\Tr\,\bar F^2$-term also receives
+contributions from the background field dependence of the regulator.
+This $\bar A$-dependence triggered by the regulator should not be seen
+as a genuine field dependence. Indeed, for $k\to 0$ it disappears, cf. Eq.
+\eq{eq:gaugeNIk}. This is why we have to disentangle the regulator field
+dependence from the genuine one.
+This can be done by writing the effective action as
+\begin{align}
+\label{eq:EAsplit}
+\Gamma_k[\bar A,a] = \Gamma_{k,1}[a] + \Gamma_{k,2}[\bar A] + \Gamma_{k,3}[\bar A, a]\,,
+\end{align}
+where the second term originates from the $\bar A$-dependence of the regulator and
+the last term accounts for gauge invariance under transformations of the full field.
+We will see shortly that it vanishes in the present case.
+
+To extract the regulator dependence, on simply takes a functional derivative of
+the last expression with respect to the background field. The RG flow of
+the resulting object can then be projected onto the relevant coupling
+($\tr \, \bar F^2$ in the Yang-Mills case) to obtain the regulator contribution
+of the beta function one is interested in. The physical beta function
+is then given by the difference
+\begin{align}
+	\beta^{(\text{phys})} = \beta \, \big|_{a=0} - \bar \beta \,.
+\end{align}
+
+This is why we will investigate the flow of the background-dependence
+of the effective action $\partial_t \delta_{\bar A} \Gamma_k$
+\begin{align}
+\label{eq:A-Rk}
+	\partial_t \int_{y,z} \0{\delta R_k(y,z)}{\delta \bar A(x)}
+	\0{\delta \Gamma_k}{\delta R_k(y,z)} =
+	\012 \, \Tr\, \partial_t
+	\left(\0{\delta R_k[\bar A]}{\delta \bar A(x)}\, G_k[\bar A,
+	a]\right).
+\end{align}
+The right hand side of the equation can be rewritten as a sum of
+traces depending on the spin-0 and spin-1 Laplacians, $\bar \Delta_0=
+-\bar D^2$ and $\bar \Delta_1 =-\bar D^2\id -2 g \bar F$, respectively.
+These traces can be expressed as
+\begin{align}
+	\label{eq:A-Rk1}
+	\012 \,  \Tr\, \partial_t \left[\0{\delta R_k(\bar \Delta)}{\delta \bar
+	A(x)}\, G_k(\bar \Delta )\right] =
+  \frac{1}{2}
+	\0{\delta }{\delta \bar A(x)}
+	\Tr\, \partial_t F_{\text{\tiny RG}}(\bar\Delta)\,,
+\end{align}
+where
+\begin{align}\label{eq:FA}
+	\partial_t  F_{\text{\tiny RG}}(x)= \partial_t \int_{x_0}^x d x' \0{\partial
+	R_k(x')}{\partial x'} G_k(x')\,.
+\end{align}
+Note that the function $F_{\text{\tiny RG}}(x)$ is potentially
+singular in the infrared, that is for $x\rightarrow 0$.  The infrared limit of
+the regulators is given by \eq{eq:IRRk} and it follows that
+\begin{align}\label{eq:IRF}
+	F_{\text{\tiny RG}}(x\to 0)
+	\propto x^{-(n-1)}\,,
+\end{align}
+where one has a logarithmic divergence for $n=1$. Accordingly, the
+$t$-derivatives in \eq{eq:A-Rk}-\eq{eq:IRF} are required for
+finiteness.
+
+This shows how the NI \eq{eq:gaugeNIk} can trigger
+contributions to logarithmically running quantities already at
+one-loop: IR-singular regulators introduce additional scales for
+background observables.
+
+Now we want to compute the contributions to $\tr\, \bar F^2$ that
+come from the genuine background field dependence of the effective
+action. This is done by removing the mixed contributions, $\tr\, \bar
+F \bar F_{R_k}$, and $\tr \,\bar F_{R_k} \bar F_{R_k}$ contributions
+from the full $\bar A$-dependence. Here, $F_{R_k}$ signals the field
+strength of the regulator field. To that end we first notice that
+mixed contributions to $\tr\, \bar F^2$ are not present: taking a
+$\bar A$-derivative of \eq{eq:A-Rk1} that hits the genuine $\bar
+A$-dependence leads to terms proportional to
+\begin{align}
+	\label{eq:mixed}
+	- \partial_t
+	\left[\Tr\,
+		\int_{x_0}^x d x' \0{\partial
+		R_k(x')}{\partial x'} G_k(x) \0{\delta
+		\Gamma_k^{(2)}}{\delta\bar A} G_k
+		\bigg|_{\tr \bar F^2}
+	\right]=0\,.
+\end{align}
+Note that the occurrence of $G_k^2$ leads to IR-finite expressions, and
+hence the trace can be taken before taking the $t$-derivative. As we
+concentrate on field-dependences with dimensionless coefficients, the
+$t$-derivative vanishes (no other scale is present that could lead to
+$\log k/{\rm scale}$ dependences).
+
+This leaves us with the task to compute \eq{eq:A-Rk1}. The
+right hand side is a trace of a functional of $\bar \Delta =
+\bar\Delta_0, \,\bar\Delta_1$, and can be computed with standard
+heat-kernel techniques. In case we are only interested in powers of $\Tr
+\bar F^2$ the simplest way to compute the trace is by using
+\begin{align}
+	\label{eq:tau_expansion}
+	\Tr f(\bar \Delta) =
+	f(-\partial_\tau ) \Tr\, e^{-\tau \bar
+	\Delta}\bigg|_{\tau=0} \,,
+\end{align}
+for a general function $f$, which avoids the standard Laplace
+transform. In the present case of a Yang-Mills theory this straightforwardly
+leads to
+\begin{align}
+	\label{eq:betabarARk}
+  \frac{1}{2} \, \Tr\, \partial_t F_{\text{\tiny RG}}(\bar \Delta) \bigg|_{\tr \bar F^2}= -2 n
+	\,\beta_{g,\rm 1-loop} S_{\text{\tiny YM}}[\bar A]\,.
+\end{align}
+Subtracting this result from \eq{eq:betabarA} leads us to
+\begin{align} \label{eq:betabarAfinal}  \dot \Gamma_k[ \bar A]-
+  \frac{1}{2} \, \Tr\, \partial_t F_{\text{\tiny RG}}(\bar \Delta)\bigg|_{\tr \bar
+	F^2} = -2 \,\beta_{g,\rm 1-loop} S_{\text{\tiny YM}}[\bar A]\,,
+\end{align}
+which is indeed the regulator independent, universal beta function.
+
+The above analysis in the Yang-Mills example suggests the following:
+When using the background field approximation one should modify the
+second derivative w.r.t.\ the background field in order to account
+for the regulator dependence of the background field.
+
+
+
+In gravity as opposed to infrared Yang-Mills theory we do
+not expect qualitative differences in the UV. Still we remark that in
+Yang-Mills theory the (genuine) background anomalous dimension
+$\eta_{\bar A}=-\partial_t \log Z_{\bar A}=2 \beta_g$, and the
+fluctuating anomalous dimension $\eta_{\bar a}=-\partial_t \log
+Z_{\bar a}$ differ by approximately a factor two (in the Landau
+gauge). Moreover, while the latter is gauge-dependent, the former is
+not. This difference is at the heart of the background approximation,
+and together with the missing confinement properties is a strong
+incentive to use a full fluctuation approach.
+
+
 
 %----------------------------------------------------------------------------------------
 %	Conclusions

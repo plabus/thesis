@@ -12,19 +12,22 @@ all appendices: do I need \GNewton somewhere?
 TODO:
 =====
 
-open issues chaper 3:
-  -- explain RG improvement
-
 open issues chaper 1:
   -- larger arrows UV crit surface?
 
-----------------------
+open issues chaper 3:
+  -- explain RG improvement
 
-chapter + conclusions 5
-
-----------------------
+open issues chaper 5:
+  -- introduction
+  -- notation
+  -- figures
+     (include tex files of pgfplots & missing pdf's)
+  -- references
+  -- appendices
 
 write abstract
+
 fine tuning
 
 
