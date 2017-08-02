@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+
+  \begin{axis}[
+    xmin = 0,
+    xmax = 55,
+    ymin = 0,
+    ymax = 10,
+    major tick length =2pt,
+    cycle list = {black},
+    xlabel={number of scalars $\NS$},
+    ylabel={fixed point values},
+    legend pos=north west,
+    legend cell align=left,
+    % width=6.5cm,
+    ]
+    \filldraw[pattern=north east lines, draw=none] (524,0) rectangle +(26,400);	
+    \addplot+[no marks, thick, red, mark size=0.3pt]
+      table [x index =0,y expr = \thisrowno{2}/(1+\thisrowno{3}),col sep = comma]{Sources/Matter-flow-hss.csv};
+    \addplot+[no marks, thick, blue, dashed, mark size=0.3pt]
+      table [x index =0,y expr = \thisrowno{2}/(1+\thisrowno{3})^2,col sep = comma]{Sources/Matter-flow-hss.csv};
+    \addplot+[no marks, dotted] coordinates {(0.1,0)(70,0)};
+
+    \legend{
+      \, $\nicefrac{G_3^\star}{1+\mu^\star}$,
+      \, $\nicefrac{G_3^\star}{(1+\mu^\star)^2}$
+    }
+  \end{axis}
+
+\end{tikzpicture}

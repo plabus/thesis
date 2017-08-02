@@ -75,13 +75,15 @@ letterpaper,
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
-\usepackage{scalerel}
 \pgfplotsset{compat=newest}
+
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{scalerel}
 
 \usetikzlibrary{patterns}
 \usetikzlibrary{matrix}
 \usetikzlibrary{positioning}
-% \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{fit}
 \usetikzlibrary{math}
@@ -156,6 +158,8 @@ letterpaper,
 \newcommand{\SLambda}{ S_{\scriptscriptstyle{\Lambda}} }
 \newcommand{\weyl}{\delta_\varepsilon}
 \newcommand\Ntrunc{ N_{\scriptscriptstyle{\mathrm{trunc}}} }
+
+\newcommand{\Flow}{\mathrm{Flow}}
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -6449,23 +6453,35 @@ Moreover, the behaviour is in agreement with that of $G_{(1,2)}$ in \cite{Dona:2
 which employed a different choice of parametrisation, gauge, and projection.
 This robustness with respect to (unphysical) variations of the scheme is encouraging.
 
-\begin{figure}
-\includegraphics[width=\linewidth]{NS_findiff_all_hss_all_g_new.pdf}
-\caption{We show the fixed-point values for the three Newton couplings:
-	The three-graviton coupling (red continuous line), the graviton-scalar-coupling (blue dashed line) and the background coupling (dot-dashed orange line).}
-\label{fig:NewtoncouplingFPs}
+\begin{figure}[t]
+  \begin{center}
+    \input{figures/NS_findiff_all_hss_all_g_new.tex}
+  \end{center}
+  \caption{
+    We show the fixed-point values for the three Newton couplings:
+    The three-graviton coupling (red continuous line),
+    the graviton-scalar-coupling (blue dashed line) and the background coupling (dot-dashed orange line).
+  }
+  \label{fig:NewtoncouplingFPs}
 \end{figure}
 %
-\begin{figure}
-\includegraphics[width=\textwidth]{NS_findiff_all_hss_b.pdf}
-\caption{We plot fixed-point values, critical exponents and anomalous dimensions as a function of $\NS$.
-	The line at $\NS \approx 17$ shows where $\eta_h(0)$ exceeds two, and the line at $\NS \approx 45$ shows where $\eta_h(k^2)$ also exceeds 2.}
-\label{fig:allFPvalues}
+\begin{figure}[t]
+  \begin{center}
+    \input{figures/NS_findiff_all_hss_b.tex}
+  \end{center}
+  \caption{
+    We plot the fixed-point values, the (real part of) critical exponents,
+    and the anomalous dimensions as a function of $\NS$.
+    The line at $\NS \approx 17$ shows where $\eta_h(0)$ exceeds two,
+    and the line at $\NS \approx 45$ shows where $\eta_h(k^2)$ also exceeds 2.
+  }
+  \label{fig:allFPvalues}
 \end{figure}
 
 As the fluctuation Newton couplings enter the graviton anomalous dimension,
 $\eta_h$ increases as a function of $\NS$, \cf \autoref{fig:allFPvalues}.
-This implies that the bounds on $\eta_h$, discussed in \cite{Meibohm:2015twa}, are violated at large $\NS$.
+This implies that the bounds on $\eta_h$, discussed in Ref.~\cite{Meibohm:2015twa},
+are violated at large $\NS$.
 
 
 \subsection{Effective gravitational coupling}
@@ -6487,13 +6503,18 @@ However, each internal graviton line is associated to either of the two above ef
 As $\mu$ stays approximately constant as $\NS$ increases, while $G_{(3,0)}$ increases,
 $g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
 
-\begin{figure}
-\includegraphics[width=\linewidth]{NS_findiff_all_hss_eff_g.pdf}
-\caption{\label{fig:effectiveG} We plot the effective gravitational
-  strength $G_{(3,0)}/(1+\mu)$ and $G_{(3,0)}/(1+\mu)^2$. The latter appears
-  on propagators with the regulator insertion, whereas the former
-  appears on propagators where the regulator insertion sits on another
-  one of the internal legs of a diagram.}
+\begin{figure}[t]
+  \begin{center}
+    \input{figures/NS_findiff_all_hss_eff_g.tex}
+  \end{center}
+  \caption{
+    We plot the effective gravitational strength
+    $\nicefrac{ G_{(3,0)} }{ (1+\mu) }$ and $\nicefrac{ G_{(3,0)} }{ (1+\mu)^2 }$.
+    The latter appears on propagators with the regulator insertion,
+    whereas the former appears on propagators where the regulator insertion sits on another
+    one of the internal legs of a diagram.
+  }
+  \label{fig:effectiveG}
 \end{figure}
 
 
@@ -6528,7 +6549,7 @@ Newton coupling in the infrared.
 Now we exploit the Nielsen identity (NI) or split Ward identity (sWI) to
 improve upon the background field approximation. Related derivations
 and application in the present context can be found in
-\cite{
+Refs.~\cite{
   Litim:2002ce, Litim:2002hj, Pawlowski:2003sk, PawlowskiH,
   Pawlowski:2005xe, Donkin ,Donkin:2012ud
 }.
@@ -6607,25 +6628,28 @@ In the present application to the gravity scalar system we
 drop the background scalar, as we have a free scalar theory and only
 deal with the background metric. Then the simple scalar NI of Eq.
 \eqref{eq:scalarNIk} turns into
-\begin{align}\nonumber
-	\frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
-	\Gamma_k}{\delta h_{\mu\nu}} =& \frac 12 \,\frac 1{\sqrt{\bar g}} \Tr\, \frac{\delta \sqrt{\bar g}
-	R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\\[2ex]
-	&+\left\langle \frac{\delta S_{\text{\tiny
-	gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
-	-\frac{\delta S_{\text{\tiny gauge}}[\bar g,h]
-}{\delta h_{\mu\nu}}\right\rangle \,,
-\label{eq:gaugeNIk}
+\begin{align}
+  \frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
+    \Gamma_k}{\delta h_{\mu\nu}} =& \frac 12 \,\frac 1{\sqrt{\bar g}} \Tr\, \frac{\delta \sqrt{\bar g}
+  R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]
+  +\left\langle \frac{\delta S_{\text{\tiny
+  gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
+  -\frac{\delta S_{\text{\tiny gauge}}[\bar g,h]}{\delta h_{\mu\nu}}\right\rangle \,,
+  \label{eq:gaugeNIk}
 \end{align}
 where the second line originates from the genuine background field
 dependence of the gauge fixing sector and we have dropped the
 dependence of the other fields. The regulator $R_k$ is a matrix in field
 space,
 \begin{align}
-	R_k= \left( \begin{array}{cccc} R_h & 0 & 0 & 0\\
-	0 &0& R_c&  0 \\
-	0 &-R_c &0 &0 \\
-0 & 0& 0& R_\varphi\end{array}\right)\,.
+  R_k =
+  \begin{pmatrix*}
+    R_h & 0    & 0   & 0 \\
+    0   & 0    & R_c & 0 \\
+    0   & -R_c & 0   & 0 \\
+    0   & 0    & 0   & R_\varphi
+  \end{pmatrix*}
+  \,.
 \end{align}
 and the trace involves a symplectic metric in the ghost subsector. The
 second line in \eqref{eq:gaugeNIk} survives in the limit $k\to 0$. This
@@ -6647,23 +6671,19 @@ underlies most quantum gravity computations. Despite the fact that the
 physics mechanisms working in infrared QCD are certainly qualitatively
 different from that working in UV gravity....
 
-
-
 We work with the approximation
 \begin{align}
-	\lim_{k\to \infty} \left(\frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
-		\Gamma_k}{\delta h_{\mu\nu}} \right)\simeq \frac 12 \Tr\, \frac{1}{ \sqrt{\bar g} } \frac{\delta\sqrt{\bar g} R_k[\bar
-	g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\,,
-\label{eq:gravappNIk}\end{align}
+  \lim_{k\to \infty} \left(\frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
+    \Gamma_k}{\delta h_{\mu\nu}} \right)\simeq \frac 12 \Tr\, \frac{1}{ \sqrt{\bar g} } \frac{\delta\sqrt{\bar g} R_k[\bar
+  g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\,,
+  \label{eq:gravappNIk}
+\end{align}
 where the have dropped the second line with the gauge fixing
 contributions: they account for the difference of the wave function
 renormalisation of the fluctuating graviton and the background
 graviton propagator.
 
-
-We only
-want to improve on the regulator-induced part of the background field
-approximation.
+We only want to improve on the regulator-induced part of the background field approximation.
 Note also that if one compares the contributions
 of the cutoff term and the gauge fixing sector to the UV flow,
 combinatorial arguments suggest that the cutoff term is of
@@ -6689,12 +6709,12 @@ of \eqref{eq:gravappNIk}.
 Applying the operator $\delta_{\bar g} + \delta_h$ once more to
 \eqref{eq:gravappNIk} and dropping mixed derivatives then results in
 \begin{align}
-	\frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\simeq
-	\frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}  \notag \\
-	&-\frac 12 \left(\frac{\delta}{\delta\bar g_{\rho\sigma}}+\frac{\delta}{\delta h_{\rho\sigma}}
-		\right) \Tr\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar
-	g, h]\right]\,.
-\label{eq:gravpropNIk}
+  \frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\simeq
+  \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}
+  -\frac 12 \left(\frac{\delta}{\delta\bar g_{\rho\sigma}}+\frac{\delta}{\delta h_{\rho\sigma}}
+  \right) \Tr\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}}
+  \, G_k[\bar g, h]\right]\,.
+  \label{eq:gravpropNIk}
 \end{align}
 We have shown at the example of Yang-Mills theory, that the
 fluctuation field derivative of the term in the square brackets on the
@@ -6708,9 +6728,10 @@ two-point function
 	- \frac{\delta}{\delta \bar g_{\rho\sigma}} \int \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\frac{\delta
 	\Gamma_k}{\delta R_k}\,,
 \end{align}
-This approximation has been used in gravity e.g.\ in
-\cite{Donkin,Donkin:2012ud}. Apart from the standard background
-two-point function it contains a second, purely regulator induced term.
+This approximation has been used in gravity \eg in
+Refs.~\cite{Donkin,Donkin:2012ud}.
+Apart from the standard background two-point function it contains a second,
+purely regulator induced term.
 The flow of this term is simply given by
 \eqref{eq:FA}, which we recall was given by
 \begin{align}\label{eq:Fg}
@@ -6741,11 +6762,11 @@ is actually (almost) the left hand side of \eqref{eq:commuted-flow}.
 
 \Eq{eq:Fg} can straightforwardly be computed with heat-kernel methods.
 Similarly to our Yang-Mills example we have for IR-finite regulators
-\begin{align}\nonumber
-  \frac 12 \Tr&\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} \, R_k(\bar \Delta)}{\delta \bar g_{\mu\nu}}\,G_k(\bar \Delta, \bar R )\right]\\[2ex]
-  =&\frac{1}{2} \, \Tr\, \frac{\delta }{\delta \bar g_{\mu\nu}} F_{\text{\tiny{RG}}}(\bar\Delta)
+\begin{align}
+  \frac 12 \Tr&\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} \, R_k(\bar \Delta)}{\delta \bar g_{\mu\nu}}\,G_k(\bar \Delta, \bar R )\right]
+  =\frac{1}{2} \, \Tr\, \frac{\delta }{\delta \bar g_{\mu\nu}} F_{\text{\tiny{RG}}}(\bar\Delta)
   +\frac{1}{2} \Tr \, \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}}\, R_k(\bar \Delta) G_k (\bar \Delta, \bar R ) \,.
-\label{eq:g-Rkg}
+  \label{eq:g-Rkg}
 \end{align}
 Moreover, in gravity the luxury of using a background field for gauge
 invariance turns into the necessity of using a background metric in
@@ -6781,12 +6802,13 @@ at least at $h=0$.
 \section{Background flow equations}
 %
 We start with the derivation of the background flow equations.
-These are on the one hand necessary for comparison and on the other hand we can express the level one couplings as background plus a Nielsen identity
+These are on the one hand necessary for comparison and on the other hand
+we can express the level one couplings as background plus a Nielsen identity
 We use a {\it type\,I} Litim regulator and the gauge $\alpha=0=\beta$.
 Furthermore we specialise the background to a sphere in four dimensions.
-The results for gravity part of the background flows agree with e.g.~\cite{Gies:2015tca}
-and the scalar part agrees with e.g.~\cite{Dona:2013qba}.
-The details of the computation are given in appendix \ref{app:msWItraces}.
+The results for gravity part of the background flows agree with Ref.~\cite{Gies:2015tca}
+and the scalar part agrees with Ref.~\cite{Dona:2013qba}.
+The details of the computation are given in App.~\ref{app:msWItraces}.
 
 The flow of the background couplings is given by
 \begin{align}
@@ -6796,8 +6818,8 @@ The flow of the background couplings is given by
 \end{align}
 where
 \begin{align}
-  \Flow_{\bar \Gamma} =& \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg\lbrace
+  &\Flow_{\bar \Gamma} = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \Bigg\lbrace
     \bigg[
       \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
       + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda}
@@ -6807,8 +6829,7 @@ where
       + N_s
     \bigg] k^4
     \notag \\
-    &\hspace{.7cm}
-    + \bigg[
+    &+ \bigg[
       - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
       - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
       + \frac{1}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - \frac 43 \lambda}
@@ -6818,8 +6839,7 @@ where
       + \frac {1}{3} N_s
     \bigg] k^2 \bar R
     \notag \\
-    &\hspace{.7cm}
-    + \bigg[
+    &+ \bigg[
         \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
       + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
       - \frac{1}{216} \frac{1}{1 - 2 \lambda}
@@ -6827,8 +6847,9 @@ where
       - \frac{149}{270}
       + \frac {29}{1080} N_s
     \bigg] \bar R^2
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
+  \Bigg\rbrace
+    \notag \\
+    &+ \mathcal O (\bar R^3) \,.
 \end{align}
 Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
 In this case the background couplings are non-dynamical spectators.
@@ -6846,12 +6867,11 @@ As derived in \autoref{sec:Nielsen-id}, we have made the approximation
 \end{align}
 Consequently we are interested in evaluating the quantity
 \begin{align}
-  \nonumber
   I \equiv&\, \frac 12 \, \Tr
   \left[
     \frac{1}{\sqrt{\bar g}} \, G_k \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k \Big)
-  \right]\\%[2ex]
-  =&\,
+  \right]
+  =
   \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - F_{\text{\tiny RG}}  \Big]
   + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, F_{\text{\tiny RG}} \Big)  \,,
   \label{eq:def-I}
@@ -6865,71 +6885,41 @@ In \eqref{eq:def-I} $F_{\text{\tiny RG}}(\bar \Delta)$ is the functional introdu
 % and the $x_0$ part of this term precisely cancels the $x_0$ part of $\Tr F_{\text{\tiny RG}}$ without a $\delta_{\bar g}$ derivative.
 All traces appearing in \eqref{eq:def-I} can be evaluated using heat kernel techniques.
 Details of the computation and intermediate results can be found in appendix \ref{app:msWItraces}.
-
-
 The results for $I$ are given by
-% \begin{align}
-%   \notag
-%   I =& \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
-%   \bigg\lbrace
-%     \bigg[
-%     \frac 5{12} \frac{1}{1 - 2 \lambda}
-%     + \frac 1{12} \frac{1}{1 - \frac 43 \lambda}
-%     - \frac{1}{3}
-%     + \frac{1}{12}N_s
-%     \bigg] k^4
-%     +\bigg[
-%       - \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-%       - \frac {5}{16} \frac{1}{1 - 2 \lambda}
-%       + \frac {1}{16} \frac{1}{1 - \frac 43 \lambda}
-%       - \frac {71}{288}
-%       + \frac {1}{16} N_s
-%     \bigg] k^2 \bar R
-%     \\
-%     &\hspace{1.1cm}
-%     + \bigg[
-%       \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
-%       + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-%       - \frac {1}{432} \frac{1}{1 - 2 \lambda}
-%       + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
-%       - \frac {169}{1440}
-%       + \frac {29}{4320} N_s
-%     \bigg] \bar R^2
-%   \bigg\rbrace
-%     + \mathcal O (\bar R^3) \,.
-% \end{align}
 \begin{align}
   \notag
-  8I =& \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
-  \bigg\lbrace
+  & 8I = \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
+  \Bigg\lbrace
     \bigg[
     \frac {10}{3} \frac{1}{1 - 2 \lambda}
     + \frac 2{3} \frac{1}{1 - \frac 43 \lambda}
     - \frac{8}{3}
-    + \frac{2}{3}N_s
+    + \frac{2}{3} \NS
     \bigg] k^4
-    +\bigg[
+    \nonumber \\
+    &+\bigg[
       - \frac {20}{9} \frac{1}{(1 - 2 \lambda)^2}
       - \frac {5}{2} \frac{1}{1 - 2 \lambda}
       + \frac {1}{2} \frac{1}{1 - \frac 43 \lambda}
       - \frac {71}{36}
-      + \frac {1}{2} N_s
+      + \frac {1}{2} \NS
     \bigg] k^2 \bar R
-    \\
-    &\hspace{1.1cm}
-    + 8\cdot \bigg[
+    \nonumber \\
+    &+ 8 \,
+    \bigg[
       \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
       + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
       - \frac {1}{432} \frac{1}{1 - 2 \lambda}
       + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
       - \frac {169}{1440}
-      + \frac {29}{4320} N_s
+      + \frac {29}{4320} \NS
     \bigg] \bar R^2
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
+  \Bigg\rbrace
+    \nonumber \\
+    &+ \mathcal O (\bar R^3) \,.
 \end{align}
-
-The flow equations for the level one couplings can now be expressed by flow of the background couplings plus the improvement from the Nielsen identity, to wit
+The flow equations for the level one couplings can now be expressed by flow of
+the background couplings plus the improvement from the Nielsen identity, to wit
 \begin{align}
  \partial_t \bar G_1 &= (2 + \eta_{N,1}) \bar G_1 \,, \\
  \partial_t \bar \Lambda_1 &= - 4 \bar \Lambda_1 + \frac{\bar \Lambda_1}{\bar G_1} \partial_t \bar G_1 + 8 \pi \bar G_1 \left(  \Flow_{\bar \Gamma} - 8 I \right) \bigg|_{\sqrt{\bar g} \text{-terms}} \,, \\
@@ -6941,16 +6931,20 @@ We can make an approximation in order to obtain a closed equation for the level 
 which is a similar approximation as the standard background field approximation.
 For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\eta_{N,1}$ and $\eta_c=0$.
 
-\begin{figure*}[!ht]
-\includegraphics[width=0.49\textwidth]{Background-g-comparison}
-\hfill
-\includegraphics[width=0.49\textwidth]{Fluctuation-g-comparison}
-\caption{Comparison of different gravitational couplings.
-In the left panel the background gravitational coupling is plotted with different input on the right hand side.
-In the right panel the highest dynamical coupling of different systems is plotted.
-The first system is the pure background system, the second is the level one improved background system and the last one is the fully fluctuating system.}
-\label{fig:Comparison-of-g}
-\end{figure*}
+\begin{figure}
+  \begin{center}
+    \input{figures/g-comparison.tex}
+  \end{center}
+  \caption{
+    Comparison of different gravitational couplings.
+    In the left panel the background gravitational coupling is plotted with different
+    input on the right hand side.
+    In the right panel the highest dynamical coupling of different systems is plotted.
+    The first system is the pure background system,
+    the second is the level one improved background system and the last one is the fully fluctuating system.
+  }
+  \label{fig:Comparison-of-g}
+\end{figure}
 
 \begin{figure*}[!ht]
 \includegraphics[width=0.49\textwidth]{Background-lam-comparison}
