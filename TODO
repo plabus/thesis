@@ -17,7 +17,6 @@ open issues chaper 5:
   -- notation
   -- figures
      (include tex files of pgfplots & missing pdf's)
-  -- references
   -- appendices
 
 write abstract
@@ -56,6 +55,9 @@ issues chaper 1:
 
 issues chaper 3:
   -- explain RG improvement
+
+issues chaper 5:
+  -- references
 
 conclusions 1--4
 
