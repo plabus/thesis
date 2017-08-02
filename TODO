@@ -12,9 +12,6 @@ all appendices: do I need \GNewton somewhere?
 TODO:
 =====
 
-open issues chaper 3:
-  -- explain RG improvement
-
 open issues chaper 5:
   -- introduction
   -- notation
@@ -56,6 +53,9 @@ issues chaper 1:
      uv critical surface fixes/predicts IR irrelevant couplings
      (including origin of the name (ir)relevant directions)
   -- larger arrows UV crit surface?
+
+issues chaper 3:
+  -- explain RG improvement
 
 conclusions 1--4
 
