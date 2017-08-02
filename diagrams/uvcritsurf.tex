@@ -59,18 +59,31 @@
   \draw[->] (FP) -- ($ (FP) + (dirx) $);
   \node at ($ (FP) + ( 0.38,-0.57) $) {$\hat g_1$};
   \draw[->] (FP) -- ($ (FP) + (diry) $);
-  \node at ($ (FP) + (-0.55,-0.52) $) {$\hat g_2$};
+  \node at ($ (FP) + (-0.60,-0.52) $) {$\hat g_2$};
   \draw[->] (FP) -- ($ (FP) + (dirz) $);
-  \node at ($ (FP) + (-0.20, 0.56) $) {$\hat g_3$};
+  \node at ($ (FP) + (-0.25, 0.56) $) {$\hat g_3$};
 
   % Annotation UV and IR critical surface
   \node at (SUV) {$\mathcal S_{\scriptscriptstyle{\mathrm{UV}}}$};
   \node at (SIR) {$\mathcal S_{\scriptscriptstyle{\mathrm{IR}}}$};
 
   % IR critical surface
-  \draw[midarrow,        line width=0.01mm] ($ (FP) + (IR) $) -- (FP);
-  \draw[midarrow-dashed, line width=0.01mm] ($ (FP) - (IR) $) -- (FP);
-  \draw[midarrow-rev,    line width=0.01mm] ($ (FP) - (IR) $) -- ($ (FP) - 1.5*(IR)$);
+  \draw[
+  postaction={decorate},
+  decoration={markings, mark=at position .55 with {\arrow[scale=2]{>}}},
+  line width=0.02mm,
+  ] ($ (FP) + (IR) $) -- (FP);
+  \draw[
+  dashed,
+  postaction={decorate},
+  decoration={markings, mark=at position .55 with {\arrow[scale=2]{>}}},
+  line width=0.02mm,
+  ] ($ (FP) - (IR) $) -- (FP);
+  \draw[
+  postaction={decorate},
+  decoration={markings, mark=at position .55 with {\arrow[scale=2]{<}}},
+  line width=0.02mm,
+  ] ($ (FP) - (IR) $) -- ($ (FP) - 1.5*(IR)$);
 
   % fundamental theory, with trajectory and dot
   \draw[fill] (Gamma) circle [radius=\dotradius] node[left] {$\Gamma$};

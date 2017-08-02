@@ -12,9 +12,6 @@ all appendices: do I need \GNewton somewhere?
 TODO:
 =====
 
-open issues chaper 1:
-  -- larger arrows UV crit surface?
-
 open issues chaper 3:
   -- explain RG improvement
 
@@ -46,6 +43,10 @@ OPTINAL:
 DONE:
 =====
 
+issues Introduction:
+  -- historical facts
+  -- validity EFTs
+
 issues chaper 1:
   -- Infliction potential?
   -- motivation scale-dependent W_k
@@ -54,10 +55,7 @@ issues chaper 1:
   -- explanation section 1.2 about how
      uv critical surface fixes/predicts IR irrelevant couplings
      (including origin of the name (ir)relevant directions)
-
-issues Introduction:
-  -- historical facts
-  -- validity EFTs
+  -- larger arrows UV crit surface?
 
 conclusions 1--4
 
