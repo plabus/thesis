@@ -14,9 +14,10 @@ TODO:
 
 open issues chaper 5:
   -- introduction
-  \subsection{Effective gravitational coupling}
-  \section{Nielsen identity \& applications}
-  \section{Level one couplings via Nielsen identities}
+  -- \subsection{Effective gravitational coupling}
+  -- \section{Nielsen identity \& applications}
+  -- definition F_RG
+  -- some interpretation last section
 
   -- figures (captions)
   -- appendices
@@ -53,6 +54,7 @@ issues chaper 3:
 issues chaper 5:
   -- references
   \section{Background flow equations}
+  -- \section{Level one couplings via Nielsen identities}
 
 conclusions 1--4
 

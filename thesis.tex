@@ -6870,8 +6870,9 @@ We then obtain the following flow equations for the background couplings
   \vphantom{ \frac{\bar \Lambda}{\bar G} }
   \partial_t \bar \Lambda
   &= - 4 \, \bar \Lambda + \frac{\bar \Lambda}{\bar G} \, \partial_t \bar G
-  + 8 \pi \bar G \; \Flow_{\bar \Gamma}\bigg|_{\mathcal O(\bR^0)} \,, \\
-\etaS &= 16 \pi \bar G \; \Flow_{\bar \Gamma}\bigg|_{\mathcal O(\bR^1)} \,,
+  + 8 \pi \bar G \; \Flow_{\bar \Gamma} \Big|_{\mathcal O(\bR^0)} \,, \\
+  \etaS &=
+   16 \pi \bar G \; \Flow_{\bar \Gamma} \Big|_{\mathcal O(\bR^1)} \,,
 \end{align}
 where
 \begin{align}
@@ -6919,20 +6920,25 @@ Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken
 from the fluctuation two-point function.
 In this case the background couplings are non-dynamical spectators.
 We obtain the usual background field approximation
-by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS=0$ and $\eta_c=0$.
+by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS$ and $\eta_c=0$.
 
 
-\section{Level one couplings via Nielsen identities}
+\section{Obtaining fluctuation couplings using the Ward identities}
 
-In this section we compute the level one couplings via a Nielsen identity from the
-background flow equations of the last section.
-As derived in \autoref{sec:Nielsen-id}, we have made the approximation
+In this section we want to compute the running of the level one fluctuation couplings
+using the modified split Ward identity together with the background flow equations of the last section.
+As derived in Sec.~\ref{sec:Nielsen-id}, we want to make the following approximation
 \begin{align}
- \frac{\delta}{\delta h_{\mu\nu}} \partial_t \Gamma_k \approx  \frac{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k
- - \partial_t \left( \frac 12 \Tr \frac 1{\sqrt{\bar g}} \frac{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k \right)
- \,.
+  \frac{\delta}{\delta h_{\mu\nu}} \partial_t \Gamma_k
+  \approx \frac{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k
+  - \partial_t
+  \left(
+    \frac 12 \Tr \frac 1{\sqrt{\bar g}} \frac{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k
+  \right) .
 \end{align}
-Consequently we are interested in evaluating the quantity
+Consequently, in order to extract the running of the fluctuation couplings from the one of the
+background couplings,
+we need to compute the flow of the following quantity:
 \begin{align}
   I \equiv&\, \frac 12 \, \Tr
   \left[
@@ -6940,19 +6946,13 @@ Consequently we are interested in evaluating the quantity
   \right]
   =
   \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - F_{\text{\tiny RG}}  \Big]
-  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, F_{\text{\tiny RG}} \Big)  \,,
+  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, F_{\text{\tiny RG}} \Big)  \,.
   \label{eq:def-I}
 \end{align}
-which gives us, combined with the background flows, the flows for the level one couplings.
-In \eqref{eq:def-I} $F_{\text{\tiny RG}}(\bar \Delta)$ is the functional introduced in \eqref{eq:FA}.
-% Here it seems that the $x_0$ dependence of $F_{\text{\tiny RG}}$ does not drop out anymore,
-% since $\Tr F_{\text{\tiny RG}}$ appears without a $\delta_{\bar g}$ derivative.
-% This is, however, a false conclusion since only in $\Tr \delta_{\bar g} F_{\text{\tiny RG}}$ the $x_0$ part vanishes
-% while in $\delta_{\bar g} \Tr F_{\text{\tiny RG}}$ the derivative hits the $\sqrt{\bar g}$ part of the trace
-% and the $x_0$ part of this term precisely cancels the $x_0$ part of $\Tr F_{\text{\tiny RG}}$ without a $\delta_{\bar g}$ derivative.
-All traces appearing in \eqref{eq:def-I} can be evaluated using heat kernel techniques.
-Details of the computation and intermediate results can be found in appendix \ref{app:msWItraces}.
-The results for $I$ are given by
+Here, $F_{\text{\tiny RG}}(\bar \Delta)$ is the functional introduced in \eqref{eq:FA}.
+All functional traces appearing in the last equation can be evaluated using heat kernel techniques.
+Details of the computation, as well as intermediate results may be found in App.~\ref{app:msWItraces}.
+There, we find the following result for $I$:
 \begin{align}
   \notag
   & 8I = \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
@@ -6964,14 +6964,16 @@ The results for $I$ are given by
     + \frac{2}{3} \NS
     \bigg] k^4
     \nonumber \\
+    \vphantom{ \Bigg\lbrace }
     &+\bigg[
       - \frac {20}{9} \frac{1}{(1 - 2 \lambda)^2}
       - \frac {5}{2} \frac{1}{1 - 2 \lambda}
       + \frac {1}{2} \frac{1}{1 - \frac 43 \lambda}
       - \frac {71}{36}
       + \frac {1}{2} \NS
-    \bigg] k^2 \bar R
+    \bigg] k^2 \bR
     \nonumber \\
+    \vphantom{ \Bigg\lbrace }
     &+ 8 \,
     \bigg[
       \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
@@ -6980,17 +6982,26 @@ The results for $I$ are given by
       + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
       - \frac {169}{1440}
       + \frac {29}{4320} \NS
-    \bigg] \bar R^2
+    \bigg] \bR^2
   \Bigg\rbrace
     \nonumber \\
-    &+ \mathcal O (\bar R^3) \,.
+    \vphantom{ \Bigg\lbrace }
+    &+ \mathcal O (\bR^3) \,.
 \end{align}
-The flow equations for the level one couplings can now be expressed by flow of
-the background couplings plus the improvement from the Nielsen identity, to wit
+The flow equations for the level one fluctuation couplings can now be expressed
+through the flow of the background couplings with the addition of the improvement
+coming from the modified split Ward identity.
+This yields
 \begin{align}
- \partial_t \bar G_1 &= (2 + \eta_{N,1}) \bar G_1 \,, \\
- \partial_t \bar \Lambda_1 &= - 4 \bar \Lambda_1 + \frac{\bar \Lambda_1}{\bar G_1} \partial_t \bar G_1 + 8 \pi \bar G_1 \left(  \Flow_{\bar \Gamma} - 8 I \right) \bigg|_{\sqrt{\bar g} \text{-terms}} \,, \\
- \eta_{N,1} &= 16 \pi \bar G_1 \left(\Flow_{\bar \Gamma} - 8 I  \right)\bigg|_{\sqrt{\bar g} \bar R \text{-terms}} \,.
+  \vphantom{ \frac{\bar \Lambda}{\bar G} }
+  \partial_t \bar G_1
+  &= \big( 2 + \eta_{S,1} \big) \, \bar G_1 \,, \\
+  \partial_t \bar \Lambda_1
+  &= - 4 \, \bar \Lambda_1 + \frac{\bar \Lambda_1}{\bar G_1} \, \partial_t \bar G_1
+  + 8 \pi \bar G_1 \, \big(  \Flow_{\bar \Gamma} - 8 I \big) \Big|_{\mathcal O(\bR^0)} \,, \\
+  \vphantom{ \frac{\bar \Lambda}{\bar G} }
+  \eta_{N,1}
+  &= 16 \pi \bar G_1 \, \big( \Flow_{\bar \Gamma} - 8 I  \big) \Big|_{\mathcal O(\bR^1)} \,.
 \end{align}
 The quantities in $I$ and $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
 Hence the level one couplings are non-dynamical spectators.
