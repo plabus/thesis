@@ -1,0 +1,61 @@
+\begin{tikzpicture}
+
+  \begin{groupplot}[
+    group style={group size=2 by 1, vertical sep=7pt},
+    width=0.49\linewidth,
+    grid=major,
+    grid style=dashed,
+    % ylabel absolute,
+    ]
+
+	\nextgroupplot[
+		xmin = 0,
+		xmax = 45,
+		ymin = 0,
+		ymax = 1,
+    xlabel={number of scalars $\NS$},
+    ylabel={fixed point values},
+    legend pos=north west,
+    legend cell align=left,
+    width=0.49\linewidth,
+	]
+		\addplot+[no marks, thick, red]
+      table [x index =0,y index = 2,col sep = comma]{Sources/Pure-Background-beta0.csv};
+		\addplot+[no marks, thick, blue, dashed]
+      table [x index =0,y index = 2,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
+		\addplot+[no marks, thick, cyan, dashdotted]
+      table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
+    \legend{
+      \, {$\bar \lambda^\star ( \eta_N , \bar \lambda^\star )$ },
+      \, {$\bar \lambda^\star ( \eta_{N,1},\lambda_1^\star )$},
+      \, {$\bar \lambda^\star ( \eta_h,\mu^\star )$},
+    }
+
+
+	\nextgroupplot[
+		xmin = 0,
+		xmax = 45,
+		ymin = 0,
+		ymax = 1,
+    xlabel={number of scalars $\NS$},
+    ylabel={fixed point values},
+    ylabel near ticks, yticklabel pos=right,
+    legend pos=north west,
+    legend cell align=left,
+    width=0.49\linewidth,
+	]
+		\addplot+[no marks, thick, red]
+      table [x index =0, y index = 2, col sep = comma]{Sources/Pure-Background-beta0.csv};
+		\addplot+[no marks, thick, blue, dashed]
+      table [x index =0, y index = 2, col sep = comma]{Sources/Improved-Background-beta0.csv};
+		\addplot+[no marks, thick, cyan, dashdotted]
+      table [x index =0, y expr = -\thisrowno{3}/2, col sep = comma]{Sources/Matter-flow-hss.csv};
+    \legend{
+      \, {$\bar \lambda^\star (\eta_N,\bar \lambda^\star )$},
+      \, {$\lambda_1^\star$},
+      \, {$- \nicefrac{\mu^\star}{2}$}
+    }
+
+  \end{groupplot}
+
+\end{tikzpicture}
