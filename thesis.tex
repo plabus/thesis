@@ -6306,90 +6306,113 @@ approximations used in gravity.
 It is also important for the convergence properties of the expansion schemes.
 
 
-\section{Present work}
+\section{Matter-gravity flow setup}
 
-In the present work we shed light onto the above questions. To that end
-we compare two ``versions" of the Newton coupling: The first is
-defined from the three-graviton vertex, as in
-\cite{Christiansen:2015rva,Meibohm:2015twa}, and its dimensionless
-version is called $G_{(3,0)}$. The second one is defined from the
-graviton-two-scalar vertex as in \cite{Dona:2015tnf}, and is called
-$G_{(1,2)}$. We use a symmetric momentum configuration. For the analytical
-results, we project at $p=0$. For the numerical results, we employ a
-bi-local projection, as in
-\cite{Christiansen:2015rva,Meibohm:2015twa}.\newline We also compare
-to the background Newton coupling, $\bar{G}$. We use the gauge
-$\alpha=0, \beta=1$.
+% In the present work we shed light onto the above questions.
+In this chapter we will compare two versions of the Newton coupling:
+The first is defined through the three-graviton vertex,
+as in Refs.~\cite{Christiansen:2015rva, Meibohm:2015twa}.
+We will call its dimensionless version $G_{(3,0)}$.
+The second coupling is defined through the one-graviton-two-scalar vertex as in
+the last chapter, and here we will denote its dimensionless version with $G_{(1,2)}$.
+We again use a symmetric momentum configuration.
+For the analytical results, we will project onto $p=0$.
+For the numerical results, we will employ a bi-local projection instead, as in
+Refs.~\cite{Christiansen:2015rva,Meibohm:2015twa}.
+We also compare our results with the background Newton coupling, $\bar{G}$.
+Throughout this chapter, we use the gauge a conventional gauge fixing procedure
+where we set the gauge parameters to $\alpha=0$ and $\beta=1$.
 
-We define our truncation as follows:
-Starting from an Einstein-Hilbert term
-(augmented by a gauge fixing and ghost action) and a kinetic term for the scalar,
+We will define our truncation in a very similar manner as in the last chapter:
+Starting from an auxiliary effective average action composed out of the Einstein-Hilbert action
+(including a cosmological constant, and augmented by a gauge fixing and ghost term)
+and a kinetic term for the minimally coupled $\NS$ scalar fields
 \begin{align}
-  S &= S_{\rm EH} + S_{\rm gf} + S_{\rm gh} + S_{\rm scalar}\nonumber\\
-    &= -\frac{1}{16 \pi \GNewton}
-  \int \mathrm d^4x \, \sqrt{g} \;
-  \left( R - 2 \Lambda \right) + S_{\rm gf} + S_{\rm gh} \nonumber\\
-  &+\frac{1}{2}\sum_{i=1}^{\NS} \int \mathrm d^4x \, \sqrt{g} \;
-  g^{\mu \nu} \partial_{\mu}\varphi^i\partial_{\nu}\varphi^i\,,
+  \hat \Gamma_k[\bgmunu, \, \hmunu, \, \varphi] = \int d^4x \, \sqrt{g} \,
+  \left[
+    - \frac{R - 2 \Lambda}{16 \pi \GNewton} + \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \nabla\varphi^i \right)^2
+  \right] ,
 \end{align}
-we insert the linear parametrisation Eq.~\eqref{eq:linpara} and
-expand to fifth order in $h_{\mu \nu}$ in the Einstein-Hilbert term and
-to third order in $h_{\mu \nu}$ in the kinetic term for the scalar.
-Then, we take into account the fact that the breaking of background independence
-results in a different running of the three-graviton from the four- and five-graviton vertex,
-as well as a different graviton-scalar vertices.
-Accordingly, we introduce separate dimensionful couplings, denoted by $\bar{G}_{(n_h, n_{\varphi})}$ in front of these vertices.
-Similarly, we distinguish the different incarnations of the cosmological constant
-by introducing the dimensionful graviton mass parameter $\bar{\mu}$ associated to $- 2 \Lambda$ and
-the momentum-independent part of the $n$-graviton vertex, $\bar{\lambda}_n$.
-Therefore, our flowing action now reads
+we insert the linear parametrisation Eqn.~\eqref{eq:linpara}.
+We then expand the Einstein-Hilbert term to fifth order and
+the kinetic term for the scalar fields to third order in $h_{\mu \nu}$.
+
+Once again, due to the breaking of background independence,
+the running of the three-graviton vertex will differ from the one of the four- and five-graviton vertex,
+as well as the different graviton-scalar vertices.
+Accordingly, we again introduce separate dimensionful couplings,
+denoted by $\bar{G}_{(n_h, n_{\varphi})}$ in front of these vertices.
+Similarly, we will have to distinguish the different avatars of the cosmological constant
+by introducing the dimensionful graviton mass parameter $\bar{\mu}$
+associated to $-2 \Lambda$ and the momentum-independent part of the $n$-graviton vertex,
+$\bar{\lambda}_n$.
+Thus, the effective average action of our truncation schematically reads
 \begin{align}
-  \Gamma_k &= Z_h \int \mathrm d^4 x\, h_{\mu \nu} \left(S_{G_N}^{(2,0)}\right)^{\mu \nu \kappa \lambda}h_{\kappa \lambda} \nonumber\\
-           &+ Z_h \bar{\mu}\, \int \mathrm  d^4 x\, h_{\mu \nu} \left(S_{\Lambda}^{(2,0)}\right)^{\mu \nu \kappa \lambda}h_{\kappa \lambda} \dots \mbox{ to complete }
+  \Gamma_k
+  &= Z_h \int \mathrm d^4 x \;
+  h_{\mu \nu} \left( \hat \Gamma_{\GNewton}^{(2,0)} \right)^{\mu \nu \kappa \lambda} h_{\kappa \lambda}
+  + Z_h \, \bar{\mu} \, \int \mathrm  d^4 x \;
+  h_{\mu \nu} \left( \hat \Gamma_{\Lambda}^{(2,0)} \right)^{\mu \nu \kappa \lambda} h_{\kappa \lambda}
+  + \dots \,.
 \end{align}
-Observe that the beta-function for $\bar{G}_{(4,0)}$ depends on $\bar{G}_{6,0}$ and
-that for $\bar{G}_{(5,0)}$ on $\bar{G}_{(6,0)}$ and $\bar{G}_{(7,0)}$,
-which we have excluded from our truncation.
-Deriving beta-functions for $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}$ as well as $\bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ within our truncation
-would thus yield only partial results, as important contributions to those beta functions would be missing.
-Instead, we derive only the beta functions for $\bar{G}_{(3,0)}$ and $\bar{G}_{(2,1)}$.
-All vertices which enter the flow of those couplings in a diagrammatic expansion of the flow equation are present within our truncation.
-To close the system of beta-functions, we therefore leave $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}, \bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ as well as $\bar{\lambda}_4, \bar{\lambda}_5$ as free parameters for now.
-These free parameters will show up in $\beta_{G_{(3,0)}}$ and $\beta_{G_{(2,1)}}$.
-Later, we will have the choice of either equating them to one of the lower-order couplings, or setting them to zero.
+As we have pointed out before, the beta function of $\bar{G}_{(4,0)}$
+depends on $\bar{G}_{(6,0)}$, and the one of $\bar{G}_{(5,0)}$
+on $\bar{G}_{(6,0)}$ and $\bar{G}_{(7,0)}$, which we have excluded from our truncation.
+% Deriving beta functions for $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}$
+% as well as $\bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ within our truncation
+% would thus yield only partial results, as important contributions to those beta functions would be missing.
+% Instead, we derive only the beta functions for $\bar{G}_{(3,0)}$ and $\bar{G}_{(2,1)}$.
+% All vertices which enter the flow of those couplings in a diagrammatic expansion of the
+% flow equation are present within our truncation.
+To close the system of beta functions, we will use a similar strategy as in the last chapter,
+and leave $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}, \bar{G}_{(2,2)}, \bar{G}_{(3,2)}$
+as well as $\bar{\lambda}_4, \bar{\lambda}_5$ as free parameters.
+These free parameters will then appear in the beta functions of $G_{(3,0)}$ and $G_{(2,1)}$.
+Later, we will have the choice of either equating them to one of the lower-order couplings,
+or setting them to zero.
+
 
 \section{Analytical results}
 
-In the following,
-all pure-graviton couplings will be set equal to $G_{(3,0)}$, i.e., $G_{n,0}= G_{(3,0)}$,
-and all graviton-matter couplings will be set equal to $G_{(1,2)}$, i.e., $G_{n,m}=G_{(1,2)}$ (for $m>0$).
-We then obtain
+In the following, all pure-graviton couplings will be set equal to $G_{(3,0)}$,
+\ie $G_{(n,0)}= G_{(3,0)}$, and all graviton-matter couplings will be set equal to $G_{(1,2)}$,
+\ie $G_{(n,m)}=G_{(1,2)}$ for $m>0$.
+We then obtain the following beta functions
 \begin{align}
-  \beta_{G_{(3,0)}} &= \beta_{G_{(3,0)}}|_{\rm grav} + 2 G_{(3,0)} +
-  3G_{(3,0)}\, \eta_h \phantom{\frac{1}{1}}\nonumber\\
-                    & - G_{(3,0)}^{1/2} \,G_{(1,2)}^{3/2}\, \NS\frac{86+\eta_S}{1140 \pi}, \label{eq:betaG3}\\
-  \beta_{G_{(1,2)}} &= \left(2 +\eta_h+ 2\eta_S\right)G_{(1,2)}
-   + \frac{2\sqrt{G_{(1,2)}}}{3\pi} \Bigl(-G_{(1,2)}^{3/2} \frac{6-\eta_h}{(\mu+1)^2} \nonumber\\
-  &+ \sqrt{G_{(3,0)}}G_{(1,2)} \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3} \Bigr)\label{eq:betag3},\\
-  &+ \bar{G}^2\, \NS\, \frac{1}{24\pi}(4-\eta_S).
-  \end{align}
-The shown background results are the same as in \cite{Dona:2013qba} since the contribution from
-the scalar loop is independent of the gauge.
+  \beta_{G_{(3,0)}}
+  &= \beta_{G_{(3,0)}}\big|_{\mathrm{grav}} + 2 G_{(3,0)} + 3 G_{(3,0)} \, \eta_h
+  - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \,,
+  \label{eq:betaG3} \\
+  \beta_{G_{(1,2)}}
+  &= \big( 2 + \eta_h+ 2\etaS \big) \, G_{(1,2)}
+  + \frac{ 2 \sqrt{G_{(1,2)}} }{ 3\pi }
+  + \bar{G}^2\, \NS\, \frac{1}{24\pi}(4-\etaS)
+  \nonumber \\
+  &+
+  \left(
+    - G_{(1,2)}^{3/2} \frac{6-\eta_h}{(\mu+1)^2}
+    + \sqrt{G_{(3,0)}}G_{(1,2)} \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3}
+  \right) .
+  \label{eq:betag3}
+\end{align}
+The background results displayed here are the same as in Ref.~\cite{Dona:2013qba},
+because the contribution from the scalar loops are independent of the gauge fixing.
 Our focus is on the $\NS$-dependent part.
 If we neglect for now that $\eta_h$ can have an $\NS$ dependence,
 we obtain a picture that suggests very strong violations of diffeomorphism invariance:
 Whereas the $\NS$ dependence in $\beta_{G_{(3,0)}}$ comes with $-\,\sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}$,
-there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$ (as there is no closed scalar loop that contributes).
+there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$
+(as there is no closed scalar loop which contributes in that case).
 Finally, the $\NS$ dependence in $\beta_{\bar{G}}$ comes with $+ \bar{G}^2$.
 In particular, let us focus on the comparison of the background flow with the fluctuation flow,
-which clearly feature an opposite sign.
-In the case of the background flow, the background-field dependence of the regulator yields extra
+which clearly features a different sign.
+In the case of the background flow, the background-field dependence of the regulator yields additional
 contributions to the flow, which are absent in the case of the fluctuation coupling.
 The background-field approximation does therefore not provide a reliable result for this case.
 
 Let us now add the graviton anomalous dimension, for which
 \begin{align}
-  \eta_h = -\eta_h\Big|_{\rm grav} + G_{(1,2)} \frac{\NS}{24 \pi}.
+  \eta_h = -\eta_h \Big|_{\rm grav} + G_{(1,2)} \frac{\NS}{24 \pi} \,.
 \end{align}
 If we insert this into Eqn.~\eqref{eq:betaG3} and \eqref{eq:betag3},
 we obtain the contribution $\sim \NS$ as follows:
