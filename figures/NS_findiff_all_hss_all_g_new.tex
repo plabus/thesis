@@ -18,21 +18,21 @@
 
     \addplot+[no marks, thick, red, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
       {Sources/Matter-flow-hss.csv};
-    \addplot+[no marks, thick, blue, dashed, mark size=0.3pt] table [x index =0,y index = 2,col sep = comma]
+    \addplot+[no marks, thick, blue, mark size=0.3pt] table [x index =0,y index = 2,col sep = comma]
       {Sources/Matter-flow-hss.csv};
-    \addplot+[no marks, thick, orange, dashdotted, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
+    \addplot+[no marks, thick, orange, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
       {Sources/Matter-flow-hss-bg-beta1.csv};
-    \addplot+[no marks, thick, cyan, dashdotted, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
+    \addplot+[no marks, thick, cyan, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
       {Sources/Matter-flow-hss-bg-beta0.csv};
     \addplot+[no marks, dotted] coordinates {(0.1,0)(70,0)};
     \addplot+[no marks, black] coordinates {(44.6,-1)(44.6,5)};
 
     \legend{
-      \, $g_3^\star$,
-      \, $G_3^\star$,
+      \, $G_{(3,0)}^\star$,
+      \, $G_{(1,2)}^\star$,
       \, $\bar G^\star(\beta=0)$,
       \, $\bar G^\star(\beta=1)$
-    },
+    }
   \end{axis}
 
 \end{tikzpicture}
