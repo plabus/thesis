@@ -6535,9 +6535,9 @@ are violated at large $\NS$.
 \subsection{Effective gravitational coupling}
 
 Metric fluctuations enter the diagrams with a propagator of the form
-$\frac{G_{(n,m)}}{1+\mu} = g_{\rm eff,\,1}$
+$g^{\mathrm{eff}}_1 \equiv \nicefrac{G_{(n,m)}}{1+\mu}$
 and
-$\frac{G_{(n,m)}}{\left(1+\mu\right)^2}= g_{\rm eff, \, 2}$,
+$g^{\mathrm{eff}}_2 \equiv \nicefrac{G_{(n,m)}}{\left(1+\mu\right)^2}$,
 which we define as the two effective gravitational couplings.
 The second is the effective coupling associated to a graviton propagator with an insertion
 of $\partial_t R_k$.
@@ -6568,28 +6568,32 @@ $g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
 
 \subsection{Large $\NS$ limit}
 
-In the limit of large $\NS$, all loops which are not given by closed
-scalar loops, are suppressed by $\nicefrac{1}{\NS}$. We assume that this
-suppression is not counteracted by a scaling of couplings with $\NS$.
-Accordingly, the results within our truncation simplify to the
-following
+In the limit of large $\NS$, all closed loops which do not feature a
+propagating scalar field are suppressed by a factor of $\nicefrac{1}{\NS}$.
+We will assume here, that this suppression is not counteracted by an implicit scaling
+with $\NS$ of the couplings.
+With this assumption, we obtain the following large $\NS$ limit within our truncation:
 \begin{align}
-  \beta_{G_{(3,0)}} &= 2 G_{(3,0)} + 3 G_{(3,0)} \eta_h - \sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}\NS\, \frac{86}{1140 \pi},\\
-  \beta_{G_{(1,2)}} &= 2 G_{(1,2)} + G_{(1,2)} \eta_h \,, \\
-  \eta_h &= G_{(1,2)} \NS \frac{1}{24 \pi} \,, \\
+  \beta_{G_{(3,0)}}
+  &= 2 \, G_{(3,0)} + 3 \, G_{(3,0)} \, \eta_h
+  - \sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2} \, \NS\, \frac{86}{1140 \pi} \,, \\[3pt]
+  \beta_{G_{(1,2)}} &= 2 \, G_{(1,2)} + G_{(1,2)} \, \eta_h \,, \\[3pt]
+  \eta_h &= G_{(1,2)} \, \NS \, \frac{1}{24 \pi} \,, \\[3pt]
   \etaS &= 0 \,.
 \end{align}
 As the system is only driven by scalar fluctuations, the increase of
 $\eta_h$ does not pose a problem for the choice of regulator.
+
 This system admits three fixed points
 \begin{alignat}{5}
-  G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &= 0 \,,                         & \theta_{1,2}   &=-2 \,, \\
-  G_{3\, \star}  &=-\frac{355008 \pi}{9025 \NS} \,, \qquad & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,, \qquad & \theta_{1,2}   &= 2 \,, \\
+  G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &= 0 \,,                         & \theta_{1,2}   &=-2 \,, \\[3pt]
+  G_{3\, \star}  &=-\frac{355008 \pi}{9025 \NS} \,, \qquad & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,, \qquad & \theta_{1,2}   &= 2 \,, \\[3pt]
   G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,,        & \theta_1       &= 2 \,, \;\; \theta_2 \rightarrow - i \, \infty \,.
 \end{alignat}
-Due to the presence of the Gaussian fixed point, the fixed point at
-negative $G_{(3,0)}, G_{(1,2)}$ cannot be connected to positive values of the
-Newton coupling in the infrared.
+Due to the presence of the Gaussian fixed point, the fixed point with
+negative values of  $G_{(3,0)}$ and $G_{(1,2)}$ cannot be connected
+to positive values of the Newton couplings in the infrared. It must thus
+be regarded as unphysical.
 
 
 \section{Nielsen identity \& applications} \label{sec:Nielsen-id}

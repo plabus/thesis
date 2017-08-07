@@ -14,9 +14,12 @@ TODO:
 
 open issues chaper 5:
   -- introduction
-  -- notation
-  -- figures
-     ( fix shaded regions )
+  \subsection{Effective gravitational coupling}
+  \section{Nielsen identity \& applications}
+  \section{Background flow equations}
+  \section{Level one couplings via Nielsen identities}
+
+  -- figures (captions)
   -- appendices
 
 write abstract
