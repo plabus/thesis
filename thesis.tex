@@ -6460,61 +6460,76 @@ flows at the level of the fluctuations couplings.
 
 \section{Numerical results}
 
-Here, we will use a bi-local projection for the Newton couplings,
-and will include the anomalous dimension projected at $k$.
-Our projection prescriptions are
-\begin{align}
-  \dot G_{(3,0)} &= 2G_{(3,0)} + 3 \eta_h(k^2) G_{(3,0)} -\frac{24}{19}\left(\eta_h(k^2)
-  -\eta_h(0)\right)\lambda_3\ G_{(1,2)} \\
-  &+ \frac{64}{171}
-  \frac{(32\pi)^2\sqrt{G_{(3,0)}}}{k}\left(\text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(k^2)-
-  \text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(0)\right),\nonumber\\
-  \dot G_{(1,2)} &= 2 G_{(1,2)} + \eta_h(k^2)G_{(1,2)} +2 \etaS(k^2)G_{(1,2)}\\
-                 &+ \frac{32 \pi\, \sqrt{G_{(1,2)}}}{k}\frac{8}{3}\text{Flow}^{(h\varphi\varphi)}_{{\rm TT},G_{(1,2)}}(k^2).\nonumber
-\end{align}
-Here, the notation ${\rm TT}, G_{(3,0)}/G_{(1,2)}$ indicates a contraction of the right hand side
-of the Wetterich equation with the projector onto the corresponding coupling,
-as in Refs.~\cite{Meibohm:2015twa, Dona:2013qba}.
-
-We then obtain a qualitatively similar behaviour with $\NS$ as in the analytical case,
-\cf \autoref{fig:NewtoncouplingFPs}.
-In particular, all three Newton couplings are driven to larger fixed-point values when $\NS$ is increased.
-Remarkably, the quantitative deviations between the three different couplings are not even particularly large.
-
-Moreover, the behaviour is in agreement with that of $G_{(1,2)}$ in \cite{Dona:2015tnf},
-which employed a different choice of parametrisation, gauge, and projection.
-This robustness with respect to (unphysical) variations of the scheme is encouraging.
-
 \begin{figure}[t]
   \begin{center}
     \input{figures/NS_findiff_all_hss_all_g_new.tex}
   \end{center}
   \caption{
-    Comparison of the fixed point values for the three avatars of Newton's constant:
+    Comparison of the numerical results of the fixed point values
+    for the three avatars of Newton's constant:
     the three-graviton coupling (red line),
     the graviton-scalar-coupling (blue line) and the background coupling
     in two different gauges (orange and light blue line).
   }
   \label{fig:NewtoncouplingFPs}
 \end{figure}
-%
+
+To obtain numerical results, we will use a bi-local projection for the Newton couplings,
+and include the anomalous dimension projected at scale $k$.
+Our projection prescriptions are
+\begin{align}
+  \beta_{G_{(3,0)}} &= 2 \, G_{(3,0)} + 3  \, \eta_h(k^2)  \, G_{(3,0)}
+  - \frac{24}{19}
+  \Big(
+    \eta_h(k^2)
+    -\eta_h(0)
+  \Big)
+  \lambda_3 \, G_{(1,2)}
+  \nonumber \\[3pt]
+  &+ \frac{64}{171} \, \frac{ (32\pi)^2 \, \sqrt{G_{(3,0)}} }{ k }
+  \left(
+    \text{Flow}^{(hhh)}_{{\TT},G_{(3,0)}}(k^2)-
+    \text{Flow}^{(hhh)}_{{\TT},G_{(3,0)}}(0)
+  \right) ,
+  \\[5pt]
+  \beta_{G_{(1,2)}} &= 2 \, G_{(1,2)} + \eta_h(k^2) \, G_{(1,2)} + 2 \, \etaS(k^2) \, G_{(1,2)}
+  \nonumber \\[3pt]
+  &+ \frac{ 32 \pi \, \sqrt{G_{(1,2)}} }{ 8 } \, \frac{8}{3} \;
+  \text{Flow}^{(h\varphi\varphi)}_{{\TT},G_{(1,2)}}(k^2) \,.
+\end{align}
+Here, the subscripts ${\TT}, G_{(3,0)}$ and ${\TT}, G_{(1,2)}$
+indicate that a projection onto the corresponding coupling
+is carried out on the right hand side of the exact renormalisation group equation,
+\cf the procedure of Refs.~\cite{Meibohm:2015twa, Dona:2013qba}.
+
+We then obtain a qualitatively very similar behaviour as in the analytical case,
+\cf \autoref{fig:NewtoncouplingFPs}.
+In particular, all three Newton couplings are driven towards larger
+fixed point values when $\NS$ is increased.
+Remarkably, the quantitative deviations between the three avatars are not particularly large.
+
+Moreover, the behaviour is in agreement with that of $g_3$ in the last chapter,
+where we employed a different choice of parametrisation, gauge, and projection.
+The robustness of the results with respect to these unphysical variations of the
+scheme is very encouraging.
+
+When the fluctuation couplings enter the graviton anomalous dimension,
+$\eta_h$ increases as a function of $\NS$, \cf \autoref{fig:allFPvalues}.
+This implies that the bounds on $\eta_h$, discussed in Ref.~\cite{Meibohm:2015twa},
+are violated at large $\NS$.
+
 \begin{figure}[t]
   \begin{center}
     \input{figures/NS_findiff_all_hss_b.tex}
   \end{center}
   \caption{
-    We plot the fixed-point values, the (real part of) critical exponents,
+    We plot the fixed point values, the (real part of) critical exponents,
     and the anomalous dimensions as a function of $\NS$.
-    The line at $\NS \approx 17$ shows where $\eta_h(0)$ exceeds two,
-    and the line at $\NS \approx 45$ shows where $\eta_h(k^2)$ also exceeds 2.
+    The dashed line at $\NS = 17$ shows where $\eta_h(0)$ exceeds 2,
+    whereas the one at $\NS = 45$ shows where $\eta_h(k^2)$ exceeds 2.
   }
   \label{fig:allFPvalues}
 \end{figure}
-
-As the fluctuation Newton couplings enter the graviton anomalous dimension,
-$\eta_h$ increases as a function of $\NS$, \cf \autoref{fig:allFPvalues}.
-This implies that the bounds on $\eta_h$, discussed in Ref.~\cite{Meibohm:2015twa},
-are violated at large $\NS$.
 
 
 \subsection{Effective gravitational coupling}
@@ -6554,7 +6569,7 @@ $g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
 \subsection{Large $\NS$ limit}
 
 In the limit of large $\NS$, all loops which are not given by closed
-scalar loops, are suppressed by $\frac{1}{\NS}$. We assume that this
+scalar loops, are suppressed by $\nicefrac{1}{\NS}$. We assume that this
 suppression is not counteracted by a scaling of couplings with $\NS$.
 Accordingly, the results within our truncation simplify to the
 following
