@@ -6469,7 +6469,7 @@ flows at the level of the fluctuations couplings.
     for the three avatars of Newton's constant:
     the three-graviton coupling (red line),
     the graviton-scalar-coupling (blue line) and the background coupling
-    in two different gauges (orange and light blue line).
+    in two different gauges (orange and cyan line).
   }
   \label{fig:NewtoncouplingFPs}
 \end{figure}
@@ -6852,35 +6852,41 @@ at least at $h=0$.
 
 
 \section{Background flow equations}
-%
-We start with the derivation of the background flow equations.
-These are on the one hand necessary for comparison and on the other hand
-we can express the level one couplings as background plus a Nielsen identity
-We use a {\it type\,I} Litim regulator and the gauge $\alpha=0=\beta$.
-Furthermore we specialise the background to a sphere in four dimensions.
-The results for gravity part of the background flows agree with Ref.~\cite{Gies:2015tca}
-and the scalar part agrees with Ref.~\cite{Dona:2013qba}.
-The details of the computation are given in App.~\ref{app:msWItraces}.
 
-The flow of the background couplings is given by
+In this section we have a look at the flow equations of the background couplings.
+First of all, they are necessary to be able to directly compare
+results of the background field approximation with the fluctuation field results.
+Furthermore, we will use them to express the flow of the level one fluctuation couplings
+with the flow of the background quantities and the modified split Ward identities.
+Once again, we use a type I optimised cutoff and fix the gauge parameters to be
+$\alpha=\beta=0$.
+We also specialise the background to a sphere in four dimensions.
+
+We then obtain the following flow equations for the background couplings
 \begin{align}
- \partial_t \bar G &= (2 + \eta_N) \bar G \,,\\
- \partial_t \bar \Lambda &= - 4 \bar \Lambda + \frac{\bar \Lambda}{\bar G} \partial_t \bar G + 8 \pi \bar G \Flow_{\bar \Gamma}\bigg|_{\sqrt{\bar g} \text{-terms}} \,,\\
- \eta_N &= 16 \pi \bar G \Flow_{\bar \Gamma}\bigg|_{\sqrt{\bar g} \bar R \text{-terms}} \,,
+  \vphantom{ \frac{\bar \Lambda}{\bar G} }
+  \partial_t \bar G
+  &= \big( 2 + \etaS \big) \, \bar G \,, \\
+  \vphantom{ \frac{\bar \Lambda}{\bar G} }
+  \partial_t \bar \Lambda
+  &= - 4 \, \bar \Lambda + \frac{\bar \Lambda}{\bar G} \, \partial_t \bar G
+  + 8 \pi \bar G \; \Flow_{\bar \Gamma}\bigg|_{\mathcal O(\bR^0)} \,, \\
+\etaS &= 16 \pi \bar G \; \Flow_{\bar \Gamma}\bigg|_{\mathcal O(\bR^1)} \,,
 \end{align}
 where
 \begin{align}
   &\Flow_{\bar \Gamma} = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
   \Bigg\lbrace
     \bigg[
-      \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
+        \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
       + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda}
       - 4
       - \frac{2}{3} \, \eta_h
       + \frac{4}{3} \, \eta_c
-      + N_s
+      + \NS
     \bigg] k^4
     \notag \\
+    \vphantom{ \Bigg\lbrace }
     &+ \bigg[
       - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
       - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
@@ -6888,29 +6894,38 @@ where
       - \frac{23}{12}
       - \frac{7}{18} \, \eta_h
       + \frac{14}{18} \, \eta_c
-      + \frac {1}{3} N_s
-    \bigg] k^2 \bar R
+      + \frac {1}{3} \NS
+    \bigg] k^2 \bR
     \notag \\
+    \vphantom{ \Bigg\lbrace }
     &+ \bigg[
         \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
       + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
       - \frac{1}{216} \frac{1}{1 - 2 \lambda}
       + \frac{29}{1080} \frac{1}{1 - \frac 43 \lambda}
       - \frac{149}{270}
-      + \frac {29}{1080} N_s
-    \bigg] \bar R^2
+      + \frac {29}{1080} \NS
+    \bigg] \bR^2
   \Bigg\rbrace
     \notag \\
-    &+ \mathcal O (\bar R^3) \,.
+    \vphantom{ \Bigg\lbrace }
+    &+ \mathcal O (\bR^3) \,.
 \end{align}
-Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
+Our result for the gravity part of the background flows agrees with Ref.~\cite{Gies:2015tca},
+and the scalar part agrees with Ref.~\cite{Dona:2013qba}.
+Details of the derivation may be found in App.~\ref{app:msWItraces}.
+
+Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken
+from the fluctuation two-point function.
 In this case the background couplings are non-dynamical spectators.
-We obtain the usual background field approximation by setting $\lambda=\bar\Lambda$, $\eta_h=\eta_N$ and $\eta_c=0$.
+We obtain the usual background field approximation
+by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS=0$ and $\eta_c=0$.
 
 
 \section{Level one couplings via Nielsen identities}
-%
-In this section we compute the level one couplings via a Nielsen identity from the background flow equations of the last section.
+
+In this section we compute the level one couplings via a Nielsen identity from the
+background flow equations of the last section.
 As derived in \autoref{sec:Nielsen-id}, we have made the approximation
 \begin{align}
  \frac{\delta}{\delta h_{\mu\nu}} \partial_t \Gamma_k \approx  \frac{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k
