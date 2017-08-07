@@ -5783,6 +5783,7 @@ This gives rise to a beta function of the form
 \begin{align}
   \beta_{g_3} = 2 g_3 - \frac{1}{3\pi} \, g_3^2 \left( 10-\frac{\NS}{8} \right) + \mathcal{O}(g_3^3).
   \label{norma}
+  \label{eq:betag3ch4a}
 \end{align}
 Herein, the factor $10/3\pi$ differs from the  factor $47/18\pi$ in
 Eqn.~\eqref{purgravitysemipertbeta} since it includes contributions form scalar fluctuations
@@ -5963,6 +5964,7 @@ This yields a new contribution to $\beta_{g_3}$, which now reads
 Using $\etaS = \frac{7}{4\pi} \, g_3 + \mathcal{O}(g_3^2)$, Eqn.~(\ref{norma}) gets replaced by
 \begin{align}
   \beta_{g_3} = 2 g_3 +\frac{4+\NS}{24\pi} \, g_3^2 + \mathcal{O}(g_3^3).
+  \label{eq:betag3ch4b}
 \end{align}
 Therefore, in this simplified form,
 the terms of $\mathcal O(g_3^2)$ in the beta function
@@ -6377,17 +6379,20 @@ or setting them to zero.
 In the following, all pure-graviton couplings will be set equal to $G_{(3,0)}$,
 \ie $G_{(n,0)}= G_{(3,0)}$, and all graviton-matter couplings will be set equal to $G_{(1,2)}$,
 \ie $G_{(n,m)}=G_{(1,2)}$ for $m>0$.
+
 We then obtain the following beta functions
 \begin{align}
   \beta_{G_{(3,0)}}
-  &= \beta_{G_{(3,0)}}\big|_{\mathrm{grav}} + 2 G_{(3,0)} + 3 G_{(3,0)} \, \eta_h
+  &= \beta_{G_{(3,0)}} \Big|_{\mathrm{grav}}
+  + 2 \, G_{(3,0)}
+  + 3 \, G_{(3,0)} \, \eta_h
   - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \,,
-  \label{eq:betaG3} \\
+  \label{eq:betaG3} \\[3pt]
   \beta_{G_{(1,2)}}
   &= \big( 2 + \eta_h+ 2\etaS \big) \, G_{(1,2)}
   + \frac{ 2 \sqrt{G_{(1,2)}} }{ 3\pi }
   + \bar{G}^2\, \NS\, \frac{1}{24\pi}(4-\etaS)
-  \nonumber \\
+  \nonumber \\[3pt]
   &+
   \left(
     - G_{(1,2)}^{3/2} \frac{6-\eta_h}{(\mu+1)^2}
@@ -6397,56 +6402,60 @@ We then obtain the following beta functions
 \end{align}
 The background results displayed here are the same as in Ref.~\cite{Dona:2013qba},
 because the contribution from the scalar loops are independent of the gauge fixing.
-Our focus is on the $\NS$-dependent part.
-If we neglect for now that $\eta_h$ can have an $\NS$ dependence,
+Our focus here will be on the $\NS$-dependent part instead.
+If we neglect for the moment that $\eta_h$ can develop an $\NS$ dependence,
 we obtain a picture that suggests very strong violations of diffeomorphism invariance:
-Whereas the $\NS$ dependence in $\beta_{G_{(3,0)}}$ comes with $-\,\sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}$,
+Whereas the $\NS$ dependence in $\beta_{G_{(3,0)}}$ comes with a factor
+$-\sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2}$,
 there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$
-(as there is no closed scalar loop which contributes in that case).
-Finally, the $\NS$ dependence in $\beta_{\bar{G}}$ comes with $+ \bar{G}^2$.
+(because there is no closed scalar loop which contributes in that case)
+and the $\NS$ dependence in $\beta_{\bar{G}}$ is proportional to $+\bar{G}^2$.
 In particular, let us focus on the comparison of the background flow with the fluctuation flow,
 which clearly features a different sign.
-In the case of the background flow, the background-field dependence of the regulator yields additional
+In the case of the background flow, the background field dependence of the regulator yields additional
 contributions to the flow, which are absent in the case of the fluctuation coupling.
-The background-field approximation does therefore not provide a reliable result for this case.
+The background field approximation therefore does not provide a reliable result in this case.
 
 Let us now add the graviton anomalous dimension, for which
 \begin{align}
-  \eta_h = -\eta_h \Big|_{\rm grav} + G_{(1,2)} \frac{\NS}{24 \pi} \,.
+  \eta_h = \eta_h \Big|_{\rm grav} + G_{(1,2)} \, \frac{\NS}{24 \pi} \,.
 \end{align}
-If we insert this into Eqn.~\eqref{eq:betaG3} and \eqref{eq:betag3},
-we obtain the contribution $\sim \NS$ as follows:
+If we insert this relation into Eqns.~\eqref{eq:betaG3} and \eqref{eq:betag3},
+we obtain the following contribution linear in $\NS$
 \begin{align}
-  \beta_{G_{(3,0)}}\Big|_{\NS} &= 3 G_{(3,0)} G_{(1,2)} \frac{\NS}{24 \pi}
-  - G_{(3,0)}^{1/2} \,G_{(1,2)}^{3/2}\, \NS\frac{86+\eta_S}{1140 \pi} \nonumber\\
-                               &= g^2  \NS \frac{113}{2280 \pi} \approx 0.016\, g^2 \NS \,, \\
-  \beta_{G_{(1,2)}} \Big|_{\NS}&= G_{(1,2)}^2 \frac{\NS}{24 \pi} \nonumber\\
-                               &\approx 0.013 \,g^2 \NS \,.
+  \beta_{G_{(3,0)}}\Big|_{\NS} &= 3 \, G_{(3,0)} \, G_{(1,2)} \, \frac{\NS}{24 \pi}
+  - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \nonumber\\[3pt]
+                               &= g^2 \, \NS \, \frac{113}{2280 \pi} \approx 0.016 \, g^2 \, \NS \,, \\[5pt]
+  \beta_{G_{(1,2)}} \Big|_{\NS}&= G_{(1,2)}^2 \, \frac{\NS}{24 \pi} \nonumber\\[3pt]
+                               &\approx 0.013 \, g^2 \, \NS \,,
 \end{align}
 where we have set $G_{(1,2)} = G_{(3,0)} = g$ in the second lines of both equations.
-These two results agree rather well, with a 16 \% deviation of the coefficients.
-Thus, taking into account a non-trivial graviton anomalous dimension leads to a very similar
-behaviour for those two different couplings, as suggested by diffeomorphism invariance.
-Further, we observe that the same sign of the coefficient as in $\beta_{G_{(1,2)}}$ has been obtained
-within the exponential parametrization and the so-called physical gauge, see Eqn.~(59) in
-Ref.~\cite{Dona:2015tnf}.
+These two results agree within a 16\% deviation with each other.
+That is, allowing for a non-trivial graviton anomalous dimension
+forces the two couplings to behave very similarly,
+as (classical) diffeomorphism invariance would have suggested in the first place.
+Furthermore, we observe that the contribution to $\beta_{G_{(1,2)}}$ comes
+with the same sign as in the exponential parametrisation and using the physical gauge,
+\cf Eqns.~\eqref{eq:betag3ch4a} and \eqref{eq:betag3ch4b} in the last chapter.
 
-For the background coupling, the coefficient is larger by a factor of 4.
-Nevertheless, the three definitions of the coupling share the qualitative behaviour,
-and their fixed points grow as a function of $\NS$.
+For the background coupling, the $\NS$ coefficient is larger by a factor of four.
+Nevertheless, all three definitions of the coupling share the same qualitative behaviour,
+and their values at the fixed point grow as a function of $\NS$.
 The running of the Newton coupling thus features an effective universality,
-\ie different definitions of the coupling lead to qualitative agreement on the running.
+\ie different definitions of the coupling lead to qualitatively similar behaviour in
+their scale-dependence.
 
-The agreement between the fluctuation results and the background result relies on the dominance
-of the graviton anomalous dimension in the case of the fluctuation results,
-which yields an opposite sign for the $\NS$-dependence of the flow of the coupling as compared
-to that of the vertex (which does not include $\eta_h$).
-Note that the flow of the 3-graviton vertex itself has the opposite sign from the background result,
-and the equality of the signs only appears at the level of the couplings.
+However, the agreement between the fluctuation and the background field results rely
+on the dominance of the graviton anomalous dimension.
+% which yields an opposite sign for the $\NS$-dependence of the flow of the coupling as compared
+% to that of the vertex (which does not include $\eta_h$).
+Note that the flow of the 3-graviton vertex itself has the opposite sign
+as compared to the background field result,
+and the same sign only appears at the level of the couplings.
 At present, it is unclear whether the qualitative agreement of the background approximation with
 the fluctuation result has a deeper reason, or is accidental.
-Thus, we stress that it is necessary to evaluate gravitational RG flows at the level of the
-fluctuations couplings.
+This is why, we believe, it is necessary to evaluate gravitational renormalisation group
+flows at the level of the fluctuations couplings.
 
 
 \section{Numerical results}
@@ -6460,7 +6469,7 @@ Our projection prescriptions are
   &+ \frac{64}{171}
   \frac{(32\pi)^2\sqrt{G_{(3,0)}}}{k}\left(\text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(k^2)-
   \text{Flow}^{(hhh)}_{{\rm TT},G_{(3,0)}}(0)\right),\nonumber\\
-  \dot G_{(1,2)} &= 2 G_{(1,2)} + \eta_h(k^2)G_{(1,2)} +2 \eta_S(k^2)G_{(1,2)}\\
+  \dot G_{(1,2)} &= 2 G_{(1,2)} + \eta_h(k^2)G_{(1,2)} +2 \etaS(k^2)G_{(1,2)}\\
                  &+ \frac{32 \pi\, \sqrt{G_{(1,2)}}}{k}\frac{8}{3}\text{Flow}^{(h\varphi\varphi)}_{{\rm TT},G_{(1,2)}}(k^2).\nonumber
 \end{align}
 Here, the notation ${\rm TT}, G_{(3,0)}/G_{(1,2)}$ indicates a contraction of the right hand side
@@ -6481,9 +6490,10 @@ This robustness with respect to (unphysical) variations of the scheme is encoura
     \input{figures/NS_findiff_all_hss_all_g_new.tex}
   \end{center}
   \caption{
-    We show the fixed-point values for the three Newton couplings:
-    The three-graviton coupling (red continuous line),
-    the graviton-scalar-coupling (blue dashed line) and the background coupling (dot-dashed orange line).
+    Comparison of the fixed point values for the three avatars of Newton's constant:
+    the three-graviton coupling (red line),
+    the graviton-scalar-coupling (blue line) and the background coupling
+    in two different gauges (orange and light blue line).
   }
   \label{fig:NewtoncouplingFPs}
 \end{figure}
@@ -6552,7 +6562,7 @@ following
   \beta_{G_{(3,0)}} &= 2 G_{(3,0)} + 3 G_{(3,0)} \eta_h - \sqrt{G_{(3,0)}}G_{(1,2)}^{3/2}\NS\, \frac{86}{1140 \pi},\\
   \beta_{G_{(1,2)}} &= 2 G_{(1,2)} + G_{(1,2)} \eta_h \,, \\
   \eta_h &= G_{(1,2)} \NS \frac{1}{24 \pi} \,, \\
-  \eta_S &= 0 \,.
+  \etaS &= 0 \,.
 \end{align}
 As the system is only driven by scalar fluctuations, the increase of
 $\eta_h$ does not pose a problem for the choice of regulator.
