@@ -83,7 +83,7 @@
 		xmin = 0,
 		xmax = 55,
 		ymin = -6,
-		ymax = 10,
+		ymax = 15,
 		major tick length =1pt,
     xlabel={number of scalars $\NS$},
     ylabel={anomalous dimensions},
@@ -93,17 +93,21 @@
 	]
 		\filldraw[pattern=north east lines, draw=none]
 			  (524,0) rectangle +(34,550);
-		\addplot+[no marks, thick, blue,mark size=0.3pt] table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
-		\addplot+[no marks, thick, blue,dashed,name path=etah0] table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
-		\addplot+[no marks, thick, red,mark size=0.3pt] table [x index =0,y index = 4,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
-		\addplot+[no marks, thick, red,dashed, mark size=0.3pt] table [x index =0,y index = 3,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
+		\addplot+[no marks, thick, blue,mark size=0.3pt]
+      table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
+		\addplot+[no marks, thick, blue,dashed,name path=etah0]
+      table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
+		\addplot+[no marks, thick, red,mark size=0.3pt]
+      table [x index =0,y index = 4,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
+		\addplot+[no marks, thick, red,dashed, mark size=0.3pt]
+      table [x index =0,y index = 3,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
 		\addplot+[no marks, thick, orange, mark size=0.3pt] coordinates {(0.1,0)(52.2,0)};
 		\addplot+[no marks, thick,dashed, orange, mark size=0.3pt] coordinates {(0.1,0)(52.2,0)};
 		\addplot+[forget plot,no marks, dotted] coordinates {(0,0)(70,0)};
 		\addplot+[name path=limit,forget plot,no marks, dotted] coordinates {(0,2)(70,2)};
-		\addplot+[no marks, black] coordinates {(17.4,-6)(17.4,12)};
+		\addplot+[no marks, black] coordinates {(17.4,-6)(17.4,15)};
 		\draw (110,105) node {$N_{s_{\mbox{\tiny trunc,1}}}$};
-		\addplot+[no marks, black] coordinates {(44.6,-6)(44.6,12)};
+		\addplot+[no marks, black] coordinates {(44.6,-6)(44.6,15)};
 		\draw (382,50) node {$N_{s_{\mbox{\tiny trunc,2}}}$};
 
     \legend{
