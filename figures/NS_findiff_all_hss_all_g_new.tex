@@ -2,7 +2,7 @@
 
   \begin{axis}[
     xmin=0,
-    xmax=55,
+    xmax=52,
     ymin=0,
     ymax=5,
     major tick length =1pt,
@@ -13,8 +13,8 @@
     legend cell align=left,
     % width=6.5cm,
     ]
-    \shade[left color=lightgray!20!white,right color=lightgray,draw=none] (446,0) rectangle +(475,400);
-    \filldraw[pattern=north east lines,draw=none] (524,0) rectangle +(34,400);
+    % \shade[left color=lightgray!20!white,right color=lightgray,draw=none] (446,0) rectangle +(475,400);
+    % \filldraw[pattern=north east lines,draw=none] (524,0) rectangle +(34,400);
 
     \addplot+[no marks, thick, red, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
       {Sources/Matter-flow-hss.csv};
@@ -24,8 +24,8 @@
       {Sources/Matter-flow-hss-bg-beta1.csv};
     \addplot+[no marks, thick, cyan, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
       {Sources/Matter-flow-hss-bg-beta0.csv};
-    \addplot+[no marks, dotted] coordinates {(0.1,0)(70,0)};
-    \addplot+[no marks, black] coordinates {(44.6,-1)(44.6,5)};
+		\addplot+[no marks, black, dashed, thin] coordinates {(45,-40) (45,40)};
+		\addplot+[no marks, black, dashed, thin] coordinates {(17,-40) (17,40)};
 
     \legend{
       \, $G_{(3,0)}^\star$,
