@@ -161,6 +161,7 @@ letterpaper,
 \newcommand\Ntrunc{ N_{\scriptscriptstyle{\mathrm{trunc}}} }
 
 \newcommand{\Flow}{\mathrm{Flow}}
+\newcommand\FRG{ F_{\scriptscriptstyle{\mathrm{RG}}} }
 
 % Used in Paper Percaci+Vacca
 \newcommand{\bV}{\overbar V}
@@ -4176,6 +4177,7 @@ together with those of Ref. \cite{Dietz:2015owa}, in table \ref{table:summary}.%
 
 
 \section{Towards background independence in full quantum gravity}
+\label{sec:msWIquantumgravity}
 
 First attempts to go beyond conformally truncated gravity and study background
 independence in theories of the full metric field using similar ideas as
@@ -6311,7 +6313,6 @@ It is also important for the convergence properties of the expansion schemes.
 
 \section{Matter-gravity flow setup}
 
-% In the present work we shed light onto the above questions.
 In this chapter we will compare two versions of the Newton coupling:
 The first is defined through the three-graviton vertex,
 as in Refs.~\cite{Christiansen:2015rva, Meibohm:2015twa}.
@@ -6610,259 +6611,196 @@ to positive values of the Newton couplings in the infrared. It must thus
 be regarded as unphysical.
 
 
-\section{Nielsen identity \& applications} \label{sec:Nielsen-id}
+\section{The background field approximation and the msWI}
+\label{sec:Nielsen-id}
 
-Now we exploit the Nielsen identity (NI) or split Ward identity (sWI) to
-improve upon the background field approximation. Related derivations
-and application in the present context can be found in
+In this section we want to study how to use the msWI, which we have already
+seen in Ch.~\ref{ch:tim}, to improve upon the background field approximation.
+Related derivations and applications in a similar context can be found in
 Refs.~\cite{
   Litim:2002ce, Litim:2002hj, Pawlowski:2003sk, PawlowskiH,
   Pawlowski:2005xe, Donkin ,Donkin:2012ud
 }.
-% In general split Ward identities have also been discussed in
-% \cite
-% {
-%   Reuter-Wetterich1997,Reuter1998ff,Morrisetal2013ff,Safari2015
-% }
 
-With the introduction of a background field,
-the effective action becomes a functional of both
-the dynamical fluctuation field $\Delta\Phi$ and the auxiliary
-background field $\bar\Phi$
+As we have outlined already in Sec.~\ref{sec:msWIquantumgravity},
+in the case of full quantum gravity the msWI receives contributions
+from both the cutoff action as well as the gauge sector, which includes
+the gauge fixing term and the resulting ghost action.
+In our present application to the gravity-matter system we
+will ignore the background-dependence of the scalar fields,
+since we are dealing with a free theory here and only
+keep track of the background dependence of the metric field.
+The msWI for the latter then reads
 \begin{align}
-\Gamma_k=\Gamma_k[\bar\Phi,\Delta\Phi].
-\end{align}
-In the present case of
-gravity coupled to scalar matter the background and fluctuation fields read
-\begin{align}
-  \bar\Phi=(\bar g, 0,0,\bar \phi)\,,\qquad \Delta\Phi= (h,C,\bar
-  C,\varphi)\,,
-\end{align}
-respectively,
-where the full metric field is given by $g=\bar g+h$ and full scalar field
-by $\phi=\bar\phi+\varphi$.
-
-In scalar theories it is easily seen that for
-vanishing cutoff $k=0$ the effective action is a functional of
-the full field
-$\phi=\bar\phi+\varphi$ only.
-This is due to the fact that the classical action has
-this property,
-$S_{\text{\tiny cl}}[\bar\phi,\varphi]=S_{\text{\tiny
-    cl}}[\bar\phi+\varphi]$.
-The shift symmetry is then broken
-by introducing the cutoff term $R_k=R_k[\bar\phi]$.
-The resulting difference in the field dependencies is
-then expressed by the NI or sWI as follows
-\cite{Litim:2002hj}
-\begin{align}\label{eq:scalarNIk}
-	\frac{\delta \Gamma_k}{\delta\bar\phi}-\frac{\delta
-	\Gamma_k}{\delta\varphi} =
-	\frac 12\, \Tr \left(
-		G_k[\bar\phi,\varphi]\,
-		\frac{\delta R_k[\bar\phi]}{\delta \bar\phi}
-	\right) \,,
-\end{align}
-for applications see e.g.\ \dots%\cite{Morrisetal}.
-For flows towards the
-infrared Eqn. \eqref{eq:scalarNIk} suggests
-to use the background approximation
-\begin{align}\label{eq:backapprox}
-	\Gamma_k[\bar\phi,\varphi]\approx \Gamma_k[\bar\phi,\varphi=0]\,,
-\end{align}
-which is exact for $k=0$.
-However, for flows towards the UV ($k\to\infty$)
-the background approximation
-is spoiled by powercounting leading
-terms in the effective action,
-even in asymptotically safe scalar theories.
-
-In gauge theories the situation is even more complicated.
-In this case
-there are two sources for a genuine background dependence.
-Besides the cutoff term which is present in scalar theories as well,
-there is an additional source coming from the gauge fixing sector
-$S_{\text{\tiny gauge}}=S_{\text{\tiny gf}}+S_{\text{\tiny ghost}}$.
-Both the gauge fixing term $S_{\text{\tiny gf}}$ and the
-ghost term $S_{\text{\tiny ghost}}$ have to depend on the background
-gauge field if background gauge invariance is demanded.
-This shows that the motivation for introducing the background field, namely
-background gauge invariance, leads to a genuine background
-dependence of the effective action.
-
-In the present application to the gravity scalar system we
-drop the background scalar, as we have a free scalar theory and only
-deal with the background metric. Then the simple scalar NI of Eq.
-\eqref{eq:scalarNIk} turns into
-\begin{align}
-  \frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
-    \Gamma_k}{\delta h_{\mu\nu}} =& \frac 12 \,\frac 1{\sqrt{\bar g}} \Tr\, \frac{\delta \sqrt{\bar g}
-  R_k[\bar g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]
-  +\left\langle \frac{\delta S_{\text{\tiny
-  gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
-  -\frac{\delta S_{\text{\tiny gauge}}[\bar g,h]}{\delta h_{\mu\nu}}\right\rangle \,,
+  \frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}
+  -\frac{\delta \Gamma_k}{\delta h_{\mu\nu}}
+  = \frac 12 \, \frac 1{\sqrt{\bar g}} \Tr \,
+  \frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}} \, G_k[\bar g, h]
+  +
+  \left(
+    \frac{\delta S_{\mathrm{gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
+    -\frac{\delta S_{\mathrm{gauge}}[\bar g,h]}{\delta h_{\mu\nu}}
+  \right)
+  \,,
   \label{eq:gaugeNIk}
 \end{align}
-where the second line originates from the genuine background field
-dependence of the gauge fixing sector and we have dropped the
-dependence of the other fields. The regulator $R_k$ is a matrix in field
-space,
+where $S_{\mathrm{gauge}}=S_{\mathrm{gf}}+S_{\mathrm{ghost}}$
+encodes both the gauge fixing as well as the ghost sector.
+% The full cutoff operator $R_k$ is a matrix in field space,
+% \begin{align}
+%   R_k =
+%   \begin{pmatrix*}
+%     R_h & 0    & 0   & 0 \\
+%     0   & 0    & R_c & 0 \\
+%     0   & -R_c & 0   & 0 \\
+%     0   & 0    & 0   & R_\varphi
+%   \end{pmatrix*}
+%   \,.
+% \end{align}
+% and the functional traces above include a symplectic metric in the ghost subsector.
+In this chapter we want to work within the approximation
 \begin{align}
-  R_k =
-  \begin{pmatrix*}
-    R_h & 0    & 0   & 0 \\
-    0   & 0    & R_c & 0 \\
-    0   & -R_c & 0   & 0 \\
-    0   & 0    & 0   & R_\varphi
-  \end{pmatrix*}
-  \,.
-\end{align}
-and the trace involves a symplectic metric in the ghost subsector. The
-second line in \eqref{eq:gaugeNIk} survives in the limit $k\to 0$. This
-casts some doubt on the use of background field approximations even
-for infrared flows.
-
-Indeed, in Yang-Mills theories in covariant gauges the fluctuation
-propagator shows the Yang-Mills mass gap that signals confinement while
-the background propagator has no mass gap. Identifying the former with
-the latter in the flow leads to a loss of confinement: within the
-background field approximation the potential of the order parameter,
-the Polyakov loop variable $\langle \tr \, \CP \exp \, i g_s
-\int_0^{1/T} A_0 dt\rangle $, does not show the confining minimum
-which is directly related to the mass gap in the gluon propagator in
-covariant gauges. Whether or not all confining properties are lost is
-difficult to access. However, at least in the standard vertex
-expansion scheme this statement holds. This expansion scheme also
-underlies most quantum gravity computations. Despite the fact that the
-physics mechanisms working in infrared QCD are certainly qualitatively
-different from that working in UV gravity....
-
-We work with the approximation
-\begin{align}
-  \lim_{k\to \infty} \left(\frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta
-    \Gamma_k}{\delta h_{\mu\nu}} \right)\simeq \frac 12 \Tr\, \frac{1}{ \sqrt{\bar g} } \frac{\delta\sqrt{\bar g} R_k[\bar
-  g]}{\delta \bar g_{\mu\nu}}\, G_k[\bar g, h]\,,
+  \lim_{k\to \infty}
+  \left(
+    \frac{\delta \Gamma_k}{\delta\bar g_{\mu\nu}}-\frac{\delta \Gamma_k}{\delta h_{\mu\nu}}
+  \right)
+  \simeq \frac 12 \Tr \,
+  \frac{1}{ \sqrt{\bar g} } \, \frac{\delta\sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}} \, G_k[\bar g, h] \,,
   \label{eq:gravappNIk}
 \end{align}
-where the have dropped the second line with the gauge fixing
-contributions: they account for the difference of the wave function
-renormalisation of the fluctuating graviton and the background
+dropping the background-dependence due to the gauge sector.
+The latter accounts for the difference of the wave function
+renormalisation of the fluctuation and the background
 graviton propagator.
-
-We only want to improve on the regulator-induced part of the background field approximation.
-Note also that if one compares the contributions
-of the cutoff term and the gauge fixing sector to the UV flow,
-combinatorial arguments suggest that the cutoff term is of
-dominant importance.
+That is, we only want to improve the background field approximation
+by removing the background-dependence introduce through the
+regulator.
+Note however that comparing the contributions
+of the cutoff term and the gauge fixing sector to the ultraviolet flow,
+combinatorial arguments suggest that the cutoff term will contribute
+dominantly.
 This is because it couples to all fluctuations modes
-of the graviton, while the contributions of the gauge fixing sector
-couple directly to the longitudinal modes only: the derivative of the gauge
-fixing term is proportional to $h*F(\bar g) \delta F/\delta \bar g
-h$.
-% This suggests the dominance of the cutoff terms in the UV where
-% the only scale is the cutoff scale.
-
-Strictly speaking, however, this
-argument only applies to renormalisation group invariant quantities
-such as the Newton coupling $g_N$ with
+of the graviton, whilst the contributions of the gauge sector
+directly couple only to the longitudinal modes.
+Strictly speaking, however, this argument applies only to
+quantities which are invariant under the renormalisation group
+such as the Newton's constant $\GNewton$ if and only if
 \begin{align}
-	\mu\frac{d}{d\mu} g_N=0\,,
+	\mu \frac{\mathrm d}{\mathrm d\mu} \GNewton = 0 \,,
 \end{align}
 where $\mu$ is the renormalisation group scale of the underlying
-theory. In summary, this leads us to a modified background field
-approximation for the two-point function by taking the $h$-derivative
-of \eqref{eq:gravappNIk}.
-Applying the operator $\delta_{\bar g} + \delta_h$ once more to
-\eqref{eq:gravappNIk} and dropping mixed derivatives then results in
+theory.
+
+By taking a derivative with respect to the fluctuation field
+$h_{\mu\nu}$ of Eqn.~\eqref{eq:gravappNIk}, we can thus
+derive a modified background field approximation for the
+graviton two-point function.
+Namely, applying the operator $\delta_{\bar g} + \delta_h$
+to Eqn.~\eqref{eq:gravappNIk}
+and dropping mixed derivatives will result in
 \begin{align}
   \frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\simeq
   \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}
   -\frac 12 \left(\frac{\delta}{\delta\bar g_{\rho\sigma}}+\frac{\delta}{\delta h_{\rho\sigma}}
   \right) \Tr\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}}
-  \, G_k[\bar g, h]\right]\,.
+  \, G_k[\bar g, h]\right] \,.
   \label{eq:gravpropNIk}
 \end{align}
-We have shown at the example of Yang-Mills theory, that the
-fluctuation field derivative of the term in the square brackets on the
-right hand side of \eqref{eq:gravpropNIk} gives sub-leading
-contributions only.
-In analogy we assume that the same feature holds in
-gravity, and arrive at the final approximation for the fluctuating
-two-point function
+In App.~\ref{app:YM} we have studied a similar approximation in
+Yang-Mills theory, in order to derive the universal one-loop beta
+function of the Yang-Mills coupling.
+There we have shown in particular, that the equivalent of the fluctuation field derivative
+of the term in the square brackets on the right hand side of
+\eqref{eq:gravpropNIk} gives only sub-leading contributions.
+In analogy, we will assume that the same feature holds true for
+gravity, and with that we arrive at the final approximation for
+the two-point function of the metric fluctuation field:
 \begin{align} \label{eq:modback}
 	\frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\approx \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}
 	- \frac{\delta}{\delta \bar g_{\rho\sigma}} \int \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\frac{\delta
-	\Gamma_k}{\delta R_k}\,,
+	\Gamma_k}{\delta R_k} \,.
 \end{align}
-This approximation has been used in gravity \eg in
-Refs.~\cite{Donkin,Donkin:2012ud}.
-Apart from the standard background two-point function it contains a second,
-purely regulator induced term.
-The flow of this term is simply given by
-\eqref{eq:FA}, which we recall was given by
-\begin{align}\label{eq:Fg}
-	F_{\text{\tiny RG}}(x)= \int_{x_0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \bar R = 0)\,,
-\end{align}
-where we have restricted ourselves to IR-finite regulators.
-Note, that $F_{\text{\tiny RG}}$ depends on the parameter $x_0$.
-This dependence drops out later, since we take a $\delta_{\bar g}$ derivative.
-For simplicity we set $x_0=0$ in this work.
-As a reminder, these equations stem from
+This approximation has been used in gravity \eg in Refs.~\cite{Donkin,Donkin:2012ud}.
+Apart from the standard two-point function of the background field it contains a second,
+purely regulator induced term. The flow of this term is given by
 \begin{align}
- \partial_t \delta_{\bar g} \Gamma_k = \delta_{\bar g} \partial_t \Gamma_k \,.
+	\FRG(x)
+  = \int_{x_0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \overbar R = 0)\,,
+  \label{eq:Fg}
 \end{align}
-With the approximation that the leading background dependence stems from the regulator insertion, this entails the equation
-\begin{align} \label{eq:commuted-flow}
- \frac 12 \partial_t \Tr \left[ \frac 1{\sqrt{\bar g}} G_k \frac{\delta  \sqrt{\bar g} R_k}{ \delta \bar g_{\mu\nu}}  \right]
- = \frac 12 \frac{\delta}{\delta \bar g_{\mu\nu}} \Tr \left[ G_k \partial_t R_k \right] \,,
-\end{align}
-see \cite{Litim:2002ce} for a similar equation in the context of a Yang-Mills theory.
-We further note that
-\begin{align}
- \frac{\delta}{\delta \bar g_{\mu\nu}} F_{\text{\tiny RG}}(\bar \Delta)
- &= \frac{\delta}{\delta \bar g_{\mu\nu}} \int_{0}^{\bar\Delta} d x' \frac{\partial R_k(x')}{\partial x'} G_k(x', \bar R = 0) \notag \\
- &= \frac{\delta \bar \Delta}{ \delta \bar g_{\mu\nu}} \frac{\partial R_k(\bar \Delta)}{\partial \bar \Delta} G_k(\bar \Delta, \bar R = 0) \notag \\
- &= \frac{\delta R_k(\bar \Delta)}{ \delta \bar g_{\mu\nu}} G_k(\bar \Delta, \bar R = 0)  \,, \label{eq:der-F}
-\end{align}
-is actually (almost) the left hand side of \eqref{eq:commuted-flow}.
+\cf also the definition Eqn.~\eqref{eq:FA} for the Yang-Mills case.
+Here we have to restrict ourselves to infrared-finite regulators.
+Note that $\FRG$ seem to depend on the parameter $x_0$.
+However, this dependence will drop out later, as we take a functional derivative
+with respect to $\bar g_{\mu\nu}$.  For simplicity, we will set $x_0=0$ from now on.
 
-\Eq{eq:Fg} can straightforwardly be computed with heat-kernel methods.
-Similarly to our Yang-Mills example we have for IR-finite regulators
+% As a reminder, these equations stem from
+% \begin{align}
+%  \partial_t \delta_{\bar g} \Gamma_k = \delta_{\bar g} \partial_t \Gamma_k \,.
+% \end{align}
+% With the approximation that the leading background dependence stems from the regulator insertion, this entails the equation
+% \begin{align} \label{eq:commuted-flow}
+%  \frac 12 \partial_t \Tr \left[ \frac 1{\sqrt{\bar g}} G_k \frac{\delta  \sqrt{\bar g} R_k}{ \delta \bar g_{\mu\nu}}  \right]
+%  = \frac 12 \frac{\delta}{\delta \bar g_{\mu\nu}} \Tr \left[ G_k \partial_t R_k \right] \,,
+% \end{align}
+% see \cite{Litim:2002ce} for a similar equation in the context of a Yang-Mills theory.
+% is actually (almost) the left hand side of \eqref{eq:commuted-flow}.
+
+The corrections to the background approximation Eqn.~\eqref{eq:Fg}
+can be computed with heat-kernel techniques. Details of this derivation
+may be found in App.~\ref{app:msWItraces}.
+Similarly to our Yang-Mills example of App.~\ref{app:YM}
+we have for infrared-finite regulators
 \begin{align}
-  \frac 12 \Tr&\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} \, R_k(\bar \Delta)}{\delta \bar g_{\mu\nu}}\,G_k(\bar \Delta, \bar R )\right]
-  =\frac{1}{2} \, \Tr\, \frac{\delta }{\delta \bar g_{\mu\nu}} F_{\text{\tiny{RG}}}(\bar\Delta)
-  +\frac{1}{2} \Tr \, \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}}\, R_k(\bar \Delta) G_k (\bar \Delta, \bar R ) \,.
+  \frac 12 \Tr&\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} \, R_k(\overbar \Delta)}{\delta \bar g_{\mu\nu}}\,G_k(\overbar \Delta, \bR )\right]
+  =\frac{1}{2} \, \Tr\, \frac{\delta }{\delta \bar g_{\mu\nu}} \FRG(\overbar\Delta)
+  +\frac{1}{2} \Tr \, \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}}\, R_k(\overbar \Delta) G_k (\overbar \Delta, \bR ) \,.
   \label{eq:g-Rkg}
 \end{align}
-Moreover, in gravity the luxury of using a background field for gauge
-invariance turns into the necessity of using a background metric in
-the gauge fixing sector (if one insists on linear gauge fixing in the
-fluctuation field $h$). For UV flows the cutoff contributions have
-leading contributions to relevant operators such as the two-, three-,
-and four-point functions. In terms of diffeomorphism invariant objects
-this relates to the running of cosmological constant $\Lambda$,
-curvature scalar $R$ and curvature scalar squared $R^2$, the presumably
-minimal set of relevant operators in asymptotically safe quantum
-gravity.
+We further note that
+\begin{align}
+ \frac{\delta}{\delta \bar g_{\mu\nu}} \FRG(\overbar \Delta)
+ = \frac{\delta}{\delta \bar g_{\mu\nu}} \int_{0}^{\overbar\Delta} \mathrm dx' \frac{\partial R_k(x')}{\partial x'} G_k(x', \bR = 0)
+ % = \frac{\delta \overbar \Delta}{ \delta \bar g_{\mu\nu}} \frac{\partial R_k(\overbar \Delta)}{\partial \overbar \Delta} G_k(\overbar \Delta, \bR = 0) \notag \\
+ = \frac{\delta R_k(\overbar \Delta)}{ \delta \bar g_{\mu\nu}} G_k(\overbar \Delta, \bR = 0)  \,. \label{eq:der-F}
+\end{align}
+
+In gravity the luxury of using a background field to ensure gauge invariance
+turns into the necessity of using a background metric in the gauge fixing sector
+(if one insists on linear gauge fixing in the fluctuation field $h$).
+In ultraviolet flows, the cutoff operator with respect to this background
+metric however gives leading contributions to field operators such as two-, three-,
+and four-point functions.
+In terms of diffeomorphism invariant objects, this influences
+the running of the cosmological constant $\Lambda$,
+the curvature scalar $R$ and the curvature scalar squared $R^2$,
+which is the presumably minimal set of relevant operators in
+asymptotically safe quantum gravity.
 
 In \cite{Manrique:2010am} the so-called bi-metric approach to quantum
-gravity was put forward aiming at a distinction of the fluctuating
-part of the metric and the background metric. For computational
-reasons the following approximation was considered,
+gravity was put forward, aiming at a distinction of the fluctuating
+and the background part of the metric. For computational reasons the
+following approximation was considered,
 \begin{align}
-	\Gamma_k[\bar g,h]= \Gamma_{\text{EH},k}[g]+\bar \Gamma_{\text{EH},k}[\bar g]+M_k \int d^4 x \sqrt{g}
-	\left(\frac{\sqrt{\bar g}}{\sqrt{g}}\right)^n\,,
+  \Gamma_k[\bar g,h] = \Gamma_{\mathrm{\scriptscriptstyle{EH}},k} [g]
+  + \overbar           \Gamma_{\mathrm{\scriptscriptstyle{EH}},k} [\bar g]
+  + M_k \int \mathrm d^4x \sqrt{\bar g}
+  \left(
+    \frac{\sqrt{\bar g}}{\sqrt{g}}
+  \right)^n
+  \,,
 \end{align}
-where $\Gamma_{\text{EH}},\bar \Gamma_{\text{EH}}$ is the
-Einstein-Hilbert actions with cutoff-dependent parameters. In later
-extended computations, \cite{Becker:2014qya}, the last term has been
-dropped, $M_k=0$. Evidently, this approximation violates the approximated NI
+where
+$\Gamma_{\mathrm{\scriptscriptstyle{EH}},k},\overbar \Gamma_{\mathrm{\scriptscriptstyle{EH}},k}$
+is the Einstein-Hilbert actions with cutoff-dependent parameters.
+In later extended computations \cite{Becker:2014qya}, the last term has been
+dropped, $M_k=0$. Evidently, this approximation violates the approximated msWI
 \eqref{eq:gravpropNIk} and only holds if
 \begin{align}
 	\frac{\delta}{\delta h_{\rho\sigma}} \Tr\left[\frac 1{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar
 	g_{\mu\nu}}\, G_k[\bar g, h]\right]\approx 0\,,
 \end{align}
-at least at $h=0$.
+at least at vanishing fluctuation field $h_{\mu\nu} = 0$.
 
 
 \section{Background flow equations}
@@ -6939,7 +6877,7 @@ by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS$ and $\eta_c=0$.
 
 \section{Fluctuation couplings via the Ward identities}
 
-\begin{figure}[t]
+\begin{figure}[t!]
   \begin{center}
     \input{figures/comparison-couplings.tex}
   \end{center}
@@ -6975,11 +6913,11 @@ we need to compute the flow of the following quantity:
     \frac{1}{\sqrt{\bar g}} \, G_k \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k \Big)
   \right]
   =
-  \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - F_{\text{\tiny RG}}  \Big]
-  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, F_{\text{\tiny RG}} \Big)  \,.
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - \FRG  \Big]
+  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, \FRG \Big)  \,.
   \label{eq:def-I}
 \end{align}
-Here, $F_{\text{\tiny RG}}(\bar \Delta)$ is the functional introduced in \eqref{eq:FA}.
+Here, $\FRG(\bar \Delta)$ is the functional introduced in \eqref{eq:Fg}.
 All functional traces appearing in the last equation can be evaluated using heat kernel techniques.
 Details of the computation, as well as intermediate results may be found in App.~\ref{app:msWItraces}.
 There, we find the following result for $I$:
@@ -7039,7 +6977,7 @@ We can make an approximation in order to obtain a closed equation for the level 
 which is a similar approximation as the standard background field approximation.
 For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\etaSfluc$ and $\eta_c=0$.
 
-\begin{figure}[t]
+\begin{figure}[t!]
   \begin{center}
     \input{figures/all-from-fluc-and-mu.tex}
   \end{center}
@@ -8949,6 +8887,7 @@ which agrees with the result listed in Tab.~\ref{tab:eta-results}.
 
 
 \chapter{The msWI in Yang-Mills theory}
+\label{app:YM}
 
 In this appendix we briefly want to illustrate
 the use of the msWI in the case of
@@ -9044,20 +8983,20 @@ These traces can then be re-expressed as total derivatives as follows
   =
   \frac{1}{2} \,
 	\frac{\delta }{\delta \overbar A(x)} \,
-	\Tr\, \partial_t F_{\text{\tiny RG}}(\overbar\Delta)\,,
+	\Tr\, \partial_t \FRG (\overbar\Delta)\,,
 \end{align}
 where we defined the functional
 \begin{align}
-	F_{\text{\tiny RG}}(x)= \int_{x_0}^x \mathrm dx' \;
+	\FRG(x)= \int_{x_0}^x \mathrm dx' \;
   \frac{\partial R_k(x')}{\partial x'} \, G_k(x') \,.
   \label{eq:FA}
 \end{align}
-Note that the functional $F_{\text{\tiny RG}}(x)$ is potentially
+Note that the functional $\FRG(x)$ is potentially
 singular in the infrared, that is for $x\rightarrow 0$.
 The infrared limit of the regulators is given by
 \eqref{eq:IRRk}, and it follows that
 \begin{align}
-	F_{\text{\tiny RG}}(x\to 0)
+	\FRG(x\to 0)
 	\propto x^{-(n-1)} \,,
   \label{eq:IRF}
 \end{align}
@@ -9116,7 +9055,7 @@ It is useful, since it avoids the standard Laplace transform.
 In the case of a Yang-Mills theory this leads to
 \begin{align}
   \frac{1}{2} \, \Tr \,
-  \partial_t F_{\text{\tiny RG}}(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
+  \partial_t \FRG(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
   = - 2 n \, \beta_g \big|_{\mathrm{1-loop}} \, S_{\mathrm{\scriptscriptstyle YM}}[\overbar A] \,.
 	\label{eq:betabarARk}
 \end{align}
@@ -9125,7 +9064,7 @@ Subtracting this result from Eqn.~\eqref{eq:betabarA} leads us to
   \label{eq:betabarAfinal}
   \dot \Gamma_k[ \overbar A]
   - \frac{1}{2} \, \Tr\,
-  \partial_t F_{\text{\tiny RG}}(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
+  \partial_t \FRG(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
   = -2 \, \beta_g \big|_{\mathrm{1-loop}} \, S_{\mathrm{\scriptscriptstyle YM}}[\overbar A] \,.
 \end{align}
 which is indeed the regulator independent, universal beta function.
@@ -9166,27 +9105,27 @@ the following expression through heat kernel techniques:
   \right]
   =
   \frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
-  + \frac 12 \, \Tr \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, F_{\text{\tiny RG}}
+  + \frac 12 \, \Tr \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \FRG
   \nonumber \\
   &=
   \frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
-  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}}
+  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, \FRG
   - \frac 12 \, \Tr \,
   \bigg[
     \frac{1}{\sqrt{\bar g}}
-    \left( \frac{\delta}{\delta \bar g_{\mu\nu}} \sqrt{\bar g} \right) F_{\text{\tiny RG}}
+    \left( \frac{\delta}{\delta \bar g_{\mu\nu}} \sqrt{\bar g} \right) \FRG
   \bigg]
   \nonumber \\
   &=
-  \frac 14 \, \bar g^{\mu\nu} \, \Tr \, \Big( G_k R_k - F_{\text{\tiny RG}} \Big)
-  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}}
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \, \Big( G_k R_k - \FRG \Big)
+  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, \FRG
   =
   \frac 12 \, \bar g^{\mu\nu} \, \Big( I_1 - I_2 \Big) + \frac{\delta}{\delta \bar g_{\mu\nu}} \, I_2 \,.
 \end{align}
 In order to present intermediate results, we introduce the following short hand notations:
 \begin{align}
   I_1 = \frac 12 \, \Tr \, G_k R_k \,, \quad
-  I_2 = \frac 12 \, \Tr \, F_{\text{\tiny RG}} \,, \quad
+  I_2 = \frac 12 \, \Tr \, \FRG \,, \quad
   I_3 = \frac 12 \, \Tr \, G_k \dot R_k \,,
 \end{align}
 where the last expression is nothing but the background flow.
@@ -9309,7 +9248,7 @@ all spin modes, we find
 With similar methods we can evaluate the trace $I_2$. In particular,
 using the expansion Eqn.~\eqref{eq:tau_expansion} we may write
 \begin{align}
-  I_2 = \, \frac{1}{32\pi^2} \, &F_\text{\tiny RG}(-\partial_\tau)
+  I_2 = \, \frac{1}{32\pi^2} \, &\FRG \partial_\tau)
   \Big[
     B_0(\bar\Delta_s) \, \tau^{-2} +
     B_2(\bar\Delta_s) \, \tau^{-1}
@@ -9326,27 +9265,27 @@ In particular, by utilising the following identities
 \end{align}
 one can evaluate the action of the differential operator of Eqn.~\eqref{eq:FA}:
 \begin{alignat}{4}
-  F_\text{\tiny RG}(-\partial_\tau) \,
+  \FRG (-\partial_\tau) \,
   &\tau^{-2}
   \, &=& \,
-  \int_0^\infty \mathrm dx \; x \, F_\text{\tiny RG}(x)
+  \int_0^\infty \mathrm dx \; x \, \FRG (x)
   \, &=& \,
   - \frac 13 \frac{k^{6-2b}}{(1+a\lambda)^b} \,,
   \label{eq:threshold-I2-const} \\
-  F_\text{\tiny RG}(-\partial_\tau) \,
+  \FRG (-\partial_\tau) \,
   &\tau^{-1}
-  &=& \int_0^\infty \mathrm dx \; F_\text{\tiny RG}(x)
+  &=& \int_0^\infty \mathrm dx \; \FRG (x)
   &=& - \frac 12 \frac{k^{4-2b}}{(1+a\lambda)^b} \,,
   \label{eq:threshold-I2-lin} \\
   \vphantom{\int_0^\infty}
-  F_\text{\tiny RG}(-\partial_\tau) \,
+  \FRG (-\partial_\tau) \,
   &\tau^0
-  &=& \;   F_\text{\tiny RG}(0)
+  &=& \; \FRG (0)
   &=& \;\; 0 \label{eq:threshold-I2-quad} \,,
 \end{alignat}
 where the last equalities respectively hold for the general function
 \begin{align}
-  F_\text{\tiny RG}(x)
+  \FRG (x)
   = \int^{x}_0 \mathrm dy \; \frac{r'_k(y)}{(y+r_k(y)+a \, \lambda \, k^2)^b}
   =  -\frac{x}{ \big( 1 + a \lambda \big)^b } \,, \quad (x \leq k^2) \,,
 \end{align}
