@@ -137,6 +137,7 @@ letterpaper,
 \newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
 \newcommand\ZTT{ Z_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
 \newcommand\etaS{ \eta_{\scriptscriptstyle{\mathrm{S}}} }
+\newcommand\etaSfluc{ \eta_{\scriptscriptstyle{\mathrm{S}},1} }
 \newcommand\ZS{ Z_{\scriptscriptstyle{\mathrm{S}}} }
 
 \newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
@@ -6467,9 +6468,14 @@ flows at the level of the fluctuations couplings.
   \caption{
     Comparison of the numerical results of the fixed point values
     for the three avatars of Newton's constant:
-    the three-graviton coupling (red line),
-    the graviton-scalar-coupling (blue line) and the background coupling
-    in two different gauges (orange and cyan line).
+    the three-graviton coupling (red),
+    the graviton-scalar-coupling (blue) and the background coupling
+    in two different gauges (orange and cyan).
+    In this and the following plots, the dashed line at $\NS = 17$
+    shows where $\eta_h(0)$ exceeds 2, whereas the one at $\NS = 45$
+    shows where $\eta_h(k^2)$ exceeds 2.
+    The latter should be viewed as an indicator of where the range of
+    validity of the approximation is lost.
   }
   \label{fig:NewtoncouplingFPs}
 \end{figure}
@@ -6523,10 +6529,8 @@ are violated at large $\NS$.
     \input{figures/NS_findiff_all_hss_b.tex}
   \end{center}
   \caption{
-    We plot the fixed point values, the (real part of) critical exponents,
-    and the anomalous dimensions as a function of $\NS$.
-    The dashed line at $\NS = 17$ shows where $\eta_h(0)$ exceeds 2,
-    whereas the one at $\NS = 45$ shows where $\eta_h(k^2)$ exceeds 2.
+    Numerical results of fixed point values, (real parts of) critical exponents,
+    and anomalous dimensions as a function of $\NS$.
   }
   \label{fig:allFPvalues}
 \end{figure}
@@ -6556,11 +6560,10 @@ $g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
     \input{figures/NS_findiff_all_hss_eff_g.tex}
   \end{center}
   \caption{
-    We plot the effective gravitational strength
-    $\nicefrac{ G_{(3,0)} }{ (1+\mu) }$ and $\nicefrac{ G_{(3,0)} }{ (1+\mu)^2 }$.
-    The latter appears on propagators with the regulator insertion,
-    whereas the former appears on propagators where the regulator insertion sits on another
-    one of the internal legs of a diagram.
+    Numerical results for the fixed point values
+    of the effective gravitational couplings
+    $\nicefrac{ G_{(3,0)} }{ (1+\mu) }$ and $\nicefrac{ G_{(3,0)} }{ (1+\mu)^2 }$
+    as a function of $\NS$.
   }
   \label{fig:effectiveG}
 \end{figure}
@@ -6923,7 +6926,23 @@ We obtain the usual background field approximation
 by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS$ and $\eta_c=0$.
 
 
-\section{Obtaining fluctuation couplings using the Ward identities}
+\section{Fluctuation couplings via the Ward identities}
+
+\begin{figure}[t]
+  \begin{center}
+    \input{figures/comparison-couplings.tex}
+  \end{center}
+  \caption{
+    Comparison of three different definitions of gravitational couplings and
+    cosmological constants:
+    pure background system (red dashed), background system improved by msWI (blue),
+    and fully fluctuating system (cyan).
+    (Left) Background gravitational couplings using different avatars of the
+    remaining couplings on the right hand side of the flow equation.
+    (Right) Highest dynamical coupling of the three approximation schemes.
+  }
+  \label{fig:comparison-couplings}
+\end{figure}
 
 In this section we want to compute the running of the level one fluctuation couplings
 using the modified split Ward identity together with the background flow equations of the last section.
@@ -6933,7 +6952,7 @@ As derived in Sec.~\ref{sec:Nielsen-id}, we want to make the following approxima
   \approx \frac{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k
   - \partial_t
   \left(
-    \frac 12 \Tr \frac 1{\sqrt{\bar g}} \frac{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k
+    \frac 12 \, \Tr \frac 1{\sqrt{\bar g}} \frac{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k
   \right) .
 \end{align}
 Consequently, in order to extract the running of the fluctuation couplings from the one of the
@@ -6995,81 +7014,40 @@ This yields
 \begin{align}
   \vphantom{ \frac{\bar \Lambda}{\bar G} }
   \partial_t \bar G_1
-  &= \big( 2 + \eta_{S,1} \big) \, \bar G_1 \,, \\
+  &= \big( 2 + \etaSfluc \big) \, \bar G_1 \,, \\
   \partial_t \bar \Lambda_1
   &= - 4 \, \bar \Lambda_1 + \frac{\bar \Lambda_1}{\bar G_1} \, \partial_t \bar G_1
   + 8 \pi \bar G_1 \, \big(  \Flow_{\bar \Gamma} - 8 I \big) \Big|_{\mathcal O(\bR^0)} \,, \\
   \vphantom{ \frac{\bar \Lambda}{\bar G} }
-  \eta_{N,1}
+  \etaSfluc
   &= 16 \pi \bar G_1 \, \big( \Flow_{\bar \Gamma} - 8 I  \big) \Big|_{\mathcal O(\bR^1)} \,.
 \end{align}
 The quantities in $I$ and $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
 Hence the level one couplings are non-dynamical spectators.
 We can make an approximation in order to obtain a closed equation for the level one couplings,
 which is a similar approximation as the standard background field approximation.
-For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\eta_{N,1}$ and $\eta_c=0$.
+For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\etaSfluc$ and $\eta_c=0$.
 
-\begin{figure}
+\begin{figure}[t]
   \begin{center}
-    \input{figures/g-comparison.tex}
+    \input{figures/all-from-fluc-and-mu.tex}
   \end{center}
   \caption{
-    Comparison of different gravitational couplings.
-    In the left panel the background gravitational coupling is plotted with different
-    input on the right hand side.
-    In the right panel the highest dynamical coupling of different systems is plotted.
-    The first system is the pure background system,
-    the second is the level one improved background system and the last one is the fully fluctuating system.
-  }
-  \label{fig:Comparison-of-g}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \input{figures/lam-comparison.tex}
-  \end{center}
-  \caption{
-    Comparison of different $\lambda$ couplings.
-    In the left panel the background cosmological constant coupling is plotted with
-    different input on the right hand side.
-    In the right panel the highest dynamical $\lambda$ coupling of different systems is plotted.
-    The first system is the pure background system,
-    the second is the level one improved background system and the last one is the fully fluctuating system.
-    In the right panel all couplings are bound by the value $\frac 12$,
-    while in the left panel only $\bar \Lambda*(\eta_N,\bar\Lambda^*)$ is bound by that value.
-  }
-  \label{fig:Comparison-of-lam}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \input{figures/all-from-fluc.tex}
-  \end{center}
-  \caption{
-    Comparison of different level-$n$ gravitational couplings (left) and 'cosmological constants' (right).
-    All couplings were evaluated with the input of the full fluctuation system on the right hand side.
-    While the gravitational couplings behave qualitatively similar,
-    the level-$n$ 'cosmological constants' display significant differences in their behaviour.
-    This emphasises again the necessity to treat the graviton mass parameter in a fluctuation computation.
+    Comparison of different avatars of the gravitational couplings (left)
+    and the cosmological constants (right).
+    (Above) All couplings were evaluated with the input of the full fluctuation
+    system on the right hand side of the flow equation.
+    (Below) We combined the flow equation for the graviton mass parameter $\mu$
+    with different flow equations for the Newton's coupling.
   }
   \label{fig:All-from-fluc}
 \end{figure}
 
-\begin{figure}
-  \begin{center}
-    \input{figures/all-from-mu.tex}
-  \end{center}
-  \caption{
-    Comparison of different level-$n$ gravitational couplings (left) and 'cosmological constants' (right).
-    Here we combined the flow equation for the graviton mass parameter $\mu$
-    with different flow equations for the Newton's coupling.
-    All couplings behave qualitatively similar and thus we conclude that the correct treatment
-    of the graviton mass parameter is essential for qualitatively reliable results.
-  }
-  \label{fig:All-from-mu}
-\end{figure}
-
-
+While the gravitational couplings behave qualitatively similar,
+the level-$n$ 'cosmological constants' display significant differences in their behaviour.
+This emphasises again the necessity to treat the graviton mass parameter in a fluctuation computation.
+All couplings behave qualitatively similar and thus we conclude that the correct treatment
+of the graviton mass parameter is essential for qualitatively reliable results.
 
 %----------------------------------------------------------------------------------------
 %	Conclusions
