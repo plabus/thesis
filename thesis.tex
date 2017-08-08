@@ -6538,22 +6538,30 @@ are violated at large $\NS$.
 
 \subsection{Effective gravitational coupling}
 
-Metric fluctuations enter the diagrams with a propagator of the form
-$g^{\mathrm{eff}}_1 \equiv \nicefrac{G_{(n,m)}}{1+\mu}$
-and
-$g^{\mathrm{eff}}_2 \equiv \nicefrac{G_{(n,m)}}{\left(1+\mu\right)^2}$,
-which we define as the two effective gravitational couplings.
-The second is the effective coupling associated to a graviton propagator with an insertion
-of $\partial_t R_k$.
-For the flow of matter vertices,
-it is immediately apparent that these are the only two combinations of $G_{(n,m)}$ and $\mu$ that can appear.
-The case of pure gravity flows features additional factors of $G_{(n,0)}$ at the vertices
-associated to the number of external gravitons.
-Accordingly, the beta functions contain different powers of $1/(1+\mu)$ than powers of $G_{(3,0)}$.
-However, each internal graviton line is associated to either of the two above effective couplings.
-% On the other hand, the effect of metric fluctuations on matter couplings is encoded within the effective coupling $g_{\rm eff}$.
-As $\mu$ stays approximately constant as $\NS$ increases, while $G_{(3,0)}$ increases,
-$g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
+The fluctuation field of the metric $h_{\mu\nu}$ enters the Feynman
+diagrams either via a pure propagator, or via a propagator that
+is dressed with a cutoff insertion $\partial_t R_k$.
+Accordingly, for any combination $(n,m)$,
+we can define two effective gravitational couplings through
+\begin{align}
+  g^{\mathrm{eff}}_1 \equiv \frac{G_{(n,m)}}{1+\mu}
+  \quad \text{ and } \quad
+  g^{\mathrm{eff}}_2 \equiv \frac{G_{(n,m)}}{\left(1+\mu\right)^2} \,.
+\end{align}
+For diagrams contributing to the flow of vertices composed out of
+matter and gravitons, these are the only two combinations of $G_{(n,m)}$
+and $\mu$ that may appear.
+In the case of pure gravity, however,
+diagrams feature additional factors of $G_{(n,0)}$
+associated with the number of external gravitons $n$ coming from
+the vertices of the Feynman diagrams.
+Hence, the beta functions for the purely gravitational couplings
+contain different powers of $\nicefrac{1}{1+\mu}$ than powers of $G_{(3,0)}$.
+However, each internal graviton line is still associated with
+either of the two above effective couplings.
+Since $\mu$ stays approximately constant as $\NS$ increases,
+while $G_{(3,0)}$ increases with $\NS$,
+$g_{\rm eff,\,1/2}$ increase as well, \cf Fig.~\ref{fig:effectiveG}.
 
 \begin{figure}[t]
   \begin{center}
@@ -6562,7 +6570,7 @@ $g_{\rm eff,\,1/2}$ increase as well, \cf \autoref{fig:effectiveG}.
   \caption{
     Numerical results for the fixed point values
     of the effective gravitational couplings
-    $\nicefrac{ G_{(3,0)} }{ (1+\mu) }$ and $\nicefrac{ G_{(3,0)} }{ (1+\mu)^2 }$
+    % $\nicefrac{ G_{(3,0)} }{ (1+\mu) }$ and $\nicefrac{ G_{(3,0)} }{ (1+\mu)^2 }$
     as a function of $\NS$.
   }
   \label{fig:effectiveG}
@@ -8937,317 +8945,11 @@ is given by
 which agrees with the result listed in Tab.~\ref{tab:eta-results}.
 
 
-\chapter{The msWI from heat kernel techniques}
-\label{app:msWItraces}
-
-In this appendix we want to give a more detailed outline on how to
-calculate the trace expression
-\begin{align}\nonumber
- I \equiv&\, \frac 12 \, \Tr
-  \left[
-    \frac{1}{\sqrt{\bar g}} \, G_k(\bar \Delta) \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k(\bar\Delta) \Big)
-  \right]\\[2ex] \nonumber
-=&\,
-\frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k + \frac 12 \, \Tr \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, F_{\text{\tiny RG}}\\[2ex] \nonumber
-=&\,
-\frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
-+ \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}} \\ \notag
-&- \frac 12 \, \Tr \, \bigg[ \frac{1}{\sqrt{\bar g}} \left( \frac{\delta}{\delta \bar g_{\mu\nu}} \sqrt{\bar g} \right) F_{\text{\tiny RG}} \bigg] \\[2ex] \notag
-=&\,
-\frac 14 \, \bar g^{\mu\nu} \, \Tr \, \Big( G_k R_k - F_{\text{\tiny RG}} \Big)
-+ \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}} \\[2ex]
-=&\,
-\frac 12 \, \bar g^{\mu\nu} \, \Big( I_1 - I_2 \Big) + \frac{\delta}{\delta \bar g_{\mu\nu}} \, I_2 \,.
-\end{align}
-For ease of notation we introduced
-\begin{align}
-  I_1 &\equiv \frac 12 \, \Tr \, G_k R_k \,, \\
-  I_2 &\equiv \frac 12 \, \Tr \, F_{\text{\tiny RG}} \,,
-\end{align}
-and we recall that
-\begin{align}
-	F_{\text{\tiny RG}}(x)= \int_{0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \bar R = 0) \,.
-\end{align}
-For later convenience we will also abbreviate the background flow by
-\begin{align}
-  I_3 &\equiv \frac 12 \, \Tr \, G_k \dot R_k \,.
-\end{align}
-Following \cite{Codello:2008vh}, we may write
-\begin{align}
-  I_1 =& \,
-  \frac{1}{32 \pi^2}
-  \Big[ B_0(\bar\Delta) Q_2(R_kG_k)
-    + B_2(\bar\Delta) Q_1(R_kG_k) \notag \\
-  & + B_4(\bar\Delta) Q_0(R_kG_k)
-  \Big]
-  + \mathcal O (R^3) \,,
-\end{align}
-where
-\begin{align}
-  Q_n[W] &= \frac 1{\Gamma(n)} \, \int \mathrm dx \; x^{n-1} \, W(x) \,, \\
-  B_n &= \int \mathrm d^dx \, \sqrt{\bar g} \; \tr \, b_n \,,
-\end{align}
-and $\tr \, b_n(\bar\Delta_s) \propto R^{n/2}$ are the  heat kernel coefficients.
-We are interested in the function
-\begin{align}
-  W(x) = \frac{r_k(x)}{[x+r_k(x)+a \, \lambda \, k^2]^b} \,,
-\end{align}
-with constants $a$ and $b$, and dimensionless cosmological constant $\lambda$.
-Using the optimized cutoff function
-\begin{align}
-  r_k(x) = (k^2-x) \, \theta( k^2-x) \,,
-\end{align}
-one finds
-\begin{align}
-  Q_2 &= \frac 16 \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \label{eq:threshold-I1-const}\\
-  Q_1 &= \frac 12 \frac {k^{4-2b}}{(1 + a \lambda)^b} \,, \label{eq:threshold-I1-lin} \\
-  Q_0 &= \frac {k^{2-2b}}{(1 + a \lambda)^b} \,. \label{eq:threshold-I1-quad}
-\end{align}
-In the limit $\beta = 0$ and $\alpha \rightarrow 0$,
-the trace of $R_k G_k$ can be evaluated following the procedure in
-\cite{Gies:2015tca} and is given by the sum of the contributions
-of the four modes $h^{TT}_{\mu\nu}, \xi^{\mu}, h$ and $\sigma$. They are given
-(in that order) for $\eta_h=0=\eta_c$ by
-\begin{align}
-  & \frac{r_k(x)}{x+r_k(x) - 2 \, \lambda \, k^2} - \frac 23 \, \bar R \, \frac{r_k(x)}{(x+r_k(x) - 2 \, \lambda \, k^2) ^2} \notag \\
-    &\hspace*{0.7cm} + \frac 49 \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x) - 2 \, \lambda \, k^2) ^3} \\
-  & \frac{r_k(x)}{x+r_k(x)} + \frac 14 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} + \frac{1}{16} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \\
-  & \frac{r_k(x)}{x+r_k(x) - \frac 43 \, \lambda \, k^2} \\
-  & \frac{r_k(x)}{x+r_k(x)} + \frac 13 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} + \frac{1}{9} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3}
-\end{align}
-The vector and scalar ghost contributions are given by
-\begin{align}
-  & - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 12 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} - \frac{1}{8} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \,, \\
-  & - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 23 \, \bar R \, \frac{r_k(x)}{(x+r_k(x)) ^2} - \frac{2}{9} \, \bar R^2 \, \frac{r_k(x)}{(x+r_k(x)) ^3} \,.
-\end{align}
-Furthermore, on the sphere we have
-\begin{align}
-  B_0(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_0 \,, \\
-  B_2(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_2 \,, \\
-  B_4(\bar\Delta_s) &= \sqrt{ \bar g } \;\tr \, b_4 \,,
-\end{align}
-where the trace coefficients are given in \autoref{tab:coeff}.
-\begin{table}
-	\begin{center}
-		\begin{tabular}{  c  c  c  c  }
-      \toprule[1mm]
-      & TTT & VT & S \\[1mm]
-			\midrule
-      $\tr \, b_0$ & 5 & 3 & 1 \\[1mm]
-      $\tr \, b_2$ & $-\frac 56 R$  & $\frac 14 R$  & $\frac 16 R$  \\[1mm]
-      $\tr \, b_4$ & $-\frac {1}{432} R^2$  & $-\frac {7}{1440} R^2$  & $\frac {29}{2160} R^2$  \\[1mm]
-			\bottomrule
-		\end{tabular}
-	\end{center}
-  \caption{Heat kernel coefficients for transverse traceless tensors (TTT), transverse vectors (VT)
-  and scalars (S) on a four-dimensional sphere $\mathbb S^4$.}
-	\label{tab:coeff}
-\end{table}
-By specialising the coefficients $a$ and $b$ in the general expression above and evaluating the sum over
-all spin modes, we find
-\begin{align}
-  &I_1 = \,  \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg\lbrace
-    \bigg[
-    \frac 56 \frac{1}{1 - 2 \lambda}
-    + \frac 16 \frac{1}{1 - \frac 43 \lambda}
-    - \frac 23
-    \bigg] k^4 \bar R^0 \notag \\
-    &+ \bigg[
-      - \frac {5}{9} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {5}{12} \frac{1}{1 - 2 \lambda}
-      + \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {7}{18}
-    \bigg] k^2 \bar R^1 \notag \\
-    &+ \bigg[
-      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
-      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {1}{432} \frac{1}{1 - 2 \lambda} \notag  \\
-      & \quad + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {169}{1440}
-    \bigg] k^0 \bar R^2
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
-\end{align}
-In similar fashion, one can calculate
-\begin{align}
-  I_2 = \, \frac{1}{32\pi^2} \, &F_\text{\tiny RG}(-\partial_\tau)
-  \Big[
-    B_0(\bar\Delta_s) \, \tau^{-2} +
-    B_2(\bar\Delta_s) \, \tau^{-1} \notag \\
-    &+ B_4(\bar\Delta_s) \, \tau^{0}
-  \Big] \bigg|_{\tau=0}
-    + \mathcal O(\bar R^3) \label{eq:I2-in-heatkernel}
-\end{align}
-where we used \eqref{eq:tau_expansion}. In particular, by utilizing the
-identities
-\begin{align}
-  \frac 1{\tau^2} &= \int_0^\infty \mathrm dx \; x \, e^{-\tau x} \bigg|_{\tau=0} \\
-  \frac 1\tau &= \int_0^\infty \mathrm dx \; e^{-\tau x} \bigg|_{\tau=0}
-\end{align}
-one can evaluate the action of the differential operators, and we find
-\begin{align}
-  F_\text{\tiny RG}(-\partial_\tau) \tau^{-2} &= \int_0^\infty \mathrm dx \; x \, F_\text{\tiny RG}(x) \notag \\
-  &= - \frac 13 \frac{k^{6-2b}}{(1+a\lambda)^b} \label{eq:threshold-I2-const} \\
-  F_\text{\tiny RG}(-\partial_\tau) \tau^{-1} &= \int_0^\infty \mathrm dx \; F_\text{\tiny RG}(x) \notag \\
-  &= - \frac 12 \frac{k^{4-2b}}{(1+a\lambda)^b} \label{eq:threshold-I2-lin} \\
-  F_\text{\tiny RG}(-\partial_\tau) \tau^0    &= F_\text{\tiny RG}(0) \notag \\
-  &= 0 \label{eq:threshold-I2-quad}
-\end{align}
-where the last equalities hold for the general function
-\begin{align}
-  F_\text{\tiny RG}(x) &= \int^{x}_0 \mathrm dy \; \frac{r'_k(y)}{(y+r_k(y)+a \, \lambda \, k^2)^b} \notag \\
-  &=  -\frac{x}{(1 + a \lambda)^b } \,,\quad \text{for } x \leq k^2 \,,
-\end{align}
-using the optimized cutoff as before.
-Specializing the coefficients $a$ and $b$ for the various spin modes and summing the contributions
-we get
-\begin{align}
-  &I_2 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg\lbrace
-    \bigg[
-    - \frac 53 \frac {1}{1 - 2 \lambda}
-    - \frac 13 \frac {1}{1 - \frac 43 \lambda}
-    + \frac 43
-    \bigg] k^4 \bar R^0 \notag \\
-    &+ \bigg[
-        \frac {5}{12} \frac{1}{1 - 2 \lambda}
-      - \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
-      + \frac {5}{24}
-    \bigg] k^2 \bar R^1
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
-\end{align}
-Finally, the right-hand side of the flow equation $I_3$ can be evaluated
-in the same way as $I_1$, where the Heat Kernel Functionals now depend on
-\begin{align}
-  \tilde W(x) = \frac{\dot r_k(x)}{[x+r_k(x)+a \, \lambda \, k^2]^b} \,.
-\end{align}
-Using $\dot r_k(x) = 2 \, k^2 \, \theta(k^2-x)$ for the optimized cutoff, we find
-\begin{align}
-  Q_2[\tilde W] &= \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \\
-  Q_1[\tilde W] &= \frac {2 \, k^{4-2b}}{(1 + a \lambda)^b} \,, \\
-  Q_0[\tilde W] &= \frac {2 \, k^{2-2b}}{(1 + a \lambda)^b} \,.
-\end{align}
-With these relations, we find
-\begin{align}
-  &I_3 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg\lbrace
-    \bigg[
-      \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
-      + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda} \notag \\
-      & \quad - 4
-      - \frac{2}{3} \, \eta_h
-      + \frac{4}{3} \, \eta_c
-    \bigg] k^4 \bar R^0 \notag \\
-    &+ \bigg[
-      - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
-      - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
-      + \frac{1}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - \frac 43 \lambda} \notag \\
-      & \quad - \frac{23}{12}
-      - \frac{7}{18} \, \eta_h
-      + \frac{14}{18} \, \eta_c
-    \bigg] k^2 \bar R^1 \notag \\
-    &+ \bigg[
-        \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
-      + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac{1}{216} \frac{1}{1 - 2 \lambda} \notag \\
-      & \quad + \frac{29}{1080} \frac{1}{1 - \frac 43 \lambda}
-      - \frac{149}{270}
-    \bigg] k^0 \bar R^2
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
-\end{align}
-We now want to evaluate $I$, and in particular the first derivative
-with respect to the background field.
-Since $S^4$ is an Einstein manifold, and in particular
-\begin{align}
-  \bar R_{\mu\nu} = \frac 1d \bar R\, \bar g_{\mu\nu} \,,
-\end{align}
-this gives
-\begin{align}
-  \frac{\delta \bar R}{\delta \bar g_{\mu\nu}} =  - \frac 1d \bar R\, \bar g^{\mu\nu} + \, \bar g^{\alpha\beta} \frac{\delta \bar R_{\alpha\beta}}{\delta \bar g_{\mu\nu}} \,.
-\end{align}
-We further know
-\begin{align}
-\frac{\delta \bar R_{\alpha\beta}}{\delta \bar g_{\mu\nu}} = \bar \Delta_\rho \frac{\delta \Gamma^\rho_{\alpha\beta}}{\delta \bar g_{\mu\nu}}
-				  - \bar \Delta_\alpha \frac{\delta \Gamma^\rho_{\rho\beta}}{\delta  \bar g_{\mu\nu}} \,.
-\end{align}
-These terms are total derivatives and will not contribute.
-Note that this does not hold any more when the derivative of $\bar R^2$ is evaluated,
-but we don't need the $\bar R^2$ derivative anyway. This gives
-\begin{align}
-  \frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}} &= \frac 12 \sqrt{\bar g}\, \bar g^{\mu\nu} \,,\\
-  \frac{\delta \sqrt{\bar g} \bar R}{\delta \bar g_{\mu\nu}} &= \frac 14  \sqrt{\bar g}\, \bar g^{\mu\nu} \bar R \,.
-\end{align}
-Using these relations, we can finally evaluate $I$ to be
-\begin{align}
-  \notag
-  I &= \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
-  \bigg\lbrace
-    \bigg[
-    \frac 5{12} \frac{1}{1 - 2 \lambda}
-    + \frac 1{12} \frac{1}{1 - \frac 43 \lambda}
-    - \frac{1}{3}
-    \bigg] k^4 \bar R^0 \\ \notag
-    &+\bigg[
-      - \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {5}{16} \frac{1}{1 - 2 \lambda}
-      + \frac {1}{16} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {71}{288}
-    \bigg] k^2 \bar R^1 \\ \notag
-    &+ \bigg[
-      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
-      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {1}{432} \frac{1}{1 - 2 \lambda} \notag  \\
-      & \quad + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {169}{1440}
-    \bigg] k^0 \bar R^2
-  \bigg\rbrace
-    + \mathcal O (\bar R^3) \,.
-\end{align}
-For a pure scalar field we find the following results:
-\begin{align}
-  I_1^s
-  &= \frac{ \sqrt{ \bar g} }{ 32 \pi^2 }
-  \bigg[
-      \frac{1}{6} \, k^4
-    + \frac{1}{12} \, k^2 \, \bar R
-    + \frac{29}{2160} \, \bar R^2
-  \bigg]
-  + \mathcal O (\bar R^3) \,, \\
-  I_2^s
-  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg[
-    - \frac{1}{3} \, k^4
-    - \frac{1}{12} \, k^2 \, \bar R
-  \bigg]
-  + \mathcal O (\bar R^3) \,, \\
-  I_3^s
-  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
-  \bigg[
-  k^4
-  + \frac{1}{3} \, k^2 \, \bar R
-  + \frac{29}{1080} \, \bar R^2
-  \bigg]
-  + \mathcal O (\bar R^3) \,.
-\end{align}
-This implies
-\begin{align}
-  I^s &= \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 }
-  \bigg[
-    \frac{1}{12} \, k^4 + \frac{1}{16} \, k^2 \bar R + \frac{29}{4320} \, \bar R^2
-  \bigg]
-  + \mathcal O (\bar R^3) \,.
-\end{align}
-
-
-
-\chapter{Nielsen Identities and Yang-Mills}
+\chapter{The msWI in Yang-Mills theory}
 
 Let us now briefly illustrate the use of the NI in the case of
 pure Yang-Mills theory in a covariant gauge
-(\cf in particular \cite{PawlowskiH}, Chapter IV C, page 61ff)
+(\cf in particular \cite{PawlowskiH}, Ch.~IV C, p.~61ff)
 for the example of the universal one-loop beta function.
 Splitting the full field as
 $A_\mu=\bar A_\mu+a_\mu$,
@@ -9416,6 +9118,366 @@ gauge). Moreover, while the latter is gauge-dependent, the former is
 not. This difference is at the heart of the background approximation,
 and together with the missing confinement properties is a strong
 incentive to use a full fluctuation approach.
+
+
+\chapter{The msWI from heat kernel techniques}
+\label{app:msWItraces}
+
+In this appendix we present a detailed derivation
+for the corrections of the background couplings
+through the use of the modified split Ward identity for
+Ch.~\ref{ch:jan}. In particular we want to evaluate
+the following expression through heat kernel techniques:
+\begin{align}
+  I &\equiv
+  \frac 12 \, \Tr
+  \left[
+    \frac{1}{\sqrt{\bar g}}
+    \, G_k(\overbar \Delta) \, \frac{\delta}{\delta \bar g_{\mu\nu}}
+    \Big( \sqrt{\bar g} \, R_k(\overbar\Delta) \Big)
+  \right]
+  =
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
+  + \frac 12 \, \Tr \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, F_{\text{\tiny RG}}
+  \nonumber \\
+  &=
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \, G_k R_k
+  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}}
+  - \frac 12 \, \Tr \,
+  \bigg[
+    \frac{1}{\sqrt{\bar g}}
+    \left( \frac{\delta}{\delta \bar g_{\mu\nu}} \sqrt{\bar g} \right) F_{\text{\tiny RG}}
+  \bigg]
+  \nonumber \\
+  &=
+  \frac 14 \, \bar g^{\mu\nu} \, \Tr \, \Big( G_k R_k - F_{\text{\tiny RG}} \Big)
+  + \frac 12 \, \frac{\delta}{\delta \bar g_{\mu\nu}} \, \Tr \, F_{\text{\tiny RG}}
+  =
+  \frac 12 \, \bar g^{\mu\nu} \, \Big( I_1 - I_2 \Big) + \frac{\delta}{\delta \bar g_{\mu\nu}} \, I_2 \,.
+\end{align}
+In order to present intermediate results, we introduce the following short hand notations:
+\begin{align}
+  I_1 = \frac 12 \, \Tr \, G_k R_k \,, \quad
+  I_2 = \frac 12 \, \Tr \, F_{\text{\tiny RG}} \,, \quad
+  I_3 = \frac 12 \, \Tr \, G_k \dot R_k \,,
+\end{align}
+where the last expression is nothing but the background flow.
+To calculate these functional traces, we will once again follow
+Ref.~\cite{Codello:2008vh}. In particular, we can write
+\begin{align}
+  I_1 =& \,
+  \frac{1}{32 \pi^2}
+  \Big[
+      B_0(\overbar\Delta) \, Q_2(R_kG_k)
+    + B_2(\overbar\Delta) \, Q_1(R_kG_k)
+    + B_4(\overbar\Delta) \, Q_0(R_kG_k)
+  \Big]
+  + \mathcal O (\bR^3) \,,
+\end{align}
+where the $Q$--functionals and the heat kernel coefficients were given by
+\begin{align}
+  Q_n[W] &= \frac 1{\Gamma(n)} \, \int \mathrm dx \; x^{n-1} \, W(x) \,, \\
+  B_n &= \int \mathrm d^dx \, \sqrt{\bar g} \; \tr \, b_n \,.
+\end{align}
+To evaluate the $Q$--functionals, we note that the most general argument function $W(x)$
+we encounter here is given by
+\begin{align}
+  W(x) = \frac{ r_k(x) }{ \big[ x+r_k(x)+a \, \lambda \, k^2 \big]^b } \,,
+\end{align}
+as we will see shortly. The constants $a$ and $b$ will depend
+on the field component, and we have introduced the dimensionless
+cosmological constant $\lambda$.
+Using again the optimised cutoff, one finds the following results:
+\begin{align}
+  Q_2 = \frac 16 \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \qquad
+  Q_1 = \frac 12 \frac {k^{4-2b}}{(1 + a \lambda)^b} \,, \qquad
+  Q_0 = \frac {k^{2-2b}}{(1 + a \lambda)^b} \,.
+\end{align}
+In the limit $\beta = 0$ and $\alpha \rightarrow 0$,
+the trace of $R_k G_k$ over the spin components
+can be evaluated following the procedure in Ref.~\cite{Gies:2015tca},
+and is given by the sum of the contributions
+of the four modes $\hTTmunu, \xi^{\mu}, h$ and $\sigma$.
+For the case of vanishing anomalous dimensions $\eta_h=\eta_c=0$
+they are given by
+\begin{align}
+  \Tr R_k G_k \bigg|_{\hTT}
+  &= \frac{r_k(x)}{x+r_k(x) - 2 \, \lambda \, k^2}
+  - \frac 23 \, \bR \, \frac{r_k(x)}{ \big( x+r_k(x) - 2 \, \lambda \, k^2 \big) ^2}
+  + \frac 49 \, \bR^2 \, \frac{r_k(x)}{ \big( x+r_k(x) - 2 \, \lambda \, k^2 \big) ^3} \,,
+  \\[3pt]
+  \Tr R_k G_k \Big|_{\xi}
+  &= \frac{r_k(x)}{x+r_k(x)} + \frac 14 \, \bR \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^2}
+  + \frac{1}{16} \, \bR^2 \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^3} \,,
+  \\[3pt]
+  \Tr R_k G_k \Big|_{h}
+  &= \frac{r_k(x)}{x+r_k(x) - \frac 43 \, \lambda \, k^2} \,,
+  \\[3pt]
+  \Tr R_k G_k \Big|_{\sigma}
+  &= \frac{r_k(x)}{x+r_k(x)} + \frac 13 \, \bR \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^2}
+  + \frac{1}{9} \, \bR^2 \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^3} \,.
+\end{align}
+The vector (VG) and scalar ghost (SG) contributions are given by
+\begin{align}
+  \Tr R_k G_k \Big|_{\mathrm{VG}}
+  &= - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 12 \, \bR \, \frac{r_k(x)}{(x+r_k(x)) ^2}
+  - \frac{1}{8} \, \bR^2 \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^3} \,, \\[3pt]
+  \Tr R_k G_k \Big|_{\mathrm{SG}}
+  &= - 2 \frac{r_k(x)}{x+r_k(x)} - \frac 23 \, \bR \, \frac{r_k(x)}{(x+r_k(x)) ^2}
+  - \frac{2}{9} \, \bR^2 \, \frac{r_k(x)}{ \big( x+r_k(x) \big) ^3} \,.
+\end{align}
+We will now specialise the background to a four-dimensional sphere $\mathbb S^4$.
+Then the heat kernel coefficients are given by
+\begin{align}
+  B_n(\overbar\Delta) &= \sqrt{ \bar g } \; \Tr \, b_n \,, \;\; n=0,2,4 \,,
+\end{align}
+where the trace coefficients are given in Tab.~\ref{tab:coeff}.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{  c  c  c  c  }
+      \toprule[1mm]
+      & TTT & VT & S \\[1mm]
+			\midrule
+      $\tr \, b_0$ & 5 & 3 & 1 \\[1mm]
+      $\tr \, b_2$ & $-\frac 56 R$  & $\frac 14 R$  & $\frac 16 R$  \\[1mm]
+      $\tr \, b_4$ & $-\frac {1}{432} R^2$  & $-\frac {7}{1440} R^2$  & $\frac {29}{2160} R^2$  \\[1mm]
+			\bottomrule
+		\end{tabular}
+	\end{center}
+  \caption{Heat kernel coefficients for transverse traceless tensors (TTT), transverse vectors (VT)
+  and scalars (S) on a four-dimensional sphere $\mathbb S^4$.}
+	\label{tab:coeff}
+\end{table}
+By specialising the coefficients $a$ and $b$ in the general expression above and evaluating the sum over
+all spin modes, we find
+\begin{align}
+  I_1 =
+  \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \Bigg\lbrace
+  &\bigg[
+    \frac 56 \frac{1}{1 - 2 \lambda}
+    + \frac 16 \frac{1}{1 - \frac 43 \lambda}
+    - \frac 23
+    \bigg] \, k^4 \, \bR^0
+    \nonumber \\
+    + &\bigg[
+      - \frac {5}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {5}{12} \frac{1}{1 - 2 \lambda}
+      + \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {7}{18}
+    \bigg] \, k^2 \, \bR^1
+    \nonumber \\
+    + &\bigg[
+      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {1}{432} \frac{1}{1 - 2 \lambda}
+      + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {169}{1440}
+    \bigg] \, k^0 \, \bR^2
+  \Bigg\rbrace
+    % + \mathcal O (\bR^3)
+    \,.
+\end{align}
+With similar methods we can evaluate the trace $I_2$. In particular,
+using the expansion Eqn.~\eqref{eq:tau_expansion} we may write
+\begin{align}
+  I_2 = \, \frac{1}{32\pi^2} \, &F_\text{\tiny RG}(-\partial_\tau)
+  \Big[
+    B_0(\bar\Delta_s) \, \tau^{-2} +
+    B_2(\bar\Delta_s) \, \tau^{-1}
+    + B_4(\bar\Delta_s) \, \tau^{0}
+  \Big] \bigg|_{\tau=0}
+    + \mathcal O(\bar R^3)
+    \,.
+    \label{eq:I2-in-heatkernel}
+\end{align}
+In particular, by utilising the following identities
+\begin{align}
+  \frac 1{\tau^2} &= \int_0^\infty \mathrm dx \; x \, e^{-\tau x} \bigg|_{\tau=0} \\
+  \frac 1\tau &= \int_0^\infty \mathrm dx \; e^{-\tau x} \bigg|_{\tau=0}
+\end{align}
+one can evaluate the action of the differential operators, and we find
+\begin{alignat}{4}
+  F_\text{\tiny RG}(-\partial_\tau) \,
+  &\tau^{-2}
+  \, &=& \,
+  \int_0^\infty \mathrm dx \; x \, F_\text{\tiny RG}(x)
+  \, &=& \,
+  - \frac 13 \frac{k^{6-2b}}{(1+a\lambda)^b} \,,
+  \label{eq:threshold-I2-const} \\
+  F_\text{\tiny RG}(-\partial_\tau) \,
+  &\tau^{-1}
+  &=& \int_0^\infty \mathrm dx \; F_\text{\tiny RG}(x)
+  &=& - \frac 12 \frac{k^{4-2b}}{(1+a\lambda)^b} \,,
+  \label{eq:threshold-I2-lin} \\
+  \vphantom{\int_0^\infty}
+  F_\text{\tiny RG}(-\partial_\tau) \,
+  &\tau^0
+  &=& \;   F_\text{\tiny RG}(0)
+  &=& \;\; 0 \label{eq:threshold-I2-quad} \,,
+\end{alignat}
+where the last equalities respectively hold for the general function
+\begin{align}
+  F_\text{\tiny RG}(x)
+  = \int^{x}_0 \mathrm dy \; \frac{r'_k(y)}{(y+r_k(y)+a \, \lambda \, k^2)^b}
+  =  -\frac{x}{ \big( 1 + a \lambda \big)^b } \,, \quad (x \leq k^2) \,,
+\end{align}
+using the optimised cutoff as before.
+Specializing the coefficients $a$ and $b$ for the various spin modes
+and summing the contributions we find up to $\mathcal O(\bR^2)$
+\begin{align}
+  I_2 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg\lbrace
+  \bigg[
+    - \frac 53 \frac {1}{1 - 2 \lambda}
+    - \frac 13 \frac {1}{1 - \frac 43 \lambda}
+    + \frac 43
+  \bigg] \, k^4 \, \bR^0
+  + \bigg[
+    \frac {5}{12} \frac{1}{1 - 2 \lambda}
+    - \frac {1}{12} \frac{1}{1 - \frac 43 \lambda}
+    + \frac {5}{24}
+  \bigg] \, k^2 \, \bR^1
+  \bigg\rbrace
+  % + \mathcal O (\bR^3)
+  \,.
+\end{align}
+Finally, the right-hand side of the flow equation $I_3$ can be evaluated
+in the same way as $I_1$, where the $Q$--functionals now depend on another
+function
+\begin{align}
+  \tilde W(x) = \frac{\dot r_k(x)}{ \big[ x+r_k(x)+a \, \lambda \, k^2 \big]^b} \,.
+\end{align}
+Using $\dot r_k(x) = 2 \, k^2 \, \theta(k^2-x)$ for the optimized cutoff, we find
+\begin{align}
+  Q_2[\tilde W] = \frac {k^{6-2b}}{(1 + a \lambda)^b} \,, \qquad
+  Q_1[\tilde W] = \frac {2 \, k^{4-2b}}{(1 + a \lambda)^b} \,, \qquad
+  Q_0[\tilde W] = \frac {2 \, k^{2-2b}}{(1 + a \lambda)^b} \,.
+\end{align}
+With these relations, we find for the background flow
+\begin{align}
+  I_3 = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \Bigg\lbrace
+    &\bigg[
+      \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
+      + \frac{1 - \frac{1}{6} \eta_h}{1 - \frac 43 \lambda}
+      - 4
+      - \frac{2}{3} \, \eta_h
+      + \frac{4}{3} \, \eta_c
+    \bigg] \, k^4 \, \bR^0
+    \notag \\
+    + &\bigg[
+      - \frac{10}{3} \frac{1 - \frac{1}{6} \eta_h}{(1 - 2 \lambda)^2}
+      - \frac{5}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - 2 \lambda}
+      + \frac{1}{3} \frac{1 - \frac{1}{4} \eta_h}{1 - \frac 43 \lambda}
+      - \frac{23}{12}
+      - \frac{7}{18} \, \eta_h
+      + \frac{14}{18} \, \eta_c
+    \bigg] \, k^2 \, \bR^1
+    \notag \\
+    + &\bigg[
+        \frac{20}{9} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac{10}{9} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac{1}{216} \frac{1}{1 - 2 \lambda}
+      + \frac{29}{1080} \frac{1}{1 - \frac 43 \lambda}
+      - \frac{149}{270}
+    \bigg] \, k^0 \, \bR^2
+  \Bigg\rbrace
+    % + \mathcal O (\bR^3)
+    \,.
+\end{align}
+In order to evaluate the full expression for $I$,
+we have to take first derivatives of the background Ricci
+scalar $\bR$ with respect to the background field.
+% Since $S^4$ is an Einstein manifold, and in particular
+% \begin{align}
+%   \bR_{\mu\nu} = \frac 1d \bR\, \bar g_{\mu\nu} \,,
+% \end{align}
+% this gives
+Carrying out the general variation one finds
+\begin{align}
+  \frac{\delta \bR}{\delta \bar g_{\mu\nu}}
+  =
+  - \frac 1d \, \bR \, \bar g^{\mu\nu}
+  + \bar g^{\alpha\beta} \, \frac{\delta \bR_{\alpha\beta}}{\delta \bar g_{\mu\nu}} \,,
+  \quad \text{where} \quad
+  \frac{\delta \bR_{\alpha\beta}}{\delta \bar g_{\mu\nu}}
+  =
+  \overbar \Delta_\rho \frac{\delta \Gamma^\rho_{\alpha\beta}}{\delta \bar g_{\mu\nu}}
+  - \overbar \Delta_\alpha \frac{\delta \Gamma^\rho_{\rho\beta}}{\delta  \bar g_{\mu\nu}} \,.
+\end{align}
+The two right-most terms are total derivatives and will not contribute.
+Note that this does not hold true any more when the derivative of $\bR^2$ is evaluated.
+% but we don't need the $\bR^2$ derivative anyway.
+We thus have in $d=4$
+\begin{align}
+  \frac{\delta \sqrt{\bar g}}{\delta \bar g_{\mu\nu}}
+  = \frac 12 \sqrt{\bar g}\, \bar g^{\mu\nu} \,, \quad
+  \frac{\delta \sqrt{\bar g} \bR}{\delta \bar g_{\mu\nu}}
+  = \frac 14  \sqrt{\bar g}\, \bar g^{\mu\nu} \bR \,.
+\end{align}
+Using these relations, we can finally evaluate $I$ to be
+\begin{align}
+  \notag
+  I = \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
+  \Bigg\lbrace
+  &\bigg[
+    \frac 5{12} \frac{1}{1 - 2 \lambda}
+    + \frac 1{12} \frac{1}{1 - \frac 43 \lambda}
+    - \frac{1}{3}
+    \bigg] \, k^4 \, \bR^0 \\ \notag
+    + &\bigg[
+      - \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {5}{16} \frac{1}{1 - 2 \lambda}
+      + \frac {1}{16} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {71}{288}
+    \bigg] \, k^2 \, \bR^1 \\ \notag
+    + &\bigg[
+      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
+      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
+      - \frac {1}{432} \frac{1}{1 - 2 \lambda}
+      + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
+      - \frac {169}{1440}
+    \bigg] \, k^0 \, \bR^2
+  \Bigg\rbrace
+    % + \mathcal O (\bR^3)
+    \,.
+\end{align}
+For a pure scalar field we find the following results:
+\begin{align}
+  I_1^s
+  &= \frac{ \sqrt{ \bar g} }{ 32 \pi^2 }
+  \bigg[
+      \frac{1}{6} \, k^4
+    + \frac{1}{12} \, k^2 \, \bR
+    + \frac{29}{2160} \, \bR^2
+  \bigg]
+  + \mathcal O (\bR^3) \,, \\
+  I_2^s
+  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg[
+    - \frac{1}{3} \, k^4
+    - \frac{1}{12} \, k^2 \, \bR
+  \bigg]
+  + \mathcal O (\bR^3) \,, \\
+  I_3^s
+  & = \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  \bigg[
+  k^4
+  + \frac{1}{3} \, k^2 \, \bR
+  + \frac{29}{1080} \, \bR^2
+  \bigg]
+  + \mathcal O (\bR^3) \,.
+\end{align}
+This implies
+\begin{align}
+  I^s &= \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 }
+  \bigg[
+    \frac{1}{12} \, k^4 + \frac{1}{16} \, k^2 \bR + \frac{29}{4320} \, \bR^2
+  \bigg]
+  + \mathcal O (\bR^3) \,.
+\end{align}
+
 
 
 \end{appendices}
