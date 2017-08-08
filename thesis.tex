@@ -8947,177 +8947,202 @@ which agrees with the result listed in Tab.~\ref{tab:eta-results}.
 
 \chapter{The msWI in Yang-Mills theory}
 
-Let us now briefly illustrate the use of the NI in the case of
+In this appendix we briefly want to illustrate
+the use of the msWI in the case of
 pure Yang-Mills theory in a covariant gauge
-(\cf in particular \cite{PawlowskiH}, Ch.~IV C, p.~61ff)
-for the example of the universal one-loop beta function.
+using the example of the universal one-loop beta function,
+\cf in particular Ref.~\cite{PawlowskiH}, Ch.~IV C, p.~61ff.
+
 Splitting the full field as
-$A_\mu=\bar A_\mu+a_\mu$,
+$A_\mu = \overbar A_\mu + a_\mu$,
 the covariant background gauge reads
 \begin{align}
-	\bar D_\mu a_\mu \equiv (\partial_\mu + i\,g\,\bar A_\mu) \, a_\mu=0\,.
+	\overbar D_\mu a_\mu
+  \equiv \big( \partial_\mu + i\,g\,\overbar A_\mu \big) a_\mu
+  = 0\,.
 \end{align}
-The beta function of the coupling can be read off from that of the
-running of the $\tr \,\bar F^2$-term in the background effective
-action $\Gamma_k[\bar A]=\Gamma_k[\bar A, a=0]$.
-The beta function can then be derived from the flow as follows
-\begin{align}\label{eq:betabarA}
-	\dot \Gamma_k[\bar A]\Big|_{\tr \bar F^2} = - 2 \bar \beta_g
-	S_{\text{\tiny YM}}[\bar A]\,,
+The beta function of the coupling $g$ can be read off from that of the
+running of the kinetic term $\Tr \,\overbar F^2$ in the background effective
+action $\Gamma_k[\overbar A_\mu]=\Gamma_k[\overbar A_\mu, a_\mu=0]$.
+In particular, one finds
+\begin{align}
+	\partial_t \Gamma_k[\bar A]\Big|_{\Tr \overbar F^2} =
+  - 2 \, \overbar \beta_g \,
+	S_{\mathrm{\scriptscriptstyle YM}}[\overbar A] \,,
+  \label{eq:betabarA}
 \end{align}
 which comes about due to background gauge invariance.
-It turns out that regulators that scale in the infrared as
-\begin{align}\label{eq:IRRk}
-	p^2 \, r \left( \frac{p^2}{k^2} \right)
-	\sim k^2  \left( \frac{k^2}{p^2} \right)^{n-1}\,,
+It turns out that regulators $r_k$ which scale in the infrared like
+\begin{align}
+	p^2 \, r_k(y)
+  \sim
+  k^2 \, y^{-(n-1)}\,,
+  \label{eq:IRRk}
 \end{align}
-lead to a background beta function $\bar \beta_g = (1+n)
-\beta_{g,\rm 1-loop}$ and are hence regulator-dependent. In turn the
-beta function computed from the fluctuation diagrams is
-regulator-independent, $\beta_g=\beta_{g,\rm 1-loop}$, which reflects
-the one-loop universality of the Yang-Mills beta function.
-This result is surprising as the beta function is a universal
-quantity.
+where $y = \nicefrac{p^2}{k^2}$,
+lead to a background beta function
+$\overbar \beta_g = (1+n) \, \beta_g \big|_{\mathrm{1-loop}}$,
+and are hence regulator-dependent.
+The beta function computed from the fluctuation diagrams instead is
+regulator-independent,
+$\beta_g = \beta_g \big|_{\mathrm{1-loop}}$,
+which reflects the one-loop universality of the Yang-Mills beta function.
+% This result is surprising as the beta function is a universal quantity.
 
-This puzzle can be resolved as follows. First we notice
-that an evaluation of the fluctuation correlation functions reveals
-the correct one-loop beta function. Secondly, in the background
-field approximation the $\Tr\,\bar F^2$-term also receives
-contributions from the background field dependence of the regulator.
-This $\bar A$-dependence triggered by the regulator should not be seen
-as a genuine field dependence. Indeed, for $k\to 0$ it disappears, \cf Eq.
+This puzzle may be resolved as follows.
+Firstly, let us note that an evaluation of the fluctuation correlation functions
+yields the correct one-loop beta function.
+Secondly, in the background field approximation the kinetic term $\Tr\,\overbar F^2$ receives
+contributions from the background field dependence of the regulator, too.
+This $\overbar A$--dependence triggered by the regulator should not be seen
+as a genuine field dependence. Indeed, for $k\to 0$ it disappears, \cf Eqn.
 \eqref{eq:gaugeNIk}. This is why we have to disentangle the regulator field
 dependence from the genuine one.
-This can be done by writing the effective action as
+This may be done by writing the effective action as
 \begin{align}
-\label{eq:EAsplit}
-\Gamma_k[\bar A,a] = \Gamma_{k,1}[a] + \Gamma_{k,2}[\bar A] + \Gamma_{k,3}[\bar A, a]\,,
+  \Gamma_k[\overbar A,a] = \Gamma_{k,1}[a] + \Gamma_{k,2}[\overbar A] + \Gamma_{k,3}[\overbar A, a]\,,
+  \label{eq:EAsplit}
 \end{align}
-where the second term originates from the $\bar A$-dependence of the regulator and
+where the second term originates from the $\overbar A$-dependence of the regulator and
 the last term accounts for gauge invariance under transformations of the full field.
-We will see shortly that it vanishes in the present case.
+We will see shortly that this term vanishes in the present case.
 
 To extract the regulator dependence, on simply takes a functional derivative of
-the last expression with respect to the background field. The RG flow of
-the resulting object can then be projected onto the relevant coupling
-($\tr \, \bar F^2$ in the Yang-Mills case) to obtain the regulator contribution
-of the beta function one is interested in. The physical beta function
-is then given by the difference
+the last expression with respect to the background field. The renormalisation group
+flow of the resulting object can then be projected onto the relevant coupling
+% ($\tr \, \overbar F^2$ in the Yang-Mills case)
+to obtain the regulator contribution
+of the beta function one is interested in.
+The physical beta function is then given by the difference
 \begin{align}
-	\beta^{(\text{phys})} = \beta \, \big|_{a=0} - \bar \beta \,.
+	\beta^{(\text{phys})} = \beta \, \big|_{a=0} - \overbar \beta \,.
 \end{align}
-
 This is why we will investigate the flow of the background-dependence
-of the effective action $\partial_t \delta_{\bar A} \Gamma_k$
+of the effective action $\partial_t \delta_{\overbar A} \Gamma_k$
 \begin{align}
-\label{eq:A-Rk}
-	\partial_t \int_{y,z} \frac{\delta R_k(y,z)}{\delta \bar A(x)}
-	\frac{\delta \Gamma_k}{\delta R_k(y,z)} =
-	\frac 12 \, \Tr\, \partial_t
-	\left(\frac{\delta R_k[\bar A]}{\delta \bar A(x)}\, G_k[\bar A,
-	a]\right).
+  \partial_t \int_{y,z} \frac{\delta R_k(y,z)}{\delta \overbar A(x)}
+  \frac{\delta \Gamma_k}{\delta R_k(y,z)} =
+  \frac 12 \, \Tr\, \partial_t
+  \left(
+    \frac{\delta R_k[\overbar A]}{\delta \overbar A(x)}\, G_k[\overbar A, a]
+  \right).
+  \label{eq:A-Rk}
 \end{align}
-The right hand side of the equation can be rewritten as a sum of
-traces depending on the spin-0 and spin-1 Laplacians, $\bar \Delta_0=
--\bar D^2$ and $\bar \Delta_1 =-\bar D^2\id -2 g \bar F$, respectively.
-These traces can be expressed as
+The right hand side of this equation can be rewritten as a sum of
+traces over the spin-0 and spin-1 Laplacians $\overbar \Delta_0=
+-\overbar D^2$ and $\overbar \Delta_1 =-\overbar D^2\id -2 g \overbar F$, respectively.
+These traces can then be re-expressed as total derivatives as follows
 \begin{align}
 	\label{eq:A-Rk1}
-	\frac 12 \,  \Tr\, \partial_t \left[\frac{\delta R_k(\bar \Delta)}{\delta \bar
-	A(x)}\, G_k(\bar \Delta )\right] =
-  \frac{1}{2}
-	\frac{\delta }{\delta \bar A(x)}
-	\Tr\, \partial_t F_{\text{\tiny RG}}(\bar\Delta)\,,
+	\frac 12 \, \Tr \, \partial_t
+  \left[
+    \frac{\delta R_k(\overbar \Delta)}{\delta \overbar A(x)} \, G_k(\overbar \Delta )
+  \right]
+  =
+  \frac{1}{2} \,
+	\frac{\delta }{\delta \overbar A(x)} \,
+	\Tr\, \partial_t F_{\text{\tiny RG}}(\overbar\Delta)\,,
 \end{align}
-where
-\begin{align}\label{eq:FA}
-	\partial_t  F_{\text{\tiny RG}}(x)= \partial_t \int_{x_0}^x d x' \frac{\partial
-	R_k(x')}{\partial x'} G_k(x')\,.
-\end{align}
-Note that the function $F_{\text{\tiny RG}}(x)$ is potentially
-singular in the infrared, that is for $x\rightarrow 0$.  The infrared limit of
-the regulators is given by \eqref{eq:IRRk} and it follows that
-\begin{align}\label{eq:IRF}
-	F_{\text{\tiny RG}}(x\to 0)
-	\propto x^{-(n-1)}\,,
-\end{align}
-where one has a logarithmic divergence for $n=1$. Accordingly, the
-$t$-derivatives in \eqref{eq:A-Rk}-\eqref{eq:IRF} are required for
-finiteness.
-
-This shows how the NI \eqref{eq:gaugeNIk} can trigger
-contributions to logarithmically running quantities already at
-one-loop: IR-singular regulators introduce additional scales for
-background observables.
-
-Now we want to compute the contributions to $\tr\, \bar F^2$ that
-come from the genuine background field dependence of the effective
-action. This is done by removing the mixed contributions, $\tr\, \bar
-F \bar F_{R_k}$, and $\tr \,\bar F_{R_k} \bar F_{R_k}$ contributions
-from the full $\bar A$-dependence. Here, $F_{R_k}$ signals the field
-strength of the regulator field. To that end we first notice that
-mixed contributions to $\tr\, \bar F^2$ are not present: taking a
-$\bar A$-derivative of \eqref{eq:A-Rk1} that hits the genuine $\bar
-A$-dependence leads to terms proportional to
+where we defined the functional
 \begin{align}
-	\label{eq:mixed}
-	- \partial_t
-	\left[\Tr\,
-		\int_{x_0}^x d x' \frac{\partial
-		R_k(x')}{\partial x'} G_k(x) \frac{\delta
-		\Gamma_k^{(2)}}{\delta\bar A} G_k
-		\bigg|_{\tr \bar F^2}
-	\right]=0\,.
+	F_{\text{\tiny RG}}(x)= \int_{x_0}^x \mathrm dx' \;
+  \frac{\partial R_k(x')}{\partial x'} \, G_k(x') \,.
+  \label{eq:FA}
 \end{align}
-Note that the occurrence of $G_k^2$ leads to IR-finite expressions, and
-hence the trace can be taken before taking the $t$-derivative. As we
-concentrate on field-dependences with dimensionless coefficients, the
-$t$-derivative vanishes (no other scale is present that could lead to
-$\log k/{\rm scale}$ dependences).
+Note that the functional $F_{\text{\tiny RG}}(x)$ is potentially
+singular in the infrared, that is for $x\rightarrow 0$.
+The infrared limit of the regulators is given by
+\eqref{eq:IRRk}, and it follows that
+\begin{align}
+	F_{\text{\tiny RG}}(x\to 0)
+	\propto x^{-(n-1)} \,,
+  \label{eq:IRF}
+\end{align}
+shows a logarithmic divergence for $n=1$. Accordingly, the
+$t$-derivative in Eqn.~\eqref{eq:A-Rk} is required for finiteness.
 
-This leaves us with the task to compute \eqref{eq:A-Rk1}. The
-right hand side is a trace of a functional of $\bar \Delta =
-\bar\Delta_0, \,\bar\Delta_1$, and can be computed with standard
-heat-kernel techniques. In case we are only interested in powers of $\Tr
-\bar F^2$ the simplest way to compute the trace is by using
+This shows how the msWI of Eqn.~\eqref{eq:gaugeNIk} can trigger
+contributions to logarithmically running quantities,
+even at one-loop:
+this is because infrared-singular regulators can
+introduce additional scales for background observables.
+
+Now we want to compute the contributions to $\Tr \, \overbar F^2$ that
+come from the genuine background field dependence of the effective
+action. This is done by removing the mixed contributions,
+$\Tr\, \overbar F \overbar F_{R_k}$,
+and
+$\Tr \,\overbar F_{R_k} \overbar F_{R_k}$,
+from the full $\overbar A$-dependence.
+Here, $F_{R_k}$ signals the field strength of the regulator field.
+To that end we first notice that mixed contributions to
+$\Tr\, \overbar F^2$ are not present:
+taking a $\overbar A$-derivative of Eqn.~\eqref{eq:A-Rk1} which hits the
+genuine $\overbar A$-dependence will lead to terms proportional to
+\begin{align}
+	- \partial_t
+	\left[
+    \Tr \, \int_{x_0}^x \mathrm dx' \;
+    \frac{\partial R_k(x')}{\partial x'} \, G_k(x)
+    \frac{\delta \Gamma_k^{(2)}}{\delta\overbar A} \, G_k
+		\bigg|_{\Tr \overbar F^2}
+	\right]
+  = 0 \,.
+	\label{eq:mixed}
+\end{align}
+Note that the occurrence of $G_k^2$ leads to an infrared-finite expressions,
+and hence the trace can be evaluated before taking the $t$-derivative.
+Since we focus on field-dependences with dimensionless coefficients,
+the $t$-derivative vanishes
+(this is because no other scale $\mu$ is present which
+could lead to $\log \nicefrac{k}{\mu}$ dependences).
+
+This leaves us with the task to compute Eqn.~\eqref{eq:A-Rk1}.
+The right hand side of which is a trace over a functional of
+$\overbar \Delta = \overbar\Delta_0, \,\overbar\Delta_1$,
+and can be computed with standard heat-kernel techniques.
+In case we are interested in powers of $\Tr \overbar F^2$ only,
+the simplest way to compute the trace is by using the identity
 \begin{align}
 	\label{eq:tau_expansion}
-	\Tr f(\bar \Delta) =
-	f(-\partial_\tau ) \Tr\, e^{-\tau \bar
-	\Delta}\bigg|_{\tau=0} \,,
+	\Tr f(\overbar \Delta) =
+	f(-\partial_\tau ) \Tr\, e^{-\tau \overbar \Delta}\bigg|_{\tau=0} \,,
 \end{align}
-for a general function $f$, which avoids the standard Laplace
-transform. In the present case of a Yang-Mills theory this straightforwardly
-leads to
+which is valid a general function $f$.
+It is useful, since it avoids the standard Laplace transform.
+In the case of a Yang-Mills theory this leads to
 \begin{align}
+  \frac{1}{2} \, \Tr \,
+  \partial_t F_{\text{\tiny RG}}(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
+  = - 2 n \, \beta_g \big|_{\mathrm{1-loop}} \, S_{\mathrm{\scriptscriptstyle YM}}[\overbar A] \,.
 	\label{eq:betabarARk}
-  \frac{1}{2} \, \Tr\, \partial_t F_{\text{\tiny RG}}(\bar \Delta) \bigg|_{\tr \bar F^2}= -2 n
-	\,\beta_{g,\rm 1-loop} S_{\text{\tiny YM}}[\bar A]\,.
 \end{align}
-Subtracting this result from \eqref{eq:betabarA} leads us to
-\begin{align} \label{eq:betabarAfinal}  \dot \Gamma_k[ \bar A]-
-  \frac{1}{2} \, \Tr\, \partial_t F_{\text{\tiny RG}}(\bar \Delta)\bigg|_{\tr \bar
-	F^2} = -2 \,\beta_{g,\rm 1-loop} S_{\text{\tiny YM}}[\bar A]\,,
+Subtracting this result from Eqn.~\eqref{eq:betabarA} leads us to
+\begin{align}
+  \label{eq:betabarAfinal}
+  \dot \Gamma_k[ \overbar A]
+  - \frac{1}{2} \, \Tr\,
+  \partial_t F_{\text{\tiny RG}}(\overbar \Delta) \bigg|_{\Tr \overbar F^2}
+  = -2 \, \beta_g \big|_{\mathrm{1-loop}} \, S_{\mathrm{\scriptscriptstyle YM}}[\overbar A] \,.
 \end{align}
 which is indeed the regulator independent, universal beta function.
 
-The above analysis in the Yang-Mills example suggests the following:
-When using the background field approximation one should modify the
-second derivative w.r.t.\ the background field in order to account
+The above analysis of Yang-Mills theory suggests the following:
+When using the background field approximation, one should modify
+second derivatives with respect to the background field in order to account
 for the regulator dependence of the background field.
 
-
-
-In gravity as opposed to infrared Yang-Mills theory we do
-not expect qualitative differences in the UV. Still we remark that in
-Yang-Mills theory the (genuine) background anomalous dimension
-$\eta_{\bar A}=-\partial_t \log Z_{\bar A}=2 \beta_g$, and the
-fluctuating anomalous dimension $\eta_{\bar a}=-\partial_t \log
-Z_{\bar a}$ differ by approximately a factor two (in the Landau
-gauge). Moreover, while the latter is gauge-dependent, the former is
-not. This difference is at the heart of the background approximation,
-and together with the missing confinement properties is a strong
-incentive to use a full fluctuation approach.
+% In gravity as opposed to infrared Yang-Mills theory we do
+% not expect qualitative differences in the UV.
+% Still we remark that in Yang-Mills theory the (genuine) background anomalous dimension
+% $\eta_{\overbar A}=-\partial_t \log Z_{\overbar A}=2 \beta_g$,
+% and the fluctuating anomalous dimension
+% $\eta_{\overbar a}=-\partial_t \log Z_{\overbar a}$
+% differ by approximately a factor two (in the Landau gauge).
+% Moreover, while the latter is gauge-dependent, the former is not.
+% This difference is at the heart of the background approximation,
+% and together with the missing confinement properties is a strong
+% incentive to use a full fluctuation approach.
 
 
 \chapter{The msWI from heat kernel techniques}
@@ -9296,7 +9321,7 @@ In particular, by utilising the following identities
   \frac 1{\tau^2} &= \int_0^\infty \mathrm dx \; x \, e^{-\tau x} \bigg|_{\tau=0} \\
   \frac 1\tau &= \int_0^\infty \mathrm dx \; e^{-\tau x} \bigg|_{\tau=0}
 \end{align}
-one can evaluate the action of the differential operators, and we find
+one can evaluate the action of the differential operator of Eqn.~\label{eq:FA}:
 \begin{alignat}{4}
   F_\text{\tiny RG}(-\partial_\tau) \,
   &\tau^{-2}
