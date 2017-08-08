@@ -19,11 +19,11 @@
       legend cell align=left,
       width=0.49\linewidth,
       ]
-      \addplot+[no marks, thick, red]
+      \addplot+[no marks, thick, red, dashed]
         table [x index =0,y index = 1,col sep = comma]{Sources/BackGwithMu.csv};
-      \addplot+[no marks, thick, blue, dashed]
+      \addplot+[no marks, thick, blue]
         table [x index =0,y index = 1,col sep = comma]{Sources/LevelOnewithMu.csv};
-      \addplot+[no marks, thick, cyan, dashdotted]
+      \addplot+[no marks, thick, cyan]
         table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss.csv};
       \legend{
         \, {$\bar G^\star$ from $(\dot{\bar G},\dot\mu)$},
@@ -43,13 +43,13 @@
       legend cell align=left,
       width=0.49\linewidth,
       ]
-      \addplot+[no marks, thick, red]
+      \addplot+[no marks, thick, red, dashed]
         table [x index =0,y index = 2,col sep = comma]{Sources/BackGwithMu.csv};
-      \addplot+[no marks, thick, blue, dashed]
+      \addplot+[no marks, thick, blue]
         table [x index =0,y index = 2,col sep = comma]{Sources/LevelOnewithMu.csv};
-      \addplot+[no marks, thick, cyan, dashdotted]
+      \addplot+[no marks, thick, cyan]
         table [x index =0,y expr = -\thisrowno{3}/2,col sep = comma]{Sources/Matter-flow-hss.csv};
-      \addplot+[no marks, thick, orange, dashdotted]
+      \addplot+[no marks, thick, orange]
         table [x index =0,y index = 4,col sep = comma]{Sources/Matter-flow-hss.csv};
       \legend{
         \, {$-\nicefrac{\mu^\star}{2}$ from $(\dot{\bar G},\dot\mu)$},

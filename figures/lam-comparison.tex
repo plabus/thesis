@@ -19,11 +19,11 @@
     legend cell align=left,
     width=0.49\linewidth,
 	]
-		\addplot+[no marks, thick, red]
+		\addplot+[no marks, thick, red, dashed]
       table [x index =0,y index = 2,col sep = comma]{Sources/Pure-Background-beta0.csv};
-		\addplot+[no marks, thick, blue, dashed]
+		\addplot+[no marks, thick, blue]
       table [x index =0,y index = 2,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
-		\addplot+[no marks, thick, cyan, dashdotted]
+		\addplot+[no marks, thick, cyan]
       table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
     \legend{
       \, {$\bar \lambda^\star ( \eta_N , \bar \lambda^\star )$ },
@@ -44,11 +44,11 @@
     legend cell align=left,
     width=0.49\linewidth,
 	]
-		\addplot+[no marks, thick, red]
+		\addplot+[no marks, thick, red, dashed]
       table [x index =0, y index = 2, col sep = comma]{Sources/Pure-Background-beta0.csv};
-		\addplot+[no marks, thick, blue, dashed]
+		\addplot+[no marks, thick, blue]
       table [x index =0, y index = 2, col sep = comma]{Sources/Improved-Background-beta0.csv};
-		\addplot+[no marks, thick, cyan, dashdotted]
+		\addplot+[no marks, thick, cyan]
       table [x index =0, y expr = -\thisrowno{3}/2, col sep = comma]{Sources/Matter-flow-hss.csv};
     \legend{
       \, {$\bar \lambda^\star (\eta_N,\bar \lambda^\star )$},

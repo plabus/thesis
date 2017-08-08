@@ -18,16 +18,16 @@
     legend cell align=left,
     width=0.49\linewidth,
     ]
-    \addplot+[no marks, thick, red]
+    \addplot+[no marks, thick, red, dashed]
     table [x index =0,y index = 1,col sep = comma]{Sources/Pure-Background-beta0.csv};
-    \addplot+[no marks, thick, blue, dashed]
+    \addplot+[no marks, thick, blue]
     table [x index =0,y index = 1,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
-    \addplot+[no marks, thick, cyan, dashdotted]
+    \addplot+[no marks, thick, cyan]
     table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
     \legend{
-      \, {$\bar G^\star (\eta_N ,\bar \lambda^\star)$},
-      \, {$\bar G^\star(\eta_{N,1},\lambda_1^\star)$},
-      \, {$\bar G^\star(\eta_h,\mu^\star)$},
+      \, {$\bar G^\star (\etaS,     \bar \lambda^\star)$},
+      \, {$\bar G^\star (\etaSfluc, \lambda_1^\star)$},
+      \, {$\bar G^\star (\eta_h,    \mu^\star)$},
     }
 
     \nextgroupplot[
@@ -42,14 +42,14 @@
     legend cell align=left,
     width=0.49\linewidth,
     ]
-    \addplot+[no marks, thick, red]
+    \addplot+[no marks, thick, red, dashed]
     table [x index =0,y index = 1,col sep = comma]{Sources/Pure-Background-beta0.csv};
-    \addplot+[no marks, thick, blue, dashed]
+    \addplot+[no marks, thick, blue]
     table [x index =0,y index = 1,col sep = comma]{Sources/Improved-Background-beta0.csv};
-    \addplot+[no marks, thick, cyan, dashdotted]
+    \addplot+[no marks, thick, cyan]
     table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss.csv};
     \legend{
-      \, {$\bar G^\star (\eta_N ,\bar \lambda^\star)$},
+      \, {$\bar G^\star (\etaS ,\bar \lambda^\star)$},
       \, {$G_{(1,0)}^\star$},
       \, {$G_{(3,0)}^\star$},
     }
