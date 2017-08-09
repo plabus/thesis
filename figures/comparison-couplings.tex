@@ -25,9 +25,9 @@
     \addplot+[no marks, thick, cyan]
     table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
     \legend{
-      \, {$\bar G^\star (\etaS,     \bar \lambda^\star)$},
-      \, {$\bar G^\star (\etaSfluc, \lambda_1^\star)$},
-      \, {$\bar G^\star (\eta_h,    \mu^\star)$},
+      \, {$\Gback^\star (\etaS,     \Lback^\star)$},
+      \, {$\Gback^\star (\etaSfluc, \lambda_1^\star)$},
+      \, {$\Gback^\star (\eta_h,    \mu^\star)$},
     }
 
 
@@ -50,7 +50,7 @@
     \addplot+[no marks, thick, cyan]
     table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss.csv};
     \legend{
-      \, {$\bar G^\star (\etaS ,\bar \lambda^\star)$},
+      \, {$\Gback^\star (\etaS ,\Lback^\star)$},
       \, {$G_{(1,0)}^\star$},
       \, {$G_{(3,0)}^\star$},
     }
@@ -74,9 +74,9 @@
 		\addplot+[no marks, thick, cyan]
       table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
     \legend{
-      \, {$\bar \lambda^\star ( \eta_N , \bar \lambda^\star )$ },
-      \, {$\bar \lambda^\star ( \eta_{N,1},\lambda_1^\star )$},
-      \, {$\bar \lambda^\star ( \eta_h,\mu^\star )$},
+      \, {$\Lback^\star ( \eta_N , \Lback^\star )$ },
+      \, {$\Lback^\star ( \eta_{N,1},\lambda_1^\star )$},
+      \, {$\Lback^\star ( \eta_h,\mu^\star )$},
     }
 
 
@@ -98,7 +98,7 @@
 		\addplot+[no marks, thick, cyan]
       table [x index =0, y expr = -\thisrowno{3}/2, col sep = comma]{Sources/Matter-flow-hss.csv};
     \legend{
-      \, {$\bar \lambda^\star (\eta_N,\bar \lambda^\star )$},
+      \, {$\Lback^\star (\eta_N,\Lback^\star )$},
       \, {$\lambda_1^\star$},
       \, {$- \nicefrac{\mu^\star}{2}$}
     }

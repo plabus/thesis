@@ -147,7 +147,8 @@ letterpaper,
 
 \newcommand{\bnabla}{\overbar \nabla}
 \newcommand{\bR}{\overbar R}
-\newcommand\Gback{ \GNewton } % background Newton coupling
+\newcommand\Gback{ \overbar{G} } % background Newton coupling
+\newcommand\Lback{ \overbar{\Lambda} } % background cosmological constant
 \newcommand{\Tr}{\mathrm{Tr}}
 
 \newcommand{\FPone}  {\textsl{FP1}}
@@ -5785,7 +5786,6 @@ It only depends on $\NS$ if we include the anomalous dimensions $\etaTT$ and $\e
 This gives rise to a beta function of the form
 \begin{align}
   \beta_{g_3} = 2 g_3 - \frac{1}{3\pi} \, g_3^2 \left( 10-\frac{\NS}{8} \right) + \mathcal{O}(g_3^3).
-  \label{norma}
   \label{eq:betag3ch4a}
 \end{align}
 Herein, the factor $10/3\pi$ differs from the  factor $47/18\pi$ in
@@ -5964,7 +5964,7 @@ This yields a new contribution to $\beta_{g_3}$, which now reads
   \left( 20 - \frac{\NS}{4} + \frac{23}{60} \, \etaS \right)
   + \mathcal{O}(g_3^3) \,.
 \end{align}
-Using $\etaS = \frac{7}{4\pi} \, g_3 + \mathcal{O}(g_3^2)$, Eqn.~(\ref{norma}) gets replaced by
+Using $\etaS = \frac{7}{4\pi} \, g_3 + \mathcal{O}(g_3^2)$, Eqn.~(\ref{eq:betag3ch4a}) gets replaced by
 \begin{align}
   \beta_{g_3} = 2 g_3 +\frac{4+\NS}{24\pi} \, g_3^2 + \mathcal{O}(g_3^3).
   \label{eq:betag3ch4b}
@@ -6213,6 +6213,7 @@ would suggest that there could be an upper limit of scalars that is compatible w
 
 
 \section{Introduction}
+
 In quantum gravity,
 quantum fluctuations of matter and geometry induce a scale dependence of the Newton coupling,
 just as quantum fluctuations of matter induce running matter couplings in the Standard Model.
@@ -6326,7 +6327,7 @@ spin modes. We will again use a symmetric momentum configuration, and
 for the analytical results we will project onto $p=0$.
 For the numerical results, we will employ a bi-local projection instead, as in
 Refs.~\cite{Christiansen:2015rva,Meibohm:2015twa}.
-We also compare our results with the background Newton coupling, $\bar{G}$.
+We also compare our results with the background Newton coupling, $\Gback$.
 Throughout this chapter, we use the gauge a conventional gauge fixing procedure
 where we set the gauge parameters to $\alpha=0$ and $\beta=1$.
 
@@ -6347,12 +6348,12 @@ the kinetic term for the scalar fields to third order in $h_{\mu \nu}$.
 Once again, due to the breaking of background independence,
 the running of the three-graviton vertex will differ from the one of the four- and five-graviton vertex,
 as well as the different graviton-scalar vertices.
-Accordingly, we again introduce separate dimensionful couplings,
-denoted by $\bar{G}_{(n_h, n_{\varphi})}$ in front of these vertices.
+Accordingly, we again introduce separate couplings,
+denoted by $G_{(n_h, n_{\varphi})}$ in front of these vertices.
 Similarly, we will have to distinguish the different avatars of the cosmological constant
-by introducing the dimensionful graviton mass parameter $\bar{\mu}$
+by introducing the graviton mass parameter $\mu$
 associated to $-2 \Lambda$ and the momentum-independent part of the $n$-graviton vertex,
-$\bar{\lambda}_n$.
+$\lambda_n$.
 Thus, the effective average action of our truncation schematically reads
 \begin{align}
   \Gamma_k
@@ -6362,9 +6363,9 @@ Thus, the effective average action of our truncation schematically reads
   h_{\mu \nu} \left( \hat \Gamma_{\Lambda}^{(2,0)} \right)^{\mu \nu \kappa \lambda} h_{\kappa \lambda}
   + \dots \,.
 \end{align}
-As we have pointed out before, the beta function of $\bar{G}_{(4,0)}$
-depends on $\bar{G}_{(6,0)}$, and the one of $\bar{G}_{(5,0)}$
-on $\bar{G}_{(6,0)}$ and $\bar{G}_{(7,0)}$, which we have excluded from our truncation.
+As we have pointed out before, the beta function of $G_{(4,0)}$
+depends on $G_{(6,0)}$, and the one of $G_{(5,0)}$
+on $G_{(6,0)}$ and $G_{(7,0)}$, which we have excluded from our truncation.
 % Deriving beta functions for $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}$
 % as well as $\bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ within our truncation
 % would thus yield only partial results, as important contributions to those beta functions would be missing.
@@ -6372,8 +6373,8 @@ on $\bar{G}_{(6,0)}$ and $\bar{G}_{(7,0)}$, which we have excluded from our trun
 % All vertices which enter the flow of those couplings in a diagrammatic expansion of the
 % flow equation are present within our truncation.
 To close the system of beta functions, we will use a similar strategy as in the last chapter,
-and leave $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}, \bar{G}_{(2,2)}, \bar{G}_{(3,2)}$
-as well as $\bar{\lambda}_4, \bar{\lambda}_5$ as free parameters.
+and leave $G_{(4,0)}, G_{(5,0)}, G_{(2,2)}, G_{(3,2)}$
+as well as $\lambda_4, \lambda_5$ as free parameters.
 These free parameters will then appear in the beta functions of $G_{(3,0)}$ and $G_{(2,1)}$.
 Later, we will have the choice of either equating them to one of the lower-order couplings,
 or setting them to zero.
@@ -6395,13 +6396,13 @@ We then obtain the following beta functions
   \label{eq:betaG3} \\[3pt]
   \beta_{G_{(1,2)}}
   &= \big( 2 + \eta_h+ 2\etaS \big) \, G_{(1,2)}
-  + \frac{ 2 \sqrt{G_{(1,2)}} }{ 3\pi }
-  + \bar{G}^2\, \NS\, \frac{1}{24\pi}(4-\etaS)
+  + \frac{ 2 \, \sqrt{ \vphantom{G^2} G_{(1,2)}} }{ 3\pi }
+  + \Gback^2 \, \frac{\NS}{24\pi}(4-\etaS)
   \nonumber \\[3pt]
   &+
   \left(
-    - G_{(1,2)}^{3/2} \frac{6-\eta_h}{(\mu+1)^2}
-    + \sqrt{G_{(3,0)}}G_{(1,2)} \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3}
+    - G_{(1,2)}^{3/2} \, \frac{6-\eta_h}{(\mu+1)^2}
+    + \sqrt{G_{(3,0)}} \, G_{(1,2)}  \, \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3}
   \right) .
   \label{eq:betag3}
 \end{align}
@@ -6414,7 +6415,7 @@ Whereas the $\NS$ dependence in $\beta_{G_{(3,0)}}$ comes with a factor
 $-\sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2}$,
 there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$
 (because there is no closed scalar loop which contributes in that case)
-and the $\NS$ dependence in $\beta_{\bar{G}}$ is proportional to $+\bar{G}^2$.
+and the $\NS$ dependence in $\beta_{\Gback}$ is proportional to $+\Gback^2$.
 In particular, let us focus on the comparison of the background flow with the fluctuation flow,
 which clearly features a different sign.
 In the case of the background flow, the background field dependence of the regulator yields additional
@@ -6490,24 +6491,27 @@ Our projection prescriptions are
 \begin{align}
   \beta_{G_{(3,0)}} &= 2 \, G_{(3,0)} + 3  \, \eta_h(k^2)  \, G_{(3,0)}
   - \frac{24}{19}
-  \Big(
+  \Big[
     \eta_h(k^2)
     -\eta_h(0)
-  \Big)
+  \Big]
   \lambda_3 \, G_{(1,2)}
   \nonumber \\[3pt]
-  &+ \frac{64}{171} \, \frac{ (32\pi)^2 \, \sqrt{G_{(3,0)}} }{ k }
-  \left(
-    \text{Flow}^{(hhh)}_{{\TT},G_{(3,0)}}(k^2)-
-    \text{Flow}^{(hhh)}_{{\TT},G_{(3,0)}}(0)
-  \right) ,
+  &+ \frac{64}{171} \, \frac{ (32\pi)^2 \, \sqrt{ \vphantom{G^2} G_{(3,0)} } }{ k }
+  \left[
+    \Flow^{(hhh)}_{ \TT, G_{(3,0)} }(k^2)-
+    \Flow^{(hhh)}_{ \TT, G_{(3,0)} }(0)
+  \right] ,
   \\[5pt]
   \beta_{G_{(1,2)}} &= 2 \, G_{(1,2)} + \eta_h(k^2) \, G_{(1,2)} + 2 \, \etaS(k^2) \, G_{(1,2)}
   \nonumber \\[3pt]
-  &+ \frac{ 32 \pi \, \sqrt{G_{(1,2)}} }{ 8 } \, \frac{8}{3} \;
-  \text{Flow}^{(h\varphi\varphi)}_{{\TT},G_{(1,2)}}(k^2) \,.
+  &+ \frac{ 32 \pi \, \sqrt{ \vphantom{G^2} G_{(1,2)} } }{ 8 } \, \frac{8}{3} \;
+  \Flow^{(h\varphi\varphi)}_{ \TT, G_{(1,2)} }(k^2) \,.
 \end{align}
-Here, the subscripts ${\TT}, G_{(3,0)}$ and ${\TT}, G_{(1,2)}$
+Here, the subscripts
+$\scriptstyle{\mathrm{T\hspace{\TTspace}T}}, G_{(3,0)}$
+and
+$\scriptstyle{\mathrm{T\hspace{\TTspace}T}}, G_{(1,2)}$
 indicate that a projection onto the corresponding coupling
 is carried out on the right hand side of the exact renormalisation group equation,
 \cf the procedure of Refs.~\cite{Meibohm:2015twa, Dona:2013qba}.
@@ -6591,18 +6595,18 @@ With this assumption, we obtain the following large $\NS$ limit within our trunc
 \begin{align}
   \beta_{G_{(3,0)}}
   &= 2 \, G_{(3,0)} + 3 \, G_{(3,0)} \, \eta_h
-  - \sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2} \, \NS\, \frac{86}{1140 \pi} \,, \\[3pt]
+  - \sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2} \, \frac{86 \, \NS}{1140 \pi} \,, \\[3pt]
   \beta_{G_{(1,2)}} &= 2 \, G_{(1,2)} + G_{(1,2)} \, \eta_h \,, \\[3pt]
-  \eta_h &= G_{(1,2)} \, \NS \, \frac{1}{24 \pi} \,, \\[3pt]
+  \eta_h &= G_{(1,2)} \, \frac{\NS}{24 \pi} \,, \\[3pt]
   \etaS &= 0 \,.
 \end{align}
 As the system is only driven by scalar fluctuations, the increase of
 $\eta_h$ does not pose a problem for the choice of regulator.
-
-This system admits three fixed points
+The system admits three fixed points
 \begin{alignat}{5}
-  G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &= 0 \,,                         & \theta_{1,2}   &=-2 \,, \\[3pt]
-  G_{3\, \star}  &=-\frac{355008 \pi}{9025 \NS} \,, \qquad & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,, \qquad & \theta_{1,2}   &= 2 \,, \\[3pt]
+  \vphantom{ \frac{48 \pi}{\NS} }
+  G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &= 0 \,,                         & \theta_{1,2}   &=-2 \,, \\
+  G_{3\, \star}  &=-\frac{355008 \pi}{9025 \NS} \,, \qquad & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,, \qquad & \theta_{1,2}   &= 2 \,, \\
   G_{3\, \star}  &= 0 \,,                                  & g_{3\, \star}  &=-\frac{48 \pi}{\NS} \,,        & \theta_1       &= 2 \,, \;\; \theta_2 \rightarrow - i \, \infty \,.
 \end{alignat}
 Due to the presence of the Gaussian fixed point, the fixed point with
@@ -6725,7 +6729,7 @@ Apart from the standard two-point function of the background field it contains a
 purely regulator induced term. The flow of this term is given by
 \begin{align}
 	\FRG(x)
-  = \int_{x_0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \overbar R = 0)\,,
+  = \int_{x_0}^x \mathrm dx' \; \frac{\partial R_k(x')}{\partial x'} \, G_k(x', \bR = 0)\,,
   \label{eq:Fg}
 \end{align}
 \cf also the definition Eqn.~\eqref{eq:FA} for the Yang-Mills case.
@@ -6816,19 +6820,19 @@ We also specialise the background to a sphere in four dimensions.
 
 We then obtain the following flow equations for the background couplings
 \begin{align}
-  \vphantom{ \frac{\bar \Lambda}{\bar G} }
-  \partial_t \bar G
-  &= \big( 2 + \etaS \big) \, \bar G \,, \\
-  \vphantom{ \frac{\bar \Lambda}{\bar G} }
-  \partial_t \bar \Lambda
-  &= - 4 \, \bar \Lambda + \frac{\bar \Lambda}{\bar G} \, \partial_t \bar G
-  + 8 \pi \bar G \; \Flow_{\bar \Gamma} \Big|_{\mathcal O(\bR^0)} \,, \\
+  \vphantom{ \frac{\Lback}{\Gback} }
+  \partial_t \Gback
+  &= \big( 2 + \etaS \big) \, \Gback \,, \\
+  \vphantom{ \frac{\Lback}{\Gback} }
+  \partial_t \Lback
+  &= - 4 \, \Lback + \frac{\Lback}{\Gback} \, \partial_t \Gback
+  + 8 \pi \Gback \; \Flow_{\overbar \Gamma} \Big|_{\mathcal O(\bR^0)} \,, \\
   \etaS &=
-   16 \pi \bar G \; \Flow_{\bar \Gamma} \Big|_{\mathcal O(\bR^1)} \,,
+   16 \pi \Gback \; \Flow_{\overbar \Gamma} \Big|_{\mathcal O(\bR^1)} \,,
 \end{align}
 where
 \begin{align}
-  &\Flow_{\bar \Gamma} = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
+  &\Flow_{\overbar \Gamma} = \, \frac{ \sqrt {\bar g} }{ 32 \pi^2 }
   \Bigg\lbrace
     \bigg[
         \frac{5 - \frac{5}{6} \eta_h}{1 - 2 \lambda}
@@ -6868,16 +6872,16 @@ Our result for the gravity part of the background flows agrees with Ref.~\cite{G
 and the scalar part agrees with Ref.~\cite{Dona:2013qba}.
 Details of the derivation may be found in App.~\ref{app:msWItraces}.
 
-Note that the quantities in $\Flow_{\bar \Gamma}$ should be taken
+Note that the quantities in $\Flow_{\overbar \Gamma}$ should be taken
 from the fluctuation two-point function.
 In this case the background couplings are non-dynamical spectators.
 We obtain the usual background field approximation
-by setting $\lambda=\bar\Lambda$, $\eta_h=\etaS$ and $\eta_c=0$.
+by setting $\lambda=\Lback$, $\eta_h=\etaS$ and $\eta_c=0$.
 
 
 \section{Fluctuation couplings via the Ward identities}
 
-\begin{figure}[t!]
+\begin{figure}%[t]
   \begin{center}
     \input{figures/comparison-couplings.tex}
   \end{center}
@@ -6917,7 +6921,7 @@ we need to compute the flow of the following quantity:
   + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, \FRG \Big)  \,.
   \label{eq:def-I}
 \end{align}
-Here, $\FRG(\bar \Delta)$ is the functional introduced in \eqref{eq:Fg}.
+Here, $\FRG(\overbar \Delta)$ is the functional introduced in \eqref{eq:Fg}.
 All functional traces appearing in the last equation can be evaluated using heat kernel techniques.
 Details of the computation, as well as intermediate results may be found in App.~\ref{app:msWItraces}.
 There, we find the following result for $I$:
@@ -6958,26 +6962,25 @@ There, we find the following result for $I$:
 \end{align}
 The flow equations for the level one fluctuation couplings can now be expressed
 through the flow of the background couplings with the addition of the improvement
-coming from the modified split Ward identity.
-This yields
+coming from the modified split Ward identity. This yields
 \begin{align}
-  \vphantom{ \frac{\bar \Lambda}{\bar G} }
-  \partial_t \bar G_1
-  &= \big( 2 + \etaSfluc \big) \, \bar G_1 \,, \\
-  \partial_t \bar \Lambda_1
-  &= - 4 \, \bar \Lambda_1 + \frac{\bar \Lambda_1}{\bar G_1} \, \partial_t \bar G_1
-  + 8 \pi \bar G_1 \, \big(  \Flow_{\bar \Gamma} - 8 I \big) \Big|_{\mathcal O(\bR^0)} \,, \\
-  \vphantom{ \frac{\bar \Lambda}{\bar G} }
+  \vphantom{ \frac{\Lback}{\Gback} }
+  \partial_t \Gback_1
+  &= \big( 2 + \etaSfluc \big) \, \Gback_1 \,, \\
+  \partial_t \Lback_1
+  &= - 4 \, \Lback_1 + \frac{\Lback_1}{\Gback_1} \, \partial_t \Gback_1
+  + 8 \pi \Gback_1 \, \big(  \Flow_{\overbar \Gamma} - 8 I \big) \Big|_{\mathcal O(\bR^0)} \,, \\
+  \vphantom{ \frac{\Lback}{\Gback} }
   \etaSfluc
-  &= 16 \pi \bar G_1 \, \big( \Flow_{\bar \Gamma} - 8 I  \big) \Big|_{\mathcal O(\bR^1)} \,.
+  &= 16 \pi \Gback_1 \, \big( \Flow_{\overbar \Gamma} - 8 I  \big) \Big|_{\mathcal O(\bR^1)} \,.
 \end{align}
-The quantities in $I$ and $\Flow_{\bar \Gamma}$ should be taken from the fluctuation two-point function.
+The quantities in $I$ and $\Flow_{\overbar \Gamma}$ should be taken from the fluctuation two-point function.
 Hence the level one couplings are non-dynamical spectators.
 We can make an approximation in order to obtain a closed equation for the level one couplings,
 which is a similar approximation as the standard background field approximation.
-For this we set $\lambda=\bar\Lambda_1$, $\eta_h=\etaSfluc$ and $\eta_c=0$.
+For this we set $\lambda=\Lback_1$, $\eta_h=\etaSfluc$ and $\eta_c=0$.
 
-\begin{figure}[t!]
+\begin{figure}%[t]
   \begin{center}
     \input{figures/all-from-fluc-and-mu.tex}
   \end{center}
