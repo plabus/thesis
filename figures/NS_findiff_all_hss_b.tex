@@ -1,47 +1,37 @@
-\begin{tikzpicture}
+% \begin{tikzpicture}
 
-	\begin{axis}[
-		xmin = 0,
-		xmax = 52,
-		ymin = -1,
-		ymax = 3,
-		major tick length =1pt,
-		cycle list = {black},
-    xlabel={number of scalars $\NS$},
-    ylabel={fixed point values},
-    legend pos=north west,
-    legend cell align=left,
-    width=0.49\linewidth,
-	]
-		% \shade[left color=gray!20!lightgray,right color = gray, draw=none]
-		% 	  (446,0) rectangle +(104,400);
-		% \shade[left color=lightgray!20!white,right color = lightgray, draw=none]
-		% 	  (175,0) rectangle +(270,400);
-		% \filldraw[pattern=north east lines, draw=none]
-		% 	  (524,0) rectangle +(26,400);
+% 	\begin{axis}[
+% 		xmin = 0,
+% 		xmax = 52,
+% 		ymin = -1,
+% 		ymax = 3,
+% 		major tick length =1pt,
+% 		cycle list = {black},
+%     xlabel={number of scalars $\NS$},
+%     ylabel={fixed point values},
+%     legend pos=north west,
+%     legend cell align=left,
+%     width=0.49\linewidth,
+% 	]
 
-		\addplot+[no marks, thick, red, mark size=0.3pt]
-      table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss.csv};
-		\addplot+[no marks, thick, blue, mark size=0.3pt]
-      table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss.csv};
-		\addplot+[no marks, thick, green, mark size=0.3pt]
-      table [x index =0,y index = 4,col sep = comma]{Sources/Matter-flow-hss.csv};
-		\addplot+[no marks, thick, yellow, mark size=0.3pt]
-      table [x index =0,y index = 3,col sep = comma]{Sources/Matter-flow-hss.csv};
+% 		\addplot+[no marks, thick, red, mark size=0.3pt]
+%       table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss.csv};
+% 		\addplot+[no marks, thick, blue, mark size=0.3pt]
+%       table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss.csv};
 
-		\addplot+[no marks, dotted]              coordinates {(0,0)    (55,0)};
-		\addplot+[no marks, black, dashed, thin] coordinates {(45,-40) (45,40)};
-		\addplot+[no marks, black, dashed, thin] coordinates {(17,-40) (17,40)};
+% 		\addplot+[no marks, dotted]              coordinates {(0,0)    (55,0)};
+% 		\addplot+[no marks, black, dashed, thin] coordinates {(45,-40) (45,40)};
+% 		\addplot+[no marks, black, dashed, thin] coordinates {(17,-40) (17,40)};
 
-    \legend{
-      \, $G_{(3,0)}^\star$,
-      \, $G_{(1,2)}^\star$,
-      \, $\lambda_3^\star$,
-      \, $\mu^\star$
-    }
-	\end{axis}
+%     \legend{
+%       \, $G_{(3,0)}^\star$,
+%       \, $G_{(1,2)}^\star$,
+%       \, $\lambda_3^\star$,
+%       \, $\mu^\star$
+%     }
+% 	\end{axis}
 
-\end{tikzpicture}
+% \end{tikzpicture}
 %
 \begin{tikzpicture}
 	\begin{axis}[
@@ -53,17 +43,11 @@
 		cycle list = {black},
     xlabel={number of scalars $\NS$},
     ylabel={critical exponents},
-    ylabel near ticks, yticklabel pos=right,
+    % ylabel near ticks, yticklabel pos=right,
     legend pos=south west,
     legend cell align=left,
     width=0.49\linewidth,
 	]
-		% \shade[left color=green!20!white,right color = white, draw=none]
-		% 	  (0,0) rectangle +(308,650);
-		% \shade[left color=white,right color = red!15!white, draw=none]
-		% 	  (308,0) rectangle +(242,650);
-		% \filldraw[pattern=north east lines, draw=none]
-		% 	  (524,0) rectangle +(26,650);
 
 		\addplot+[no marks, thick, green, mark size=0.3pt]
       table [x index =0,y expr = - \thisrowno{5},col sep = comma]{Sources/Matter-flow-hss.csv};
@@ -97,12 +81,11 @@
 		major tick length =1pt,
     xlabel={number of scalars $\NS$},
     ylabel={anomalous dimensions},
+    ylabel near ticks, yticklabel pos=right,
     legend pos=north west,
     legend cell align=left,
     width=0.49\linewidth,
 	]
-		% \filldraw[pattern=north east lines, draw=none]
-		% 	  (524,0) rectangle +(34,550);
 
 		\addplot+[no marks, thick, blue,mark size=0.3pt]
       table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
@@ -113,9 +96,6 @@
 		\addplot+[no marks, thick, red,dashed, mark size=0.3pt]
       table [x index =0,y index = 3,col sep = comma]{Sources/Matter-flow-hss-eta.csv};
 
-		% \addplot+[no marks, thick, orange, mark size=0.3pt]        coordinates {(0.1,0)(52.2,0)};
-		% \addplot+[no marks, thick,dashed, orange, mark size=0.3pt] coordinates {(0.1,0)(52.2,0)};
-		% \addplot+[forget plot,no marks, dotted]                    coordinates {(0,0)(70,0)};
 		\addplot+[no marks, dotted]                    coordinates {(0,0)    (55,0)};
 		\addplot+[forget plot, no marks, dashed, thin] coordinates {(0,2)(70,2)};
 		\addplot+[no marks, black, dashed, thin]       coordinates {(45,-40) (45,40)};
