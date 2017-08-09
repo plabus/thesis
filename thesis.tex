@@ -5279,6 +5279,7 @@ and at vanishing external fields $\hTTmunu$, $\sigma$ and $\varphi$.
 
 
 \section{Results for beta functions and anomalous dimensions}
+\label{sec:resultsCH4}
 
 For our explicit results, we will employ a regulator shape function of the form
 \begin{align}
@@ -5526,6 +5527,7 @@ or for the pure-gravity coupling $G_3$ in Ref.~\cite{Meibohm:2015twa}.
 
 
 \section{Results for the pure gravity case}
+\label{sec:resultsPureGravityCH4}
 
 Let us now analyse the fixed-point structure within various approximations.
 If we consider the scalar as an external field, and only integrate out metric fluctuations,
@@ -6213,119 +6215,95 @@ would suggest that there could be an upper limit of scalars that is compatible w
 \chapter{Effective Universality in Quantum Gravity}
 \label{ch:jan}
 
-
-% \section{Introduction}
-
-In quantum gravity,
-quantum fluctuations of matter and geometry induce a scale dependence of the Newton coupling,
-just as quantum fluctuations of matter induce running matter couplings in the Standard Model.
-Therefore, a central object of interest in quantum gravity becomes the running Newton coupling
-and in particular its high-energy behaviour.
-In practice, different ways of reading off the scale-dependence of the Newton coupling can be implemented.
-Specifically, in gravity-matter systems the scatterings with gravitons are described
-by $G_{\vec n}$ with $\vec n=(n_h, n_c,n_\varphi,n_\psi,....)$.
-Here, $\phi=(h_{\mu\nu},c_{\mu},\varphi,\psi,...)$ and $n_{\phi_i}$ stands for the number
-of fields $\phi_i$ involved (notation from \cite{Meibohm:2016mkp}.
-These couplings can be viewed as ``avatars" of the Newton coupling.
-In the present case we limit ourselves to a gravity-scalar system.
-% and
-%suppress the number of ghosts for the sake of accessibility. This
-%leaves us with a two-index coupling
-We focus on pure-graviton and graviton-scalar couplings, which leaves us with a two-index coupling.
+In the last chapter, we have begun to disentangle the different renormalisation
+group flows of gravity-matter vertices on the level of fluctuating fields.
+Specifically, in these systems, scattering with gravitons is described
+by scale-dependent couplings
 \begin{align}
-  G_{(n_h,n_\varphi)}\,.
+  G_{\mathbf{n}} \,,
+  \quad \text{where} \quad
+  \mathbf{n} = \big( n_h, n_\varphi, n_\psi, n_{A_\mu}, n_c \dots \big) \,.
 \end{align}
-For example, the coupling $G_{(3, 0)}$ relates to the scattering of
-three gravitons, derived from the pure gravity part of the effective
-action. The coupling $G_{(1,2)}$ relates to the scattering of a
-graviton on two scalars derived from the kinetic term of the
-scalars. This coupling to gravity is also present in the free scalar
-theory or free approximation and can be considered to be the
-fundamental coupling of the scalars to gravity.
-If diffeomorphism invariance is intact, these couplings are of course all equal to each other.
-Additionally, the scale-dependence of the Newton coupling can also be read off using the
-background-field formalism, where it is of course associated to the running prefactor of the curvature
-term in the action and will be referred to as $\bar{G}$.
-The main focus of this paper will be to compare the scale dependence of these couplings under the impact
-of quantum fluctuations of the metric and of $\NS$ scalar fields, and in various approximations.
-
-The present functional renormalisation group approach builds on a gauge-fixed approach to quantum gravity.
-The gauge fixing is implemented with the help of the background field formalism,
-such that background gauge dependence is respected.
-In contrast to non-Abelian gauge theories,
-the use of the background field method is unavoidable in setting up a Renormalisation Group flow in
-the geometric phase of quantum gravity,
-as the distinction of high-momentum and low-momentum modes,
-inherent to the coarse-graining procedure, requires the introduction of a background.
-The resulting effective action $\Gamma[\bar g_{\mu\nu},h_{\mu\nu}]$ is not diffeomorphism-invariant but
-satisfies non-trivial Slavnov-Taylor identities (STIs).
-Moreover, the introduction of a background metric $\bar g_{\mu\nu}$ is inherent to the
-gauge-fixed approach, and in a seemingly counter-intuitive way,
-background independence of the setting is encoded in the STIs together
-with the Nielsen-identity (NI) or split Ward identity (SWI), that
-relates derivatives with respect to the background metric and those
-with respect to the fluctuation graviton field $h_{\mu\nu}$.
-The relation between background metric and fluctuation field is not necessarily linear,
-but in the present work we (mostly) consider the linear split,
-\begin{align}\label{eq:linpara}
-  g_{\mu \nu}=\bar g_{\mu \nu}+h_{\mu \nu}.
+With $n_{\Psi}$ we denote the number of fields $\Psi$ involved in
+the process (\cf notation of Ref.~\cite{Meibohm:2016mkp}).
+We have referred to these couplings as `avatars' of Newton's constant $\GNewton$.
+As before, we want to limit ourselves here to gravity-scalar systems,
+and focus on pure-graviton and graviton-scalar couplings.
+Suppressing the number of ghost fields $n_c$ for the sake of clarity,
+this leaves us with couplings carrying  two indices
+\begin{align}
+  G_{(n_h,n_\varphi)} \,.
 \end{align}
-Additionally, we rescale the fluctuation field $h_{\mu\nu}$ by a dimensionful constant of mass-dimension -1,
-such that $h_{\mu\nu}$ has a canonical dimension 1 for the bosonic fluctuation field $h_{\mu \nu}$.
-If we derive all pure-graviton and graviton-matter indices from a diffeomorphism invariant action
-containing an Einstein-Hilbert term with Newton coupling $\bar{G}_N$,
-then that dimensionful constant should be $\sqrt{\bar{G}_N}$.
-In a second step, we then reabsorb the corresponding power of $\bar{G}_N$ in the fluctuation field vertices.
-
-Additionally to the above we introduce a infrared regularisation term
-with infrared cutoff scale $k$ to the fluctuation field $h$, that is
-quadratic in $h$. This is a direct violation of diffeomorphism
-invariance and leads to modified STIs, the mSTIs, as well as modified
-SWIs, the mSWIs. In the limit $k\to\infty$ these deviations from the
-standard STI,NI/SWI may play a crucial r$\hat{\rm o}$le for the correct
-description of the physical dynamics that is described in the
-limit $k\to 0$.
-
-In spite of the above properties, we expand the effective action in
+At the classical level, Einstein gravity is diffeomorphism invariant,
+and all these couplings are of course equal to each other.
+However, in the functional renormalisation group approach to quantum gravity,
+we expand the effective average action in
 terms of diffeomorphism-invariant terms and diffeomorphism-variant
 corrections that depend on the gauge fixing as well as the infrared
-regularisation. If the latter terms were missing, the different
-$G_{(n_h,n_\varphi)}$ would be identical and a
-unique Newton coupling $G$ would be present.
+regularisation (the cutoff operator).
+If the latter terms were missing, the different couplings $G_{(n_h,n_\varphi)}$
+would be identical and a unique Newton coupling $\GNewton$ would be present.
 This property indeed holds for the diffeomorphism-invariant effective action
 \begin{align}
-  \Gamma[g_{\mu\nu}]= \Gamma[g_{\mu\nu},0]\,.
+  \Gamma[g_{\mu\nu}] = \Gamma[\bar g_{\mu\nu} + h_{\mu\nu}] \,.
 \end{align}
-This already sets its vertices $\Gamma^{(n)}[\bar g_{\mu\nu}]$ apart from
-$\delta^n/\delta h^n \Gamma[\bar g_{\mu\nu},h_{\mu\nu}]$.
-In renormalisable theories with dimensionless couplings these couplings have a two-loop universality,
-the first two non-vanishing coefficients of the $\beta$-function are
-scheme independent in mass-independent RG-schemes.
-This also relates the momentum-dependence of vertices.
+In renormalisable theories, dimensionless couplings have a two-loop universality,
+\ie the first two non-vanishing coefficients of the $\beta$ functions are
+universal in mass-independent renormalisation schemes.
+This also relates the momentum-dependence of vertices to each other.
 
-In gravity, the couplings are not dimensionless and universality is missing (except for the $R^2$-coupling).
-Still, in a diffeomorphism-invariant action the couplings would agree which again
-would restricts the momentum-dependence of vertices. In the full
-setting with mSTIs and mNIs we may hope for {\it `effective universality'}
+In gravity, however,
+couplings are not dimensionless and universality is missing (except for the $R^2$-coupling).
+But yet, in a diffeomorphism-invariant action the couplings would agree with each other,
+which again would restricts the momentum-dependence of vertices.
+Supplementing the flow equation with the modified split Ward identities, as outlined
+in Ch.~\ref{ch:tim}, one may thus ask if you can uncover some notion of `effective universality'
 based on the underlying diffeomorphism invariance.
-For example, such a property is crucial for the applicability of the
-background approximation, and is also implicitly underlying most other
-approximations used in gravity.
-It is also important for the convergence properties of the expansion schemes.
+
+In this chapter we want to investigate this question. Our motivation will be two-fold.
+First, in the last chapter we have noticed, that contributions to the anomalous dimensions
+coming from the scalar fields had different signs with respect to an older calculation done
+in Ref.~\cite{Dona:2013qba}, cf. Secs.~\ref{sec:resultsPureGravityCH4} and
+\ref{sec:resultsPureGravityCH4}.
+This might be either due to the use of the exponential parametrisation of the metric field,
+or due to the use of the background
+approximation in Ref.~\cite{Dona:2013qba} compared to the fluctuation field calculation
+we have done in the last chapter. This is why we want to re-do the latter calculation in
+the linear parametrisation, using a different gauge fixing procedure at the same time.
+This will also test the robustness on the scheme-dependence of the results obtained so far.
+Secondly, we want to use the msWI derived in a background field approximation together
+with the background flow equation to investigate whether the artificial background field
+contributions of the cutoff operator can be removed and the effective behaviour of the
+fluctuation field couplings can be recovered.
+
 
 
 \section{Matter-gravity flow setup}
 
-In this chapter we will compare two versions of the Newton coupling:
+In this chapter we will again compare two versions of the Newton coupling.
 The first is defined through the three-graviton vertex,
-as in Refs.~\cite{Christiansen:2015rva, Meibohm:2015twa}.
-We will call its dimensionless version $G_{(3,0)}$.
-The second coupling is defined through the one-graviton-two-scalar vertex as in
-the last chapter, and here we will denote its dimensionless version with $G_{(1,2)}$.
+as in Refs.~\cite{Christiansen:2015rva, Meibohm:2015twa},
+and we will call its dimensionless version $G_{(3,0)}$
+(this corresponds to $G_3$ in the last chapter).
+The second coupling is defined through the one-graviton-two-scalar vertex
+($g_3$ in the last chapter),
+and here we will denote its dimensionless version with $G_{(1,2)}$.
 
 Differently from the last chapter, we will use the linear parametrisation
+\begin{align}\label{eq:linpara}
+  g_{\mu \nu}=\bar g_{\mu \nu}+h_{\mu \nu}.
+\end{align}
 for the metric fluctuations and we will not York--decomposed the respective
-spin modes. We will again use a symmetric momentum configuration, and
+spin modes.
+Additionally, we rescale the fluctuation field $h_{\mu\nu}$ by a dimensionful constant of mass-dimension $-1$,
+such that $h_{\mu\nu}$ has a canonical dimension $1$ for the bosonic fluctuation field $h_{\mu \nu}$.
+If we derive all pure-graviton and graviton-matter indices from a diffeomorphism invariant action
+containing an Einstein-Hilbert term with Newton coupling $\GNewton$,
+then that dimensionful constant should be $\sqrt{\GNewton}$.
+In a second step, we then reabsorb the corresponding power of $\GNewton$
+in the fluctuation field vertices.
+
+Furthermore, we will again use a symmetric momentum configuration, and
 for the analytical results we will project onto $p=0$.
 For the numerical results, we will employ a bi-local projection instead, as in
 Refs.~\cite{Christiansen:2015rva,Meibohm:2015twa}.
@@ -6361,19 +6339,13 @@ Thus, the effective average action of our truncation schematically reads
   \Gamma_k
   &= Z_h \int \mathrm d^4 x \;
   h_{\mu \nu} \left( \hat \Gamma_{\GNewton}^{(2,0)} \right)^{\mu \nu \kappa \lambda} h_{\kappa \lambda}
-  + Z_h \, \bar{\mu} \, \int \mathrm  d^4 x \;
+  + Z_h \, \mu \int \mathrm  d^4 x \;
   h_{\mu \nu} \left( \hat \Gamma_{\Lambda}^{(2,0)} \right)^{\mu \nu \kappa \lambda} h_{\kappa \lambda}
   + \dots \,.
 \end{align}
 As we have pointed out before, the beta function of $G_{(4,0)}$
 depends on $G_{(6,0)}$, and the one of $G_{(5,0)}$
 on $G_{(6,0)}$ and $G_{(7,0)}$, which we have excluded from our truncation.
-% Deriving beta functions for $\bar{G}_{(4,0)}, \bar{G}_{(5,0)}$
-% as well as $\bar{G}_{(2,2)}, \bar{G}_{(3,2)}$ within our truncation
-% would thus yield only partial results, as important contributions to those beta functions would be missing.
-% Instead, we derive only the beta functions for $\bar{G}_{(3,0)}$ and $\bar{G}_{(2,1)}$.
-% All vertices which enter the flow of those couplings in a diagrammatic expansion of the
-% flow equation are present within our truncation.
 To close the system of beta functions, we will use a similar strategy as in the last chapter,
 and leave $G_{(4,0)}, G_{(5,0)}, G_{(2,2)}, G_{(3,2)}$
 as well as $\lambda_4, \lambda_5$ as free parameters.
