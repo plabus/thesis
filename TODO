@@ -3,21 +3,12 @@ capital letters in sub/superscripts should probably be of smaller size
 all words in equations should be with \text
 
 
-Questions:
-==========
-
-all appendices: do I need \GNewton somewhere?
-
-
 TODO:
 =====
 
-finish abstract
 
 open issues chaper 5:
   -- conclusions
-
-fine tuning
 
 
 ----------------------
@@ -27,6 +18,7 @@ fine tuning
 DONE:
 =====
 
+finish abstract
 check declaration of authorship
 acknowledgements
 
