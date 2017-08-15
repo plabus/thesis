@@ -5850,7 +5850,7 @@ This is the same effect that was already observed for the background-system in R
 Interestingly, the contribution of scalars to the running of the three-graviton coupling features
 the opposite sign in the approximation used in Ref.~\cite{Meibohm:2015twa}.
 On the other hand, the overall fixed-point dynamics in Ref.~\cite{Meibohm:2015twa} are similar,
-as $G_{3\,\ast}$ is also pushed towards larger values.
+as $G_{3\,\star}$ is also pushed towards larger values.
 The destabilising effects of scalars show up in the momentum-independent part of the
 graviton two- and three-point functions.
 
@@ -6400,47 +6400,75 @@ Later, we will have the choice of either equating them to one of the lower-order
 or setting them to zero.
 
 
-\section{Analytical results}
+% \section{Analytical results}
+\section{Effective universality for the scalar contribution to the Newton coupling}
 
+We first focus on the beta functions for three avatars of the Newton coupling,
+namely the three-graviton coupling $G_{(3,0)}$,
+the graviton-scalar coupling $G_{(1,2)}$ and the background Newton coupling $\bar{G}$.
+The beta functions for the first two depend on higher $n$-point functions,
+such as the four-graviton coupling $G_{(4,0)}$.
 In the following, all pure-graviton couplings will be set equal to $G_{(3,0)}$,
 \ie $G_{(n,0)}= G_{(3,0)}$, and all graviton-matter couplings will be set equal to $G_{(1,2)}$,
 \ie $G_{(n,m)}=G_{(1,2)}$ for $m>0$.
-
-We then obtain the following beta functions
+We then obtain
 \begin{align}
-  \beta_{G_{(3,0)}}
-  &= \beta_{G_{(3,0)}} \Big|_{\mathrm{grav}}
-  + 2 \, G_{(3,0)}
-  + 3 \, G_{(3,0)} \, \eta_h
-  - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \,,
-  \label{eq:betaG3} \\[3pt]
-  \beta_{G_{(1,2)}}
-  &= \big( 2 + \eta_h+ 2\etaS \big) \, G_{(1,2)}
-  + \frac{ 2 \, \sqrt{ \vphantom{G^2} G_{(1,2)}} }{ 3\pi }
-  + \Gback^2 \, \frac{\NS}{24\pi}(4-\etaS)
-  \nonumber \\[3pt]
-  &+
-  \left(
-    - G_{(1,2)}^{3/2} \, \frac{6-\eta_h}{(\mu+1)^2}
-    + \sqrt{G_{(3,0)}} \, G_{(1,2)}  \, \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3}
-  \right) .
-  \label{eq:betag3}
+  % \beta_{G_{(3,0)}}
+  % &= \beta_{G_{(3,0)}} \Big|_{\mathrm{grav}}
+  % + 2 \, G_{(3,0)}
+  % + 3 \, G_{(3,0)} \, \eta_h
+  % - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \,,
+  % \label{eq:betaG3} \\[3pt]
+  % \beta_{G_{(1,2)}}
+  % &= \big( 2 + \eta_h+ 2\etaS \big) \, G_{(1,2)}
+  % + \frac{ 2 \, \sqrt{ \vphantom{G^2} G_{(1,2)}} }{ 3\pi }
+  % + \Gback^2 \, \frac{\NS}{24\pi}(4-\etaS)
+  % \nonumber \\[3pt]
+  % &+
+  % \left(
+  %   - G_{(1,2)}^{3/2} \, \frac{6-\eta_h}{(\mu+1)^2}
+  %   + \sqrt{G_{(3,0)}} \, G_{(1,2)}  \, \frac{3(8-\eta_h)-16\lambda_3(6-\eta_h)}{6(\mu+1)^3}
+  % \right) .
+  % \label{eq:betag3}
+  \beta_{G_{(3,0)}} &= G_{(3,0)} \left(2+3 \eta_h\right)+ \beta_{G_{(3,0)}}\Big|_{\rm grav}
+  - G_{(3,0)}^{1/2} \,G_{(1,2)}^{3/2}\, \NS \frac{86+\etaS}{1140 \pi} \,,
+  \label{eq:betaG3}\\[2ex]
+  \beta_{G_{(1,2)}} &= \left(2 +\eta_h+ 2\etaS\right)G_{(1,2)}
+  -  \frac{2G_{(1,2)}^2}{3\pi}  \left(6-\eta_h\right)+\frac{ 2\sqrt{G_{(3,0)}}G_{(1,2)}^{3/2} }{\pi}3(8-\eta_h)
+  \,,
+  \label{eq:betag3} \\
+  \beta_{\Gback} &= 2 \Gback - \frac{79}{24\pi} \Gback^2
+  + \Gback^2 \, \NS \, \frac{1}{24\pi}(4-\etaS) \,.
+  \label{eq:betaGbar}
 \end{align}
-The background results displayed here are the same as in Ref.~\cite{Dona:2013qba},
-because the contribution from the scalar loops are independent of the gauge fixing.
-Our focus here will be on the $\NS$-dependent part instead.
-If we neglect for the moment that $\eta_h$ can develop an $\NS$ dependence,
-we obtain a picture that suggests very strong violations of diffeomorphism invariance:
-Whereas the $\NS$ dependence in $\beta_{G_{(3,0)}}$ comes with a factor
-$-\sqrt{G_{(3,0)}} \, G_{(1,2)}^{3/2}$,
-there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$
-(because there is no closed scalar loop which contributes in that case)
-and the $\NS$ dependence in $\beta_{\Gback}$ is proportional to $+\Gback^2$.
-In particular, let us focus on the comparison of the background flow with the fluctuation flow,
-which clearly features a different sign.
-In the case of the background flow, the background field dependence of the regulator yields additional
-contributions to the flow, which are absent in the case of the fluctuation coupling.
-The background field approximation therefore does not provide a reliable result in this case.
+The matter contribution to the background Newton coupling is the same as in Ref.~\cite{Dona:2013qba}
+since the contribution from the scalar loop is independent of the gauge.
+Let us first comment on the case of vanishing anomalous dimensions and $\NS=1$.
+In that case,
+\begin{align}
+  \beta_{G_{(3,0)}}|_{\rm grav}=- \frac{833}{285\pi}G_{(3,0)}^2.
+\end{align}
+We then obtain a fixed point at
+\begin{align}
+  G_{(1,2)}^{\star}=2.04,\, G_{(3,0)}^{\star}=3.30, \, \Gback^{\star}=2.01.
+\end{align}
+The set of critical exponents, defined as the eigenvalues of the stability matrix multiplied by an additional sign, read
+\begin{align}
+  \theta_1=2.95, \, \theta_2=2, \, \theta_3=2.
+\end{align}
+This simple approximation yields a fixed point at positive values of the Newton couplings and with critical exponents of approximately the expected size. The agreement between $\theta_2$ and $\theta_3$ is a simple consequence of the structure of the quadratic equations, which result in a critical exponent being equal to the negative canonical dimension.
+
+Our focus is now on the $\NS$-dependent part in Eqns.~\eqref{eq:betaG3}- \eqref{eq:betaGbar}.
+If we neglect that $\eta_h$ can have an $\NS$ dependence,
+we obtain a picture that suggests very strong violations of diffeomorphism invariance.
+For simplicity we equate $G_{(3,0)}=G_{(1,2)}=G$,
+and obtain an $\NS$ dependence in $\beta_{G_{(3,0)}}$ that is proportional to $-G^2$.
+On the other hand there is no $\NS$ dependence in $\beta_{G_{(1,2)}}$,
+as there is no closed scalar loop that contributes.
+Finally, the $\NS$ dependence in $\beta_{\Gback}$ comes with $+ \Gback^2$.
+Thus, in this approximation the three avatars of the Newton coupling exhibit all three
+possible dependences on $\NS$, \ie either no $\NS$--dependence in $\beta_{G_{(1,2)}}$,
+a positive $\NS$ dependence in $\beta_{G_{(3,0)}}$, or a negative one in $\beta_{\Gback}$.
 
 Let us now add the graviton anomalous dimension, for which
 \begin{align}
@@ -6451,11 +6479,11 @@ we obtain the following contribution linear in $\NS$
 \begin{align}
   \beta_{G_{(3,0)}}\Big|_{\NS} &= 3 \, G_{(3,0)} \, G_{(1,2)} \, \frac{\NS}{24 \pi}
   - G_{(3,0)}^{1/2} \, G_{(1,2)}^{3/2} \, \NS \, \frac{86+\etaS}{1140 \pi} \nonumber\\[3pt]
-                               &= g^2 \, \NS \, \frac{113}{2280 \pi} \approx 0.016 \, g^2 \, \NS \,, \\[5pt]
+                               &= G^2 \, \NS \, \frac{113}{2280 \pi} \approx 0.016 \, g^2 \, \NS \,, \\[5pt]
   \beta_{G_{(1,2)}} \Big|_{\NS}&= G_{(1,2)}^2 \, \frac{\NS}{24 \pi} \nonumber\\[3pt]
-                               &\approx 0.013 \, g^2 \, \NS \,,
+                               &\approx 0.013 \, G^2 \, \NS \,,
 \end{align}
-where we have set $G_{(1,2)} = G_{(3,0)} = g$ in the second lines of both equations.
+where we have set $G_{(1,2)} = G_{(3,0)} = G$ in the second lines of both equations.
 These two results agree within a 16\% deviation with each other.
 That is, allowing for a non-trivial graviton anomalous dimension
 forces the two couplings to behave very similarly,
@@ -6471,20 +6499,33 @@ The running of the Newton coupling thus features an effective universality,
 \ie different definitions of the coupling lead to qualitatively similar behaviour in
 their scale-dependence.
 
-However, the agreement between the fluctuation and the background field results rely
-on the dominance of the graviton anomalous dimension.
-% which yields an opposite sign for the $\NS$-dependence of the flow of the coupling as compared
-% to that of the vertex (which does not include $\eta_h$).
-Note that the flow of the 3-graviton vertex itself has the opposite sign
-as compared to the background field result,
-and the same sign only appears at the level of the couplings.
-At present, it is unclear whether the qualitative agreement of the background approximation with
-the fluctuation result has a deeper reason, or is accidental.
-This is why, we believe, it is necessary to evaluate gravitational renormalisation group
-flows at the level of the fluctuations couplings.
+The agreement between the scalar contribution to different versions of the fluctuation coupling and
+the background result relies on the dominance of the graviton anomalous dimension in the case of the
+fluctuation results,
+which yields an opposite sign for the $\NS$-dependence of the flow of the coupling $G_{(3,0)}$
+as compared to that of the vertex, which does not include $\eta_h$, \cf Eqn.~\eqref{eq:betaG3} for $\eta_h=0$.
+In the case of the coupling $G_{(1,2)}$ there is no $\NS$ dependence at all in the running
+of the vertex itself.
+The observation, that even for dimensionless couplings an important contribution to the
+universal one-loop running is carried by the anomalous dimension and not the running of the vertex,
+together with the potentially even higher importance of the anomalous dimension in models
+with momentum-dependent interactions,
+highlights the need to include the anomalous dimension of the fluctuation field to obtain
+(close-to) universal results.
 
+Let us remark that the effective universality is simply a fact of the beta functions that we observe,
+but no mechanism for it is apparent at present.
+In particular, the sign of the scalar contribution to $\eta_h$ is not fixed by physical arguments,
+and the relative size of the contribution of scalars to $\eta_h$ and to the running of
+the three-point vertices is also unrestricted.
+Thus we do not find an explanation for the emergence of effective universality.
+Therefore it remains to be clarified whether it persists under extensions of our truncation or
+whether it might be a mere accident at the present level of the truncation.
+We speculate that there is a mechanism underlying the emergence of effective universality that
+still remains to be discovered.
 
-\section{Numerical results}
+\section{Threshold effects}
+% \section{Numerical results}
 
 \begin{figure}[t]
   \begin{center}
@@ -6494,20 +6535,27 @@ flows at the level of the fluctuations couplings.
     Comparison of the numerical results of the fixed point values
     for the three avatars of Newton's constant and the cosmological
     constants.
-    % the three-graviton coupling (red),
-    % the graviton-scalar-coupling (blue) and the background coupling
-    % in two different gauges (orange and cyan).
     In this and the following plots, the dashed line at $\NS = 17$
     shows where $\eta_h(0)$ exceeds 2, whereas the one at $\NS = 45$
     shows where $\eta_h(k^2)$ exceeds 2.
     The latter should be viewed as an indicator of where the range of
     validity of the approximation is lost.
   }
-  \label{fig:NewtoncouplingFPs}
+  \label{fig:allFPvalues}
 \end{figure}
 
-To obtain numerical results, we will use a bi-local projection for the Newton couplings,
-and include the anomalous dimension projected at scale $k$.
+Until now, we have only considered the $\NS$ dependence of the beta functions for different
+avatars of the Newton coupling. However, ultimately we are interested in modelling the graviton propagator,
+which includes a non-trivial denominator.
+Thus, we include threshold effects as well as full anomalous dimensions in the beta functions and will
+now consider the full beta functions and evaluate fixed points.
+Specifically, in our truncation these are limited to the background cosmological constant $\overbar{\lambda}$
+in the background approximation versus the graviton mass parameter $\mu$ for the fluctuation field
+approximation.
+All fluctuation field propagators appear with a dependence on $\mu$, \ie unlike for the Newton coupling,
+this coupling has no analogue that is defined from a matter-gravity interaction term.
+
+To capture the momentum-dependence of the flow, we will use a bi-local projection for the fluctuation Newton couplings, and will include the anomalous dimension projected at $k$.
 Our projection prescriptions are
 \begin{align}
   \beta_{G_{(3,0)}} &= 2 \, G_{(3,0)} + 3  \, \eta_h(k^2)  \, G_{(3,0)}
@@ -6536,22 +6584,33 @@ $\scriptstyle{\mathrm{T\hspace{\TTspace}T}}, G_{(1,2)}$
 indicate that a projection onto the corresponding coupling
 is carried out on the right hand side of the exact renormalisation group equation,
 \cf the procedure of Refs.~\cite{Meibohm:2015twa, Dona:2013qba}.
+$\Flow^{(hhh)}_{{\rm TT},G_{(3,0)}}(0)$ is the right hand side of the renormalisation group equation,
+projected onto contributions with three external gravitons and evaluated at vanishing momentum.
 
-We then obtain a qualitatively very similar behaviour as in the analytical case,
-\cf \autoref{fig:NewtoncouplingFPs}.
-In particular, all three Newton couplings are driven towards larger
-fixed point values when $\NS$ is increased.
-Remarkably, the quantitative deviations between the three avatars are not particularly large.
+Here, we observe a markedly different behaviour in the background approximation from the fluctuation results.
+Whereas the fixed point for the background Newton coupling grows as a function of $\NS$,
+if threshold effects are neglected, it decreases if threshold effects are included.
+This is in contrast to the behaviour of $G_{(3,0)}^{\star}$, $G_{(1,2)}^{\star}$,
+both of which still increase as a function of $\NS$ if threshold effects are taken into account,
+\cf Fig.~\ref{fig:allFPvalues}.
 
-Moreover, the behaviour is in agreement with that of $g_3$ in the last chapter,
-where we employed a different choice of parametrisation, gauge, and projection.
-The robustness of the results with respect to these unphysical variations of the
-scheme is very encouraging.
-
-When the fluctuation couplings enter the graviton anomalous dimension,
-$\eta_h$ increases as a function of $\NS$, \cf \autoref{fig:allFPvalues}.
-This implies that the bounds on $\eta_h$, discussed in Ref.~\cite{Meibohm:2015twa},
-are violated at large $\NS$.
+Within a hybrid calculation with background couplings and a fluctuation anomalous dimension in
+Ref.~\cite{Dona:2013qba},
+a behaviour qualitatively closer to that of the fluctuation system was observed.
+This can be traced back to a growth of the anomalous dimension, \cf Fig.~\ref{fig:critexpandeta}.
+For anomalous dimensions exceeding the bound $\eta=2$ (for bosonic fields),
+the UV behaviour of the regulator is altered \cite{Meibohm:2015twa}.
+This is a result of our choice of regulator, $R_k \sim Z_h$.
+As $Z_h \sim k^{-\eta_h}$ in the fixed-point regime,
+$\eta_h>2$ destroys the UV behaviour of the regulator
+that should suppress all modes in the limit $k \rightarrow \infty$.
+For $\eta_h>4$, signs of diagrams in the beta function for the Newton coupling start to flip.
+The type-I-regulator does not exhibit the same behaviour,
+as it features higher powers of $(1-2\lambda)$ in the denominator,
+Although the case $\eta_h>4$ necessitates a re-examination with a regulator that is independent of $Z_h$,
+it is nevertheless intriguing to observe that the hybrid background-fluctuation system,
+where threshold effects  destroy the similarity to the fluctuation system,
+attempts to restore this similarity through a very large $\eta_h$.
 
 \begin{figure}[t]
   \begin{center}
@@ -6561,11 +6620,39 @@ are violated at large $\NS$.
     Numerical results for (real parts of) critical exponents,
     and anomalous dimensions as a function of $\NS$.
   }
-  \label{fig:allFPvalues}
+  \label{fig:critexpandeta}
 \end{figure}
 
 
+\section{Effective universality}
+
+Going beyond the background field approximation results in the appearance of $\mu$ instead
+of $\overbar{\lambda}$ on the right hand side of the flow equation.
+In contrast, the background couplings do not appear on the right hand side of the flow equation.
+Therefore the full system can be solved by first finding a fixed point solution for the fluctuation system.
+Inserting the fixed point values for the $\mu$ into the background flow then provides
+fixed points for the background system.
+
+Once we only use fluctuation quantities on the right hand side,
+the fixed point in the Newton coupling exhibits an effective universality,
+\cf Fig.~\ref{fig:allFPvalues}.
+Both fluctuation couplings as well as the background coupling take very similar values as a
+function of $\NS$ and increase as a function of $\NS$.
+In particular, all three Newton couplings are driven to larger fixed-point values when $\NS$ is increased.
+Remarkably, the quantitative deviations between the three different couplings are not even particularly large.
+Moreover, the behaviour is in agreement with that of $g_3$ in the last chapter,
+where we used a different choice of parametrisation, gauge, and projection.
+This robustness with respect to (unphysical) variations of the scheme is encouraging.
+As the fluctuation Newton couplings enter the graviton anomalous dimension,
+$\eta_h$ increases as a function of $\NS$, \cf Fig.~\ref{fig:allFPvalues}.
+This implies that the bounds on $\eta_h$, discussed in \cite{Meibohm:2015twa}, are violated at large $\NS$.
+At the level of the cosmological constant, there is no such property.
+
 \subsection{Effective gravitational coupling}
+
+Ultimately, we are interested in the strength of the metric propagator,
+as this appears to be the decisive quantity to determine the quantum gravity
+effects on matter \cite{Eichhorn:2017eht,Eichhorn:2017ylw}.
 
 The fluctuation field of the metric $h_{\mu\nu}$ enters the Feynman
 diagrams either via a pure propagator, or via a propagator that
@@ -6636,8 +6723,20 @@ to positive values of the Newton couplings in the infrared. It must thus
 be regarded as unphysical.
 
 
-\section{Background field approximation and Ward identities}
+\section{Level-1 improvement}
 \label{sec:Nielsen-id}
+
+It is highly desirable to find a simple approximation of the system that ideally does not require
+the calculation of background flows and fluctuation flows.
+Therefore, we study whether the background approximation can qualitatively or even quantitatively
+reproduce the behaviour of the full system.
+Such an approximate agreement appears to arise at the level of pure gravity,
+where fixed point results are quantitatively similar---although the structure of the threshold
+effects in the flow equations is different.
+These differences become more pronounced as scalar matter is taken into account.
+
+We caution that the disagreement between background flows and fluctuation flows might conceivable
+be resolved by extended truncations that take into account higher-order operators.
 
 In this section we want to study how to use the msWI, which we have already
 seen in Ch.~\ref{ch:tim}, to improve upon the background field approximation.
@@ -6646,6 +6745,8 @@ Refs.~\cite{
   Litim:2002ce, Litim:2002hj, Pawlowski:2003sk, PawlowskiH,
   Pawlowski:2005xe, Donkin ,Donkin:2012ud
 }.
+
+\subsection{Background field approximation and Ward identities}
 
 As we have outlined already in Sec.~\ref{sec:msWIquantumgravity},
 in the case of full quantum gravity the msWI receives contributions
@@ -6828,9 +6929,9 @@ dropped, $M_k=0$. Evidently, this approximation violates the approximated msWI
 at least at vanishing fluctuation field $h_{\mu\nu} = 0$.
 
 
-\section{Background flow equations}
+\subsection{Background flow equations}
 
-In this section we have a look at the flow equations of the background couplings.
+In this subsection we have a look at the flow equations of the background couplings.
 First of all, they are necessary to be able to directly compare
 results of the background field approximation with the fluctuation field results.
 Furthermore, we will use them to express the flow of the level one fluctuation couplings
@@ -6899,130 +7000,64 @@ In this case the background couplings are non-dynamical spectators.
 We obtain the usual background field approximation
 by setting $\lambda=\Lback$, $\eta_h=\etaS$ and $\eta_c=0$.
 
+\subsection{Fluctuation couplings via Ward identities}
 
-\section{Fluctuation couplings via Ward identities}
-
-\begin{figure}[t]
+\begin{figure}[p]
   \begin{center}
     \input{figures/comparison-couplings.tex}
   \end{center}
   \caption{
-    Comparison of three different definitions of gravitational couplings and
-    cosmological constants:
-    pure background system (red dashed), background system improved by msWI (blue),
-    and fully fluctuating system (cyan).
-    (Left) Background gravitational couplings using different avatars of the
-    remaining couplings on the right hand side of the flow equation.
-    (Right) Highest dynamical coupling of the three approximation schemes.
+    We show the fixed-point values as a function of $\NS$ in the background approximation (red dashed),
+    in the level-1 approximation (dark blue) and for the fluctuation system (light blue).
   }
-  \label{fig:comparison-couplings}
+  \label{fig:level1comp}
 \end{figure}
 
-In this section we want to compute the running of the level one fluctuation couplings
-using the modified split Ward identity together with the background flow equations of the last section.
-As derived in Sec.~\ref{sec:Nielsen-id}, we want to make the following approximation
-\begin{align}
-  \frac{\delta}{\delta h_{\mu\nu}} \partial_t \Gamma_k
-  \approx \frac{\delta}{\delta {\bar g}_{\mu\nu}} \partial_t \Gamma_k
-  - \partial_t
-  \left(
-    \frac 12 \, \Tr \frac 1{\sqrt{\bar g}} \frac{\delta \sqrt{\bar g} R_k }{ \delta {\bar g}_{\mu\nu} } G_k
-  \right) .
-\end{align}
-Consequently, in order to extract the running of the fluctuation couplings from the one of the
-background couplings,
-we need to compute the flow of the following quantity:
-\begin{align}
-  I \equiv&\, \frac 12 \, \Tr
-  \left[
-    \frac{1}{\sqrt{\bar g}} \, G_k \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \sqrt{\bar g} \, R_k \Big)
-  \right]
-  =
-  \frac 14 \, \bar g^{\mu\nu} \, \Tr \Big[ G_k R_k - \FRG  \Big]
-  + \frac{1}{2} \, \frac{\delta}{\delta \bar g_{\mu\nu}} \Big( \Tr \, \FRG \Big)  \,.
-  \label{eq:def-I}
-\end{align}
-Here, $\FRG(\overbar \Delta)$ is the functional introduced in \eqref{eq:Fg}.
-All functional traces appearing in the last equation can be evaluated using heat kernel techniques.
-Details of the computation, as well as intermediate results may be found in App.~\ref{app:msWItraces}.
-There, we find the following result for $I$:
-\begin{align}
-  \notag
-  & 8I = \, \frac{ \sqrt{\bar g} \, \bar g^{\mu\nu} }{ 32 \pi^2 } \,
-  \Bigg\lbrace
-    \bigg[
-    \frac {10}{3} \frac{1}{1 - 2 \lambda}
-    + \frac 2{3} \frac{1}{1 - \frac 43 \lambda}
-    - \frac{8}{3}
-    + \frac{2}{3} \NS
-    \bigg] k^4
-    \nonumber \\
-    \vphantom{ \Bigg\lbrace }
-    &+\bigg[
-      - \frac {20}{9} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {5}{2} \frac{1}{1 - 2 \lambda}
-      + \frac {1}{2} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {71}{36}
-      + \frac {1}{2} \NS
-    \bigg] k^2 \bR
-    \nonumber \\
-    \vphantom{ \Bigg\lbrace }
-    &+ 8 \,
-    \bigg[
-      \frac {10}{27} \frac{1}{(1 - 2 \lambda)^3}
-      + \frac {5}{18} \frac{1}{(1 - 2 \lambda)^2}
-      - \frac {1}{432} \frac{1}{1 - 2 \lambda}
-      + \frac {29}{2160} \frac{1}{1 - \frac 43 \lambda}
-      - \frac {169}{1440}
-      + \frac {29}{4320} \NS
-    \bigg] \bR^2
-  \Bigg\rbrace
-    \nonumber \\
-    \vphantom{ \Bigg\lbrace }
-    &+ \mathcal O (\bR^3) \,.
-\end{align}
-The flow equations for the level one fluctuation couplings can now be expressed
-through the flow of the background couplings with the addition of the improvement
-coming from the modified split Ward identity. This yields
-\begin{align}
-  \vphantom{ \frac{\Lback}{\Gback} }
-  \partial_t \Gback_1
-  &= \big( 2 + \etaSfluc \big) \, \Gback_1 \,, \\
-  \partial_t \Lback_1
-  &= - 4 \, \Lback_1 + \frac{\Lback_1}{\Gback_1} \, \partial_t \Gback_1
-  + 8 \pi \Gback_1 \, \big(  \Flow_{\overbar \Gamma} - 8 I \big) \Big|_{\mathcal O(\bR^0)} \,, \\
-  \vphantom{ \frac{\Lback}{\Gback} }
-  \etaSfluc
-  &= 16 \pi \Gback_1 \, \big( \Flow_{\overbar \Gamma} - 8 I  \big) \Big|_{\mathcal O(\bR^1)} \,.
-\end{align}
-The quantities in $I$ and $\Flow_{\overbar \Gamma}$ should be taken from the fluctuation two-point function.
-Hence the level one couplings are non-dynamical spectators.
-We can make an approximation in order to obtain a closed equation for the level one couplings,
-which is a similar approximation as the standard background field approximation.
-For this we set $\lambda=\Lback_1$, $\eta_h=\etaSfluc$ and $\eta_c=0$.
+We can now analyse whether the level-1 improvement leads to a closed system
+that reproduces the fluctuation results more closely than the background approximation does.
+To that end, we compare the $\NS$--dependence of the fixed points at each level of the approximation,
+\ie we use the background couplings on the right hand side of the exact renormalisation group
+equation for the background approximation.
+Similarly, we use level-1 couplings on the right hand side to obtain the level-1 approximation.
+Finally, the fluctuation system is evaluated with the fluctuation couplings on the right hand side.
 
-\begin{figure}[t]
+It turns out that the level-1 approximation tracks the background approximation in its qualitative
+dependence on $\NS$.
+On the other hand, the quantitative difference between the fixed point results for the
+fluctuation field and that in the level-1 approximation is smaller than the quantitative difference of
+the fluctuation results and the background results, \cf Fig.~\ref{fig:level1comp}.
+Thus, the level-1 approximation might be considered a slight improvement over the background approximation.
+However, given its failure to capture the fluctuation results, a level-1 approximation seems
+hardly justified in view of the significantly increased computational effort---at least based on the
+results in our truncation. Details of the computation may be found in App.~\ref{app:msWItraces}.
+
+Finally, we observe that the level-1 approximation even appears to break the effective universality
+that was observed for the Newton coupling.
+When evaluated with the fluctuation couplings on the right hand side of the flow equation,
+the qualitative and quantitative dependence of $G_{(1,0)}^{\star}$ on
+$\NS$ does not match that of the other couplings, \cf Fig.~\ref{fig:noeffuniv}.
+For the `cosmological constants', we make the opposite observation:
+whilst the background cosmological constant deviates strongly from the $\NS$ dependence
+of the graviton mass parameter,
+the level-1 cosmological constant approaches it towards larger $\NS$.
+For the canonically most relevant coupling in the truncation,
+the step from the background coupling to the level-1 coupling is
+therefore a significant step towards effective universality.
+
+\begin{figure}[p]
   \begin{center}
     \input{figures/all-from-fluc-and-mu.tex}
   \end{center}
   \caption{
-    Comparison of different avatars of the gravitational couplings (left)
-    and the cosmological constants (right).
-    (Above) All couplings were evaluated with the input of the full fluctuation
-    system on the right hand side of the flow equation.
-    (Below) We combined the flow equation for the graviton mass parameter $\mu$
-    with different flow equations for the Newton's coupling.
+    Comparison of different level-$n$ gravitational couplings (left) and 'cosmological constants' (right).
+    All couplings were evaluated with the input of the full fluctuation system on the right hand side.
+    While the gravitational couplings behave qualitatively similar,
+    the level-$n$ 'cosmological constants' display significant differences in their behaviour.
   }
-  \label{fig:All-from-fluc}
+  \label{fig:noeffuniv}
 \end{figure}
 
-Whilst the gravitational couplings behave qualitatively similar,
-the level-$n$ 'cosmological constants' display significant differences in their behaviour
-\cf Fig.~\ref{fig:All-from-fluc}.
-This emphasises the necessity to include the graviton mass parameter in a fluctuation field
-computation.
-All couplings behave qualitatively similar and thus we conclude that the correct treatment
-of the graviton mass parameter is essential for qualitatively reliable results.
+
 
 %----------------------------------------------------------------------------------------
 %	Conclusions

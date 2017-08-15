@@ -1,34 +1,34 @@
 \begin{tikzpicture}
 
   \begin{groupplot}[
-    group style={group size=2 by 2, horizontal sep=16pt, vertical sep=16pt},
+    group style={group size=2 by 1, horizontal sep=16pt, vertical sep=16pt},
     width=0.49\linewidth,
     grid=major,
     grid style=dashed,
     ]
 
-    \nextgroupplot[
-    xmin = 0,
-    xmax = 40,
-    ymin = 0,
-    ymax = 2,
-    xlabel={number of scalars $\NS$},
-    ylabel={fixed point values},
-    xlabel near ticks, xticklabel pos=top,
-    legend pos=north west,
-    legend cell align=left,
-    ]
-    \addplot+[no marks, thick, red, dashed]
-    table [x index =0,y index = 1,col sep = comma]{Sources/Pure-Background-beta0.csv};
-    \addplot+[no marks, thick, blue]
-    table [x index =0,y index = 1,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
-    \addplot+[no marks, thick, cyan]
-    table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
-    \legend{
-      \, {$\Gback^\star (\etaS,     \Lback^\star)$},
-      \, {$\Gback^\star (\etaSfluc, \lambda_1^\star)$},
-      \, {$\Gback^\star (\eta_h,    \mu^\star)$},
-    }
+    % \nextgroupplot[
+    % xmin = 0,
+    % xmax = 40,
+    % ymin = 0,
+    % ymax = 2,
+    % xlabel={number of scalars $\NS$},
+    % ylabel={fixed point values},
+    % xlabel near ticks, xticklabel pos=top,
+    % legend pos=north west,
+    % legend cell align=left,
+    % ]
+    % \addplot+[no marks, thick, red, dashed]
+    % table [x index =0,y index = 1,col sep = comma]{Sources/Pure-Background-beta0.csv};
+    % \addplot+[no marks, thick, blue]
+    % table [x index =0,y index = 1,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
+    % \addplot+[no marks, thick, cyan]
+    % table [x index =0,y index = 1,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
+    % \legend{
+    %   \, {$\Gback^\star (\etaS,     \Lback^\star)$},
+    %   \, {$\Gback^\star (\etaSfluc, \lambda_1^\star)$},
+    %   \, {$\Gback^\star (\eta_h,    \mu^\star)$},
+    % }
 
 
     \nextgroupplot[
@@ -38,8 +38,8 @@
     ymax = 2,
     xlabel={number of scalars $\NS$},
     ylabel={fixed point values},
-    xlabel near ticks, xticklabel pos=top,
-    ylabel near ticks, yticklabel pos=right,
+    % xlabel near ticks, xticklabel pos=top,
+    % ylabel near ticks, yticklabel pos=right,
     legend pos=north west,
     legend cell align=left,
     ]
@@ -56,39 +56,40 @@
     }
 
 
-	\nextgroupplot[
-		xmin = 0,
-		xmax = 40,
-		ymin = 0,
-		ymax = 1,
-    ytick={0,.25,.50,.75,1},
-    xlabel={number of scalars $\NS$},
-    ylabel={fixed point values},
-    legend pos=north west,
-    legend cell align=left,
-	]
-		\addplot+[no marks, thick, red, dashed]
-      table [x index =0,y index = 2,col sep = comma]{Sources/Pure-Background-beta0.csv};
-		\addplot+[no marks, thick, blue]
-      table [x index =0,y index = 2,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
-		\addplot+[no marks, thick, cyan]
-      table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
-    \legend{
-      \, {$\Lback^\star ( \eta_N , \Lback^\star )$ },
-      \, {$\Lback^\star ( \eta_{N,1},\lambda_1^\star )$},
-      \, {$\Lback^\star ( \eta_h,\mu^\star )$},
-    }
+	% \nextgroupplot[
+	% 	xmin = 0,
+	% 	xmax = 40,
+	% 	ymin = 0,
+	% 	ymax = 1,
+    % ytick={0,.25,.50,.75,1},
+    % xlabel={number of scalars $\NS$},
+    % ylabel={fixed point values},
+    % legend pos=north west,
+    % legend cell align=left,
+	% ]
+	% 	\addplot+[no marks, thick, red, dashed]
+      % table [x index =0,y index = 2,col sep = comma]{Sources/Pure-Background-beta0.csv};
+	% 	\addplot+[no marks, thick, blue]
+      % table [x index =0,y index = 2,col sep = comma]{Sources/Background-beta0-from-Improved-g.csv};
+	% 	\addplot+[no marks, thick, cyan]
+      % table [x index =0,y index = 2,col sep = comma]{Sources/Matter-flow-hss-bg-beta0.csv};
+    % \legend{
+      % \, {$\Lback^\star ( \eta_N , \Lback^\star )$ },
+      % \, {$\Lback^\star ( \eta_{N,1},\lambda_1^\star )$},
+      % \, {$\Lback^\star ( \eta_h,\mu^\star )$},
+    % }
 
 
 	\nextgroupplot[
 		xmin = 0,
 		xmax = 40,
 		ymin = 0,
-		ymax = 1,
+		ymax = .5,
     xlabel={number of scalars $\NS$},
     ylabel={fixed point values},
     ylabel near ticks, yticklabel pos=right,
-    legend pos=north west,
+    % legend pos=north west,
+    legend pos=south east,
     legend cell align=left,
 	]
 		\addplot+[no marks, thick, red, dashed]
