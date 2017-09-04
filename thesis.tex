@@ -6751,10 +6751,10 @@ The msWI for the latter then reads
   = \frac 12 \, \frac 1{\sqrt{\bar g}} \Tr \,
   \frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}} \, G_k[\bar g, h]
   +
-  \left(
+  \left\langle
     \frac{\delta S_{\mathrm{gauge}}[\bar g,h]}{\delta \bar g_{\mu\nu}}
     -\frac{\delta S_{\mathrm{gauge}}[\bar g,h]}{\delta h_{\mu\nu}}
-  \right)
+  \right\rangle
   \,,
   \label{eq:gaugeNIk}
 \end{align}
@@ -6813,8 +6813,8 @@ Namely, applying the operator $\delta_{\bar g} + \delta_h$
 to Eqn.~\eqref{eq:gravappNIk}
 and dropping mixed derivatives will result in
 \begin{align}
-  \frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\simeq
-  \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}
+  \frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu} \, \delta h_{\rho\sigma}}&\simeq
+  \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu} \, \delta \bar g_{\rho\sigma}}
   -\frac 12 \left(\frac{\delta}{\delta\bar g_{\rho\sigma}}+\frac{\delta}{\delta h_{\rho\sigma}}
   \right) \Tr\left[ \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k[\bar g]}{\delta \bar g_{\mu\nu}}
   \, G_k[\bar g, h]\right] \,.
@@ -6830,8 +6830,9 @@ In analogy, we will assume that the same feature holds true for
 gravity, and with that we arrive at the final approximation for
 the two-point function of the metric fluctuation field:
 \begin{align} \label{eq:modback}
-	\frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu}\delta h_{\rho\sigma}}&\approx \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu}\delta \bar g_{\rho\sigma}}
-	- \frac{\delta}{\delta \bar g_{\rho\sigma}} \int \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\frac{\delta
+	\frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu} \, \delta h_{\rho\sigma}} &\approx
+  \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu} \, \delta \bar g_{\rho\sigma}}
+	- \frac 12 \frac{\delta}{\delta \bar g_{\rho\sigma}} \int \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\frac{\delta
 	\Gamma_k}{\delta R_k} \,.
 \end{align}
 This approximation has been used in gravity \eg in Refs.~\cite{Donkin,Donkin:2012ud}.
