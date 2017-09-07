@@ -19,6 +19,7 @@
 \usepackage{array}
 \usepackage{listings}
 \usepackage{nicefrac} % for \nicefrac macro giving nice fractions in exponent
+\usepackage{enumerate}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
@@ -31,6 +32,7 @@
 
 % My definitions:
 % ---------------
+\newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
 \newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
 \newcommand\SEH{ S_{\scriptscriptstyle{\mathrm{EH}}}{} }
 \newcommand\SUV{ S_{\scriptscriptstyle{\mathrm{UV}}}{} }
@@ -42,6 +44,8 @@
 %----------------------------------------------------------------------------------------
 % OTHER STUFF
 %----------------------------------------------------------------------------------------
+
+\newsavebox\bracebox
 
 \makeatletter
 \def\amsbb{\use@mathgroup \M@U \symAMSb}
@@ -99,6 +103,48 @@
 
 \section{Asymptotically safe quantum gravity}
 \fontsize{10pt}{7.2}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Outline}
+  \begin{enumerate}[I]
+    \item
+      Asymptotic Safety
+      \begin{itemize}
+        \item Why quantum gravity?
+        \item What is asymptotic safety and why to study it?
+      \end{itemize}
+      \vfill
+    \item
+      Matter fields coupled to gravity
+      \begin{itemize}
+        \item Why we should include matter fields from the start...
+        \item ...and what we might learn from it
+      \end{itemize}
+      \vfill
+    \item
+      Tools to study asymptotic safety
+      \begin{itemize}
+        \item What is needed and available?
+        \item Why to use the functional renormalisation group (FRG)?
+      \end{itemize}
+      \vfill
+    \item
+      Known issues of the FRG in gravity
+      \begin{itemize}
+        \item Outline of some open research questions...
+        \item ...and relation to my own work
+      \end{itemize}
+      \vfill
+    \item
+      My research \& its implications
+  \end{enumerate}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   SLIDE 1
@@ -334,7 +380,9 @@
 
   \begin{columns}[T]
     \begin{column}{.4\textwidth}
-        Theory space:\\[50pt]
+      \textbf{Theory space:}\\[5pt]
+      QFT = trajectory in theory space,
+      parametetrised by scale $k$\\[25pt]
       % \begin{center}
         \includegraphics[scale=0.6]{theory_space.pdf}
       % \end{center}
@@ -403,9 +451,152 @@
 \end{frame}
 
 \section{Matter fields in asymptotic safety}
+
 \section{Technical tools}
+
 \section{Known issues}
+
+\begin{frame}
+  \frametitle{Truncating the exact renormalisation group equation}
+
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{derivative expansion:}
+        \begin{itemize}
+          \item
+            expanded in diffeomorphism invariant quantities
+            ($R$, $R_{\mu\nu}$, $C_{\mu\nu}$, ...)
+          \item
+            background field approximation + heat kernel
+            techniques
+          \item
+            using curved backgrounds
+            $\rightarrow$ physically most relevant?
+          \item
+            functional truncations
+            $\rightarrow$ $\infty$-many operators
+          \item
+            $\beta_{\GNewton}$ receives contributions
+            from cutoff--operator
+        \end{itemize}
+      \end{center}
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{vertex expansion:}
+        \begin{itemize}
+          \item
+            local, non-diffeomorphism invariant action $\Gamma_k$
+            $\rightarrow$ but maybe \textit{effective universality}?
+          \item
+            calculate Feynman diagrams
+          \item
+            many different ``avatars'' of $\GNewton$
+          \item
+            (usually) evaluated on flat background
+            $\rightarrow$ farther from ``true vacuum''?
+          \item
+            functional truncations difficult
+          \item
+            fluctuation field couplings do not receives contributions
+            from cutoff--operator
+        \end{itemize}
+      \end{center}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Background (in-)dependence of the ERGE in gravity}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
 \section{My research \& and its implications}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\fontsize{8pt}{7.2}\selectfont
+\begin{frame}
+  \frametitle{Overview of my research}
+  \vspace{3pt}
+
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+      \begin{enumerate}[a]
+
+        \sbox\bracebox{%
+          \begin{minipage}{.8\linewidth}%
+          \item
+            \textbf{functional truncations} of non-minimally coupled
+            scalar fields\\[3pt]
+            [Percacci, Vacca '15; PL, Percacci, Vacca '16]
+            \begin{itemize}
+              \fontsize{8pt}{7.2}\selectfont
+              \item Are there scaling solutions?
+              \item What is the impact of the scalars?
+            \end{itemize}
+            \vspace{5pt}
+
+          \item renormalisation group dynamics of \textbf{gravity-matter vertices}\\[3pt]
+            [Don\`a, Eichhorn, PL, Percacci '16]
+            \begin{itemize}
+              \fontsize{8pt}{7.2}\selectfont
+              \item Are there well-behaved fixed points?
+              \item How does this compare to other truncations?
+            \end{itemize}
+            \vspace{5pt}
+
+          \item
+            \textbf{effective universality}\\
+            and subtracting the cutoff--dependence using the msWI\\[3pt]
+            [Eichhorn, PL, Pawlowski, Reichert '17]
+          \end{minipage}%
+        }\usebox{\bracebox}%
+        \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
+
+            \vspace{15pt}
+        \sbox\bracebox{%
+          \begin{minipage}{.8\linewidth}%
+          \item
+            \textbf{ERGE \& msWI}\\[3pt]
+            [Dietz, Morris '15; PL, Morris, Slade '16; Percacci, Vacca '16]
+            \begin{itemize}
+              \fontsize{8pt}{7.2}\selectfont
+              \item Can they be solved together?
+              \item Are there restrictions to RG properties (FPs, number of relevant directions, etc.)?
+            \end{itemize}
+          \end{minipage}%
+        }\usebox{\bracebox}%
+        \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
+
+    \end{enumerate}
+  \end{column}
+
+  \hspace{-2.5cm}
+  \begin{column}{.2\textwidth}
+    \begin{center}
+      \vspace{53pt}
+      gravity\\[2pt]
+      $\oplus$\\[3pt]
+      $\NS$ scalar fields\\
+      \vspace{108pt}
+      CORE gravity
+    \end{center}
+  \end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}
   \titlepage
