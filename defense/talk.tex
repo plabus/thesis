@@ -1,95 +1,106 @@
 \documentclass{beamer}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usetheme{CambridgeUS}
-\usecolortheme{seahorse}
-\setbeamersize{text margin left=0.75cm,text margin right=0.75cm} 
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{itemize items}[default]
-\setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{mini frames}{}
-\setbeamercolor{alerted text}{fg =red}
-\usepackage{framed}
-\usepackage{tikz}
-\usetikzlibrary{patterns}
-\definecolor{blu}{RGB}{0, 64, 161}
-\usepackage[]{textpos}
-\usepackage{multirow}
-\usepackage[makeroom]{cancel}
-\usepackage{color}
-\usepackage{colortbl}
-\usepackage{libertine}
-\usepackage{microtype}
 
-\newcommand{\eps}{\varepsilon}
-\newcommand{\vp}{\varphi}  %%
-\newcommand{\bp}{\bar \varphi} %%
-\newcommand{\bc}{\bar \chi} %%
-\newcommand{\bV}{\bar V} %%
-\newcommand{\bg}{\bar \gamma} %%
-\newcommand{\al}{\alpha}
-\newcommand{\hV}{\hat V} %%
-%\newcommand{\Kh}{\hat K}
-\newcommand{\hp}{\hat \phi} %%
-\newcommand{\hk}{\hat k} %%
-\newcommand{\hc}{\hat \chi} %%
-\newcommand{\hatt}{\hat t} %%
-\newcommand{\gmn}{g_{\mu\nu}}
-\newcommand{\tgmn}{\tilde g_{\mu\nu}}
-\newcommand{\bgmn}{\bar g_{\mu\nu}}
-\newcommand{\hmn}{h_{\mu\nu}}
-\newcommand{\thmn}{\tilde h_{\mu\nu}}
-\newcommand{\hess}{\Gamma^{(2)}}
-\newcommand{\eipx}{e^{i p\cdot x}}
-\newcommand{\emipx}{e^{-ip \cdot x}}
-\newcommand{\dclnf}{\,\partial_\chi\! \ln\! f \,}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{array}
+\usepackage[british]{babel}
+\usepackage{bbm}
+\usepackage{bbold}
+\usepackage{beamerthemesplit}
+\usepackage[bf]{caption}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{slashed}
+\usepackage[utf8]{luainputenc}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{nicefrac} % for \nicefrac macro giving nice fractions in exponent
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+
+% My fonts:
+% ---------
+\usepackage{libertine}
+\usefonttheme[onlymath]{serif}
+\usepackage[activate]{microtype}
+
+% My definitions:
+% ---------------
+\newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
+\newcommand\MPl{ M_{\scriptscriptstyle{\mathrm{Pl}}}{} }
+
+%----------------------------------------------------------------------------------------
+% OTHER STUFF
+%----------------------------------------------------------------------------------------
 
 \makeatletter
-\def\maketag@@@#1{\hbox{\m@th\normalfont\footnotesize#1}}
+\def\amsbb{\use@mathgroup \M@U \symAMSb}
 \makeatother
 
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
-  \end{beamercolorbox}}%
-  \vskip0pt%
+\usetheme{Boadilla}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{itemize items}[default]
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{footline}{bg=black}
+\setbeamertemplate{footline}{%
+  \raisebox{8pt}{\makebox[\paperwidth]{\hfill\makebox[15pt]{{\tiny\insertframenumber}}\qquad}}
 }
 
-\newcommand{\eaa}{\hat\Gamma}
-\newcommand{\bare}{\mathcal{S}}
+\definecolor{myred}{RGB}{176,50,50}
+\definecolor{myblue}{RGB}{50,50,176}
+\definecolor{mygreen}{RGB}{60,166,60}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
+}
+
+%----------------------------------------------------------------------------------------
+% DOCUMENT
+%----------------------------------------------------------------------------------------
 
 \begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   TITLE SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Matter fields in the Asymptotic Safety scenario}
 \author{Peter Labus}
 \institute{SISSA Trieste
-\vspace{5mm}
-\\ \vspace{8pt}PL, T. R. Morris and Z. H. Slade, Phys. Rev. D 94 (2016)
-\\ \vspace{8pt}P. Don\`a, A. Eichhorn, PL and R. Percacci, Phys. Rev. D93 (2016)
-\\ \vspace{8pt}PL, R. Percacci, G.P. Vacca, Phys. Lett.  B753 (2016)
-\\ \vspace{8pt}A. Eichhorn, PL, J. M. Pawlowski, M. Reichert, \textit{In preparation.}
-\date{14/09/2017}
+  \vspace{5mm}
+  \\ \vspace{8pt}PL, T. R. Morris and Z. H. Slade, Phys. Rev. D 94 (2016)
+  \\ \vspace{8pt}P. Don\`a, A. Eichhorn, PL and R. Percacci, Phys. Rev. D93 (2016)
+  \\ \vspace{8pt}PL, R. Percacci, G.P. Vacca, Phys. Lett.  B753 (2016)
+  \\ \vspace{8pt}A. Eichhorn, PL, J. M. Pawlowski, M. Reichert, \textit{In preparation.}
+  \date{14/09/2017}
 }
 \begin{frame}[noframenumbering,plain]
-	\titlepage
+  \titlepage
 \end{frame}
 
-
 %----------------------------------------------------------------------------------------
-%   Section 1 --- Introduction
+%   Section 1 --- Quantum Gravity
 %----------------------------------------------------------------------------------------
-
-\fontsize{8pt}{7.2}\selectfont
 
 \section{Asymptotically safe quantum gravity}
+\fontsize{10pt}{7.2}\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% consistent spacing
 
 \begin{frame}
   \frametitle{Why quantum gravity?}
@@ -98,8 +109,8 @@
     \item singularities in GR (black holes, big bang)
       \hspace{2cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{blackholes_singularity.jpg}}
-    \item singularities in SM (stability of electroweak sector)
-      \hspace{1cm}
+    \item singularities in SM (stability of $U(1)$ and Higgs sector)
+      % \hspace{1cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{running_alpha.png}}
   \end{enumerate}
   \vfill
@@ -109,6 +120,7 @@
   CP-violation, grand unification?, TOE?, \dots
 \end{frame}
 
+\addtocounter{framenumber}{-1}
 \begin{frame}
   \frametitle{Why quantum gravity?}
   \textbf{Two pressing issues:}
@@ -116,8 +128,8 @@
     \item singularities in GR (black holes, big bang)
       \hspace{2cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{blackholes_singularity.jpg}}
-    \item singularities in SM (stability of electroweak sector)
-      \hspace{1cm}
+    \item singularities in SM (stability of $U(1)$ and Higgs sector)
+      % \hspace{1cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{running_alpha.png}}
   \end{enumerate}
   \vfill
@@ -133,6 +145,7 @@
   \end{center}
 \end{frame}
 
+\addtocounter{framenumber}{-1}
 \begin{frame}
   \frametitle{Why quantum gravity?}
   \textbf{Two pressing issues:}
@@ -140,8 +153,8 @@
     \item singularities in GR (black holes, big bang)
       \hspace{2cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{blackholes_singularity.jpg}}
-    \item singularities in SM (stability of electroweak sector)
-      \hspace{1cm}
+    \item singularities in SM (stability of $U(1)$ and Higgs sector)
+      % \hspace{1cm}
       \raisebox{-.5\height}{\includegraphics[width=0.25\textwidth]{running_alpha.png}}
   \end{enumerate}
   \vfill
@@ -152,10 +165,79 @@
   \end{center}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% references
+% check formula
+% Feynman diagram
+
+\begin{frame}
+  \frametitle{Wait a minute...!}
+  \textbf{We know (low-energy) quantum gravity:}\\[5pt]
+  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
+  \begin{align*}
+    \boxed{
+      V(r) = -\frac{\GNewton m_1 m_2}{r}
+      \bigg(
+        1
+        + 3 \, \frac{\GNewton (m_1 + m_2)}{r \, c^2}
+        + \frac{41}{10 \pi} \, \frac{\GNewton \hbar}{r^2 \, c^3}
+        + \dots
+      \bigg)
+    }
+  \end{align*}
+  \hfill Probably most accurate result in quantum gravity...!
+  \pause
+  \vfill
+  \begin{itemize}
+    \item well-defined QFT of gravity\\[5pt]
+    \item predictive, but experimentally indistinguishable from GR\\[5pt]
+    \item consistent with all available data
+  \end{itemize}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+  \frametitle{Wait a minute...!}
+  \textbf{We know (low-energy) quantum gravity:}\\[5pt]
+  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
+  \begin{align*}
+    \boxed{
+      V(r) = -\frac{\GNewton m_1 m_2}{r}
+      \bigg(
+        1
+        + 3 \, \frac{\GNewton (m_1 + m_2)}{r \, c^2}
+        + \frac{41}{10 \pi} \, \frac{\GNewton \hbar}{r^2 \, c^3}
+        + \dots
+      \bigg)
+    }
+  \end{align*}
+  \hfill Probably most accurate result in quantum gravity...!
+  \pause
+  \vfill
+  \begin{center}
+    \fontsize{12pt}{7.2}\selectfont
+    \textbf{ So, what's the catch? }
+  \end{center}
+  \pause
+  \vspace{10pt}
+  Expansion in $\nicefrac{k}{\MPl}$ needs $\infty$--terms in UV:\\[5pt]
+  \begin{itemize}
+    \item How to make predictions at the Planck scale?\\[5pt]
+    \item Can we address either of our two issues?
+  \end{itemize}
+\end{frame}
+
 \section{Matter fields in asymptotic safety}
 \section{Technical tools}
 \section{Known issues}
 \section{My research \& and its implications}
 
+\begin{frame}
+  \titlepage
+\end{frame}
 
 \end{document}
