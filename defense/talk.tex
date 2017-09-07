@@ -32,7 +32,12 @@
 % My definitions:
 % ---------------
 \newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
+\newcommand\SEH{ S_{\scriptscriptstyle{\mathrm{EH}}}{} }
+\newcommand\SUV{ S_{\scriptscriptstyle{\mathrm{UV}}}{} }
+\newcommand\Sbare{ S_{\scriptscriptstyle{\mathrm{bare}}}{} }
+\newcommand\Sclass{ S_{\scriptscriptstyle{\mathrm{classical}}}{} }
 \newcommand\MPl{ M_{\scriptscriptstyle{\mathrm{Pl}}}{} }
+\newcommand\metric{ g_{\mu\nu} }
 
 %----------------------------------------------------------------------------------------
 % OTHER STUFF
@@ -172,10 +177,11 @@
 % TODO:
 % references
 % check formula
-% Feynman diagram
+% Feynman diagram of graviton scattering
+% picture of Einstein?
 
 \begin{frame}
-  \frametitle{Wait a minute...!}
+  \frametitle{But wait a minute...!}
   \textbf{We know (low-energy) quantum gravity:}\\[5pt]
   GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
   \begin{align*}
@@ -201,7 +207,7 @@
 
 \addtocounter{framenumber}{-1}
 \begin{frame}
-  \frametitle{Wait a minute...!}
+  \frametitle{But wait a minute...!}
   \textbf{We know (low-energy) quantum gravity:}\\[5pt]
   GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
   \begin{align*}
@@ -229,6 +235,75 @@
     \item How to make predictions at the Planck scale?\\[5pt]
     \item Can we address either of our two issues?
   \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% picture Feynman?
+
+\begin{frame}
+  \frametitle{The path integral approach}
+  % \textbf{Have to make sense of}
+  \begin{align*}
+    \boxed{
+    \int \mathcal D \Phi \; e^{i S[\Phi]}\,,
+    \text{ let's try } \Phi = \metric \,.
+    }
+  \end{align*}
+  \vfill
+  % Have to specify:
+  \begin{itemize}
+    \item integration measure $\mathcal D \metric$ (integral over all space-times)
+    \item action $S[\metric]$
+  \end{itemize}
+  \vfill
+  \begin{enumerate}
+    \item $S[\metric] = \SEH[\metric] = - \frac{1}{16 \pi \GNewton} \int \sqrt{g} \, R$
+      \hspace{2pt}
+      \textit{does not work} [t'Hooft, Veltman]\\[15pt]
+    \item $S = \Sbare = \SUV = \, ???\,,$\\[5pt]
+          $S \neq \Sclass$
+  \end{enumerate}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+  \frametitle{The path integral approach}
+  % \textbf{Have to make sense of}
+  \begin{align*}
+    \boxed{
+    \int \mathcal D \Phi \; e^{i S[\Phi]}\,,
+    \text{ let's try } \Phi = \metric \,.
+    }
+  \end{align*}
+  \vfill
+  % Have to specify:
+  \begin{itemize}
+    \item integration measure $\mathcal D \metric$ (integral over all space-times)
+    \item action $S[\metric]$
+  \end{itemize}
+  \vfill
+  \begin{center}
+    \fontsize{12pt}{7.2}\selectfont
+    \textbf{ What is going wrong here? }
+  \end{center}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        couplings of the theory are \textbf{scale-dependent},\\[10pt]
+        na\"ively $\GNewton \rightarrow \infty$ in the UV limit
+      \end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        vacuum polarisation in QED:
+        \includegraphics[width=0.4\textwidth]{vacuum_polarisation.jpg}
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \section{Matter fields in asymptotic safety}
