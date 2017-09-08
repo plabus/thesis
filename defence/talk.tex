@@ -82,6 +82,9 @@
 
 \begin{document}
 
+% General TODO:
+% More colour everywhere!
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   TITLE SLIDE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -666,7 +669,7 @@
 
           \item
             \textbf{effective universality}\\
-            and subtracting the cutoff--dependence using the msWI\\[3pt]
+            and subtracting the \textbf{cutoff--dependence} using the msWI\\[3pt]
             [Eichhorn, PL, Pawlowski, Reichert '17]
           \end{minipage}%
         }\usebox{\bracebox}%
@@ -702,6 +705,90 @@
     \end{center}
   \end{column}
 \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}[t]
+  \frametitle{Background independence in CORE gravity}
+  \vspace{3mm}
+
+  Restrict dynamics to \textbf{conformal factor} $f(\phi)$
+
+  \begin{align*}
+      g_{\mu\nu} = f(\chi + \varphi ) \, \hat g_{\mu\nu} \,, \;
+      \bar g_{\mu\nu} = f(\chi) \, \hat g_{\mu\nu} \,, \;
+      \hat g_{\mu\nu} = \delta_{\mu\nu}
+  \end{align*}
+
+  \textbf{No gauge fixing, no ghosts}.
+
+  \vspace{25pt}
+  \textbf{Split symmetry} reduces to:
+  \begin{align*}
+    \boxed{
+      \varphi(x) \mapsto \varphi(x) + \varepsilon(x) \,, \; \chi(x) \mapsto \chi(x) - \varepsilon(x)\,.
+    }
+  \end{align*}
+
+  \vspace{25pt}
+  The \textbf{msWI} encodes the extent to which the effective action violates split symmetry:
+  \footnotesize
+  \begin{align*}
+    \boxed{
+      \frac{1}{\sqrt{\bar g}}\left(\frac{\delta\Gamma_k}{\delta \chi}
+      -\frac{\delta \Gamma_k}{\delta \varphi}\right)
+      = \frac{1}{2} \,
+      \mathrm{Tr}\left[\frac{1}{\sqrt{\bar g}\sqrt{\bar g}}\frac{\delta^2\Gamma_k}
+      {\delta \varphi \delta \varphi}+ R_k[\chi]\right]^{-1} \frac{1}{\sqrt{\bar g}}
+      \left\{\frac{\delta R_k[\chi] }{\delta \chi}+\frac{d}{2}\dclnf R_k[\chi]\right\}
+    }
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}[t]
+  \frametitle{The full, non-truncated system}
+
+  \vspace{25pt}
+
+  \begin{center}
+    \fbox{\begin{minipage}{33em}
+        \begin{center}
+          \vspace{3pt}
+          \textbf{Compatibility:}\\[5pt]
+          \textbf{msWI \& ERGE compatible} iff msWI satisfied everywhere \textbf{along the flow}%
+        \end{center}
+    \end{minipage}}
+  \end{center}
+
+  \vspace{25pt}
+  Rewriting Ward Identity as $\mathcal{W}=0$ the flow of the msWI reads
+  \begin{align*}
+    \boxed{
+      \partial_t \mathcal{W}_{\omega}=-\frac{1}{2} \, \text{Tr}
+      \left(
+        \Delta \, \partial_t R_k \, \Delta \, \frac{\delta^2}{\delta\varphi\delta\varphi}
+      \right)
+      \mathcal{W}_{\omega}
+    }
+  \end{align*}
+
+  \vspace{15pt}
+  \begin{itemize}
+    \item \textit{Expected} on the functional level $\leftrightarrow$ derived from same partition function.
+    \item Cannot solve them together...
+    \item What about compatibility within truncations
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
