@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[]{beamer}  % only frames
 
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{array}
@@ -40,6 +40,9 @@
 \newcommand\Sclass{ S_{\scriptscriptstyle{\mathrm{classical}}}{} }
 \newcommand\MPl{ M_{\scriptscriptstyle{\mathrm{Pl}}}{} }
 \newcommand\metric{ g_{\mu\nu} }
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\bnabla}{\overbar \nabla}
 
 %----------------------------------------------------------------------------------------
 % OTHER STUFF
@@ -456,6 +459,12 @@
 
 \section{Known issues}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
 \begin{frame}
   \frametitle{Truncating the exact renormalisation group equation}
 
@@ -510,8 +519,46 @@
   \end{columns}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% connection with diff-invariance
+
 \begin{frame}
   \frametitle{Background (in-)dependence of the ERGE in gravity}
+  \textbf{Background field method:}
+  \begin{align*}
+    \boxed{
+      g_{\mu\nu} = \bar{g}_{\mu\nu} + h_{\mu\nu}
+    }
+  \end{align*}
+  \begin{itemize}
+    % \item split: background plus fluctuation
+    \item physics \textit{must} be invariant $\Gamma_k[g_{\mu\nu}] = \Gamma_k[\bar{g}_{\mu\nu} + h_{\mu\nu}]$
+    \item \textbf{split symmetry:}
+      \begin{align*}
+        \boxed{
+          \bar g_{\mu\nu}(x) \mapsto \bar g_{\mu\nu}(x) + \varepsilon_{\mu\nu}(x) \,, \;
+          h_{\mu\nu}(x) \mapsto h_{\mu\nu}(x) - \varepsilon_{\mu\nu}(x)
+        }
+      \end{align*}
+  \end{itemize}
+  \pause
+  \textbf{Gravity:} define scale $k$ via Laplace operator $-\bnabla^2$\\[5pt]
+  \vspace{5pt}
+  \begin{itemize}
+    \item cutoff--operator:
+      $\Delta S_k = \frac 12 \int d^d x \, \sqrt{g} \;
+      h_{\mu\nu} \, R_k^{\mu\nu\rho\sigma}(-\bnabla^2) \, h_{\rho\sigma} $\\[3pt]
+    \item gauge fixing:
+      $S_{\mathrm{gf}} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
+      F_\mu \, \bar g^{\mu\nu} \, F_\nu$\\[5pt]
+    \item Faddeev-Popov ghost sector
+  \end{itemize}
+  \vspace{10pt}
+  \textbf{break} split symmetry $\rightarrow$ modified split Ward identity (msWI)
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
