@@ -468,6 +468,65 @@
 \begin{frame}
   \frametitle{Truncating the exact renormalisation group equation}
 
+  \vspace{-33pt}
+  \begin{align*}
+    \boxed{
+      \Gamma_k[\Phi] = \sum_i \; g_i(k) \! \int \mathrm d^d x \; \mathcal O_i [\Phi(x)]
+    }
+  \end{align*}
+
+  \vspace{-15pt}
+  \begin{columns}[T]
+
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{derivative expansion:}\\
+        (expand in powers of momentum)
+        \begin{align*}
+          \Gamma_k [\Phi] &=
+          \int \mathrm d^dx
+          \bigg[
+            V_k (\Phi)\\
+            &+ \frac 12 \, Z_k (\Phi) \big( \partial_\mu \Phi \, \partial^\mu \Phi \big)\\
+            &+ \frac 12 \, W_k (\Phi) \big( \Box \Phi \, \Box \Phi \big)
+            + \dots
+          \bigg]
+        \end{align*}
+      \end{center}
+    \end{column}
+
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \textbf{vertex expansion:}\\
+        (functional Taylor expansion)
+        \begin{align*}
+          \Gamma_k [\Phi] =
+          \sum_{n=0}^{N} \; \frac{1}{n!}
+          \int \mathrm d^dx_1
+          \int \mathrm d^dx_2
+          \; \dots \\
+          \times \int \mathrm d^dx_n \;
+          \Gamma_{x_1 x_2 \dots x_n}^{(n)} \,
+          \prod_{i=1}^n
+          \big( \Phi(x_i) - \overbar\Phi(x_i) \big)
+        \end{align*}
+      \end{center}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\addtocounter{framenumber}{-1}
+\begin{frame}
+  \frametitle{Truncating the exact renormalisation group equation}
+
+  \begin{align*}
+    \boxed{
+      \Gamma_k[\Phi] = \sum_i \; g_i(k) \! \int \mathrm d^d x \; \mathcal O_i [\Phi(x)]
+    }
+  \end{align*}
+
+  \vspace{-15pt}
   \begin{columns}[T]
 
     \begin{column}{.5\textwidth}
@@ -476,42 +535,42 @@
         \begin{itemize}
           \item
             expanded in diffeomorphism invariant quantities
-            ($R$, $R_{\mu\nu}$, $C_{\mu\nu}$, ...)
+            ($R$, $R_{\mu\nu}$, $C_{\mu\nu}$, ...)\\[8pt]
           \item
             background field approximation + heat kernel
-            techniques
+            techniques\\[8pt]
           \item
-            using curved backgrounds
-            $\rightarrow$ physically most relevant?
+            using curved backgrounds\\
+            $\rightarrow$ physically most relevant?\\[8pt]
           \item
-            functional truncations
-            $\rightarrow$ $\infty$-many operators
+            functional truncations\\
+            $\rightarrow$ $\infty$-many operators\\[8pt]
           \item
             $\beta_{\GNewton}$ receives contributions
-            from cutoff--operator
+            from cutoff--operator\\[8pt]
         \end{itemize}
       \end{center}
     \end{column}
 
-    \begin{column}{.5\textwidth}
+    \begin{column}{.55\textwidth}
       \begin{center}
         \textbf{vertex expansion:}
         \begin{itemize}
           \item
-            local, non-diffeomorphism invariant action $\Gamma_k$
-            $\rightarrow$ but maybe \textit{effective universality}?
+            local, non-diffeomorphism invariant action $\Gamma_k$\\
+            $\rightarrow$ but maybe \textit{``effective universality''}?\\[8pt]
           \item
-            calculate Feynman diagrams
+            calculate Feynman diagrams\\[8pt]
           \item
-            many different ``avatars'' of $\GNewton$
+            many different ``avatars'' of $\GNewton$\\[8pt]
           \item
-            (usually) evaluated on flat background
-            $\rightarrow$ farther from ``true vacuum''?
+            (usually) evaluated on flat background\\
+            $\rightarrow$ farther from ``true vacuum''?\\[8pt]
           \item
-            functional truncations difficult
+            functional truncations difficult\\[8pt]
           \item
             fluctuation field couplings do not receives contributions
-            from cutoff--operator
+            from cutoff--operator\\[8pt]
         \end{itemize}
       \end{center}
     \end{column}
@@ -550,12 +609,12 @@
   \vspace{5pt}
   \begin{itemize}
     \item cutoff--operator:
-      $\Delta S_k = \frac 12 \int d^d x \, \sqrt{g} \;
+      $\Delta S_k = \frac 12 \int \mathrm d^d x \, \sqrt{g} \;
       h_{\mu\nu} \, R_k^{\mu\nu\rho\sigma}(-\bnabla^2) \, h_{\rho\sigma} $\\[3pt]
     \item gauge fixing:
       $S_{\mathrm{gf}} = \frac{1}{2\alpha} \int \mathrm d^dx \, \sqrt{\bar g} \;
       F_\mu \, \bar g^{\mu\nu} \, F_\nu$\\[5pt]
-    \item Faddeev-Popov ghost sector
+    \item induced Faddeev-Popov ghost sector
   \end{itemize}
   \vspace{10pt}
   \textbf{break} split symmetry $\rightarrow$ modified split Ward identity (msWI)
