@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+
+  \begin{axis}[
+    xmin=0,
+    xmax=52,
+ 		ymin = -1,
+    ymax=5,
+    major tick length =1pt,
+    cycle list = {black},
+    xlabel={number of scalars $\NS$},
+    ylabel={fixed point values},
+    legend pos=north west,
+    legend cell align=left,
+    width=0.70\linewidth,
+    ]
+
+    \addplot+[no marks, thick, red, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
+      {../Sources/Matter-flow-hss.csv};
+    \addplot+[no marks, thick, blue, mark size=0.3pt] table [x index =0,y index = 2,col sep = comma]
+      {../Sources/Matter-flow-hss.csv};
+    \addplot+[no marks, thick, orange, mark size=0.3pt] table [x index =0,y index = 1,col sep = comma]
+      {../Sources/Matter-flow-hss-bg-beta1.csv};
+
+		\addplot+[no marks, thick, green, mark size=0.3pt]
+      table [x index =0,y index = 4,col sep = comma]{../Sources/Matter-flow-hss.csv};
+		\addplot+[no marks, thick, yellow, mark size=0.3pt]
+      table [x index =0,y index = 3,col sep = comma]{../Sources/Matter-flow-hss.csv};
+
+		\addplot+[no marks, dotted]              coordinates {(0,0)    (55,0)};
+		\addplot+[no marks, black, dashed, thin] coordinates {(45,-40) (45,40)};
+		\addplot+[no marks, black, dashed, thin] coordinates {(17,-40) (17,40)};
+
+    \legend{
+      \, $G_{(3,0)}^\star$,
+      \, $G_{(1,2)}^\star$,
+      \, {$\GNewton^{\!\!\!\star}$},
+      \, $\lambda_3^\star$,
+      \, $\mu^\star$,
+    }
+  \end{axis}
+
+\end{tikzpicture}
