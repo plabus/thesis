@@ -24,9 +24,21 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
 
+% For table:
+% ----------
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage[makeroom]{cancel} % needed for xcancel
+
+\usepackage{array}
+\setlength{\heavyrulewidth}{1.5pt}
+\setlength{\abovetopsep}{4pt}
+
 % My fonts:
 % ---------
 \usepackage{libertine}
+% \usepackage{tgcursor}
 \usefonttheme[onlymath]{serif}
 \usepackage[activate]{microtype}
 
@@ -40,6 +52,7 @@
 \newcommand\Sclass{ S_{\scriptscriptstyle{\mathrm{classical}}}{} }
 \newcommand\MPl{ M_{\scriptscriptstyle{\mathrm{Pl}}}{} }
 \newcommand\metric{ g_{\mu\nu} }
+\newcommand{\weyl}{\delta_\varepsilon}
 
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\bnabla}{\overbar \nabla}
@@ -787,9 +800,157 @@
   \begin{itemize}
     \item \textit{Expected} on the functional level $\leftrightarrow$ derived from same partition function.
     \item Cannot solve them together...
-    \item What about compatibility within truncations
+    \item What about compatibility within truncations?
   \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Compatibility in the derivative expansion}
+
+  Expanding up to $\mathcal{O}(\partial^2)$:
+  \begin{align*}
+    \boxed{
+      \Gamma_k[\varphi, \chi] = \int \mathrm d^dx \, \sqrt{\bar g} \;
+      \left[
+        V(\varphi,\chi)
+        - \frac{1}{2} \, K(\varphi,\chi) \,
+        \bar g^{\mu\nu}\, \partial_{\mu} \varphi  \,
+        \partial_{\nu}\varphi
+      \right]
+    }
+  \end{align*}
+  gives msWI \& ERGE \textbf{at every order}.
+  \vspace{25pt}
+
+  Demanding compatibility at every order...
+  \begin{align*}
+    \partial_t \mathcal{W}^{(V)} = 0 \,, \; \partial_t \mathcal{W}^{(K)} = 0
+  \end{align*}
+  ...implies the \textit{compatibility condition}:
+  \begin{align*}
+    \boxed{
+      \partial_\chi R_k + \frac{d}{2} \, \big( \partial_\chi \log f \big) \, R_k = F(\chi,t) \,\dot R_k
+    }
+  \end{align*}
+
+  % \vfill
+  \begin{center}
+    \textbf{
+      This provides a necessary and sufficient condition to ensure\\
+      compatibility in the derivative expansion.
+    }
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Implications}
+
+  \begin{align*}
+    \boxed{
+      \partial_\chi R_k + \frac{d}{2} \, \big( \partial_\chi \log f \big) \, R_k = F(\chi,t) \,\dot R_k
+    }
+  \end{align*}
+
+  \begin{itemize}
+    \item $\eta=0$: compatibility condition automatically satisfied
+    \item $\eta\neq 0$: forces $R_k$ to be power-law
+  \end{itemize}
+
+  \vspace{10pt}
+  \textbf{Three Observations in the LPA}:
+
+  \vspace{5pt}
+  \begin{columns}[T]
+    \begin{column}{.7\textwidth}
+      \begin{enumerate}[1]
+
+        \sbox\bracebox{%
+          \begin{minipage}{1.05\linewidth}%
+          \item Fixed points are forbidden in general
+            [Ward identity forces $\overbar V$ to depend on $k$]
+          \item Incompatibility implies no solutions
+            [explicitely varified for $d=4$, optimised cutoff]
+          \end{minipage}%
+        }\usebox{\bracebox}%
+        \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
+
+        \item When compatible $\rightarrow$ background independent description
+          $\partial_t \overbar V = \partial_{\hat t} \hat V\nonumber$
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{.2\textwidth}
+      \begin{center}
+        unless $\eta = 0$
+      \end{center}
+    \end{column}
+  \end{columns}
+
+  \vspace{15pt}
+  \textbf{In full gravity for split symmetry:}
+  \begin{align*}
+    \boxed{
+      \weyl \Gamma_k = \sum_\Phi \frac{ \delta \Gamma_k }{ \delta \Phi } \, \weyl \Phi
+      = \varepsilon \, \dot \Gamma_k \,,
+    }
+  \end{align*}
+  \hfill[Morris `16, Percacci, Vacca `16]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% rulers
+
+\begin{frame}
+  \frametitle{Overview of the results}
+  \begin{center}
+    \begin{tabular}{ r@{\hskip 10mm}  l  r  l@{\hskip 10mm}  c  c  c  c  c  c  c }
+      % \toprule
+      \hline
+
+      \textbf{anomalous}            & \multicolumn{3}{ c }{ \hspace{-8mm}\textbf{parametrisation $f(\chi)$} } & \multicolumn{2}{ c }{ \textbf{cutoff profile $R_k$} }                                              \\[1mm]
+      \textbf{dimension}            & type                 & $d_f$           & runs                     & power-law                                                      & not power-law                   \\
+
+      % \midrule
+      \hline
+
+      \multirow{3}{*}{$\eta \ne 0$} & not power-law        & any             & yes                      & \xcancel{FP} ,\,  $\widehat{\rm FP}$                           & \color{red}{incompatible} \\[2mm]
+                                    & power-law            & $\ne\rho\eta/2$ & yes                      & FP $\ne$ $\widehat{\rm FP}$                                    & \color{red}{incompatible} \\[0.5mm]
+                                    & ($f=\chi^\rho$)      & $=\rho\eta/2$   & no                       & FP $=$ $\widehat{\rm FP}$                                      & \color{red}{incompatible} \\[5mm]
+
+      \multirow{2}{*}{$\eta =0$}    & \multirow{2}{*}{any} & $\ne0$          & yes                      & \multicolumn{2}{c}{\multirow{2}{*}{FP $=$ $\widehat{\rm FP}$}}                                   \\[0.5mm]
+                                    &                      & $=0$            & no                       & \multicolumn{2}{c}{}                                                                             \\
+      % \bottomrule
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \vspace{15pt}
+  \fontsize{10pt}{7.2}\selectfont
+  \begin{center}
+    \textbf{
+      Background independence may impose\\ (strong) restrictions on RG dynamics.\\[20pt]
+      Is this purely a shortcoming of the expansion scheme?
+    }
+  \end{center}
+
+\end{frame}
+
 
 \begin{frame}
   \titlepage
