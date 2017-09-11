@@ -1,0 +1,39 @@
+\begin{tikzpicture}[
+  scale=0.5,
+  line width=0.20mm,
+  baseline=-0.1cm
+  >=stealth,
+  scale=1.00,
+  thick,
+  ]
+
+  \tikzmath{
+    \radius    = 0.72; % radius of right circle
+    \dotradius = 0.07; % radius of the circles that make the dots
+  }
+
+  % define the distances between the Feynman diagrams
+  \coordinate   (dist6) at ( 0.0,  0.0);
+
+  %--------------
+  %  DIAGRAM 6  |
+  %--------------
+
+  % Loop composed out of two segments + annotation
+  \draw[double] ($ (dist6) + (-\radius, 0) $) arc (180:   0: \radius);
+  \draw[double] ($ (dist6) + (-\radius, 0) $) arc (180: 360: \radius);
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist6) + (-1.0*\radius, 0) $) -- ($ (dist6) + (-2.5*\radius, 0) $)
+    node[above, midway, inner sep=2mm] {$\hTT$};
+
+  % Two external legs incoming from the right: above, below
+  \draw        ($ (dist6) + ( 1.0*\radius, 0) $) -- ($ (dist6) + (1.953*\radius, 0.550*\radius) $)
+    node[above, midway, inner sep=2mm] {$\varphi$};
+  \draw        ($ (dist6) + ( 1.0*\radius, 0) $) -- ($ (dist6) + (1.953*\radius,-0.550*\radius) $)
+    node[below, midway, inner sep=2mm] {$\varphi$};
+
+  % Two dots for vertices
+  \draw[fill]  ($ (dist6) + (-\radius, 0) $) circle [radius=\dotradius];
+  \draw[fill]  ($ (dist6) + ( \radius, 0) $) circle [radius=\dotradius];
+\end{tikzpicture}

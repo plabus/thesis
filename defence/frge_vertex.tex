@@ -26,62 +26,17 @@ arb2/.style={decorate, decoration={snake}}
 
 
 \begin{document}
-\scalebox{0.75}{
-\begin{equation*}
-  \boxed{
-\mbox{\fontsize{19.28}{21.6}\selectfont\( %
-\partial_t
-\left(
-  \hspace{-10pt}
-  \begin{tikzpicture}[>=stealth,scale=1.00,baseline=-0.1cm]
-    \draw[TT] (-1,0) -- (-2.5,0) node[anchor=east] {};
-    \draw (-1,0) -- (.6,1);
-    \draw (-1,0) -- (.6,-1);
-    \draw[fill] (-1,0) circle [radius=0.05];
-  \end{tikzpicture}
-  \hspace{10pt}
-\right)
-=
-\begin{tikzpicture}[>=stealth,scale=1.00,baseline=-0.1cm]
-\draw[TT] (-1,0) -- (-2.5,0) node[anchor=east] {};
-\draw (.6,-1) -- (2.1,-1) node[anchor=east] {};
-\draw (.6,1) -- (2.1,1) node[anchor=east] {};
-
-\draw[double,double distance=.5mm] (-1,0) -- (.6,1);
-\draw[double,double distance=.5mm] (-1,0) -- (.6,-1);
-\draw[double,double distance=.5mm] (.6,1) -- (.6,-1);
-
-
-\draw[fill] (-1,0) circle [radius=0.05];
-\draw[fill] (.6,1) circle [radius=0.05];
-\draw[fill] (.6,-1) circle [radius=0.05];
-\end{tikzpicture}
-+
-\begin{tikzpicture}[>=stealth,scale=1.00,baseline=-0.1cm]
-\draw (2.5,0.75) node[anchor=west] {} -- (1,0);
-\draw[TT] (2.5,-0.75) node[anchor=west] {} -- (1,0);
-\draw (-1,0) -- (-2.5,0) node[anchor=east] {};
-
-\draw[double,double distance=.5mm] (-1,0) arc (180:0:1cm);
-\draw[double,double distance=.5mm] (-1,0) arc (180:360:1cm);
-
-\draw[fill] (-1,0) circle [radius=0.05];
-\draw[fill] (1,0) circle [radius=0.05];
-\end{tikzpicture}
-+
-\begin{tikzpicture}[>=stealth,scale=1,baseline=-0.1cm]
-\draw (-1.5,-2.3) node[anchor=north] {} -- (0,-1);
-\draw[TT] (0,-2.5) node[anchor=north] {} -- (0,-1);
-\draw (1.5,-2.3) node[anchor=north] {} -- (0,-1);
-
-\draw (0,-1)[double,double distance=.5mm] arc (270:-90:1cm);
-
-\draw[fill] (0,-1) circle [radius=0.05];
-\end{tikzpicture}
-+
-\,\cdots
-\)}
-}
-\end{equation*}
-}
+\begin{align}
+  \partial_t
+  \input{vertex1.tex} =
+  \frac12 \;
+  \left(
+    \input{flow1.tex}
+  + \input{flow2.tex}
+  + \input{flow3.tex}
+  \right)
+\end{align}
 \end{document}
+
+\begin{tikzpicture}[line width=0.20mm,scale=0.5,baseline=-0.1cm]
+

@@ -46,6 +46,7 @@
 % ---------------
 \newcommand\TTspace{ 0pt }
 \newcommand\TT{ \scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}} }
+\newcommand\hTT{ h_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
 \newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
 \newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
 \newcommand\SEH{ S_{\scriptscriptstyle{\mathrm{EH}}}{} }
@@ -1146,12 +1147,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% Add 1/2 trace and nice pictures
 
 \begin{frame}
   \frametitle{RG dynamics of interaction vertices}
 
-  \includegraphics[width=0.95\linewidth,clip=true,trim=3cm 24cm 0cm 2cm]{frge_vertex.pdf}
+  \begin{align*}
+    \boxed{
+      \partial_t
+      \left(
+        \hspace{-5pt}
+        \input{vertex1.tex}
+        \hspace{2pt}
+      \right)
+      =
+      \frac12 \;
+      \mathrm{Tr}
+      \left(
+        \hspace{-5pt}
+        \input{flow1.tex}
+        + \input{flow2.tex}
+        +
+        % \hspace{-5pt}
+        \input{flow3.tex}
+        \hspace{-5pt}
+        + \dots
+      \right)
+    }
+  \end{align*}
 
   couple scalars minimally to Einstein--Hilbert gravity
   \begin{align*}
@@ -1159,7 +1181,7 @@
     \left[
       \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \nabla\varphi^i \right)^2
       - \frac{R}{16 \pi \GNewton}
-    \right] .
+    \right]
   \end{align*}
 
   different vertices allowed to flow differently $\rightarrow$ need ``avatars'' of $\GNewton$
@@ -1170,7 +1192,7 @@
     + \sqrt{ \frac{g_3}{\GNewton} \, } \, \hat\Gamma^{(1,\,2)}_k
     + \frac{g_4}{ \GNewton} \, \hat\Gamma^{(2,\,2)}_k
     + \left(\frac{g_5}{ \GNewton}\right)^{3/2} \, \hat\Gamma^{(3,\,2)}_k
-    + \mbox{ quadratic terms }.
+    + \mbox{ quadratic terms }
   \end{align*}
 
   \vspace{-5pt}
@@ -1277,9 +1299,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% plots for eta = 0 and != 0
-% problems w/ g_\star < 0
-% higher truncations
 
 \begin{frame}
   \frametitle{Fixed point structure II: Gravity--Matter}
@@ -1346,6 +1365,42 @@
 
 
   \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{???}
+
+  -- break down of truncation (running $\lambda^4$ vertex)
+  -- sign of scalar contributions
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Effective universality in quantum gravity}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Controlling the cutoff-dependence through the msWI}
 
 \end{frame}
 

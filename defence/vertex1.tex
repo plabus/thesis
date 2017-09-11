@@ -1,0 +1,34 @@
+\begin{tikzpicture}[
+  scale=0.5,
+  line width=0.20mm,
+  baseline=-0.1cm
+  >=stealth,
+  scale=1.00,
+  thick,
+  ]
+
+  \tikzmath{
+    \radius    = 0.72; % radius of right circle
+    \dotradius = 0.07; % radius of the circles that make the dots
+  }
+
+  % define the distances between the Feynman diagrams
+  \coordinate   (dist5) at ( 0.0,  0.0);
+
+  %--------------
+  %  DIAGRAM 5  |
+  %--------------
+
+  % External leg incoming from the left
+  \draw[TT]    ($ (dist5) + (-2.5*\radius, 0.0*\radius) $) -- ($ (dist5) + (-1.0*\radius,  0*\radius) $)
+    node[above, near start, inner sep=2mm] {$\hTT$};
+
+  % Phi's going out
+  \draw        ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist5) + ( 0.6*\radius,  1*\radius) $)
+    node[above, midway, inner sep=1mm] {$\varphi$};
+  \draw        ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) -- ($ (dist5) + ( 0.6*\radius, -1*\radius) $)
+    node[below, midway, inner sep=1mm] {$\varphi$};
+
+  % One dots for the vertices
+  \draw[fill]  ($ (dist5) + (-1.0*\radius, 0.0*\radius) $) circle [radius=\dotradius];
+\end{tikzpicture}

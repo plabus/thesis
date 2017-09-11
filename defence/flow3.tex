@@ -1,0 +1,35 @@
+\begin{tikzpicture}[
+  scale=0.5,
+  line width=0.20mm,
+  baseline=-0.1cm
+  >=stealth,
+  scale=1.00,
+  thick,
+  ]
+
+  \tikzmath{
+    \radius    = 0.72; % radius of right circle
+    \dotradius = 0.07; % radius of the circles that make the dots
+  }
+
+  % define the distances between the Feynman diagrams
+  \coordinate   (dist11) at ( 0.0,  0.0);
+
+  %--------------
+  %  DIAGRAM 11  |
+  %--------------
+
+  % Loop composed out of one circle
+  \draw[double] ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) arc (-90:270:\radius);
+
+  % Three external legs pointing down: left, middle, right
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + (-0.707*\radius, -1.843*\radius) $)
+    node[left, midway, inner sep=1mm] {$\varphi$};
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.000*\radius, -2.100*\radius) $)
+    node[below, inner sep=0.5mm] {$\varphi$};
+  \draw[TT]    ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.707*\radius, -1.843*\radius) $)
+    node[right, midway, inner sep=2mm] {$\hTT$};
+
+  % One dot for the vertex
+  \draw[fill]  ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) circle [radius=\dotradius];
+\end{tikzpicture}
