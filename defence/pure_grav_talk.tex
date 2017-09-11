@@ -1,0 +1,33 @@
+  \begin{center}
+    % \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=1.0]
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=10pt, vertical sep=10pt},
+        width=0.49\linewidth,
+        xmin=0, xmax=6,
+        xtick={0,2,4,6},
+        legend pos=north east,
+        legend cell align=left,
+        grid=major,
+        grid style=dashed,
+        % ylabel absolute,
+        ]
+        \nextgroupplot[ % 1
+        xlabel={fixed point value $G_{3\,\star}$},
+        ylabel={fixed point value $g_{3\,\star}$},
+        ]
+        \addplot[blue] table{../data/plotdata1a.dat};
+        \addplot[red] table{../data/plotdata1b.dat};
+        \legend{\, full,\, semi-pert.}
+
+        \nextgroupplot[ % 2
+        xlabel={fixed point value $G_{3\,\star}$},
+        ylabel={critical exponent $\theta$},
+        ylabel near ticks, yticklabel pos=right,
+        ]
+        \addplot[blue] table{../data/plotdata2a.dat};
+        \addplot[red] table{../data/plotdata2b.dat};
+
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}

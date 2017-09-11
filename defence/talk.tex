@@ -44,6 +44,8 @@
 
 % My definitions:
 % ---------------
+\newcommand\TTspace{ 0pt }
+\newcommand\TT{ \scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}} }
 \newcommand\NS{ N_{\scriptscriptstyle{\mathrm{S}}} }
 \newcommand\GNewton{ G_{\scriptscriptstyle{\mathrm{N}}}{} }
 \newcommand\SEH{ S_{\scriptscriptstyle{\mathrm{EH}}}{} }
@@ -56,7 +58,57 @@
 
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\bnabla}{\overbar \nabla}
+\newcommand\etaS{ \eta_{\scriptscriptstyle{\mathrm{S}}} }
+\newcommand\etaTT{ \eta_{\scriptscriptstyle{\mathrm{T\hspace{\TTspace}T}}} }
 
+\newcommand{\FPone}  {\textbf{FP1}}
+\newcommand{\FPtwo}  {\textbf{FP2}}
+
+%----------------------------------------------------------------------------------------
+% TikZ & PGFPLOTS SETUP (FOR PLOTTING IN LATEX)
+%----------------------------------------------------------------------------------------
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{scalerel}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{fit}
+\usetikzlibrary{math}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{pgfplots.groupplots}
+
+\tikzset{
+  midarrow/.style={draw, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
+  midarrow-rev/.style={draw, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{<}}}},
+  midarrow-dashed/.style={draw, dashed, postaction={decorate},
+  decoration={markings,mark=at position .55 with {\arrow[draw]{>}}}},
+  midarrow-dashed-thick/.style={
+    draw, thick, dashed, postaction={decorate},
+  decoration={markings,mark=at position .50 with {\arrow[draw]{>}}}},
+}
+\tikzset{
+  TT/.style={decorate, draw=black,
+  decoration={coil,aspect=0.7,segment length=3.2pt,amplitude=2pt}}
+}
+\tikzset{
+  sigma/.style={dashed}
+}
+
+\usepgfplotslibrary{groupplots} % Libraries to generate group plots
 %----------------------------------------------------------------------------------------
 % OTHER STUFF
 %----------------------------------------------------------------------------------------
@@ -1094,17 +1146,219 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
+% Add 1/2 trace and nice pictures
 
 \begin{frame}
   \frametitle{RG dynamics of interaction vertices}
 
-  -- flow
-  -- \Gamma rhs -> avatars
-  -- field rescale, exp. para, gauge and projection + momentum scheme (?)
+  \includegraphics[width=0.95\linewidth,clip=true,trim=3cm 24cm 0cm 2cm]{frge_vertex.pdf}
 
-  -- results (slide 17ff)
-  pure gravity, scalars include + pictures
+  couple scalars minimally to Einstein--Hilbert gravity
+  \begin{align*}
+    \hat \Gamma_k[\bar g_{\mu\nu}, h_{\mu\nu}, \varphi] = \int d^4x \, \sqrt{g} \,
+    \left[
+      \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \nabla\varphi^i \right)^2
+      - \frac{R}{16 \pi \GNewton}
+    \right] .
+  \end{align*}
+
+  different vertices allowed to flow differently $\rightarrow$ need ``avatars'' of $\GNewton$
+  \begin{align*}
+    \Gamma_k^\mathrm{rhs} &=
+    \sqrt{ \frac{G_3}{\GNewton} \, } \, \hat\Gamma^{(3,\,0)}_k
+    + \frac{G_4}{\GNewton} \, \hat\Gamma^{(4,\,0)}_k
+    + \sqrt{ \frac{g_3}{\GNewton} \, } \, \hat\Gamma^{(1,\,2)}_k
+    + \frac{g_4}{ \GNewton} \, \hat\Gamma^{(2,\,2)}_k
+    + \left(\frac{g_5}{ \GNewton}\right)^{3/2} \, \hat\Gamma^{(3,\,2)}_k
+    + \mbox{ quadratic terms }.
+  \end{align*}
+
+  \vspace{-5pt}
+  \fontsize{6pt}{7.2}\selectfont
+  \hfill [use canonical rescaling, exp. parametrisation w/ unimodular gauge,
+  York decomposition, symmetric momentum configuration]
+
+  \vspace{15pt}
+  \fontsize{8pt}{7.2}\selectfont
+  \begin{center}
+    \textbf{
+      distinquish pure gravity couplings $\mathbf{G_3}$, $\mathbf{G_4}$ and gravity---matter couplings
+      $\mathbf{g_3}$, $\mathbf{g_4}$ and $\mathbf{g_5}$
+    }
+  \end{center}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Fixed point structure I: Pure Gravity}
+
+  \begin{center}
+    \fbox{
+      \begin{minipage}{35em}
+        \begin{center}
+          \textbf{approximations:}
+          \begin{itemize}
+            % \setlength\itemsep{2.0mm}
+            \item
+              {\makebox[65pt]{perturbative:\hfill}
+              {$\eta_\Phi = 0$}}
+            \item
+              {\makebox[65pt]{semi-perturbative:\hfill}
+              {$\eta_\Phi = 0$ on the right hand side of the flow of $\eta_\Phi$}}
+            \item
+              {\makebox[65pt]{full:\hfill}
+              {$\eta_\Phi \neq 0$}}
+          \end{itemize}
+        \end{center}
+        \end{minipage}
+    }
+  \end{center}
+
+  \begin{enumerate}
+    \item
+      $\mathbf{G_3 = G_4 = g_4 = g_5 = g_3}$
+
+      \vspace{-7pt}
+      \begin{columns}[T]
+        \begin{column}{.8\textwidth}
+          \renewcommand{\arraystretch}{1.5}
+          \begin{center}
+            \begin{tabular}{c|cccc}
+              approximation&$g_{3}^{\star}$& $\theta$& $\eta_{\TT}$& $\eta_{\sigma}$\\
+              \hline
+              full              & 4.58 & 2.27 & -1.24 & 1.32\\
+              semi-perturbative & 4.56 & 2.31 & -1.29 & 0.77\\
+              perturbative      & 4.92 & 2    &     - &    -
+            \end{tabular}
+          \end{center}
+        \end{column}
+
+        \hspace{-30pt}
+        \begin{column}{.2\textwidth}
+          \begin{center}
+            \textbf{
+              The critical exponents are remarkably close to previous results!
+            }
+          \end{center}
+        \end{column}
+      \end{columns}
+
+      \vspace{15pt}
+    \item
+      $\mathbf{g_4 = g_5 = g_3}$ \textbf{and} $\mathbf{G_3 = G_4}$ \textbf{ext. parameter}\\
+
+      \vspace{-7pt}
+      \begin{columns}[T]
+        \begin{column}{.8\textwidth}
+          \input{pure_grav_talk.tex}
+        \end{column}
+
+        \hspace{-30pt}
+        \begin{column}{.2\textwidth}
+          \vspace{20pt}
+          \begin{center}
+            \textbf{
+              We can find a viable fixed point for a wide range of parameters.
+            }
+          \end{center}
+        \end{column}
+      \end{columns}
+
+  \end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% plots for eta = 0 and != 0
+% problems w/ g_\star < 0
+% higher truncations
+
+\begin{frame}
+  \frametitle{Fixed point structure II: Gravity--Matter}
+
+  \begin{enumerate}
+
+      \vspace{5pt}
+    \item
+      $\mathbf{\boxed{\etaS = 0}}$
+
+      \vspace{2pt}
+      \begin{columns}[T]
+        \begin{column}{.8\textwidth}
+          \input{gravity_matter_talk.tex}
+        \end{column}
+
+        \hspace{-80pt}
+        \begin{column}{.4\textwidth}
+          \vspace{20pt}
+          \begin{center}
+            \begin{itemize}
+            \item
+              Large number of scalars $\NS$ \textbf{destabilises} grav. sector
+            \item
+              Viable \textbf{fixed points} exist
+            \item
+              $\eta_\sigma > 2$ for $\NS=14$ $\rightarrow$\\ \textbf{need bigger truncation}
+          \end{itemize}
+          \end{center}
+        \end{column}
+      \end{columns}
+
+      \vspace{7pt}
+    \item
+      $\mathbf{\boxed{\etaS \neq 0}}$
+
+      \vspace{-10pt}
+      \begin{columns}[T]
+        \begin{column}{.6\textwidth}
+          \begin{center}
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{ r r r r r r }
+              & $g_{3}^\star$ & $\theta$ & $\etaTT$        & $\eta_{\sigma}$ & $\etaS$ \\
+              \hline
+              $\FPone$    & -8.67          & 3.42     & 2.34            & -1.92           & -4.83   \\
+              $\FPtwo$    & 12.2           & 4.81     & -3.28           & 2.69            & 6.78    \\
+            \end{tabular}
+          \end{center}
+        \end{column}
+
+        \hspace{-20pt}
+        \begin{column}{.5\textwidth}
+          % \vspace{20pt}
+          \begin{center}
+            \begin{itemize}
+            \item
+              Large anomalous dimensions
+            \item
+              No clear candidate for physical FP
+          \end{itemize}
+          \end{center}
+        \end{column}
+      \end{columns}
+
+
+  \end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Conclusions}
+\end{frame}
+
 
 \begin{frame}
   \titlepage
