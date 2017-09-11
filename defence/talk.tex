@@ -155,10 +155,10 @@
 \author{Peter Labus}
 \institute{SISSA Trieste
   \vspace{5mm}
-  \\ \vspace{8pt}PL, T. R. Morris and Z. H. Slade, Phys. Rev. D 94 (2016)
-  \\ \vspace{8pt}P. Don\`a, A. Eichhorn, PL and R. Percacci, Phys. Rev. D93 (2016)
-  \\ \vspace{8pt}PL, R. Percacci, G.P. Vacca, Phys. Lett.  B753 (2016)
-  \\ \vspace{8pt}A. Eichhorn, PL, J. M. Pawlowski, M. Reichert, \textit{In preparation.}
+  \\ \vspace{8pt}P.L., T. R. Morris and Z. H. Slade, Phys. Rev. D 94 (2016)
+  \\ \vspace{8pt}P. Don\`a, A. Eichhorn, P.L. and R. Percacci, Phys. Rev. D93 (2016)
+  \\ \vspace{8pt}P.L., R. Percacci, G.P. Vacca, Phys. Lett.  B753 (2016)
+  \\ \vspace{8pt}A. Eichhorn, P.L., J. M. Pawlowski, M. Reichert, \textit{In preparation.}
   \date{14/09/2017}
 }
 \begin{frame}[noframenumbering,plain]
@@ -712,7 +712,7 @@
           \item
             \textbf{functional truncations} of non-minimally coupled
             scalar fields\\[3pt]
-            [Percacci, Vacca '15; PL, Percacci, Vacca '16]
+            [Percacci, Vacca '15; P.L., Percacci, Vacca '16]
             \begin{itemize}
               \fontsize{8pt}{7.2}\selectfont
               \item Are there scaling solutions?
@@ -721,7 +721,7 @@
             \vspace{5pt}
 
           \item renormalisation group dynamics of \textbf{gravity-matter vertices}\\[3pt]
-            [Don\`a, Eichhorn, PL, Percacci '16]
+            [Don\`a, Eichhorn, P.L., Percacci '16]
             \begin{itemize}
               \fontsize{8pt}{7.2}\selectfont
               \item Are there well-behaved fixed points?
@@ -732,7 +732,7 @@
           \item
             \textbf{effective universality}\\
             and subtracting the \textbf{cutoff--dependence} using the msWI\\[3pt]
-            [Eichhorn, PL, Pawlowski, Reichert '17]
+            [Eichhorn, P.L., Pawlowski, Reichert '17]
           \end{minipage}%
         }\usebox{\bracebox}%
         \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
@@ -742,7 +742,7 @@
           \begin{minipage}{.8\linewidth}%
           \item
             \textbf{ERGE \& msWI}\\[3pt]
-            [Dietz, Morris '15; PL, Morris, Slade '16; Percacci, Vacca '16]
+            [Dietz, Morris '15; P.L., Morris, Slade '16; Percacci, Vacca '16]
             \begin{itemize}
               \fontsize{8pt}{7.2}\selectfont
               \item Can they be solved together?
@@ -1183,11 +1183,11 @@
   different vertices allowed to flow differently $\rightarrow$ need ``avatars'' of $\GNewton$
   \begin{align*}
     \Gamma_k^\mathrm{rhs} &=
-    \sqrt{ \frac{G_3}{\GNewton} \, } \, \hat\Gamma^{(3,\,0)}_k
-    + \frac{G_4}{\GNewton} \, \hat\Gamma^{(4,\,0)}_k
-    + \sqrt{ \frac{g_3}{\GNewton} \, } \, \hat\Gamma^{(1,\,2)}_k
-    + \frac{g_4}{ \GNewton} \, \hat\Gamma^{(2,\,2)}_k
-    + \left(\frac{g_5}{ \GNewton}\right)^{3/2} \, \hat\Gamma^{(3,\,2)}_k
+    \sqrt{ \frac{G_3}{\GNewton} \, } \, \hat\Gamma^{(3,0)}_k
+    + \frac{G_4}{\GNewton} \, \hat\Gamma^{(4,0)}_k
+    + \sqrt{ \frac{g_3}{\GNewton} \, } \, \hat\Gamma^{(1,2)}_k
+    + \frac{g_4}{ \GNewton} \, \hat\Gamma^{(2,2)}_k
+    + \left(\frac{g_5}{ \GNewton}\right)^{3/2} \, \hat\Gamma^{(3,2)}_k
     + \mbox{ quadratic terms }
   \end{align*}
 
@@ -1295,6 +1295,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
+% shall I add: break down of truncation (running $\lambda^4$ vertex)?
 
 \begin{frame}
   \frametitle{Fixed point structure II: Gravity--Matter}
@@ -1359,9 +1360,7 @@
         \end{column}
       \end{columns}
 
-
   \end{enumerate}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1371,11 +1370,80 @@
 % TODO:
 
 \begin{frame}
-  \frametitle{???}
+  \frametitle{Substracting the cutoff-dependence via the msWI}
 
-  -- break down of truncation (running $\lambda^4$ vertex)
-  -- sign of scalar contributions
+  \begin{align*}
+    \boxed{
+      \etaTT = \etaTT \big|_\mathrm{grav} {\color{red} + \frac{ g_3 }{ 24 \pi } \, \NS}
+    }
+    \qquad
+    \text{versus}
+    \qquad
+    \boxed{
+      \eta_h = \eta_h \big|_\mathrm{grav} {\color{red} - \frac{ \GNewton }{ 60 \pi } \, \NS}
+    }
+  \end{align*}
 
+  \vspace{-5pt}
+  \fontsize{6pt}{7.2}\selectfont
+  [Don\`a, P.L., Eichhorn, Percacci `16] \hfill [Don\`a, Eichhorn, Percacci `13]
+
+  \vspace{5pt}
+  \fontsize{8pt}{7.2}\selectfont
+  \begin{center}
+    \textbf{
+      Sign of scalar contribution couples back to beta functions $\Rightarrow$ impact on matter bounds
+    }
+  \end{center}
+
+  \vspace{-8pt}
+  \fontsize{6pt}{7.2}\selectfont
+  \vspace{3pt}
+  Possible causes:\\
+  metric parametrisation (linear vs. exponential), York--decomposition, background field approxmation vs fluctuation
+  field calculation, ...
+
+  \vspace{5pt}
+  \fontsize{8pt}{7.2}\selectfont
+  \begin{center}
+    \textbf{
+      Is this the background dependence of the cutoff--operator $R_k$,\\
+      and can we substract it using the msWI?
+    }
+  \end{center}
+
+  \vspace{-15pt}
+  \begin{align*}
+    \boxed{
+      \frac{\delta^2 \Gamma_k}{\delta h_{\mu\nu} \, \delta h_{\rho\sigma}} \approx
+      \frac{\delta^2 \Gamma_k}{\delta \bar g_{\mu\nu} \, \delta \bar g_{\rho\sigma}}
+      - \frac 12 \frac{\delta}{\delta \bar g_{\rho\sigma}}
+      \int \frac{1}{\sqrt{\bar g}}\frac{\delta \sqrt{\bar g} R_k}{\delta \bar g_{\mu\nu}}\frac{\delta
+      \Gamma_k}{\delta R_k}
+    }
+  \end{align*}
+
+  \vspace{5pt}
+  \begin{columns}[T]
+    \begin{column}{.8\textwidth}
+      \input{cutoff-dependence.tex}
+    \end{column}
+
+    \hspace{-30pt}
+    \begin{column}{.4\textwidth}
+      \vspace{10pt}
+      \begin{center}
+        \begin{itemize}
+          \item
+            Cosmological constant/\\
+            gravition mass behaviour improved
+          \item
+            Approximating fluctuation\\
+            field Newton coupling fails
+        \end{itemize}
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1385,18 +1453,7 @@
 % TODO:
 
 \begin{frame}
-  \frametitle{Effective universality in quantum gravity}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% TODO:
-
-\begin{frame}
-  \frametitle{Controlling the cutoff-dependence through the msWI}
+  \frametitle{Towards effective universality in quantum gravity?}
 
 \end{frame}
 
