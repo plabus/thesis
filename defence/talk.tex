@@ -173,7 +173,7 @@
 \fontsize{10pt}{7.2}\selectfont
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 0
+%%%   SLIDE 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -215,7 +215,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 1
+%%%   SLIDE 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -287,7 +287,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 2
+%%%   SLIDE 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -354,7 +354,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 3
+%%%   SLIDE 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -423,14 +423,14 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 4
+%%%   SLIDE 5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
 
 \begin{frame}
   \frametitle{A look into theory space}
-  \textbf{effective average action}
+  scale-dependent \textbf{effective average action}
   \begin{align*}
     \boxed{
     e^{ - \Gamma_k \lbrack \varphi \rbrack }
@@ -450,7 +450,7 @@
     \begin{column}{.4\textwidth}
       \textbf{Theory space:}\\[5pt]
       QFT = trajectory in theory space,
-      parametetrised by scale $k$\\[25pt]
+      parametrised by scale $k$\\[25pt]
       % \begin{center}
         \includegraphics[scale=0.6]{theory_space.pdf}
       % \end{center}
@@ -472,7 +472,7 @@
 \begin{frame}
   \frametitle{A look into theory space}
   \vspace{7.5pt}
-  \textbf{effective average action}
+  scale-dependent \textbf{effective average action}
   \begin{align*}
     \boxed{
     e^{ - \Gamma_k \lbrack \varphi \rbrack }
@@ -497,7 +497,7 @@
     \end{column}
     \begin{column}{.4\textwidth}
       \begin{center}
-        fixed point in $\infty$--dim theory space:\\
+        fixed point in $\infty$--dim\\ theory space:\\
         \textbf{asymptotic safety} (freedom)\\[20pt]
         relevant directions\\[3pt]
         $\rightarrow$ free parameters (fix in the IR)\\[10pt]
@@ -509,20 +509,81 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 5
+%%%   SLIDE 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+% add plot G(k) over k/\mu
+
+\begin{frame}
+  \frametitle{Asymptotically safe (pure) gravity }
+
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{center}
+        $\varepsilon$--expansion in $d=2+\epsilon$:
+        \begin{align*}
+          \boxed{
+            \beta_G = \varepsilon \, G - \frac{38}{3} \, G^2
+          }
+        \end{align*}
+        fixed point at positive $G_\star > 0$, classical
+        and quantum scaling balance out [Weinberg `76]
+      \end{center}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{center}
+        % \vspace{-20pt}
+        \input{beta_talk.tex}
+      \end{center}
+    \end{column}
+  \end{columns}
+
+  \begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \begin{center}
+        \includegraphics[width=0.9\textwidth]{fixed_point_EH.png}
+      \end{center}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      \begin{center}
+        Strong evidence for existence of \textbf{interacting UV FP}
+        with 3 relevant directions from \textbf{functional RG}\\[5pt]
+        \hfill [Reuter `96]
+
+        \vspace{15pt}
+        scale invariant UV theory flows to Einstein-Hilbert regime in IR,
+        finite number of free parameters\\[5pt]
+        % \vspace{5pt}
+        \hfill [Reuter, Saueressig, Litim, Codello, Percacci,\\
+        \hfill Rahmede, Dietz, Morris, Eichhorn, ...]
+      \end{center}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 7
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
 
 \begin{frame}
-  \frametitle{Asymptotically safe (pure) gravity }
+  \frametitle{Including matter...}
+
 \end{frame}
 
-\section{Matter fields in asymptotic safety}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE 8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Technical tools}
+% TODO:
 
-\section{Known issues}
+\begin{frame}
+  \frametitle{Matter matters}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   SLIDE
@@ -531,9 +592,74 @@
 % TODO:
 
 \begin{frame}
-  \frametitle{Truncating the exact renormalisation group equation}
+  \frametitle{The exact renormalisation group equation}
+
+  \begin{center}
+    \textbf{
+      Need non-perturbative tool for strongly interacting regime $\mathbf{g>1}$
+    }
+  \end{center}
+
+  Introduce scale-dependent \textbf{effective average action}
+  \begin{align*}
+    e^{ - \Gamma_k \lbrack \varphi \rbrack }
+    = \int \mathcal D \chi \;
+    e^{
+      - S \lbrack \chi + \varphi \rbrack
+      - \Delta S_k \lbrack \chi \rbrack
+      + \int \mathrm d^dx \;
+      \frac{ \delta \Gamma_k }{ \delta \varphi (x) }
+      \, \chi(x)
+    } \,, \;\;
+   \Delta S_k \lbrack \chi \rbrack =
+   \frac 12 \int \chi(-p) R_k(p) \chi(p)
+  \end{align*}
+  through cutoff-operator $R_k$ (scale and momentum-dependent mass term)
+
+  \vspace{30pt}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \textbf{Exact RG equation:}\\[3pt]
+      \begin{align*}
+        \boxed{
+          \partial_t \Gamma_k
+          = \frac 12 \; \mathrm{Tr}
+          \left[
+            \left(
+              \frac{ \delta^2 \Gamma_k }{ \delta \varphi \, \delta \varphi } + R_k
+            \right) ^{\!\!-1}
+            \! \dot R_k
+          \right]
+        }
+      \end{align*}
+      \hfill [Wetterich `93, Morris `94]
+    \end{column}
+    \begin{column}{.5\textwidth}
+      % \begin{center}
+        \textbf{
+          $\mathbf{\Gamma_k}$ contains quantum fluctuations above $\mathbf{k}$
+        }\\[10pt]
+
+        IR limit ($k \rightarrow 0$): full effective action $\Gamma$\\[5pt]
+        UV limit ($k \rightarrow \infty$): UV action $S$\\
+        % $\rightarrow$
+        \hfill (prediction of the theory)
+      % \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   SLIDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO:
+
+\begin{frame}
+  \frametitle{Truncating the functional RG}
 
   \vspace{-33pt}
+  Practical calculations: include only proper subset of all possible operators
   \begin{align*}
     \boxed{
       \Gamma_k[\Phi] = \sum_i \; g_i(k) \! \int \mathrm d^d x \; \mathcal O_i [\Phi(x)]
@@ -583,8 +709,9 @@
 
 \addtocounter{framenumber}{-1}
 \begin{frame}
-  \frametitle{Truncating the exact renormalisation group equation}
+  \frametitle{Truncating the functional RG}
 
+  Practical calculations: include only proper subset of all possible operators
   \begin{align*}
     \boxed{
       \Gamma_k[\Phi] = \sum_i \; g_i(k) \! \int \mathrm d^d x \; \mathcal O_i [\Phi(x)]
@@ -684,13 +811,6 @@
   \vspace{10pt}
   \textbf{break} split symmetry $\rightarrow$ modified split Ward identity (msWI)
 \end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% TODO:
-\section{My research \& and its implications}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   SLIDE
@@ -1041,7 +1161,7 @@
   \begin{itemize}
     \item single metric
     \item maximally symmetric background
-    \item $\NS$ scalar fields with $O(\NS)$ symmetry non-minimally coupled
+    \item $\NS$ scalar fields with $O(\NS)$ symmetry, non-minimally coupled
     \item local potential approximation up to $\mathcal O(R)$ of $\mathcal F_k(\rho, R)$
   \hfill[Narain, Rahmede, Percacci, Vacca]
   \end{itemize}
@@ -1436,8 +1556,8 @@
       \begin{center}
         \begin{itemize}
           \item
-            Cosmological constant/\\
-            graviton mass behaviour improved
+            Cosmological constant\\
+            behaviour improved
           \item
             Approximating fluctuation\\
             field Newton coupling fails
