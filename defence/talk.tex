@@ -145,7 +145,8 @@
 \begin{document}
 
 % General TODO:
-% Right swapping
+% !!! right positioning
+% !!! check references (name spelling etc)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   TITLE SLIDE
@@ -172,50 +173,8 @@
 \section{Asymptotically safe quantum gravity}
 \fontsize{10pt}{7.2}\selectfont
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%   SLIDE 1
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% % TODO:
-
-% \begin{frame}
-%   \frametitle{Outline}
-%   \begin{enumerate}[I]
-%     \item
-%       Asymptotic Safety
-%       \begin{itemize}
-%         \item Why quantum gravity?
-%         \item What is asymptotic safety and why to study it?
-%       \end{itemize}
-%       \vfill
-%     \item
-%       Matter fields coupled to gravity
-%       \begin{itemize}
-%         \item Why we should include matter fields from the start...
-%         \item ...and what we might learn from it
-%       \end{itemize}
-%       \vfill
-%     \item
-%       Tools to study asymptotic safety
-%       \begin{itemize}
-%         \item What is needed and available?
-%         \item Why to use the functional renormalisation group (FRG)?
-%       \end{itemize}
-%       \vfill
-%     \item
-%       Known issues of the FRG in gravity
-%       \begin{itemize}
-%         \item Outline of some open research questions...
-%         \item ...and relation to my own work
-%       \end{itemize}
-%       \vfill
-%     \item
-%       My research \& its implications
-%   \end{enumerate}
-% \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 2
+%%%   SLIDE 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -287,19 +246,15 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 3
+%%%   SLIDE 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% references
-% check formula
-% Feynman diagram of graviton scattering
-% picture of Einstein?
 
 \begin{frame}
   \frametitle{But wait a minute...!}
   \textbf{We know (low-energy) quantum gravity:}\\[5pt]
-  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
+  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donoghue `94]
   \begin{align*}
     \boxed{
       V(r) = -\frac{\GNewton m_1 m_2}{r}
@@ -325,7 +280,7 @@
 \begin{frame}
   \frametitle{But wait a minute...!}
   \textbf{We know (low-energy) quantum gravity:}\\[5pt]
-  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donogue et al.]
+  GR as an EFT $\rightarrow$ can calculate corrections to Newtonian potential [Donoghue `94]
   \begin{align*}
     \boxed{
       V(r) = -\frac{\GNewton m_1 m_2}{r}
@@ -354,7 +309,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 4
+%%%   SLIDE 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -423,7 +378,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 5
+%%%   SLIDE 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -504,16 +459,50 @@
   \end{columns}
 \end{frame}
 
-% !!! examples:
-% QCD, (Yang-Mills), Gross-Neveu (d=3),
-% Gauge-Yukawa theories in Veneziano-limit [Litim, Sannino]
+\addtocounter{framenumber}{-1}
+\begin{frame}
+  \frametitle{A look into theory space}
+  \vspace{7.5pt}
+  scale-dependent \textbf{effective average action}
+  \begin{align*}
+    \boxed{
+    e^{ - \Gamma_k \lbrack \varphi \rbrack }
+    = \int \mathcal D \chi \;
+    e^{
+      - S \lbrack \chi + \varphi \rbrack
+      - \Delta S_k \lbrack \chi \rbrack
+      + \int \mathrm d^dx \;
+      \frac{ \delta \Gamma_k }{ \delta \varphi (x) }
+      \, \chi(x)
+    }
+    }
+  \end{align*}
+  \vspace{2pt}
+
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      UV critical surface:\\[10pt]
+      \includegraphics[scale=0.6]{uvcritsurface_talk.pdf}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{center}
+        \textbf{example theories:}\\[10pt]
+        \begin{itemize}
+          \item QCD / Yang-Mills
+          \item Gross-Neveu model ($d=3$)
+          \item Gauge-Yukawa theories in Veneziano limit\\[3pt]
+            \hfill [Litim, Sannino]
+        \end{itemize}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 6
+%%%   SLIDE 5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% add plot G(k) over k/\mu
 
 \begin{frame}
   \frametitle{Asymptotically safe (pure) gravity }
@@ -533,7 +522,6 @@
     \end{column}
     \begin{column}{.4\textwidth}
       \begin{center}
-        % \vspace{-20pt}
         \input{beta_talk.tex}
       \end{center}
     \end{column}
@@ -554,7 +542,6 @@
         \vspace{15pt}
         scale invariant UV theory flows to Einstein-Hilbert regime in IR,
         finite number of free parameters\\[5pt]
-        % \vspace{5pt}
         \hfill [Reuter, Saueressig, Litim, Codello, Percacci,\\
         \hfill Rahmede, Dietz, Morris, Eichhorn, ...]
       \end{center}
@@ -564,12 +551,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 7
+%%%   SLIDE 6
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! May I use triviality?
-% nicer version of pic
 
 \begin{frame}
   \frametitle{Matter fields in asymptotic safety}
@@ -592,14 +577,16 @@
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \begin{center}
+        \vspace{10pt}
         \includegraphics[width=0.9\textwidth]{qcdbeta.png}\\[5pt]
-        No asymptotic freedom in QCD for $N_f > 16.5$!
+        \textbf{No asymptotic freedom in QCD for $N_f > 16.5$!}
       \end{center}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{center}
-        \includegraphics[scale=0.25]{triviality.png}\\[5pt]
-        Can gravity stabilise matter?
+        \vspace{-10pt}
+        \includegraphics[scale=0.30]{triviality_new.png}\\[5pt]
+        \textbf{Can gravity stabilise matter?}
       \end{center}
     \end{column}
   \end{columns}
@@ -607,11 +594,11 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE 8
+%%%   SLIDE 7
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! slide
+% !!! do
 
 \begin{frame}
   \frametitle{Matter matters}
@@ -625,7 +612,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 8
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -687,12 +674,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 9
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! highlight
-% functional, universality, ...
 
 \begin{frame}
   \frametitle{Truncating the functional RG}
@@ -768,17 +753,19 @@
             expanded in diffeomorphism invariant quantities
             ($R$, $R_{\mu\nu}$, $C_{\mu\nu}$, ...)\\[8pt]
           \item
-            background field approximation + heat kernel
-            techniques\\[8pt]
+            background field approximation
+            + heat kernel techniques\\[8pt]
           \item
             using curved backgrounds\\
             $\rightarrow$ physically most relevant?\\[8pt]
           \item
-            functional truncations\\
+            \textbf{functional truncations}\\
             $\rightarrow$ $\infty$-many operators\\[8pt]
           \item
-            $\beta_{\GNewton}$ receives contributions
-            from cutoff--operator\\[8pt]
+            \textit{
+              $\beta_{\GNewton}$ receives contributions
+              from cutoff--operator
+            }\\[8pt]
         \end{itemize}
       \end{center}
     \end{column}
@@ -789,7 +776,7 @@
         \begin{itemize}
           \item
             local, non-diffeomorphism invariant action $\Gamma_k$\\
-            $\rightarrow$ but maybe \textit{``effective universality''}?\\[8pt]
+            $\rightarrow$ but maybe \textbf{``effective universality''} ?\\[8pt]
           \item
             calculate Feynman diagrams\\[8pt]
           \item
@@ -800,8 +787,10 @@
           \item
             functional truncations difficult\\[8pt]
           \item
-            fluctuation field couplings do not receives contributions
-            from cutoff--operator\\[8pt]
+            \textit{
+              fluctuation field couplings do not receives contributions
+              from cutoff--operator
+            }\\[8pt]
         \end{itemize}
       \end{center}
     \end{column}
@@ -810,7 +799,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -852,11 +841,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 11
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! swap
 
 \fontsize{8pt}{7.2}\selectfont
 \begin{frame}
@@ -867,6 +855,22 @@
     \begin{column}{.8\textwidth}
       \begin{enumerate}[1]
 
+    \sbox\bracebox{%
+      \begin{minipage}{.8\linewidth}%
+      \item
+        \textbf{ERGE \& msWI}\\[3pt]
+        [Dietz, Morris '15; P.L., Morris, Slade '16; Percacci, Vacca '16]
+        \begin{itemize}
+          \fontsize{8pt}{7.2}\selectfont
+        \item Can they be solved together?
+        \item Are there restrictions to RG properties (FPs, number of relevant directions, etc.)?
+      \end{itemize}
+    \end{minipage}%
+  }\usebox{\bracebox}%
+  \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
+
+    \vspace{10pt}
+
         \sbox\bracebox{%
           \begin{minipage}{.8\linewidth}%
           \item
@@ -875,42 +879,28 @@
             [Percacci, Vacca '15; P.L., Percacci, Vacca '16]
             \begin{itemize}
               \fontsize{8pt}{7.2}\selectfont
-              \item Are there scaling solutions?
-              \item What is the impact of the scalars?
-            \end{itemize}
-            \vspace{5pt}
+            \item Are there scaling solutions?
+            \item What is the impact of the scalars?
+          \end{itemize}
+          \vspace{5pt}
 
-          \item renormalisation group dynamics of \textbf{gravity-matter vertices}\\[3pt]
-            [Don\`a, Eichhorn, P.L., Percacci '16]
-            \begin{itemize}
-              \fontsize{8pt}{7.2}\selectfont
-              \item Are there well-behaved fixed points?
-              \item How does this compare to other truncations?
-            \end{itemize}
-            \vspace{5pt}
+        \item renormalisation group dynamics of \textbf{gravity-matter vertices}\\[3pt]
+          [Don\`a, Eichhorn, P.L., Percacci '16]
+          \begin{itemize}
+            \fontsize{8pt}{7.2}\selectfont
+          \item Are there well-behaved fixed points?
+          \item How does this compare to other truncations?
+        \end{itemize}
+        \vspace{5pt}
 
-          \item
-            \textbf{effective universality}\\
-            and subtracting the \textbf{cutoff--dependence} using the msWI\\[3pt]
-            [Eichhorn, P.L., Pawlowski, Reichert '17]
-          \end{minipage}%
-        }\usebox{\bracebox}%
-        \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
+      \item
+        \textbf{effective universality}\\
+        and subtracting the \textbf{cutoff--dependence} using the msWI\\[3pt]
+        [Eichhorn, P.L., Pawlowski, Reichert '17]
+      \end{minipage}%
+    }\usebox{\bracebox}%
+    \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
 
-            \vspace{15pt}
-        \sbox\bracebox{%
-          \begin{minipage}{.8\linewidth}%
-          \item
-            \textbf{ERGE \& msWI}\\[3pt]
-            [Dietz, Morris '15; P.L., Morris, Slade '16; Percacci, Vacca '16]
-            \begin{itemize}
-              \fontsize{8pt}{7.2}\selectfont
-              \item Can they be solved together?
-              \item Are there restrictions to RG properties (FPs, number of relevant directions, etc.)?
-            \end{itemize}
-          \end{minipage}%
-        }\usebox{\bracebox}%
-        \makebox[15pt][r]{$\left.\vrule height\ht\bracebox width 0pt\right\}$}
 
     \end{enumerate}
   \end{column}
@@ -918,19 +908,19 @@
   \hspace{-2.5cm}
   \begin{column}{.2\textwidth}
     \begin{center}
-      \vspace{53pt}
+      \vspace{11pt}
+      CORE gravity\\
+      \vspace{105pt}
       gravity\\[2pt]
       $\oplus$\\[3pt]
-      $\NS$ scalar fields\\
-      \vspace{108pt}
-      CORE gravity
+      $\NS$ scalar fields
     \end{center}
   \end{column}
 \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -973,7 +963,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 13
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1014,7 +1004,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 14
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1058,7 +1048,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 15
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1120,11 +1110,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 16
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! say: search for solutions
 
 \begin{frame}
   \frametitle{Overview of the results}
@@ -1159,16 +1148,14 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 17
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! references
 
 \begin{frame}
   \frametitle{Functional truncations in scalar--tensor theories}
 
-  Towards understanding QFTs of gravity and scalar matter
   \begin{align*}
     % \boxed{
       \Gamma[\varphi^i,g_{\mu\nu}]
@@ -1176,9 +1163,10 @@
     % }
   \end{align*}
   \begin{itemize}
-    \item early Universe cosmology and inflation [Wetterich et al., Bonanno]
-    \item well-defined asymptotic states
-    \item stability of gravitational FPs?
+    \item early Universe cosmology and inflation\\[1pt]
+      [Hindmarsh et al. `11; Copeland et al. `13; Bonanno, Platania `15; Saltas `16]
+    \item well-defined asymptotic states for scalars
+    \item stability of gravitational fixed points?
     \item ``simple enough'' for functional truncations
   \end{itemize}
 
@@ -1198,17 +1186,16 @@
     \item single metric
     \item maximally symmetric background
     \item $\NS$ scalar fields with $O(\NS)$ symmetry, non-minimally coupled
-    \item local potential approximation up to $\mathcal O(R)$ of $\mathcal F_k(\rho, R)$
-  \hfill[Narain, Rahmede, Percacci, Vacca]
+    \item local potential approximation up to $\mathcal O(R)$ of $\mathcal F_k(\rho, R)$\\[1pt]
+  \hfill [Narain, Percacci `10; Narain, Rahmede `10; Percacci, Vacca `15]
   \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 18
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! plot of WF potential
 
 \begin{frame}
   \frametitle{Scaling solutions}
@@ -1221,6 +1208,7 @@
     }
   \end{align*}
   For arbitrary $d$ and $\NS$ we find \textbf{3 fixed point solutions}.
+  \hfill (displayed $d=4$)
   \renewcommand{\arraystretch}{2.5}
   \begin{center}
     \begin{tabular}{cclc}
@@ -1236,25 +1224,32 @@
       $\mathbf{1 < \NS \leq 11}$ \\
     \end{tabular}
   \end{center}
-  \hfill ($d=4$)
 
-  \begin{itemize}
-    \item \textbf{upper bounds} on $\NS$
-      (in approx. agreement with previous results [Don\`a, Eichhorn, Percacci `15])
-    \item \textbf{four relevant directions} (one close to zero)
-    \item numerical studies: gravitationally dressed \textbf{Wilson--Fisher FP} in $d=3$
-    \item phenomenologically most interesting FP3 needs \textbf{at least two fields}
-  \end{itemize}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item \textbf{upper bounds} on $\NS$\\[1pt]
+          (in approx. agreement with previous results [Don\`a, Eichhorn, Percacci `15])\\[7pt]
+        \item \textbf{four relevant directions} (one close to zero)\\[7pt]
+        \item numerical studies: gravitationally dressed \textbf{Wilson--Fisher FP} in $d=3$\\[7pt]
+        \item phenomenologically most interesting FP3 needs \textbf{at least two fields}
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{center}
+        \vspace{-10pt}
+        \includegraphics[scale=0.6]{wilson_fisher_gravity.eps}
+      \end{center}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 19
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! reference
-% !!! rho versus phi (and rightness of solution)
 
 \begin{frame}
   \frametitle{A look into cosmology}
@@ -1278,7 +1273,7 @@
       \Gamma = \int \mathrm{d}^4x \, \sqrt{g} \;
       \left[
         \frac{1}{2} \, \sum_{i=1}^{\NS} \left( \nabla\varphi^i \right)^2
-        - \xi \, \rho^2 \, R
+        - \frac12 \, \xi \, \varphi^2 \, R
       \right]
     }
   \end{align*}
@@ -1287,7 +1282,7 @@
   \vspace{10pt}
   \begin{itemize}
     \item non-perturbatively renormalisable gravity\\[5pt]
-    \item $\MPl$ generated by VEV of $\rho$ $\leftrightarrow$ spontaneous symmetry breaking of scale symmetry\\[5pt]
+    \item $\MPl$ generated by VEV of $\varphi$ $\leftrightarrow$ spontaneous symmetry breaking of scale symmetry\\[5pt]
     \item RG flows close to the FP can model dynamical dark energy in the IR
       with asymptotically vanishing cosmological constant %$\Lambda$
   \end{itemize}
@@ -1295,11 +1290,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 20
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
-% !!! hTT leg to the left horizontally
 
 \begin{frame}
   \frametitle{RG dynamics of interaction vertices}
@@ -1364,7 +1358,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 21
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1448,7 +1442,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 22
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1520,7 +1514,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 23
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1604,7 +1598,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 24
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:
@@ -1663,7 +1657,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%   SLIDE
+%%%   SLIDE 25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO:

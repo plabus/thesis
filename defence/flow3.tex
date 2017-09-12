@@ -23,12 +23,12 @@
   \draw[double] ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) arc (-90:270:\radius);
 
   % Three external legs pointing down: left, middle, right
-  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + (-0.707*\radius, -1.843*\radius) $)
-    node[left, midway, inner sep=1mm] {$\varphi$};
-  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.000*\radius, -2.100*\radius) $)
+  \draw[TT]    ($ (dist11) + (-1.5*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $)
+    node[below, near start, inner sep=1mm] {$\hTT$};
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.0*\radius, -2.1*\radius) $)
     node[below, inner sep=0.5mm] {$\varphi$};
-  \draw[TT]    ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 0.707*\radius, -1.843*\radius) $)
-    node[right, midway, inner sep=2mm] {$\hTT$};
+  \draw        ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) -- ($ (dist11) + ( 1.5*\radius, -1.0*\radius) $)
+    node[below, near end, inner sep=1mm] {$\varphi$};
 
   % One dot for the vertex
   \draw[fill]  ($ (dist11) + ( 0.0*\radius, -1.0*\radius) $) circle [radius=\dotradius];
